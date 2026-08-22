@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Home, MapPin, Search, Star, Map, Users } from "lucide-react";
+import { ArrowRight, Home, MapPin, Search, Star, Map, Users, BarChart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
