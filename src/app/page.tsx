@@ -46,7 +46,7 @@ export default function Home() {
             Elevate Your Real Estate Brand with <span className="text-gradient">ClickMe</span>
           </h1>
           <p className="text-xl text-slate-300 leading-relaxed max-w-xl">
-            Prepared exclusively for <strong className="text-white">Davis & Garnett</strong>. We don't just build websites; we build self-generating authority networks that dominate AEO (Answer Engine Optimization).
+            Prepared exclusively for <strong className="text-white">Davis & Garnett</strong>. While others just give you an AEO (Answer Engine Optimization) score and leave you hanging, we build the self-generating authority engine that actually solves it.
           </p>
           <div className="flex gap-4">
             <a href="#vision" className="bg-primary hover:bg-blue-600 text-white px-8 py-4 rounded-full font-medium transition-all flex items-center gap-2 group">
@@ -110,9 +110,9 @@ export default function Home() {
               <div className="w-14 h-14 rounded-xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Layout className="w-7 h-7 text-blue-400" />
               </div>
-              <h3 className="text-xl font-bold mb-3 font-heading text-white">AEO-Ready Foundation</h3>
+              <h3 className="text-xl font-bold mb-3 font-heading text-white">Becoming AEO Ready</h3>
               <p className="text-slate-400 leading-relaxed">
-                We build a lightning-fast, highly styled website designed specifically for Answer Engine Optimization. This is the foundation everything else runs on.
+                We build a lightning-fast, highly styled website designed specifically for Answer Engine Optimization. Stop worrying about your score—we build the engine that fixes it on autopilot.
               </p>
             </div>
             
