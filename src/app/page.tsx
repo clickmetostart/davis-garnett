@@ -1,343 +1,510 @@
 "use client";
 
-import { 
-  ArrowRight, 
-  TrendingUp, 
-  Users, 
-  Layout, 
-  Cpu, 
-  Share2, 
-  CheckCircle2, 
-  Home, 
-  Percent, 
-  Search, 
-  FileSignature, 
-  Hammer, 
-  Check,
-  Mail,
-  Phone
-} from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Mail, Phone } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
+
+const NAV_LINKS = [
+  { label: "The Engine", href: "#engine" },
+  { label: "The Advisors", href: "#advisors" },
+  { label: "The Network", href: "#network" },
+  { label: "Investment", href: "#investment" },
+];
+
+const LISTINGS = [
+  { src: "/davis-garnett-real-estate-advisors-cover-image.webp", label: "Featured", tall: true },
+  { src: "/davis-garnett-listing-1.jpg", label: "Commercial" },
+  { src: "/davis-garnett-listings-2.jpg", label: "Residential" },
+  { src: "/davis-garnett-listing-2.jpg", label: "Investment" },
+  { src: "/davis-garnett-listing-3.jpg", label: "Commercial" },
+  { src: "/davis-garnett-listings-4.jpg", label: "Residential" },
+];
+
+const FEATURES = [
+  {
+    number: "01",
+    title: "The AEO Engine",
+    body: "Answer Engine Optimization isn't a score — it's an architecture. We build the entire infrastructure so that when buyers and investors ask AI assistants about Tampa Bay real estate, Davis & Garnett is the answer.",
+  },
+  {
+    number: "02",
+    title: "The Dashboard Hub",
+    body: "One command center: your Network CRM, Content Pipeline, Reputation Engine, and listing performance — all in one dashboard built specifically for commercial and residential advisors.",
+  },
+  {
+    number: "03",
+    title: "The Authority Network",
+    body: "Connect your digital presence directly to your strategic partners — title companies, mortgage brokers, inspectors. As their authority grows, so does yours. A web of trust that no individual listing can replicate.",
+  },
+];
+
+const MARKETS = ["Tampa", "Wesley Chapel", "Land O' Lakes", "Lutz", "St. Petersburg", "Clearwater", "New Port Richey", "Sarasota"];
 
 export default function Page() {
+  const [activeFeature, setActiveFeature] = useState(0);
+
   return (
-    <div className="min-h-screen">
-      {/* Navbar */}
-      <nav className="fixed top-0 w-full z-50 glass border-b-0 border-white/5">
-        <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <div className="text-xl md:text-2xl font-bold font-heading tracking-tight text-primary uppercase">Davis & Garnett</div>
-            <div className="hidden md:block h-8 w-px bg-white/20"></div>
-            <div className="text-sm font-medium tracking-wide text-slate-300 hidden md:block uppercase">Commercial | Residential Advisors</div>
+    <div className="min-h-screen bg-black text-white" style={{ fontFamily: "var(--font-sans)" }}>
+
+      {/* ── NAVIGATION ──────────────────────────────────── */}
+      <nav className="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-sm border-b border-[rgba(212,175,55,0.12)]">
+        <div className="max-w-screen-xl mx-auto px-8 h-20 flex items-center justify-between">
+          <div>
+            <span className="font-serif text-xl tracking-[0.2em] uppercase text-white" style={{ fontFamily: "var(--font-serif)" }}>
+              Davis & Garnett
+            </span>
+            <span className="text-[#D4AF37] mx-3 opacity-40">×</span>
+            <span className="label-caps text-[0.6rem] tracking-[0.2em] text-[#a0a0a0]">ClickMe</span>
           </div>
-          <div className="hidden lg:flex gap-8 items-center text-sm font-medium">
-            <a href="#vision" className="hover:text-primary transition-colors text-slate-300">The Engine</a>
-            <a href="#team" className="hover:text-primary transition-colors text-slate-300">The Team</a>
-            <a href="#network" className="hover:text-primary transition-colors text-slate-300">The Network Effect</a>
-            <a href="#investment" className="bg-primary hover:bg-accent text-black font-bold px-6 py-2.5 rounded-full transition-all shadow-lg shadow-primary/20">
-              View Pricing
+          <div className="hidden lg:flex items-center gap-10">
+            {NAV_LINKS.map((l) => (
+              <a key={l.label} href={l.href} className="label-caps text-[#a0a0a0] hover:text-[#D4AF37] transition-colors">
+                {l.label}
+              </a>
+            ))}
+            <a href="#investment" className="btn-gold text-[0.65rem] py-3 px-6">
+              View Proposal
             </a>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <header className="pt-40 pb-20 px-6 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-        <div className="space-y-8 relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-sm font-medium text-primary border-primary/30 uppercase tracking-wider">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-            A Strategic Partnership Proposal
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold font-heading leading-tight">
-            Local Knowledge. <br/><span className="text-gradient">Bigger Picture.</span>
-          </h1>
-          <p className="text-xl text-slate-300 leading-relaxed max-w-xl">
-            Prepared exclusively for <strong className="text-white">Davis & Garnett Commercial | Residential Advisors</strong>. While others just give you an AEO (Answer Engine Optimization) score and leave you hanging, we build the self-generating authority engine that actually solves it.
-          </p>
-          <div className="flex gap-4">
-            <a href="#vision" className="bg-primary hover:bg-accent text-black px-8 py-4 rounded-full font-bold transition-all flex items-center gap-2 group shadow-xl shadow-primary/20 uppercase tracking-wide">
-              Explore the Engine
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </div>
-        </div>
+      {/* ── HERO ────────────────────────────────────────── */}
+      <header className="relative h-screen min-h-[700px] flex flex-col justify-end pb-20 overflow-hidden">
+        {/* Full-bleed background image */}
+        <Image
+          src="/davis-garnett-real-estate-advisors-cover-image.webp"
+          alt="Davis & Garnett Tampa Bay Real Estate"
+          fill
+          className="object-cover object-center"
+          priority
+          loading="eager"
+        />
+        {/* Two-tone overlay: dark on left for text legibility, lighter on right to show image */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/70 to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40" />
 
-        <div className="relative animate-float lg:ml-10">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-black/20 blur-3xl rounded-full"></div>
-          <div className="glass rounded-2xl p-2 border border-primary/30 relative shadow-2xl overflow-hidden group">
-            <Image 
-              src="/davis-garnett-real-estate-advisors-cover-image.webp" 
-              alt="Davis & Garnett Cover" 
-              width={800} 
-              height={600} 
-              className="rounded-xl w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-            />
-            {/* Dashboard Overlay Mockup */}
-            <div className="absolute bottom-6 left-6 right-6 glass p-4 rounded-xl border border-white/10 flex justify-between items-center bg-black/80 backdrop-blur-md">
+        <div className="relative max-w-screen-xl mx-auto px-8 w-full">
+          {/* Top label */}
+          <div className="mb-8 fade-up fade-up-delay-1">
+            <span className="label-caps text-[#D4AF37]">A Strategic Partnership Proposal</span>
+            <span className="inline-block ml-4 w-12 h-px bg-[#D4AF37] align-middle" />
+          </div>
+
+          {/* Main headline — editorial scale */}
+          <h1 className="fade-up fade-up-delay-2" style={{
+            fontFamily: "var(--font-serif)",
+            fontWeight: 300,
+            letterSpacing: "0.06em",
+            lineHeight: "0.92",
+            fontSize: "clamp(4rem, 9vw, 9rem)",
+            textTransform: "uppercase",
+            color: "#ffffff",
+          }}>
+            Local<br />
+            <span style={{ color: "#D4AF37" }}>Knowledge.</span><br />
+            Bigger<br />
+            Picture.
+          </h1>
+
+          {/* Subline */}
+          <p className="fade-up fade-up-delay-3 mt-10 max-w-xl text-[#a0a0a0] text-base leading-relaxed" style={{ fontFamily: "var(--font-sans)" }}>
+            Commercial & Residential Advisors helping businesses, investors, buyers and sellers move with confidence across Tampa Bay — powered by an AI presence engine that works while you're closing deals.
+          </p>
+
+          {/* Agents + CTA row */}
+          <div className="fade-up fade-up-delay-4 mt-12 flex flex-wrap items-center gap-8">
+            {/* Agent portraits */}
+            <div className="flex items-center gap-5">
               <div className="flex items-center gap-3">
-                 <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                    <TrendingUp className="text-primary w-5 h-5"/>
-                 </div>
-                 <div>
-                   <div className="text-xs text-slate-400">AEO Authority</div>
-                   <div className="font-bold text-white">Ranking Top 3</div>
-                 </div>
+                <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#D4AF37]">
+                  <Image src="/mark-davis-profile-image.webp" alt="Mark Davis" width={56} height={56} className="object-cover w-full h-full" />
+                </div>
+                <div>
+                  <p className="font-serif text-sm text-white" style={{ fontFamily: "var(--font-serif)" }}>Mark Davis</p>
+                  <p className="label-caps text-[0.55rem] text-[#D4AF37]">Broker Associate</p>
+                </div>
               </div>
-              <div className="flex -space-x-3">
-                 <img src="/mark-davis-profile-image.webp" className="w-10 h-10 rounded-full border-2 border-black object-cover" />
-                 <img src="/rachael-garnett.webp" className="w-10 h-10 rounded-full border-2 border-black object-cover" />
+              <div className="w-px h-10 bg-[rgba(212,175,55,0.3)]" />
+              <div className="flex items-center gap-3">
+                <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#D4AF37]">
+                  <Image src="/rachael-garnett.webp" alt="Rachael Garnett" width={56} height={56} className="object-cover w-full h-full" />
+                </div>
+                <div>
+                  <p className="font-serif text-sm text-white" style={{ fontFamily: "var(--font-serif)" }}>Rachael Garnett</p>
+                  <p className="label-caps text-[0.55rem] text-[#D4AF37]">Real Estate Advisor</p>
+                </div>
               </div>
             </div>
+
+            <a href="#engine" className="btn-gold">
+              Explore the Engine <ArrowRight className="w-4 h-4" />
+            </a>
           </div>
         </div>
       </header>
 
-      {/* The Vision Section */}
-      <section id="vision" className="py-24 px-6 relative z-10">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold font-heading">
-              Strategic Real Estate Guidance, <br/><span className="text-gradient">Powered by ClickMe.</span>
-            </h2>
-            <p className="text-lg text-slate-400">
-              Whether you are locating your next business, investing, buying a home or preparing to sell across Tampa Bay — your digital presence needs to work actively for you.
+      {/* ── TICKER STRIP ─────────────────────────────────── */}
+      <div className="section-divider" />
+      <div className="section-surface overflow-hidden py-4">
+        <div className="flex gap-16 animate-none whitespace-nowrap px-8">
+          {MARKETS.concat(MARKETS).map((m, i) => (
+            <span key={i} className="label-caps text-[#555555] shrink-0">
+              {m} <span className="text-[#D4AF37] mx-4">·</span>
+            </span>
+          ))}
+        </div>
+      </div>
+      <div className="section-divider" />
+
+      {/* ── ENGINE SECTION ───────────────────────────────── */}
+      <section id="engine" className="section-dark py-32 px-8">
+        <div className="max-w-screen-xl mx-auto">
+
+          {/* Section header */}
+          <div className="mb-20 grid lg:grid-cols-2 gap-12 items-end">
+            <div>
+              <span className="label-caps text-[#D4AF37] block mb-6">What We Build</span>
+              <h2 className="font-serif" style={{
+                fontFamily: "var(--font-serif)",
+                fontWeight: 300,
+                fontSize: "clamp(2.5rem, 4.5vw, 5rem)",
+                letterSpacing: "0.04em",
+                lineHeight: "1.05",
+                textTransform: "uppercase",
+              }}>
+                The AEO<br />
+                <span style={{ color: "#D4AF37" }}>Authority</span><br />
+                Engine
+              </h2>
+            </div>
+            <div className="max-w-sm">
+              <p className="text-[#a0a0a0] leading-relaxed text-sm">
+                While competitors hand you a score and walk away, we build the entire infrastructure that fixes it — permanently. One dashboard. One network. Infinite compounding authority across every AI-driven platform.
+              </p>
+              <div className="mt-8 w-12 h-px bg-[#D4AF37]" />
+            </div>
+          </div>
+
+          {/* Interactive feature tabs */}
+          <div className="grid lg:grid-cols-[1fr_1.4fr] gap-0 border border-[rgba(212,175,55,0.15)]">
+            {/* Tab list */}
+            <div className="border-r border-[rgba(212,175,55,0.15)]">
+              {FEATURES.map((f, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActiveFeature(i)}
+                  className={`w-full text-left p-10 border-b border-[rgba(212,175,55,0.1)] transition-all duration-300 ${
+                    activeFeature === i ? "bg-[#111111]" : "bg-transparent hover:bg-[#0f0f0f]"
+                  }`}
+                >
+                  <span className="label-caps text-[#555555] block mb-3">{f.number}</span>
+                  <span className="font-serif text-2xl" style={{
+                    fontFamily: "var(--font-serif)",
+                    fontWeight: 400,
+                    letterSpacing: "0.03em",
+                    color: activeFeature === i ? "#D4AF37" : "#ffffff",
+                  }}>{f.title}</span>
+                  {activeFeature === i && (
+                    <div className="mt-4 w-8 h-px bg-[#D4AF37]" />
+                  )}
+                </button>
+              ))}
+            </div>
+
+            {/* Tab content */}
+            <div className="p-14 flex flex-col justify-center bg-[#111111]">
+              <span className="label-caps text-[#D4AF37] block mb-6">
+                Feature {FEATURES[activeFeature].number}
+              </span>
+              <h3 className="font-serif mb-8" style={{
+                fontFamily: "var(--font-serif)",
+                fontWeight: 300,
+                fontSize: "2.5rem",
+                letterSpacing: "0.04em",
+                lineHeight: "1.1",
+                textTransform: "uppercase",
+              }}>
+                {FEATURES[activeFeature].title}
+              </h3>
+              <p className="text-[#a0a0a0] text-sm leading-loose max-w-md">
+                {FEATURES[activeFeature].body}
+              </p>
+              <a href="#investment" className="btn-ghost mt-12 self-start">
+                See What's Included <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── LISTINGS GRID ────────────────────────────────── */}
+      <section className="section-surface py-32 px-8">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="mb-16 flex items-end justify-between">
+            <div>
+              <span className="label-caps text-[#D4AF37] block mb-5">Your Portfolio</span>
+              <h2 className="font-serif" style={{
+                fontFamily: "var(--font-serif)",
+                fontWeight: 300,
+                fontSize: "clamp(2.2rem, 4vw, 4.5rem)",
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                lineHeight: "1.05",
+              }}>
+                Listings,<br />
+                <span style={{ color: "#D4AF37" }}>Elevated.</span>
+              </h2>
+            </div>
+            <p className="text-[#555555] text-sm max-w-xs leading-relaxed hidden lg:block">
+              Every listing you carry deserves to be found by the right buyer at the right moment — on Google, on ChatGPT, on Perplexity.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="glass rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300 border border-white/5 group">
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border border-primary/20">
-                <Layout className="w-7 h-7 text-primary" />
+          {/* Asymmetric masonry grid */}
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
+            {LISTINGS.map((item, i) => (
+              <div
+                key={i}
+                className={`img-overlay group relative ${i === 0 ? "lg:col-span-2 lg:row-span-2 h-[480px]" : "h-[220px]"}`}
+              >
+                <Image
+                  src={item.src}
+                  alt={`${item.label} listing`}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute bottom-4 left-4 z-10">
+                  <span className="label-caps text-white/70 bg-black/50 px-3 py-1.5 inline-block">
+                    {item.label}
+                  </span>
+                </div>
               </div>
-              <h3 className="text-xl font-bold mb-3 font-heading text-white">Becoming AEO Ready</h3>
-              <p className="text-slate-400 leading-relaxed">
-                We build a lightning-fast, highly styled website designed specifically for Answer Engine Optimization. Stop worrying about your score—we build the engine that fixes it on autopilot.
-              </p>
-            </div>
-            
-            <div className="glass rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300 border border-white/5 group">
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border border-primary/20">
-                <Cpu className="w-7 h-7 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 font-heading text-white">The Dashboard Hub</h3>
-              <p className="text-slate-400 leading-relaxed">
-                Manage your Network CRM, Content Pipeline, and Reputation Engine from one single, powerful command center tailored for Tampa Bay real estate.
-              </p>
-            </div>
-            
-            <div className="glass rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300 border border-white/5 group">
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border border-primary/20">
-                <Share2 className="w-7 h-7 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 font-heading text-white">The Network Moat</h3>
-              <p className="text-slate-400 leading-relaxed">
-                Link your site directly with your strategic partners (title companies, inspectors). As their authority grows, yours does too. A true rising tide.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Team / Personalization Section */}
-      <section id="team" className="py-24 px-6 bg-neutral-950 border-y border-white/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 space-y-4">
-             <h2 className="text-4xl md:text-5xl font-bold font-heading">Meet the <span className="text-gradient">Advisors</span></h2>
-             <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-               The ClickMe engine doesn't just build the brokerage brand; it empowers the individual agents to dominate their local search presence.
-             </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-12">
-             {/* Mark Davis */}
-             <div className="glass p-8 rounded-3xl border border-white/5 flex gap-6 items-start">
-               <Image src="/mark-davis-profile-image.webp" alt="Mark Davis" width={120} height={120} className="rounded-full border-4 border-primary/40 object-cover w-32 h-32 shrink-0"/>
-               <div>
-                  <h3 className="text-2xl font-bold font-heading text-white mb-1">Mark Davis</h3>
-                  <p className="text-primary font-medium mb-4 uppercase text-sm tracking-wider">Broker Associate</p>
-                  <p className="text-slate-400 text-sm mb-6 leading-relaxed">
-                    Commercial & Residential Advisor helping businesses and investors move with confidence. ClickMe automates your content pipeline so you can focus on negotiations.
-                  </p>
-                  <div className="flex gap-4">
-                     <a href="mailto:msdavis118@gmail.com" className="p-3 rounded-full bg-white/5 hover:bg-primary hover:text-black transition-colors"><Mail className="w-4 h-4" /></a>
-                     <a href="tel:941-737-4127" className="p-3 rounded-full bg-white/5 hover:bg-primary hover:text-black transition-colors"><Phone className="w-4 h-4" /></a>
-                  </div>
-               </div>
-             </div>
-
-             {/* Rachael Garnett */}
-             <div className="glass p-8 rounded-3xl border border-white/5 flex gap-6 items-start">
-               <Image src="/rachael-garnett.webp" alt="Rachael Garnett" width={120} height={120} className="rounded-full border-4 border-primary/40 object-cover w-32 h-32 shrink-0"/>
-               <div>
-                  <h3 className="text-2xl font-bold font-heading text-white mb-1">Rachael Garnett</h3>
-                  <p className="text-primary font-medium mb-4 uppercase text-sm tracking-wider">Real Estate Agent</p>
-                  <p className="text-slate-400 text-sm mb-6 leading-relaxed">
-                    Hands-on buyer and seller representation throughout Tampa Bay. The ClickMe Reputation Engine aggregates your reviews automatically to build instant trust.
-                  </p>
-                  <div className="flex gap-4">
-                     <a href="mailto:rachaellgarnett@gmail.com" className="p-3 rounded-full bg-white/5 hover:bg-primary hover:text-black transition-colors"><Mail className="w-4 h-4" /></a>
-                     <a href="tel:727-808-3344" className="p-3 rounded-full bg-white/5 hover:bg-primary hover:text-black transition-colors"><Phone className="w-4 h-4" /></a>
-                  </div>
-               </div>
-             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Visualizing the Properties */}
-      <section className="py-24 px-6 overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold font-heading">
-              Your Listings, <span className="text-gradient">Elevated.</span>
+      {/* ── ADVISORS ─────────────────────────────────────── */}
+      <section id="advisors" className="section-dark py-32 px-8">
+        <div className="section-divider mb-20" />
+        <div className="max-w-screen-xl mx-auto">
+          <div className="mb-16">
+            <span className="label-caps text-[#D4AF37] block mb-5">The People</span>
+            <h2 className="font-serif" style={{
+              fontFamily: "var(--font-serif)",
+              fontWeight: 300,
+              fontSize: "clamp(2.2rem, 4vw, 4.5rem)",
+              letterSpacing: "0.05em",
+              textTransform: "uppercase",
+              lineHeight: "1.05",
+            }}>
+              Built Around<br />
+              <span style={{ color: "#D4AF37" }}>The Advisors.</span>
             </h2>
-            <p className="text-lg text-slate-400">Our AEO engine ensures your commercial and residential properties show up everywhere they need to be.</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="space-y-4">
-               <Image src="/davis-garnett-listing-1.jpg" alt="Listing" width={400} height={300} className="rounded-xl w-full h-48 object-cover glass hover:scale-105 transition-transform" />
-               <Image src="/davis-garnett-listings-5.jpg" alt="Listing" width={400} height={300} className="rounded-xl w-full h-64 object-cover glass hover:scale-105 transition-transform" />
+
+          <div className="grid lg:grid-cols-2 gap-px bg-[rgba(212,175,55,0.1)]">
+            {/* Mark Davis */}
+            <div className="bg-black p-12 lg:p-16 flex flex-col gap-8">
+              <div className="flex items-start gap-6">
+                <div className="w-20 h-20 rounded-full overflow-hidden border border-[rgba(212,175,55,0.4)] shrink-0">
+                  <Image src="/mark-davis-profile-image.webp" alt="Mark Davis" width={80} height={80} className="object-cover w-full h-full" />
+                </div>
+                <div>
+                  <span className="label-caps text-[#D4AF37] block mb-2">Broker Associate</span>
+                  <h3 className="font-serif text-4xl" style={{
+                    fontFamily: "var(--font-serif)",
+                    fontWeight: 400,
+                    letterSpacing: "0.04em",
+                  }}>Mark Davis</h3>
+                </div>
+              </div>
+              <p className="text-[#a0a0a0] text-sm leading-loose max-w-sm">
+                Commercial & Residential expert across Tampa Bay. Your listings, your deals, your reputation — automatically amplified across every platform buyers use.
+              </p>
+              <div className="gold-line-short" />
+              <div className="flex flex-col gap-3">
+                <a href="mailto:msdavis118@gmail.com" className="flex items-center gap-3 text-sm text-[#555555] hover:text-[#D4AF37] transition-colors">
+                  <Mail className="w-4 h-4 text-[#D4AF37]" />
+                  msdavis118@gmail.com
+                </a>
+                <a href="tel:941-737-4127" className="flex items-center gap-3 text-sm text-[#555555] hover:text-[#D4AF37] transition-colors">
+                  <Phone className="w-4 h-4 text-[#D4AF37]" />
+                  941-737-4127
+                </a>
+              </div>
             </div>
-            <div className="space-y-4 pt-8">
-               <Image src="/davis-garnett-listings-2.jpg" alt="Listing" width={400} height={300} className="rounded-xl w-full h-64 object-cover glass hover:scale-105 transition-transform" />
-               <Image src="/davis-garnett-listings-6.jpg" alt="Listing" width={400} height={300} className="rounded-xl w-full h-48 object-cover glass hover:scale-105 transition-transform" />
+
+            {/* Rachael Garnett */}
+            <div className="bg-[#0a0a0a] p-12 lg:p-16 flex flex-col gap-8">
+              <div className="flex items-start gap-6">
+                <div className="w-20 h-20 rounded-full overflow-hidden border border-[rgba(212,175,55,0.4)] shrink-0">
+                  <Image src="/rachael-garnett.jpg" alt="Rachael Garnett" width={80} height={80} className="object-cover w-full h-full" />
+                </div>
+                <div>
+                  <span className="label-caps text-[#D4AF37] block mb-2">Real Estate Advisor</span>
+                  <h3 className="font-serif text-4xl" style={{
+                    fontFamily: "var(--font-serif)",
+                    fontWeight: 400,
+                    letterSpacing: "0.04em",
+                  }}>Rachael Garnett</h3>
+                </div>
+              </div>
+              <p className="text-[#a0a0a0] text-sm leading-loose max-w-sm">
+                Hands-on buyer and seller representation across Tampa Bay. Reviews, authority, and trust — aggregated automatically and surfaced wherever buyers are looking.
+              </p>
+              <div className="gold-line-short" />
+              <div className="flex flex-col gap-3">
+                <a href="mailto:rachaellgarnett@gmail.com" className="flex items-center gap-3 text-sm text-[#555555] hover:text-[#D4AF37] transition-colors">
+                  <Mail className="w-4 h-4 text-[#D4AF37]" />
+                  rachaellgarnett@gmail.com
+                </a>
+                <a href="tel:727-808-3344" className="flex items-center gap-3 text-sm text-[#555555] hover:text-[#D4AF37] transition-colors">
+                  <Phone className="w-4 h-4 text-[#D4AF37]" />
+                  727-808-3344
+                </a>
+              </div>
             </div>
-            <div className="space-y-4">
-               <Image src="/davis-garnett-listing-3.jpg" alt="Listing" width={400} height={300} className="rounded-xl w-full h-48 object-cover glass hover:scale-105 transition-transform" />
-               <Image src="/davis-garnett-listings-4.jpg" alt="Listing" width={400} height={300} className="rounded-xl w-full h-64 object-cover glass hover:scale-105 transition-transform" />
+          </div>
+        </div>
+        <div className="section-divider mt-20" />
+      </section>
+
+      {/* ── MARKETS ──────────────────────────────────────── */}
+      <section id="network" className="section-surface py-32 px-8">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="grid lg:grid-cols-[1fr_1.5fr] gap-20 items-center">
+            <div>
+              <span className="label-caps text-[#D4AF37] block mb-6">The Network</span>
+              <h2 className="font-serif mb-8" style={{
+                fontFamily: "var(--font-serif)",
+                fontWeight: 300,
+                fontSize: "clamp(2.2rem, 4vw, 4rem)",
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                lineHeight: "1.1",
+              }}>
+                Core<br />
+                <span style={{ color: "#D4AF37" }}>Markets.</span>
+              </h2>
+              <p className="text-[#a0a0a0] text-sm leading-loose max-w-sm mb-10">
+                We operate throughout Tampa Bay and surrounding Florida markets, connecting clients with opportunities that fit their goals — not simply what happens to be available.
+              </p>
+              <div className="w-12 h-px bg-[#D4AF37]" />
             </div>
-            <div className="space-y-4 pt-8">
-               <Image src="/davis-garnett-listings-7.jpg" alt="Listing" width={400} height={300} className="rounded-xl w-full h-64 object-cover glass hover:scale-105 transition-transform" />
-               <Image src="/davis-garnett-listing-2.jpg" alt="Listing" width={400} height={300} className="rounded-xl w-full h-48 object-cover glass hover:scale-105 transition-transform" />
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-[rgba(212,175,55,0.08)]">
+              {MARKETS.map((m) => (
+                <div key={m} className="bg-[#111111] p-6 flex items-end justify-start">
+                  <span className="font-serif text-white/80 text-sm" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.03em" }}>{m}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Network Effect */}
-      <section id="network" className="py-24 px-6 bg-neutral-950">
-        <div className="max-w-5xl mx-auto text-center">
-          <div className="mb-16 space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold font-heading">
-              Build Your <span className="text-gradient">Tampa Bay Network</span>
+      {/* ── INVESTMENT ───────────────────────────────────── */}
+      <section id="investment" className="section-dark py-32 px-8">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="section-divider mb-20" />
+          <div className="mb-16">
+            <span className="label-caps text-[#D4AF37] block mb-5">Partnership Investment</span>
+            <h2 className="font-serif" style={{
+              fontFamily: "var(--font-serif)",
+              fontWeight: 300,
+              fontSize: "clamp(2.2rem, 4vw, 4.5rem)",
+              letterSpacing: "0.05em",
+              textTransform: "uppercase",
+              lineHeight: "1.05",
+            }}>
+              Choose Your<br />
+              <span style={{ color: "#D4AF37" }}>Level.</span>
             </h2>
-            <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-              Join a movement. Our platform allows you to create a web of authority with your local partners in Tampa, Wesley Chapel, St. Pete and beyond.
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-px bg-[rgba(212,175,55,0.15)]">
+            {/* Standard */}
+            <div className="bg-black p-12 lg:p-16 flex flex-col">
+              <span className="label-caps text-[#555555] block mb-6">Standard</span>
+              <div className="mb-8">
+                <span className="font-serif text-7xl text-white" style={{ fontFamily: "var(--font-serif)", fontWeight: 300 }}>$499</span>
+                <span className="text-[#555555] text-sm ml-2">/month</span>
+              </div>
+              <p className="text-[#a0a0a0] text-sm mb-10">$0 setup fee. Cancel any time. Full platform access from day one.</p>
+              <div className="gold-line-short mb-10" />
+              <ul className="flex flex-col gap-5 mb-12 flex-1">
+                {[
+                  "Custom AEO-ready website build",
+                  "Core Dashboard & Network CRM",
+                  "Automated content pipeline",
+                  "Reputation engine & review aggregation",
+                  "Monthly performance reports",
+                ].map((f) => (
+                  <li key={f} className="flex items-start gap-4 text-sm text-[#a0a0a0]">
+                    <Check className="w-4 h-4 text-[#D4AF37] mt-0.5 shrink-0" />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <a href="mailto:msdavis118@gmail.com" className="btn-ghost self-start">
+                Get Started <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
+
+            {/* Rachael's Offer */}
+            <div className="bg-[#0f0e0a] p-12 lg:p-16 flex flex-col border-l border-[rgba(212,175,55,0.3)]">
+              <div className="flex items-center gap-4 mb-6">
+                <span className="label-caps text-[#D4AF37] block">Rachael's Offer</span>
+                <span className="label-caps text-[0.55rem] bg-[#D4AF37] text-black px-3 py-1">Lifetime</span>
+              </div>
+              <div className="mb-8">
+                <span className="font-serif text-7xl text-[#D4AF37]" style={{ fontFamily: "var(--font-serif)", fontWeight: 300 }}>$2,500</span>
+                <span className="text-[#555555] text-sm ml-2">one-time</span>
+              </div>
+              <p className="text-[#a0a0a0] text-sm mb-10">You own the build forever. $0/month platform fee. Full access, no subscription.</p>
+              <div className="gold-line-short mb-10" />
+              <ul className="flex flex-col gap-5 mb-12 flex-1">
+                {[
+                  "You own the website — forever",
+                  "Lifetime Dashboard & CRM access",
+                  "All platform features included",
+                  "Priority support & onboarding",
+                  "No monthly fees, ever",
+                ].map((f) => (
+                  <li key={f} className="flex items-start gap-4 text-sm text-white">
+                    <Check className="w-4 h-4 text-[#D4AF37] mt-0.5 shrink-0" />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <a href="mailto:rachaellgarnett@gmail.com" className="btn-gold self-start">
+                Claim This Offer <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
+          </div>
+
+          <div className="section-divider mt-20" />
+        </div>
+      </section>
+
+      {/* ── FOOTER ───────────────────────────────────────── */}
+      <footer className="section-surface px-8 py-16">
+        <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+          <div>
+            <span className="font-serif text-lg tracking-[0.2em] uppercase text-white/50" style={{ fontFamily: "var(--font-serif)" }}>
+              Davis & Garnett
+            </span>
+            <p className="label-caps text-[#333333] mt-2">
+              Align Right Realty Carrollwood · Tampa Bay, Florida
             </p>
           </div>
-
-          <div className="relative max-w-3xl mx-auto aspect-[4/3] md:aspect-[2/1] my-12">
-            {/* Connection Lines (SVG) */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 0 }}>
-              <path d="M50% 50% L20% 20%" className="stroke-primary/30 stroke-2" />
-              <path d="M50% 50% L80% 20%" className="stroke-primary/30 stroke-2" />
-              <path d="M50% 50% L20% 80%" className="stroke-white/10 stroke-2" />
-              <path d="M50% 50% L80% 80%" className="stroke-white/10 stroke-2" />
-            </svg>
-
-            {/* Nodes */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-              <div className="glass px-8 py-5 rounded-2xl border border-primary/50 shadow-xl shadow-primary/20 flex flex-col items-center gap-3 w-56 bg-black">
-                <span className="font-bold text-lg text-primary text-center font-heading uppercase tracking-wide">Davis & Garnett</span>
-              </div>
-            </div>
-
-            <div className="absolute top-[10%] left-[10%] z-10">
-              <div className="glass px-4 py-3 rounded-xl border border-white/5 flex flex-col items-center gap-2 bg-black/80">
-                <Percent className="w-5 h-5 text-slate-400" />
-                <span className="text-xs font-medium text-slate-300">Mortgage</span>
-              </div>
-            </div>
-            
-            <div className="absolute top-[10%] right-[10%] z-10">
-              <div className="glass px-4 py-3 rounded-xl border border-white/5 flex flex-col items-center gap-2 bg-black/80">
-                <Search className="w-5 h-5 text-slate-400" />
-                <span className="text-xs font-medium text-slate-300">Inspector</span>
-              </div>
-            </div>
-
-            <div className="absolute bottom-[10%] left-[10%] z-10">
-              <div className="glass px-4 py-3 rounded-xl border border-white/5 flex flex-col items-center gap-2 bg-black/80">
-                <FileSignature className="w-5 h-5 text-slate-400" />
-                <span className="text-xs font-medium text-slate-300">Title Co.</span>
-              </div>
-            </div>
-
-            <div className="absolute bottom-[10%] right-[10%] z-10">
-              <div className="glass px-4 py-3 rounded-xl border border-white/5 flex flex-col items-center gap-2 bg-black/80">
-                <Hammer className="w-5 h-5 text-slate-400" />
-                <span className="text-xs font-medium text-slate-300">Contractor</span>
-              </div>
-            </div>
-          </div>
+          <p className="label-caps text-[#333333]">
+            © {new Date().getFullYear()} ClickMe. Building Local Authority.
+          </p>
         </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section id="investment" className="py-24 px-6 relative">
-        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold font-heading">
-              Partnership <span className="text-gradient">Investment</span>
-            </h2>
-            <p className="text-lg text-slate-400">Choose the level of growth that fits your ambition.</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Standard Tier */}
-            <div className="glass p-10 rounded-3xl border border-white/10 flex flex-col hover:border-primary/30 transition-colors">
-              <h3 className="text-2xl font-heading font-bold text-white">Standard Platform</h3>
-              <p className="text-slate-400 text-sm mt-2">The complete AEO real estate engine.</p>
-              <div className="mt-8 mb-10">
-                <span className="text-5xl font-bold text-white">$499</span>
-                <span className="text-slate-400"> / month</span>
-                <p className="text-sm text-primary mt-3 uppercase tracking-wider font-bold">$0 Setup Fee</p>
-              </div>
-              <ul className="space-y-5 mb-10 flex-1">
-                <li className="flex gap-4 text-slate-300 items-center"><Check className="w-5 h-5 text-primary shrink-0" /> Custom AEO-Ready Website Build</li>
-                <li className="flex gap-4 text-slate-300 items-center"><Check className="w-5 h-5 text-primary shrink-0" /> Core Dashboard & Network CRM</li>
-                <li className="flex gap-4 text-slate-300 items-center"><Check className="w-5 h-5 text-primary shrink-0" /> Automated Content Pipeline</li>
-                <li className="flex gap-4 text-slate-300 items-center"><Check className="w-5 h-5 text-primary shrink-0" /> Reputation Engine</li>
-              </ul>
-              <button className="w-full py-4 rounded-xl border-2 border-white/20 hover:border-primary hover:text-primary transition-all font-bold tracking-wide uppercase text-sm">Select Standard</button>
-            </div>
-
-            {/* Custom Offer Tier */}
-            <div className="glass p-10 rounded-3xl border border-primary/50 relative flex flex-col transform md:-translate-y-4 bg-primary/5 shadow-2xl shadow-primary/20">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-accent text-black text-xs font-bold px-6 py-2 rounded-full uppercase tracking-wider whitespace-nowrap shadow-lg">
-                Rachael's Special Offer
-              </div>
-              <h3 className="text-2xl font-heading font-bold text-white">Lifetime Access</h3>
-              <p className="text-slate-300 text-sm mt-2">You keep the build, forever.</p>
-              <div className="mt-8 mb-10">
-                <span className="text-5xl font-bold text-primary">$2,500</span>
-                <span className="text-slate-400"> one-time</span>
-                <p className="text-sm text-white mt-3 uppercase tracking-wider font-bold bg-white/10 inline-block px-3 py-1 rounded">$0 Monthly Platform Fee</p>
-              </div>
-              <ul className="space-y-5 mb-10 flex-1">
-                <li className="flex gap-4 text-white items-center"><Check className="w-5 h-5 text-primary shrink-0" /> You Own the Website Forever</li>
-                <li className="flex gap-4 text-white items-center"><Check className="w-5 h-5 text-primary shrink-0" /> Lifetime Dashboard Access</li>
-                <li className="flex gap-4 text-white items-center"><Check className="w-5 h-5 text-primary shrink-0" /> All Platform Features Included</li>
-                <li className="flex gap-4 text-white items-center"><Check className="w-5 h-5 text-primary shrink-0" /> Priority Support</li>
-              </ul>
-              <button className="w-full py-4 rounded-xl bg-primary hover:bg-accent text-black transition-colors font-bold shadow-lg shadow-primary/20 uppercase tracking-wide text-sm">Claim Special Offer</button>
-            </div>
-          </div>
-          
-          <div className="mt-20 text-center">
-             <a href="mailto:msdavis118@gmail.com" className="inline-flex items-center gap-3 bg-primary text-black hover:bg-accent px-10 py-5 rounded-full font-bold text-lg transition-all shadow-xl shadow-primary/20 group uppercase tracking-wide">
-               Let's Build Your Engine
-               <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
-             </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-12 border-t border-white/5 text-center px-6 bg-black">
-        <div className="text-xl md:text-2xl font-bold font-heading tracking-widest text-primary/50 uppercase mb-4">Davis & Garnett</div>
-        <p className="text-slate-600 text-sm">&copy; {new Date().getFullYear()} ClickMe. Building the future of local authority.</p>
       </footer>
+
     </div>
   );
 }

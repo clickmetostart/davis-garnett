@@ -1,20 +1,24 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+// Elegant serif for all display/heading text — replaces Georgia from their Canva site
+const cormorant = Cormorant_Garamond({
+  variable: "--font-serif",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+// Clean, precise sans-serif for body, labels, UI
+const dmSans = DM_Sans({
+  variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
 });
 
 export const metadata: Metadata = {
-  title: "ClickMe x Davis & Garnett",
-  description: "A strategic partnership proposal for Davis & Garnett to build authority, dominate AI search, and join the ClickMe network.",
+  title: "ClickMe × Davis & Garnett | A Partnership Proposal",
+  description: "A strategic proposal for Davis & Garnett Commercial & Residential Advisors — Tampa Bay's premier real estate duo — to dominate AI-powered search and build lasting digital authority.",
 };
 
 export default function RootLayout({
@@ -24,13 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body
-        className={`${inter.variable} ${outfit.variable} antialiased relative min-h-screen`}
-      >
-        <div className="fixed inset-0 z-[-1] pointer-events-none">
-          <div className="blob blob-1"></div>
-          <div className="blob blob-2"></div>
-        </div>
+      <body className={`${cormorant.variable} ${dmSans.variable} antialiased bg-black text-white`}>
         {children}
       </body>
     </html>
