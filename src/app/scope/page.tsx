@@ -182,6 +182,19 @@ export default function ScopePage() {
                   </ul>
                 </div>
 
+                <div className="mb-8">
+                  <strong className="text-[#D4AF37] block mb-2 text-sm uppercase tracking-wider">Total Self-Sufficiency</strong>
+                  <p className="text-sm mb-4">
+                    Stop spending money on third-party subscriptions and logging into 15 different tools online. The ClickMe dashboard gives you the power to manage your brand internally:
+                  </p>
+                  <ul className="flex flex-col gap-2 text-sm pl-4 border-l-2 border-[#D4AF37]/30">
+                    <li>• Create and publish your own featured listings</li>
+                    <li>• Schedule and promote open houses</li>
+                    <li>• Manage a unified calendar for both pipelines</li>
+                    <li>• Publish custom posts directly in your distinct brand voice</li>
+                  </ul>
+                </div>
+
                 <div>
                   <strong className="text-[#D4AF37] block mb-2 text-sm uppercase tracking-wider">Shared Ecosystem</strong>
                   <p className="text-sm">
@@ -200,6 +213,7 @@ export default function ScopePage() {
                   <li className="flex items-start gap-3"><span className="text-[#D4AF37]">☑</span> Individual secure login credentials per partner</li>
                   <li className="flex items-start gap-3"><span className="text-[#D4AF37]">☑</span> Separate content pipelines per voice</li>
                   <li className="flex items-start gap-3"><span className="text-[#D4AF37]">☑</span> Cross-referral tracking between dashboards</li>
+                  <li className="flex items-start gap-3"><span className="text-[#D4AF37]">☑</span> Native featured listings & open house creation</li>
                   <li className="flex items-start gap-3"><span className="text-[#D4AF37]">☑</span> Unified billing and support</li>
                 </ul>
               </div>
