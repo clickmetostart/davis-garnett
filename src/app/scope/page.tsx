@@ -1,7 +1,11 @@
-"use client";
-
 import { ArrowRight, ChevronRight, Server, Layout, Zap, Shield, CheckSquare } from "lucide-react";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "ClickMe Platform | Project Scope & Masterplan",
+  description: "A complete breakdown of the digital masterplan, dual dashboards, and active content engine being built for Davis & Garnett.",
+};
 
 export default function ScopePage() {
   return (

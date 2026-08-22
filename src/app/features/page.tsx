@@ -1,7 +1,11 @@
-"use client";
-
-import { ArrowRight, Check, Target, Globe, Users, MapPin, Smartphone, Star, BarChart, Link as LinkIcon } from "lucide-react";
+import { ArrowRight, Zap, Target, Search, BarChart3, Users, Home, Globe, MessageSquare, Shield, Clock, Layout, Check, MapPin, Smartphone, Star, BarChart, Link as LinkIcon } from "lucide-react";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Platform Features | ClickMe Real Estate Engine",
+  description: "Explore the core features of the ClickMe ecosystem, including AEO optimization, automated content pipelines, and AI citation tracking.",
+};
 
 export default function FeaturesPage() {
   return (

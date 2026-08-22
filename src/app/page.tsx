@@ -469,9 +469,9 @@ export default function Page() {
                   </li>
                 ))}
               </ul>
-              <a href="mailto:msdavis118@gmail.com" className="btn-ghost w-full">
+              <Link href="/agreement?plan=monthly" className="btn-ghost w-full text-center block">
                 Sign Contract & Start
-              </a>
+              </Link>
             </div>
 
             {/* Rachael's Offer */}
@@ -502,9 +502,9 @@ export default function Page() {
               <Link href="/scope" className="btn-gold w-full flex items-center justify-center gap-2 mb-4">
                 View Full Project Scope
               </Link>
-              <a href="mailto:rachaellgarnett@gmail.com" className="btn-ghost w-full">
+              <Link href="/agreement?plan=annual" className="btn-ghost w-full flex items-center justify-center gap-2">
                 Sign Contract & Pay <ArrowRight className="w-4 h-4" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

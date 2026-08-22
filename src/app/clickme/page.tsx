@@ -1,8 +1,12 @@
-"use client";
-
-import { ArrowRight, LayoutDashboard, Users, Zap, Star, BarChart, Share2, MessageSquare, MapPin } from "lucide-react";
+import { ArrowRight, LayoutDashboard, Users, FileText, Search, Activity, Zap, CheckCircle2, ChevronRight, Bell, Star, BarChart, Share2, MessageSquare, MapPin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Dashboard Demo | Command Center Preview",
+  description: "Preview the ClickMe dual command centers. Separate, purpose-built CRM and content dashboards for commercial and residential real estate pipelines.",
+};
 
 export default function ClickMePage() {
   return (

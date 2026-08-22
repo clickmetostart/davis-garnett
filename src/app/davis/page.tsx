@@ -1,8 +1,12 @@
-"use client";
-
 import { ArrowRight, Building, MapPin, Briefcase, BarChart, LandPlot, Map } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Mark Davis | Commercial Real Estate Advisor | Tampa Bay",
+  description: "Mark Davis specializes in commercial real estate across Tampa Bay, focusing on retail leasing, land acquisition, and industrial spaces.",
+};
 
 export default function DavisPage() {
   return (

@@ -1,8 +1,12 @@
-"use client";
-
 import { ArrowRight, Home, MapPin, Search, Star, Map, Users, BarChart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Rachael Garnett | Residential Real Estate Advisor | Tampa Bay",
+  description: "Rachael Garnett provides premier residential real estate services across Tampa Bay, specializing in luxury homes, relocations, and buyer representation.",
+};
 
 export default function GarnettPage() {
   return (
