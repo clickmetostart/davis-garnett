@@ -5,10 +5,10 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Dashboard Demo | Command Center Preview",
-  description: "Preview the ClickMe dual command centers. Separate,
+  description: "Preview the ClickMe dual command centers. Separate, purpose-built CRM and content dashboards for commercial and residential real estate pipelines.",
   openGraph: {
     images: ["/davis-garnett-real-combo.png"],
-  }, purpose-built CRM and content dashboards for commercial and residential real estate pipelines.",
+  },
 };
 
 export default function ClickMePage() {

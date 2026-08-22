@@ -5,10 +5,10 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Rachael Garnett | Residential Real Estate Advisor | Tampa Bay",
-  description: "Rachael Garnett provides premier residential real estate services across Tampa Bay,
+  description: "Rachael Garnett provides premier residential real estate services across Tampa Bay, specializing in luxury homes, relocations, and buyer representation.",
   openGraph: {
     images: ["/rachael-garnett-headshot.png"],
-  }, specializing in luxury homes, relocations, and buyer representation.",
+  },
 };
 
 export default function GarnettPage() {

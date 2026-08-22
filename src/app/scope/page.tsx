@@ -4,10 +4,10 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "ClickMe Platform | Project Scope & Masterplan",
-  description: "A complete breakdown of the digital masterplan,
+  description: "A complete breakdown of the digital masterplan, dual dashboards, and active content engine being built for Davis & Garnett.",
   openGraph: {
     images: ["/davis-garnett-real-combo.png"],
-  }, dual dashboards, and active content engine being built for Davis & Garnett.",
+  },
 };
 
 export default function ScopePage() {
