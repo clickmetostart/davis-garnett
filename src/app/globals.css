@@ -41,8 +41,22 @@ body {
   background-color: var(--black);
   color: var(--text-primary);
   font-family: var(--font-sans), 'DM Sans', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #b0b0b0;
+}
+
+li {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #909090;
 }
 
 /* ============================================
@@ -82,11 +96,36 @@ body {
 
 .label-caps {
   font-family: var(--font-sans), sans-serif;
-  font-size: 0.65rem;
+  font-size: 0.68rem;
   font-weight: 500;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--text-secondary);
+}
+
+/* Body text utilities — use these instead of text-xs/text-sm everywhere */
+.body-lg {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: #b0b0b0;
+}
+
+.body-md {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #909090;
+}
+
+.body-sm {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: #707070;
+}
+
+/* Table/grid cell text */
+.cell-text {
+  font-size: 0.85rem;
+  line-height: 1.5;
 }
 
 /* ============================================
