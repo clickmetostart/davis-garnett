@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { Outfit, DM_Sans } from "next/font/google";
 import "./globals.css";
 
-// Elegant serif for all display/heading text — replaces Georgia from their Canva site
-const cormorant = Cormorant_Garamond({
-  variable: "--font-serif",
+// Modern, sleek geometric sans-serif for massive display/heading text
+const outfit = Outfit({
+  variable: "--font-serif", // Keeping the variable name same to avoid refactoring every class, but it's now a modern sans
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 });
@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${cormorant.variable} ${dmSans.variable} antialiased bg-black text-white`}>
+      <body className={`${outfit.variable} ${dmSans.variable} antialiased bg-black text-white`}>
         {children}
       </body>
     </html>

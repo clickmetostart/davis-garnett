@@ -2,22 +2,23 @@
 
 /* ============================================
    DAVIS & GARNETT × CLICKME DESIGN SYSTEM
-   Dark Prestige — Black Card Aesthetic
+   Modern Tech Luxury — True Wow-Factor
    ============================================ */
 
 :root {
-  /* Gold palette — pulled directly from D&G Canva site */
+  /* Gold palette */
   --gold:      #D4AF37;
   --gold-light: #F6E3B0;
   --gold-muted: #8B6914;
 
   /* Neutrals */
-  --black:     #0a0a0a;
+  --black:     #050505;
   --black-deep: #000000;
-  --surface:   #111111;
-  --surface-2: #1a1a1a;
-  --border:    rgba(212, 175, 55, 0.15);
-  --border-strong: rgba(212, 175, 55, 0.4);
+  --surface:   rgba(255, 255, 255, 0.02);
+  --surface-2: rgba(255, 255, 255, 0.04);
+  --border:    rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(212, 175, 55, 0.3);
+  --border-gold: rgba(212, 175, 55, 0.15);
 
   --text-primary:   #ffffff;
   --text-secondary: #a0a0a0;
@@ -35,10 +36,11 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--black-deep);
 }
 
 body {
-  background-color: var(--black);
+  background-color: transparent;
   color: var(--text-primary);
   font-family: var(--font-sans), 'DM Sans', system-ui, sans-serif;
   font-size: 16px;
@@ -47,169 +49,143 @@ body {
   overflow-x: hidden;
 }
 
-p {
-  font-size: 1rem;
-  line-height: 1.75;
-  color: #b0b0b0;
-}
-
-li {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: #909090;
-}
-
 /* ============================================
    TYPOGRAPHY UTILITIES
    ============================================ */
 
 .font-serif {
-  font-family: var(--font-serif), 'Cormorant Garamond', Georgia, serif;
+  font-family: var(--font-serif), 'Outfit', sans-serif;
 }
 
 .font-sans {
   font-family: var(--font-sans), 'DM Sans', system-ui, sans-serif;
 }
 
-/* Gold text */
-.text-gold        { color: var(--gold); }
-.text-gold-light  { color: var(--gold-light); }
-.text-gold-muted  { color: var(--gold-muted); }
-
-/* Editorial display headings */
+/* Editorial display headings with Gradient Masking */
 .display-xl {
-  font-family: var(--font-serif), Georgia, serif;
-  font-weight: 300;
-  letter-spacing: 0.08em;
+  font-family: var(--font-serif), sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
   line-height: 0.95;
   font-size: clamp(4rem, 9vw, 10rem);
-  text-transform: uppercase;
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.4) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .display-lg {
-  font-family: var(--font-serif), Georgia, serif;
-  font-weight: 300;
-  letter-spacing: 0.06em;
+  font-family: var(--font-serif), sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
   line-height: 1.0;
   font-size: clamp(2.5rem, 5vw, 5.5rem);
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.6) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .label-caps {
   font-family: var(--font-sans), sans-serif;
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.22em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--text-secondary);
 }
 
-/* Body text utilities — use these instead of text-xs/text-sm everywhere */
-.body-lg {
-  font-size: 1.1rem;
-  line-height: 1.75;
-  color: #b0b0b0;
-}
-
-.body-md {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #909090;
-}
-
-.body-sm {
-  font-size: 0.875rem;
-  line-height: 1.7;
-  color: #707070;
-}
-
-/* Table/grid cell text */
-.cell-text {
-  font-size: 0.85rem;
-  line-height: 1.5;
-}
-
 /* ============================================
-   STRUCTURAL UTILITIES
+   STRUCTURAL UTILITIES & TRUE GLASSMORPHISM
    ============================================ */
 
-.gold-line {
-  width: 100%;
-  height: 1px;
-  background: var(--border-strong);
+/* Bento Box Glass Card */
+.glass-card {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.15); /* Top light highlight */
+  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  overflow: hidden;
 }
 
-.gold-line-short {
-  width: 3rem;
-  height: 1px;
-  background: var(--gold);
-  display: block;
+.glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
-/* Section backgrounds */
-.section-dark   { background-color: var(--black); }
-.section-surface { background-color: var(--surface); }
-.section-surface-2 { background-color: var(--surface-2); }
-
-/* Card — no glass, no blur, just sharp, dark, bordered */
-.card {
-  background-color: var(--surface);
-  border: 1px solid var(--border);
-}
-
-.card-hover {
-  transition: border-color 0.3s ease, transform 0.3s ease;
-}
-.card-hover:hover {
-  border-color: var(--border-strong);
+.glass-card:hover {
   transform: translateY(-4px);
+  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5), 0 0 40px -10px rgba(212,175,55,0.1);
 }
 
-/* Gold CTA button */
+/* Modern Pill Buttons */
 .btn-gold {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.75rem;
-  background-color: var(--gold);
+  background: linear-gradient(180deg, #F6E3B0 0%, #D4AF37 100%);
   color: #000;
   font-family: var(--font-sans), sans-serif;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 1rem 2.5rem;
-  border: none;
+  border-radius: 9999px;
+  border: 1px solid rgba(255,255,255,0.2);
   cursor: pointer;
-  transition: background-color 0.25s ease, transform 0.2s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px -5px rgba(212,175,55,0.4), inset 0 1px 0 rgba(255,255,255,0.4);
 }
 .btn-gold:hover {
-  background-color: var(--gold-light);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px -5px rgba(212,175,55,0.6), inset 0 1px 0 rgba(255,255,255,0.4);
 }
 
-/* Ghost (outline) button */
 .btn-ghost {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.75rem;
-  background-color: transparent;
-  color: var(--gold);
+  background-color: rgba(255,255,255,0.03);
+  backdrop-filter: blur(12px);
+  color: var(--text-primary);
   font-family: var(--font-sans), sans-serif;
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 0.9rem 2.5rem;
-  border: 1px solid var(--border-strong);
+  padding: 1rem 2.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255,255,255,0.2);
   cursor: pointer;
-  transition: background-color 0.25s ease, color 0.25s ease;
+  transition: all 0.3s ease;
 }
 .btn-ghost:hover {
-  background-color: var(--gold);
-  color: #000;
+  background-color: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.2);
+  transform: translateY(-2px);
 }
 
 /* ============================================
-   SCROLL & ANIMATION
+   SCROLL & AMBIENT ANIMATIONS
    ============================================ */
 
 @keyframes fadeUp {
@@ -225,28 +201,17 @@ li {
 .fade-up-delay-3 { animation-delay: 0.35s; }
 .fade-up-delay-4 { animation-delay: 0.5s; }
 
-/* Image overlay for cinematic property shots */
-.img-overlay {
-  position: relative;
-  overflow: hidden;
-}
-.img-overlay::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%);
-  pointer-events: none;
-}
-.img-overlay:hover img {
-  transform: scale(1.04);
-}
-.img-overlay img {
-  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+/* Slow floating orbs for ambient background */
+@keyframes float {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0, 0) scale(1); }
 }
 
-/* Divider element */
-.section-divider {
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--border-strong), transparent);
+.animate-float-slow {
+  animation: float 20s ease-in-out infinite;
+}
+.animate-float-slower {
+  animation: float 25s ease-in-out infinite reverse;
 }

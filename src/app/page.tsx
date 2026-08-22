@@ -1,41 +1,34 @@
 "use client";
 
-import { ArrowRight, Check, Mail, Phone, X, Sparkles } from "lucide-react";
+import { ArrowRight, Check, Sparkles, X, ChevronRight, Activity, Layers, Zap } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
 const NAV_LINKS = [
-  { label: "The Trap", href: "#truth" },
-  { label: "The Playbook", href: "#playbook" },
-  { label: "The Architecture", href: "#deliverables" },
-  { label: "The Math", href: "#investment" },
-  { label: "Preview Site", href: "/coming-soon" },
+  { label: "The Reality", href: "#truth" },
+  { label: "The Engine", href: "#playbook" },
+  { label: "Architecture", href: "#deliverables" },
+  { label: "Investment", href: "#investment" },
+  { label: "Live Preview", href: "/coming-soon" },
 ];
 
-const LISTINGS = [
-  { src: "/davis-garnett-real-estate-advisors-cover-image.webp", label: "Featured", tall: true },
-  { src: "/davis-garnett-listing-1.jpg", label: "Commercial" },
-  { src: "/davis-garnett-listings-2.jpg", label: "Residential" },
-  { src: "/davis-garnett-listing-2.jpg", label: "Investment" },
-  { src: "/davis-garnett-listing-3.jpg", label: "Commercial" },
-  { src: "/davis-garnett-listings-4.jpg", label: "Residential" },
-];
+const MARKETS = ["Tampa", "Wesley Chapel", "Land O' Lakes", "Lutz", "St. Petersburg", "Clearwater", "New Port Richey", "Sarasota"];
 
 const FEATURES = [
   {
     number: "01",
     title: "The Power Combo",
-    body: "We are merging Mark's commercial/investment gravity with Rachael's residential finesse into a single dominant Tampa Bay brand. By combining forces under one domain, your combined traffic and authority scale twice as fast.",
+    body: "We are merging Mark's commercial and investment gravity with Rachael's residential finesse into a single dominant Tampa Bay brand. By combining forces under one digital domain, your traffic and authority scale twice as fast as your competitors.",
   },
   {
     number: "02",
-    title: "Beyond Basic SEO",
-    body: "Our platform comes 100% SEO-perfect out of the box because it's the bare minimum standard — charging monthly for basic meta tags is a con. But by mid-2027, 'magic formatting' won't be enough to rank. True AI authority requires fresh, purposeful, continuous content to drive actual sales. We build the engine to produce it.",
+    title: "Beyond The SEO Scam",
+    body: "Perfect SEO is the bare minimum. We build it 100% SEO-perfect out of the box because it's required—charging you monthly for 'basic meta tags' is an industry scam. True AI authority requires fresh, purposeful, continuous content to drive actual sales. We build the engine that produces it automatically.",
   },
   {
     number: "03",
     title: "Independent Authority",
-    body: "You share a domain, but you don't share an identity. We build you individual authority hubs. Mark gets commercial case studies and investment ROI breakdowns. Rachael gets neighborhood guides and residential market trends.",
+    body: "You share a domain, but you don't share an identity. We build you individual authority hubs. Mark gets commercial case studies and ROI breakdowns. Rachael gets neighborhood guides and residential market trends. You stay completely distinct.",
   },
   {
     number: "04",
@@ -44,27 +37,35 @@ const FEATURES = [
   },
 ];
 
-const MARKETS = ["Tampa", "Wesley Chapel", "Land O' Lakes", "Lutz", "St. Petersburg", "Clearwater", "New Port Richey", "Sarasota"];
-
 export default function Page() {
   const [activeFeature, setActiveFeature] = useState(0);
 
   return (
-    <div className="min-h-screen bg-black text-white" style={{ fontFamily: "var(--font-sans)" }}>
+    <div className="min-h-screen text-white relative selection:bg-[#D4AF37] selection:text-black font-sans">
+      
+      {/* ── AMBIENT FLUID BACKGROUND ──────────────────────── */}
+      <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-black">
+        {/* Deep Gold Orb */}
+        <div className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] rounded-full bg-[#D4AF37]/10 blur-[150px] animate-float-slow" />
+        {/* Deep Slate Orb */}
+        <div className="absolute top-[30%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-white/5 blur-[120px] animate-float-slower" style={{ animationDelay: '2s' }} />
+        {/* Bottom Central Glow */}
+        <div className="absolute bottom-[-20%] left-[20%] w-[60vw] h-[60vw] rounded-full bg-[#D4AF37]/5 blur-[150px] animate-float-slow" style={{ animationDelay: '4s' }} />
+      </div>
 
       {/* ── NAVIGATION ──────────────────────────────────── */}
-      <nav className="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-sm border-b border-[rgba(212,175,55,0.12)]">
+      <nav className="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-xl border-b border-white/5">
         <div className="max-w-screen-xl mx-auto px-8 h-20 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <span className="font-serif text-lg tracking-[0.2em] uppercase text-white" style={{ fontFamily: "var(--font-serif)" }}>
+            <span className="font-serif text-xl font-bold tracking-tight text-white drop-shadow-md">
               Davis & Garnett
             </span>
-            <span className="w-px h-4 bg-[rgba(212,175,55,0.4)] block"></span>
-            <span className="label-caps text-[0.6rem] tracking-[0.2em] text-[#a0a0a0] mt-0.5">Powered by ClickMe</span>
+            <span className="w-px h-5 bg-white/20 block"></span>
+            <span className="label-caps text-[0.6rem] text-white/50 mt-0.5">Powered by ClickMe</span>
           </div>
           <div className="hidden lg:flex items-center gap-10">
             {NAV_LINKS.map((l) => (
-              <a key={l.label} href={l.href} className="label-caps text-[#a0a0a0] hover:text-[#D4AF37] transition-colors">
+              <a key={l.label} href={l.href} className="label-caps text-white/60 hover:text-white transition-colors">
                 {l.label}
               </a>
             ))}
@@ -76,68 +77,52 @@ export default function Page() {
       </nav>
 
       {/* ── 1. HERO ────────────────────────────────────────── */}
-      <header className="relative min-h-screen flex items-stretch overflow-hidden bg-black">
-
-        {/* LEFT — editorial text column, clean black */}
-        <div className="relative flex flex-col justify-center w-full lg:w-[55%] px-8 lg:px-16 py-32 lg:py-40 z-10">
-
-          {/* Proposal badge */}
-          <div className="flex items-center gap-4 mb-14 fade-up fade-up-delay-1">
-            <span className="label-caps text-[#D4AF37]">Bespoke Digital Strategy</span>
-            <span className="block w-16 h-px bg-[#D4AF37] shrink-0" />
+      <header className="relative min-h-screen flex items-stretch pt-20">
+        <div className="relative flex flex-col justify-center w-full lg:w-[60%] px-8 lg:px-16 py-20 z-10">
+          <div className="inline-flex items-center gap-3 mb-10 fade-up fade-up-delay-1 bg-white/5 border border-white/10 backdrop-blur-md px-5 py-2.5 rounded-full self-start shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]">
+            <Sparkles className="w-4 h-4 text-[#D4AF37]" />
+            <span className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-white/80">Strategic Proposal</span>
           </div>
 
-          {/* Massive editorial headline */}
-          <h1 className="fade-up fade-up-delay-2" style={{
-            fontFamily: "var(--font-serif)",
-            fontWeight: 300,
-            letterSpacing: "0.05em",
-            lineHeight: "0.88",
-            fontSize: "clamp(4rem, 9vw, 9.5rem)",
-            textTransform: "uppercase",
-            color: "#ffffff",
-          }}>
-            Local<br />
-            <em style={{ color: "#D4AF37", fontStyle: "italic" }}>Knowledge.</em><br />
-            Bigger<br />
-            Picture.
+          <h1 className="display-xl fade-up fade-up-delay-2">
+            Static SEO <br />
+            Is Dead.<br />
+            We Build <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F6E3B0] via-[#D4AF37] to-[#8B6914] drop-shadow-[0_0_40px_rgba(212,175,55,0.3)]">Engines.</span>
           </h1>
 
-          {/* Pull quote */}
-          <p className="fade-up fade-up-delay-3 mt-12 max-w-xl" style={{
-            fontFamily: "var(--font-sans)",
-            fontSize: "1.15rem",
-            lineHeight: "1.8",
-            color: "#888888",
-          }}>
-            We aren't just selling you software. We are engineering the exact digital playbook to merge Mark's commercial gravity and Rachael's residential finesse into Tampa Bay's premier real estate syndicate.
+          <p className="fade-up fade-up-delay-3 mt-10 max-w-xl text-lg text-white/60 leading-relaxed font-light">
+            We aren't just selling you a static brochure with an arbitrary "SEO tax." We are engineering the exact active content engine required to merge Mark's commercial gravity and Rachael's residential finesse into Tampa Bay's premier real estate syndicate.
           </p>
 
-          {/* CTAs */}
           <div className="fade-up fade-up-delay-4 mt-12 flex flex-wrap gap-4">
             <a href="#truth" className="btn-gold">
               See the Playbook <ArrowRight className="w-4 h-4" />
             </a>
+            <a href="/coming-soon" className="btn-ghost">
+              Live Preview
+            </a>
           </div>
         </div>
 
-        {/* RIGHT — hero image */}
-        <div className="hidden lg:flex flex-col w-[45%] relative border-l border-[rgba(212,175,55,0.1)]">
-          <div className="flex-1 relative overflow-hidden">
+        <div className="hidden lg:flex flex-col w-[40%] relative justify-center pr-8 py-20">
+          <div className="relative w-full aspect-[4/5] glass-card overflow-hidden group">
             <Image
               src="/davis-garnett-hero.png"
-              alt="Mark Davis and Rachael Garnett — Davis & Garnett Tampa Bay"
+              alt="Davis & Garnett"
               fill
-              className="object-cover object-center"
+              className="object-cover object-center scale-105 transition-transform duration-1000 group-hover:scale-100 opacity-90"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
-            {/* Name plate at bottom */}
-            <div className="absolute bottom-0 left-0 right-0 p-10 flex items-end justify-between">
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+            
+            <div className="absolute bottom-0 left-0 right-0 p-8 flex items-end justify-between">
               <div>
-                <span className="label-caps text-[#D4AF37] block mb-2">Tampa Bay, FL</span>
-                <p style={{ fontFamily: "var(--font-serif)", fontSize: "1.5rem", fontWeight: 300, letterSpacing: "0.08em", color: "#ffffff" }}>Davis & Garnett</p>
+                <span className="label-caps text-[#D4AF37] block mb-2 drop-shadow-md">Tampa Bay, FL</span>
+                <p className="font-serif text-3xl font-semibold text-white drop-shadow-lg">Davis & Garnett</p>
+              </div>
+              <div className="w-14 h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
+                <ChevronRight className="w-6 h-6 text-white" />
               </div>
             </div>
           </div>
@@ -145,81 +130,60 @@ export default function Page() {
       </header>
 
       {/* ── TICKER STRIP ─────────────────────────────────── */}
-      <div className="section-divider" />
-      <div className="section-surface overflow-hidden py-4">
-        <div className="flex gap-16 animate-none whitespace-nowrap px-8">
+      <div className="overflow-hidden py-5 bg-white/[0.02] border-y border-white/5 backdrop-blur-sm">
+        <div className="flex gap-16 animate-none whitespace-nowrap px-8 items-center">
           {MARKETS.concat(MARKETS).map((m, i) => (
-            <span key={i} className="label-caps text-[#555555] shrink-0">
-              {m} <span className="text-[#D4AF37] mx-4">·</span>
+            <span key={i} className="label-caps text-white/30 shrink-0">
+              {m} <span className="text-[#D4AF37] mx-6 opacity-30">/</span>
             </span>
           ))}
         </div>
       </div>
-      <div className="section-divider" />
 
       {/* ── 2. THE WHY: THE TRUTH NO ONE TELLS YOU ────────── */}
-      <section id="truth" className="section-surface py-32 px-8">
+      <section id="truth" className="relative py-32 px-8">
         <div className="max-w-screen-xl mx-auto">
-          <div className="mb-16 grid lg:grid-cols-2 gap-12 items-end">
+          <div className="mb-20 grid lg:grid-cols-2 gap-16 items-end">
             <div>
-              <span className="label-caps text-red-500 block mb-6">The Industry Trap</span>
-              <h2 style={{
-                fontFamily: "var(--font-serif)",
-                fontWeight: 300,
-                fontSize: "clamp(2.2rem, 4vw, 4.5rem)",
-                letterSpacing: "0.05em",
-                textTransform: "uppercase",
-                lineHeight: "1.05",
-              }}>
-                A Beautiful<br />
-                <span style={{ color: "#D4AF37" }}>Brochure</span><br />
-                Is A Dead<br />
-                Asset.
+              <span className="label-caps text-white/50 block mb-6 flex items-center gap-2"><Zap className="w-4 h-4 text-[#D4AF37]" /> The Industry Trap</span>
+              <h2 className="display-lg">
+                The SEO<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-700">Extortion</span><br />
+                Scam.
               </h2>
             </div>
-            <div className="max-w-sm">
-              <p className="text-[#a0a0a0] text-sm leading-loose mb-6">
-                Right now, agents are paying platforms like Agent Image or Luxury Presence $5,000 upfront just to rent a beautiful WordPress template. The marketing promises exclusivity. The reality? Websites that look exactly like 10,000 other agents, with zero actual search authority.
+            <div className="max-w-lg glass-card p-8">
+              <p className="text-white/70 text-base leading-relaxed mb-6 font-light">
+                Agencies charge up to $5,000 upfront for a pretty WordPress template, and then extort you for $800/month for "SEO maintenance." 
               </p>
-              <p className="text-[#a0a0a0] text-sm leading-loose">
-                The game has changed. Search is moving away from traditional Google links and toward AI Answer Engines (AEO) and Generative Engine Optimization (GEO).
+              <div className="gold-line-short mb-6" />
+              <p className="text-white text-base leading-relaxed font-medium">
+                Perfect SEO formatting is the bare minimum standard. Charging you monthly to maintain meta-tags is a con. By mid-2027, "magic formatting" won't rank you at all. If you don't have an engine continuously pumping out fresh, purposeful content, you simply will not exist to AI.
               </p>
-              <div className="mt-4 p-5 bg-[rgba(212,175,55,0.03)] border-l-2 border-[#D4AF37]">
-                <p className="text-[#D4AF37] label-caps mb-2 text-xs">What this means for you:</p>
-                <p className="text-white text-sm leading-relaxed">
-                  When a high-net-worth buyer asks ChatGPT or Perplexity, "Who is the top commercial broker in Tampa?", AI doesn't give them a list of websites to click. It gives them ONE definitive answer. If your platform isn't structured to feed those AI models exactly what they want, a sleek template won't save you. You simply won't exist.
-                </p>
-              </div>
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-[rgba(212,175,55,0.08)]">
+          <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: "⚠",
                 title: "The Agent Image Trap",
-                body: "You pay $4,000+ for a 'custom' site that is actually just a reskinned WordPress theme. Once it launches, you are entirely on your own for traffic.",
+                body: "You pay $4,000+ for a 'custom' site that is actually just a reskinned template. Once it launches, you are entirely on your own for generating traffic.",
               },
               {
-                icon: "⚠",
                 title: "The Luxury Presence Trap",
-                body: "You pay premium setup fees and $800/month for proprietary code. The second you cancel, you lose your website, your content, and your ranking entirely.",
+                body: "You pay premium setup fees and $800/month for proprietary code and basic SEO formatting. The second you cancel, you lose your website entirely.",
               },
               {
-                icon: "⚠",
-                title: "The SEO Extortion",
-                body: "They charge monthly for basic SEO formatting that should be built-in by default. It's a con. And worse, basic 'magic formatting' doesn't actually drive sales anymore.",
-              },
-              {
-                icon: "⚠",
-                title: "Forced Concessions",
-                body: "As a team, these platforms force you to share a single identity and a single backend. You end up tripping over each other's leads and diluting your individual brands.",
+                title: "The Team Concession",
+                body: "These platforms force you to share a single identity and a single backend. You end up tripping over each other's leads and diluting your individual brands.",
               },
             ].map((card) => (
-              <div key={card.title} className="bg-[#111111] p-10 flex flex-col gap-5">
-                <span className="text-2xl text-red-500">{card.icon}</span>
-                <h3 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "1.25rem", letterSpacing: "0.03em" }}>{card.title}</h3>
-                <p className="text-[#555555] text-sm leading-loose">{card.body}</p>
+              <div key={card.title} className="glass-card p-10 flex flex-col gap-6">
+                <div className="w-12 h-12 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center">
+                  <X className="w-5 h-5 text-red-400" />
+                </div>
+                <h3 className="font-serif font-semibold text-2xl text-white">{card.title}</h3>
+                <p className="text-white/60 text-base leading-relaxed font-light">{card.body}</p>
               </div>
             ))}
           </div>
@@ -227,74 +191,58 @@ export default function Page() {
       </section>
 
       {/* ── 3. THE HOW: ENGINE SECTION ───────────────────── */}
-      <section id="playbook" className="section-dark py-32 px-8">
+      <section id="playbook" className="relative py-32 px-8">
         <div className="max-w-screen-xl mx-auto">
-          {/* Section header */}
-          <div className="mb-20 grid lg:grid-cols-2 gap-12 items-end">
+          <div className="mb-24 grid lg:grid-cols-2 gap-12 items-end">
             <div>
               <span className="label-caps text-[#D4AF37] block mb-6">The Strategy</span>
-              <h2 className="font-serif" style={{
-                fontFamily: "var(--font-serif)",
-                fontWeight: 300,
-                fontSize: "clamp(2.5rem, 4.5vw, 5rem)",
-                letterSpacing: "0.04em",
-                lineHeight: "1.05",
-                textTransform: "uppercase",
-              }}>
+              <h2 className="display-lg">
                 The Dual-Engine<br />
-                <span style={{ color: "#D4AF37" }}>Playbook.</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F6E3B0]">Playbook.</span>
               </h2>
             </div>
-            <div className="max-w-sm">
-              <p className="text-[#a0a0a0] leading-relaxed text-sm">
-                We don't rent you a website and walk away. We engineer the core infrastructure that respects your individual expertise while leveraging your combined gravity.
+            <div className="max-w-md glass-card p-6 bg-[#D4AF37]/5 border-[#D4AF37]/20">
+              <p className="text-white/80 leading-relaxed text-base font-light">
+                We aren't renting you a static brochure. We are deploying the exact digital playbook to dominate your specific commercial and residential markets.
               </p>
-              <div className="mt-8 w-12 h-px bg-[#D4AF37]" />
             </div>
           </div>
 
-          {/* Interactive feature tabs */}
-          <div className="grid lg:grid-cols-[1fr_1.4fr] gap-0 border border-[rgba(212,175,55,0.15)]">
-            {/* Tab list */}
-            <div className="border-r border-[rgba(212,175,55,0.15)]">
+          <div className="grid lg:grid-cols-[1fr_1.5fr] gap-8">
+            <div className="flex flex-col gap-4">
               {FEATURES.map((f, i) => (
                 <button
                   key={i}
                   onClick={() => setActiveFeature(i)}
-                  className={`w-full text-left p-10 border-b border-[rgba(212,175,55,0.1)] transition-all duration-300 ${
-                    activeFeature === i ? "bg-[#111111]" : "bg-transparent hover:bg-[#0f0f0f]"
+                  className={`w-full text-left p-6 rounded-2xl transition-all duration-300 border ${
+                    activeFeature === i 
+                      ? "bg-white/10 border-white/20 shadow-[0_0_30px_rgba(255,255,255,0.05)] backdrop-blur-xl" 
+                      : "bg-white/[0.02] border-white/5 hover:bg-white/5 hover:border-white/10 backdrop-blur-md"
                   }`}
                 >
-                  <span className="label-caps text-[#555555] block mb-3">{f.number}</span>
-                  <span className="font-serif text-2xl" style={{
-                    fontFamily: "var(--font-serif)",
-                    fontWeight: 400,
-                    letterSpacing: "0.03em",
-                    color: activeFeature === i ? "#D4AF37" : "#ffffff",
-                  }}>{f.title}</span>
-                  {activeFeature === i && (
-                    <div className="mt-4 w-8 h-px bg-[#D4AF37]" />
-                  )}
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <span className="label-caps text-white/40 block mb-2">{f.number}</span>
+                      <span className={`font-serif text-xl font-medium transition-colors ${activeFeature === i ? "text-white" : "text-white/50"}`}>
+                        {f.title}
+                      </span>
+                    </div>
+                    {activeFeature === i && <ChevronRight className="w-5 h-5 text-[#D4AF37]" />}
+                  </div>
                 </button>
               ))}
             </div>
 
-            {/* Tab content */}
-            <div className="p-14 flex flex-col justify-center bg-[#111111]">
-              <span className="label-caps text-[#D4AF37] block mb-6">
-                Strategic Protocol {FEATURES[activeFeature].number}
-              </span>
-              <h3 className="font-serif mb-8" style={{
-                fontFamily: "var(--font-serif)",
-                fontWeight: 300,
-                fontSize: "2.5rem",
-                letterSpacing: "0.04em",
-                lineHeight: "1.1",
-                textTransform: "uppercase",
-              }}>
+            <div className="glass-card p-12 lg:p-16 flex flex-col justify-center min-h-[400px] border-l-4 border-l-[#D4AF37]">
+              <div className="inline-flex items-center gap-3 mb-8 bg-[#D4AF37]/10 border border-[#D4AF37]/20 px-4 py-2 rounded-full self-start">
+                <span className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-[#D4AF37]">
+                  Protocol {FEATURES[activeFeature].number}
+                </span>
+              </div>
+              <h3 className="font-serif font-semibold text-4xl lg:text-5xl mb-8 leading-tight text-white drop-shadow-md">
                 {FEATURES[activeFeature].title}
               </h3>
-              <p className="text-[#a0a0a0] text-sm leading-loose max-w-md">
+              <p className="text-white/70 text-xl leading-relaxed max-w-xl font-light">
                 {FEATURES[activeFeature].body}
               </p>
             </div>
@@ -302,201 +250,100 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ── 4. CONTEXT: ADVISORS & MARKETS & LISTINGS ──────── */}
-      <section id="advisors" className="section-dark py-32 px-8 border-t border-[rgba(212,175,55,0.1)]">
+      {/* ── 5. BENTO BOX: THE ARCHITECTURE ───────────────── */}
+      <section id="deliverables" className="relative py-32 px-8">
         <div className="max-w-screen-xl mx-auto">
-          <div className="mb-16 text-center">
-            <span className="label-caps text-[#D4AF37] block mb-5">The Identity</span>
-            <h2 className="font-serif" style={{
-              fontFamily: "var(--font-serif)",
-              fontWeight: 300,
-              fontSize: "clamp(2.2rem, 4vw, 3.5rem)",
-              letterSpacing: "0.05em",
-              textTransform: "uppercase",
-              lineHeight: "1.05",
-            }}>
-              Individual Profiles.<br />
-              <span style={{ color: "#D4AF37" }}>Unified Empire.</span>
-            </h2>
-            <p className="text-[#a0a0a0] text-sm mt-6 max-w-lg mx-auto">
-              You both get distinct digital footprints tailored exactly to your client base. Mark speaks to investors; Rachael speaks to homeowners.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-px bg-[rgba(212,175,55,0.1)] mb-32">
-            {/* Mark Davis */}
-            <div className="bg-black p-12 lg:p-16 flex flex-col gap-8">
-              <div className="flex items-start gap-6">
-                <div className="w-20 h-20 rounded-full overflow-hidden border border-[rgba(212,175,55,0.4)] shrink-0">
-                  <Image src="/mark-davis-profile-image.webp" alt="Mark Davis" width={80} height={80} className="object-cover w-full h-full" />
-                </div>
-                <div>
-                  <span className="label-caps text-[#D4AF37] block mb-2">Commercial & Investment</span>
-                  <h3 className="font-serif text-4xl" style={{
-                    fontFamily: "var(--font-serif)",
-                    fontWeight: 400,
-                    letterSpacing: "0.04em",
-                  }}>Mark Davis</h3>
-                </div>
-              </div>
-            </div>
-
-            {/* Rachael Garnett */}
-            <div className="bg-[#0a0a0a] p-12 lg:p-16 flex flex-col gap-8">
-              <div className="flex items-start gap-6">
-                <div className="w-20 h-20 rounded-full overflow-hidden border border-[rgba(212,175,55,0.4)] shrink-0">
-                  <Image src="/rachael-garnett.jpg" alt="Rachael Garnett" width={80} height={80} className="object-cover w-full h-full" />
-                </div>
-                <div>
-                  <span className="label-caps text-[#D4AF37] block mb-2">Residential & Advisory</span>
-                  <h3 className="font-serif text-4xl" style={{
-                    fontFamily: "var(--font-serif)",
-                    fontWeight: 400,
-                    letterSpacing: "0.04em",
-                  }}>Rachael Garnett</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 5. THE WHAT: FULL DELIVERABLES ───────────────── */}
-      <section id="deliverables" className="section-surface py-32 px-8 border-t border-[rgba(212,175,55,0.1)]">
-        <div className="max-w-screen-xl mx-auto">
-          <div className="mb-16">
-            <span className="label-caps text-[#D4AF37] block mb-6">The Architecture</span>
-            <h2 style={{
-              fontFamily: "var(--font-serif)",
-              fontWeight: 300,
-              fontSize: "clamp(2.2rem, 4vw, 4.5rem)",
-              letterSpacing: "0.05em",
-              textTransform: "uppercase",
-              lineHeight: "1.05",
-            }}>
+          <div className="mb-20 text-center">
+            <span className="label-caps text-white/50 block mb-6">The Architecture</span>
+            <h2 className="display-lg">
               How We Build<br />
-              <span style={{ color: "#D4AF37" }}>The Machine.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F6E3B0]">The Machine.</span>
             </h2>
-            <p className="mt-6 text-[#555555] text-sm max-w-xl leading-loose">
-              This isn't a generic feature list. This is the exact infrastructure we deploy to execute the dual-engine strategy for your team.
-            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-[rgba(212,175,55,0.08)]">
-            {[
-              {
-                number: "01",
-                title: "The Unified Platform",
-                items: [
-                  "Custom-built, ultra-fast core architecture",
-                  "Bespoke Commercial & Residential service hubs",
-                  "Deep-dive market area landing pages for Tampa Bay",
-                  "Structured AEO schema ensuring AI indexation",
-                ],
-              },
-              {
-                number: "02",
-                title: "Dual Dashboards",
-                items: [
-                  "Unrestricted access to the ClickMe command center",
-                  "Mark's dedicated commercial CRM & lead routing",
-                  "Rachael's dedicated residential CRM & pipeline",
-                  "Unified performance metrics and rankings overview",
-                ],
-              },
-              {
-                number: "03",
-                title: "The Split Content Engine",
-                items: [
-                  "Commercial lease & investment strategy explainers for Mark",
-                  "Buyer & Seller Q&A residential libraries for Rachael",
-                  "Gap analysis: We find the exact questions clients are asking",
-                  "Autopilot publishing, written strictly in your distinct voices",
-                ],
-              },
-            ].map((block) => (
-              <div key={block.number} className="bg-black p-10 flex flex-col gap-6">
-                <div className="flex items-center gap-4">
-                  <span className="label-caps text-[#333333]">{block.number}</span>
-                  <div className="flex-1 h-px bg-[rgba(212,175,55,0.1)]" />
-                </div>
-                <h3 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "1.3rem", letterSpacing: "0.03em", color: "#D4AF37" }}>
-                  {block.title}
-                </h3>
-                <ul className="flex flex-col gap-3">
-                  {block.items.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-xs text-[#777777] leading-relaxed">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] mt-1.5 shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Bento 1: Large Span */}
+            <div className="glass-card p-10 flex flex-col gap-8 lg:col-span-2 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#D4AF37]/10 blur-[100px] rounded-full" />
+              <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+                <Layers className="w-5 h-5 text-white" />
               </div>
-            ))}
+              <h3 className="font-serif font-semibold text-3xl text-white">The Baseline Foundation</h3>
+              <p className="text-white/60 font-light text-lg max-w-md">100% SEO-perfect out of the box (No extortion fees). Custom-built, ultra-fast core architecture with structured AEO schema ensuring complete AI indexation.</p>
+            </div>
+
+            {/* Bento 2: Standard */}
+            <div className="glass-card p-10 flex flex-col gap-8">
+               <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+                <Activity className="w-5 h-5 text-white" />
+              </div>
+              <h3 className="font-serif font-semibold text-2xl text-white">Dual Dashboards</h3>
+              <ul className="flex flex-col gap-4">
+                <li className="flex items-start gap-3 text-sm text-white/60 font-light"><Sparkles className="w-4 h-4 text-[#D4AF37] shrink-0" /> Mark's dedicated commercial CRM</li>
+                <li className="flex items-start gap-3 text-sm text-white/60 font-light"><Sparkles className="w-4 h-4 text-[#D4AF37] shrink-0" /> Rachael's dedicated residential CRM</li>
+                <li className="flex items-start gap-3 text-sm text-white/60 font-light"><Sparkles className="w-4 h-4 text-[#D4AF37] shrink-0" /> Unified performance metrics</li>
+              </ul>
+            </div>
+
+            {/* Bento 3: Large Span */}
+            <div className="glass-card p-10 flex flex-col gap-8 lg:col-span-3 bg-gradient-to-r from-white/[0.05] to-transparent border-t-white/20">
+               <div className="w-12 h-12 rounded-full bg-[#D4AF37]/20 border border-[#D4AF37]/30 flex items-center justify-center">
+                <Zap className="w-5 h-5 text-[#D4AF37]" />
+              </div>
+              <h3 className="font-serif font-semibold text-4xl text-white">The Sales-Driving Engine</h3>
+              <p className="text-white/70 font-light text-xl max-w-3xl">This is the actual value: fresh, purposeful content. Autopilot publishing, written strictly in your distinct voices. Commercial lease & ROI explainers generated for Mark. Buyer & Seller Q&A libraries generated for Rachael.</p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ── 6. COMPARISON: HOW WE STACK UP ───────────────── */}
-      <section className="section-dark py-32 px-8">
+      <section className="relative py-32 px-8">
         <div className="max-w-screen-xl mx-auto">
-          <div className="mb-16 grid lg:grid-cols-2 gap-12 items-end">
-            <div>
-              <span className="label-caps text-[#D4AF37] block mb-6">The Reality Check</span>
-              <h2 style={{
-                fontFamily: "var(--font-serif)",
-                fontWeight: 300,
-                fontSize: "clamp(2.2rem, 4vw, 4.5rem)",
-                letterSpacing: "0.05em",
-                textTransform: "uppercase",
-                lineHeight: "1.05",
-              }}>
-                How We Stack Up<br />
-                <span style={{ color: "#D4AF37" }}>Against Everyone.</span>
-              </h2>
-            </div>
-            <p className="text-[#555555] text-sm leading-loose max-w-sm">
-              They built aesthetics to sell to the masses. We build AI-forward authority engines. Here is the undeniable mathematical reality of what you are buying.
+          <div className="mb-20 text-center">
+            <span className="label-caps text-[#D4AF37] block mb-6">The Reality Check</span>
+            <h2 className="display-lg">
+              Stop Paying For<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F6E3B0]">Magic Formatting.</span>
+            </h2>
+            <p className="text-white/60 text-lg mt-6 max-w-xl mx-auto font-light">
+              They charge you a massive premium just to maintain code. We give you the code for free and build you an engine that actually hunts for sales.
             </p>
           </div>
 
-          <div className="border border-[rgba(212,175,55,0.15)] overflow-hidden overflow-x-auto">
-            {/* Header row */}
-            <div className="grid grid-cols-5 border-b border-[rgba(212,175,55,0.15)] bg-[#0a0a0a] min-w-[900px]">
-              <div className="p-5 border-r border-[rgba(212,175,55,0.1)]">
-                <span className="label-caps text-[#333333]">Feature</span>
+          <div className="glass-card overflow-hidden overflow-x-auto">
+            <div className="grid grid-cols-4 lg:grid-cols-5 border-b border-white/10 bg-white/5 min-w-[900px]">
+              <div className="p-6 border-r border-white/10 flex items-center">
+                <span className="label-caps text-white/50">The Offering</span>
               </div>
-              <div className="p-5 border-r border-[rgba(212,175,55,0.1)] text-center">
-                <span className="label-caps text-[#444444]">Owner.com</span>
-                <p className="label-caps text-[0.5rem] text-[#2a2a2a] mt-1">$499/mo · Restaurants only</p>
+              <div className="p-6 border-r border-white/10 text-center hidden lg:block">
+                <span className="label-caps text-white/80">Owner.com</span>
               </div>
-              <div className="p-5 border-r border-[rgba(212,175,55,0.1)] text-center">
-                <span className="label-caps text-[#444444]">Agent Image</span>
-                <p className="label-caps text-[0.5rem] text-[#2a2a2a] mt-1">$4,000+ Setup · WordPress</p>
+              <div className="p-6 border-r border-white/10 text-center">
+                <span className="label-caps text-white/80">Agent Image</span>
               </div>
-              <div className="p-5 border-r border-[rgba(212,175,55,0.1)] text-center">
-                <span className="label-caps text-[#444444]">Luxury Presence</span>
-                <p className="label-caps text-[0.5rem] text-[#2a2a2a] mt-1">$5k setup + $800/mo</p>
+              <div className="p-6 border-r border-white/10 text-center">
+                <span className="label-caps text-white/80">Luxury Presence</span>
               </div>
-              <div className="p-5 text-center bg-[rgba(212,175,55,0.06)]">
-                <span className="label-caps text-[#D4AF37] font-semibold">ClickMe</span>
-                <p className="label-caps text-[0.5rem] text-[#666] mt-1">$0 setup · $499/mo or $3,000 lifetime</p>
+              <div className="p-6 text-center bg-[#D4AF37]/10 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-b from-[#D4AF37]/20 to-transparent opacity-50" />
+                <span className="label-caps text-[#D4AF37] font-bold relative z-10 text-sm">ClickMe</span>
               </div>
             </div>
 
             {[
-              { feature: "Upfront Cost", owner: "$0 setup", ai: "$4,000+ setup", lp: "$2,500–$5,000+ setup", us: "$0 setup fee. Ever." },
-              { feature: "Search Strategy", owner: "Basic SEO", ai: "Aesthetic focus, zero AEO", lp: "Design-first, light SEO", us: "Aggressive AEO / AI-forward" },
-              { feature: "Content Production", owner: "Not included", ai: "DIY", lp: "DIY or expensive add-on", us: "Autopilot, in your voice" },
+              { feature: "Upfront Cost", owner: "$0 setup", ai: "$4,000+ setup", lp: "$5,000+ setup", us: "$0 setup fee. Ever." },
+              { feature: "Basic SEO Formatting", owner: "Included", ai: "Extortion Retainer", lp: "Extortion Retainer ($800/mo)", us: "100% Perfect Out-of-the-Box" },
+              { feature: "Content Engine", owner: "None", ai: "DIY", lp: "DIY", us: "Autopilot, Sales-Driven" },
               { feature: "Dual Dashboards", owner: "Single login", ai: "Single WP login", lp: "Single login", us: "Dedicated CRM for each partner" },
-              { feature: "You Own the Asset", owner: "Cancel = lose everything", ai: "You own the WP files", lp: "Cancel = lose your site", us: "You own the build. Period." },
+              { feature: "Asset Ownership", owner: "Cancel = lose it all", ai: "You own the WP files", lp: "Cancel = lose it all", us: "You own the build. Period." },
             ].map((row, i) => (
-              <div key={i} className="grid grid-cols-5 border-b border-[rgba(212,175,55,0.06)] hover:bg-[rgba(212,175,55,0.02)] transition-colors min-w-[900px]">
-                <div className="p-5 border-r border-[rgba(212,175,55,0.06)]"><span className="text-sm text-white">{row.feature}</span></div>
-                <div className="p-5 border-r border-[rgba(212,175,55,0.06)] flex items-center justify-center gap-2"><X className="w-3 h-3 text-[#3a3a3a]" /><span className="text-xs text-[#444444] text-center">{row.owner}</span></div>
-                <div className="p-5 border-r border-[rgba(212,175,55,0.06)] flex items-center justify-center gap-2"><X className="w-3 h-3 text-[#3a3a3a]" /><span className="text-xs text-[#444444] text-center">{row.ai}</span></div>
-                <div className="p-5 border-r border-[rgba(212,175,55,0.06)] flex items-center justify-center gap-2"><X className="w-3 h-3 text-[#3a3a3a]" /><span className="text-xs text-[#444444] text-center">{row.lp}</span></div>
-                <div className="p-5 flex items-center justify-center gap-2 bg-[rgba(212,175,55,0.04)]"><Sparkles className="w-3 h-3 text-[#D4AF37]" /><span className="text-xs text-[#D4AF37] font-medium text-center">{row.us}</span></div>
+              <div key={i} className="grid grid-cols-4 lg:grid-cols-5 border-b border-white/5 hover:bg-white/5 transition-colors min-w-[900px]">
+                <div className="p-6 border-r border-white/5 flex items-center"><span className="text-sm font-medium text-white">{row.feature}</span></div>
+                <div className="p-6 border-r border-white/5 hidden lg:flex items-center justify-center gap-2"><span className="text-sm text-white/50 text-center">{row.owner}</span></div>
+                <div className="p-6 border-r border-white/5 flex items-center justify-center gap-2"><span className="text-sm text-white/50 text-center">{row.ai}</span></div>
+                <div className="p-6 border-r border-white/5 flex items-center justify-center gap-2"><span className="text-sm text-white/50 text-center">{row.lp}</span></div>
+                <div className="p-6 flex items-center justify-center gap-2 bg-[#D4AF37]/5"><Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" /><span className="text-sm text-[#D4AF37] font-bold text-center">{row.us}</span></div>
               </div>
             ))}
           </div>
@@ -504,133 +351,123 @@ export default function Page() {
       </section>
 
       {/* ── 7. PRICE: INVESTMENT ─────────────────────────── */}
-      <section id="investment" className="section-surface py-32 px-8">
+      <section id="investment" className="relative py-32 px-8">
         <div className="max-w-screen-xl mx-auto">
-          <div className="section-divider mb-20" />
-          <div className="mb-16">
+          <div className="mb-20 text-center">
             <span className="label-caps text-[#D4AF37] block mb-5">The Split Advantage</span>
-            <h2 className="font-serif" style={{
-              fontFamily: "var(--font-serif)",
-              fontWeight: 300,
-              fontSize: "clamp(2.2rem, 4vw, 4.5rem)",
-              letterSpacing: "0.05em",
-              textTransform: "uppercase",
-              lineHeight: "1.05",
-            }}>
-              Two Dashboards.<br />
-              <span style={{ color: "#D4AF37" }}>One Investment.</span>
+            <h2 className="display-lg">
+              Invest In The Engine.<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F6E3B0]">Not The Formatting.</span>
             </h2>
-            <p className="mt-6 text-[#555555] text-sm max-w-xl leading-loose">
-              By combining forces, you are each acquiring a massive enterprise-grade infrastructure for a fraction of what individual agents pay. Split the cost, double the power.
+            <p className="mt-6 text-white/60 text-lg max-w-2xl mx-auto font-light leading-relaxed">
+              By combining forces, you are acquiring a massive enterprise-grade infrastructure for a fraction of what individual agents pay. You aren't paying a scammy SEO retainer; you are investing in the active engine that drives real transactions.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-px bg-[rgba(212,175,55,0.15)]">
+          <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {/* Standard */}
-            <div className="bg-black p-12 lg:p-16 flex flex-col">
-              <span className="label-caps text-[#555555] block mb-6">Standard</span>
-              <div className="mb-8">
-                <span className="font-serif text-7xl text-white" style={{ fontFamily: "var(--font-serif)", fontWeight: 300 }}>$499</span>
-                <span className="text-[#555555] text-sm ml-2">/month</span>
+            <div className="glass-card p-12 flex flex-col">
+              <span className="label-caps text-white/50 block mb-6">Standard Platform</span>
+              <div className="mb-4">
+                <span className="font-serif text-6xl font-bold text-white">$499</span>
+                <span className="text-white/50 font-medium ml-2">/month</span>
               </div>
-              <p className="text-[#a0a0a0] text-sm mb-10">That's just <span className="text-white font-bold">$249.50/month each</span>. $0 setup fee. Cancel any time.</p>
-              <div className="gold-line-short mb-10" />
-              <ul className="flex flex-col gap-5 mb-12 flex-1">
-                {["Custom Dual-Engine AEO website build", "Individual Dashboards for Mark & Rachael", "Automated content pipeline for both channels", "Reputation engine & review aggregation"].map((f) => (
-                  <li key={f} className="flex items-start gap-4 text-sm text-[#a0a0a0]">
-                    <Check className="w-4 h-4 text-[#D4AF37] mt-0.5 shrink-0" />
+              <p className="text-white/60 text-sm mb-8">That's just <span className="text-white font-bold">$249.50/month each</span>. $0 setup fee. Cancel any time.</p>
+              
+              <div className="gold-line-short mb-8 opacity-50 bg-white/20" />
+              
+              <ul className="flex flex-col gap-4 mb-12 flex-1">
+                {["100% SEO-Perfect build out of the box", "Individual Dashboards for Mark & Rachael", "Active Content Engine for both channels", "Reputation engine & review aggregation"].map((f) => (
+                  <li key={f} className="flex items-start gap-3 text-sm text-white/70 font-light">
+                    <Check className="w-4 h-4 text-white/40 mt-0.5 shrink-0" />
                     {f}
                   </li>
                 ))}
               </ul>
-              <a href="mailto:msdavis118@gmail.com" className="btn-ghost self-start">
-                Get Started <ArrowRight className="w-3.5 h-3.5" />
+              <a href="mailto:msdavis118@gmail.com" className="btn-ghost w-full">
+                Get Started
               </a>
             </div>
 
             {/* Rachael's Offer */}
-            <div className="bg-[#0f0e0a] p-12 lg:p-16 flex flex-col border-l border-[rgba(212,175,55,0.3)]">
-              <div className="flex items-center gap-4 mb-6">
-                <span className="label-caps text-[#D4AF37] block">Rachael's Offer</span>
-                <span className="label-caps text-[0.55rem] bg-[#D4AF37] text-black px-3 py-1">Save 50%</span>
+            <div className="glass-card p-12 flex flex-col border-2 border-[#D4AF37]/40 bg-gradient-to-b from-[#D4AF37]/10 to-transparent relative overflow-hidden shadow-[0_0_50px_rgba(212,175,55,0.15)]">
+              <div className="absolute top-0 right-0 bg-gradient-to-r from-[#D4AF37] to-[#F6E3B0] text-black text-[0.65rem] font-bold tracking-[0.2em] uppercase px-6 py-2 rounded-bl-2xl">
+                Save 50%
               </div>
-              <div className="mb-8">
-                <span className="font-serif text-7xl text-[#D4AF37]" style={{ fontFamily: "var(--font-serif)", fontWeight: 300 }}>$3,000</span>
-                <span className="text-[#555555] text-sm ml-2">paid up front</span>
+              
+              <span className="label-caps text-[#D4AF37] block mb-6">Rachael's Offer</span>
+              <div className="mb-4">
+                <span className="font-serif text-6xl font-bold text-[#D4AF37] drop-shadow-[0_0_15px_rgba(212,175,55,0.3)]">$3,000</span>
+                <span className="text-white/50 font-medium ml-2">lifetime</span>
               </div>
-              <p className="text-[#a0a0a0] text-sm mb-10">That's just <span className="text-white font-bold">$1,500 each</span>. You own the build forever. $0/month software fee.*<br/><span className="text-xs text-[#666] mt-2 inline-block">*Standard annual renewals apply for hosting, security, and Real Estate IDX (MLS) feeds.</span></p>
-              <div className="gold-line-short mb-10" />
-              <ul className="flex flex-col gap-5 mb-12 flex-1">
-                {["You own the website asset — forever", "Lifetime Dashboard access for both advisors", "All platform features included", "Priority support & onboarding"].map((f) => (
-                  <li key={f} className="flex items-start gap-4 text-white text-sm">
+              <p className="text-white/60 text-sm mb-8">That's just <span className="text-white font-bold">$1,500 each</span>. You own the build forever. $0 software fee.*</p>
+              
+              <div className="gold-line-short mb-8" />
+              
+              <ul className="flex flex-col gap-4 mb-10 flex-1">
+                {["You own the website asset — forever", "Lifetime Dashboard & Engine access", "100% SEO & Content Strategy Included", "Priority support & onboarding"].map((f) => (
+                  <li key={f} className="flex items-start gap-3 text-sm text-white font-light">
                     <Check className="w-4 h-4 text-[#D4AF37] mt-0.5 shrink-0" />
                     {f}
                   </li>
                 ))}
               </ul>
-              <a href="mailto:rachaellgarnett@gmail.com" className="btn-gold self-start">
-                Claim This Offer <ArrowRight className="w-3.5 h-3.5" />
+
+              <p className="text-[0.65rem] text-white/40 mb-8">*Standard annual renewals apply for hosting, security, and MLS IDX feeds.</p>
+              
+              <a href="mailto:rachaellgarnett@gmail.com" className="btn-gold w-full">
+                Claim This Offer <ArrowRight className="w-4 h-4" />
               </a>
             </div>
           </div>
 
-          {/* Full Transparency Note */}
-          <div className="mt-16 p-10 border-l border-[rgba(212,175,55,0.4)] bg-[rgba(212,175,55,0.03)] mx-auto">
+          {/* Full Transparency */}
+          <div className="mt-16 max-w-4xl mx-auto glass-card p-12 border-l-4 border-l-[#D4AF37] bg-gradient-to-r from-[#D4AF37]/10 to-transparent">
             <span className="label-caps text-[#D4AF37] block mb-4">Full Transparency: The Real ROI</span>
-            <p className="text-white text-base leading-loose" style={{ fontFamily: "var(--font-serif)", fontWeight: 300, letterSpacing: "0.03em" }}>
+            <p className="text-white/80 text-lg leading-relaxed font-light">
               Frankly, Rachael's Offer is a fraction of what this architecture usually costs. Why? Because my true ROI isn't in a setup fee. It's in the network. The larger your digital footprint grows, and the more strategic partners (title, mortgage, inspectors) we plug into your authority web, the stronger our entire ecosystem becomes. <br/><br/>
-              <span className="text-[#D4AF37] italic">I'm not building you a website for a check; I'm building you a digital monopoly because when your network wins, my network wins.</span>
+              <span className="text-white font-medium italic">I'm not building you a website for a check; I'm building you a digital monopoly because when your network wins, my network wins.</span>
             </p>
           </div>
         </div>
       </section>
 
       {/* ── 8. DEMO: COMING SOON PREVIEW ─────────────────── */}
-      <section className="section-dark py-32 px-8 border-t border-[rgba(212,175,55,0.1)]">
+      <section className="relative py-32 px-8">
         <div className="max-w-screen-xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <span className="label-caps text-[#D4AF37] block mb-6">The Demo</span>
-              <h2 style={{
-                fontFamily: "var(--font-serif)",
-                fontWeight: 300,
-                fontSize: "clamp(2.2rem, 4vw, 4rem)",
-                letterSpacing: "0.05em",
-                textTransform: "uppercase",
-                lineHeight: "1.05",
-              }}>
+              <h2 className="display-lg">
                 We Are Already<br />
-                <span style={{ color: "#D4AF37" }}>Building It.</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F6E3B0]">Building It.</span>
               </h2>
-              <p className="mt-8 text-[#555555] text-sm leading-loose max-w-sm">
+              <p className="mt-8 text-white/60 text-lg leading-relaxed font-light">
                 While you review this strategic playbook, we have already spun up an interim digital presence in your branding. This landing page acts as your high-end digital business card while we construct the definitive AEO platform underneath.
               </p>
-              <a href="/coming-soon" className="btn-gold mt-10 inline-flex">
-                View Your Live Environment <ArrowRight className="w-4 h-4" />
+              <a href="/coming-soon" className="btn-gold mt-10">
+                View Live Environment <ArrowRight className="w-4 h-4" />
               </a>
             </div>
-            <div className="border border-[rgba(212,175,55,0.2)] overflow-hidden">
-              <div className="bg-black px-8 py-6 border-b border-[rgba(212,175,55,0.1)] flex items-center gap-3">
+            <div className="glass-card overflow-hidden p-2">
+              <div className="bg-black/80 rounded-t-xl px-6 py-4 border-b border-white/10 flex items-center gap-3">
                 <div className="flex gap-2">
-                  <span className="w-3 h-3 rounded-full bg-[#333]" />
-                  <span className="w-3 h-3 rounded-full bg-[#333]" />
-                  <span className="w-3 h-3 rounded-full bg-[#333]" />
+                  <span className="w-3 h-3 rounded-full bg-red-500/50" />
+                  <span className="w-3 h-3 rounded-full bg-yellow-500/50" />
+                  <span className="w-3 h-3 rounded-full bg-green-500/50" />
                 </div>
-                <span className="label-caps text-[#333333] ml-2">davisandgarnett.com</span>
+                <span className="text-xs font-medium text-white/30 ml-2">davisandgarnett.com</span>
               </div>
-              <div className="relative h-72 overflow-hidden">
+              <div className="relative h-80 overflow-hidden rounded-b-xl group cursor-pointer" onClick={() => window.location.href='/coming-soon'}>
                 <Image
                   src="/davis-garnett-real-combo.png"
                   alt="Site Preview"
                   fill
-                  className="object-cover object-top opacity-60"
+                  className="object-cover object-top opacity-50 transition-all duration-700 group-hover:scale-105 group-hover:opacity-80"
                 />
-                <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/70">
-                  <span style={{ fontFamily: "var(--font-serif)", fontSize: "2rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#D4AF37", fontWeight: 300 }}>Davis & Garnett</span>
-                  <span className="label-caps text-[#666] mt-3">System Assembly in Progress</span>
-                  <a href="/coming-soon" className="mt-6 btn-ghost text-xs py-2 px-6">
-                    Enter Live Demo →
-                  </a>
+                <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 backdrop-blur-[2px] pointer-events-none transition-all duration-700 group-hover:backdrop-blur-0 group-hover:bg-transparent">
+                  <span className="font-serif text-3xl font-bold tracking-widest text-white drop-shadow-lg transition-opacity duration-700 group-hover:opacity-0">DAVIS & GARNETT</span>
+                  <span className="label-caps text-white/80 mt-4 bg-black/50 px-4 py-1 rounded-full backdrop-blur-md transition-opacity duration-700 group-hover:opacity-0">System Assembly in Progress</span>
                 </div>
               </div>
             </div>
@@ -639,23 +476,20 @@ export default function Page() {
       </section>
 
       {/* ── FOOTER ───────────────────────────────────────── */}
-      <footer className="section-surface px-8 py-16 border-t border-[rgba(212,175,55,0.1)]">
-        <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+      <footer className="relative px-8 py-12 bg-black border-t border-white/5">
+        <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <span className="font-serif text-lg tracking-[0.2em] uppercase text-white/30" style={{ fontFamily: "var(--font-serif)" }}>
+            <span className="font-serif text-xl font-bold tracking-widest text-white/30 uppercase">
               Davis & Garnett
             </span>
-            <p className="label-caps text-[#222222] mt-2">
-              Align Right Realty Carrollwood · Tampa Bay, Florida
+            <p className="text-xs font-medium text-white/30 mt-2 tracking-widest uppercase">
+              Align Right Realty Carrollwood
             </p>
           </div>
-          <div className="flex flex-col gap-3">
-            <a href="mailto:msdavis118@gmail.com" className="label-caps text-[#333333] hover:text-[#D4AF37] transition-colors">msdavis118@gmail.com</a>
-            <a href="mailto:rachaellgarnett@gmail.com" className="label-caps text-[#333333] hover:text-[#D4AF37] transition-colors">rachaellgarnett@gmail.com</a>
+          <div className="flex gap-6">
+            <a href="mailto:msdavis118@gmail.com" className="text-xs font-semibold text-white/50 hover:text-white transition-colors tracking-widest uppercase">msdavis118@gmail.com</a>
+            <a href="mailto:rachaellgarnett@gmail.com" className="text-xs font-semibold text-white/50 hover:text-white transition-colors tracking-widest uppercase">rachaellgarnett@gmail.com</a>
           </div>
-          <p className="label-caps text-[#222222]">
-            © {new Date().getFullYear()} ClickMe. Building Local Authority.
-          </p>
         </div>
       </footer>
 
