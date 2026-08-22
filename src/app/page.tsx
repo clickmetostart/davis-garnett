@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { label: "The Reality", href: "#truth" },
   { label: "The Engine", href: "#playbook" },
   { label: "Architecture", href: "#deliverables" },
+  { label: "Project Scope", href: "/scope" },
   { label: "Investment", href: "#investment" },
   { label: "Live Preview", href: "/coming-soon" },
 ];
@@ -145,20 +146,19 @@ export default function Page() {
         <div className="max-w-screen-xl mx-auto">
           <div className="mb-20 grid lg:grid-cols-2 gap-16 items-end">
             <div>
-              <span className="label-caps text-white/50 block mb-6 flex items-center gap-2"><Zap className="w-4 h-4 text-[#D4AF37]" /> The Industry Trap</span>
+              <span className="label-caps text-white/50 block mb-6 flex items-center gap-2"><Zap className="w-4 h-4 text-[#D4AF37]" /> The Industry Shift</span>
               <h2 className="display-lg">
-                The SEO<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-700">Extortion</span><br />
-                Scam.
+                The Static Web<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-700">Is Dead.</span>
               </h2>
             </div>
             <div className="max-w-lg glass-card p-8">
               <p className="text-white/70 text-base leading-relaxed mb-6 font-light">
-                Agencies charge up to $5,000 upfront for a pretty WordPress template, and then extort you for $800/month for "SEO maintenance." 
+                The real estate industry is still selling "beautiful digital brochures" as if it's 2018. Having a pretty website no longer guarantees traffic.
               </p>
               <div className="gold-line-short mb-6" />
               <p className="text-white text-base leading-relaxed font-medium">
-                Perfect SEO formatting is the bare minimum standard. Charging you monthly to maintain meta-tags is a con. By mid-2027, "magic formatting" won't rank you at all. If you don't have an engine continuously pumping out fresh, purposeful content, you simply will not exist to AI.
+                By mid-2027, "magic formatting" and static pages won't rank you at all. AI-driven search engines demand fresh, purposeful, continuous content. If you don't have an engine pumping out local market insights and authority pieces, you simply will not exist to AI.
               </p>
             </div>
           </div>
@@ -166,16 +166,16 @@ export default function Page() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "The Agent Image Trap",
-                body: "You pay $4,000+ for a 'custom' site that is actually just a reskinned template. Once it launches, you are entirely on your own for generating traffic.",
+                title: "The Zero-Traffic Brochure",
+                body: "You launch a stunning design, but once it's live, it sits idle. Without an active engine pushing new data, search engines completely ignore it.",
               },
               {
-                title: "The Luxury Presence Trap",
-                body: "You pay premium setup fees and $800/month for proprietary code and basic SEO formatting. The second you cancel, you lose your website entirely.",
+                title: "The SEO Illusion",
+                body: "Agencies charge heavy monthly retainers for 'SEO maintenance' which is often just basic meta-tag updates. True SEO requires active, continuous content generation.",
               },
               {
-                title: "The Team Concession",
-                body: "These platforms force you to share a single identity and a single backend. You end up tripping over each other's leads and diluting your individual brands.",
+                title: "The Shared Team Dilemma",
+                body: "Standard platforms force teams into a single identity. In reality, commercial and residential agents need their own dedicated authority hubs to rank.",
               },
             ].map((card) => (
               <div key={card.title} className="glass-card p-10 flex flex-col gap-6">
@@ -261,7 +261,7 @@ export default function Page() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {/* Bento 1: Large Span */}
             <div className="glass-card p-10 flex flex-col gap-8 lg:col-span-2 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#D4AF37]/10 blur-[100px] rounded-full" />
@@ -269,7 +269,7 @@ export default function Page() {
                 <Layers className="w-5 h-5 text-white" />
               </div>
               <h3 className="font-serif font-semibold text-3xl text-white">The Baseline Foundation</h3>
-              <p className="text-white/60 font-light text-lg max-w-md">100% SEO-perfect out of the box (No extortion fees). Custom-built, ultra-fast core architecture with structured AEO schema ensuring complete AI indexation.</p>
+              <p className="text-white/60 font-light text-lg max-w-md">Custom-built, ultra-fast core architecture with structured AEO schema ensuring complete AI indexation from day one.</p>
             </div>
 
             {/* Bento 2: Standard */}
@@ -281,7 +281,6 @@ export default function Page() {
               <ul className="flex flex-col gap-4">
                 <li className="flex items-start gap-3 text-sm text-white/60 font-light"><Sparkles className="w-4 h-4 text-[#D4AF37] shrink-0" /> Mark's dedicated commercial CRM</li>
                 <li className="flex items-start gap-3 text-sm text-white/60 font-light"><Sparkles className="w-4 h-4 text-[#D4AF37] shrink-0" /> Rachael's dedicated residential CRM</li>
-                <li className="flex items-start gap-3 text-sm text-white/60 font-light"><Sparkles className="w-4 h-4 text-[#D4AF37] shrink-0" /> Unified performance metrics</li>
               </ul>
             </div>
 
@@ -291,8 +290,14 @@ export default function Page() {
                 <Zap className="w-5 h-5 text-[#D4AF37]" />
               </div>
               <h3 className="font-serif font-semibold text-4xl text-white">The Sales-Driving Engine</h3>
-              <p className="text-white/70 font-light text-xl max-w-3xl">This is the actual value: fresh, purposeful content. Autopilot publishing, written strictly in your distinct voices. Commercial lease & ROI explainers generated for Mark. Buyer & Seller Q&A libraries generated for Rachael.</p>
+              <p className="text-white/70 font-light text-xl max-w-3xl">Autopilot publishing, written strictly in your distinct voices. Commercial lease explainers for Mark. Buyer & Seller libraries for Rachael. We drive the traffic so you can close the deal.</p>
             </div>
+          </div>
+          
+          <div className="flex justify-center mt-12">
+            <a href="/scope" className="btn-ghost flex items-center gap-2">
+              View the Detailed Project Scope <ArrowRight className="w-4 h-4" />
+            </a>
           </div>
         </div>
       </section>
@@ -303,11 +308,11 @@ export default function Page() {
           <div className="mb-20 text-center">
             <span className="label-caps text-[#D4AF37] block mb-6">The Reality Check</span>
             <h2 className="display-lg">
-              Stop Paying For<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F6E3B0]">Magic Formatting.</span>
+              How We Stack Up<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F6E3B0]">Against the Old Guard.</span>
             </h2>
             <p className="text-white/60 text-lg mt-6 max-w-xl mx-auto font-light">
-              They charge you a massive premium just to maintain code. We give you the code for free and build you an engine that actually hunts for sales.
+              Don't pay an agency a massive premium just to maintain code. We build an active architecture that hunts for sales.
             </p>
           </div>
 
@@ -360,7 +365,7 @@ export default function Page() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F6E3B0]">Not The Formatting.</span>
             </h2>
             <p className="mt-6 text-white/60 text-lg max-w-2xl mx-auto font-light leading-relaxed">
-              By combining forces, you are acquiring a massive enterprise-grade infrastructure for a fraction of what individual agents pay. You aren't paying a scammy SEO retainer; you are investing in the active engine that drives real transactions.
+              By combining forces, you are acquiring a massive enterprise-grade infrastructure for a fraction of what individual agents pay.
             </p>
           </div>
 
@@ -368,16 +373,19 @@ export default function Page() {
             {/* Standard */}
             <div className="glass-card p-12 flex flex-col">
               <span className="label-caps text-white/50 block mb-6">Standard Platform</span>
-              <div className="mb-4">
-                <span className="font-serif text-6xl font-bold text-white">$499</span>
+              <div className="mb-2">
+                <span className="font-serif text-5xl font-bold text-white">$595</span>
                 <span className="text-white/50 font-medium ml-2">/month</span>
               </div>
-              <p className="text-white/60 text-sm mb-8">That's just <span className="text-white font-bold">$249.50/month each</span>. $0 setup fee. Cancel any time.</p>
+              <div className="mb-6">
+                <span className="text-white/50 font-medium text-sm">+ $995 Initial Setup Fee</span>
+              </div>
+              <p className="text-white/60 text-sm mb-8">Our retail pricing for an enterprise real estate infrastructure.</p>
               
               <div className="gold-line-short mb-8 opacity-50 bg-white/20" />
               
               <ul className="flex flex-col gap-4 mb-12 flex-1">
-                {["100% SEO-Perfect build out of the box", "Individual Dashboards for Mark & Rachael", "Active Content Engine for both channels", "Reputation engine & review aggregation"].map((f) => (
+                {["100% SEO-Perfect build out of the box", "Individual Dashboards for Mark & Rachael", "Active Content Engine for both channels"].map((f) => (
                   <li key={f} className="flex items-start gap-3 text-sm text-white/70 font-light">
                     <Check className="w-4 h-4 text-white/40 mt-0.5 shrink-0" />
                     {f}
@@ -392,42 +400,35 @@ export default function Page() {
             {/* Rachael's Offer */}
             <div className="glass-card p-12 flex flex-col border-2 border-[#D4AF37]/40 bg-gradient-to-b from-[#D4AF37]/10 to-transparent relative overflow-hidden shadow-[0_0_50px_rgba(212,175,55,0.15)]">
               <div className="absolute top-0 right-0 bg-gradient-to-r from-[#D4AF37] to-[#F6E3B0] text-black text-[0.65rem] font-bold tracking-[0.2em] uppercase px-6 py-2 rounded-bl-2xl">
-                Save 50%
+                Referral Pricing
               </div>
               
-              <span className="label-caps text-[#D4AF37] block mb-6">Rachael's Offer</span>
-              <div className="mb-4">
-                <span className="font-serif text-6xl font-bold text-[#D4AF37] drop-shadow-[0_0_15px_rgba(212,175,55,0.3)]">$3,000</span>
-                <span className="text-white/50 font-medium ml-2">lifetime</span>
+              <span className="label-caps text-[#D4AF37] block mb-6">Rachael's Network Offer</span>
+              <div className="mb-2">
+                <span className="font-serif text-5xl font-bold text-[#D4AF37] drop-shadow-[0_0_15px_rgba(212,175,55,0.3)]">$295</span>
+                <span className="text-white/50 font-medium ml-2">/month</span>
               </div>
-              <p className="text-white/60 text-sm mb-8">That's just <span className="text-white font-bold">$1,500 each</span>. You own the build forever. $0 software fee.*</p>
+              <div className="mb-6">
+                <span className="text-[#D4AF37] font-medium text-sm">+ $995 Initial Setup Fee</span>
+              </div>
+              <p className="text-white/60 text-sm mb-8">Special rate. Total due first month: <strong>$1,295.00</strong>.</p>
               
               <div className="gold-line-short mb-8" />
               
-              <ul className="flex flex-col gap-4 mb-10 flex-1">
-                {["You own the website asset — forever", "Lifetime Dashboard & Engine access", "100% SEO & Content Strategy Included", "Priority support & onboarding"].map((f) => (
-                  <li key={f} className="flex items-start gap-3 text-sm text-white font-light">
-                    <Check className="w-4 h-4 text-[#D4AF37] mt-0.5 shrink-0" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-
-              <p className="text-[0.65rem] text-white/40 mb-8">*Standard annual renewals apply for hosting, security, and MLS IDX feeds.</p>
+              <div className="bg-[#D4AF37]/10 border border-[#D4AF37]/20 p-6 rounded-xl mb-8 relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <span className="label-caps text-[#D4AF37] block mb-3 text-[0.65rem]">Best Value Option</span>
+                <p className="text-white text-base leading-relaxed mb-3">Pay <span className="font-bold text-[#D4AF37]">$3,000 upfront</span> and your membership is paid for the entire first year.</p>
+                <p className="text-white/50 text-[0.65rem] leading-relaxed">*You own your products & dashboards. Excludes 3rd-party subscription fees (e.g., MLS/IDX). Standard annual integration renewals apply after year 1.</p>
+              </div>
               
-              <a href="mailto:rachaellgarnett@gmail.com" className="btn-gold w-full">
+              <a href="/scope" className="btn-gold w-full flex items-center justify-center gap-2 mb-4">
+                View Full Project Scope
+              </a>
+              <a href="mailto:rachaellgarnett@gmail.com" className="btn-ghost w-full">
                 Claim This Offer <ArrowRight className="w-4 h-4" />
               </a>
             </div>
-          </div>
-
-          {/* Full Transparency */}
-          <div className="mt-16 max-w-4xl mx-auto glass-card p-12 border-l-4 border-l-[#D4AF37] bg-gradient-to-r from-[#D4AF37]/10 to-transparent">
-            <span className="label-caps text-[#D4AF37] block mb-4">Full Transparency: The Real ROI</span>
-            <p className="text-white/80 text-lg leading-relaxed font-light">
-              Frankly, Rachael's Offer is a fraction of what this architecture usually costs. Why? Because my true ROI isn't in a setup fee. It's in the network. The larger your digital footprint grows, and the more strategic partners (title, mortgage, inspectors) we plug into your authority web, the stronger our entire ecosystem becomes. <br/><br/>
-              <span className="text-white font-medium italic">I'm not building you a website for a check; I'm building you a digital monopoly because when your network wins, my network wins.</span>
-            </p>
           </div>
         </div>
       </section>
