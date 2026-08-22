@@ -375,11 +375,11 @@ export default function Page() {
             </div>
           </div>
           
-          <div className="flex justify-center mt-12 gap-4">
-            <Link href="/features" className="btn-gold flex items-center gap-2">
+          <div className="flex flex-col sm:flex-row justify-center items-stretch sm:items-center mt-12 gap-4 max-w-xs sm:max-w-none mx-auto">
+            <Link href="/features" className="btn-gold flex items-center justify-center gap-2">
               Explore All Features <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link href="/scope" className="btn-ghost flex items-center gap-2">
+            <Link href="/scope" className="btn-ghost flex items-center justify-center gap-2">
               View Detailed Scope
             </Link>
           </div>
@@ -398,6 +398,11 @@ export default function Page() {
             <p className="text-white/60 text-lg mt-6 max-w-xl mx-auto font-light">
               Don't pay an agency a massive premium just to maintain code. We build an active architecture that hunts for sales.
             </p>
+          </div>
+
+          <div className="flex lg:hidden items-center justify-end gap-2 mb-3 text-white/40 text-[0.6rem] uppercase tracking-widest font-bold">
+            <span>Swipe to compare</span>
+            <ArrowRight className="w-3 h-3 animate-pulse" />
           </div>
 
           <div className="w-full overflow-x-auto pb-4">
