@@ -495,7 +495,7 @@ export default function Page() {
                 ))}
               </ul>
               <Link href="/agreement?plan=monthly" className="btn-ghost w-full text-center block">
-                Sign Contract & Start
+                Accept and Pay
               </Link>
             </div>
 
@@ -528,7 +528,7 @@ export default function Page() {
                 View Full Project Scope
               </Link>
               <Link href="/agreement?plan=annual" className="btn-ghost w-full flex items-center justify-center gap-2">
-                Sign Contract & Pay <ArrowRight className="w-4 h-4" />
+                Accept and Pay <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
