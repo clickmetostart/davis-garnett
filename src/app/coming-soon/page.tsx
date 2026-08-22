@@ -43,18 +43,20 @@ export default function ComingSoon() {
       <main className="flex-1 flex flex-col lg:flex-row items-stretch">
         
         {/* Left Side (Image) */}
-        <div className="w-full lg:w-[45%] relative min-h-[30vh] lg:min-h-screen block border-r border-[rgba(212,175,55,0.1)]">
+        <div className="w-full lg:w-[45%] relative h-[55vh] lg:h-auto lg:min-h-screen block border-b lg:border-b-0 lg:border-r border-[rgba(212,175,55,0.1)]">
           <Image 
             src="/davis-garnett-real-combo.png" 
             alt="Mark Davis and Rachael Garnett - Tampa Bay Real Estate"
             fill
-            className="object-cover opacity-90"
+            className="object-cover object-top opacity-90"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/40 via-transparent to-[#050505]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-80 lg:hidden" />
+          {/* Desktop Gradient */}
+          <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-[#050505]/40 via-transparent to-[#050505]" />
+          {/* Mobile Gradient */}
+          <div className="lg:hidden absolute inset-0 bg-gradient-to-b from-[#050505]/40 via-transparent to-[#050505]" />
           
-          <div className="absolute bottom-12 left-12 max-w-sm">
+          <div className="hidden lg:block absolute bottom-12 left-12 max-w-sm">
              <div className="flex gap-2 mb-4">
                   <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
                   <span className="label-caps text-[#D4AF37] text-[0.65rem]">System Assembly in Progress</span>
@@ -64,7 +66,7 @@ export default function ComingSoon() {
         </div>
 
         {/* Right Side (Content) */}
-        <div className="w-full lg:w-[55%] relative flex flex-col justify-center px-8 lg:px-24 py-32 bg-[#050505]">
+        <div className="w-full lg:w-[55%] relative flex flex-col justify-center px-8 lg:px-24 py-12 lg:py-32 bg-[#050505]">
           <div className="max-w-xl">
             <div className="inline-block px-4 py-1.5 border border-[#D4AF37]/30 bg-[#D4AF37]/5 mb-8">
               <span className="label-caps text-[#D4AF37] block">Davis & Garnett</span>
