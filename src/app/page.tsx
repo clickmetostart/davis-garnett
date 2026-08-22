@@ -6,14 +6,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 const NAV_LINKS = [
-  { label: "The Truth", href: "#truth" },
-  { label: "The Engine", href: "#playbook" },
-  { label: "Architecture", href: "#deliverables" },
-  { label: "Features", href: "/features" },
-  { label: "Meet Mark", href: "/davis" },
-  { label: "Meet Rachael", href: "/garnett" },
-  { label: "Scope", href: "/scope" },
-  { label: "Investment", href: "#investment" },
+  { label: "Project Scope", href: "/scope" },
   { label: "Live Preview", href: "/coming-soon" },
 ];
 
@@ -78,7 +71,7 @@ export default function Page() {
               )
             ))}
             <a href="#investment" className="btn-gold text-[0.65rem] py-3 px-6 ml-4">
-              View Strategy
+              Investment & Contract
             </a>
           </div>
         </div>
@@ -476,7 +469,7 @@ export default function Page() {
                 ))}
               </ul>
               <a href="mailto:msdavis118@gmail.com" className="btn-ghost w-full">
-                Get Started
+                Sign Contract & Start
               </a>
             </div>
 
@@ -509,7 +502,7 @@ export default function Page() {
                 View Full Project Scope
               </Link>
               <a href="mailto:rachaellgarnett@gmail.com" className="btn-ghost w-full">
-                Claim This Offer <ArrowRight className="w-4 h-4" />
+                Sign Contract & Pay <ArrowRight className="w-4 h-4" />
               </a>
             </div>
           </div>
