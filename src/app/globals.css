@@ -1,17 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000; /* deep black */
-  --foreground: #ffffff; /* white */
-  
-  --primary: #dc2626; /* bright red */
+  --background: #000000;
+  /* deep black */
+  --foreground: #ffffff;
+  /* white */
+
+  --primary: #dc2626;
+  /* bright red */
   --primary-foreground: #ffffff;
-  
-  --accent: #404040; /* dark gray */
+
+  --accent: #404040;
+  /* dark gray */
   --accent-foreground: #ffffff;
-  
-  --card: rgba(23, 23, 23, 0.7); /* neutral-900 with opacity */
-  --card-border: rgba(220, 38, 38, 0.2); /* red with opacity for border */
+
+  --card: rgba(23, 23, 23, 0.7);
+  /* neutral-900 with opacity */
+  --card-border: rgba(220, 38, 38, 0.2);
+  /* red with opacity for border */
 }
 
 @theme inline {
@@ -51,9 +57,17 @@ body {
 
 /* Animations */
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .animate-float {
@@ -78,7 +92,7 @@ body {
   left: -10%;
   width: 50vw;
   height: 50vw;
-  background: radial-gradient(circle, rgba(220,38,38,0.4) 0%, rgba(220,38,38,0) 70%);
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.4) 0%, rgba(220, 38, 38, 0) 70%);
 }
 
 .blob-2 {
@@ -86,5 +100,5 @@ body {
   right: -10%;
   width: 60vw;
   height: 60vw;
-  background: radial-gradient(circle, rgba(100,100,100,0.3) 0%, rgba(100,100,100,0) 70%);
+  background: radial-gradient(circle, rgba(100, 100, 100, 0.3) 0%, rgba(100, 100, 100, 0) 70%);
 }
