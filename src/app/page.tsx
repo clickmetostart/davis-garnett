@@ -589,7 +589,7 @@ export default function Page() {
               Align Right Realty Carrollwood
             </p>
           </div>
-          <div className="flex gap-6">
+          <div className="flex flex-col md:flex-row items-center gap-3 md:gap-6">
             <a href="mailto:msdavis118@gmail.com" className="text-xs font-semibold text-white/50 hover:text-white transition-colors tracking-widest uppercase">msdavis118@gmail.com</a>
             <a href="mailto:rachaellgarnett@gmail.com" className="text-xs font-semibold text-white/50 hover:text-white transition-colors tracking-widest uppercase">rachaellgarnett@gmail.com</a>
           </div>
