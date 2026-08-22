@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Check, Sparkles, X, ChevronRight, Activity, Layers, Zap, Search, Box, Database, MessageSquare, Code, Settings } from "lucide-react";
+import { ArrowRight, Check, Sparkles, X, ChevronRight, Activity, Layers, Zap, Search, Box, Database, MessageSquare, Code, Settings, Menu } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
@@ -38,6 +38,7 @@ const FEATURES = [
 
 export default function Page() {
   const [activeFeature, setActiveFeature] = useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <div className="min-h-screen text-white relative selection:bg-[#D4AF37] selection:text-black font-sans">
@@ -75,12 +76,36 @@ export default function Page() {
               Investment & Contract
             </a>
           </div>
+
+          <button className="lg:hidden p-2 text-white/60" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden absolute top-20 left-0 w-full bg-black/95 backdrop-blur-3xl border-b border-white/10 p-8 flex flex-col gap-6 shadow-2xl">
+            {NAV_LINKS.map((l) => (
+              l.href.startsWith("/") ? (
+                <Link key={l.label} href={l.href} onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-serif text-white hover:text-[#D4AF37] transition-colors border-b border-white/10 pb-4">
+                  {l.label}
+                </Link>
+              ) : (
+                <a key={l.label} href={l.href} onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-serif text-white hover:text-[#D4AF37] transition-colors border-b border-white/10 pb-4">
+                  {l.label}
+                </a>
+              )
+            ))}
+            <a href="#investment" onClick={() => setIsMobileMenuOpen(false)} className="btn-gold text-center py-4 mt-4">
+              Investment & Contract
+            </a>
+          </div>
+        )}
       </nav>
 
       {/* ── 1. HERO ────────────────────────────────────────── */}
-      <header className="relative min-h-screen flex items-stretch pt-20">
-        <div className="relative flex flex-col justify-center w-full lg:w-[60%] px-8 lg:px-16 py-20 z-10">
+      <header className="relative lg:min-h-screen flex flex-col lg:flex-row items-center lg:items-stretch pt-28 lg:pt-20">
+        <div className="relative flex flex-col justify-center w-full lg:w-[60%] px-8 lg:px-16 py-10 lg:py-20 z-10">
           <div className="inline-flex items-center gap-3 mb-10 fade-up fade-up-delay-1 bg-white/5 border border-white/10 backdrop-blur-md px-5 py-2.5 rounded-full self-start shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]">
             <Sparkles className="w-4 h-4 text-[#D4AF37]" />
             <span className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-white/80">Strategic Proposal</span>
@@ -107,7 +132,7 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="hidden lg:flex flex-col w-[40%] relative justify-center pr-8 py-20">
+        <div className="flex flex-col w-full lg:w-[40%] relative justify-center px-8 lg:pr-8 pb-20 lg:py-20">
           <div className="relative w-full aspect-[4/5] glass-card overflow-hidden group">
             <Image
               src="/davis-garnett-hero.png"
@@ -382,8 +407,9 @@ export default function Page() {
             </p>
           </div>
 
-          <div className="glass-card overflow-hidden overflow-x-auto">
-            <div className="grid grid-cols-4 lg:grid-cols-5 border-b border-white/10 bg-white/5 min-w-[900px]">
+          <div className="w-full overflow-x-auto pb-4">
+            <div className="glass-card min-w-[900px] overflow-hidden">
+              <div className="grid grid-cols-4 lg:grid-cols-5 border-b border-white/10 bg-white/5">
               <div className="p-6 border-r border-white/10 flex items-center">
                 <span className="label-caps text-white/50">The Offering</span>
               </div>
@@ -413,7 +439,7 @@ export default function Page() {
               { feature: "Dual Dashboards", owner: "Single login", ai: "Single WP login", lp: "Single login", us: "Dedicated CRM for each partner" },
               { feature: "Asset Ownership", owner: "Cancel = lose it all", ai: "You own the WP files", lp: "Cancel = lose it all", us: "You own the build. Period." },
             ].map((row, i) => (
-              <div key={i} className="grid grid-cols-4 lg:grid-cols-5 border-b border-white/5 hover:bg-white/5 transition-colors min-w-[900px]">
+              <div key={i} className="grid grid-cols-4 lg:grid-cols-5 border-b border-white/5 hover:bg-white/5 transition-colors">
                 <div className="p-6 border-r border-white/5 flex items-center"><span className="text-sm font-medium text-white">{row.feature}</span></div>
                 <div className="p-6 border-r border-white/5 hidden lg:flex items-center justify-center gap-2"><span className="text-sm text-white/50 text-center">{row.owner}</span></div>
                 <div className="p-6 border-r border-white/5 flex items-center justify-center gap-2"><span className="text-sm text-white/50 text-center">{row.ai}</span></div>
@@ -421,6 +447,7 @@ export default function Page() {
                 <div className="p-6 flex items-center justify-center gap-2 bg-[#D4AF37]/5"><Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" /><span className="text-sm text-[#D4AF37] font-bold text-center">{row.us}</span></div>
               </div>
             ))}
+            </div>
           </div>
         </div>
       </section>
