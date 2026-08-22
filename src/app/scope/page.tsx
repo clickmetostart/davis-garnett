@@ -78,7 +78,7 @@ export default function ScopePage() {
                   No WordPress. No page builders. No bloated themes slowing you down and confusing AI crawlers.
                 </p>
                 <p className="mb-6">
-                  Your site is built on Next.js — the same framework powering major enterprise platforms — deployed on Vercel's global edge network. Sub-second load times anywhere in the world. Zero downtime. A clean, structured codebase that AI engines can crawl completely and confidently.
+                  We aren't building a basic website — we are building a full, custom React web application. Deployed on a global edge network, it delivers sub-second load times anywhere in the world with zero downtime. A clean, structured codebase that AI engines can crawl completely and confidently.
                 </p>
                 
                 <h4 className="text-white font-medium mb-3 mt-8">Every single page ships with:</h4>
@@ -87,7 +87,7 @@ export default function ScopePage() {
                     <strong className="text-[#D4AF37] block mb-2 text-sm uppercase tracking-wider">Technical</strong>
                     <ul className="flex flex-col gap-2 text-sm">
                       <li>• Custom Next.js build — no templates</li>
-                      <li>• Global CDN via Vercel edge network</li>
+                      <li>• Global CDN edge network deployment</li>
                       <li>• Sub-second load times</li>
                       <li>• Zero WordPress vulnerabilities</li>
                       <li>• Automatic HTTPS & security headers</li>
@@ -123,7 +123,7 @@ export default function ScopePage() {
                 </h3>
                 <ul className="flex flex-col gap-4 text-sm">
                   <li className="flex items-start gap-3"><span className="text-[#D4AF37]">☑</span> Custom Next.js website deployed to your domain</li>
-                  <li className="flex items-start gap-3"><span className="text-[#D4AF37]">☑</span> Vercel edge network deployment</li>
+                  <li className="flex items-start gap-3"><span className="text-[#D4AF37]">☑</span> Global edge network deployment</li>
                   <li className="flex items-start gap-3"><span className="text-[#D4AF37]">☑</span> Complete technical SEO audit passed pre-launch</li>
                   <li className="flex items-start gap-3"><span className="text-[#D4AF37]">☑</span> AEO schema on every page</li>
                   <li className="flex items-start gap-3"><span className="text-[#D4AF37]">☑</span> GEO structured data throughout</li>

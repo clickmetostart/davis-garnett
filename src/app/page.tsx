@@ -318,8 +318,8 @@ export default function Page() {
               <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
                 <Code className="w-5 h-5 text-white" />
               </div>
-              <h3 className="font-serif font-semibold text-3xl text-white">Next.js Edge Foundation</h3>
-              <p className="text-white/60 font-light text-lg">Custom-built React architecture deployed on Vercel's global edge network. Sub-second load times worldwide, eliminating the bloat and vulnerabilities of WordPress entirely.</p>
+              <h3 className="font-serif font-semibold text-3xl text-white">Full Custom Web App</h3>
+              <p className="text-white/60 font-light text-lg">A custom-built, enterprise-grade React web application deployed on a global edge network. Sub-second load times worldwide, eliminating the bloat and vulnerabilities of WordPress entirely.</p>
             </div>
 
             <div className="glass-card p-10 flex flex-col gap-6">
