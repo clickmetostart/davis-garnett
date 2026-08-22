@@ -1,14 +1,18 @@
 "use client";
 
-import { ArrowRight, Check, Sparkles, X, ChevronRight, Activity, Layers, Zap } from "lucide-react";
+import { ArrowRight, Check, Sparkles, X, ChevronRight, Activity, Layers, Zap, Search, Box, Database, MessageSquare, Code, Settings } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
+import Link from "next/link";
 
 const NAV_LINKS = [
-  { label: "The Reality", href: "#truth" },
+  { label: "The Truth", href: "#truth" },
   { label: "The Engine", href: "#playbook" },
   { label: "Architecture", href: "#deliverables" },
-  { label: "Project Scope", href: "/scope" },
+  { label: "Features", href: "/features" },
+  { label: "Meet Mark", href: "/davis" },
+  { label: "Meet Rachael", href: "/garnett" },
+  { label: "Scope", href: "/scope" },
   { label: "Investment", href: "#investment" },
   { label: "Live Preview", href: "/coming-soon" },
 ];
@@ -46,11 +50,8 @@ export default function Page() {
       
       {/* ── AMBIENT FLUID BACKGROUND ──────────────────────── */}
       <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-black">
-        {/* Deep Gold Orb */}
         <div className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] rounded-full bg-[#D4AF37]/10 blur-[150px] animate-float-slow" />
-        {/* Deep Slate Orb */}
         <div className="absolute top-[30%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-white/5 blur-[120px] animate-float-slower" style={{ animationDelay: '2s' }} />
-        {/* Bottom Central Glow */}
         <div className="absolute bottom-[-20%] left-[20%] w-[60vw] h-[60vw] rounded-full bg-[#D4AF37]/5 blur-[150px] animate-float-slow" style={{ animationDelay: '4s' }} />
       </div>
 
@@ -64,13 +65,19 @@ export default function Page() {
             <span className="w-px h-5 bg-white/20 block"></span>
             <span className="label-caps text-[0.6rem] text-white/50 mt-0.5">Powered by ClickMe</span>
           </div>
-          <div className="hidden lg:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-6">
             {NAV_LINKS.map((l) => (
-              <a key={l.label} href={l.href} className="label-caps text-white/60 hover:text-white transition-colors">
-                {l.label}
-              </a>
+              l.href.startsWith("/") ? (
+                <Link key={l.label} href={l.href} className="label-caps text-white/60 hover:text-white transition-colors">
+                  {l.label}
+                </Link>
+              ) : (
+                <a key={l.label} href={l.href} className="label-caps text-white/60 hover:text-white transition-colors">
+                  {l.label}
+                </a>
+              )
             ))}
-            <a href="#investment" className="btn-gold text-[0.65rem] py-3 px-6">
+            <a href="#investment" className="btn-gold text-[0.65rem] py-3 px-6 ml-4">
               View Strategy
             </a>
           </div>
@@ -100,9 +107,9 @@ export default function Page() {
             <a href="#truth" className="btn-gold">
               See the Playbook <ArrowRight className="w-4 h-4" />
             </a>
-            <a href="/coming-soon" className="btn-ghost">
+            <Link href="/coming-soon" className="btn-ghost">
               Live Preview
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -141,24 +148,25 @@ export default function Page() {
         </div>
       </div>
 
-      {/* ── 2. THE WHY: THE TRUTH NO ONE TELLS YOU ────────── */}
+      {/* ── 2. THE SEARCH WAR (NEW) ──────────────────────── */}
       <section id="truth" className="relative py-32 px-8">
         <div className="max-w-screen-xl mx-auto">
           <div className="mb-20 grid lg:grid-cols-2 gap-16 items-end">
             <div>
-              <span className="label-caps text-white/50 block mb-6 flex items-center gap-2"><Zap className="w-4 h-4 text-[#D4AF37]" /> The Industry Shift</span>
+              <span className="label-caps text-white/50 block mb-6 flex items-center gap-2"><Search className="w-4 h-4 text-[#D4AF37]" /> The Search War</span>
               <h2 className="display-lg">
-                The Static Web<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-700">Is Dead.</span>
+                AI Engines Don't<br />
+                Use Google.<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-700">They Use Everything.</span>
               </h2>
             </div>
             <div className="max-w-lg glass-card p-8">
               <p className="text-white/70 text-base leading-relaxed mb-6 font-light">
-                The real estate industry is still selling "beautiful digital brochures" as if it's 2018. Having a pretty website no longer guarantees traffic.
+                Something shifted permanently. And almost nobody in real estate has noticed yet. Your next client didn't open Google this morning. They opened ChatGPT. Or Perplexity. Or Claude.
               </p>
               <div className="gold-line-short mb-6" />
               <p className="text-white text-base leading-relaxed font-medium">
-                By mid-2027, "magic formatting" and static pages won't rank you at all. AI-driven search engines demand fresh, purposeful, continuous content. If you don't have an engine pumping out local market insights and authority pieces, you simply will not exist to AI.
+                These engines don't use Google to find answers. They pull directly from the web—crawling your site, directories, and social platforms simultaneously. If you aren't structuring your data for AI engines to read directly, you are already invisible.
               </p>
             </div>
           </div>
@@ -166,16 +174,16 @@ export default function Page() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "The Zero-Traffic Brochure",
-                body: "You launch a stunning design, but once it's live, it sits idle. Without an active engine pushing new data, search engines completely ignore it.",
+                title: "Google Is A Middleman",
+                body: "Clients aren't typing 'commercial real estate agent tampa' into Google and scrolling past ads anymore. They are asking ChatGPT to evaluate who has the best track record based on web citations. AI skips the middleman entirely.",
               },
               {
-                title: "The SEO Illusion",
-                body: "Agencies charge heavy monthly retainers for 'SEO maintenance' which is often just basic meta-tag updates. True SEO requires active, continuous content generation.",
+                title: "The SEO Trap",
+                body: "Agencies are still charging $2,000/month to optimize for Google's 2018 algorithm. Meanwhile, generative engines don't care about your backlink profile—they care about structured, authoritative answers to specific prompts.",
               },
               {
-                title: "The Shared Team Dilemma",
-                body: "Standard platforms force teams into a single identity. In reality, commercial and residential agents need their own dedicated authority hubs to rank.",
+                title: "The Content Deficit",
+                body: "If your website is just a static digital brochure with no new data being generated, AI engines assume you aren't an active authority. You don't just need a website. You need a continuously running content engine.",
               },
             ].map((card) => (
               <div key={card.title} className="glass-card p-10 flex flex-col gap-6">
@@ -190,7 +198,49 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ── 3. THE HOW: ENGINE SECTION ───────────────────── */}
+      {/* ── 3. THE NEW BATTLEGROUND (NEW AEO/GEO) ────────── */}
+      <section className="relative py-32 px-8 bg-white/[0.02] border-y border-white/5">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="mb-20 text-center">
+             <span className="label-caps text-[#D4AF37] block mb-6">The New Battleground</span>
+            <h2 className="display-lg">
+              AEO & GEO:<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F6E3B0]">How You Actually Win.</span>
+            </h2>
+            <p className="text-white/60 text-lg mt-6 max-w-2xl mx-auto font-light leading-relaxed">
+              We don't sell traditional SEO because traditional SEO is dead. We engineer your platform for Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO).
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="glass-card p-12">
+              <h3 className="font-serif text-3xl text-white mb-6">Answer Engine Optimization (AEO)</h3>
+              <p className="text-white/70 font-light mb-6">
+                AEO structures your data so voice assistants (Siri, Alexa) and direct-answer platforms can instantly pull your exact words to answer user questions.
+              </p>
+              <ul className="flex flex-col gap-4 text-white/60 text-sm">
+                <li className="flex items-start gap-3"><Check className="w-5 h-5 text-[#D4AF37] shrink-0" /> Focuses on conversational, long-tail queries.</li>
+                <li className="flex items-start gap-3"><Check className="w-5 h-5 text-[#D4AF37] shrink-0" /> Uses specific FAQ schemas that engines look for first.</li>
+                <li className="flex items-start gap-3"><Check className="w-5 h-5 text-[#D4AF37] shrink-0" /> Answers the "Who, What, Where, Why" immediately.</li>
+              </ul>
+            </div>
+            
+            <div className="glass-card p-12">
+              <h3 className="font-serif text-3xl text-white mb-6">Generative Engine Optimization (GEO)</h3>
+              <p className="text-white/70 font-light mb-6">
+                GEO ensures your content is cited by LLMs (ChatGPT, Perplexity) when they generate comprehensive summaries for complex research queries.
+              </p>
+              <ul className="flex flex-col gap-4 text-white/60 text-sm">
+                <li className="flex items-start gap-3"><Check className="w-5 h-5 text-[#D4AF37] shrink-0" /> Focuses on deep, authoritative, comprehensive content.</li>
+                <li className="flex items-start gap-3"><Check className="w-5 h-5 text-[#D4AF37] shrink-0" /> Structures data with clear headings and citations.</li>
+                <li className="flex items-start gap-3"><Check className="w-5 h-5 text-[#D4AF37] shrink-0" /> Ensures your brand is the "source material" for the AI's logic.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 4. THE HOW: PLAYBOOK SECTION ───────────────────── */}
       <section id="playbook" className="relative py-32 px-8">
         <div className="max-w-screen-xl mx-auto">
           <div className="mb-24 grid lg:grid-cols-2 gap-12 items-end">
@@ -250,7 +300,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ── 5. BENTO BOX: THE ARCHITECTURE ───────────────── */}
+      {/* ── 5. THE ARCHITECTURE (EXPANDED) ───────────────── */}
       <section id="deliverables" className="relative py-32 px-8">
         <div className="max-w-screen-xl mx-auto">
           <div className="mb-20 text-center">
@@ -262,42 +312,64 @@ export default function Page() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {/* Bento 1: Large Span */}
-            <div className="glass-card p-10 flex flex-col gap-8 lg:col-span-2 relative overflow-hidden">
+            
+            <div className="glass-card p-10 flex flex-col gap-6 lg:col-span-2 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#D4AF37]/10 blur-[100px] rounded-full" />
               <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
-                <Layers className="w-5 h-5 text-white" />
+                <Code className="w-5 h-5 text-white" />
               </div>
-              <h3 className="font-serif font-semibold text-3xl text-white">The Baseline Foundation</h3>
-              <p className="text-white/60 font-light text-lg max-w-md">Custom-built, ultra-fast core architecture with structured AEO schema ensuring complete AI indexation from day one.</p>
+              <h3 className="font-serif font-semibold text-3xl text-white">Next.js Edge Foundation</h3>
+              <p className="text-white/60 font-light text-lg">Custom-built React architecture deployed on Vercel's global edge network. Sub-second load times worldwide, eliminating the bloat and vulnerabilities of WordPress entirely.</p>
             </div>
 
-            {/* Bento 2: Standard */}
-            <div className="glass-card p-10 flex flex-col gap-8">
+            <div className="glass-card p-10 flex flex-col gap-6">
                <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
-                <Activity className="w-5 h-5 text-white" />
+                <Database className="w-5 h-5 text-white" />
+              </div>
+              <h3 className="font-serif font-semibold text-2xl text-white">AEO & GEO Schema</h3>
+              <p className="text-white/60 font-light text-sm">Every page is laced with structured data designed specifically to feed generative AI engines (ChatGPT, Perplexity) and voice search algorithms directly.</p>
+            </div>
+
+            <div className="glass-card p-10 flex flex-col gap-6">
+               <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+                <Box className="w-5 h-5 text-white" />
               </div>
               <h3 className="font-serif font-semibold text-2xl text-white">Dual Dashboards</h3>
-              <ul className="flex flex-col gap-4">
-                <li className="flex items-start gap-3 text-sm text-white/60 font-light"><Sparkles className="w-4 h-4 text-[#D4AF37] shrink-0" /> Mark's dedicated commercial CRM</li>
-                <li className="flex items-start gap-3 text-sm text-white/60 font-light"><Sparkles className="w-4 h-4 text-[#D4AF37] shrink-0" /> Rachael's dedicated residential CRM</li>
-              </ul>
+              <p className="text-white/60 font-light text-sm">Separate, dedicated ClickMe CRM ecosystems for Mark's commercial pipeline and Rachael's residential leads. One unified platform, independent data.</p>
             </div>
 
-            {/* Bento 3: Large Span */}
-            <div className="glass-card p-10 flex flex-col gap-8 lg:col-span-3 bg-gradient-to-r from-white/[0.05] to-transparent border-t-white/20">
+            <div className="glass-card p-10 flex flex-col gap-6">
+               <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+                <MessageSquare className="w-5 h-5 text-white" />
+              </div>
+              <h3 className="font-serif font-semibold text-2xl text-white">Multi-Channel Autopilot</h3>
+              <p className="text-white/60 font-light text-sm">Your content isn't just on your site. The engine automatically syndicates your insights to your Google Business Profiles and social platforms.</p>
+            </div>
+
+            <div className="glass-card p-10 flex flex-col gap-6">
+               <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+                <Settings className="w-5 h-5 text-white" />
+              </div>
+              <h3 className="font-serif font-semibold text-2xl text-white">Unified Reputation</h3>
+              <p className="text-white/60 font-light text-sm">Monitor, respond, and manage reviews across Google, Yelp, and Zillow for both Mark and Rachael from inside a single command center.</p>
+            </div>
+
+            <div className="glass-card p-10 flex flex-col gap-6 lg:col-span-3 bg-gradient-to-r from-white/[0.05] to-transparent border-t-white/20">
                <div className="w-12 h-12 rounded-full bg-[#D4AF37]/20 border border-[#D4AF37]/30 flex items-center justify-center">
                 <Zap className="w-5 h-5 text-[#D4AF37]" />
               </div>
-              <h3 className="font-serif font-semibold text-4xl text-white">The Sales-Driving Engine</h3>
-              <p className="text-white/70 font-light text-xl max-w-3xl">Autopilot publishing, written strictly in your distinct voices. Commercial lease explainers for Mark. Buyer & Seller libraries for Rachael. We drive the traffic so you can close the deal.</p>
+              <h3 className="font-serif font-semibold text-4xl text-white">The Active Content Engine™</h3>
+              <p className="text-white/70 font-light text-xl max-w-3xl">This is what replaces the $2,000/mo SEO agency. The engine learns your voices, analyzes your specific markets, and continuously generates, schedules, and publishes authority content—building your AI citations while you sleep.</p>
             </div>
           </div>
           
-          <div className="flex justify-center mt-12">
-            <a href="/scope" className="btn-ghost flex items-center gap-2">
-              View the Detailed Project Scope <ArrowRight className="w-4 h-4" />
-            </a>
+          <div className="flex justify-center mt-12 gap-4">
+            <Link href="/features" className="btn-gold flex items-center gap-2">
+              Explore All Features <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link href="/scope" className="btn-ghost flex items-center gap-2">
+              View Detailed Scope
+            </Link>
           </div>
         </div>
       </section>
@@ -339,7 +411,11 @@ export default function Page() {
             {[
               { feature: "Upfront Cost", owner: "$0 setup", ai: "$4,000+ setup", lp: "$5,000+ setup", us: "$0 setup fee. Ever." },
               { feature: "Basic SEO Formatting", owner: "Included", ai: "Extortion Retainer", lp: "Extortion Retainer ($800/mo)", us: "100% Perfect Out-of-the-Box" },
+              { feature: "AEO Optimization", owner: "None", ai: "None", lp: "None", us: "Core Infrastructure" },
+              { feature: "GEO Architecture", owner: "None", ai: "None", lp: "None", us: "Core Infrastructure" },
               { feature: "Content Engine", owner: "None", ai: "DIY", lp: "DIY", us: "Autopilot, Sales-Driven" },
+              { feature: "AI Citation Tracking", owner: "None", ai: "None", lp: "None", us: "Dashboard Integrated" },
+              { feature: "Voice Model Training", owner: "None", ai: "None", lp: "None", us: "Individual Partner Training" },
               { feature: "Dual Dashboards", owner: "Single login", ai: "Single WP login", lp: "Single login", us: "Dedicated CRM for each partner" },
               { feature: "Asset Ownership", owner: "Cancel = lose it all", ai: "You own the WP files", lp: "Cancel = lose it all", us: "You own the build. Period." },
             ].map((row, i) => (
@@ -355,7 +431,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ── 7. PRICE: INVESTMENT ─────────────────────────── */}
+      {/* ── 7. PRICE: INVESTMENT (UPDATED) ───────────────── */}
       <section id="investment" className="relative py-32 px-8">
         <div className="max-w-screen-xl mx-auto">
           <div className="mb-20 text-center">
@@ -385,7 +461,14 @@ export default function Page() {
               <div className="gold-line-short mb-8 opacity-50 bg-white/20" />
               
               <ul className="flex flex-col gap-4 mb-12 flex-1">
-                {["100% SEO-Perfect build out of the box", "Individual Dashboards for Mark & Rachael", "Active Content Engine for both channels"].map((f) => (
+                {[
+                  "100% SEO-Perfect build out of the box", 
+                  "AEO and GEO infrastructure included",
+                  "Individual Dashboards for Mark & Rachael", 
+                  "Active Content Engine for both channels",
+                  "Reputation & Review Management",
+                  "Excludes 3rd-party subscriptions (e.g., MLS)"
+                ].map((f) => (
                   <li key={f} className="flex items-start gap-3 text-sm text-white/70 font-light">
                     <Check className="w-4 h-4 text-white/40 mt-0.5 shrink-0" />
                     {f}
@@ -422,9 +505,9 @@ export default function Page() {
                 <p className="text-white/50 text-[0.65rem] leading-relaxed">*You own your products & dashboards. Excludes 3rd-party subscription fees (e.g., MLS/IDX). Standard annual integration renewals apply after year 1.</p>
               </div>
               
-              <a href="/scope" className="btn-gold w-full flex items-center justify-center gap-2 mb-4">
+              <Link href="/scope" className="btn-gold w-full flex items-center justify-center gap-2 mb-4">
                 View Full Project Scope
-              </a>
+              </Link>
               <a href="mailto:rachaellgarnett@gmail.com" className="btn-ghost w-full">
                 Claim This Offer <ArrowRight className="w-4 h-4" />
               </a>
@@ -446,9 +529,9 @@ export default function Page() {
               <p className="mt-8 text-white/60 text-lg leading-relaxed font-light">
                 While you review this strategic playbook, we have already spun up an interim digital presence in your branding. This landing page acts as your high-end digital business card while we construct the definitive AEO platform underneath.
               </p>
-              <a href="/coming-soon" className="btn-gold mt-10">
+              <Link href="/coming-soon" className="btn-gold mt-10">
                 View Live Environment <ArrowRight className="w-4 h-4" />
-              </a>
+              </Link>
             </div>
             <div className="glass-card overflow-hidden p-2">
               <div className="bg-black/80 rounded-t-xl px-6 py-4 border-b border-white/10 flex items-center gap-3">
