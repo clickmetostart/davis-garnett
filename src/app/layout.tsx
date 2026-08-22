@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit, DM_Sans } from "next/font/google";
+import AmbientBackground from "@/components/AmbientBackground";
 import "./globals.css";
 
 // Modern, sleek geometric sans-serif for massive display/heading text
@@ -31,8 +32,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${outfit.variable} ${dmSans.variable} antialiased bg-black text-white overflow-x-hidden max-w-[100vw]`}>
-        {children}
+      <body className={`${outfit.variable} ${dmSans.variable} antialiased bg-black text-white`}>
+        <AmbientBackground />
+        <main className="w-full overflow-x-hidden relative flex flex-col min-h-screen">
+          {children}
+        </main>
       </body>
     </html>
   );

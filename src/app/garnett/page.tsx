@@ -14,13 +14,6 @@ export const metadata: Metadata = {
 export default function GarnettPage() {
   return (
     <div className="min-h-screen text-white relative selection:bg-[#D4AF37] selection:text-black font-sans">
-      
-      {/* ── AMBIENT FLUID BACKGROUND ──────────────────────── */}
-      <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-black">
-        <div className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] rounded-full bg-[#D4AF37]/10 blur-[150px] animate-float-slow" />
-        <div className="absolute top-[30%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-white/5 blur-[120px] animate-float-slower" style={{ animationDelay: '2s' }} />
-        <div className="absolute bottom-[-20%] left-[20%] w-[60vw] h-[60vw] rounded-full bg-[#D4AF37]/5 blur-[150px] animate-float-slow" style={{ animationDelay: '4s' }} />
-      </div>
 
       {/* ── NAVIGATION ──────────────────────────────────── */}
       <nav className="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-xl border-b border-white/5">

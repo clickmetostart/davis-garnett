@@ -43,7 +43,7 @@ export default function ComingSoon() {
       <main className="flex-1 flex flex-col lg:flex-row items-stretch">
         
         {/* Left Side (Image) */}
-        <div className="w-full lg:w-[45%] relative min-h-[50vh] lg:min-h-screen hidden lg:block border-r border-[rgba(212,175,55,0.1)]">
+        <div className="w-full lg:w-[45%] relative min-h-[30vh] lg:min-h-screen block border-r border-[rgba(212,175,55,0.1)]">
           <Image 
             src="/davis-garnett-real-combo.png" 
             alt="Mark Davis and Rachael Garnett - Tampa Bay Real Estate"
