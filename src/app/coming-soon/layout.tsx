@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Coming Soon | Davis & Garnett Platform",
   description: "The digital architecture for Davis & Garnett is currently being assembled.",
+  openGraph: {
+    images: ["/davis-garnett-real-combo.png"],
+  },
 };
 
 export default function ComingSoonLayout({

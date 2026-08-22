@@ -4,7 +4,10 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Platform Features | ClickMe Real Estate Engine",
-  description: "Explore the core features of the ClickMe ecosystem, including AEO optimization, automated content pipelines, and AI citation tracking.",
+  description: "Explore the core features of the ClickMe ecosystem,
+  openGraph: {
+    images: ["/davis-garnett-real-combo.png"],
+  }, including AEO optimization, automated content pipelines, and AI citation tracking.",
 };
 
 export default function FeaturesPage() {

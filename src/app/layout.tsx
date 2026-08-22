@@ -19,6 +19,9 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "ClickMe × Davis & Garnett | A Partnership Proposal",
   description: "A strategic proposal for Davis & Garnett Commercial & Residential Advisors — Tampa Bay's premier real estate duo — to dominate AI-powered search and build lasting digital authority.",
+  openGraph: {
+    images: ["/davis-garnett-real-combo.png"],
+  },
 };
 
 export default function RootLayout({
