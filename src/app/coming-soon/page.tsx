@@ -1,9 +1,33 @@
+"use client";
+
 import Image from "next/image";
-import { Mail, Phone, ArrowLeft } from "lucide-react";
+import { Mail, Phone, ArrowLeft, X } from "lucide-react";
+import { useState } from "react";
 
 export default function ComingSoon() {
+  const [showPopup, setShowPopup] = useState(true);
+
   return (
-    <div className="min-h-screen bg-[#050505] text-white flex flex-col" style={{ fontFamily: "var(--font-sans)" }}>
+    <div className="min-h-screen bg-[#050505] text-white flex flex-col relative" style={{ fontFamily: "var(--font-sans)" }}>
+      
+      {/* ── POPUP ── */}
+      {showPopup && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
+          <div className="bg-[#111] border border-[#D4AF37]/30 p-8 max-w-md w-full relative shadow-[0_0_50px_rgba(212,175,55,0.15)]">
+            <button onClick={() => setShowPopup(false)} className="absolute top-4 right-4 text-white/50 hover:text-white">
+              <X className="w-5 h-5" />
+            </button>
+            <span className="label-caps text-[#D4AF37] block mb-4 text-[0.65rem] tracking-[0.2em] uppercase">Live Preview Note</span>
+            <h3 className="font-serif text-2xl text-white mb-4">Interim Landing Page</h3>
+            <p className="text-white/70 font-light text-sm mb-6 leading-relaxed">
+              This is the live "Coming Soon" page we deploy to your domain immediately while the full ClickMe architecture and content engine are being built underneath.
+            </p>
+            <button onClick={() => setShowPopup(false)} className="w-full py-3 bg-[#D4AF37] text-black font-bold text-sm tracking-widest uppercase hover:bg-[#F6E3B0] transition-colors">
+              Continue to Preview
+            </button>
+          </div>
+        </div>
+      )}
       
       {/* Navbar Minimal */}
       <nav className="w-full z-50 bg-transparent absolute top-0">
