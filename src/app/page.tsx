@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, ArrowUpRight, Check, Mail, Phone } from "lucide-react";
+import { ArrowRight, Check, Mail, Phone, X, Sparkles } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -70,76 +70,103 @@ export default function Page() {
       </nav>
 
       {/* ── HERO ────────────────────────────────────────── */}
-      <header className="relative h-screen min-h-[700px] flex flex-col justify-end pb-20 overflow-hidden">
-        {/* Full-bleed background image */}
-        <Image
-          src="/davis-garnett-real-estate-advisors-cover-image.webp"
-          alt="Davis & Garnett Tampa Bay Real Estate"
-          fill
-          className="object-cover object-center"
-          priority
-          loading="eager"
-        />
-        {/* Two-tone overlay: dark on left for text legibility, lighter on right to show image */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/70 to-black/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40" />
+      <header className="relative min-h-screen flex items-center overflow-hidden bg-black">
 
-        <div className="relative max-w-screen-xl mx-auto px-8 w-full">
-          {/* Top label */}
-          <div className="mb-8 fade-up fade-up-delay-1">
+        {/* Right-side contained image — not a background */}
+        <div className="absolute right-0 top-0 bottom-0 w-[45%] hidden lg:block">
+          <div className="relative h-full">
+            <Image
+              src="/davis-garnett-real-estate-advisors-cover-image.webp"
+              alt="Davis & Garnett Tampa Bay"
+              fill
+              className="object-cover object-center"
+              priority
+              loading="eager"
+            />
+            {/* Fade image into black on the left edge */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black via-black/30 to-transparent" />
+            {/* Subtle top/bottom vignette */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
+          </div>
+        </div>
+
+        {/* Left content — clean black canvas */}
+        <div className="relative w-full lg:w-[62%] max-w-screen-xl mx-auto px-8 py-32 lg:py-40">
+
+          {/* Proposal badge */}
+          <div className="flex items-center gap-4 mb-12 fade-up fade-up-delay-1">
             <span className="label-caps text-[#D4AF37]">A Strategic Partnership Proposal</span>
-            <span className="inline-block ml-4 w-12 h-px bg-[#D4AF37] align-middle" />
+            <span className="block w-16 h-px bg-[#D4AF37]" />
+            <span className="label-caps text-[#333333]">Prepared exclusively for Davis & Garnett</span>
           </div>
 
-          {/* Main headline — editorial scale */}
+          {/* Massive editorial headline */}
           <h1 className="fade-up fade-up-delay-2" style={{
             fontFamily: "var(--font-serif)",
             fontWeight: 300,
-            letterSpacing: "0.06em",
-            lineHeight: "0.92",
-            fontSize: "clamp(4rem, 9vw, 9rem)",
+            letterSpacing: "0.05em",
+            lineHeight: "0.9",
+            fontSize: "clamp(3.5rem, 8.5vw, 8.5rem)",
             textTransform: "uppercase",
             color: "#ffffff",
           }}>
             Local<br />
-            <span style={{ color: "#D4AF37" }}>Knowledge.</span><br />
+            <em style={{ color: "#D4AF37", fontStyle: "italic" }}>Knowledge.</em><br />
             Bigger<br />
             Picture.
           </h1>
 
-          {/* Subline */}
-          <p className="fade-up fade-up-delay-3 mt-10 max-w-xl text-[#a0a0a0] text-base leading-relaxed" style={{ fontFamily: "var(--font-sans)" }}>
-            Commercial & Residential Advisors helping businesses, investors, buyers and sellers move with confidence across Tampa Bay — powered by an AI presence engine that works while you're closing deals.
+          {/* Pull quote below headline */}
+          <p className="fade-up fade-up-delay-3 mt-10 text-[#777777] leading-relaxed max-w-lg"
+            style={{ fontFamily: "var(--font-sans)", fontSize: "0.95rem" }}>
+            While competitors hand you an AEO score and walk away, we build the entire self-generating authority engine that answers it — permanently. Built for Tampa Bay real estate. Built for you.
           </p>
 
-          {/* Agents + CTA row */}
-          <div className="fade-up fade-up-delay-4 mt-12 flex flex-wrap items-center gap-8">
-            {/* Agent portraits */}
-            <div className="flex items-center gap-5">
-              <div className="flex items-center gap-3">
-                <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#D4AF37]">
-                  <Image src="/mark-davis-profile-image.webp" alt="Mark Davis" width={56} height={56} className="object-cover w-full h-full" />
-                </div>
-                <div>
-                  <p className="font-serif text-sm text-white" style={{ fontFamily: "var(--font-serif)" }}>Mark Davis</p>
-                  <p className="label-caps text-[0.55rem] text-[#D4AF37]">Broker Associate</p>
-                </div>
+          {/* Agents row */}
+          <div className="fade-up fade-up-delay-4 mt-14 flex flex-wrap items-center gap-6">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full overflow-hidden border border-[#D4AF37]">
+                <Image src="/mark-davis-profile-image.webp" alt="Mark Davis" width={48} height={48} className="object-cover w-full h-full" />
               </div>
-              <div className="w-px h-10 bg-[rgba(212,175,55,0.3)]" />
-              <div className="flex items-center gap-3">
-                <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#D4AF37]">
-                  <Image src="/rachael-garnett.webp" alt="Rachael Garnett" width={56} height={56} className="object-cover w-full h-full" />
-                </div>
-                <div>
-                  <p className="font-serif text-sm text-white" style={{ fontFamily: "var(--font-serif)" }}>Rachael Garnett</p>
-                  <p className="label-caps text-[0.55rem] text-[#D4AF37]">Real Estate Advisor</p>
-                </div>
+              <div>
+                <p style={{ fontFamily: "var(--font-serif)", fontSize: "0.95rem", letterSpacing: "0.04em" }}>Mark Davis</p>
+                <p className="label-caps text-[0.55rem] text-[#D4AF37]">Broker Associate</p>
               </div>
             </div>
+            <div className="w-px h-10 bg-[rgba(212,175,55,0.2)]" />
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full overflow-hidden border border-[#D4AF37]">
+                <Image src="/rachael-garnett.webp" alt="Rachael Garnett" width={48} height={48} className="object-cover w-full h-full" />
+              </div>
+              <div>
+                <p style={{ fontFamily: "var(--font-serif)", fontSize: "0.95rem", letterSpacing: "0.04em" }}>Rachael Garnett</p>
+                <p className="label-caps text-[0.55rem] text-[#D4AF37]">Real Estate Advisor</p>
+              </div>
+            </div>
+            <div className="mt-4 w-full flex gap-4">
+              <a href="#engine" className="btn-gold">
+                Explore the Engine <ArrowRight className="w-4 h-4" />
+              </a>
+              <a href="#investment" className="btn-ghost">
+                View Pricing
+              </a>
+            </div>
+          </div>
 
-            <a href="#engine" className="btn-gold">
-              Explore the Engine <ArrowRight className="w-4 h-4" />
-            </a>
+          {/* Bottom micro-stats row */}
+          <div className="fade-up fade-up-delay-4 mt-16 pt-10 border-t border-[rgba(212,175,55,0.1)] grid grid-cols-3 gap-8 max-w-lg">
+            <div>
+              <p style={{ fontFamily: "var(--font-serif)", fontSize: "2rem", fontWeight: 300, color: "#D4AF37", letterSpacing: "0.04em" }}>$499</p>
+              <p className="label-caps text-[#444444] mt-1">Per Month</p>
+            </div>
+            <div>
+              <p style={{ fontFamily: "var(--font-serif)", fontSize: "2rem", fontWeight: 300, color: "#D4AF37", letterSpacing: "0.04em" }}>8+</p>
+              <p className="label-caps text-[#444444] mt-1">Markets Covered</p>
+            </div>
+            <div>
+              <p style={{ fontFamily: "var(--font-serif)", fontSize: "2rem", fontWeight: 300, color: "#D4AF37", letterSpacing: "0.04em" }}>1</p>
+              <p className="label-caps text-[#444444] mt-1">Dashboard. Everything.</p>
+            </div>
           </div>
         </div>
       </header>
@@ -235,6 +262,81 @@ export default function Page() {
               </a>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── COMPETITIVE COMPARISON ───────────────────────── */}
+      <section className="section-surface py-32 px-8">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="mb-16 grid lg:grid-cols-2 gap-12 items-end">
+            <div>
+              <span className="label-caps text-[#D4AF37] block mb-6">Why ClickMe</span>
+              <h2 className="font-serif" style={{
+                fontFamily: "var(--font-serif)",
+                fontWeight: 300,
+                fontSize: "clamp(2.2rem, 4vw, 4.5rem)",
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                lineHeight: "1.05",
+              }}>
+                Beyond What<br />
+                <span style={{ color: "#D4AF37" }}>Owner.com</span><br />
+                Can Offer.
+              </h2>
+            </div>
+            <p className="text-[#555555] text-sm leading-loose max-w-sm">
+              Owner.com built a $499/month vertical SaaS for restaurants — and it works. We built the same model for every business category, with AI-forward architecture they'll never catch up to.
+            </p>
+          </div>
+
+          {/* Comparison table */}
+          <div className="border border-[rgba(212,175,55,0.15)] overflow-hidden">
+            {/* Header */}
+            <div className="grid grid-cols-3 border-b border-[rgba(212,175,55,0.15)] bg-[#0f0f0f]">
+              <div className="p-6 border-r border-[rgba(212,175,55,0.1)]">
+                <span className="label-caps text-[#444444]">Feature</span>
+              </div>
+              <div className="p-6 border-r border-[rgba(212,175,55,0.1)] text-center">
+                <span className="label-caps text-[#444444]">Owner.com</span>
+                <p className="label-caps text-[0.5rem] text-[#333333] mt-1">$499/mo · Restaurants Only</p>
+              </div>
+              <div className="p-6 text-center bg-[rgba(212,175,55,0.04)]">
+                <span className="label-caps text-[#D4AF37]">ClickMe</span>
+                <p className="label-caps text-[0.5rem] text-[#888] mt-1">$499/mo · Every Industry</p>
+              </div>
+            </div>
+
+            {[
+              { feature: "Industry Coverage", them: "Restaurants only", us: "Every business category" },
+              { feature: "Search Strategy", them: "Traditional SEO", us: "AEO / GEO / AI-forward" },
+              { feature: "Website Architecture", them: "Template builder", us: "Built-to-rank architecture" },
+              { feature: "Partner Network", them: "None", us: "Cross-linking authority network" },
+              { feature: "Content Engine", them: "Manual", us: "Self-reading, self-writing loop" },
+              { feature: "Lock-in Model", them: "Painful to leave", us: "Network effect makes staying valuable" },
+              { feature: "Community / Movement", them: "None", us: "Inner circle access" },
+            ].map((row, i) => (
+              <div
+                key={i}
+                className={`grid grid-cols-3 border-b border-[rgba(212,175,55,0.08)] hover:bg-[rgba(212,175,55,0.02)] transition-colors`}
+              >
+                <div className="p-6 border-r border-[rgba(212,175,55,0.08)]">
+                  <span className="text-sm text-white">{row.feature}</span>
+                </div>
+                <div className="p-6 border-r border-[rgba(212,175,55,0.08)] flex items-center justify-center gap-3">
+                  <X className="w-3.5 h-3.5 text-[#444444] shrink-0" />
+                  <span className="text-xs text-[#555555]">{row.them}</span>
+                </div>
+                <div className="p-6 flex items-center justify-center gap-3 bg-[rgba(212,175,55,0.03)]">
+                  <Sparkles className="w-3.5 h-3.5 text-[#D4AF37] shrink-0" />
+                  <span className="text-xs text-[#D4AF37] font-medium">{row.us}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-8 text-[#333333] text-xs leading-relaxed max-w-xl">
+            Owner.com charges $499/month — and restaurant owners still call it expensive. ClickMe operates at the same price point and delivers more across any industry, with a network moat Owner.com has never built.
+          </p>
         </div>
       </section>
 
