@@ -49,9 +49,9 @@ export default function PreviewMockup() {
   // No opacity fades! It just sits at z-index 10 and gets covered by the side images coming over the top.
   const centerScale = useTransform(scrollYProgress, [0, 0.3, 0.4], [1, 1, 0.8]);
 
-  // Text Overlays
-  const textOpacity = useTransform(scrollYProgress, [0.5, 0.6], [0, 1]);
-  const textY = useTransform(scrollYProgress, [0.5, 0.6], [40, 0]);
+  // Text Overlays (Explicitly clamped to 1.0 to prevent any weird browser fade-outs)
+  const textOpacity = useTransform(scrollYProgress, [0.5, 0.6, 1], [0, 1, 1]);
+  const textY = useTransform(scrollYProgress, [0.5, 0.6, 1], [40, 0, 0]);
 
   return (
     <div className="min-h-screen text-white bg-[#050505] selection:bg-[#D4AF37] selection:text-black font-sans">
@@ -194,7 +194,7 @@ export default function PreviewMockup() {
                 fill 
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
+              <div className="absolute inset-0 bg-black/20 transition-colors duration-500" />
               
               {/* Text Overlay for Phase 3 */}
               <motion.div 
@@ -229,7 +229,7 @@ export default function PreviewMockup() {
                 fill 
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
+              <div className="absolute inset-0 bg-black/20 transition-colors duration-500" />
               
               {/* Text Overlay for Phase 3 */}
               <motion.div 
