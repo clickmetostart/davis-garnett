@@ -66,7 +66,7 @@ export default function Page() {
               )
             ))}
             <a href="#investment" className="btn-gold text-[0.65rem] py-3 px-6 ml-4">
-              Investment & Contract
+              Your Investment
             </a>
           </div>
 
@@ -90,7 +90,7 @@ export default function Page() {
               )
             ))}
             <a href="#investment" onClick={() => setIsMobileMenuOpen(false)} className="btn-gold text-center py-4 mt-4">
-              Investment & Contract
+              Your Investment
             </a>
           </div>
         )}
