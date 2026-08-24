@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
+import DavisGarnettLogo, { DavisGarnettMark } from "@/components/DavisGarnettLogo";
 import {
   ArrowLeft, Palette, Type, Smartphone, ShieldCheck,
-  PrinterIcon, Layers, Globe, CheckCircle2, ArrowRight, Sparkles
+  PrinterIcon, Layers, Globe, CheckCircle2, ArrowRight, Sparkles, Tag
 } from "lucide-react";
 
 const PHYSICAL_ASSETS = [
@@ -158,6 +159,82 @@ export default function BrandingBook() {
       </header>
 
       <main className="py-20 px-8 max-w-screen-xl mx-auto flex flex-col gap-32">
+
+        {/* ── 0. THE LOGO ── */}
+        <section>
+          <div className="flex items-center gap-3 mb-12 border-b border-white/10 pb-5">
+            <Tag className="w-5 h-5 text-[#D4AF37]" />
+            <h2 className="font-serif text-3xl">The Logo</h2>
+          </div>
+
+          {/* Light Version */}
+          <div className="mb-8">
+            <p className="text-xs uppercase tracking-widest text-white/40 mb-4">Primary — Light (on white backgrounds)</p>
+            <div className="bg-white rounded-2xl p-10 md:p-14 flex items-center justify-center border border-white/10">
+              <DavisGarnettLogo variant="light" width={700} />
+            </div>
+          </div>
+
+          {/* Dark / Reverse Version */}
+          <div className="mb-16">
+            <p className="text-xs uppercase tracking-widest text-white/40 mb-4">Reverse — Dark (on dark/obsidian backgrounds)</p>
+            <div className="bg-[#050505] rounded-2xl p-10 md:p-14 flex items-center justify-center border border-white/10">
+              <DavisGarnettLogo variant="dark" width={700} />
+            </div>
+          </div>
+
+          {/* Mark + Font Anatomy */}
+          <div className="grid md:grid-cols-3 gap-6">
+
+            {/* Isolated Mark — Light */}
+            <div className="glass-card p-8 flex flex-col items-center gap-4">
+              <p className="text-xs uppercase tracking-widest text-white/40 self-start">The Mark — Light</p>
+              <div className="bg-white rounded-xl p-6 flex items-center justify-center w-full">
+                <DavisGarnettMark variant="light" size={130} />
+              </div>
+              <p className="text-xs text-white/40 font-light text-center">Standalone monogram for profile photos, favicons, stamps, and embossing</p>
+            </div>
+
+            {/* Isolated Mark — Dark */}
+            <div className="glass-card p-8 flex flex-col items-center gap-4">
+              <p className="text-xs uppercase tracking-widest text-white/40 self-start">The Mark — Dark</p>
+              <div className="bg-[#050505] rounded-xl p-6 flex items-center justify-center w-full border border-white/10">
+                <DavisGarnettMark variant="dark" size={130} />
+              </div>
+              <p className="text-xs text-white/40 font-light text-center">Used on dark brand surfaces, social media profiles, and merch embroidery</p>
+            </div>
+
+            {/* Font Anatomy */}
+            <div className="glass-card p-8 flex flex-col gap-6">
+              <p className="text-xs uppercase tracking-widest text-white/40">Logo Fonts</p>
+              <div className="flex flex-col gap-6">
+                <div>
+                  <p className="text-[0.6rem] uppercase tracking-widest text-[#b39556] mb-1">Wordmark</p>
+                  <p className="text-2xl text-white" style={{ fontFamily: "'AIVeritas', serif" }}>AIVeritas Roman</p>
+                  <p className="text-xs text-white/40 mt-1 font-light">DAVIS &amp; GARNETT headline — all caps, tracked</p>
+                </div>
+                <div className="h-px bg-white/10" />
+                <div>
+                  <p className="text-[0.6rem] uppercase tracking-widest text-[#b39556] mb-1">Subtitle</p>
+                  <p className="text-xl text-white" style={{ fontFamily: "'Montserrat', sans-serif", letterSpacing: "0.2em" }}>MONTSERRAT</p>
+                  <p className="text-xs text-white/40 mt-1 font-light">COMMERCIAL RESIDENTIAL ADVISORS — wide tracked caps</p>
+                </div>
+                <div className="h-px bg-white/10" />
+                <div>
+                  <p className="text-[0.6rem] uppercase tracking-widest text-[#b39556] mb-1">Logo Gold</p>
+                  <div className="flex items-center gap-3 mt-1">
+                    <div className="w-8 h-8 rounded" style={{ backgroundColor: "#b39556" }} />
+                    <div>
+                      <p className="text-white text-sm font-mono">#b39556</p>
+                      <p className="text-white/40 text-xs">Ampersand, mark, rules</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
 
         {/* ── 1. COLOR & TYPOGRAPHY ── */}
         <section>

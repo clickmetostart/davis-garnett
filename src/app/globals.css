@@ -1,9 +1,28 @@
 @import "tailwindcss";
 
 /* ============================================
-   DAVIS & GARNETT × CLICKME DESIGN SYSTEM
-   Modern Tech Luxury — True Wow-Factor
+   CUSTOM BRAND FONTS
+   AIVeritas Roman — Logo Headlines
+   Montserrat — Logo Subtitle / UI
    ============================================ */
+
+@font-face {
+  font-family: 'AIVeritas';
+  src: url('/AIVeritas Roman.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/Montserrat-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 
 :root {
   /* Gold palette */
