@@ -17,7 +17,7 @@ export default function ComingSoon() {
             <button onClick={() => setShowPopup(false)} className="absolute top-4 right-4 text-white/50 hover:text-white">
               <X className="w-5 h-5" />
             </button>
-            <span className="label-caps text-[#D4AF37] block mb-4 text-[0.65rem] tracking-[0.2em] uppercase">Live Preview Note</span>
+            <span className="label-caps text-[#D4AF37] block mb-4 text-[0.65rem] tracking-[0.2em] uppercase">Coming Soon Note</span>
             <h3 className="font-serif text-2xl text-white mb-4">Interim Landing Page</h3>
             <p className="text-white/70 font-light text-sm mb-6 leading-relaxed">
               This is the live "Coming Soon" page we deploy to your domain immediately while the full ClickMe architecture and content engine are being built underneath.

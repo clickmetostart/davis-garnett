@@ -36,7 +36,7 @@ export default function ScopePage() {
               Return to Proposal
             </Link>
             <Link href="/coming-soon" className="label-caps text-white/60 hover:text-white transition-colors">
-              Live Preview
+              (Coming Soon Page)
             </Link>
             <Link href="/features" className="label-caps text-white/60 hover:text-white transition-colors">
               Features

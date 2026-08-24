@@ -8,7 +8,7 @@ import Link from "next/link";
 const NAV_LINKS = [
   { label: "Why Now", href: "#truth" },
   { label: "Project Scope", href: "/scope" },
-  { label: "Live Preview", href: "/coming-soon" },
+  { label: "(Coming Soon Page)", href: "/coming-soon" },
 ];
 
 const MARKETS = ["Tampa", "Wesley Chapel", "Land O' Lakes", "Lutz", "St. Petersburg", "Clearwater", "New Port Richey", "Sarasota"];
@@ -120,7 +120,7 @@ export default function Page() {
               See the Playbook <ArrowRight className="w-4 h-4" />
             </a>
             <Link href="/coming-soon" className="btn-ghost">
-              Live Preview
+              (Coming Soon Page)
             </Link>
           </div>
         </div>
