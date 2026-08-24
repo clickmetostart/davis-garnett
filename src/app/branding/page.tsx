@@ -438,9 +438,13 @@ export default function BrandingBook() {
               <div className="w-20 h-20 relative rounded-full overflow-hidden border-2 border-[#D4AF37]">
                 <Image src="/davis-garnett-real-combo.png" alt="Team" fill className="object-cover object-top" />
               </div>
-              <div className="text-center">
-                <h3 className="font-serif text-xl">Davis & Garnett</h3>
-                <p className="text-[#D4AF37] text-[0.65rem] uppercase tracking-widest mt-1">Commercial & Residential Advisors</p>
+              <div className="flex flex-col items-center w-full px-2 mt-1">
+                <div className="font-serif text-[1.3rem] tracking-widest flex items-center justify-center whitespace-nowrap text-[#F6E3B0]">
+                  DAVIS <span className="text-[#D4AF37] text-3xl mx-1.5 leading-[0] translate-y-[-1px]">&amp;</span> GARNETT
+                </div>
+                <div className="w-full h-[1px] bg-[#D4AF37] mt-3 mb-1.5 opacity-70" />
+                <p className="text-[#F6E3B0] text-[0.55rem] uppercase tracking-[0.2em] font-light font-['Montserrat',sans-serif] w-full text-center">Commercial &nbsp;&nbsp; Residential &nbsp;&nbsp; Advisors</p>
+                <div className="w-full h-[1px] bg-[#D4AF37] mt-1.5 mb-2 opacity-70" />
               </div>
 
               <div className="flex flex-col items-center gap-1.5 mt-2">
@@ -468,7 +472,7 @@ export default function BrandingBook() {
 
               {/* Compliance Logo */}
               <div className="w-full mt-4 pt-6 border-t border-white/5 flex justify-center">
-                <div className="relative w-24 h-5 opacity-30 hover:opacity-60 transition-opacity grayscale">
+                <div className="relative w-32 h-7 opacity-30 hover:opacity-60 transition-opacity grayscale">
                   <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
                 </div>
               </div>
@@ -494,7 +498,7 @@ export default function BrandingBook() {
               </div>
 
               <div className="w-full flex flex-col gap-2 mt-4">
-                {["Commercial Listings", "Investment Properties", "Book a Consultation", "Email Mark", "Call Mark"].map(l => (
+                {["Commercial Listings", "Residential Listings", "Book a Consultation", "Email Mark", "Call Mark"].map(l => (
                   <div key={l} className="w-full py-2.5 border border-white/10 bg-white/5 text-xs text-center tracking-widest uppercase text-white/80 rounded hover:bg-white/10 transition-colors cursor-pointer">{l}</div>
                 ))}
               </div>
@@ -508,7 +512,7 @@ export default function BrandingBook() {
 
               {/* Compliance Logo */}
               <div className="w-full mt-4 pt-6 border-t border-white/5 flex justify-center">
-                <div className="relative w-24 h-5 opacity-30 hover:opacity-60 transition-opacity grayscale">
+                <div className="relative w-32 h-7 opacity-30 hover:opacity-60 transition-opacity grayscale">
                   <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
                 </div>
               </div>
@@ -534,7 +538,7 @@ export default function BrandingBook() {
               </div>
 
               <div className="w-full flex flex-col gap-2 mt-4">
-                {["Residential Listings", "Neighborhoods", "Book a Showing", "Email Rachael", "Call Rachael"].map(l => (
+                {["Residential Listings", "Commercial Listings", "Book a Consultation", "Email Rachael", "Call Rachael"].map(l => (
                   <div key={l} className="w-full py-2.5 border border-white/10 bg-white/5 text-xs text-center tracking-widest uppercase text-white/80 rounded hover:bg-white/10 transition-colors cursor-pointer">{l}</div>
                 ))}
               </div>
@@ -549,7 +553,7 @@ export default function BrandingBook() {
 
               {/* Compliance Logo */}
               <div className="w-full mt-4 pt-6 border-t border-white/5 flex justify-center">
-                <div className="relative w-24 h-5 opacity-30 hover:opacity-60 transition-opacity grayscale">
+                <div className="relative w-32 h-7 opacity-30 hover:opacity-60 transition-opacity grayscale">
                   <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
                 </div>
               </div>
