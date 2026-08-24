@@ -578,7 +578,7 @@ export default function BrandingBook() {
               </p>
               <div className="w-full aspect-[21/9] bg-[#050505] rounded-xl border border-white/10 relative overflow-hidden flex items-center justify-center group">
                 <div className="absolute inset-0 opacity-80 transition-opacity group-hover:opacity-100">
-                  <Image src="/team-commercial-youtube-banner.png" alt="Team Commercial" fill className="object-cover object-[center_15%]" />
+                  <Image src="/team-commercial-youtube-banner-3.png" alt="Team Commercial" fill className="object-cover object-top" />
                 </div>
                 {/* Subtle gradient so the logo is readable, but the sunset shines through */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/60 via-[#050505]/20 to-transparent" />
