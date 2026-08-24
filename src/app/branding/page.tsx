@@ -134,7 +134,7 @@ export default function BrandingBook() {
       <nav className="fixed top-0 w-full z-50 bg-black/40 backdrop-blur-xl border-b border-white/5">
         <div className="max-w-screen-xl mx-auto px-8 h-20 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 text-xs text-[#a0a0a0] hover:text-[#D4AF37] transition-colors uppercase tracking-widest">
-            <ArrowLeft className="w-4 h-4" /> Back to Proposal
+            <ArrowLeft className="w-4 h-4" /> Back to Main Page
           </Link>
           <div className="flex items-center gap-6">
             <Link href="/mark" className="hidden md:block label-caps text-white/50 hover:text-white transition-colors text-[0.6rem]">Mark's Page</Link>
@@ -697,9 +697,7 @@ export default function BrandingBook() {
 
       </main>
 
-      <footer className="py-12 text-center border-t border-white/5 mt-24">
-        <p className="text-white/30 text-xs tracking-widest uppercase">Brand System by ClickMe</p>
-      </footer>
+
     </div>
   );
 }

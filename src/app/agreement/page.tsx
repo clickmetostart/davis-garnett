@@ -116,7 +116,6 @@ export default function AgreementPage() {
           <Link href="/" className="font-serif text-xl font-bold tracking-tight text-white hover:text-[#D4AF37] transition-colors">
             Davis & Garnett
           </Link>
-          <span className="label-caps text-[0.6rem] tracking-[0.2em] text-[#555]">Powered by ClickMe</span>
         </div>
       </nav>
 

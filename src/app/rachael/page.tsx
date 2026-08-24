@@ -14,7 +14,7 @@ const LINKS = [
   { label: "First-Time Buyer Guide", href: "/garnett#buyers", icon: Users },
   { label: "Schedule a Showing", href: "mailto:rachaellgarnett@gmail.com", icon: Star },
   { label: "Meet Mark Davis", href: "/mark", icon: ArrowRight },
-  { label: "Davis & Garnett Proposal", href: "/", icon: ArrowRight },
+  { label: "Davis & Garnett Main Page", href: "/", icon: ArrowRight },
 ];
 
 export default function RachaelLinktree() {
@@ -90,7 +90,6 @@ export default function RachaelLinktree() {
           <div className="relative w-[120px] h-[40px] opacity-50">
             <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
           </div>
-          <p className="text-white/20 text-[0.6rem] uppercase tracking-widest">Powered by ClickMe</p>
         </div>
 
       </div>

@@ -49,8 +49,6 @@ export default function Page() {
             <span className="font-serif text-xl font-bold tracking-tight text-white drop-shadow-md">
               Davis & Garnett
             </span>
-            <span className="w-px h-5 bg-white/20 block"></span>
-            <span className="label-caps text-[0.6rem] text-white/50 mt-0.5">Powered by ClickMe</span>
           </div>
           <div className="hidden lg:flex items-center gap-6">
             {NAV_LINKS.map((l) => (
@@ -574,23 +572,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ── FOOTER ───────────────────────────────────────── */}
-      <footer className="relative px-8 py-12 bg-black border-t border-white/5">
-        <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <span className="font-serif text-xl font-bold tracking-widest text-white/30 uppercase">
-              Davis & Garnett
-            </span>
-            <p className="text-xs font-medium text-white/30 mt-2 tracking-widest uppercase">
-              Align Right Realty Carrollwood
-            </p>
-          </div>
-          <div className="flex flex-col md:flex-row items-center gap-3 md:gap-6">
-            <a href="mailto:msdavis118@gmail.com" className="text-xs font-semibold text-white/50 hover:text-white transition-colors tracking-widest uppercase">msdavis118@gmail.com</a>
-            <a href="mailto:rachaellgarnett@gmail.com" className="text-xs font-semibold text-white/50 hover:text-white transition-colors tracking-widest uppercase">rachaellgarnett@gmail.com</a>
-          </div>
-        </div>
-      </footer>
+
 
     </div>
   );

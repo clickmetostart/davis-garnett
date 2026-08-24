@@ -28,12 +28,10 @@ export default function ScopePage() {
             <span className="font-serif text-xl font-bold tracking-tight text-white drop-shadow-md">
               Davis & Garnett
             </span>
-            <span className="w-px h-5 bg-white/20 block"></span>
-            <span className="label-caps text-[0.6rem] text-white/50 mt-0.5">Powered by ClickMe</span>
           </div>
           <div className="hidden lg:flex items-center gap-10">
             <Link href="/" className="label-caps text-white/60 hover:text-white transition-colors">
-              Return to Proposal
+              Return to Main Page
             </Link>
             <Link href="/scope" className="label-caps text-white/60 hover:text-white transition-colors">
               Scope
@@ -400,7 +398,7 @@ export default function ScopePage() {
               View Investment Options <ArrowRight className="w-4 h-4" />
             </Link>
             <Link href="/" className="btn-ghost">
-              Return to Proposal
+              Return to Main Page
             </Link>
           </div>
 

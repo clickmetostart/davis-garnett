@@ -29,12 +29,10 @@ export default function ClickMePage() {
             <span className="font-serif text-xl font-bold tracking-tight text-white drop-shadow-md">
               Davis & Garnett
             </span>
-            <span className="w-px h-5 bg-white/20 block"></span>
-            <span className="label-caps text-[0.6rem] text-white/50 mt-0.5">Powered by ClickMe</span>
           </div>
           <div className="hidden lg:flex items-center gap-10">
             <Link href="/" className="label-caps text-white/60 hover:text-white transition-colors">
-              ← Back to Proposal
+              ← Back to Main Page
             </Link>
             <Link href="/features" className="label-caps text-white/60 hover:text-white transition-colors">
               Features
@@ -206,7 +204,7 @@ export default function ClickMePage() {
               See The Investment <ArrowRight className="w-4 h-4" />
             </Link>
             <Link href="/" className="btn-ghost">
-              Back to Proposal
+              Back to Main Page
             </Link>
           </div>
         </div>

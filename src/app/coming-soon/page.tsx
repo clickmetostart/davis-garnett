@@ -33,9 +33,8 @@ export default function ComingSoon() {
       <nav className="w-full z-50 bg-transparent absolute top-0">
         <div className="max-w-screen-xl mx-auto px-8 h-24 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2 text-xs text-[#a0a0a0] hover:text-[#D4AF37] transition-colors uppercase tracking-widest">
-            <ArrowLeft className="w-4 h-4" /> Back to Proposal
+            <ArrowLeft className="w-4 h-4" /> Back to Main Page
           </a>
-          <span className="label-caps text-[0.6rem] tracking-[0.2em] text-[#555]">Powered by ClickMe</span>
         </div>
       </nav>
 

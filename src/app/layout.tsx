@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit, DM_Sans } from "next/font/google";
 import AmbientBackground from "@/components/AmbientBackground";
+import GlobalFooter from "@/components/GlobalFooter";
 import "./globals.css";
 
 // Modern, sleek geometric sans-serif for the proposal display/heading text
@@ -37,6 +38,7 @@ export default function RootLayout({
         <main className="w-full relative flex flex-col min-h-screen">
           {children}
         </main>
+        <GlobalFooter />
       </body>
     </html>
   );
