@@ -578,7 +578,7 @@ export default function BrandingBook() {
               </p>
               <div className="w-full aspect-[21/9] bg-[#050505] rounded-xl border border-white/10 relative overflow-hidden flex items-center justify-center group">
                 <div className="absolute inset-0 opacity-80 transition-opacity group-hover:opacity-100">
-                  <Image src="/davis-garnett-coming-soon-2.jfif" alt="Team Commercial" fill className="object-cover object-top" />
+                  <Image src="/davis-garnett-coming-soon-2.jfif" alt="Team Commercial" fill className="object-cover object-[center_25%]" />
                 </div>
                 {/* Subtle gradient so the logo is readable, but the sunset shines through */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/60 via-[#050505]/20 to-transparent" />
@@ -684,7 +684,7 @@ export default function BrandingBook() {
                 "/social-post-examples/rachael-garnett.webp",
                 "/social-post-examples/davis-garnett-real-estate-advisors-cover-image.webp",
                 "/social-post-examples/mark-davis-profile-image.webp",
-                "/social-post-examples/davis-garnett-coming-soon.png"
+                "/social-post-examples/davis-garnett-coming-soon-2.jfif"
               ].map((src, i) => (
                 <div key={i} className="aspect-square relative overflow-hidden group">
                   <Image src={src} alt="Feed" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
