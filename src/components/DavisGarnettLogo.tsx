@@ -99,14 +99,16 @@ export default function DavisGarnettLogo({
         strokeWidth="2.5"
       />
 
-      {/* COMMERCIAL RESIDENTIAL ADVISORS — perfectly justified */}
+      {/* COMMERCIAL RESIDENTIAL ADVISORS — perfectly justified and vertically centered */}
       <text
         x="725"
-        y="205"
+        y="211"
         fontFamily="'Montserrat', 'Helvetica Neue', sans-serif"
         fontSize="24"
         fontWeight="400"
         fill={textColor}
+        stroke={!isDark ? textColor : "none"}
+        strokeWidth={!isDark ? "0.5" : "0"}
         textAnchor="middle"
         textLength="850"
         lengthAdjust="spacing"
@@ -188,5 +190,6 @@ export function DavisGarnettMark({
     </svg>
   );
 }
+
 
 
