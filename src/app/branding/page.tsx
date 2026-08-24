@@ -3,7 +3,7 @@ import Image from "next/image";
 import DavisGarnettLogo, { DavisGarnettMark } from "@/components/DavisGarnettLogo";
 import {
   ArrowLeft, Palette, Type, Smartphone, ShieldCheck,
-  PrinterIcon, Layers, Globe, CheckCircle2, ArrowRight, Sparkles, Tag
+  PrinterIcon, Layers, Globe, CheckCircle2, ArrowRight, Sparkles, Tag, Mail
 } from "lucide-react";
 
 const PHYSICAL_ASSETS = [
@@ -441,10 +441,26 @@ export default function BrandingBook() {
                 <h3 className="font-serif text-xl">Davis & Garnett</h3>
                 <p className="text-[#D4AF37] text-xs uppercase tracking-widest mt-1">Align Right Realty</p>
               </div>
-              <div className="w-full flex flex-col gap-2 mt-2">
+
+              <div className="flex flex-col items-center gap-1.5 mt-2">
+                <div className="flex items-center gap-2 text-xs text-white/70">
+                  <Smartphone className="w-3.5 h-3.5 text-[#D4AF37]" /> <span>(813) 555-0192</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-white/70">
+                  <Mail className="w-3.5 h-3.5 text-[#D4AF37]" /> <span>team@davisgarnett.com</span>
+                </div>
+              </div>
+
+              <div className="w-full flex flex-col gap-2 mt-4">
                 {["Our Listings", "Commercial", "Residential", "Meet Mark", "Meet Rachael", "Contact Us"].map(l => (
-                  <div key={l} className="w-full py-2.5 border border-white/10 bg-white/5 text-xs text-center tracking-widest uppercase text-white/80 rounded hover:bg-[#D4AF37]/20 transition-colors">{l}</div>
+                  <div key={l} className="w-full py-2.5 border border-white/10 bg-white/5 text-xs text-center tracking-widest uppercase text-white/80 rounded hover:bg-[#D4AF37]/20 transition-colors cursor-pointer">{l}</div>
                 ))}
+              </div>
+
+              <div className="flex items-center gap-5 mt-4 text-white/40">
+                <InstaIcon className="w-4 h-4 hover:text-[#D4AF37] transition-colors cursor-pointer" />
+                <FbIcon className="w-4 h-4 hover:text-[#D4AF37] transition-colors cursor-pointer" />
+                <LiIcon className="w-4 h-4 hover:text-[#D4AF37] transition-colors cursor-pointer" />
               </div>
             </div>
 
@@ -455,12 +471,27 @@ export default function BrandingBook() {
               </div>
               <div className="text-center">
                 <h3 className="font-serif text-xl">Mark Davis</h3>
-                <p className="text-white/50 text-xs uppercase tracking-widest mt-1">Broker Associate · Commercial</p>
+                <p className="text-white/50 text-xs uppercase tracking-widest mt-1">Broker Associate · Commercial & Residential</p>
               </div>
-              <div className="w-full flex flex-col gap-2 mt-2">
+
+              <div className="flex flex-col items-center gap-1.5 mt-2">
+                <div className="flex items-center gap-2 text-xs text-white/70">
+                  <Smartphone className="w-3.5 h-3.5 text-white/40" /> <span>(813) 555-0198</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-white/70">
+                  <Mail className="w-3.5 h-3.5 text-white/40" /> <span>mark@davisgarnett.com</span>
+                </div>
+              </div>
+
+              <div className="w-full flex flex-col gap-2 mt-4">
                 {["Commercial Listings", "Investment Properties", "Book a Consultation", "Email Mark", "Call Mark"].map(l => (
-                  <div key={l} className="w-full py-2.5 border border-white/10 bg-white/5 text-xs text-center tracking-widest uppercase text-white/80 rounded hover:bg-white/10 transition-colors">{l}</div>
+                  <div key={l} className="w-full py-2.5 border border-white/10 bg-white/5 text-xs text-center tracking-widest uppercase text-white/80 rounded hover:bg-white/10 transition-colors cursor-pointer">{l}</div>
                 ))}
+              </div>
+
+              <div className="flex items-center gap-5 mt-4 text-white/40">
+                <InstaIcon className="w-4 h-4 hover:text-white transition-colors cursor-pointer" />
+                <LiIcon className="w-4 h-4 hover:text-white transition-colors cursor-pointer" />
               </div>
             </div>
 
@@ -471,12 +502,28 @@ export default function BrandingBook() {
               </div>
               <div className="text-center">
                 <h3 className="font-serif text-xl">Rachael Garnett</h3>
-                <p className="text-white/50 text-xs uppercase tracking-widest mt-1">Real Estate Advisor · Residential</p>
+                <p className="text-white/50 text-xs uppercase tracking-widest mt-1">Real Estate Advisor · Residential & Commercial</p>
               </div>
-              <div className="w-full flex flex-col gap-2 mt-2">
+
+              <div className="flex flex-col items-center gap-1.5 mt-2">
+                <div className="flex items-center gap-2 text-xs text-white/70">
+                  <Smartphone className="w-3.5 h-3.5 text-white/40" /> <span>(813) 555-0199</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-white/70">
+                  <Mail className="w-3.5 h-3.5 text-white/40" /> <span>rachael@davisgarnett.com</span>
+                </div>
+              </div>
+
+              <div className="w-full flex flex-col gap-2 mt-4">
                 {["Residential Listings", "Neighborhoods", "Book a Showing", "Email Rachael", "Call Rachael"].map(l => (
-                  <div key={l} className="w-full py-2.5 border border-white/10 bg-white/5 text-xs text-center tracking-widest uppercase text-white/80 rounded hover:bg-white/10 transition-colors">{l}</div>
+                  <div key={l} className="w-full py-2.5 border border-white/10 bg-white/5 text-xs text-center tracking-widest uppercase text-white/80 rounded hover:bg-white/10 transition-colors cursor-pointer">{l}</div>
                 ))}
+              </div>
+
+              <div className="flex items-center gap-5 mt-4 text-white/40">
+                <InstaIcon className="w-4 h-4 hover:text-white transition-colors cursor-pointer" />
+                <FbIcon className="w-4 h-4 hover:text-white transition-colors cursor-pointer" />
+                <LiIcon className="w-4 h-4 hover:text-white transition-colors cursor-pointer" />
               </div>
             </div>
 
@@ -538,3 +585,14 @@ export default function BrandingBook() {
     </div>
   );
 }
+
+// Inline Social SVGs to guarantee build stability without lucide dependencies
+const InstaIcon = ({ className }: { className?: string }) => (
+  <svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+);
+const FbIcon = ({ className }: { className?: string }) => (
+  <svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+);
+const LiIcon = ({ className }: { className?: string }) => (
+  <svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+);
