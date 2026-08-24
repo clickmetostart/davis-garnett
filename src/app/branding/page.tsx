@@ -279,9 +279,9 @@ export default function BrandingBook() {
               <div className="glass-card p-10 flex flex-col gap-10 h-full">
                 <div>
                   <span className="text-[0.6rem] uppercase tracking-[0.3em] text-[#D4AF37] block mb-3">Serif — Headlines & Hero Text</span>
-                  <p className="font-serif text-5xl text-gradient-gold font-bold leading-none mb-2">Aa</p>
-                  <p className="font-serif text-lg text-white/70 font-bold">Playfair Display</p>
-                  <p className="font-serif text-sm text-white/40 italic mt-1">"The Tampa Standard."</p>
+                  <p className="font-aiveritas text-5xl text-gradient-gold font-bold leading-none mb-2">Aa</p>
+                  <p className="font-aiveritas text-lg text-white/70 font-bold">AIVeritas Roman</p>
+                  <p className="font-aiveritas text-sm text-white/40 italic mt-1">"The Tampa Standard."</p>
                 </div>
                 <div className="h-px bg-white/10" />
                 <div>
