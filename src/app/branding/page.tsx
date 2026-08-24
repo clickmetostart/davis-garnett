@@ -570,17 +570,17 @@ export default function BrandingBook() {
           </div>
 
           <div className="flex flex-col gap-8 mb-12">
-            {/* YouTube Banner */}
+            {/* Team Commercial Cover (YouTube) */}
             <div>
               <p className="text-xs uppercase tracking-widest text-white/40 mb-4 flex justify-between">
-                <span>YouTube Channel Art</span>
+                <span>Team Commercial Cover (YouTube)</span>
                 <span className="text-[#D4AF37]/50 lowercase hidden sm:inline">2560 x 1440</span>
               </p>
               <div className="w-full aspect-[21/9] bg-[#050505] rounded-xl border border-white/10 relative overflow-hidden flex items-center justify-center group">
-                <div className="absolute inset-0 opacity-40 mix-blend-luminosity transition-opacity group-hover:opacity-50">
-                  <Image src="/davis-garnett-hero.png" alt="Tampa" fill className="object-cover" />
+                <div className="absolute inset-0 opacity-40 transition-opacity group-hover:opacity-50">
+                  <Image src="/team-commercial-banner.png" alt="Team Commercial" fill className="object-cover" />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent" />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/90 via-transparent to-[#050505]/90" />
                 
                 <div className="relative z-10 w-[60%] max-w-[600px] flex items-center justify-center drop-shadow-2xl">
@@ -594,21 +594,71 @@ export default function BrandingBook() {
               </div>
             </div>
 
-            {/* Social Media Covers (Facebook & LinkedIn) */}
+            {/* Team Residential Cover (LinkedIn/Facebook) */}
             <div>
               <p className="text-xs uppercase tracking-widest text-white/40 mb-4 flex justify-between">
-                <span>Social Media Covers (Facebook & LinkedIn)</span>
+                <span>Team Residential Cover (Facebook / LinkedIn)</span>
                 <span className="text-[#D4AF37]/50 lowercase hidden sm:inline">1640 x 624</span>
               </p>
               <div className="w-full aspect-[16/6] bg-[#050505] rounded-xl border border-white/10 relative overflow-hidden flex items-center justify-center group">
-                <div className="absolute inset-0 opacity-40 mix-blend-luminosity transition-opacity group-hover:opacity-50">
-                  <Image src="/davis-garnett-listing-2.jpg" alt="Luxury Home" fill className="object-cover object-center" />
+                <div className="absolute inset-0 opacity-40 transition-opacity group-hover:opacity-50">
+                  <Image src="/team-residential-banner.png" alt="Team Residential" fill className="object-cover object-center" />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/80 via-[#050505]/40 to-transparent" />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/60 to-[#050505]" />
                 
                 <div className="relative z-10 w-[50%] max-w-[500px] flex items-center justify-center drop-shadow-2xl">
                   <DavisGarnettLogo variant="dark" className="w-full h-auto drop-shadow-2xl" />
+                </div>
+
+                {/* Compliance Logo - Bottom Right */}
+                <div className="absolute bottom-3 right-3 md:bottom-5 md:right-6 w-20 h-5 md:w-28 md:h-7 opacity-40 grayscale">
+                  <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
+                </div>
+              </div>
+            </div>
+
+            {/* Mark Individual Cover */}
+            <div>
+              <p className="text-xs uppercase tracking-widest text-white/40 mb-4 flex justify-between">
+                <span>Mark's Commercial Cover (Facebook / LinkedIn)</span>
+                <span className="text-[#D4AF37]/50 lowercase hidden sm:inline">1640 x 624</span>
+              </p>
+              <div className="w-full aspect-[16/6] bg-[#050505] rounded-xl border border-white/10 relative overflow-hidden flex items-center justify-center group">
+                <div className="absolute inset-0 opacity-60 transition-opacity group-hover:opacity-80">
+                  <Image src="/mark-commercial-banner.png" alt="Mark Commercial" fill className="object-cover object-left" />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-l from-[#050505] via-[#050505]/70 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/80 via-transparent to-transparent" />
+                
+                {/* Logo anchored to the right side where empty space is */}
+                <div className="absolute inset-y-0 right-8 md:right-16 w-1/2 flex items-center justify-end drop-shadow-2xl">
+                  <DavisGarnettLogo variant="dark" className="w-full max-w-[450px] h-auto drop-shadow-2xl" />
+                </div>
+
+                {/* Compliance Logo - Bottom Right */}
+                <div className="absolute bottom-3 right-3 md:bottom-5 md:right-6 w-20 h-5 md:w-28 md:h-7 opacity-40 grayscale">
+                  <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
+                </div>
+              </div>
+            </div>
+
+            {/* Rachael Individual Cover */}
+            <div>
+              <p className="text-xs uppercase tracking-widest text-white/40 mb-4 flex justify-between">
+                <span>Rachael's Residential Cover (Facebook / LinkedIn)</span>
+                <span className="text-[#D4AF37]/50 lowercase hidden sm:inline">1640 x 624</span>
+              </p>
+              <div className="w-full aspect-[16/6] bg-[#050505] rounded-xl border border-white/10 relative overflow-hidden flex items-center justify-center group">
+                <div className="absolute inset-0 opacity-60 transition-opacity group-hover:opacity-80">
+                  <Image src="/rachael-residential-banner.png" alt="Rachael Residential" fill className="object-cover object-left" />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-l from-[#050505] via-[#050505]/70 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/80 via-transparent to-transparent" />
+                
+                {/* Logo anchored to the right side where empty space is */}
+                <div className="absolute inset-y-0 right-8 md:right-16 w-1/2 flex items-center justify-end drop-shadow-2xl">
+                  <DavisGarnettLogo variant="dark" className="w-full max-w-[450px] h-auto drop-shadow-2xl" />
                 </div>
 
                 {/* Compliance Logo - Bottom Right */}
@@ -624,12 +674,12 @@ export default function BrandingBook() {
             <p className="text-xs uppercase tracking-widest text-white/40 mb-4">Social Feed — Aesthetic Grid</p>
             <div className="grid grid-cols-3 gap-2 rounded-xl overflow-hidden border border-white/10">
               {[
-                "/davis-garnett-listing-2.jpg",
+                "/mark-commercial-action.png",
                 "/davis-garnett-real-combo.png",
-                "/davis-garnett-listing-3.jpg",
+                "/rachael-residential-action.png",
                 "/mark-davis-headshot.png",
-                "/davis-garnett-listing-4.jpg",
-                "/rachael-garnett-headshot.png",
+                "/davis-garnett-listing-2.jpg",
+                "/rachael-garnett-headshot.png"
               ].map((src, i) => (
                 <div key={i} className="aspect-square relative overflow-hidden group">
                   <Image src={src} alt="Feed" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
