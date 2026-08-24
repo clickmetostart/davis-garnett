@@ -35,6 +35,9 @@ export default function ScopePage() {
             <Link href="/" className="label-caps text-white/60 hover:text-white transition-colors">
               Return to Proposal
             </Link>
+            <Link href="/scope" className="label-caps text-white/60 hover:text-white transition-colors">
+              Scope
+            </Link>
             <Link href="/coming-soon" className="label-caps text-white/60 hover:text-white transition-colors">
               (Coming Soon Page)
             </Link>
@@ -43,6 +46,9 @@ export default function ScopePage() {
             </Link>
             <Link href="/clickme" className="label-caps text-white/60 hover:text-white transition-colors">
               Dashboard Demo
+            </Link>
+            <Link href="/branding" className="label-caps text-white/60 hover:text-white transition-colors">
+              Branding
             </Link>
           </div>
         </div>
@@ -58,9 +64,21 @@ export default function ScopePage() {
             The Digital<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F6E3B0]">Masterplan.</span>
           </h1>
-          <p className="text-xl text-white/60 font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-white/60 font-light max-w-2xl mx-auto leading-relaxed mb-10">
             A complete breakdown of every phase, every deliverable, and every boundary of what we are building for Davis & Garnett.
           </p>
+          
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/branding" className="px-6 py-3 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium hover:bg-[#D4AF37]/20 transition-colors flex items-center gap-2">
+              Branding Identity <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link href="/coming-soon" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
+              Coming Soon Page <ArrowRight className="w-4 h-4" />
+            </Link>
+            <button disabled className="px-6 py-3 rounded-full bg-white/5 border border-white/5 text-white/30 text-sm font-medium cursor-not-allowed flex items-center gap-2">
+              Website Preview <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
         </div>
       </header>
 
