@@ -8,7 +8,8 @@ import Link from "next/link";
 const NAV_LINKS = [
   { label: "Why Now", href: "#truth" },
   { label: "Project Scope", href: "/scope" },
-  { label: "(Coming Soon Page)", href: "/coming-soon" },
+  { label: "Branding Hub", href: "/branding" },
+  { label: "Website Preview", href: "/preview-mockup" },
 ];
 
 const MARKETS = ["Tampa", "Wesley Chapel", "Land O' Lakes", "Lutz", "St. Petersburg", "Clearwater", "New Port Richey", "Sarasota"];
@@ -119,8 +120,8 @@ export default function Page() {
             <a href="#truth" className="btn-gold">
               See the Playbook <ArrowRight className="w-4 h-4" />
             </a>
-            <Link href="/coming-soon" className="btn-ghost">
-              (Coming Soon Page)
+            <Link href="/preview-mockup" className="btn-ghost">
+              View Website Preview
             </Link>
           </div>
         </div>
