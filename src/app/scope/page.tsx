@@ -1,4 +1,4 @@
-import { ArrowRight, ChevronRight, Server, Layout, Zap, Shield, CheckSquare } from "lucide-react";
+import { ArrowRight, ArrowDown, ArrowUp, ChevronRight, Server, Layout, Zap, Shield, CheckSquare } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -36,18 +36,21 @@ export default function ScopePage() {
             <Link href="/scope" className="label-caps text-white/60 hover:text-white transition-colors">
               Scope
             </Link>
-            <Link href="/coming-soon" className="label-caps text-white/60 hover:text-white transition-colors">
-              (Coming Soon Page)
-            </Link>
             <Link href="/features" className="label-caps text-white/60 hover:text-white transition-colors">
               Features
-            </Link>
-            <Link href="/clickme" className="label-caps text-white/60 hover:text-white transition-colors">
-              Dashboard Demo
             </Link>
             <Link href="/branding" className="label-caps text-white/60 hover:text-white transition-colors">
               Branding
             </Link>
+            <Link href="/clickme" className="label-caps text-white/60 hover:text-white transition-colors">
+              Dashboard Details
+            </Link>
+            <Link href="/coming-soon" className="label-caps text-white/60 hover:text-white transition-colors">
+              Coming Soon Preview
+            </Link>
+            <span className="label-caps text-white/30 cursor-not-allowed">
+              Website Preview
+            </span>
           </div>
         </div>
       </nav>
@@ -67,17 +70,23 @@ export default function ScopePage() {
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
+              <ArrowRight className="w-4 h-4 rotate-180" /> Return to Main Page
+            </Link>
             <Link href="#scope-details" className="px-6 py-3 rounded-full bg-[#D4AF37] text-black text-sm font-bold hover:bg-[#F6E3B0] transition-colors flex items-center gap-2">
-              View Scope <ArrowRight className="w-4 h-4" />
+              Scope <ArrowDown className="w-4 h-4" />
             </Link>
             <Link href="/features" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
-              Platform Features <ArrowRight className="w-4 h-4" />
+              Features <ArrowRight className="w-4 h-4" />
             </Link>
             <Link href="/branding" className="px-6 py-3 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium hover:bg-[#D4AF37]/20 transition-colors flex items-center gap-2">
-              Branding Identity <ArrowRight className="w-4 h-4" />
+              Branding <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link href="/clickme" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
+              Dashboard Details <ArrowRight className="w-4 h-4" />
             </Link>
             <Link href="/coming-soon" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
-              Coming Soon Page <ArrowRight className="w-4 h-4" />
+              Coming Soon Preview <ArrowRight className="w-4 h-4" />
             </Link>
             <button disabled className="px-6 py-3 rounded-full bg-white/5 border border-white/5 text-white/30 text-sm font-medium cursor-not-allowed flex items-center gap-2">
               Website Preview <ArrowRight className="w-4 h-4" />
@@ -406,17 +415,23 @@ export default function ScopePage() {
           
           <h3 className="text-white/40 label-caps mb-8 tracking-widest">Explore Further</h3>
           <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
+              <ArrowRight className="w-4 h-4 rotate-180" /> Return to Main Page
+            </Link>
             <Link href="#scope-details" className="px-6 py-3 rounded-full bg-[#D4AF37] text-black text-sm font-bold hover:bg-[#F6E3B0] transition-colors flex items-center gap-2">
-              View Scope <ArrowRight className="w-4 h-4 rotate-[-90deg]" />
+              Scope <ArrowUp className="w-4 h-4" />
             </Link>
             <Link href="/features" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
-              Platform Features <ArrowRight className="w-4 h-4" />
+              Features <ArrowRight className="w-4 h-4" />
             </Link>
             <Link href="/branding" className="px-6 py-3 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium hover:bg-[#D4AF37]/20 transition-colors flex items-center gap-2">
-              Branding Identity <ArrowRight className="w-4 h-4" />
+              Branding <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link href="/clickme" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
+              Dashboard Details <ArrowRight className="w-4 h-4" />
             </Link>
             <Link href="/coming-soon" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
-              Coming Soon Page <ArrowRight className="w-4 h-4" />
+              Coming Soon Preview <ArrowRight className="w-4 h-4" />
             </Link>
             <button disabled className="px-6 py-3 rounded-full bg-white/5 border border-white/5 text-white/30 text-sm font-medium cursor-not-allowed flex items-center gap-2">
               Website Preview <ArrowRight className="w-4 h-4" />
