@@ -39,7 +39,7 @@ export default function RachaelLinktree() {
         </div>
 
         <h1 className="font-serif text-3xl text-white mb-1">Rachael Garnett</h1>
-        <p className="text-white/50 text-sm mb-1">Real Estate Advisor · Residential</p>
+        <p className="text-white/50 text-sm mb-1">Real Estate Advisor · Residential & Commercial</p>
         <p className="text-white/30 text-xs uppercase tracking-widest mb-2">Align Right Realty Carrollwood</p>
 
         {/* Tampa Bay tag */}
@@ -79,7 +79,7 @@ export default function RachaelLinktree() {
         <div className="w-full max-w-md mb-12">
           <p className="text-xs uppercase tracking-widest text-white/30 text-center mb-4">Specialties</p>
           <div className="flex flex-wrap justify-center gap-2">
-            {["Buyer Representation", "Seller Strategy", "Relocation", "Luxury Homes", "First-Time Buyers", "Wesley Chapel", "South Tampa", "Lutz"].map(tag => (
+            {["Buyer Representation", "Seller Strategy", "Relocation", "Investment Properties", "Luxury Homes", "First-Time Buyers", "Tampa Bay"].map(tag => (
               <span key={tag} className="px-3 py-1 rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/5 text-[#D4AF37]/70 text-xs">{tag}</span>
             ))}
           </div>

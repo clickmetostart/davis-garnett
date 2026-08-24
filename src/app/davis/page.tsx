@@ -4,8 +4,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Mark Davis | Commercial Real Estate Advisor | Tampa Bay",
-  description: "Mark Davis specializes in commercial real estate across Tampa Bay, focusing on retail leasing, land acquisition, and industrial spaces.",
+  title: "Mark Davis | Real Estate Advisor | Tampa Bay",
+  description: "Mark Davis is a full-service real estate advisor at Align Right Realty Carrollwood, serving commercial and residential clients across Tampa Bay with deep investment, leasing, and residential expertise.",
   openGraph: {
     images: ["/mark-davis-headshot.png"],
   },
@@ -53,10 +53,10 @@ export default function DavisPage() {
           </div>
           <div>
             <div className="inline-flex items-center gap-3 mb-6 bg-[#D4AF37]/10 border border-[#D4AF37]/20 backdrop-blur-md px-5 py-2.5 rounded-full shadow-[inset_0_1px_0_rgba(212,175,55,0.2)]">
-              <span className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-[#D4AF37]">Commercial Authority — Tampa Bay</span>
+              <span className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-[#D4AF37]">Real Estate Advisor — Tampa Bay</span>
             </div>
             <h1 className="font-serif text-6xl lg:text-7xl font-bold text-white mb-4">Mark Davis</h1>
-            <p className="text-2xl text-white/70 font-light mb-6">Commercial Real Estate Advisor</p>
+            <p className="text-2xl text-white/70 font-light mb-6">Real Estate Advisor — Commercial & Residential</p>
             <ul className="flex flex-col gap-2 text-white/50 text-sm">
               <li>Align Right Realty Carrollwood</li>
               <li>Tampa Bay, FL</li>
@@ -71,23 +71,23 @@ export default function DavisPage() {
         <div className="max-w-screen-xl mx-auto grid lg:grid-cols-[1fr_1.5fr] gap-16">
           <div>
             <h2 className="display-md sticky top-32">
-              The Commercial<br />
-              Advisor Tampa Bay<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F6E3B0]">Businesses Trust.</span>
+              The Advisor Tampa Bay<br />
+              Business Owners &<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F6E3B0]">Homeowners Trust.</span>
             </h2>
           </div>
           <div className="flex flex-col gap-8 text-white/70 text-lg leading-relaxed font-light">
             <p>
-              Mark Davis has spent his career doing one thing exceptionally well — helping businesses, investors, and entrepreneurs find exactly the right commercial space to grow in Tampa Bay. Whether it's an industrial facility in Brandon, an office suite in Wesley Chapel, or a multi-unit investment property in South Tampa — Mark has closed it, and he knows every corner of the market that makes it happen.
+              Mark Davis is a full-service real estate advisor serving both commercial and residential clients across Tampa Bay. Whether it's an industrial facility in Brandon, a retail lease in Wesley Chapel, a multi-family investment acquisition, or a residential sale — Mark brings the same depth of market knowledge and transactional precision to every deal.
             </p>
             <p>
-              In an era where most commercial real estate advisors are still relying on cold calls and listing portals, Mark operates differently. His digital presence is built to make sure that when a business owner asks ChatGPT "who handles commercial real estate in Tampa Bay" or searches Perplexity for investment property advisors in the area — Mark's name, his expertise, and his track record are already in the answer.
+              His commercial background gives residential clients a distinct edge. When a homeowner also owns investment properties, or a business owner needs to secure both a commercial lease and a home in the same market, Mark handles it all in one place — with no handoffs, no silos, and no gaps.
             </p>
             <p>
-              Mark's approach is straightforward: understand exactly what a client's business needs, then find the space — or the investment — that positions them to win. No pressure. No wasted tours. Just deep market knowledge, honest guidance, and a relentless commitment to the outcome his clients actually need.
+              Mark's digital presence is engineered so that when someone asks ChatGPT or Perplexity about commercial real estate advisors in Tampa Bay, his name and his expertise are already the answer. His content engine leans heavily into commercial market intelligence — not because that's all he does, but because it's the lane that differentiates him from Rachael and avoids redundancy in their combined content strategy.
             </p>
             <p>
-              As one half of Davis & Garnett — Tampa Bay's premier commercial and residential advisory team — Mark brings commercial gravity that complements Rachael Garnett's residential expertise. Together they cover every corner of the Tampa Bay real estate market with an authority network no individual agent can match.
+              As one half of Davis & Garnett, Mark's commercial depth pairs with Rachael Garnett's residential expertise to give their team an authority footprint that no single agent — operating in one lane — can compete with.
             </p>
           </div>
         </div>
@@ -97,6 +97,7 @@ export default function DavisPage() {
       <section className="py-24 px-8 bg-white/[0.02] border-y border-white/5">
         <div className="max-w-screen-xl mx-auto">
           <h3 className="font-serif text-4xl text-white mb-16 text-center">Mark's Areas of Expertise</h3>
+          <p className="text-white/50 text-center max-w-2xl mx-auto -mt-10 mb-16 font-light text-sm">Mark serves both commercial and residential clients. His content engine focuses primarily on commercial and investment to differentiate from Rachael's residential-led output.</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             <div className="glass-card p-8 flex flex-col gap-4">
@@ -154,9 +155,9 @@ export default function DavisPage() {
       {/* ── MARKET AUTHORITY ─────────────────────────────── */}
       <section className="py-24 px-8">
         <div className="max-w-screen-xl mx-auto text-center">
-          <h3 className="font-serif text-4xl text-white mb-8">Mark's Commercial Territory.</h3>
+          <h3 className="font-serif text-4xl text-white mb-8">Mark's Territory.</h3>
           <p className="text-white/60 text-lg max-w-2xl mx-auto mb-12 font-light">
-            Mark works across the full Tampa Bay commercial market — with particular depth in:
+            Mark serves commercial and residential clients across the full Tampa Bay market — with particular depth in:
           </p>
           <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto mb-16">
             {["Tampa", "Wesley Chapel", "Land O' Lakes", "Lutz", "Brandon", "Riverview", "Plant City", "Lakeland", "St. Petersburg", "Clearwater", "New Port Richey", "Odessa", "Palm Harbor", "Sarasota", "Bradenton"].map(loc => (
@@ -209,9 +210,9 @@ export default function DavisPage() {
       {/* ── CTA ──────────────────────────────────────────── */}
       <section className="py-24 px-8 bg-black border-t border-white/5">
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-          <h3 className="font-serif text-4xl text-white mb-6">Ready to talk commercial real estate?</h3>
+          <h3 className="font-serif text-4xl text-white mb-6">Ready to make a move?</h3>
           <p className="text-white/60 text-lg mb-10 font-light max-w-xl">
-            Whether you're looking for commercial space, an investment property, or need a trusted advisor to navigate the Tampa Bay market — Mark is the call you make first.
+            Whether you need commercial space, an investment property, or residential guidance anywhere in Tampa Bay — Mark brings the full picture to every client conversation.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a href="mailto:msdavis118@gmail.com" className="btn-gold flex items-center gap-2">

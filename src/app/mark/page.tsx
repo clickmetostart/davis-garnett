@@ -38,7 +38,7 @@ export default function MarkLinktree() {
         </div>
 
         <h1 className="font-serif text-3xl text-white mb-1">Mark Davis</h1>
-        <p className="text-white/50 text-sm mb-1">Broker Associate · Commercial Real Estate</p>
+        <p className="text-white/50 text-sm mb-1">Broker Associate · Commercial & Residential</p>
         <p className="text-white/30 text-xs uppercase tracking-widest mb-2">Align Right Realty Carrollwood</p>
 
         {/* Tampa Bay tag */}
@@ -78,7 +78,7 @@ export default function MarkLinktree() {
         <div className="w-full max-w-md mb-12">
           <p className="text-xs uppercase tracking-widest text-white/30 text-center mb-4">Specialties</p>
           <div className="flex flex-wrap justify-center gap-2">
-            {["Commercial Leasing", "Investment Properties", "Business Relocations", "Industrial", "Retail Space", "Office Space", "Tampa Bay"].map(tag => (
+            {["Commercial Leasing", "Residential Sales", "Investment Properties", "Business Relocations", "Industrial", "Multi-Family", "Tampa Bay"].map(tag => (
               <span key={tag} className="px-3 py-1 rounded-full border border-white/10 text-white/50 text-xs">{tag}</span>
             ))}
           </div>

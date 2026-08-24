@@ -17,7 +17,7 @@ const FEATURES = [
   {
     number: "01",
     title: "The Power Combo",
-    body: "We are merging Mark's commercial and investment gravity with Rachael's residential finesse into a single dominant Tampa Bay brand. By combining forces under one digital domain, your traffic and authority scale twice as fast as your competitors.",
+    body: "Both Mark and Rachael are full-service advisors serving commercial and residential clients across Tampa Bay. By combining forces under one digital domain, their combined traffic, authority, and referral network scales twice as fast as any competitor operating solo.",
   },
   {
     number: "02",
@@ -32,7 +32,7 @@ const FEATURES = [
   {
     number: "04",
     title: "Dual Command Centers",
-    body: "No tripping over each other's leads. You each get your own dedicated ClickMe CRM dashboard. Mark tracks his commercial deal flow; Rachael manages her residential pipeline—unified seamlessly behind the scenes.",
+    body: "No tripping over each other's leads. You each get your own dedicated ClickMe CRM dashboard. Mark tracks his commercial-heavy deal flow and investment pipeline; Rachael manages her residential-focused leads — while both stay fully capable of working across either space.",
   },
 ];
 

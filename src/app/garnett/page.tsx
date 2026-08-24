@@ -4,8 +4,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Rachael Garnett | Residential Real Estate Advisor | Tampa Bay",
-  description: "Rachael Garnett provides premier residential real estate services across Tampa Bay, specializing in luxury homes, relocations, and buyer representation.",
+  title: "Rachael Garnett | Real Estate Advisor | Tampa Bay",
+  description: "Rachael Garnett is a full-service real estate advisor at Align Right Realty Carrollwood, serving residential and commercial clients across Tampa Bay with deep local market expertise.",
   openGraph: {
     images: ["/rachael-garnett-headshot.png"],
   },
@@ -53,10 +53,10 @@ export default function GarnettPage() {
           </div>
           <div>
             <div className="inline-flex items-center gap-3 mb-6 bg-[#D4AF37]/10 border border-[#D4AF37]/20 backdrop-blur-md px-5 py-2.5 rounded-full shadow-[inset_0_1px_0_rgba(212,175,55,0.2)]">
-              <span className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-[#D4AF37]">Residential Authority — Tampa Bay</span>
+              <span className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-[#D4AF37]">Real Estate Advisor — Tampa Bay</span>
             </div>
             <h1 className="font-serif text-6xl lg:text-7xl font-bold text-white mb-4">Rachael Garnett</h1>
-            <p className="text-2xl text-white/70 font-light mb-6">Residential Real Estate Advisor</p>
+            <p className="text-2xl text-white/70 font-light mb-6">Real Estate Advisor — Residential & Commercial</p>
             <ul className="flex flex-col gap-2 text-white/50 text-sm">
               <li>Align Right Realty Carrollwood</li>
               <li>Tampa Bay, FL</li>
@@ -71,23 +71,23 @@ export default function GarnettPage() {
         <div className="max-w-screen-xl mx-auto grid lg:grid-cols-[1fr_1.5fr] gap-16">
           <div>
             <h2 className="display-md sticky top-32">
-              The Residential Advisor<br />
-              Who Knows Tampa Bay<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F6E3B0]">Like It's Home.</span>
+              The Advisor Who Knows<br />
+              Tampa Bay Like<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F6E3B0]">It's Home.</span>
             </h2>
           </div>
           <div className="flex flex-col gap-8 text-white/70 text-lg leading-relaxed font-light">
             <p>
-              Rachael Garnett has built her real estate career on a simple truth — buying or selling a home is one of the most significant decisions a person makes, and they deserve an advisor who takes that seriously. With deep roots in the Tampa Bay residential market and an instinctive ability to match clients with the right home in the right neighborhood at the right time, Rachael doesn't just close transactions. She changes people's lives.
+              Rachael Garnett is a full-service real estate advisor serving both residential and commercial clients across Tampa Bay. From first-time buyers and luxury home sellers to investors and business owners looking for the right space — Rachael brings the same care, market expertise, and unwavering advocacy to every client relationship.
             </p>
             <p>
-              From first-time buyers navigating the process for the first time to experienced sellers who need a strategic partner to maximize their return — Rachael brings the same level of care, market knowledge, and honest guidance to every client she works with. Her deep familiarity with Tampa Bay neighborhoods, school districts, and community dynamics means she's not just selling houses. She's selling the right life for each client.
+              Her residential depth is her signature strength. Rachael has an instinctive ability to match clients with the right home in the right neighborhood at the right time — and her familiarity with Tampa Bay communities, school districts, and lifestyle dynamics means she's not just selling houses. She's placing people into the right chapter of their lives.
             </p>
             <p>
-              Rachael's digital presence is built to match her real-world reputation. When someone asks ChatGPT "who are the best residential real estate agents in Tampa Bay" or searches Perplexity for home buying advisors in Wesley Chapel or Lutz — Rachael's name, her expertise, and her track record are already in the answer. Her Active Content Engine™ builds authority across every AI search platform continuously — so new clients find her before they find anyone else.
+              Rachael's content engine leans heavily into residential neighborhood guides, buyer education, and lifestyle content — not because that's the only space she works in, but because it differentiates her output from Mark's and builds a broader, non-overlapping authority footprint for Davis & Garnett as a team.
             </p>
             <p>
-              As one half of Davis & Garnett — Tampa Bay's leading commercial and residential advisory team — Rachael brings residential depth and neighborhood expertise that perfectly complements Mark Davis's commercial authority. Together they serve every corner of the Tampa Bay real estate market with a combined credibility no single agent can compete with.
+              As one half of Davis & Garnett, Rachael's residential expertise pairs with Mark Davis's commercial depth to give their clients a single point of contact for every real estate need in Tampa Bay — a combined authority no individual agent can replicate.
             </p>
           </div>
         </div>
@@ -97,6 +97,7 @@ export default function GarnettPage() {
       <section className="py-24 px-8 bg-white/[0.02] border-y border-white/5">
         <div className="max-w-screen-xl mx-auto">
           <h3 className="font-serif text-4xl text-white mb-16 text-center">Rachael's Areas of Expertise</h3>
+          <p className="text-white/50 text-center max-w-2xl mx-auto -mt-10 mb-16 font-light text-sm">Rachael serves both residential and commercial clients. Her content engine focuses primarily on residential neighborhoods and lifestyle to differentiate from Mark's commercial-led output.</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             <div className="glass-card p-8 flex flex-col gap-4">
@@ -154,9 +155,9 @@ export default function GarnettPage() {
       {/* ── MARKET AUTHORITY ─────────────────────────────── */}
       <section className="py-24 px-8">
         <div className="max-w-screen-xl mx-auto text-center">
-          <h3 className="font-serif text-4xl text-white mb-8">Rachael's Residential Territory.</h3>
+          <h3 className="font-serif text-4xl text-white mb-8">Rachael's Territory.</h3>
           <p className="text-white/60 text-lg max-w-2xl mx-auto mb-12 font-light">
-            Rachael serves buyers and sellers across the full Tampa Bay residential market — with particular expertise in:
+            Rachael serves residential and commercial clients across the full Tampa Bay market — with particular expertise in:
           </p>
           <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto mb-16">
             {["Tampa", "Lutz", "Land O' Lakes", "Wesley Chapel", "New Tampa", "Carrollwood", "Odessa", "Palm Harbor", "St. Petersburg", "Clearwater", "Dunedin", "Safety Harbor", "Brandon", "Riverview", "Seminole", "South Tampa", "Westchase", "Citrus Park", "Valrico", "Lithia"].map(loc => (
@@ -209,9 +210,9 @@ export default function GarnettPage() {
       {/* ── CTA ──────────────────────────────────────────── */}
       <section className="py-24 px-8 bg-black border-t border-white/5">
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-          <h3 className="font-serif text-4xl text-white mb-6">Ready to find your Tampa Bay home?</h3>
+          <h3 className="font-serif text-4xl text-white mb-6">Ready to find your place in Tampa Bay?</h3>
           <p className="text-white/60 text-lg mb-10 font-light max-w-xl">
-            Whether you're buying, selling, or relocating to Tampa Bay — Rachael is the advisor who will make sure you get it right. Reach out directly and let's start the conversation.
+            Whether you're buying a home, selling a property, relocating, or exploring investment opportunities — Rachael brings the full picture to every client conversation.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a href="mailto:rachaellgarnett@gmail.com" className="btn-gold flex items-center gap-2">
