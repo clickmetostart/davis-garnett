@@ -70,9 +70,6 @@ export default function ScopePage() {
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
-              <ArrowRight className="w-4 h-4 rotate-180" /> Return to Main Page
-            </Link>
             <Link href="#scope-details" className="px-6 py-3 rounded-full bg-[#D4AF37] text-black text-sm font-bold hover:bg-[#F6E3B0] transition-colors flex items-center gap-2">
               Scope <ArrowDown className="w-4 h-4" />
             </Link>
@@ -415,9 +412,6 @@ export default function ScopePage() {
           
           <h3 className="text-white/40 label-caps mb-8 tracking-widest">Explore Further</h3>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
-              <ArrowRight className="w-4 h-4 rotate-180" /> Return to Main Page
-            </Link>
             <Link href="#scope-details" className="px-6 py-3 rounded-full bg-[#D4AF37] text-black text-sm font-bold hover:bg-[#F6E3B0] transition-colors flex items-center gap-2">
               Scope <ArrowUp className="w-4 h-4" />
             </Link>
