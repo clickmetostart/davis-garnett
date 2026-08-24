@@ -584,8 +584,9 @@ export default function BrandingBook() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/60 via-[#050505]/20 to-transparent" />
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(5,5,5,0.7)_0%,transparent_60%)]" />
                 
-                <div className="relative z-10 w-[60%] max-w-[600px] flex items-center justify-center drop-shadow-2xl">
-                  <DavisGarnettLogo variant="dark" className="w-full h-auto drop-shadow-2xl" />
+                {/* Logo anchored to bottom-center to avoid face overlap */}
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[55%] max-w-[550px] drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)] z-10">
+                  <DavisGarnettLogo variant="dark" className="w-full h-auto" />
                 </div>
 
                 {/* Compliance Logo - Bottom Right */}
