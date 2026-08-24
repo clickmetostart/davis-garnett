@@ -479,8 +479,8 @@ export default function BrandingBook() {
             </div>
 
             {/* Mark */}
-            <div className="glass-card p-8 flex flex-col items-center gap-4">
-              <div className="w-20 h-20 relative rounded-full overflow-hidden border-2 border-white/20">
+            <div className="glass-card p-8 flex flex-col items-center gap-4 border border-[#D4AF37]/20">
+              <div className="w-20 h-20 relative rounded-full overflow-hidden border-2 border-[#D4AF37]">
                 <Image src="/mark-davis-headshot.png" alt="Mark Davis" fill className="object-cover" />
               </div>
               <div className="text-center">
@@ -490,24 +490,24 @@ export default function BrandingBook() {
 
               <div className="flex flex-col items-center gap-1.5 mt-2">
                 <div className="flex items-center gap-2 text-xs text-white/70">
-                  <Smartphone className="w-3.5 h-3.5 text-white/40" /> <span>(813) 555-0198</span>
+                  <Smartphone className="w-3.5 h-3.5 text-[#D4AF37]" /> <span>(941) 737-4127</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs text-white/70">
-                  <Mail className="w-3.5 h-3.5 text-white/40" /> <span>mark@davisgarnett.com</span>
+                  <Mail className="w-3.5 h-3.5 text-[#D4AF37]" /> <span>mark@davisgarnett.com</span>
                 </div>
               </div>
 
               <div className="w-full flex flex-col gap-2 mt-4">
                 {["Commercial Listings", "Residential Listings", "Book a Consultation", "Email Mark", "Call Mark"].map(l => (
-                  <div key={l} className="w-full py-2.5 border border-white/10 bg-white/5 text-xs text-center tracking-widest uppercase text-white/80 rounded hover:bg-white/10 transition-colors cursor-pointer">{l}</div>
+                  <div key={l} className="w-full py-2.5 border border-white/10 bg-white/5 text-xs text-center tracking-widest uppercase text-white/80 rounded hover:bg-[#D4AF37]/20 transition-colors cursor-pointer">{l}</div>
                 ))}
               </div>
 
               <div className="flex items-center gap-5 mt-4 text-white/40">
-                <InstaIcon className="w-4 h-4 hover:text-white transition-colors cursor-pointer" />
-                <LiIcon className="w-4 h-4 hover:text-white transition-colors cursor-pointer" />
-                <MapPin className="w-4 h-4 hover:text-white transition-colors cursor-pointer" />
-                <Star className="w-4 h-4 hover:text-white transition-colors cursor-pointer" />
+                <InstaIcon className="w-4 h-4 hover:text-[#D4AF37] transition-colors cursor-pointer" />
+                <LiIcon className="w-4 h-4 hover:text-[#D4AF37] transition-colors cursor-pointer" />
+                <MapPin className="w-4 h-4 hover:text-[#D4AF37] transition-colors cursor-pointer" />
+                <Star className="w-4 h-4 hover:text-[#D4AF37] transition-colors cursor-pointer" />
               </div>
 
               {/* Compliance Logo */}
@@ -519,8 +519,8 @@ export default function BrandingBook() {
             </div>
 
             {/* Rachael */}
-            <div className="glass-card p-8 flex flex-col items-center gap-4">
-              <div className="w-20 h-20 relative rounded-full overflow-hidden border-2 border-white/20">
+            <div className="glass-card p-8 flex flex-col items-center gap-4 border border-[#D4AF37]/20">
+              <div className="w-20 h-20 relative rounded-full overflow-hidden border-2 border-[#D4AF37]">
                 <Image src="/rachael-garnett-headshot.png" alt="Rachael Garnett" fill className="object-cover" />
               </div>
               <div className="text-center">
@@ -530,25 +530,25 @@ export default function BrandingBook() {
 
               <div className="flex flex-col items-center gap-1.5 mt-2">
                 <div className="flex items-center gap-2 text-xs text-white/70">
-                  <Smartphone className="w-3.5 h-3.5 text-white/40" /> <span>(813) 555-0199</span>
+                  <Smartphone className="w-3.5 h-3.5 text-[#D4AF37]" /> <span>(727) 808-3344</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs text-white/70">
-                  <Mail className="w-3.5 h-3.5 text-white/40" /> <span>rachael@davisgarnett.com</span>
+                  <Mail className="w-3.5 h-3.5 text-[#D4AF37]" /> <span>rachael@davisgarnett.com</span>
                 </div>
               </div>
 
               <div className="w-full flex flex-col gap-2 mt-4">
                 {["Residential Listings", "Commercial Listings", "Book a Consultation", "Email Rachael", "Call Rachael"].map(l => (
-                  <div key={l} className="w-full py-2.5 border border-white/10 bg-white/5 text-xs text-center tracking-widest uppercase text-white/80 rounded hover:bg-white/10 transition-colors cursor-pointer">{l}</div>
+                  <div key={l} className="w-full py-2.5 border border-white/10 bg-white/5 text-xs text-center tracking-widest uppercase text-white/80 rounded hover:bg-[#D4AF37]/20 transition-colors cursor-pointer">{l}</div>
                 ))}
               </div>
 
               <div className="flex items-center gap-5 mt-4 text-white/40">
-                <InstaIcon className="w-4 h-4 hover:text-white transition-colors cursor-pointer" />
-                <FbIcon className="w-4 h-4 hover:text-white transition-colors cursor-pointer" />
-                <LiIcon className="w-4 h-4 hover:text-white transition-colors cursor-pointer" />
-                <MapPin className="w-4 h-4 hover:text-white transition-colors cursor-pointer" />
-                <Star className="w-4 h-4 hover:text-white transition-colors cursor-pointer" />
+                <InstaIcon className="w-4 h-4 hover:text-[#D4AF37] transition-colors cursor-pointer" />
+                <FbIcon className="w-4 h-4 hover:text-[#D4AF37] transition-colors cursor-pointer" />
+                <LiIcon className="w-4 h-4 hover:text-[#D4AF37] transition-colors cursor-pointer" />
+                <MapPin className="w-4 h-4 hover:text-[#D4AF37] transition-colors cursor-pointer" />
+                <Star className="w-4 h-4 hover:text-[#D4AF37] transition-colors cursor-pointer" />
               </div>
 
               {/* Compliance Logo */}
