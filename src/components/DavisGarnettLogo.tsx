@@ -38,8 +38,7 @@ export default function DavisGarnettLogo({
       aria-label="Davis & Garnett — Commercial Residential Advisors"
       role="img"
     >
-      {/* Background (transparent for usage on pages, solid for standalone files) */}
-      <rect width="100%" height="100%" fill={bg} />
+      {/* Background removed to ensure the logo is always transparent when overlaid on images */}
 
       {/* ── MONOGRAM MARK ── */}
       {/* Border box (Y spans from 45 to 255) */}
@@ -154,7 +153,7 @@ export function DavisGarnettMark({
       aria-label="Davis & Garnett Monogram Mark"
       role="img"
     >
-      <rect width="100%" height="100%" fill={bg} />
+      {/* Background removed to ensure transparency */}
 
       {/* Border box */}
       <rect
