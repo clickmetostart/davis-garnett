@@ -189,9 +189,9 @@ export default function PreviewMockup() {
                 opacity: initialTextOpacity 
               }}
             >
-              <h3 className="font-serif text-5xl text-white mb-4">Commercial</h3>
+              <h3 className="font-serif text-5xl text-white mb-4">Two Powerhouses</h3>
               <p className="text-white/50 text-sm font-light leading-relaxed max-w-xs mx-auto">
-                Strategic placements, high-yield acquisitions, and business growth.
+                Combining decades of award-winning expertise in Tampa Bay real estate.
               </p>
             </motion.div>
 
@@ -204,9 +204,9 @@ export default function PreviewMockup() {
                 opacity: initialTextOpacity 
               }}
             >
-              <h3 className="font-serif text-5xl text-white mb-4">Residential</h3>
+              <h3 className="font-serif text-5xl text-white mb-4">One Unified Force</h3>
               <p className="text-white/50 text-sm font-light leading-relaxed max-w-xs mx-auto">
-                Elevated neighborhood lifestyles and exceptional home experiences.
+                Unmatched strategic service across both commercial and residential markets.
               </p>
             </motion.div>
 
@@ -237,10 +237,10 @@ export default function PreviewMockup() {
                 <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold mb-4">Broker Associate</span>
                 <h2 className="font-serif text-5xl text-white mb-6">Mark Davis</h2>
                 <p className="text-white/70 text-center max-w-md font-light mb-10 leading-relaxed">
-                  Specializing in Tampa Bay commercial real estate, investment properties, and high-yield acquisitions. Driving business growth through strategic property placement.
+                  An award-winning powerhouse driving high-yield investments and exceptional real estate experiences across Tampa Bay's commercial and residential markets.
                 </p>
                 <button className="flex items-center gap-3 px-8 py-4 bg-white text-black text-xs font-bold uppercase tracking-widest hover:bg-[#D4AF37] transition-colors">
-                  View Commercial <ArrowRight className="w-4 h-4" />
+                  View Mark's Portfolio <ArrowRight className="w-4 h-4" />
                 </button>
               </motion.div>
             </motion.div>
@@ -272,10 +272,10 @@ export default function PreviewMockup() {
                 <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold mb-4">Real Estate Advisor</span>
                 <h2 className="font-serif text-5xl text-white mb-6">Rachael Garnett</h2>
                 <p className="text-white/70 text-center max-w-md font-light mb-10 leading-relaxed">
-                  Tampa Bay's premier residential specialist. Curating exceptional neighborhood lifestyles and elevating the home buying and selling experience.
+                  Delivering unparalleled luxury service. Curating exceptional lifestyles and executing elite residential and commercial transactions with precision.
                 </p>
                 <button className="flex items-center gap-3 px-8 py-4 bg-white text-black text-xs font-bold uppercase tracking-widest hover:bg-[#D4AF37] transition-colors">
-                  View Residential <ArrowRight className="w-4 h-4" />
+                  View Rachael's Portfolio <ArrowRight className="w-4 h-4" />
                 </button>
               </motion.div>
             </motion.div>
