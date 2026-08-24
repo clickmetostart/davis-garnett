@@ -69,6 +69,9 @@ export default function ScopePage() {
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
+            <Link href="#scope-details" className="px-6 py-3 rounded-full bg-[#D4AF37] text-black text-sm font-bold hover:bg-[#F6E3B0] transition-colors flex items-center gap-2">
+              View Scope <ArrowRight className="w-4 h-4" />
+            </Link>
             <Link href="/features" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
               Platform Features <ArrowRight className="w-4 h-4" />
             </Link>
@@ -86,7 +89,7 @@ export default function ScopePage() {
       </header>
 
       {/* ── SCOPE SECTIONS ───────────────────────────────── */}
-      <main className="py-24 px-8">
+      <main id="scope-details" className="py-24 px-8">
         <div className="max-w-screen-xl mx-auto flex flex-col gap-12">
           
           {/* Phase 1 / Core Foundation */}
