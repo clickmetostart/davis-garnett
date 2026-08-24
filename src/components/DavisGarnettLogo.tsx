@@ -53,8 +53,8 @@ export default function DavisGarnettLogo({
 
       {/* "D" — large, upper-left anchor */}
       <text
-        x="75"
-        y="180"
+        x="76"
+        y="186"
         fontFamily="'AIVeritas', serif"
         fontSize="150"
         fill={gold}
@@ -65,8 +65,8 @@ export default function DavisGarnettLogo({
 
       {/* "G" — overlapping, shifted right and down */}
       <text
-        x="120"
-        y="225"
+        x="122"
+        y="227"
         fontFamily="'AIVeritas', serif"
         fontSize="140"
         fill={gold}
