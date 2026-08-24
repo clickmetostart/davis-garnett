@@ -25,29 +25,31 @@ export default function PreviewMockup() {
 
   // --- SCROLL ANIMATIONS (DESKTOP) ---
 
-  // Phase 1 (0-0.33), Phase 2 (0.33-0.66), Phase 3 (0.66-1.0)
+  // Phase 1: United Team (Initial State - scroll 0)
+  // Phase 2: Individual Reveal (Scroll 0.05 -> 0.35)
+  // Phase 3: Choice Expansion (Scroll 0.6 -> 0.85)
   
   // Left Image (Mark)
-  const leftLeft = useTransform(scrollYProgress, [0, 0.33, 0.66, 1], ["50%", "50%", "17%", "25%"]);
-  const leftWidth = useTransform(scrollYProgress, [0, 0.33, 0.66, 1], ["30vw", "30vw", "30vw", "50vw"]);
-  const leftHeight = useTransform(scrollYProgress, [0, 0.33, 0.66, 1], ["75vh", "75vh", "75vh", "100vh"]);
-  const leftOpacity = useTransform(scrollYProgress, [0, 0.2, 0.33], [0, 0, 1]);
-  const leftZIndex = useTransform(scrollYProgress, [0, 0.66, 0.67], [0, 0, 20]);
+  const leftLeft = useTransform(scrollYProgress, [0, 0.05, 0.35, 0.6, 0.85, 1], ["50%", "50%", "17%", "17%", "25%", "25%"]);
+  const leftWidth = useTransform(scrollYProgress, [0, 0.05, 0.35, 0.6, 0.85, 1], ["30vw", "30vw", "30vw", "30vw", "50vw", "50vw"]);
+  const leftHeight = useTransform(scrollYProgress, [0, 0.05, 0.35, 0.6, 0.85, 1], ["75vh", "75vh", "75vh", "75vh", "100vh", "100vh"]);
+  const leftOpacity = useTransform(scrollYProgress, [0, 0.02], [0, 1]); // Fades in instantly behind the center image when scrolling starts
+  const leftZIndex = useTransform(scrollYProgress, [0, 0.59, 0.6], [0, 0, 20]);
 
   // Right Image (Rachael)
-  const rightLeft = useTransform(scrollYProgress, [0, 0.33, 0.66, 1], ["50%", "50%", "83%", "75%"]);
-  const rightWidth = useTransform(scrollYProgress, [0, 0.33, 0.66, 1], ["30vw", "30vw", "30vw", "50vw"]);
-  const rightHeight = useTransform(scrollYProgress, [0, 0.33, 0.66, 1], ["75vh", "75vh", "75vh", "100vh"]);
-  const rightOpacity = useTransform(scrollYProgress, [0, 0.2, 0.33], [0, 0, 1]);
-  const rightZIndex = useTransform(scrollYProgress, [0, 0.66, 0.67], [0, 0, 20]);
+  const rightLeft = useTransform(scrollYProgress, [0, 0.05, 0.35, 0.6, 0.85, 1], ["50%", "50%", "83%", "83%", "75%", "75%"]);
+  const rightWidth = useTransform(scrollYProgress, [0, 0.05, 0.35, 0.6, 0.85, 1], ["30vw", "30vw", "30vw", "30vw", "50vw", "50vw"]);
+  const rightHeight = useTransform(scrollYProgress, [0, 0.05, 0.35, 0.6, 0.85, 1], ["75vh", "75vh", "75vh", "75vh", "100vh", "100vh"]);
+  const rightOpacity = useTransform(scrollYProgress, [0, 0.02], [0, 1]);
+  const rightZIndex = useTransform(scrollYProgress, [0, 0.59, 0.6], [0, 0, 20]);
 
   // Center Image (Team)
-  const centerScale = useTransform(scrollYProgress, [0.66, 0.8], [1, 0.9]);
-  const centerOpacity = useTransform(scrollYProgress, [0.66, 0.8], [1, 0]);
+  const centerScale = useTransform(scrollYProgress, [0, 0.6, 0.75], [1, 1, 0.8]);
+  const centerOpacity = useTransform(scrollYProgress, [0, 0.6, 0.75], [1, 1, 0]);
 
   // Text Overlays
-  const textOpacity = useTransform(scrollYProgress, [0.85, 1], [0, 1]);
-  const textY = useTransform(scrollYProgress, [0.85, 1], [40, 0]);
+  const textOpacity = useTransform(scrollYProgress, [0.8, 0.9], [0, 1]);
+  const textY = useTransform(scrollYProgress, [0.8, 0.9], [40, 0]);
 
   return (
     <div className="min-h-screen text-white bg-[#050505] selection:bg-[#D4AF37] selection:text-black font-sans">
