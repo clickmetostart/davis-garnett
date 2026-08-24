@@ -77,7 +77,19 @@ export default function PreviewMockup() {
       </nav>
 
       {/* ── HERO SECTION ── */}
-      <section className="relative w-full h-screen flex items-center justify-center pt-16 bg-[#050505]">
+      <section className="relative w-full h-screen flex items-center justify-center pt-16 bg-[#050505] overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image 
+            src="/davis-garnett-hero.png" 
+            alt="Tampa Bay Skyline" 
+            fill 
+            className="object-cover opacity-60 scale-105"
+            priority
+          />
+          {/* Heavy gradient shadows so the text pops */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/60 to-transparent" />
+        </div>
         
         <div className="relative z-10 text-center px-8 flex flex-col items-center w-full max-w-4xl mx-auto">
           <DavisGarnettLogo variant="dark" className="w-[90%] md:w-[70%] max-w-[700px] mx-auto mb-16 drop-shadow-2xl" />
