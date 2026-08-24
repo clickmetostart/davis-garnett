@@ -279,15 +279,15 @@ export default function BrandingBook() {
               <div className="glass-card p-10 flex flex-col gap-10 h-full">
                 <div>
                   <span className="text-[0.6rem] uppercase tracking-[0.3em] text-[#D4AF37] block mb-3">Serif — Headlines & Hero Text</span>
-                  <p className="font-serif text-5xl text-white leading-none mb-2">Aa</p>
-                  <p className="font-serif text-lg text-white/70">Playfair Display</p>
-                  <p className="font-serif text-sm text-white/40 italic mt-1">"The New Standard For Tampa Bay."</p>
+                  <p className="font-serif text-5xl text-gradient-gold font-bold leading-none mb-2">Aa</p>
+                  <p className="font-serif text-lg text-white/70 font-bold">Playfair Display</p>
+                  <p className="font-serif text-sm text-white/40 italic mt-1">"The Tampa Standard."</p>
                 </div>
                 <div className="h-px bg-white/10" />
                 <div>
                   <span className="text-[0.6rem] uppercase tracking-[0.3em] text-[#D4AF37] block mb-3">Sans-Serif — Body & UI</span>
                   <p className="font-sans text-5xl text-white font-light leading-none mb-2">Aa</p>
-                  <p className="font-sans text-lg text-white/70 font-light">Inter</p>
+                  <p className="font-sans text-lg text-white/70 font-light">DM Sans</p>
                   <p className="font-sans text-sm text-white/40 font-light mt-1">Combining commercial authority with residential expertise.</p>
                 </div>
                 <div className="h-px bg-white/10" />
