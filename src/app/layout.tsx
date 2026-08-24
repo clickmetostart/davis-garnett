@@ -34,7 +34,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`${outfit.variable} ${dmSans.variable} antialiased bg-black text-white`}>
         <AmbientBackground />
-        <main className="w-full overflow-x-hidden relative flex flex-col min-h-screen">
+        <main className="w-full relative flex flex-col min-h-screen">
           {children}
         </main>
       </body>
