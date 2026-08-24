@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 
 export default function PreviewMockup() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -74,7 +75,9 @@ export default function PreviewMockup() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent" />
         </div>
         
-        <div className="relative z-10 text-center px-8 flex flex-col items-center">
+        <div className="relative z-10 text-center px-8 flex flex-col items-center w-full max-w-4xl mx-auto">
+          <DavisGarnettLogo variant="dark" className="w-[90%] md:w-[70%] max-w-[700px] mx-auto mb-12 drop-shadow-2xl" />
+          
           <div className="inline-flex items-center gap-3 mb-6 border border-white/10 bg-black/30 backdrop-blur-md px-6 py-2 rounded-full">
             <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] animate-pulse" />
             <span className="text-[0.6rem] font-bold tracking-[0.2em] uppercase text-white/80">Align Right Realty</span>
