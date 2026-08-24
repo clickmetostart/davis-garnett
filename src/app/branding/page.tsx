@@ -679,12 +679,12 @@ export default function BrandingBook() {
             </p>
             <div className="grid grid-cols-3 gap-2 rounded-xl overflow-hidden border border-white/10">
               {[
-                "/davis-garnett-real-combo.png",
-                "/mark-davis-headshot.png",
-                "/rachael-garnett.jpg",
-                "/davis-garnett-real-estate-advisors-sitting-down-together.png",
-                "/mark-davis-real-estate.jpg",
-                "/rachael-garnett-headshot.png"
+                "/social-post-examples/golf-networking.png",
+                "/social-post-examples/mark-commercial-action-2.jfif",
+                "/social-post-examples/rachael-garnett.webp",
+                "/social-post-examples/davis-garnett-real-estate-advisors-cover-image.webp",
+                "/social-post-examples/mark-davis-profile-image.webp",
+                "/social-post-examples/davis-garnett-coming-soon.png"
               ].map((src, i) => (
                 <div key={i} className="aspect-square relative overflow-hidden group">
                   <Image src={src} alt="Feed" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
