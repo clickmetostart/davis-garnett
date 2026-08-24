@@ -69,6 +69,9 @@ export default function ScopePage() {
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/features" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
+              Platform Features <ArrowRight className="w-4 h-4" />
+            </Link>
             <Link href="/branding" className="px-6 py-3 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium hover:bg-[#D4AF37]/20 transition-colors flex items-center gap-2">
               Branding Identity <ArrowRight className="w-4 h-4" />
             </Link>
