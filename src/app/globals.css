@@ -76,8 +76,8 @@ body {
   font-family: var(--font-serif), 'Outfit', sans-serif;
 }
 
-.font-playfair {
-  font-family: var(--font-playfair), 'Playfair Display', serif;
+.font-aiveritas {
+  font-family: 'AIVeritas', serif;
 }
 
 .font-sans {
