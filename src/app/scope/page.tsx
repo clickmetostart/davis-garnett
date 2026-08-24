@@ -403,6 +403,27 @@ export default function ScopePage() {
               Return to Proposal
             </Link>
           </div>
+
+          <div className="w-full max-w-2xl h-px bg-white/10 my-16" />
+          
+          <h3 className="text-white/40 label-caps mb-8 tracking-widest">Explore Further</h3>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="#scope-details" className="px-6 py-3 rounded-full bg-[#D4AF37] text-black text-sm font-bold hover:bg-[#F6E3B0] transition-colors flex items-center gap-2">
+              View Scope <ArrowRight className="w-4 h-4 rotate-[-90deg]" />
+            </Link>
+            <Link href="/features" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
+              Platform Features <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link href="/branding" className="px-6 py-3 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium hover:bg-[#D4AF37]/20 transition-colors flex items-center gap-2">
+              Branding Identity <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link href="/coming-soon" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
+              Coming Soon Page <ArrowRight className="w-4 h-4" />
+            </Link>
+            <button disabled className="px-6 py-3 rounded-full bg-white/5 border border-white/5 text-white/30 text-sm font-medium cursor-not-allowed flex items-center gap-2">
+              Website Preview <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
         </div>
       </section>
 
