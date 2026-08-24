@@ -107,6 +107,14 @@ body {
   color: transparent;
 }
 
+.text-gradient-gold {
+  background: linear-gradient(180deg, #F6E3B0 0%, #D4AF37 50%, #8B6914 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
 .label-caps {
   font-family: var(--font-sans), sans-serif;
   font-size: 0.7rem;

@@ -98,9 +98,9 @@ export default function PreviewMockup() {
         <div className="relative z-10 text-center px-8 flex flex-col items-center w-full max-w-4xl mx-auto">
           <DavisGarnettLogo variant="dark" className="w-[90%] md:w-[70%] max-w-[700px] mx-auto mb-16 drop-shadow-2xl" />
           
-          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl mb-6 font-light tracking-wide text-white">
+          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl mb-6 font-bold tracking-tight text-white">
             The Tampa <br/>
-            <span className="italic text-[#D4AF37]">Standard.</span>
+            <span className="text-gradient-gold">Standard.</span>
           </h1>
           <p className="text-lg md:text-xl text-white/70 font-light max-w-2xl leading-relaxed mb-10">
             A unified force in Tampa Bay real estate. Combining commercial gravity with unmatched residential finesse to deliver an elevated advisory experience.
@@ -113,6 +113,12 @@ export default function PreviewMockup() {
               Meet The Team
             </button>
           </div>
+        </div>
+
+        {/* Scroller Indicator */}
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-80 z-20">
+          <span className="text-[10px] tracking-[0.3em] uppercase font-bold text-gradient-gold">Scroll to Discover</span>
+          <div className="w-[2px] h-12 bg-gradient-to-b from-[#D4AF37] to-transparent animate-pulse" />
         </div>
       </section>
 
@@ -189,7 +195,7 @@ export default function PreviewMockup() {
                 opacity: initialTextOpacity 
               }}
             >
-              <h3 className="font-serif text-5xl text-white mb-4">Two Powerhouses</h3>
+              <h3 className="font-serif text-5xl font-bold text-gradient-gold mb-4">Two Powerhouses</h3>
               <p className="text-white/50 text-sm font-light leading-relaxed max-w-xs mx-auto">
                 Combining decades of award-winning expertise in Tampa Bay real estate.
               </p>
@@ -204,7 +210,7 @@ export default function PreviewMockup() {
                 opacity: initialTextOpacity 
               }}
             >
-              <h3 className="font-serif text-5xl text-white mb-4">One Unified Force</h3>
+              <h3 className="font-serif text-5xl font-bold text-gradient-gold mb-4">One Unified Force</h3>
               <p className="text-white/50 text-sm font-light leading-relaxed max-w-xs mx-auto">
                 Unmatched strategic service across both commercial and residential markets.
               </p>
@@ -234,7 +240,7 @@ export default function PreviewMockup() {
                 className="absolute inset-0 flex flex-col items-center justify-end pb-24 px-12 bg-gradient-to-t from-[#050505] via-[#050505]/50 to-transparent"
                 style={{ opacity: textOpacity, y: textY }}
               >
-                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold mb-4">Broker Associate</span>
+                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold mb-4">Real Estate Advisor</span>
                 <h2 className="font-serif text-5xl text-white mb-6">Mark Davis</h2>
                 <p className="text-white/70 text-center max-w-md font-light mb-10 leading-relaxed">
                   An award-winning powerhouse driving high-yield investments and exceptional real estate experiences across Tampa Bay's commercial and residential markets.
