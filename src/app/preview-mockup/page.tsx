@@ -52,13 +52,24 @@ export default function PreviewMockup() {
   return (
     <div className="min-h-screen text-white bg-[#050505] selection:bg-[#D4AF37] selection:text-black font-sans">
       
-      {/* ── MINIMAL PREVIEW NAV ── */}
-      <nav className="fixed top-0 w-full z-50 bg-black/40 backdrop-blur-md border-b border-white/5">
-        <div className="max-w-screen-xl mx-auto px-8 h-16 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 text-xs text-[#a0a0a0] hover:text-[#D4AF37] transition-colors uppercase tracking-widest">
-            <ArrowLeft className="w-4 h-4" /> Exit Preview
-          </Link>
-          <span className="label-caps text-[0.6rem] tracking-[0.2em] text-[#555]">Davis & Garnett - Home Preview</span>
+      {/* ── MINIMAL PREVIEW NAV (Admin/Client View) ── */}
+      <div className="fixed top-0 w-full z-[60] bg-[#D4AF37] text-black h-8 flex items-center justify-between px-8 text-[0.6rem] uppercase tracking-widest font-bold">
+        <Link href="/" className="flex items-center gap-2 hover:opacity-70 transition-opacity">
+          <ArrowLeft className="w-3 h-3" /> Exit Preview
+        </Link>
+        <span>Davis & Garnett — Live Site Preview</span>
+      </div>
+
+      {/* ── REAL WEBSITE NAVIGATION ── */}
+      <nav className="fixed top-8 w-full z-50 bg-black/40 backdrop-blur-md border-b border-white/5">
+        <div className="max-w-screen-xl mx-auto px-8 h-20 flex items-center justify-between">
+          <DavisGarnettLogo variant="dark" className="w-48 max-w-full" />
+          <div className="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest text-white/70">
+            <Link href="#" className="hover:text-[#D4AF37] transition-colors">Commercial</Link>
+            <Link href="#" className="hover:text-[#D4AF37] transition-colors">Residential</Link>
+            <Link href="#" className="hover:text-[#D4AF37] transition-colors">Portfolio</Link>
+            <Link href="#" className="text-white hover:text-[#D4AF37] transition-colors">Contact</Link>
+          </div>
         </div>
       </nav>
 
@@ -245,12 +256,86 @@ export default function PreviewMockup() {
         </section>
       )}
 
-      {/* ── FOOTER ── */}
-      <footer className="py-24 px-8 bg-[#050505] border-t border-white/5 text-center flex flex-col items-center justify-center">
-        <h2 className="font-serif text-3xl mb-8">Ready to Elevate?</h2>
-        <Link href="/" className="btn-gold">
-          Return to Proposal
-        </Link>
+      {/* ── THE DUAL ADVANTAGE (SERVICES GRID) ── */}
+      <section className="py-32 px-8 bg-[#050505]">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="text-center mb-20">
+            <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Unmatched Expertise</span>
+            <h2 className="font-serif text-4xl md:text-5xl text-white">The Dual Advantage</h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Commercial */}
+            <div className="group relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer">
+              <Image src="/mark-commercial-action.png" alt="Commercial" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent transition-opacity duration-500 group-hover:opacity-80" />
+              <div className="absolute inset-0 p-12 flex flex-col justify-end">
+                <h3 className="font-serif text-3xl text-white mb-3 drop-shadow-lg">Commercial Acquisitions</h3>
+                <p className="text-white/80 font-light max-w-sm mb-6 opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+                  Strategic property placement, multi-family investments, and high-yield commercial assets across Tampa Bay.
+                </p>
+                <div className="flex items-center gap-2 text-[#D4AF37] text-xs uppercase tracking-widest font-bold">
+                  Explore Commercial <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
+                </div>
+              </div>
+            </div>
+
+            {/* Residential */}
+            <div className="group relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer">
+              <Image src="/rachael-residential-action.png" alt="Residential" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent transition-opacity duration-500 group-hover:opacity-80" />
+              <div className="absolute inset-0 p-12 flex flex-col justify-end">
+                <h3 className="font-serif text-3xl text-white mb-3 drop-shadow-lg">Luxury Residential</h3>
+                <p className="text-white/80 font-light max-w-sm mb-6 opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+                  Curating exceptional neighborhood lifestyles and elevating the home buying and selling experience.
+                </p>
+                <div className="flex items-center gap-2 text-[#D4AF37] text-xs uppercase tracking-widest font-bold">
+                  Explore Residential <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── REAL WEBSITE FOOTER ── */}
+      <footer className="py-20 px-8 bg-black border-t border-white/5">
+        <div className="max-w-screen-xl mx-auto grid md:grid-cols-4 gap-12 mb-16">
+          <div className="md:col-span-2">
+            <DavisGarnettLogo variant="dark" className="w-64 max-w-full mb-8" />
+            <p className="text-white/50 font-light max-w-sm leading-relaxed mb-8">
+              Tampa Bay's premier real estate syndicate. Combining commercial gravity with unmatched residential finesse.
+            </p>
+            <div className="w-32 h-8 relative opacity-40 grayscale">
+              <Image src="/align-right-realty-logo.webp" alt="Align Right" fill className="object-contain object-left" />
+            </div>
+          </div>
+          <div>
+            <h4 className="text-white font-serif text-lg mb-6">Navigation</h4>
+            <ul className="flex flex-col gap-4 text-white/50 text-sm">
+              <li><Link href="#" className="hover:text-[#D4AF37]">Home</Link></li>
+              <li><Link href="#" className="hover:text-[#D4AF37]">Commercial</Link></li>
+              <li><Link href="#" className="hover:text-[#D4AF37]">Residential</Link></li>
+              <li><Link href="#" className="hover:text-[#D4AF37]">About The Team</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-white font-serif text-lg mb-6">Contact</h4>
+            <ul className="flex flex-col gap-4 text-white/50 text-sm">
+              <li>Mark Davis: (941) 737-4127</li>
+              <li>Rachael Garnett: (727) 808-3344</li>
+              <li>info@davisgarnett.com</li>
+              <li>Tampa Bay, FL</li>
+            </ul>
+          </div>
+        </div>
+        <div className="max-w-screen-xl mx-auto border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between text-[0.6rem] uppercase tracking-widest text-white/30">
+          <p>© {new Date().getFullYear()} Davis & Garnett. All Rights Reserved.</p>
+          <div className="flex gap-4 mt-4 md:mt-0">
+            <Link href="#" className="hover:text-white">Privacy Policy</Link>
+            <Link href="#" className="hover:text-white">Terms of Service</Link>
+          </div>
+        </div>
       </footer>
     </div>
   );
