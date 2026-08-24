@@ -607,8 +607,9 @@ export default function BrandingBook() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/80 via-[#050505]/40 to-transparent" />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/60 to-[#050505]" />
                 
-                <div className="relative z-10 w-[50%] max-w-[500px] flex items-center justify-center drop-shadow-2xl">
-                  <DavisGarnettLogo variant="dark" className="w-full h-auto drop-shadow-2xl" />
+                {/* Logo anchored to bottom-left to avoid shadow */}
+                <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8 w-[45%] max-w-[450px] drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+                  <DavisGarnettLogo variant="dark" className="w-full h-auto" />
                 </div>
 
                 {/* Compliance Logo - Bottom Right */}
@@ -674,11 +675,11 @@ export default function BrandingBook() {
             <p className="text-xs uppercase tracking-widest text-white/40 mb-4">Social Feed — Aesthetic Grid</p>
             <div className="grid grid-cols-3 gap-2 rounded-xl overflow-hidden border border-white/10">
               {[
-                "/mark-commercial-action.png",
                 "/davis-garnett-real-combo.png",
-                "/rachael-residential-action-2.jfif",
                 "/mark-davis-headshot.png",
-                "/davis-garnett-listing-2.jpg",
+                "/rachael-garnett.jpg",
+                "/davis-garnett-real-estate-advisors-sitting-down-together.png",
+                "/mark-davis-real-estate.jpg",
                 "/rachael-garnett-headshot.png"
               ].map((src, i) => (
                 <div key={i} className="aspect-square relative overflow-hidden group">
