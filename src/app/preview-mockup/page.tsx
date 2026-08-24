@@ -53,6 +53,9 @@ export default function PreviewMockup() {
   const textOpacity = useTransform(scrollYProgress, [0.5, 0.6, 1], [0, 1, 1]);
   const textY = useTransform(scrollYProgress, [0.5, 0.6, 1], [40, 0, 0]);
 
+  // Initial Side Text (Fades out as side images start sliding out)
+  const initialTextOpacity = useTransform(scrollYProgress, [0.1, 0.15], [1, 0]);
+
   return (
     <div className="min-h-screen text-white bg-[#050505] selection:bg-[#D4AF37] selection:text-black font-sans">
       
@@ -175,6 +178,36 @@ export default function PreviewMockup() {
                 <h3 className="font-serif text-3xl text-white drop-shadow-md mb-2">The Power Combo</h3>
                 <p className="text-[#D4AF37] text-xs uppercase tracking-widest">Tampa Bay Real Estate</p>
               </div>
+            </motion.div>
+
+            {/* Initial Text (Left) */}
+            <motion.div
+              className="absolute top-1/2 -translate-y-1/2 z-0 text-center w-[30vw]"
+              style={{ 
+                left: "17%", 
+                x: "-50%",
+                opacity: initialTextOpacity 
+              }}
+            >
+              <h3 className="font-serif text-5xl text-white mb-4">Commercial</h3>
+              <p className="text-white/50 text-sm font-light leading-relaxed max-w-xs mx-auto">
+                Strategic placements, high-yield acquisitions, and business growth.
+              </p>
+            </motion.div>
+
+            {/* Initial Text (Right) */}
+            <motion.div
+              className="absolute top-1/2 -translate-y-1/2 z-0 text-center w-[30vw]"
+              style={{ 
+                left: "83%", 
+                x: "-50%",
+                opacity: initialTextOpacity 
+              }}
+            >
+              <h3 className="font-serif text-5xl text-white mb-4">Residential</h3>
+              <p className="text-white/50 text-sm font-light leading-relaxed max-w-xs mx-auto">
+                Elevated neighborhood lifestyles and exceptional home experiences.
+              </p>
             </motion.div>
 
             {/* Left Image (Mark) */}
