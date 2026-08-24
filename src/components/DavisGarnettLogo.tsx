@@ -44,8 +44,8 @@ export default function DavisGarnettLogo({
       {/* ── MONOGRAM MARK ── */}
       {/* Border box */}
       <rect
-        x="40" y="40"
-        width="215" height="215"
+        x="40" y="45"
+        width="210" height="210"
         fill="none"
         stroke={boxBorder}
         strokeWidth="6"
@@ -53,10 +53,10 @@ export default function DavisGarnettLogo({
 
       {/* "D" — large, upper-left anchor */}
       <text
-        x="72"
-        y="195"
+        x="75"
+        y="180"
         fontFamily="'AIVeritas', serif"
-        fontSize="165"
+        fontSize="150"
         fill={gold}
         opacity="1"
       >
@@ -65,10 +65,10 @@ export default function DavisGarnettLogo({
 
       {/* "G" — overlapping, shifted right and down */}
       <text
-        x="115"
-        y="240"
+        x="120"
+        y="225"
         fontFamily="'AIVeritas', serif"
-        fontSize="155"
+        fontSize="140"
         fill={gold}
         fillOpacity="0.92"
       >
@@ -77,66 +77,47 @@ export default function DavisGarnettLogo({
 
       {/* ── WORDMARK ── */}
 
-      {/* DAVIS */}
+      {/* DAVIS & GARNETT — perfectly justified to match lines */}
       <text
-        x="295"
-        y="158"
+        x="725"
+        y="160"
         fontFamily="'AIVeritas', serif"
-        fontSize="88"
-        letterSpacing="5"
+        fontSize="95"
         fill={textColor}
+        textAnchor="middle"
+        textLength="850"
+        lengthAdjust="spacing"
       >
-        DAVIS
-      </text>
-
-      {/* & — gold, slightly smaller and raised */}
-      <text
-        x="608"
-        y="148"
-        fontFamily="'AIVeritas', serif"
-        fontSize="76"
-        fill={gold}
-      >
-        &amp;
-      </text>
-
-      {/* GARNETT */}
-      <text
-        x="680"
-        y="158"
-        fontFamily="'AIVeritas', serif"
-        fontSize="88"
-        letterSpacing="5"
-        fill={textColor}
-      >
-        GARNETT
+        DAVIS <tspan fill={gold} fontSize="130" dy="10">&amp;</tspan><tspan dy="-10"> GARNETT</tspan>
       </text>
 
       {/* Gold separator — top */}
       <line
-        x1="295" y1="178"
-        x2="1162" y2="178"
+        x1="300" y1="185"
+        x2="1150" y2="185"
         stroke={gold}
         strokeWidth="2.5"
       />
 
-      {/* COMMERCIAL RESIDENTIAL ADVISORS */}
+      {/* COMMERCIAL RESIDENTIAL ADVISORS — perfectly justified to match lines */}
       <text
-        x="295"
-        y="222"
+        x="725"
+        y="228"
         fontFamily="'Montserrat', 'Helvetica Neue', sans-serif"
-        fontSize="24"
+        fontSize="22"
         fontWeight="400"
-        letterSpacing="5"
         fill={textColor}
+        textAnchor="middle"
+        textLength="850"
+        lengthAdjust="spacing"
       >
-        COMMERCIAL  RESIDENTIAL  ADVISORS
+        COMMERCIAL   RESIDENTIAL   ADVISORS
       </text>
 
       {/* Gold separator — bottom */}
       <line
-        x1="295" y1="246"
-        x2="1162" y2="246"
+        x1="300" y1="248"
+        x2="1150" y2="248"
         stroke={gold}
         strokeWidth="2.5"
       />
@@ -175,8 +156,8 @@ export function DavisGarnettMark({
 
       {/* Border box */}
       <rect
-        x="10" y="10"
-        width="240" height="240"
+        x="15" y="15"
+        width="230" height="230"
         fill="none"
         stroke={boxBorder}
         strokeWidth="6"
@@ -184,10 +165,10 @@ export function DavisGarnettMark({
 
       {/* D */}
       <text
-        x="38"
-        y="200"
+        x="55"
+        y="170"
         fontFamily="'AIVeritas', serif"
-        fontSize="180"
+        fontSize="165"
         fill={gold}
       >
         D
@@ -195,10 +176,10 @@ export function DavisGarnettMark({
 
       {/* G — overlapping */}
       <text
-        x="90"
-        y="248"
+        x="105"
+        y="215"
         fontFamily="'AIVeritas', serif"
-        fontSize="170"
+        fontSize="155"
         fill={gold}
         fillOpacity="0.90"
       >
@@ -207,3 +188,4 @@ export function DavisGarnettMark({
     </svg>
   );
 }
+
