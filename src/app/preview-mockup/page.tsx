@@ -26,30 +26,28 @@ export default function PreviewMockup() {
   // --- SCROLL ANIMATIONS (DESKTOP) ---
 
   // Phase 1: United Team (Initial State - scroll 0)
-  // Phase 2: Slide Out & Center Fades (Scroll 0.05 -> 0.2)
-  // Phase 3: Hold separated cards (Scroll 0.2 -> 0.4)
-  // Phase 4: Choice Expansion (Scroll 0.4 -> 0.5)
-  // Phase 5: Text Fades In (Scroll 0.5 -> 0.6)
-  // Phase 6: Hold Fully Expanded (Scroll 0.6 -> 1.0) with next section overlap
+  // Phase 2: Move Out (Scroll 0.1 -> 0.2)
+  // Phase 3: Hold 3-columns (Scroll 0.2 -> 0.3)
+  // Phase 4: Come Over The Top & Expand (Scroll 0.3 -> 0.4)
+  // Phase 5: Text Fades In (Scroll 0.4 -> 0.5)
+  // Phase 6: Hold Fully Expanded (Scroll 0.5 -> 1.0) with next section overlap
   
   // Left Image (Mark)
-  const leftLeft = useTransform(scrollYProgress, [0, 0.05, 0.2, 0.4, 0.5, 1], ["50%", "50%", "25%", "25%", "25%", "25%"]);
-  const leftWidth = useTransform(scrollYProgress, [0, 0.05, 0.2, 0.4, 0.5, 1], ["25vw", "25vw", "25vw", "25vw", "50vw", "50vw"]);
-  const leftHeight = useTransform(scrollYProgress, [0, 0.05, 0.2, 0.4, 0.5, 1], ["75vh", "75vh", "75vh", "75vh", "100vh", "100vh"]);
-  const leftOpacity = useTransform(scrollYProgress, [0, 0.02], [0, 1]); 
-  const leftZIndex = useTransform(scrollYProgress, [0, 0.49, 0.5], [0, 0, 20]);
-  const borderRadius = useTransform(scrollYProgress, [0.4, 0.5], ["1rem", "0rem"]);
+  const leftLeft = useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.4, 1], ["50%", "50%", "17%", "17%", "25%", "25%"]);
+  const leftWidth = useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.4, 1], ["30vw", "30vw", "30vw", "30vw", "50vw", "50vw"]);
+  const leftHeight = useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.4, 1], ["75vh", "75vh", "75vh", "75vh", "100vh", "100vh"]);
+  const leftZIndex = useTransform(scrollYProgress, [0, 0.29, 0.3, 1], [0, 0, 20, 20]); // Switches to front just before expanding
+  const borderRadius = useTransform(scrollYProgress, [0.3, 0.4], ["1rem", "0rem"]);
 
   // Right Image (Rachael)
-  const rightLeft = useTransform(scrollYProgress, [0, 0.05, 0.2, 0.4, 0.5, 1], ["50%", "50%", "75%", "75%", "75%", "75%"]);
-  const rightWidth = useTransform(scrollYProgress, [0, 0.05, 0.2, 0.4, 0.5, 1], ["25vw", "25vw", "25vw", "25vw", "50vw", "50vw"]);
-  const rightHeight = useTransform(scrollYProgress, [0, 0.05, 0.2, 0.4, 0.5, 1], ["75vh", "75vh", "75vh", "75vh", "100vh", "100vh"]);
-  const rightOpacity = useTransform(scrollYProgress, [0, 0.02], [0, 1]);
-  const rightZIndex = useTransform(scrollYProgress, [0, 0.49, 0.5], [0, 0, 20]);
+  const rightLeft = useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.4, 1], ["50%", "50%", "83%", "83%", "75%", "75%"]);
+  const rightWidth = useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.4, 1], ["30vw", "30vw", "30vw", "30vw", "50vw", "50vw"]);
+  const rightHeight = useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.4, 1], ["75vh", "75vh", "75vh", "75vh", "100vh", "100vh"]);
+  const rightZIndex = useTransform(scrollYProgress, [0, 0.29, 0.3, 1], [0, 0, 20, 20]); // Switches to front just before expanding
 
   // Center Image (Team)
-  const centerScale = useTransform(scrollYProgress, [0, 0.05, 0.2], [1, 1, 0.9]);
-  const centerOpacity = useTransform(scrollYProgress, [0, 0.05, 0.2], [1, 1, 0]); // Fades out exactly as side images slide out
+  // No opacity fades! It just sits at z-index 10 and gets covered by the side images coming over the top.
+  const centerScale = useTransform(scrollYProgress, [0, 0.3, 0.4], [1, 1, 0.8]);
 
   // Text Overlays
   const textOpacity = useTransform(scrollYProgress, [0.5, 0.6], [0, 1]);
@@ -161,9 +159,8 @@ export default function PreviewMockup() {
             <motion.div 
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 rounded-2xl overflow-hidden shadow-2xl"
               style={{
-                width: "25vw",
+                width: "30vw",
                 height: "75vh",
-                opacity: centerOpacity,
                 scale: centerScale
               }}
             >
@@ -182,12 +179,11 @@ export default function PreviewMockup() {
 
             {/* Left Image (Mark) */}
             <motion.div 
-              className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden group cursor-pointer"
+              className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden group cursor-pointer shadow-2xl"
               style={{
                 left: leftLeft,
                 width: leftWidth,
                 height: leftHeight,
-                opacity: leftOpacity,
                 zIndex: leftZIndex,
                 borderRadius: borderRadius
               }}
@@ -218,12 +214,11 @@ export default function PreviewMockup() {
 
             {/* Right Image (Rachael) */}
             <motion.div 
-              className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden group cursor-pointer"
+              className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden group cursor-pointer shadow-2xl"
               style={{
                 left: rightLeft,
                 width: rightWidth,
                 height: rightHeight,
-                opacity: rightOpacity,
                 zIndex: rightZIndex,
                 borderRadius: borderRadius
               }}
