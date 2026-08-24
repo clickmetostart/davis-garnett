@@ -3,7 +3,8 @@ import Image from "next/image";
 import DavisGarnettLogo, { DavisGarnettMark } from "@/components/DavisGarnettLogo";
 import {
   ArrowLeft, Palette, Type, Smartphone, ShieldCheck,
-  PrinterIcon, Layers, Globe, CheckCircle2, ArrowRight, Sparkles, Tag, Mail
+  PrinterIcon, Layers, Globe, CheckCircle2, ArrowRight, Sparkles, Tag, Mail,
+  MapPin, Star
 } from "lucide-react";
 
 const PHYSICAL_ASSETS = [
@@ -461,6 +462,8 @@ export default function BrandingBook() {
                 <InstaIcon className="w-4 h-4 hover:text-[#D4AF37] transition-colors cursor-pointer" />
                 <FbIcon className="w-4 h-4 hover:text-[#D4AF37] transition-colors cursor-pointer" />
                 <LiIcon className="w-4 h-4 hover:text-[#D4AF37] transition-colors cursor-pointer" />
+                <MapPin className="w-4 h-4 hover:text-[#D4AF37] transition-colors cursor-pointer" />
+                <Star className="w-4 h-4 hover:text-[#D4AF37] transition-colors cursor-pointer" />
               </div>
             </div>
 
@@ -492,6 +495,8 @@ export default function BrandingBook() {
               <div className="flex items-center gap-5 mt-4 text-white/40">
                 <InstaIcon className="w-4 h-4 hover:text-white transition-colors cursor-pointer" />
                 <LiIcon className="w-4 h-4 hover:text-white transition-colors cursor-pointer" />
+                <MapPin className="w-4 h-4 hover:text-white transition-colors cursor-pointer" />
+                <Star className="w-4 h-4 hover:text-white transition-colors cursor-pointer" />
               </div>
             </div>
 
@@ -524,6 +529,8 @@ export default function BrandingBook() {
                 <InstaIcon className="w-4 h-4 hover:text-white transition-colors cursor-pointer" />
                 <FbIcon className="w-4 h-4 hover:text-white transition-colors cursor-pointer" />
                 <LiIcon className="w-4 h-4 hover:text-white transition-colors cursor-pointer" />
+                <MapPin className="w-4 h-4 hover:text-white transition-colors cursor-pointer" />
+                <Star className="w-4 h-4 hover:text-white transition-colors cursor-pointer" />
               </div>
             </div>
 
