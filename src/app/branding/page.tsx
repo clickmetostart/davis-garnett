@@ -440,7 +440,7 @@ export default function BrandingBook() {
               </div>
               <div className="text-center">
                 <h3 className="font-serif text-xl">Davis & Garnett</h3>
-                <p className="text-[#D4AF37] text-xs uppercase tracking-widest mt-1">Align Right Realty</p>
+                <p className="text-[#D4AF37] text-[0.65rem] uppercase tracking-widest mt-1">Commercial & Residential Advisors</p>
               </div>
 
               <div className="flex flex-col items-center gap-1.5 mt-2">
@@ -464,6 +464,13 @@ export default function BrandingBook() {
                 <LiIcon className="w-4 h-4 hover:text-[#D4AF37] transition-colors cursor-pointer" />
                 <MapPin className="w-4 h-4 hover:text-[#D4AF37] transition-colors cursor-pointer" />
                 <Star className="w-4 h-4 hover:text-[#D4AF37] transition-colors cursor-pointer" />
+              </div>
+
+              {/* Compliance Logo */}
+              <div className="w-full mt-4 pt-6 border-t border-white/5 flex justify-center">
+                <div className="relative w-24 h-5 opacity-30 hover:opacity-60 transition-opacity grayscale">
+                  <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
+                </div>
               </div>
             </div>
 
@@ -498,6 +505,13 @@ export default function BrandingBook() {
                 <MapPin className="w-4 h-4 hover:text-white transition-colors cursor-pointer" />
                 <Star className="w-4 h-4 hover:text-white transition-colors cursor-pointer" />
               </div>
+
+              {/* Compliance Logo */}
+              <div className="w-full mt-4 pt-6 border-t border-white/5 flex justify-center">
+                <div className="relative w-24 h-5 opacity-30 hover:opacity-60 transition-opacity grayscale">
+                  <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
+                </div>
+              </div>
             </div>
 
             {/* Rachael */}
@@ -531,6 +545,13 @@ export default function BrandingBook() {
                 <LiIcon className="w-4 h-4 hover:text-white transition-colors cursor-pointer" />
                 <MapPin className="w-4 h-4 hover:text-white transition-colors cursor-pointer" />
                 <Star className="w-4 h-4 hover:text-white transition-colors cursor-pointer" />
+              </div>
+
+              {/* Compliance Logo */}
+              <div className="w-full mt-4 pt-6 border-t border-white/5 flex justify-center">
+                <div className="relative w-24 h-5 opacity-30 hover:opacity-60 transition-opacity grayscale">
+                  <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
+                </div>
               </div>
             </div>
 
