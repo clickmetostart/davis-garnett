@@ -604,11 +604,11 @@ export default function BrandingBook() {
                 <div className="absolute inset-0 opacity-70 transition-opacity group-hover:opacity-100">
                   <Image src="/team-residential-banner-2.jfif" alt="Team Residential" fill className="object-cover object-center" />
                 </div>
-                {/* Subtle gradient focused only on the bottom left for logo readability */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#050505]/90 via-[#050505]/20 to-transparent" />
+                {/* Targeted radial shadow behind the logo to make it pop perfectly without darkening the image */}
+                <div className="absolute bottom-0 left-0 w-2/3 h-full bg-[radial-gradient(ellipse_at_bottom_left,rgba(5,5,5,0.95)_0%,rgba(5,5,5,0.4)_40%,transparent_70%)]" />
                 
-                {/* Logo anchored to bottom-left to avoid shadow */}
-                <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8 w-[45%] max-w-[450px] drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+                {/* Logo anchored to bottom-left */}
+                <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8 w-[45%] max-w-[450px] drop-shadow-[0_10px_30px_rgba(0,0,0,1)] drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]">
                   <DavisGarnettLogo variant="dark" className="w-full h-auto" />
                 </div>
 
