@@ -602,7 +602,7 @@ export default function BrandingBook() {
               </p>
               <div className="w-full aspect-[16/6] bg-[#050505] rounded-xl border border-white/10 relative overflow-hidden flex items-center justify-center group">
                 <div className="absolute inset-0 opacity-40 transition-opacity group-hover:opacity-50">
-                  <Image src="/team-residential-banner.png" alt="Team Residential" fill className="object-cover object-center" />
+                  <Image src="/team-residential-banner-2.jfif" alt="Team Residential" fill className="object-cover object-center" />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/80 via-[#050505]/40 to-transparent" />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/60 to-[#050505]" />
@@ -626,7 +626,7 @@ export default function BrandingBook() {
               </p>
               <div className="w-full aspect-[16/6] bg-[#050505] rounded-xl border border-white/10 relative overflow-hidden flex items-center justify-center group">
                 <div className="absolute inset-0 opacity-60 transition-opacity group-hover:opacity-80">
-                  <Image src="/mark-commercial-banner.png" alt="Mark Commercial" fill className="object-cover object-left" />
+                  <Image src="/mark-commerical-banner-1.jfif" alt="Mark Commercial" fill className="object-cover object-left" />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-l from-[#050505] via-[#050505]/70 to-transparent" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/80 via-transparent to-transparent" />
@@ -651,7 +651,7 @@ export default function BrandingBook() {
               </p>
               <div className="w-full aspect-[16/6] bg-[#050505] rounded-xl border border-white/10 relative overflow-hidden flex items-center justify-center group">
                 <div className="absolute inset-0 opacity-60 transition-opacity group-hover:opacity-80">
-                  <Image src="/rachael-residential-banner.png" alt="Rachael Residential" fill className="object-cover object-left" />
+                  <Image src="/rachael-banner-2.jfif" alt="Rachael Residential" fill className="object-cover object-left" />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-l from-[#050505] via-[#050505]/70 to-transparent" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/80 via-transparent to-transparent" />
@@ -676,7 +676,7 @@ export default function BrandingBook() {
               {[
                 "/mark-commercial-action.png",
                 "/davis-garnett-real-combo.png",
-                "/rachael-residential-action.png",
+                "/rachael-residential-action-2.jfif",
                 "/mark-davis-headshot.png",
                 "/davis-garnett-listing-2.jpg",
                 "/rachael-garnett-headshot.png"
