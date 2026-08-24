@@ -1,134 +1,253 @@
+"use client";
+
+import { useRef, useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Layout, Palette, Type, Image as ImageIcon, ChevronRight } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 
 export default function PreviewMockup() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // --- SCROLL ANIMATIONS (DESKTOP) ---
+
+  // Phase 1 (0-0.33), Phase 2 (0.33-0.66), Phase 3 (0.66-1.0)
+  
+  // Left Image (Mark)
+  const leftLeft = useTransform(scrollYProgress, [0, 0.33, 0.66, 1], ["50%", "50%", "17%", "25%"]);
+  const leftWidth = useTransform(scrollYProgress, [0, 0.33, 0.66, 1], ["30vw", "30vw", "30vw", "50vw"]);
+  const leftHeight = useTransform(scrollYProgress, [0, 0.33, 0.66, 1], ["75vh", "75vh", "75vh", "100vh"]);
+  const leftOpacity = useTransform(scrollYProgress, [0, 0.2, 0.33], [0, 0, 1]);
+  const leftZIndex = useTransform(scrollYProgress, [0, 0.66, 0.67], [0, 0, 20]);
+
+  // Right Image (Rachael)
+  const rightLeft = useTransform(scrollYProgress, [0, 0.33, 0.66, 1], ["50%", "50%", "83%", "75%"]);
+  const rightWidth = useTransform(scrollYProgress, [0, 0.33, 0.66, 1], ["30vw", "30vw", "30vw", "50vw"]);
+  const rightHeight = useTransform(scrollYProgress, [0, 0.33, 0.66, 1], ["75vh", "75vh", "75vh", "100vh"]);
+  const rightOpacity = useTransform(scrollYProgress, [0, 0.2, 0.33], [0, 0, 1]);
+  const rightZIndex = useTransform(scrollYProgress, [0, 0.66, 0.67], [0, 0, 20]);
+
+  // Center Image (Team)
+  const centerScale = useTransform(scrollYProgress, [0.66, 0.8], [1, 0.9]);
+  const centerOpacity = useTransform(scrollYProgress, [0.66, 0.8], [1, 0]);
+
+  // Text Overlays
+  const textOpacity = useTransform(scrollYProgress, [0.85, 1], [0, 1]);
+  const textY = useTransform(scrollYProgress, [0.85, 1], [40, 0]);
+
   return (
-    <div className="min-h-screen text-white relative selection:bg-[#D4AF37] selection:text-black font-sans bg-[#050505]">
-      {/* ── NAVIGATION ── */}
-      <nav className="fixed top-0 w-full z-50 bg-black/40 backdrop-blur-xl border-b border-white/5">
-        <div className="max-w-screen-xl mx-auto px-8 h-20 flex items-center justify-between">
+    <div className="min-h-screen text-white bg-[#050505] selection:bg-[#D4AF37] selection:text-black font-sans">
+      
+      {/* ── MINIMAL PREVIEW NAV ── */}
+      <nav className="fixed top-0 w-full z-50 bg-black/40 backdrop-blur-md border-b border-white/5">
+        <div className="max-w-screen-xl mx-auto px-8 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 text-xs text-[#a0a0a0] hover:text-[#D4AF37] transition-colors uppercase tracking-widest">
-            <ArrowLeft className="w-4 h-4" /> Back to Proposal
+            <ArrowLeft className="w-4 h-4" /> Exit Preview
           </Link>
-          <span className="label-caps text-[0.6rem] tracking-[0.2em] text-[#555]">Davis & Garnett Mockup</span>
+          <span className="label-caps text-[0.6rem] tracking-[0.2em] text-[#555]">Davis & Garnett - Home Preview</span>
         </div>
       </nav>
 
-      {/* ── HEADER ── */}
-      <header className="relative pt-40 pb-20 px-8">
-        <div className="max-w-screen-xl mx-auto text-center">
-          <div className="inline-flex items-center gap-3 mb-8 bg-[#D4AF37]/10 border border-[#D4AF37]/20 backdrop-blur-md px-5 py-2.5 rounded-full">
-            <span className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-[#D4AF37]">Initial Direction</span>
-          </div>
-          <h1 className="font-serif text-5xl lg:text-7xl mb-8 font-light tracking-wide">
-            Design <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F6E3B0]">Inspiration.</span>
-          </h1>
-          <p className="text-xl text-white/60 font-light max-w-2xl mx-auto leading-relaxed">
-            A sneak peek into the visual aesthetic, typography, and mood we are exploring for the Davis & Garnett unified digital platform.
-          </p>
+      {/* ── HERO SECTION ── */}
+      <section className="relative w-full h-screen flex items-center justify-center overflow-hidden pt-16">
+        <div className="absolute inset-0 z-0">
+          <Image 
+            src="/davis-garnett-hero.png" 
+            alt="Tampa Bay Real Estate" 
+            fill 
+            className="object-cover opacity-40 scale-105"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent" />
         </div>
-      </header>
-
-      {/* ── CONTENT ── */}
-      <main className="py-12 px-8 max-w-screen-xl mx-auto flex flex-col gap-24">
         
-        {/* Mood Board & Colors */}
-        <section>
-          <div className="flex items-center gap-3 mb-8 border-b border-white/10 pb-4">
-            <Palette className="w-5 h-5 text-[#D4AF37]" />
-            <h2 className="font-serif text-2xl">Color Palette</h2>
+        <div className="relative z-10 text-center px-8 flex flex-col items-center">
+          <div className="inline-flex items-center gap-3 mb-6 border border-white/10 bg-black/30 backdrop-blur-md px-6 py-2 rounded-full">
+            <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] animate-pulse" />
+            <span className="text-[0.6rem] font-bold tracking-[0.2em] uppercase text-white/80">Align Right Realty</span>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { name: "Obsidian", hex: "#050505", border: "border-white/10" },
-              { name: "Charcoal", hex: "#111111", border: "border-white/5" },
-              { name: "Signature Gold", hex: "#D4AF37", border: "border-[#D4AF37]/20" },
-              { name: "Champagne", hex: "#F6E3B0", border: "border-transparent", textDark: true },
-            ].map((color) => (
-              <div key={color.name} className="flex flex-col gap-3">
-                <div 
-                  className={`w-full aspect-video rounded-lg border ${color.border} shadow-lg`}
-                  style={{ backgroundColor: color.hex }}
-                />
-                <div>
-                  <p className="text-sm font-medium text-white">{color.name}</p>
-                  <p className="text-xs text-white/50">{color.hex}</p>
-                </div>
-              </div>
-            ))}
+          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl mb-6 font-light tracking-wide text-white drop-shadow-2xl">
+            The Tampa <br/>
+            <span className="italic text-[#D4AF37]">Standard.</span>
+          </h1>
+          <p className="text-lg md:text-xl text-white/70 font-light max-w-2xl leading-relaxed mb-10">
+            A unified force in Tampa Bay real estate. Combining commercial gravity with unmatched residential finesse to deliver an elevated advisory experience.
+          </p>
+          <div className="flex gap-4">
+            <button className="px-8 py-4 bg-[#D4AF37] text-black text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
+              Explore Portfolio
+            </button>
+            <button className="px-8 py-4 bg-transparent border border-white/20 text-white text-xs font-bold uppercase tracking-widest hover:bg-white/10 transition-colors">
+              Meet The Team
+            </button>
           </div>
-        </section>
+        </div>
 
-        {/* Typography */}
-        <section>
-          <div className="flex items-center gap-3 mb-8 border-b border-white/10 pb-4">
-            <Type className="w-5 h-5 text-[#D4AF37]" />
-            <h2 className="font-serif text-2xl">Typography</h2>
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-50 animate-bounce">
+          <span className="text-[0.55rem] uppercase tracking-widest font-bold">Scroll</span>
+          <div className="w-px h-12 bg-gradient-to-b from-white to-transparent" />
+        </div>
+      </section>
+
+
+      {/* ── TAMPA TEAM REVEAL (INTERACTIVE SECTION) ── */}
+      {isMobile ? (
+        
+        /* MOBILE FALLBACK: Clean 2-column stacked layout */
+        <section className="py-24 px-6 bg-[#050505]">
+          <div className="text-center mb-16">
+            <span className="text-[#D4AF37] text-[0.65rem] tracking-[0.2em] uppercase font-bold block mb-4">The Advisors</span>
+            <h2 className="font-serif text-4xl text-white">Your Power Combo.</h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-12 bg-white/[0.02] border border-white/5 p-12 rounded-2xl">
-            <div className="space-y-6">
-              <div>
-                <span className="label-caps text-[#D4AF37] block mb-2 text-xs">Primary Serif (Headings)</span>
-                <p className="font-serif text-4xl text-white">Playfair Display</p>
-                <p className="text-white/50 mt-2 text-sm font-serif italic">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+          
+          <div className="flex flex-col gap-12">
+            <div className="w-full">
+              <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden mb-6">
+                <Image src="/mark-davis-headshot.png" alt="Mark Davis" fill className="object-cover" />
               </div>
-              <div className="pt-6 border-t border-white/10">
-                <span className="label-caps text-[#D4AF37] block mb-2 text-xs">Secondary Sans (Body)</span>
-                <p className="font-sans text-3xl text-white font-light">Inter / Outfit</p>
-                <p className="text-white/50 mt-2 text-sm font-sans font-light">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
-                <p className="text-white/50 mt-1 text-sm font-sans font-light">abcdefghijklmnopqrstuvwxyz</p>
-              </div>
+              <h3 className="font-serif text-2xl mb-1">Mark Davis</h3>
+              <p className="text-[#D4AF37] text-xs uppercase tracking-widest mb-4">Commercial Expert</p>
+              <button className="w-full py-4 border border-white/20 text-xs uppercase tracking-widest hover:bg-white/10 transition-colors">
+                Connect With Mark
+              </button>
             </div>
-            <div className="bg-black/50 p-8 rounded-xl border border-white/10 flex flex-col justify-center gap-6">
-              <h1 className="font-serif text-4xl text-white leading-tight">Elevating Tampa Bay Real Estate.</h1>
-              <p className="font-sans text-white/60 font-light leading-relaxed">
-                We are combining commercial dominance with residential finesse to deliver an unparalleled advisory experience for our clients.
-              </p>
-              <button className="self-start px-6 py-3 bg-transparent border border-[#D4AF37] text-[#D4AF37] text-xs uppercase tracking-widest hover:bg-[#D4AF37] hover:text-black transition-colors">
-                Explore Portfolio
+            
+            <div className="w-full">
+              <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden mb-6">
+                <Image src="/rachael-garnett-headshot.png" alt="Rachael Garnett" fill className="object-cover" />
+              </div>
+              <h3 className="font-serif text-2xl mb-1">Rachael Garnett</h3>
+              <p className="text-[#D4AF37] text-xs uppercase tracking-widest mb-4">Residential Specialist</p>
+              <button className="w-full py-4 border border-white/20 text-xs uppercase tracking-widest hover:bg-white/10 transition-colors">
+                Connect With Rachael
               </button>
             </div>
           </div>
         </section>
 
-        {/* Hero Concept Wireframe */}
-        <section>
-          <div className="flex items-center gap-3 mb-8 border-b border-white/10 pb-4">
-            <Layout className="w-5 h-5 text-[#D4AF37]" />
-            <h2 className="font-serif text-2xl">Hero Section Concept</h2>
-          </div>
-          <div className="relative w-full rounded-2xl overflow-hidden border border-white/10 bg-[#111] aspect-[16/9] md:aspect-[21/9] flex items-center shadow-2xl group">
-            {/* Abstract Background Elements */}
-            <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[150%] bg-gradient-to-r from-[#D4AF37]/10 to-transparent blur-3xl opacity-50" />
+      ) : (
+
+        /* DESKTOP INTERACTIVE: Framer Motion Scroll Sequence */
+        <section ref={containerRef} className="relative w-full h-[350vh] bg-[#050505]">
+          <div className="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center">
             
-            <div className="relative z-10 w-full px-12 md:px-24 flex flex-col items-start gap-6">
-              <span className="label-caps text-white/50 text-[0.6rem] tracking-[0.3em] uppercase">Davis & Garnett</span>
-              <h2 className="font-serif text-4xl md:text-6xl text-white leading-[1.1] max-w-2xl font-light">
-                The New Standard For <span className="italic text-[#D4AF37]">Tampa Bay.</span>
-              </h2>
-              <div className="w-16 h-px bg-white/20 my-2" />
-              <div className="flex gap-4 items-center">
-                <div className="px-6 py-3 bg-[#D4AF37] text-black text-xs font-bold uppercase tracking-widest cursor-pointer hover:bg-white transition-colors">
-                  Commercial
-                </div>
-                <div className="px-6 py-3 border border-white/20 text-white text-xs font-bold uppercase tracking-widest cursor-pointer hover:bg-white/10 transition-colors">
-                  Residential
-                </div>
+            {/* Center Image (Team) */}
+            <motion.div 
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 rounded-2xl overflow-hidden shadow-2xl"
+              style={{
+                width: "30vw",
+                height: "75vh",
+                opacity: centerOpacity,
+                scale: centerScale
+              }}
+            >
+              <Image 
+                src="/davis-garnett-real-combo.png" 
+                alt="Davis & Garnett Team" 
+                fill 
+                className="object-cover object-top"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+              <div className="absolute bottom-10 left-0 right-0 text-center">
+                <h3 className="font-serif text-3xl text-white drop-shadow-md mb-2">The Power Combo</h3>
+                <p className="text-[#D4AF37] text-xs uppercase tracking-widest">Tampa Bay Real Estate</p>
               </div>
-            </div>
-            
-            {/* Image Placeholder on Right */}
-            <div className="absolute right-0 top-0 bottom-0 w-[40%] bg-black/40 border-l border-white/10 flex items-center justify-center opacity-80 mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-100 transition-all duration-700">
-              <ImageIcon className="w-12 h-12 text-white/20" />
-            </div>
+            </motion.div>
+
+            {/* Left Image (Mark) */}
+            <motion.div 
+              className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-2xl overflow-hidden group cursor-pointer"
+              style={{
+                left: leftLeft,
+                width: leftWidth,
+                height: leftHeight,
+                opacity: leftOpacity,
+                zIndex: leftZIndex
+              }}
+            >
+              <Image 
+                src="/mark-davis-headshot.png" 
+                alt="Mark Davis" 
+                fill 
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
+              
+              {/* Text Overlay for Phase 3 */}
+              <motion.div 
+                className="absolute inset-0 flex flex-col items-center justify-end pb-24 px-12 bg-gradient-to-t from-[#050505] via-[#050505]/50 to-transparent"
+                style={{ opacity: textOpacity, y: textY }}
+              >
+                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold mb-4">Broker Associate</span>
+                <h2 className="font-serif text-5xl text-white mb-6">Mark Davis</h2>
+                <p className="text-white/70 text-center max-w-md font-light mb-10 leading-relaxed">
+                  Specializing in Tampa Bay commercial real estate, investment properties, and high-yield acquisitions. Driving business growth through strategic property placement.
+                </p>
+                <button className="flex items-center gap-3 px-8 py-4 bg-white text-black text-xs font-bold uppercase tracking-widest hover:bg-[#D4AF37] transition-colors">
+                  View Commercial <ArrowRight className="w-4 h-4" />
+                </button>
+              </motion.div>
+            </motion.div>
+
+            {/* Right Image (Rachael) */}
+            <motion.div 
+              className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-2xl overflow-hidden group cursor-pointer"
+              style={{
+                left: rightLeft,
+                width: rightWidth,
+                height: rightHeight,
+                opacity: rightOpacity,
+                zIndex: rightZIndex
+              }}
+            >
+              <Image 
+                src="/rachael-garnett-headshot.png" 
+                alt="Rachael Garnett" 
+                fill 
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
+              
+              {/* Text Overlay for Phase 3 */}
+              <motion.div 
+                className="absolute inset-0 flex flex-col items-center justify-end pb-24 px-12 bg-gradient-to-t from-[#050505] via-[#050505]/50 to-transparent"
+                style={{ opacity: textOpacity, y: textY }}
+              >
+                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold mb-4">Real Estate Advisor</span>
+                <h2 className="font-serif text-5xl text-white mb-6">Rachael Garnett</h2>
+                <p className="text-white/70 text-center max-w-md font-light mb-10 leading-relaxed">
+                  Tampa Bay's premier residential specialist. Curating exceptional neighborhood lifestyles and elevating the home buying and selling experience.
+                </p>
+                <button className="flex items-center gap-3 px-8 py-4 bg-white text-black text-xs font-bold uppercase tracking-widest hover:bg-[#D4AF37] transition-colors">
+                  View Residential <ArrowRight className="w-4 h-4" />
+                </button>
+              </motion.div>
+            </motion.div>
+
           </div>
         </section>
-
-      </main>
+      )}
 
       {/* ── FOOTER ── */}
-      <footer className="py-12 text-center border-t border-white/5 mt-24">
-        <p className="text-white/30 text-xs tracking-widest uppercase">System Design by ClickMe</p>
+      <footer className="py-24 px-8 bg-[#050505] border-t border-white/5 text-center flex flex-col items-center justify-center">
+        <h2 className="font-serif text-3xl mb-8">Ready to Elevate?</h2>
+        <Link href="/" className="btn-gold">
+          Return to Proposal
+        </Link>
       </footer>
     </div>
   );
