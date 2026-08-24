@@ -42,7 +42,7 @@ export default function DavisGarnettLogo({
       <rect width="100%" height="100%" fill={bg} />
 
       {/* ── MONOGRAM MARK ── */}
-      {/* Border box */}
+      {/* Border box (Y spans from 45 to 255) */}
       <rect
         x="40" y="45"
         width="210" height="210"
@@ -77,34 +77,34 @@ export default function DavisGarnettLogo({
 
       {/* ── WORDMARK ── */}
 
-      {/* DAVIS & GARNETT — perfectly justified to match lines */}
+      {/* DAVIS & GARNETT — perfectly justified, aligned to top of box */}
       <text
         x="725"
-        y="160"
+        y="118"
         fontFamily="'AIVeritas', serif"
-        fontSize="95"
+        fontSize="105"
         fill={textColor}
         textAnchor="middle"
         textLength="850"
         lengthAdjust="spacing"
       >
-        DAVIS <tspan fill={gold} fontSize="130" dy="10">&amp;</tspan><tspan dy="-10"> GARNETT</tspan>
+        DAVIS <tspan fill={gold} fontSize="145" dy="12">&amp;</tspan><tspan dy="-12"> GARNETT</tspan>
       </text>
 
       {/* Gold separator — top */}
       <line
-        x1="300" y1="185"
-        x2="1150" y2="185"
+        x1="300" y1="160"
+        x2="1150" y2="160"
         stroke={gold}
         strokeWidth="2.5"
       />
 
-      {/* COMMERCIAL RESIDENTIAL ADVISORS — perfectly justified to match lines */}
+      {/* COMMERCIAL RESIDENTIAL ADVISORS — perfectly justified */}
       <text
         x="725"
-        y="228"
+        y="205"
         fontFamily="'Montserrat', 'Helvetica Neue', sans-serif"
-        fontSize="22"
+        fontSize="24"
         fontWeight="400"
         fill={textColor}
         textAnchor="middle"
@@ -114,10 +114,10 @@ export default function DavisGarnettLogo({
         COMMERCIAL   RESIDENTIAL   ADVISORS
       </text>
 
-      {/* Gold separator — bottom */}
+      {/* Gold separator — bottom (aligned to bottom of box) */}
       <line
-        x1="300" y1="248"
-        x2="1150" y2="248"
+        x1="300" y1="245"
+        x2="1150" y2="245"
         stroke={gold}
         strokeWidth="2.5"
       />
@@ -188,4 +188,5 @@ export function DavisGarnettMark({
     </svg>
   );
 }
+
 
