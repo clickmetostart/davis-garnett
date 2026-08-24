@@ -365,9 +365,6 @@ export default function BrandingBook() {
                   <div key={l} className="w-full py-2.5 border border-white/10 bg-white/5 text-xs text-center tracking-widest uppercase text-white/80 rounded hover:bg-[#D4AF37]/20 transition-colors">{l}</div>
                 ))}
               </div>
-              <Link href="/linktree" className="mt-4 flex items-center gap-2 text-xs text-[#D4AF37] uppercase tracking-widest hover:underline">
-                View Live Page <ArrowRight className="w-3 h-3" />
-              </Link>
             </div>
 
             {/* Mark */}
@@ -384,9 +381,6 @@ export default function BrandingBook() {
                   <div key={l} className="w-full py-2.5 border border-white/10 bg-white/5 text-xs text-center tracking-widest uppercase text-white/80 rounded hover:bg-white/10 transition-colors">{l}</div>
                 ))}
               </div>
-              <Link href="/mark" className="mt-4 flex items-center gap-2 text-xs text-white/60 uppercase tracking-widest hover:text-white">
-                View Live Page <ArrowRight className="w-3 h-3" />
-              </Link>
             </div>
 
             {/* Rachael */}
@@ -403,9 +397,6 @@ export default function BrandingBook() {
                   <div key={l} className="w-full py-2.5 border border-white/10 bg-white/5 text-xs text-center tracking-widest uppercase text-white/80 rounded hover:bg-white/10 transition-colors">{l}</div>
                 ))}
               </div>
-              <Link href="/rachael" className="mt-4 flex items-center gap-2 text-xs text-white/60 uppercase tracking-widest hover:text-white">
-                View Live Page <ArrowRight className="w-3 h-3" />
-              </Link>
             </div>
 
           </div>
