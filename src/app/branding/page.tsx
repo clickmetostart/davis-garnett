@@ -569,21 +569,52 @@ export default function BrandingBook() {
             <h2 className="font-serif text-3xl">Social Media Presence</h2>
           </div>
 
-          {/* YouTube Banner */}
-          <div className="mb-8">
-            <p className="text-xs uppercase tracking-widest text-white/40 mb-4">YouTube Channel Art</p>
-            <div className="w-full aspect-[21/9] bg-[#050505] rounded-xl border border-white/10 relative overflow-hidden flex items-center justify-center">
-              <div className="absolute inset-0 opacity-30 mix-blend-luminosity">
-                <Image src="/davis-garnett-hero.png" alt="Tampa" fill className="object-cover" />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050505] to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/80 via-transparent to-[#050505]/80" />
-              <div className="relative z-10 text-center px-8">
-                <div className="relative w-20 h-10 mx-auto mb-6 opacity-60">
-                  <Image src="/align-right-realty-logo.webp" alt="Align Right" fill className="object-contain brightness-0 invert" />
+          <div className="flex flex-col gap-8 mb-12">
+            {/* YouTube Banner */}
+            <div>
+              <p className="text-xs uppercase tracking-widest text-white/40 mb-4 flex justify-between">
+                <span>YouTube Channel Art</span>
+                <span className="text-[#D4AF37]/50 lowercase hidden sm:inline">2560 x 1440</span>
+              </p>
+              <div className="w-full aspect-[21/9] bg-[#050505] rounded-xl border border-white/10 relative overflow-hidden flex items-center justify-center group">
+                <div className="absolute inset-0 opacity-40 mix-blend-luminosity transition-opacity group-hover:opacity-50">
+                  <Image src="/davis-garnett-hero.png" alt="Tampa" fill className="object-cover" />
                 </div>
-                <h2 className="font-serif text-3xl md:text-5xl text-white tracking-widest mb-3 drop-shadow-2xl">DAVIS & GARNETT</h2>
-                <p className="text-[#D4AF37] text-[0.55rem] md:text-sm tracking-[0.5em] uppercase font-bold">The New Standard For Tampa Bay</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/90 via-transparent to-[#050505]/90" />
+                
+                <div className="relative z-10 w-[60%] max-w-[600px] flex items-center justify-center drop-shadow-2xl">
+                  <DavisGarnettLogo variant="dark" className="w-full h-auto drop-shadow-2xl" />
+                </div>
+
+                {/* Compliance Logo - Bottom Right */}
+                <div className="absolute bottom-4 right-4 md:bottom-6 md:right-8 w-24 h-6 md:w-32 md:h-8 opacity-40 grayscale">
+                  <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
+                </div>
+              </div>
+            </div>
+
+            {/* Social Media Covers (Facebook & LinkedIn) */}
+            <div>
+              <p className="text-xs uppercase tracking-widest text-white/40 mb-4 flex justify-between">
+                <span>Social Media Covers (Facebook & LinkedIn)</span>
+                <span className="text-[#D4AF37]/50 lowercase hidden sm:inline">1640 x 624</span>
+              </p>
+              <div className="w-full aspect-[16/6] bg-[#050505] rounded-xl border border-white/10 relative overflow-hidden flex items-center justify-center group">
+                <div className="absolute inset-0 opacity-40 mix-blend-luminosity transition-opacity group-hover:opacity-50">
+                  <Image src="/davis-garnett-listing-2.jpg" alt="Luxury Home" fill className="object-cover object-center" />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/80 via-[#050505]/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/60 to-[#050505]" />
+                
+                <div className="relative z-10 w-[50%] max-w-[500px] flex items-center justify-center drop-shadow-2xl">
+                  <DavisGarnettLogo variant="dark" className="w-full h-auto drop-shadow-2xl" />
+                </div>
+
+                {/* Compliance Logo - Bottom Right */}
+                <div className="absolute bottom-3 right-3 md:bottom-5 md:right-6 w-20 h-5 md:w-28 md:h-7 opacity-40 grayscale">
+                  <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
+                </div>
               </div>
             </div>
           </div>
