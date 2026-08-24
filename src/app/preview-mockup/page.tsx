@@ -152,7 +152,7 @@ export default function PreviewMockup() {
       ) : (
 
         /* DESKTOP INTERACTIVE: Framer Motion Scroll Sequence */
-        <section ref={containerRef} className="relative w-full h-[800vh] bg-[#050505] -mb-[100vh]">
+        <section ref={containerRef} className="relative w-full h-[800vh] bg-[#050505]">
           <div className="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center z-0">
             
             {/* Center Image (Team) */}
@@ -252,7 +252,7 @@ export default function PreviewMockup() {
       )}
 
       {/* ── THE DUAL ADVANTAGE (SERVICES GRID) ── */}
-      <section className="relative z-10 py-32 px-8 bg-[#050505]/90 backdrop-blur-xl shadow-[0_-20px_50px_rgba(0,0,0,0.8)] border-t border-white/10">
+      <section className="relative z-10 py-32 px-8 bg-[#050505] border-t border-white/10">
         <div className="max-w-screen-xl mx-auto">
           <div className="text-center mb-20">
             <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Unmatched Expertise</span>
