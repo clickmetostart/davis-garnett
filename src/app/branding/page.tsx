@@ -578,7 +578,7 @@ export default function BrandingBook() {
               </p>
               <div className="w-full aspect-[21/9] bg-[#050505] rounded-xl border border-white/10 relative overflow-hidden flex items-center justify-center group">
                 <div className="absolute inset-0 opacity-40 transition-opacity group-hover:opacity-50">
-                  <Image src="/team-commercial-banner.png" alt="Team Commercial" fill className="object-cover" />
+                  <Image src="/team-commercial-banner-2.png" alt="Team Commercial" fill className="object-cover" />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent" />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/90 via-transparent to-[#050505]/90" />
