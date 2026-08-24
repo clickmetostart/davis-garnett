@@ -38,6 +38,7 @@ export default function PreviewMockup() {
   const leftHeight = useTransform(scrollYProgress, [0, 0.05, 0.2, 0.3, 0.4, 1], ["75vh", "75vh", "75vh", "75vh", "100vh", "100vh"]);
   const leftOpacity = useTransform(scrollYProgress, [0, 0.02], [0, 1]); 
   const leftZIndex = useTransform(scrollYProgress, [0, 0.29, 0.3], [0, 0, 20]);
+  const borderRadius = useTransform(scrollYProgress, [0.3, 0.4], ["1rem", "0rem"]);
 
   // Right Image (Rachael)
   const rightLeft = useTransform(scrollYProgress, [0, 0.05, 0.2, 0.3, 0.4, 1], ["50%", "50%", "83%", "83%", "75%", "75%"]);
@@ -47,8 +48,8 @@ export default function PreviewMockup() {
   const rightZIndex = useTransform(scrollYProgress, [0, 0.29, 0.3], [0, 0, 20]);
 
   // Center Image (Team)
-  const centerScale = useTransform(scrollYProgress, [0, 0.3, 0.4], [1, 1, 0.8]);
-  const centerOpacity = useTransform(scrollYProgress, [0, 0.3, 0.4], [1, 1, 0]);
+  const centerScale = useTransform(scrollYProgress, [0, 0.2, 0.3], [1, 1, 0.8]);
+  const centerOpacity = useTransform(scrollYProgress, [0, 0.2, 0.25], [1, 1, 0]); // Fades out completely before side images expand
 
   // Text Overlays
   const textOpacity = useTransform(scrollYProgress, [0.4, 0.5], [0, 1]);
@@ -181,13 +182,14 @@ export default function PreviewMockup() {
 
             {/* Left Image (Mark) */}
             <motion.div 
-              className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-2xl overflow-hidden group cursor-pointer"
+              className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden group cursor-pointer"
               style={{
                 left: leftLeft,
                 width: leftWidth,
                 height: leftHeight,
                 opacity: leftOpacity,
-                zIndex: leftZIndex
+                zIndex: leftZIndex,
+                borderRadius: borderRadius
               }}
             >
               <Image 
@@ -216,13 +218,14 @@ export default function PreviewMockup() {
 
             {/* Right Image (Rachael) */}
             <motion.div 
-              className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-2xl overflow-hidden group cursor-pointer"
+              className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden group cursor-pointer"
               style={{
                 left: rightLeft,
                 width: rightWidth,
                 height: rightHeight,
                 opacity: rightOpacity,
-                zIndex: rightZIndex
+                zIndex: rightZIndex,
+                borderRadius: borderRadius
               }}
             >
               <Image 
