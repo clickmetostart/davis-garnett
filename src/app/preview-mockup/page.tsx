@@ -98,7 +98,7 @@ export default function PreviewMockup() {
         <div className="relative z-10 text-center px-8 flex flex-col items-center w-full max-w-4xl mx-auto">
           <DavisGarnettLogo variant="dark" className="w-[90%] md:w-[70%] max-w-[700px] mx-auto mb-16 drop-shadow-2xl" />
           
-          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl mb-6 font-bold tracking-tight text-white">
+          <h1 className="font-playfair text-5xl md:text-7xl lg:text-8xl mb-6 font-bold tracking-tight text-white">
             The Tampa <br/>
             <span className="text-gradient-gold">Standard.</span>
           </h1>
@@ -123,7 +123,7 @@ export default function PreviewMockup() {
         <section className="py-24 px-6 bg-[#050505]">
           <div className="text-center mb-16">
             <span className="text-[#D4AF37] text-[0.65rem] tracking-[0.2em] uppercase font-bold block mb-4">The Advisors</span>
-            <h2 className="font-serif text-4xl text-white">Your Power Combo.</h2>
+            <h2 className="font-playfair text-4xl text-white">Your Power Combo.</h2>
           </div>
           
           <div className="flex flex-col gap-12">
@@ -131,7 +131,7 @@ export default function PreviewMockup() {
               <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden mb-6">
                 <Image src="/mark-davis-headshot.png" alt="Mark Davis" fill className="object-cover" />
               </div>
-              <h3 className="font-serif text-2xl mb-1">Mark Davis</h3>
+              <h3 className="font-playfair text-2xl mb-1">Mark Davis</h3>
               <p className="text-[#D4AF37] text-xs uppercase tracking-widest mb-4">Commercial Expert</p>
               <button className="w-full py-4 border border-white/20 text-xs uppercase tracking-widest hover:bg-white/10 transition-colors">
                 Connect With Mark
@@ -142,7 +142,7 @@ export default function PreviewMockup() {
               <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden mb-6">
                 <Image src="/rachael-garnett-headshot.png" alt="Rachael Garnett" fill className="object-cover" />
               </div>
-              <h3 className="font-serif text-2xl mb-1">Rachael Garnett</h3>
+              <h3 className="font-playfair text-2xl mb-1">Rachael Garnett</h3>
               <p className="text-[#D4AF37] text-xs uppercase tracking-widest mb-4">Residential Specialist</p>
               <button className="w-full py-4 border border-white/20 text-xs uppercase tracking-widest hover:bg-white/10 transition-colors">
                 Connect With Rachael
@@ -174,7 +174,7 @@ export default function PreviewMockup() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
               <div className="absolute bottom-10 left-0 right-0 text-center">
-                <h3 className="font-serif text-3xl text-white drop-shadow-md mb-2">The Power Combo</h3>
+                <h3 className="font-playfair text-3xl text-white drop-shadow-md mb-2">The Power Combo</h3>
                 <p className="text-[#D4AF37] text-xs uppercase tracking-widest">Tampa Bay Real Estate</p>
               </div>
             </motion.div>
@@ -188,7 +188,7 @@ export default function PreviewMockup() {
                 opacity: initialTextOpacity 
               }}
             >
-              <h3 className="font-serif text-5xl font-bold text-gradient-gold mb-4">Two Powerhouses</h3>
+              <h3 className="font-playfair text-5xl font-bold text-gradient-gold mb-4">Two Powerhouses</h3>
               <p className="text-white/50 text-sm font-light leading-relaxed max-w-xs mx-auto">
                 Combining decades of award-winning expertise in Tampa Bay real estate.
               </p>
@@ -203,7 +203,7 @@ export default function PreviewMockup() {
                 opacity: initialTextOpacity 
               }}
             >
-              <h3 className="font-serif text-5xl font-bold text-gradient-gold mb-4">One Unified Force</h3>
+              <h3 className="font-playfair text-5xl font-bold text-gradient-gold mb-4">One Unified Force</h3>
               <p className="text-white/50 text-sm font-light leading-relaxed max-w-xs mx-auto">
                 Unmatched strategic service across both commercial and residential markets.
               </p>
@@ -234,7 +234,7 @@ export default function PreviewMockup() {
                 style={{ opacity: textOpacity, y: textY }}
               >
                 <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold mb-4">Real Estate Advisor</span>
-                <h2 className="font-serif text-5xl text-white mb-6">Mark Davis</h2>
+                <h2 className="font-playfair text-5xl text-white mb-6">Mark Davis</h2>
                 <p className="text-white/70 text-center max-w-md font-light mb-10 leading-relaxed">
                   An award-winning powerhouse driving high-yield investments and exceptional real estate experiences across Tampa Bay's commercial and residential markets.
                 </p>
@@ -269,7 +269,7 @@ export default function PreviewMockup() {
                 style={{ opacity: textOpacity, y: textY }}
               >
                 <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold mb-4">Real Estate Advisor</span>
-                <h2 className="font-serif text-5xl text-white mb-6">Rachael Garnett</h2>
+                <h2 className="font-playfair text-5xl text-white mb-6">Rachael Garnett</h2>
                 <p className="text-white/70 text-center max-w-md font-light mb-10 leading-relaxed">
                   Delivering unparalleled luxury service. Curating exceptional lifestyles and executing elite residential and commercial transactions with precision.
                 </p>
@@ -288,7 +288,7 @@ export default function PreviewMockup() {
         <div className="max-w-screen-xl mx-auto">
           <div className="text-center mb-20">
             <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Unmatched Expertise</span>
-            <h2 className="font-serif text-4xl md:text-5xl text-white">The Dual Advantage</h2>
+            <h2 className="font-playfair text-4xl md:text-5xl text-white">The Dual Advantage</h2>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8">
@@ -297,7 +297,7 @@ export default function PreviewMockup() {
               <Image src="/mark-commercial-action.png" alt="Commercial" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent transition-opacity duration-500 group-hover:opacity-80" />
               <div className="absolute inset-0 p-12 flex flex-col justify-end">
-                <h3 className="font-serif text-3xl text-white mb-3 drop-shadow-lg">Commercial Acquisitions</h3>
+                <h3 className="font-playfair text-3xl text-white mb-3 drop-shadow-lg">Commercial Acquisitions</h3>
                 <p className="text-white/80 font-light max-w-sm mb-6 opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
                   Strategic property placement, multi-family investments, and high-yield commercial assets across Tampa Bay.
                 </p>
@@ -312,7 +312,7 @@ export default function PreviewMockup() {
               <Image src="/rachael-residential-action.png" alt="Residential" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent transition-opacity duration-500 group-hover:opacity-80" />
               <div className="absolute inset-0 p-12 flex flex-col justify-end">
-                <h3 className="font-serif text-3xl text-white mb-3 drop-shadow-lg">Luxury Residential</h3>
+                <h3 className="font-playfair text-3xl text-white mb-3 drop-shadow-lg">Luxury Residential</h3>
                 <p className="text-white/80 font-light max-w-sm mb-6 opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
                   Curating exceptional neighborhood lifestyles and elevating the home buying and selling experience.
                 </p>
@@ -338,7 +338,7 @@ export default function PreviewMockup() {
             </div>
           </div>
           <div>
-            <h4 className="text-white font-serif text-lg mb-6">Navigation</h4>
+            <h4 className="text-white font-playfair text-lg mb-6">Navigation</h4>
             <ul className="flex flex-col gap-4 text-white/50 text-sm">
               <li><Link href="#" className="hover:text-[#D4AF37]">Home</Link></li>
               <li><Link href="#" className="hover:text-[#D4AF37]">Commercial</Link></li>
@@ -347,7 +347,7 @@ export default function PreviewMockup() {
             </ul>
           </div>
           <div>
-            <h4 className="text-white font-serif text-lg mb-6">Contact</h4>
+            <h4 className="text-white font-playfair text-lg mb-6">Contact</h4>
             <ul className="flex flex-col gap-4 text-white/50 text-sm">
               <li>Mark Davis: (941) 737-4127</li>
               <li>Rachael Garnett: (727) 808-3344</li>

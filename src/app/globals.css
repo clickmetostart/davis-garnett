@@ -76,6 +76,10 @@ body {
   font-family: var(--font-serif), 'Outfit', sans-serif;
 }
 
+.font-playfair {
+  font-family: var(--font-playfair), 'Playfair Display', serif;
+}
+
 .font-sans {
   font-family: var(--font-sans), 'DM Sans', system-ui, sans-serif;
 }

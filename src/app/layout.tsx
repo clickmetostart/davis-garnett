@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
-import { Playfair_Display, DM_Sans } from "next/font/google";
+import { Outfit, DM_Sans, Playfair_Display } from "next/font/google";
 import AmbientBackground from "@/components/AmbientBackground";
 import "./globals.css";
 
-// Premium, fat serif for large titles
+// Modern, sleek geometric sans-serif for the proposal display/heading text
+const outfit = Outfit({
+  variable: "--font-serif", // Keeping the variable name same to avoid refactoring the proposal
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+// Premium, fat serif exclusively for the client's live brand mockup
 const playfair = Playfair_Display({
-  variable: "--font-serif",
+  variable: "--font-playfair",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
 });
@@ -32,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${playfair.variable} ${dmSans.variable} antialiased bg-black text-white`}>
+      <body className={`${outfit.variable} ${playfair.variable} ${dmSans.variable} antialiased bg-black text-white`}>
         <AmbientBackground />
         <main className="w-full relative flex flex-col min-h-screen">
           {children}
