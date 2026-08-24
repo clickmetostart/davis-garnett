@@ -105,14 +105,7 @@ export default function PreviewMockup() {
           <p className="text-lg md:text-xl text-white/70 font-light max-w-2xl leading-relaxed mb-10">
             A unified force in Tampa Bay real estate. Combining commercial gravity with unmatched residential finesse to deliver an elevated advisory experience.
           </p>
-          <div className="flex gap-4">
-            <button className="px-8 py-4 bg-[#D4AF37] text-black text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
-              Explore Portfolio
-            </button>
-            <button className="px-8 py-4 bg-transparent border border-white/20 text-white text-xs font-bold uppercase tracking-widest hover:bg-white/10 transition-colors">
-              Meet The Team
-            </button>
-          </div>
+
         </div>
 
         {/* Scroller Indicator */}
