@@ -33,7 +33,7 @@ export default function ScopePage() {
             <Link href="/" className="label-caps text-white/60 hover:text-white transition-colors">
               Return to Main Page
             </Link>
-            <Link href="/scope" className="label-caps text-white/60 hover:text-white transition-colors">
+            <Link href="/scope" className="label-caps text-[#D4AF37]">
               Scope
             </Link>
             <Link href="/features" className="label-caps text-white/60 hover:text-white transition-colors">
