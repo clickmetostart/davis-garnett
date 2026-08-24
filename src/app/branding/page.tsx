@@ -573,7 +573,7 @@ export default function BrandingBook() {
             {/* Team Commercial Cover (YouTube) */}
             <div>
               <p className="text-xs uppercase tracking-widest text-white/40 mb-4 flex justify-between">
-                <span>Team Commercial Cover (YouTube)</span>
+                <span>Team Commercial Cover (YouTube) (Example)</span>
                 <span className="text-[#D4AF37]/50 lowercase hidden sm:inline">2560 x 1440</span>
               </p>
               <div className="w-full aspect-[21/9] bg-[#050505] rounded-xl border border-white/10 relative overflow-hidden flex items-center justify-center group">
@@ -597,15 +597,15 @@ export default function BrandingBook() {
             {/* Team Residential Cover (LinkedIn/Facebook) */}
             <div>
               <p className="text-xs uppercase tracking-widest text-white/40 mb-4 flex justify-between">
-                <span>Team Residential Cover (Facebook / LinkedIn)</span>
+                <span>Team Residential Cover (Facebook / LinkedIn) (Example)</span>
                 <span className="text-[#D4AF37]/50 lowercase hidden sm:inline">1640 x 624</span>
               </p>
               <div className="w-full aspect-[16/6] bg-[#050505] rounded-xl border border-white/10 relative overflow-hidden flex items-center justify-center group">
-                <div className="absolute inset-0 opacity-40 transition-opacity group-hover:opacity-50">
+                <div className="absolute inset-0 opacity-70 transition-opacity group-hover:opacity-100">
                   <Image src="/team-residential-banner-2.jfif" alt="Team Residential" fill className="object-cover object-center" />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/80 via-[#050505]/40 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/60 to-[#050505]" />
+                {/* Subtle gradient focused only on the bottom left for logo readability */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#050505]/90 via-[#050505]/20 to-transparent" />
                 
                 {/* Logo anchored to bottom-left to avoid shadow */}
                 <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8 w-[45%] max-w-[450px] drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
@@ -622,7 +622,7 @@ export default function BrandingBook() {
             {/* Mark Individual Cover */}
             <div>
               <p className="text-xs uppercase tracking-widest text-white/40 mb-4 flex justify-between">
-                <span>Mark's Commercial Cover (Facebook / LinkedIn)</span>
+                <span>Mark's Commercial Cover (Facebook / LinkedIn) (Example)</span>
                 <span className="text-[#D4AF37]/50 lowercase hidden sm:inline">1640 x 624</span>
               </p>
               <div className="w-full aspect-[16/6] bg-[#050505] rounded-xl border border-white/10 relative overflow-hidden flex items-center justify-center group">
@@ -647,7 +647,7 @@ export default function BrandingBook() {
             {/* Rachael Individual Cover */}
             <div>
               <p className="text-xs uppercase tracking-widest text-white/40 mb-4 flex justify-between">
-                <span>Rachael's Residential Cover (Facebook / LinkedIn)</span>
+                <span>Rachael's Residential Cover (Facebook / LinkedIn) (Example)</span>
                 <span className="text-[#D4AF37]/50 lowercase hidden sm:inline">1640 x 624</span>
               </p>
               <div className="w-full aspect-[16/6] bg-[#050505] rounded-xl border border-white/10 relative overflow-hidden flex items-center justify-center group">
