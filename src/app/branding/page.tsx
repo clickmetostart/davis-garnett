@@ -577,11 +577,12 @@ export default function BrandingBook() {
                 <span className="text-[#D4AF37]/50 lowercase hidden sm:inline">2560 x 1440</span>
               </p>
               <div className="w-full aspect-[21/9] bg-[#050505] rounded-xl border border-white/10 relative overflow-hidden flex items-center justify-center group">
-                <div className="absolute inset-0 opacity-40 transition-opacity group-hover:opacity-50">
-                  <Image src="/team-commercial-banner-2.png" alt="Team Commercial" fill className="object-cover" />
+                <div className="absolute inset-0 opacity-80 transition-opacity group-hover:opacity-100">
+                  <Image src="/team-commercial-youtube-banner.png" alt="Team Commercial" fill className="object-cover" />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/90 via-transparent to-[#050505]/90" />
+                {/* Subtle gradient so the logo is readable, but the sunset shines through */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/60 via-[#050505]/20 to-transparent" />
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(5,5,5,0.7)_0%,transparent_60%)]" />
                 
                 <div className="relative z-10 w-[60%] max-w-[600px] flex items-center justify-center drop-shadow-2xl">
                   <DavisGarnettLogo variant="dark" className="w-full h-auto drop-shadow-2xl" />
@@ -672,7 +673,9 @@ export default function BrandingBook() {
 
           {/* Social Feed Grid */}
           <div>
-            <p className="text-xs uppercase tracking-widest text-white/40 mb-4">Social Feed — Aesthetic Grid</p>
+            <p className="text-xs uppercase tracking-widest text-white/40 mb-4 flex justify-between">
+              <span>Social Feed — Aesthetic Grid (Examples)</span>
+            </p>
             <div className="grid grid-cols-3 gap-2 rounded-xl overflow-hidden border border-white/10">
               {[
                 "/davis-garnett-real-combo.png",
