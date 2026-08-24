@@ -162,10 +162,14 @@ export default function BrandingBook() {
 
         {/* ── 0. THE LOGO ── */}
         <section>
-          <div className="flex items-center gap-3 mb-12 border-b border-white/10 pb-5">
+          <div className="flex items-center gap-3 mb-6 border-b border-white/10 pb-5">
             <Tag className="w-5 h-5 text-[#D4AF37]" />
             <h2 className="font-serif text-3xl">The Logo</h2>
           </div>
+
+          <p className="text-white/60 text-lg font-light leading-relaxed max-w-4xl mb-12">
+            We took your original concept and rebuilt it from the ground up as a mathematically perfect vector graphic using your exact brand typography. This means it will render flawlessly and razor-sharp across any medium at any size — from a physical business card to a highway billboard, or a digital social profile. Like every asset we build during this process, the master vector files are fully yours to keep and use however you need.
+          </p>
 
           {/* Light Version */}
           <div className="mb-8">
