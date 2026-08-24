@@ -26,30 +26,31 @@ export default function PreviewMockup() {
   // --- SCROLL ANIMATIONS (DESKTOP) ---
 
   // Phase 1: United Team (Initial State - scroll 0)
-  // Phase 2: Individual Reveal (Scroll 0.05 -> 0.35)
-  // Phase 3: Choice Expansion (Scroll 0.6 -> 0.85)
+  // Phase 2: Individual Reveal (Scroll 0.05 -> 0.3)
+  // Phase 3: Choice Expansion (Scroll 0.45 -> 0.7)
+  // Phase 4: Hold (Scroll 0.7 -> 1.0) while next section slides over
   
   // Left Image (Mark)
-  const leftLeft = useTransform(scrollYProgress, [0, 0.05, 0.35, 0.6, 0.85, 1], ["50%", "50%", "17%", "17%", "25%", "25%"]);
-  const leftWidth = useTransform(scrollYProgress, [0, 0.05, 0.35, 0.6, 0.85, 1], ["30vw", "30vw", "30vw", "30vw", "50vw", "50vw"]);
-  const leftHeight = useTransform(scrollYProgress, [0, 0.05, 0.35, 0.6, 0.85, 1], ["75vh", "75vh", "75vh", "75vh", "100vh", "100vh"]);
-  const leftOpacity = useTransform(scrollYProgress, [0, 0.02], [0, 1]); // Fades in instantly behind the center image when scrolling starts
-  const leftZIndex = useTransform(scrollYProgress, [0, 0.59, 0.6], [0, 0, 20]);
+  const leftLeft = useTransform(scrollYProgress, [0, 0.05, 0.3, 0.45, 0.7, 1], ["50%", "50%", "17%", "17%", "25%", "25%"]);
+  const leftWidth = useTransform(scrollYProgress, [0, 0.05, 0.3, 0.45, 0.7, 1], ["30vw", "30vw", "30vw", "30vw", "50vw", "50vw"]);
+  const leftHeight = useTransform(scrollYProgress, [0, 0.05, 0.3, 0.45, 0.7, 1], ["75vh", "75vh", "75vh", "75vh", "100vh", "100vh"]);
+  const leftOpacity = useTransform(scrollYProgress, [0, 0.02], [0, 1]); 
+  const leftZIndex = useTransform(scrollYProgress, [0, 0.44, 0.45], [0, 0, 20]);
 
   // Right Image (Rachael)
-  const rightLeft = useTransform(scrollYProgress, [0, 0.05, 0.35, 0.6, 0.85, 1], ["50%", "50%", "83%", "83%", "75%", "75%"]);
-  const rightWidth = useTransform(scrollYProgress, [0, 0.05, 0.35, 0.6, 0.85, 1], ["30vw", "30vw", "30vw", "30vw", "50vw", "50vw"]);
-  const rightHeight = useTransform(scrollYProgress, [0, 0.05, 0.35, 0.6, 0.85, 1], ["75vh", "75vh", "75vh", "75vh", "100vh", "100vh"]);
+  const rightLeft = useTransform(scrollYProgress, [0, 0.05, 0.3, 0.45, 0.7, 1], ["50%", "50%", "83%", "83%", "75%", "75%"]);
+  const rightWidth = useTransform(scrollYProgress, [0, 0.05, 0.3, 0.45, 0.7, 1], ["30vw", "30vw", "30vw", "30vw", "50vw", "50vw"]);
+  const rightHeight = useTransform(scrollYProgress, [0, 0.05, 0.3, 0.45, 0.7, 1], ["75vh", "75vh", "75vh", "75vh", "100vh", "100vh"]);
   const rightOpacity = useTransform(scrollYProgress, [0, 0.02], [0, 1]);
-  const rightZIndex = useTransform(scrollYProgress, [0, 0.59, 0.6], [0, 0, 20]);
+  const rightZIndex = useTransform(scrollYProgress, [0, 0.44, 0.45], [0, 0, 20]);
 
   // Center Image (Team)
-  const centerScale = useTransform(scrollYProgress, [0, 0.6, 0.75], [1, 1, 0.8]);
-  const centerOpacity = useTransform(scrollYProgress, [0, 0.6, 0.75], [1, 1, 0]);
+  const centerScale = useTransform(scrollYProgress, [0, 0.45, 0.6], [1, 1, 0.8]);
+  const centerOpacity = useTransform(scrollYProgress, [0, 0.45, 0.6], [1, 1, 0]);
 
   // Text Overlays
-  const textOpacity = useTransform(scrollYProgress, [0.8, 0.9], [0, 1]);
-  const textY = useTransform(scrollYProgress, [0.8, 0.9], [40, 0]);
+  const textOpacity = useTransform(scrollYProgress, [0.65, 0.75], [0, 1]);
+  const textY = useTransform(scrollYProgress, [0.65, 0.75], [40, 0]);
 
   return (
     <div className="min-h-screen text-white bg-[#050505] selection:bg-[#D4AF37] selection:text-black font-sans">
@@ -76,26 +77,12 @@ export default function PreviewMockup() {
       </nav>
 
       {/* ── HERO SECTION ── */}
-      <section className="relative w-full h-screen flex items-center justify-center overflow-hidden pt-16">
-        <div className="absolute inset-0 z-0">
-          <Image 
-            src="/davis-garnett-hero.png" 
-            alt="Tampa Bay Real Estate" 
-            fill 
-            className="object-cover opacity-40 scale-105"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent" />
-        </div>
+      <section className="relative w-full h-screen flex items-center justify-center pt-16 bg-[#050505]">
         
         <div className="relative z-10 text-center px-8 flex flex-col items-center w-full max-w-4xl mx-auto">
-          <DavisGarnettLogo variant="dark" className="w-[90%] md:w-[70%] max-w-[700px] mx-auto mb-12 drop-shadow-2xl" />
+          <DavisGarnettLogo variant="dark" className="w-[90%] md:w-[70%] max-w-[700px] mx-auto mb-16 drop-shadow-2xl" />
           
-          <div className="inline-flex items-center gap-3 mb-6 border border-white/10 bg-black/30 backdrop-blur-md px-6 py-2 rounded-full">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] animate-pulse" />
-            <span className="text-[0.6rem] font-bold tracking-[0.2em] uppercase text-white/80">Align Right Realty</span>
-          </div>
-          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl mb-6 font-light tracking-wide text-white drop-shadow-2xl">
+          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl mb-6 font-light tracking-wide text-white">
             The Tampa <br/>
             <span className="italic text-[#D4AF37]">Standard.</span>
           </h1>
@@ -110,12 +97,6 @@ export default function PreviewMockup() {
               Meet The Team
             </button>
           </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-50 animate-bounce">
-          <span className="text-[0.55rem] uppercase tracking-widest font-bold">Scroll</span>
-          <div className="w-px h-12 bg-gradient-to-b from-white to-transparent" />
         </div>
       </section>
 
@@ -158,8 +139,8 @@ export default function PreviewMockup() {
       ) : (
 
         /* DESKTOP INTERACTIVE: Framer Motion Scroll Sequence */
-        <section ref={containerRef} className="relative w-full h-[350vh] bg-[#050505]">
-          <div className="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center">
+        <section ref={containerRef} className="relative w-full h-[400vh] bg-[#050505] -mb-[100vh]">
+          <div className="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center z-0">
             
             {/* Center Image (Team) */}
             <motion.div 
@@ -259,7 +240,7 @@ export default function PreviewMockup() {
       )}
 
       {/* ── THE DUAL ADVANTAGE (SERVICES GRID) ── */}
-      <section className="py-32 px-8 bg-[#050505]">
+      <section className="relative z-10 py-32 px-8 bg-[#050505] shadow-[0_-20px_50px_rgba(0,0,0,0.8)] border-t border-white/10">
         <div className="max-w-screen-xl mx-auto">
           <div className="text-center mb-20">
             <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Unmatched Expertise</span>
