@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, Suspense } from 'react';
+import { useSearchParams, useRouter } from 'next/navigation';
 
 // Define multiple flow templates
 const MOCK_FLOWS = [
@@ -46,19 +47,34 @@ interface ClientCard {
   budget: string;
   stage: string;
   flowId: string;
+  isShared?: boolean;
+  ownerId?: string | null;
 }
 
 function ClientFlowContent() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const [user, setUser] = useState<any>(null);
+  
+  const initialView = searchParams.get('view') === 'team' ? 'team_flow' : 'my_flow';
+  const [viewMode, setViewMode] = useState<'my_flow' | 'team_flow'>(initialView);
+
+  useEffect(() => {
+    const v = searchParams.get('view');
+    if (v === 'team') setViewMode('team_flow');
+    else if (v === 'my') setViewMode('my_flow');
+  }, [searchParams]);
+
   const [flows, setFlows] = useState(MOCK_FLOWS);
   const [activeFlowId, setActiveFlowId] = useState('f1');
   
   const [cards, setCards] = useState<ClientCard[]>([
-    { id: 'c1', name: 'James & Sarah Smith', budget: '$650k', stage: 'pre_qualified', flowId: 'f1' },
-    { id: 'c2', name: 'Michael Chen', budget: '$1.2M', stage: 'searching', flowId: 'f1' },
-    { id: 'c3', name: 'Emily Roberts', budget: '$450k', stage: 'under_contract', flowId: 'f1' },
-    { id: 'c4', name: 'The Johnson Family', budget: '$850k', stage: 'inspection', flowId: 'f1' },
-    { id: 'c5', name: 'David Lee', budget: '$920k List', stage: 'active_market', flowId: 'f2' },
-    { id: 'c6', name: 'TechStartup LLC', budget: '5,000 sqft', stage: 'loi', flowId: 'f3' }
+    { id: 'c1', name: 'James & Sarah Smith', budget: '$650k', stage: 'pre_qualified', flowId: 'f1', ownerId: 'user_123', isShared: false },
+    { id: 'c2', name: 'Michael Chen', budget: '$1.2M', stage: 'searching', flowId: 'f1', ownerId: 'user_123', isShared: true },
+    { id: 'c3', name: 'Emily Roberts', budget: '$450k', stage: 'under_contract', flowId: 'f1', ownerId: null, isShared: true },
+    { id: 'c4', name: 'The Johnson Family', budget: '$850k', stage: 'inspection', flowId: 'f1', ownerId: 'user_123', isShared: false },
+    { id: 'c5', name: 'David Lee', budget: '$920k List', stage: 'active_market', flowId: 'f2', ownerId: 'user_123', isShared: true },
+    { id: 'c6', name: 'TechStartup LLC', budget: '5,000 sqft', stage: 'loi', flowId: 'f3', ownerId: null, isShared: true }
   ]);
 
   const [showAddClientModal, setShowAddClientModal] = useState(false);
@@ -75,6 +91,14 @@ function ClientFlowContent() {
   const [crmLeads, setCrmLeads] = useState<any[]>([]);
 
   useEffect(() => {
+    // Fetch user context
+    fetch('/api/auth/me')
+      .then(res => res.json())
+      .then(data => {
+        if(data.user) setUser(data.user);
+      })
+      .catch(console.error);
+
     // Fetch mock leads from CRM API
     fetch('/api/leads')
       .then(res => res.json())
@@ -84,7 +108,20 @@ function ClientFlowContent() {
       .catch(console.error);
   }, []);
 
+  const isSuperOrOwner = user?.role === 'Super Admin' || user?.role === 'Primary Owner' || user?.role === 'System Admin';
+
   const activeFlow = flows.find(f => f.id === activeFlowId) || flows[0];
+
+  // Filter cards based on viewMode
+  let displayCards = cards;
+  if (viewMode === 'team_flow') {
+    displayCards = displayCards.filter(c => c.isShared === true);
+  } else {
+    // My Flow
+    if (!isSuperOrOwner) {
+      displayCards = displayCards.filter(c => c.ownerId === user?.id || !c.ownerId); // Showing all if no owner for demo purposes, but normally c.ownerId === user?.id
+    }
+  }
 
   const moveCard = (cardId: string, nextStageId: string) => {
     setCards(prev => prev.map(c => c.id === cardId ? { ...c, stage: nextStageId } : c));
@@ -365,6 +402,20 @@ function ClientFlowContent() {
                     >
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.5rem' }}>
                         <h4 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 700, color: '#111827' }}>{card.name}</h4>
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            if (confirm(`Remove "${card.name}" from this pipeline?`)) {
+                              setCards(prev => prev.filter(c => c.id !== card.id));
+                            }
+                          }}
+                          style={{ background: 'transparent', border: 'none', color: '#d1d5db', cursor: 'pointer', padding: '0.15rem', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, transition: 'color 0.2s' }}
+                          title="Remove client from flow"
+                          onMouseEnter={(e) => e.currentTarget.style.color = '#ef4444'}
+                          onMouseLeave={(e) => e.currentTarget.style.color = '#d1d5db'}
+                        >
+                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                        </button>
                       </div>
                       
                       <div style={{ fontSize: '0.85rem', color: '#6b7280', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
