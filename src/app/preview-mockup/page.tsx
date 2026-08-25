@@ -8,6 +8,7 @@ import { ArrowLeft, ArrowRight, ArrowUpRight, Star, MapPin, Building, PlayCircle
 import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 import FeaturedPortfolioSpillOut from "@/components/FeaturedPortfolioSpillOut";
 import PreviewNav from "@/components/PreviewNav";
+import BackgroundVideo from "@/components/BackgroundVideo";
 
 export default function PreviewMockup() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -79,16 +80,10 @@ export default function PreviewMockup() {
           {[1, 2, 3, 4].map((num) => (
             <div key={num} className="relative flex-1 h-full border-r border-white/5 last:border-r-0 overflow-hidden group">
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-700 z-10 pointer-events-none" />
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                controls={false}
-                className="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-1000 pointer-events-none"
-              >
-                <source src={`/hero-videos-homepage/davis-garnett-hero-video-${num}.mp4`} type="video/mp4" />
-              </video>
+              <BackgroundVideo 
+                src={`/hero-videos-homepage/davis-garnett-hero-video-${num}.mp4`}
+                className="absolute inset-0 w-full h-full scale-105 group-hover:scale-110 transition-transform duration-1000"
+              />
             </div>
           ))}
           {/* Heavy gradient shadows so the text pops */}
@@ -629,14 +624,9 @@ export default function PreviewMockup() {
             {/* Article 3 */}
             <Link href="/article-mockup" className="group">
               <div className="relative aspect-video mb-6 overflow-hidden bg-black border border-white/5 flex items-center justify-center rounded-xl">
-                <video
+                <BackgroundVideo 
                   src="/hero-videos-homepage/davis-garnett-hero-video-1.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  controls={false}
-                  className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 pointer-events-none"
+                  className="absolute inset-0 w-full h-full opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                 />
                 <PlayCircle className="w-12 h-12 text-white relative z-10 opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all drop-shadow-xl" />
               </div>
@@ -681,14 +671,9 @@ export default function PreviewMockup() {
       <section className="py-24 px-8 bg-[#0a0a0a] border-t border-white/5">
         <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center gap-12">
           <div className="w-full md:w-1/3 aspect-square relative rounded-full overflow-hidden border-4 border-[#D4AF37]/30 shadow-[0_0_40px_rgba(212,175,55,0.2)] shrink-0 transition-shadow duration-700 hover:shadow-[0_0_60px_rgba(212,175,55,0.4)]">
-            <video
+            <BackgroundVideo 
               src="/hero-videos-homepage/davis-garnett-hero-video-2.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              controls={false}
-              className="absolute inset-0 w-full h-full object-cover scale-105 opacity-80 pointer-events-none hover:opacity-100 transition-opacity duration-1000"
+              className="absolute inset-0 w-full h-full scale-105 opacity-80 hover:opacity-100 transition-opacity duration-1000"
             />
             <div className="absolute inset-0 bg-[#D4AF37]/10 mix-blend-overlay pointer-events-none" />
           </div>
