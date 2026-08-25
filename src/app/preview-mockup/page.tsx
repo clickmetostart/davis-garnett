@@ -32,7 +32,7 @@ export default function PreviewMockup() {
   // Phase 4: Come Over The Top & Expand (Scroll 0.3 -> 0.4)
   // Phase 5: Text Fades In (Scroll 0.4 -> 0.5)
   // Phase 6: Hold Fully Expanded (Scroll 0.5 -> 1.0) with next section overlap
-  
+
   // Left Image (Mark)
   const leftLeft = useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.4, 1], ["50%", "50%", "17%", "17%", "25%", "25%"]);
   const leftWidth = useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.4, 1], ["30vw", "30vw", "30vw", "30vw", "50vw", "50vw"]);
@@ -59,7 +59,7 @@ export default function PreviewMockup() {
 
   return (
     <div className="min-h-screen text-white bg-[#050505] selection:bg-[#D4AF37] selection:text-black font-sans">
-      
+
       {/* ── MINIMAL PREVIEW NAV (Admin/Client View) ── */}
       <div className="absolute top-0 w-full z-[60] bg-[#D4AF37] text-black h-8 flex items-center justify-between px-8 text-[0.6rem] uppercase tracking-widest font-bold">
         <Link href="/" className="flex items-center gap-2 hover:opacity-70 transition-opacity">
@@ -81,37 +81,46 @@ export default function PreviewMockup() {
         </div>
       </nav>
 
-      {/* ── HERO SECTION ── */}
+      {/* ── HERO SECTION (MULTI-COLUMN VIDEO GRID) ── */}
       <section className="relative w-full h-screen flex items-center justify-center pt-16 bg-[#050505] overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image 
-            src="/davis-garnett-hero.png" 
-            alt="Tampa Bay Skyline" 
-            fill 
-            className="object-cover opacity-60 scale-105"
-            priority
-          />
-          {/* Heavy gradient shadows so the text pops */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/80 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/60 to-transparent" />
-        </div>
         
-        <div className="relative z-10 text-center px-8 flex flex-col items-center w-full max-w-4xl mx-auto">
+        {/* Background Video Grid */}
+        <div className="absolute inset-0 z-0 flex w-full h-full">
+          {[1, 2, 3, 4].map((num) => (
+            <div key={num} className="relative flex-1 h-full border-r border-white/5 last:border-r-0 overflow-hidden group">
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-700 z-10 pointer-events-none" />
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-1000"
+              >
+                <source src={`/hero-videos-homepage/davis-garnett-hero-video-${num}.mp4`} type="video/mp4" />
+              </video>
+            </div>
+          ))}
+          {/* Heavy gradient shadows so the text pops */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent pointer-events-none z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/80 via-transparent to-transparent pointer-events-none z-10" />
+        </div>
+
+        <div className="relative z-20 text-center px-8 flex flex-col items-center w-full max-w-4xl mx-auto pt-16">
           <DavisGarnettLogo variant="dark" className="w-[90%] md:w-[70%] max-w-[700px] mx-auto mb-16 drop-shadow-2xl" />
-          
-          <h1 className="font-aiveritas text-5xl md:text-7xl lg:text-8xl mb-6 font-bold tracking-tight text-white">
-            The Tampa <br/>
-            <span className="text-gradient-gold">Standard.</span>
+
+          <h1 className="font-aiveritas text-5xl md:text-7xl lg:text-8xl mb-6 font-bold tracking-tight text-white drop-shadow-2xl">
+            The Tampa <br />
+            <span className="text-[#D4AF37]">Standard.</span>
           </h1>
-          <p className="text-lg md:text-xl text-white/70 font-light max-w-2xl leading-relaxed mb-10">
+          <p className="text-lg md:text-xl text-white/90 font-light max-w-2xl leading-relaxed mb-10 drop-shadow-lg">
             A unified force in Tampa Bay real estate. Combining commercial gravity with unmatched residential finesse to deliver an elevated advisory experience.
           </p>
 
         </div>
 
         {/* Scroller Indicator */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-80 z-20">
-          <span className="text-[10px] tracking-[0.3em] uppercase font-bold text-gradient-gold">Scroll to Discover</span>
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-80 z-20 pointer-events-none">
+          <span className="text-[10px] tracking-[0.3em] uppercase font-bold text-[#D4AF37]">Scroll to Discover</span>
           <div className="w-[2px] h-12 bg-gradient-to-b from-[#D4AF37] to-transparent animate-pulse" />
         </div>
       </section>
@@ -119,14 +128,14 @@ export default function PreviewMockup() {
 
       {/* ── TAMPA TEAM REVEAL (INTERACTIVE SECTION) ── */}
       {isMobile ? (
-        
+
         /* MOBILE FALLBACK: Clean 2-column stacked layout */
         <section className="py-24 px-6 bg-[#050505]">
           <div className="text-center mb-16">
             <span className="text-[#D4AF37] text-[0.65rem] tracking-[0.2em] uppercase font-bold block mb-4">The Advisors</span>
             <h2 className="font-aiveritas text-4xl text-white">Your Power Combo.</h2>
           </div>
-          
+
           <div className="flex flex-col gap-12">
             <div className="w-full">
               <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden mb-6">
@@ -138,7 +147,7 @@ export default function PreviewMockup() {
                 Connect With Mark
               </button>
             </div>
-            
+
             <div className="w-full">
               <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden mb-6">
                 <Image src="/rachael-garnett-headshot.png" alt="Rachael Garnett" fill className="object-cover" />
@@ -157,9 +166,9 @@ export default function PreviewMockup() {
         /* DESKTOP INTERACTIVE: Framer Motion Scroll Sequence */
         <section ref={containerRef} className="relative w-full h-[800vh] bg-[#050505]">
           <div className="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center z-0">
-            
+
             {/* Center Image (Team) */}
-            <motion.div 
+            <motion.div
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 rounded-2xl overflow-hidden shadow-2xl"
               style={{
                 width: "30vw",
@@ -167,10 +176,10 @@ export default function PreviewMockup() {
                 scale: centerScale
               }}
             >
-              <Image 
-                src="/davis-garnett-real-combo.png" 
-                alt="Davis & Garnett Team" 
-                fill 
+              <Image
+                src="/davis-garnett-real-combo.png"
+                alt="Davis & Garnett Team"
+                fill
                 className="object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
@@ -183,10 +192,10 @@ export default function PreviewMockup() {
             {/* Initial Text (Left) */}
             <motion.div
               className="absolute top-1/2 -translate-y-1/2 z-0 text-center w-[30vw]"
-              style={{ 
-                left: "17%", 
+              style={{
+                left: "17%",
                 x: "-50%",
-                opacity: initialTextOpacity 
+                opacity: initialTextOpacity
               }}
             >
               <h3 className="font-aiveritas text-5xl font-bold text-gradient-gold mb-4">Two Powerhouses</h3>
@@ -198,10 +207,10 @@ export default function PreviewMockup() {
             {/* Initial Text (Right) */}
             <motion.div
               className="absolute top-1/2 -translate-y-1/2 z-0 text-center w-[30vw]"
-              style={{ 
-                left: "83%", 
+              style={{
+                left: "83%",
                 x: "-50%",
-                opacity: initialTextOpacity 
+                opacity: initialTextOpacity
               }}
             >
               <h3 className="font-aiveritas text-5xl font-bold text-gradient-gold mb-4">One Unified Force</h3>
@@ -211,7 +220,7 @@ export default function PreviewMockup() {
             </motion.div>
 
             {/* Left Image (Mark) */}
-            <motion.div 
+            <motion.div
               className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden group cursor-pointer shadow-2xl"
               style={{
                 left: leftLeft,
@@ -221,16 +230,16 @@ export default function PreviewMockup() {
                 borderRadius: borderRadius
               }}
             >
-              <Image 
-                src="/mark-commercial-action-2.jfif" 
-                alt="Mark Davis" 
-                fill 
+              <Image
+                src="/mark-commercial-action-2.jfif"
+                alt="Mark Davis"
+                fill
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-black/20 transition-colors duration-500" />
-              
+
               {/* Text Overlay for Phase 3 */}
-              <motion.div 
+              <motion.div
                 className="absolute inset-0 flex flex-col items-center justify-end pb-24 px-12 bg-gradient-to-t from-[#050505] via-[#050505]/50 to-transparent"
                 style={{ opacity: textOpacity, y: textY }}
               >
@@ -246,7 +255,7 @@ export default function PreviewMockup() {
             </motion.div>
 
             {/* Right Image (Rachael) */}
-            <motion.div 
+            <motion.div
               className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden group cursor-pointer shadow-2xl"
               style={{
                 left: rightLeft,
@@ -256,16 +265,16 @@ export default function PreviewMockup() {
                 borderRadius: borderRadius
               }}
             >
-              <Image 
-                src="/rachael-residential-action-2.jfif" 
-                alt="Rachael Garnett" 
-                fill 
+              <Image
+                src="/rachael-residential-action-2.jfif"
+                alt="Rachael Garnett"
+                fill
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-black/20 transition-colors duration-500" />
-              
+
               {/* Text Overlay for Phase 3 */}
-              <motion.div 
+              <motion.div
                 className="absolute inset-0 flex flex-col items-center justify-end pb-24 px-12 bg-gradient-to-t from-[#050505] via-[#050505]/50 to-transparent"
                 style={{ opacity: textOpacity, y: textY }}
               >
@@ -291,7 +300,7 @@ export default function PreviewMockup() {
             <span className="text-[#F5E6CE] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Unmatched Expertise</span>
             <h2 className="font-aiveritas text-4xl md:text-5xl text-[#D4AF37]">The Dual Advantage</h2>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-8">
             {/* Commercial */}
             <div className="group relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer">
@@ -357,7 +366,7 @@ export default function PreviewMockup() {
       {/* ── 3. CLIENT SUCCESS / TESTIMONIALS ── */}
       <section className="py-32 px-8 bg-black border-y border-white/5 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#D4AF37]/5 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/3" />
-        
+
         <div className="max-w-screen-xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-[1fr_2fr] gap-16 items-center">
             <div>
@@ -370,7 +379,7 @@ export default function PreviewMockup() {
                 Read All Reviews
               </Link>
             </div>
-            
+
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="bg-[#0a0a0a] border border-white/10 p-8 flex flex-col justify-between rounded-xl">
                 <div>
@@ -409,10 +418,10 @@ export default function PreviewMockup() {
       {/* ── 3.5 FAQ / AEO Q&A SECTION ── */}
       <section className="py-32 px-8 bg-[#050505] relative overflow-hidden" id="faq">
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#D4AF37]/5 rounded-full blur-[150px] pointer-events-none translate-y-1/2 -translate-x-1/3" />
-        
+
         <div className="max-w-screen-xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-[1fr_2fr] gap-16">
-            
+
             {/* Left Column - Section Header */}
             <div className="lg:sticky lg:top-32 lg:self-start">
               <span className="text-[#F5E6CE] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Expert Answers</span>
@@ -629,12 +638,12 @@ export default function PreviewMockup() {
             {/* Article 3 */}
             <Link href="/article-mockup" className="group">
               <div className="relative aspect-video mb-6 overflow-hidden bg-black border border-white/5 flex items-center justify-center rounded-xl">
-                <video 
-                  src="/hero-videos-homepage/davis-garnett-hero-video-1.mp4" 
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline 
+                <video
+                  src="/hero-videos-homepage/davis-garnett-hero-video-1.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                   className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                 />
                 <PlayCircle className="w-12 h-12 text-white relative z-10 opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all drop-shadow-xl" />
@@ -680,24 +689,24 @@ export default function PreviewMockup() {
       <section className="py-24 px-8 bg-[#0a0a0a] border-t border-white/5">
         <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center gap-12">
           <div className="w-full md:w-1/3 aspect-square relative rounded-full overflow-hidden border-4 border-[#D4AF37]/30 shadow-[0_0_40px_rgba(212,175,55,0.2)] shrink-0 transition-shadow duration-700 hover:shadow-[0_0_60px_rgba(212,175,55,0.4)]">
-             <video 
-               src="/hero-videos-homepage/davis-garnett-hero-video-2.mp4" 
-               autoPlay 
-               loop 
-               muted 
-               playsInline 
-               className="absolute inset-0 w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-1000"
-             />
-             <div className="absolute inset-0 bg-[#D4AF37]/10 mix-blend-overlay pointer-events-none" />
+            <video
+              src="/hero-videos-homepage/davis-garnett-hero-video-2.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-1000"
+            />
+            <div className="absolute inset-0 bg-[#D4AF37]/10 mix-blend-overlay pointer-events-none" />
           </div>
-          
+
           <div className="flex-1 text-center md:text-left">
             <span className="text-[#F5E6CE] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Davis & Garnett</span>
             <h2 className="font-aiveritas text-4xl md:text-5xl text-[#D4AF37] mb-6">Dominating Tampa Bay.</h2>
             <p className="text-white/60 font-light max-w-2xl leading-relaxed mb-8 mx-auto md:mx-0">
               Our footprint spans the most lucrative and desirable markets in the region. We provide hyper-local expertise, global reach, and a unified approach to real estate across the Gulf Coast.
             </p>
-            
+
             <div className="grid grid-cols-2 gap-4 pt-8 border-t border-white/10 mt-8">
               <Link href="/locations/st-pete" className="group relative aspect-video rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-[#D4AF37]/50 transition-colors">
                 <Image src="/city_tampa_1787662311501.png" alt="Tampa" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
@@ -743,10 +752,10 @@ export default function PreviewMockup() {
       {/* ── 5.5 ELEGANT ADVISORY CTA ── */}
       <section className="relative py-32 px-8 overflow-hidden border-t border-[#D4AF37]/20">
         <div className="absolute inset-0 z-0">
-           <Image src="/davis-garnett-coming-soon-2.jfif" alt="Advisory Team" fill className="object-cover object-[center_30%]" />
-           <div className="absolute inset-0 bg-black/60" />
+          <Image src="/davis-garnett-coming-soon-2.jfif" alt="Advisory Team" fill className="object-cover object-[center_30%]" />
+          <div className="absolute inset-0 bg-black/60" />
         </div>
-        
+
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <span className="text-[#F5E6CE] text-xs uppercase tracking-[0.3em] font-bold block mb-6">Strategic Advisory</span>
           <h2 className="font-aiveritas text-4xl md:text-5xl text-[#D4AF37] mb-8 leading-tight">
@@ -791,11 +800,11 @@ export default function PreviewMockup() {
             "/com_multi_family_1787632895059.png"
           ].map((imgSrc, idx) => (
             <Link key={idx} href="#" className="group relative aspect-square w-full h-full overflow-hidden block bg-[#111]">
-              <Image 
-                src={imgSrc} 
-                alt="Instagram Post" 
-                fill 
-                className="object-cover transition-transform duration-700 group-hover:scale-110" 
+              <Image
+                src={imgSrc}
+                alt="Instagram Post"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-6">
                 <div className="flex items-center gap-2 text-white font-bold">
@@ -816,42 +825,50 @@ export default function PreviewMockup() {
       <footer className="relative py-24 px-8 bg-[#020202] border-t border-[#D4AF37]/20 overflow-hidden">
         {/* Subtle background glow */}
         <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-[#D4AF37]/5 rounded-full blur-[120px] pointer-events-none -translate-y-1/2" />
-        
+
         <div className="relative z-10 max-w-screen-xl mx-auto flex flex-col gap-16 mb-20">
-          
+
           {/* Row 1: Mission Statement */}
           <div className="text-center border-b border-white/5 pb-16 pt-8">
             <p className="text-white/70 font-light text-xl md:text-2xl leading-relaxed max-w-4xl mx-auto">
               Tampa Bay's premier real estate group. Combining commercial gravity with unmatched residential finesse.
             </p>
           </div>
-          
-          {/* Row 2: Justified Horizontal Layout */}
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-            
-            {/* Davis & Garnett Logo (Anchored Left) */}
-            <div className="w-56 h-12 relative flex-shrink-0">
-              <DavisGarnettLogo variant="dark" className="w-full h-full object-contain lg:object-left" />
+
+          {/* Row 2: 4-Column Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 items-center text-center">
+
+            {/* Col 1: Davis & Garnett Logo */}
+            <div className="flex justify-center">
+              <div className="w-56 h-16 relative">
+                <DavisGarnettLogo variant="dark" className="w-full h-full object-contain" />
+              </div>
             </div>
-            
-            {/* Commercial Link */}
-            <Link href="/preview-mockup/commercial-listing" className="text-white/70 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors duration-300">
-              Commercial Listing
-            </Link>
-            
-            {/* Residential Link */}
-            <Link href="/preview-mockup/residential-listing" className="text-white/70 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors duration-300">
-              Residential Listing
-            </Link>
-            
-            {/* Align Right Logo (Anchored Right) */}
-            <div className="w-56 h-12 relative flex-shrink-0 opacity-90">
-               <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain lg:object-right" />
+
+            {/* Col 2: Commercial */}
+            <div className="flex justify-center">
+              <Link href="/preview-mockup/commercial-listing" className="text-white/70 text-xs font-medium uppercase tracking-widest hover:text-white transition-colors duration-300">
+                Commercial Listing
+              </Link>
+            </div>
+
+            {/* Col 3: Residential */}
+            <div className="flex justify-center">
+              <Link href="/preview-mockup/residential-listing" className="text-white/70 text-xs font-medium uppercase tracking-widest hover:text-white transition-colors duration-300">
+                Residential Listing
+              </Link>
+            </div>
+
+            {/* Col 4: Align Right Logo */}
+            <div className="flex justify-center">
+              <div className="w-56 h-16 relative opacity-90">
+                <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain" />
+              </div>
             </div>
 
           </div>
         </div>
-        
+
         {/* Compliance & Copyright */}
         <div className="relative z-10 max-w-screen-xl mx-auto border-t border-white/10 pt-8 mt-8 flex flex-col items-center text-center">
           <p className="text-[0.6rem] uppercase tracking-widest text-white/30 max-w-4xl leading-relaxed mb-6">
