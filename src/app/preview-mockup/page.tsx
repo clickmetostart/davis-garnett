@@ -293,12 +293,12 @@ export default function PreviewMockup() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Commercial */}
-            <div className="group relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer">
+            <div className="group relative min-h-[400px] md:min-h-0 md:aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer">
               <Image src="/vert_tampa_commercial.png" alt="Commercial" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent transition-opacity duration-500 group-hover:opacity-80" />
-              <div className="absolute inset-0 p-12 flex flex-col justify-end">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent transition-opacity duration-500 group-hover:opacity-80" />
+              <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
                 <h3 className="font-aiveritas text-3xl text-white mb-3 drop-shadow-lg">Commercial Acquisitions</h3>
-                <p className="text-white/80 font-light max-w-sm mb-6 opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+                <p className="text-white/80 font-light max-w-sm mb-6 opacity-100 md:opacity-0 md:translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
                   Strategic property placement, multi-family investments, and high-yield commercial assets across Tampa Bay.
                 </p>
                 <div className="flex items-center gap-2 text-[#D4AF37] text-xs uppercase tracking-widest font-bold">
@@ -308,12 +308,12 @@ export default function PreviewMockup() {
             </div>
 
             {/* Residential */}
-            <div className="group relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer">
+            <div className="group relative min-h-[400px] md:min-h-0 md:aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer">
               <Image src="/vert_tampa_residential.png" alt="Residential" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent transition-opacity duration-500 group-hover:opacity-80" />
-              <div className="absolute inset-0 p-12 flex flex-col justify-end">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent transition-opacity duration-500 group-hover:opacity-80" />
+              <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
                 <h3 className="font-aiveritas text-3xl text-white mb-3 drop-shadow-lg">Luxury Residential</h3>
-                <p className="text-white/80 font-light max-w-sm mb-6 opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+                <p className="text-white/80 font-light max-w-sm mb-6 opacity-100 md:opacity-0 md:translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
                   Curating exceptional neighborhood lifestyles and elevating the home buying and selling experience.
                 </p>
                 <div className="flex items-center gap-2 text-[#D4AF37] text-xs uppercase tracking-widest font-bold">
