@@ -246,3 +246,11 @@ body {
 .animate-float-slower {
   animation: float 25s ease-in-out infinite reverse;
 }
+
+/* Hide iOS/WebKit video playback controls for background videos */
+video::-webkit-media-controls-start-playback-button,
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls {
+  display: none !important;
+  -webkit-appearance: none;
+}
