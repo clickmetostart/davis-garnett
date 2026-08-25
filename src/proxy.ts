@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   // If accessing the dashboard
   if (request.nextUrl.pathname.startsWith('/clickme')) {
     const sessionCookie = request.cookies.get('mock_session');
