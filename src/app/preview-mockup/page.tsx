@@ -744,7 +744,7 @@ export default function PreviewMockup() {
       <section className="relative py-32 px-8 overflow-hidden border-t border-[#D4AF37]/20">
         <div className="absolute inset-0 z-0">
            <Image src="/davis-garnett-coming-soon-2.jfif" alt="Advisory Team" fill className="object-cover object-[center_30%]" />
-           <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]" />
+           <div className="absolute inset-0 bg-black/60" />
         </div>
         
         <div className="relative z-10 max-w-4xl mx-auto text-center">
