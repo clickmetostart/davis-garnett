@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowLeft, ArrowRight, ArrowUpRight, Star, MapPin, Building, PlayCircle, ChevronDown, MessageCircleQuestion, Instagram, Heart, MessageCircle } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Star, MapPin, Building, PlayCircle, ChevronDown, MessageCircleQuestion, Camera, Heart, MessageCircle } from "lucide-react";
 import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 import FeaturedPortfolioSpillOut from "@/components/FeaturedPortfolioSpillOut";
 
@@ -770,7 +770,7 @@ export default function PreviewMockup() {
       <section className="bg-black pt-32 pb-0 border-t border-[#D4AF37]/20">
         <div className="max-w-screen-xl mx-auto px-8 text-center mb-16">
           <span className="text-[#F5E6CE] text-xs uppercase tracking-[0.3em] font-bold flex items-center justify-center gap-2 mb-4">
-            <Instagram className="w-4 h-4 text-[#D4AF37]" /> Connect With The Syndicate
+            <Camera className="w-4 h-4 text-[#D4AF37]" /> Connect With The Syndicate
           </span>
           <h2 className="font-aiveritas text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F5E6CE] mb-6">@DavisGarnett</h2>
           <p className="text-white/60 text-lg font-light max-w-xl mx-auto">
