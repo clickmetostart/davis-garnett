@@ -740,6 +740,32 @@ export default function PreviewMockup() {
         </div>
       </section>
 
+      {/* ── 5.5 ELEGANT ADVISORY CTA ── */}
+      <section className="relative py-32 px-8 bg-[#050505] overflow-hidden border-t border-white/5">
+        <div className="absolute inset-0 z-0 opacity-20">
+           <Image src="/davis-garnett-real-combo.png" alt="Advisory Team" fill className="object-cover object-top" />
+           <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/80 to-[#050505]" />
+        </div>
+        
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
+          <span className="text-[#F5E6CE] text-xs uppercase tracking-[0.3em] font-bold block mb-6">Strategic Advisory</span>
+          <h2 className="font-aiveritas text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F5E6CE] mb-8 leading-tight">
+            Discreet. Precise. Uncompromising.
+          </h2>
+          <p className="text-white/70 text-lg font-light mb-12 max-w-2xl mx-auto leading-relaxed">
+            Whether navigating complex commercial acquisitions or securing legacy waterfront estates, our advisory syndicate operates with absolute discretion and precision. Schedule a private consultation to discuss your real estate portfolio.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <Link href="/locations/st-pete" className="px-8 py-4 bg-[#D4AF37] hover:bg-white text-black font-bold uppercase tracking-widest text-xs transition-colors rounded-lg w-full sm:w-auto min-w-[240px]">
+              Commercial Consultation
+            </Link>
+            <Link href="/locations/st-pete" className="px-8 py-4 bg-transparent border border-white/20 hover:border-[#D4AF37] text-white font-bold uppercase tracking-widest text-xs transition-colors rounded-lg w-full sm:w-auto min-w-[240px] backdrop-blur-sm">
+              Residential Consultation
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── 6. INSTAGRAM FEED / SOCIAL PROOF ── */}
       <section className="bg-black pt-32 pb-0 border-t border-[#D4AF37]/20">
         <div className="max-w-screen-xl mx-auto px-8 text-center mb-16">
