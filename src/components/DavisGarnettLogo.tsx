@@ -6,24 +6,6 @@ interface DavisGarnettLogoProps {
   width?: number;
 }
 
-export function DavisGarnettMark({ 
-  className = "",
-  width = 250
-}: { 
-  className?: string;
-  width?: number;
-}) {
-  return (
-    <Image 
-      src="/davis and garnett logo mobile png.png"
-      alt="Davis & Garnett Monogram"
-      width={width}
-      height={width}
-      className={`object-contain ${className}`}
-    />
-  );
-}
-
 /**
  * Davis & Garnett logo
  * Globally redirects to the provided PNG assets for both light and dark backgrounds.
@@ -62,5 +44,70 @@ export default function DavisGarnettLogo({
       className={`max-w-full h-auto object-contain ${className}`}
       priority
     />
+  );
+}
+
+/**
+ * Isolated DG monogram mark — useful for favicons, profile images, etc.
+ * Left as SVG since no isolated PNG monogram was provided.
+ */
+export function DavisGarnettMark({
+  variant = "light",
+  size = 200,
+  className = "",
+}: {
+  variant?: "light" | "dark";
+  size?: number;
+  className?: string;
+}) {
+  const isDark = variant === "dark";
+  const gold = "#b39556";
+  const boxBorder = isDark ? "#F6E3B0" : "#888888";
+  const bg = isDark ? "#050505" : "#ffffff";
+
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 260 260"
+      width={size}
+      height={size}
+      className={`max-w-full h-auto ${className}`}
+      aria-label="Davis & Garnett Monogram Mark"
+      role="img"
+    >
+      {/* Background removed to ensure transparency */}
+
+      {/* Border box */}
+      <rect
+        x="15" y="15"
+        width="230" height="230"
+        fill="none"
+        stroke={boxBorder}
+        strokeWidth="6"
+      />
+
+      {/* D */}
+      <text
+        x="55"
+        y="170"
+        fontFamily="'AIVeritas', serif"
+        fontSize="165"
+        fill={gold}
+      >
+        D
+      </text>
+
+      {/* G — overlapping */}
+      <text
+        x="105"
+        y="215"
+        fontFamily="'AIVeritas', serif"
+        fontSize="155"
+        fill={gold}
+        fillOpacity="0.90"
+      >
+        G
+      </text>
+    </svg>
   );
 }
