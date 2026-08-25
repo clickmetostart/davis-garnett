@@ -222,8 +222,8 @@ export default function PreviewMockup() {
               }}
             >
               <Image 
-                src="/vert_tampa_commercial.png" 
-                alt="Commercial Real Estate" 
+                src="/mark-commercial-action-2.jfif" 
+                alt="Mark Davis" 
                 fill 
                 className="object-cover"
               />
@@ -234,13 +234,13 @@ export default function PreviewMockup() {
                 className="absolute inset-0 flex flex-col items-center justify-end pb-24 px-12 bg-gradient-to-t from-[#050505] via-[#050505]/50 to-transparent"
                 style={{ opacity: textOpacity, y: textY }}
               >
-                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold mb-4">Strategic Acquisition</span>
-                <h2 className="font-aiveritas text-5xl text-white mb-6 text-center">Commercial Division</h2>
+                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold mb-4">Real Estate Advisor</span>
+                <h2 className="font-aiveritas text-5xl text-white mb-6">Mark Davis</h2>
                 <p className="text-white/70 text-center max-w-md font-light mb-10 leading-relaxed">
-                  Securing high-yield commercial assets, luxury retail spaces, and institutional-grade developments across the Gulf Coast.
+                  An award-winning powerhouse driving high-yield investments and exceptional real estate experiences across Tampa Bay's commercial and residential markets.
                 </p>
                 <button className="flex items-center gap-3 px-8 py-4 bg-white text-black text-xs font-bold uppercase tracking-widest hover:bg-[#D4AF37] transition-colors">
-                  View Commercial Listings <ArrowRight className="w-4 h-4" />
+                  View Mark's Portfolio <ArrowRight className="w-4 h-4" />
                 </button>
               </motion.div>
             </motion.div>
@@ -257,8 +257,8 @@ export default function PreviewMockup() {
               }}
             >
               <Image 
-                src="/vert_tampa_residential.png" 
-                alt="Residential Real Estate" 
+                src="/rachael-residential-action-2.jfif" 
+                alt="Rachael Garnett" 
                 fill 
                 className="object-cover"
               />
@@ -269,13 +269,13 @@ export default function PreviewMockup() {
                 className="absolute inset-0 flex flex-col items-center justify-end pb-24 px-12 bg-gradient-to-t from-[#050505] via-[#050505]/50 to-transparent"
                 style={{ opacity: textOpacity, y: textY }}
               >
-                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold mb-4">Curated Lifestyles</span>
-                <h2 className="font-aiveritas text-5xl text-white mb-6 text-center">Residential Division</h2>
+                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold mb-4">Real Estate Advisor</span>
+                <h2 className="font-aiveritas text-5xl text-white mb-6">Rachael Garnett</h2>
                 <p className="text-white/70 text-center max-w-md font-light mb-10 leading-relaxed">
-                  Sourcing and securing the most exclusive waterfront estates and ultra-luxury residences in Tampa Bay.
+                  Delivering unparalleled luxury service. Curating exceptional lifestyles and executing elite residential and commercial transactions with precision.
                 </p>
                 <button className="flex items-center gap-3 px-8 py-4 bg-white text-black text-xs font-bold uppercase tracking-widest hover:bg-[#D4AF37] transition-colors">
-                  View Residential Listings <ArrowRight className="w-4 h-4" />
+                  View Rachael's Portfolio <ArrowRight className="w-4 h-4" />
                 </button>
               </motion.div>
             </motion.div>
@@ -288,14 +288,14 @@ export default function PreviewMockup() {
       <section className="relative z-10 py-32 px-8 bg-[#050505] border-t border-white/10">
         <div className="max-w-screen-xl mx-auto">
           <div className="text-center mb-20">
-            <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Unmatched Expertise</span>
-            <h2 className="font-aiveritas text-4xl md:text-5xl text-white">The Dual Advantage</h2>
+            <span className="text-[#F5E6CE] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Unmatched Expertise</span>
+            <h2 className="font-aiveritas text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F5E6CE]">The Dual Advantage</h2>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8">
             {/* Commercial */}
             <div className="group relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer">
-              <Image src="/mark-commercial-action.png" alt="Commercial" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+              <Image src="/vert_tampa_commercial.png" alt="Commercial" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent transition-opacity duration-500 group-hover:opacity-80" />
               <div className="absolute inset-0 p-12 flex flex-col justify-end">
                 <h3 className="font-aiveritas text-3xl text-white mb-3 drop-shadow-lg">Commercial Acquisitions</h3>
@@ -310,7 +310,7 @@ export default function PreviewMockup() {
 
             {/* Residential */}
             <div className="group relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer">
-              <Image src="/rachael-residential-action.png" alt="Residential" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+              <Image src="/vert_tampa_residential.png" alt="Residential" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent transition-opacity duration-500 group-hover:opacity-80" />
               <div className="absolute inset-0 p-12 flex flex-col justify-end">
                 <h3 className="font-aiveritas text-3xl text-white mb-3 drop-shadow-lg">Luxury Residential</h3>
