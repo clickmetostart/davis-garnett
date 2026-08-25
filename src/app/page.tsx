@@ -109,7 +109,7 @@ export default function Page() {
           </h1>
 
           <p className="fade-up fade-up-delay-3 mt-10 max-w-xl text-lg text-white/60 leading-relaxed font-light">
-            We aren't just selling you a static brochure with an arbitrary "SEO tax." We are engineering the exact active content engine required to merge Mark's commercial gravity and Rachael's residential finesse into Tampa Bay's premier real estate group.
+            We aren't just selling you a static brochure with an arbitrary "SEO tax." We are engineering the exact active content engine required to merge your combined commercial and residential power into Tampa Bay's premier real estate group.
           </p>
 
           <div className="fade-up fade-up-delay-4 mt-12 flex flex-wrap gap-4">
@@ -341,7 +341,7 @@ export default function Page() {
                 <Box className="w-5 h-5 text-white" />
               </div>
               <h3 className="font-serif font-semibold text-2xl text-white">Dual Dashboards</h3>
-              <p className="text-white/60 font-light text-sm">Separate, dedicated ClickMe CRM ecosystems for Mark's commercial pipeline and Rachael's residential leads. One unified platform, independent data.</p>
+              <p className="text-white/60 font-light text-sm">Separate, dedicated ClickMe CRM ecosystems for your commercial and residential pipelines. One unified platform, independent data.</p>
             </div>
 
             <div className="glass-card p-10 flex flex-col gap-6">
@@ -577,3 +577,4 @@ export default function Page() {
     </div>
   );
 }
+

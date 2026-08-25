@@ -89,7 +89,7 @@ export default function ClickMePage() {
             </div>
             <h3 className="font-serif text-3xl text-white">Network CRM</h3>
             <p className="text-white/60 text-base leading-relaxed font-light">
-              Your complete contact and pipeline management system. Mark's commercial pipeline and Rachael's residential pipeline — separate, organized, and always current. No Salesforce. No HubSpot. No third-party subscription.
+              Your complete contact and pipeline management system. your commercial and residential pipelines — separate, organized, and always current. No Salesforce. No HubSpot. No third-party subscription.
             </p>
           </div>
 
@@ -149,7 +149,7 @@ export default function ClickMePage() {
             </div>
             <h3 className="font-serif text-3xl text-white">Business Locations</h3>
             <p className="text-white/60 text-base leading-relaxed font-light">
-              Multi-location management for every market you serve. Mark's commercial territories. Rachael's residential communities. Every location tracked and optimized independently under one ecosystem.
+              Multi-location management for every market you serve. Commercial territories. Residential communities. Every location tracked and optimized independently under one ecosystem.
             </p>
           </div>
 
@@ -213,3 +213,5 @@ export default function ClickMePage() {
     </div>
   );
 }
+
+

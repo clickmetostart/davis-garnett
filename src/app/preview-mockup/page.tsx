@@ -113,7 +113,7 @@ export default function PreviewMockup() {
             <span className="text-[#D4AF37]">Standard.</span>
           </h1>
           <p className="text-lg md:text-xl text-white/90 font-light max-w-2xl leading-relaxed mb-10 drop-shadow-lg">
-            A unified force in Tampa Bay real estate. Combining commercial gravity with unmatched residential finesse to deliver an elevated advisory experience.
+            A unified force in Tampa Bay real estate. Combining commercial and residential power to deliver an elevated advisory experience.
           </p>
 
         </div>
@@ -831,7 +831,7 @@ export default function PreviewMockup() {
           {/* Row 1: Mission Statement */}
           <div className="text-center border-b border-white/5 pb-16 pt-8">
             <p className="text-white/70 font-light text-xl md:text-2xl leading-relaxed max-w-4xl mx-auto">
-              Tampa Bay's premier real estate group. Combining commercial gravity with unmatched residential finesse.
+              Tampa Bay's premier real estate group. Combining commercial and residential power.
             </p>
           </div>
 
@@ -886,3 +886,4 @@ export default function PreviewMockup() {
     </div>
   );
 }
+

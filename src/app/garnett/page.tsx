@@ -95,7 +95,7 @@ export default function GarnettPage() {
       <section className="py-24 px-8 bg-white/[0.02] border-y border-white/5">
         <div className="max-w-screen-xl mx-auto">
           <h3 className="font-serif text-4xl text-white mb-16 text-center">Rachael's Areas of Expertise</h3>
-          <p className="text-white/50 text-center max-w-2xl mx-auto -mt-10 mb-16 font-light text-sm">Rachael serves both residential and commercial clients. Her content engine focuses primarily on residential neighborhoods and lifestyle to differentiate from Mark's commercial-led output.</p>
+          <p className="text-white/50 text-center max-w-2xl mx-auto -mt-10 mb-16 font-light text-sm">Rachael serves both residential and commercial clients. Her content engine focuses primarily on residential neighborhoods and lifestyle to differentiate from the commercial-led output.</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             <div className="glass-card p-8 flex flex-col gap-4">
@@ -226,3 +226,4 @@ export default function GarnettPage() {
     </div>
   );
 }
+

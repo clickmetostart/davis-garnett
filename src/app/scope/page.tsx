@@ -218,7 +218,7 @@ export default function ScopePage() {
                 </p>
 
                 <div className="mb-8">
-                  <strong className="text-white block mb-3 text-lg">Mark's Commercial Dashboard</strong>
+                  <strong className="text-white block mb-3 text-lg">Commercial Dashboard</strong>
                   <p className="text-sm mb-4">Purpose-built for commercial real estate pipeline:</p>
                   <ul className="flex flex-col gap-2 text-sm pl-4 border-l-2 border-[#D4AF37]/30">
                     <li>• Commercial lead CRM — contacts, companies, deal stages</li>
@@ -261,7 +261,7 @@ export default function ScopePage() {
                 <div>
                   <strong className="text-[#D4AF37] block mb-2 text-sm uppercase tracking-wider">Shared Ecosystem</strong>
                   <p className="text-sm">
-                    Both dashboards operate under one ClickMe platform — unified billing, one support team, shared authority network, and cross-referral tracking between Mark's commercial clients and Rachael's residential pipeline.
+                    Both dashboards operate under one ClickMe platform — unified billing, one support team, shared authority network, and cross-referral tracking between your commercial and residential pipelines.
                   </p>
                 </div>
               </div>
@@ -271,7 +271,7 @@ export default function ScopePage() {
                   <CheckSquare className="w-5 h-5 text-[#D4AF37]" /> Key Deliverables
                 </h3>
                 <ul className="flex flex-col gap-4 text-sm">
-                  <li className="flex items-start gap-3"><span className="text-[#D4AF37]">☑</span> Mark's Commercial CRM Dashboard — live at launch</li>
+                  <li className="flex items-start gap-3"><span className="text-[#D4AF37]">☑</span> Commercial CRM Dashboard — live at launch</li>
                   <li className="flex items-start gap-3"><span className="text-[#D4AF37]">☑</span> Rachael's Residential CRM Dashboard — live at launch</li>
                   <li className="flex items-start gap-3"><span className="text-[#D4AF37]">☑</span> Individual secure login credentials per partner</li>
                   <li className="flex items-start gap-3"><span className="text-[#D4AF37]">☑</span> Separate content pipelines per voice</li>
@@ -521,3 +521,5 @@ export default function ScopePage() {
     </div>
   );
 }
+
+

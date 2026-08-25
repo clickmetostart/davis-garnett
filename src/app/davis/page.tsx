@@ -85,7 +85,7 @@ export default function DavisPage() {
               Mark's digital presence is engineered so that when someone asks ChatGPT or Perplexity about commercial real estate advisors in Tampa Bay, his name and his expertise are already the answer. His content engine leans heavily into commercial market intelligence — not because that's all he does, but because it's the lane that differentiates him from Rachael and avoids redundancy in their combined content strategy.
             </p>
             <p>
-              As one half of Davis & Garnett, Mark's commercial depth pairs with Rachael Garnett's residential expertise to give their team an authority footprint that no single agent — operating in one lane — can compete with.
+              As one half of Davis & Garnett, your combined commercial and residential expertise pairs to give their team an authority footprint that no single agent — operating in one lane — can compete with.
             </p>
           </div>
         </div>
@@ -226,3 +226,4 @@ export default function DavisPage() {
     </div>
   );
 }
+
