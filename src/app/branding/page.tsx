@@ -578,7 +578,7 @@ export default function BrandingBook() {
               </p>
               <div className="w-full aspect-[21/9] bg-[#050505] rounded-xl border border-white/10 relative overflow-hidden flex items-center justify-center group">
                 <div className="absolute inset-0 opacity-80 transition-opacity group-hover:opacity-100">
-                  <Image src="/davis-garnett-coming-soon-2.jfif" alt="Team Commercial" fill className="object-cover object-[center_25%]" />
+                  <Image src="/davis-garnett-coming-soon-2.jpg" alt="Team Commercial" fill className="object-cover object-[center_25%]" />
                 </div>
                 {/* Subtle gradient so the logo is readable, but the sunset shines through */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/60 via-[#050505]/20 to-transparent" />
@@ -604,7 +604,7 @@ export default function BrandingBook() {
               </p>
               <div className="w-full aspect-[16/6] bg-[#050505] rounded-xl border border-white/10 relative overflow-hidden flex items-center justify-center group">
                 <div className="absolute inset-0 opacity-70 transition-opacity group-hover:opacity-100">
-                  <Image src="/team-residential-banner-2.jfif" alt="Team Residential" fill className="object-cover object-center" />
+                  <Image src="/team-residential-banner-2.jpg" alt="Team Residential" fill className="object-cover object-center" />
                 </div>
                 {/* Targeted radial shadow behind the logo to make it pop perfectly without darkening the image */}
                 <div className="absolute bottom-0 left-0 w-2/3 h-full bg-[radial-gradient(ellipse_at_bottom_left,rgba(5,5,5,0.95)_0%,rgba(5,5,5,0.4)_40%,transparent_70%)]" />
@@ -629,7 +629,7 @@ export default function BrandingBook() {
               </p>
               <div className="w-full aspect-[16/6] bg-[#050505] rounded-xl border border-white/10 relative overflow-hidden flex items-center justify-center group">
                 <div className="absolute inset-0 opacity-60 transition-opacity group-hover:opacity-80">
-                  <Image src="/mark-commerical-banner-1.jfif" alt="Mark Commercial" fill className="object-cover object-left" />
+                  <Image src="/mark-commerical-banner-1.jpg" alt="Mark Commercial" fill className="object-cover object-left" />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-l from-[#050505] via-[#050505]/70 to-transparent" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/80 via-transparent to-transparent" />
@@ -654,7 +654,7 @@ export default function BrandingBook() {
               </p>
               <div className="w-full aspect-[16/6] bg-[#050505] rounded-xl border border-white/10 relative overflow-hidden flex items-center justify-center group">
                 <div className="absolute inset-0 opacity-60 transition-opacity group-hover:opacity-80">
-                  <Image src="/rachael-banner-2.jfif" alt="Rachael Residential" fill className="object-cover object-left" />
+                  <Image src="/rachael-banner-2.jpg" alt="Rachael Residential" fill className="object-cover object-left" />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-l from-[#050505] via-[#050505]/70 to-transparent" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/80 via-transparent to-transparent" />
@@ -680,11 +680,11 @@ export default function BrandingBook() {
             <div className="grid grid-cols-3 gap-2 rounded-xl overflow-hidden border border-white/10">
               {[
                 "/social-post-examples/golf-networking.png",
-                "/social-post-examples/mark-commercial-action-2.jfif",
+                "/social-post-examples/mark-commercial-action-2.jpg",
                 "/social-post-examples/rachael-garnett.webp",
                 "/social-post-examples/davis-garnett-real-estate-advisors-cover-image.webp",
                 "/social-post-examples/mark-davis-profile-image.webp",
-                "/social-post-examples/davis-garnett-coming-soon-2.jfif"
+                "/social-post-examples/davis-garnett-coming-soon-2.jpg"
               ].map((src, i) => (
                 <div key={i} className="aspect-square relative overflow-hidden group">
                   <Image src={src} alt="Feed" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />

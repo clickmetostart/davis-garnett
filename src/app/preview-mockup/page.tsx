@@ -231,7 +231,7 @@ export default function PreviewMockup() {
               }}
             >
               <Image
-                src="/mark-commercial-action-2.jfif"
+                src="/mark-commercial-action-2.jpg"
                 alt="Mark Davis"
                 fill
                 className="object-cover"
@@ -266,7 +266,7 @@ export default function PreviewMockup() {
               }}
             >
               <Image
-                src="/rachael-residential-action-2.jfif"
+                src="/rachael-residential-action-2.jpg"
                 alt="Rachael Garnett"
                 fill
                 className="object-cover"
@@ -752,7 +752,7 @@ export default function PreviewMockup() {
       {/* ── 5.5 ELEGANT ADVISORY CTA ── */}
       <section className="relative py-32 px-8 overflow-hidden border-t border-[#D4AF37]/20">
         <div className="absolute inset-0 z-0">
-          <Image src="/davis-garnett-coming-soon-2.jfif" alt="Advisory Team" fill className="object-cover object-[center_30%]" />
+          <Image src="/davis-garnett-coming-soon-2.jpg" alt="Advisory Team" fill className="object-cover object-[center_30%]" />
           <div className="absolute inset-0 bg-black/60" />
         </div>
 
@@ -847,14 +847,14 @@ export default function PreviewMockup() {
 
             {/* Col 2: Commercial */}
             <div className="flex justify-center">
-              <Link href="/preview-mockup/commercial-listing" className="text-white/70 text-xs font-medium uppercase tracking-widest hover:text-white transition-colors duration-300">
+              <Link href="/listing/commercial" className="text-white/70 text-xs font-medium uppercase tracking-widest hover:text-white transition-colors duration-300">
                 Commercial Listing
               </Link>
             </div>
 
             {/* Col 3: Residential */}
             <div className="flex justify-center">
-              <Link href="/preview-mockup/residential-listing" className="text-white/70 text-xs font-medium uppercase tracking-widest hover:text-white transition-colors duration-300">
+              <Link href="/listing/residential" className="text-white/70 text-xs font-medium uppercase tracking-widest hover:text-white transition-colors duration-300">
                 Residential Listing
               </Link>
             </div>
