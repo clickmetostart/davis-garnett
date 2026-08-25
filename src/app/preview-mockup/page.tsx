@@ -817,51 +817,49 @@ export default function PreviewMockup() {
         {/* Subtle background glow */}
         <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-[#D4AF37]/5 rounded-full blur-[120px] pointer-events-none -translate-y-1/2" />
         
-        <div className="relative z-10 max-w-screen-xl mx-auto flex flex-col lg:flex-row justify-between gap-16 mb-20">
+        <div className="relative z-10 max-w-screen-xl mx-auto flex flex-col gap-16 mb-20">
           
-          {/* Left Brand Identity */}
-          <div className="flex-1 max-w-sm">
-            <DavisGarnettLogo variant="dark" className="w-64 max-w-full mb-8" />
-            <p className="text-white/50 font-light leading-relaxed mb-10 text-sm">
-              Tampa Bay's premier real estate syndicate. Executing high-yield commercial acquisitions and curating elite residential lifestyles with absolute precision.
+          {/* Row 1: Mission Statement */}
+          <div className="text-center border-b border-white/5 pb-16 pt-8">
+            <p className="text-white/70 font-light text-xl md:text-2xl leading-relaxed max-w-4xl mx-auto">
+              Tampa Bay's premier real estate syndicate. Combining commercial gravity with unmatched residential finesse.
             </p>
-            {/* Align Right Logo - Clean, no box */}
-            <div className="w-48 h-12 relative opacity-90">
-               <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain object-left" />
-            </div>
           </div>
           
-          {/* Right Navigation Grids */}
-          <div className="flex-[2] grid grid-cols-2 md:grid-cols-3 gap-12">
+          {/* Row 2: 4-Column Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 items-start text-center lg:text-left">
             
-            {/* Column 1: Core Navigation */}
-            <div>
-              <h4 className="text-[#D4AF37] text-[10px] uppercase tracking-[0.3em] font-bold mb-6">Experiences</h4>
+            {/* Col 1: Davis & Garnett Logo */}
+            <div className="flex justify-center lg:justify-start pt-2">
+              <DavisGarnettLogo variant="dark" className="w-56 max-w-full" />
+            </div>
+            
+            {/* Col 2: Commercial */}
+            <div className="flex flex-col items-center lg:items-start">
+              <h4 className="text-[#D4AF37] text-[10px] uppercase tracking-[0.3em] font-bold mb-6">Commercial</h4>
               <ul className="flex flex-col gap-4 text-white/70 text-xs font-medium uppercase tracking-widest">
-                <li><Link href="/preview-mockup" className="hover:text-white transition-colors duration-300">Home Experience</Link></li>
+                <li><Link href="/preview-mockup" className="hover:text-white transition-colors duration-300">Home Mockup</Link></li>
+                <li><Link href="#" className="hover:text-white transition-colors duration-300">Commercial Listing</Link></li>
+                <li><Link href="#" className="hover:text-white transition-colors duration-300">Mark Davis Bio</Link></li>
+              </ul>
+            </div>
+            
+            {/* Col 3: Residential */}
+            <div className="flex flex-col items-center lg:items-start">
+              <h4 className="text-[#D4AF37] text-[10px] uppercase tracking-[0.3em] font-bold mb-6">Residential</h4>
+              <ul className="flex flex-col gap-4 text-white/70 text-xs font-medium uppercase tracking-widest">
                 <li><Link href="/locations/st-pete" className="hover:text-white transition-colors duration-300">St. Pete Hub</Link></li>
+                <li><Link href="#" className="hover:text-white transition-colors duration-300">Residential Listing</Link></li>
+                <li><Link href="#" className="hover:text-white transition-colors duration-300">Rachael Garnett Bio</Link></li>
                 <li><Link href="#" className="hover:text-white transition-colors duration-300">Q&A Post Mockup</Link></li>
               </ul>
             </div>
             
-            {/* Column 2: Portfolio */}
-            <div>
-              <h4 className="text-[#D4AF37] text-[10px] uppercase tracking-[0.3em] font-bold mb-6">The Portfolio</h4>
-              <ul className="flex flex-col gap-4 text-white/70 text-xs font-medium uppercase tracking-widest">
-                <li><Link href="#" className="hover:text-white transition-colors duration-300">Commercial Listing</Link></li>
-                <li><Link href="#" className="hover:text-white transition-colors duration-300">Residential Listing</Link></li>
-                <li><Link href="#" className="hover:text-white transition-colors duration-300">Past Sales</Link></li>
-              </ul>
-            </div>
-            
-            {/* Column 3: The Syndicate */}
-            <div>
-              <h4 className="text-[#D4AF37] text-[10px] uppercase tracking-[0.3em] font-bold mb-6">The Syndicate</h4>
-              <ul className="flex flex-col gap-4 text-white/70 text-xs font-medium uppercase tracking-widest">
-                <li><Link href="#" className="hover:text-white transition-colors duration-300">Mark Davis Bio</Link></li>
-                <li><Link href="#" className="hover:text-white transition-colors duration-300">Rachael Garnett Bio</Link></li>
-                <li><Link href="#" className="hover:text-white transition-colors duration-300">Contact Us</Link></li>
-              </ul>
+            {/* Col 4: Align Right Logo */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="w-48 h-16 relative opacity-90">
+                 <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain lg:object-right" />
+              </div>
             </div>
 
           </div>
