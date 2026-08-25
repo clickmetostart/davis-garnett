@@ -4,6 +4,7 @@ import { ArrowRight, Check, Sparkles, X, ChevronRight, Activity, Layers, Zap, Se
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
+import ProposalNav from "@/components/ProposalNav";
 
 const NAV_LINKS = [
   { label: "Why Now", href: "#truth" },
@@ -45,55 +46,7 @@ export default function Page() {
     <div className="min-h-screen text-white relative selection:bg-[#D4AF37] selection:text-black font-sans">
 
       {/* ── NAVIGATION ──────────────────────────────────── */}
-      <nav className="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-xl border-b border-white/5">
-        <div className="max-w-screen-xl mx-auto px-8 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <span className="font-serif text-xl font-bold tracking-tight text-white drop-shadow-md">
-              Davis & Garnett
-            </span>
-          </div>
-          <div className="hidden lg:flex items-center gap-6">
-            {NAV_LINKS.map((l) => (
-              l.href.startsWith("/") ? (
-                <Link key={l.label} href={l.href} className="label-caps text-white/60 hover:text-white transition-colors">
-                  {l.label}
-                </Link>
-              ) : (
-                <a key={l.label} href={l.href} className="label-caps text-white/60 hover:text-white transition-colors">
-                  {l.label}
-                </a>
-              )
-            ))}
-            <a href="#investment" className="btn-gold text-[0.65rem] py-3 px-6 ml-4">
-              Your Investment
-            </a>
-          </div>
-
-          <button className="lg:hidden p-2 text-white/60" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-20 left-0 w-full bg-black/95 backdrop-blur-3xl border-b border-white/10 p-8 flex flex-col gap-6 shadow-2xl">
-            {NAV_LINKS.map((l) => (
-              l.href.startsWith("/") ? (
-                <Link key={l.label} href={l.href} onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-serif text-white hover:text-[#D4AF37] transition-colors border-b border-white/10 pb-4">
-                  {l.label}
-                </Link>
-              ) : (
-                <a key={l.label} href={l.href} onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-serif text-white hover:text-[#D4AF37] transition-colors border-b border-white/10 pb-4">
-                  {l.label}
-                </a>
-              )
-            ))}
-            <a href="#investment" onClick={() => setIsMobileMenuOpen(false)} className="btn-gold text-center py-4 mt-4">
-              Your Investment
-            </a>
-          </div>
-        )}
-      </nav>
+      <ProposalNav />
 
       {/* ── 1. HERO ────────────────────────────────────────── */}
       <header className="relative lg:min-h-screen flex flex-col lg:flex-row items-center lg:items-stretch pt-28 lg:pt-20">

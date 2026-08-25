@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import DavisGarnettLogo, { DavisGarnettMark } from "@/components/DavisGarnettLogo";
+import ProposalNav from "@/components/ProposalNav";
 import {
   ArrowLeft, Palette, Type, Smartphone, ShieldCheck,
   PrinterIcon, Layers, Globe, CheckCircle2, ArrowRight, Sparkles, Tag, Mail,
@@ -130,19 +131,7 @@ export default function BrandingBook() {
         <div className="absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] rounded-full bg-white/3 blur-[120px]" />
       </div>
 
-      {/* ── NAVIGATION ── */}
-      <nav className="fixed top-0 w-full z-50 bg-black/40 backdrop-blur-xl border-b border-white/5">
-        <div className="max-w-screen-xl mx-auto px-8 h-20 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 text-xs text-[#a0a0a0] hover:text-[#D4AF37] transition-colors uppercase tracking-widest">
-            <ArrowLeft className="w-4 h-4" /> Back to Main Page
-          </Link>
-          <div className="flex items-center gap-6">
-            <Link href="/mark" className="hidden md:block label-caps text-white/50 hover:text-white transition-colors text-[0.6rem]">Mark's Page</Link>
-            <Link href="/rachael" className="hidden md:block label-caps text-white/50 hover:text-white transition-colors text-[0.6rem]">Rachael's Page</Link>
-          </div>
-        </div>
-      </nav>
-
+      <ProposalNav />
       {/* ── HERO HEADER ── */}
       <header className="relative pt-40 pb-24 px-8 text-center border-b border-white/5">
         <div className="max-w-screen-xl mx-auto">

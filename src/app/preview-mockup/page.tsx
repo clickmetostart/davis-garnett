@@ -7,6 +7,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Star, MapPin, Building, PlayCircle, ChevronDown, MessageCircleQuestion, Camera, Heart, MessageCircle } from "lucide-react";
 import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 import FeaturedPortfolioSpillOut from "@/components/FeaturedPortfolioSpillOut";
+import PreviewNav from "@/components/PreviewNav";
 
 export default function PreviewMockup() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -68,18 +69,7 @@ export default function PreviewMockup() {
         <span>Davis & Garnett — Live Site Preview</span>
       </div>
 
-      {/* ── REAL WEBSITE NAVIGATION ── */}
-      <nav className="absolute top-8 w-full z-50 bg-black/40 backdrop-blur-md border-b border-white/5">
-        <div className="max-w-screen-xl mx-auto px-8 h-20 flex items-center justify-between">
-          <DavisGarnettLogo variant="dark" className="w-48 max-w-full" />
-          <div className="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest text-white/70">
-            <Link href="#" className="hover:text-[#D4AF37] transition-colors">Commercial</Link>
-            <Link href="#" className="hover:text-[#D4AF37] transition-colors">Residential</Link>
-            <Link href="#" className="hover:text-[#D4AF37] transition-colors">Portfolio</Link>
-            <Link href="#" className="text-white hover:text-[#D4AF37] transition-colors">Contact</Link>
-          </div>
-        </div>
-      </nav>
+      <PreviewNav />
 
       {/* ── HERO SECTION (MULTI-COLUMN VIDEO GRID) ── */}
       <section className="relative w-full h-screen flex items-center justify-center pt-16 bg-[#050505] overflow-hidden">

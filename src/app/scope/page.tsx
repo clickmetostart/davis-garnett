@@ -1,5 +1,6 @@
 import { ArrowRight, ArrowDown, ArrowUp, ChevronRight, Server, Layout, Zap, Shield, CheckSquare } from "lucide-react";
 import Link from "next/link";
+import ProposalNav from "@/components/ProposalNav";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -22,36 +23,7 @@ export default function ScopePage() {
       </div>
 
       {/* ── NAVIGATION ──────────────────────────────────── */}
-      <nav className="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-xl border-b border-white/5">
-        <div className="max-w-screen-xl mx-auto px-8 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <span className="font-serif text-xl font-bold tracking-tight text-white drop-shadow-md">
-              Davis & Garnett
-            </span>
-          </div>
-          <div className="hidden lg:flex items-center gap-10">
-            <Link href="/" className="label-caps text-white/60 hover:text-white transition-colors">
-              Return to Main Page
-            </Link>
-            <Link href="/scope" className="label-caps text-[#D4AF37]">
-              Scope
-            </Link>
-            <Link href="/features" className="label-caps text-white/60 hover:text-white transition-colors">
-              Features
-            </Link>
-            <Link href="/branding" className="label-caps text-white/60 hover:text-white transition-colors">
-              Branding
-            </Link>
-            <Link href="/clickme" className="label-caps text-white/60 hover:text-white transition-colors">
-              Dashboard Details
-            </Link>
-
-            <Link href="/preview-mockup" className="label-caps text-[#D4AF37] hover:text-[#F6E3B0] transition-colors drop-shadow-md">
-              Website Preview
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <ProposalNav />
 
       {/* ── HERO SECTION (MULTI-COLUMN VIDEO GRID) ── */}
       <header className="relative w-full min-h-screen flex items-center justify-center pt-32 pb-32 lg:pt-20 lg:pb-0 overflow-hidden bg-black border-b border-white/5">
