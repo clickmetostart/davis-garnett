@@ -51,8 +51,8 @@ export default function ArticleMockup() {
           </div>
         </div>
 
-        <div className="max-w-screen-lg mx-auto relative aspect-video rounded-2xl overflow-hidden mb-16">
-          <Image src="/com_industrial_park_1787632905437.png" alt="Industrial Park" fill className="object-cover" />
+        <div className="max-w-screen-lg mx-auto relative aspect-video rounded-2xl overflow-hidden mb-16 shadow-2xl border border-white/5">
+          <Image src="/com_office_tower_1787632874122.png" alt="Industrial Park" fill className="object-cover" />
         </div>
 
         <div className="max-w-screen-md mx-auto prose prose-invert prose-lg prose-headings:font-aiveritas prose-a:text-[#D4AF37]">

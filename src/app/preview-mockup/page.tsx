@@ -423,7 +423,7 @@ export default function PreviewMockup() {
             {/* Article 1 */}
             <Link href="/article-mockup" className="group">
               <div className="relative aspect-video mb-6 overflow-hidden bg-white/5 border border-white/5 rounded-xl">
-                <Image src="/youtube_skyscraper_banner_1787607984987.png" alt="Commercial Forecast" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+                <Image src="/com_office_tower_1787632874122.png" alt="Commercial Forecast" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                 <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1 text-[0.6rem] uppercase tracking-widest text-[#D4AF37] font-bold border border-white/10 rounded-sm">Commercial</div>
               </div>
               <h3 className="font-aiveritas text-2xl text-white mb-3 group-hover:text-[#D4AF37] transition-colors">2026 Tampa Bay Commercial Real Estate Forecast</h3>
@@ -442,9 +442,16 @@ export default function PreviewMockup() {
 
             {/* Article 3 */}
             <Link href="/article-mockup" className="group">
-              <div className="relative aspect-video mb-6 overflow-hidden bg-white/5 border border-white/5 flex items-center justify-center rounded-xl">
-                <Image src="/team_commercial_banner_1787599029260.png" alt="Video Podcast" fill className="object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700" />
-                <PlayCircle className="w-12 h-12 text-white relative z-10 opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all" />
+              <div className="relative aspect-video mb-6 overflow-hidden bg-black border border-white/5 flex items-center justify-center rounded-xl">
+                <video 
+                  src="/hero-videos-homepage/davis-garnett-hero-video-1.mp4" 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline 
+                  className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                />
+                <PlayCircle className="w-12 h-12 text-white relative z-10 opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all drop-shadow-xl" />
               </div>
               <h3 className="font-aiveritas text-2xl text-white mb-3 group-hover:text-[#D4AF37] transition-colors">Video: Q3 Investment Strategies</h3>
               <p className="text-white/60 font-light text-sm line-clamp-2">Mark and Rachael discuss synergistic opportunities across their combined portfolios.</p>
