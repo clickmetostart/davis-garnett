@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowLeft, ArrowRight, ArrowUpRight, Star, MapPin, Building, PlayCircle, ChevronDown, MessageCircleQuestion } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Star, MapPin, Building, PlayCircle, ChevronDown, MessageCircleQuestion, Instagram, Heart, MessageCircle } from "lucide-react";
 import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 import FeaturedPortfolioSpillOut from "@/components/FeaturedPortfolioSpillOut";
 
@@ -740,29 +740,49 @@ export default function PreviewMockup() {
         </div>
       </section>
 
-      {/* ── 6. FINAL CTA ── */}
-      <section className="relative py-40 px-8 bg-black overflow-hidden flex items-center justify-center text-center border-t border-[#D4AF37]/20">
-        <div className="absolute inset-0 z-0">
-          <Image src="/media__1787608237847.jpg" alt="Luxury Real Estate" fill className="object-cover opacity-30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/90 to-[#050505]/40" />
-        </div>
-        
-        <div className="relative z-10 max-w-3xl mx-auto">
-          <span className="w-16 h-16 rounded-full bg-[#D4AF37]/10 flex items-center justify-center mx-auto mb-8 border border-[#D4AF37]/30 backdrop-blur-sm">
-            <Building className="w-6 h-6 text-[#D4AF37]" />
+      {/* ── 6. INSTAGRAM FEED / SOCIAL PROOF ── */}
+      <section className="bg-black pt-32 pb-0 border-t border-[#D4AF37]/20">
+        <div className="max-w-screen-xl mx-auto px-8 text-center mb-16">
+          <span className="text-[#F5E6CE] text-xs uppercase tracking-[0.3em] font-bold flex items-center justify-center gap-2 mb-4">
+            <Instagram className="w-4 h-4 text-[#D4AF37]" /> Connect With The Syndicate
           </span>
-          <h2 className="font-aiveritas text-5xl md:text-6xl text-white mb-8 drop-shadow-lg">Command Your Real Estate Future</h2>
-          <p className="text-white/80 text-lg font-light mb-12 max-w-xl mx-auto drop-shadow">
-            Ready to secure high-yield assets or discover your ultimate dream home? Partner with Tampa Bay's elite syndicate.
+          <h2 className="font-aiveritas text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F5E6CE] mb-6">@DavisGarnett</h2>
+          <p className="text-white/60 text-lg font-light max-w-xl mx-auto">
+            Follow our latest luxury listings, commercial acquisitions, and market insights across the Tampa Bay area.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Link href="#" className="btn btn-primary btn-lg w-full sm:w-auto min-w-[240px]">
-              Contact Mark (Commercial)
+        </div>
+
+        {/* Full Width Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-0">
+          {[
+            "/res_waterfront_estate_1787632802890.png",
+            "/com_office_tower_1787632874122.png",
+            "/res_modern_mansion_1787632812473.png",
+            "/com_luxury_retail_1787632885082.png",
+            "/res_luxury_condo_1787632822869.png",
+            "/land_commercial_development_1787632926636.png",
+            "/res_historic_estate_1787632833084.png",
+            "/com_multi_family_1787632895059.png"
+          ].map((imgSrc, idx) => (
+            <Link key={idx} href="#" className="group relative aspect-square w-full h-full overflow-hidden block bg-[#111]">
+              <Image 
+                src={imgSrc} 
+                alt="Instagram Post" 
+                fill 
+                className="object-cover transition-transform duration-700 group-hover:scale-110" 
+              />
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-6">
+                <div className="flex items-center gap-2 text-white font-bold">
+                  <Heart className="w-6 h-6 fill-white" />
+                  <span>{Math.floor(Math.random() * 500) + 100}</span>
+                </div>
+                <div className="flex items-center gap-2 text-white font-bold">
+                  <MessageCircle className="w-6 h-6 fill-white" />
+                  <span>{Math.floor(Math.random() * 50) + 5}</span>
+                </div>
+              </div>
             </Link>
-            <Link href="#" className="btn btn-outline-light btn-lg w-full sm:w-auto min-w-[240px] bg-black/40 backdrop-blur-md">
-              Contact Rachael (Residential)
-            </Link>
-          </div>
+          ))}
         </div>
       </section>
 
