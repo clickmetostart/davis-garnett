@@ -84,7 +84,8 @@ export default function PreviewMockup() {
                 muted
                 loop
                 playsInline
-                className="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-1000"
+                controls={false}
+                className="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-1000 pointer-events-none"
               >
                 <source src={`/hero-videos-homepage/davis-garnett-hero-video-${num}.mp4`} type="video/mp4" />
               </video>
@@ -634,7 +635,8 @@ export default function PreviewMockup() {
                   loop
                   muted
                   playsInline
-                  className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                  controls={false}
+                  className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 pointer-events-none"
                 />
                 <PlayCircle className="w-12 h-12 text-white relative z-10 opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all drop-shadow-xl" />
               </div>
@@ -685,7 +687,8 @@ export default function PreviewMockup() {
               loop
               muted
               playsInline
-              className="absolute inset-0 w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-1000"
+              controls={false}
+              className="absolute inset-0 w-full h-full object-cover scale-105 opacity-80 pointer-events-none hover:opacity-100 transition-opacity duration-1000"
             />
             <div className="absolute inset-0 bg-[#D4AF37]/10 mix-blend-overlay pointer-events-none" />
           </div>
