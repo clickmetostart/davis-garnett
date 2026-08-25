@@ -108,8 +108,8 @@ export default function FeaturedPortfolioSpillOut() {
             y: useTransform(scrollYProgress, [0, 0.1, 1], [0, -50, -50])
           }}
         >
-          <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-4 drop-shadow-md">Signature Assets</span>
-          <h2 className="font-aiveritas text-5xl md:text-7xl text-white drop-shadow-2xl mb-8">The Tampa Collection</h2>
+          <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-4 drop-shadow-md">Signature Assets - Tampa Area</span>
+          <h2 className="font-aiveritas text-5xl md:text-7xl text-white drop-shadow-2xl mb-8">The Bay Collection</h2>
           
           <div className="flex flex-col items-center gap-2 opacity-70">
             <Mouse className="w-6 h-6 text-white animate-bounce" />
