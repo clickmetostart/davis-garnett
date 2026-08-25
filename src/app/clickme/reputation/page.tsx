@@ -4,9 +4,9 @@ import React, { useState } from 'react';
 
 export default function ReputationEngine() {
   const [reviews] = useState([
-    { id: 1, author: 'Jennifer S.', rating: 5, source: 'Google', text: 'Rob and his team were absolutely incredible. We were first time home buyers in Dane County and he made the WHEDA process seamless!', date: '2 days ago', responded: false },
-    { id: 2, author: 'Mark T.', rating: 5, source: 'Yelp', text: 'Best mortgage rates in Madison. Highly recommend ClickMe Template.', date: '1 week ago', responded: true },
-    { id: 3, author: 'Alicia B.', rating: 4, source: 'Google', text: 'Great service, but the closing took a little longer than expected due to title issues. Rob was communicative though.', date: '2 weeks ago', responded: false },
+    { id: 1, author: 'Jennifer S.', rating: 5, source: 'Google', text: 'Mark and his team were absolutely incredible. We were first time commercial investors in Tampa Bay and he made the zoning process seamless!', date: '2 days ago', responded: false },
+    { id: 2, author: 'Mark T.', rating: 5, source: 'Yelp', text: 'Best luxury properties in St. Pete. Highly recommend Rachael and her team at Davis & Garnett.', date: '1 week ago', responded: true },
+    { id: 3, author: 'Alicia B.', rating: 4, source: 'Google', text: 'Great service, but the closing took a little longer than expected due to title issues. Rachael was communicative though.', date: '2 weeks ago', responded: false },
   ]);
 
   return (
