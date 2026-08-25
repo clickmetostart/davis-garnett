@@ -4,7 +4,7 @@ import path from 'path';
 
 export async function GET() {
   try {
-    const dataPath = path.join(process.cwd(), 'data', 'labels.json');
+    const dataPath = path.join(process.cwd(), 'src', 'data', 'labels.json');
     const fileData = await fs.readFile(dataPath, 'utf8').catch(() => '[]');
     const labels = JSON.parse(fileData);
     return NextResponse.json({ labels }, { status: 200 });
@@ -17,7 +17,7 @@ export async function GET() {
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const dataPath = path.join(process.cwd(), 'data', 'labels.json');
+    const dataPath = path.join(process.cwd(), 'src', 'data', 'labels.json');
     const fileData = await fs.readFile(dataPath, 'utf8').catch(() => '[]');
     const labels = JSON.parse(fileData);
 

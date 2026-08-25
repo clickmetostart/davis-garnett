@@ -8,7 +8,7 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
     const id = parseInt(paramId, 10);
     const body = await req.json();
 
-    const dataPath = path.join(process.cwd(), 'data', 'leads.json');
+    const dataPath = path.join(process.cwd(), 'src', 'data', 'leads.json');
     const fileData = await fs.readFile(dataPath, 'utf8').catch(() => '[]');
     const leads = JSON.parse(fileData);
     
@@ -34,7 +34,7 @@ export async function DELETE(req: Request, { params }: { params: Promise<{ id: s
     const { id: paramId } = await params;
     const id = parseInt(paramId, 10);
 
-    const dataPath = path.join(process.cwd(), 'data', 'leads.json');
+    const dataPath = path.join(process.cwd(), 'src', 'data', 'leads.json');
     const fileData = await fs.readFile(dataPath, 'utf8').catch(() => '[]');
     const leads = JSON.parse(fileData);
     

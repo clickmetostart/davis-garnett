@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
-const DATA_FILE = path.join(process.cwd(), 'data', 'users.json');
+const DATA_FILE = path.join(process.cwd(), 'src', 'data', 'users.json');
 
 function readData() {
   if (!fs.existsSync(DATA_FILE)) {

@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
-const dataFilePath = path.join(process.cwd(), 'data', 'settings.json');
+const dataFilePath = path.join(process.cwd(), 'src', 'data', 'settings.json');
 
 // Helper to safely read data
 const readData = () => {

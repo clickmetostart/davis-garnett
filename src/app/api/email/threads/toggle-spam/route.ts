@@ -11,7 +11,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Missing threadId or threadIds' }, { status: 400 });
     }
 
-    const inboxPath = path.join(process.cwd(), 'data', 'web_inbox.json');
+    const inboxPath = path.join(process.cwd(), 'src', 'data', 'web_inbox.json');
     let allThreads = [];
     try {
       const data = await fs.readFile(inboxPath, 'utf8');

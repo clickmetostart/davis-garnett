@@ -4,7 +4,7 @@ import path from 'path';
 
 export async function GET() {
   try {
-    const dataPath = path.join(process.cwd(), 'data', 'leads.json');
+    const dataPath = path.join(process.cwd(), 'src', 'data', 'leads.json');
     const fileData = await fs.readFile(dataPath, 'utf8').catch(() => '[]');
     const leads = JSON.parse(fileData);
     
@@ -25,7 +25,7 @@ export async function GET() {
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const dataPath = path.join(process.cwd(), 'data', 'leads.json');
+    const dataPath = path.join(process.cwd(), 'src', 'data', 'leads.json');
     const fileData = await fs.readFile(dataPath, 'utf8').catch(() => '[]');
     const leads = JSON.parse(fileData);
 

@@ -9,7 +9,7 @@ export async function GET(request: Request) {
     const urlObj = new URL(request.url);
     const type = urlObj.searchParams.get('type') || 'general'; // 'general', 'apply', 'spam'
 
-    const inboxPath = path.join(process.cwd(), 'data', 'web_inbox.json');
+    const inboxPath = path.join(process.cwd(), 'src', 'data', 'web_inbox.json');
     let inboxData = '[]';
     try {
       inboxData = await fs.readFile(inboxPath, 'utf8');

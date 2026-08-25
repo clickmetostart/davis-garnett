@@ -8,7 +8,7 @@ export async function POST(req: Request) {
     const { moduleName, payload } = body;
 
     // 1. Save state to settings.json
-    const settingsPath = path.join(process.cwd(), 'data', 'settings.json');
+    const settingsPath = path.join(process.cwd(), 'src', 'data', 'settings.json');
     let settingsData = { onboarding: {} };
     try {
       const fileData = await fs.readFile(settingsPath, 'utf8');

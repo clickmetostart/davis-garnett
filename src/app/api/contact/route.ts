@@ -45,7 +45,7 @@ export async function POST(req: Request) {
       : ['Contact Form: General'];
     
     try {
-      const settingsPath = path.join(process.cwd(), 'data', 'settings.json');
+      const settingsPath = path.join(process.cwd(), 'src', 'data', 'settings.json');
       const settingsData = await fs.readFile(settingsPath, 'utf8').catch(() => '{}');
       const settings = JSON.parse(settingsData);
       
@@ -59,7 +59,7 @@ export async function POST(req: Request) {
     // --- LOCAL CRM CAPTURE ---
     if (!isSpam) {
       try {
-        const dataPath = path.join(process.cwd(), 'data', 'leads.json');
+        const dataPath = path.join(process.cwd(), 'src', 'data', 'leads.json');
         const fileData = await fs.readFile(dataPath, 'utf8').catch(() => '[]');
         const leads = JSON.parse(fileData);
       
@@ -172,7 +172,7 @@ ${message || 'No message provided.'}
 
     // --- LOCAL INBOX CAPTURE ---
     try {
-      const inboxPath = path.join(process.cwd(), 'data', 'web_inbox.json');
+      const inboxPath = path.join(process.cwd(), 'src', 'data', 'web_inbox.json');
       const inboxData = await fs.readFile(inboxPath, 'utf8').catch(() => '[]');
       const threads = JSON.parse(inboxData);
       
