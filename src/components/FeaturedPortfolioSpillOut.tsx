@@ -79,9 +79,8 @@ export default function FeaturedPortfolioSpillOut() {
           <Image src="/mega_property_pinned_1787632939192.png" alt="Mega Property" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
           
-          <motion.div 
+          <div 
             className="absolute inset-0 flex flex-col justify-end p-8 md:p-12"
-            style={{ opacity: useTransform(scrollYProgress, [0, 0.15, 1], [1, 0, 0]) }}
           >
             <span className="bg-[#D4AF37] text-black text-[10px] uppercase tracking-[0.2em] font-bold py-1 px-3 self-start mb-4 rounded-sm">Featured Flagship</span>
             <h2 className="font-aiveritas text-3xl md:text-4xl text-white mb-2 drop-shadow-xl">The Tampa Apex</h2>
@@ -98,7 +97,7 @@ export default function FeaturedPortfolioSpillOut() {
                 <span className="text-[#D4AF37] font-bold text-xs">$850M</span>
               </div>
             </div>
-          </motion.div>
+          </div>
         </motion.div>
 
         {/* Overlay Title that fades out as you scroll */}
