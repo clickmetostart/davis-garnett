@@ -40,7 +40,7 @@ export default function FeaturedPortfolioSpillOut() {
 
         {/* Overlay Title that fades out as you scroll */}
         <motion.div 
-          className="relative z-30 pointer-events-none flex flex-col items-center mb-8 md:mb-12"
+          className="relative z-30 pointer-events-none flex flex-col items-center mb-[30px]"
           style={{
             opacity: useTransform(scrollYProgress, [0, 0.1, 1], [1, 0, 0]),
             y: useTransform(scrollYProgress, [0, 0.1, 1], [0, -50, -50])
