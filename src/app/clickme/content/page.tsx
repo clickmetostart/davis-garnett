@@ -10,9 +10,9 @@ function ContentPipelineContent() {
   const searchParams = useSearchParams();
   const { startWalkthrough, nextStep, isActive } = useWalkthrough();
   const [posts, setPosts] = useState([
-    { id: 1, title: 'Navigating VA Loans in Dane County', description: 'A complete breakdown of zero-down VA loan options for veterans moving to the Madison area.', date: '2026-08-16', status: 'Scheduled', platform: 'LinkedIn & Facebook' },
-    { id: 2, title: 'WHEDA Loans: The Secret for WI First-Time Buyers', description: 'Explaining the income limits and benefits of WHEDA loans for young families buying near Epic Systems.', date: '2026-08-18', status: 'Drafting (AI)', platform: 'Blog & GBP' },
-    { id: 3, title: 'Madison Market Update: Fall 2026', description: 'Analyzing current rates and why waiting until spring might cost you in the current Dane County inventory squeeze.', date: '2026-08-20', status: 'Queue', platform: 'All Channels' },
+    { id: 1, title: 'Navigating Commercial Zoning in Tampa Bay', description: 'A complete breakdown of commercial zoning changes for investors moving into the St. Pete and Clearwater areas.', date: '2026-08-16', status: 'Scheduled', platform: 'LinkedIn & Facebook' },
+    { id: 2, title: 'Waterfront Luxury: What FL Buyers Miss', description: 'Explaining flood insurance and hurricane impact windows for families buying near the coast.', date: '2026-08-18', status: 'Drafting (AI)', platform: 'Blog & GBP' },
+    { id: 3, title: 'Tampa Market Update: Fall 2026', description: 'Analyzing current cap rates and why waiting until spring might cost you in the current Pinellas County inventory squeeze.', date: '2026-08-20', status: 'Queue', platform: 'All Channels' },
   ]);
   const [generating, setGenerating] = useState(false);
 
@@ -22,8 +22,8 @@ function ContentPipelineContent() {
       setPosts(prev => [
         {
           id: Date.now(),
-          title: 'Is a Jumbo Loan Needed for Lake Monona Properties?',
-          description: 'A deep dive into current conventional limits vs jumbo requirements for lakefront properties in Madison.',
+          title: 'Is a Commercial DSCR Loan Right for Your Sarasota Investment?',
+          description: 'A deep dive into cash flow requirements vs traditional lending for multi-family properties in Sarasota.',
           date: '2026-08-23',
           status: 'Review Required',
           platform: 'Blog & LinkedIn'
@@ -48,7 +48,7 @@ function ContentPipelineContent() {
         {
           targetId: 'content-engine-header',
           title: 'Your Autonomous AI',
-          content: 'This is the Content Pipeline. Our AI has already been trained on your local Madison market and Rob Miller\'s tone of voice.',
+          content: 'This is the Content Pipeline. Our AI has already been trained on your local Tampa Bay market and Mark & Rachael\'s tone of voice.',
           position: 'bottom',
           actionRequired: false
         },
@@ -72,7 +72,7 @@ function ContentPipelineContent() {
         <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '3rem' }}>
           <div>
             <h1 style={{ fontSize: '2.5rem', fontWeight: 800, margin: '0 0 0.5rem 0', color: '#111827' }}>Content Pipeline</h1>
-            <p style={{ color: '#4b5563', margin: 0 }}>Manage your auto-generated localized content for Madison, WI.</p>
+            <p style={{ color: '#4b5563', margin: 0 }}>Manage your auto-generated localized content for Tampa Bay, FL.</p>
           </div>
           <div style={{ textAlign: 'right' }}>
             <div style={{ background: '#ffffff', padding: '0.5rem 1rem', borderRadius: '8px', fontSize: '0.8rem', display: 'inline-flex', gap: '1rem', border: '1px solid #d1d5db', boxShadow: '0 1px 2px rgba(0,0,0,0.05)' }}>
@@ -85,7 +85,7 @@ function ContentPipelineContent() {
           <div id="content-engine-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div>
               <h3 style={{ fontSize: '1.4rem', fontWeight: 800, margin: '0 0 0.25rem 0', color: '#111827' }}>AI Generation Engine</h3>
-              <p style={{ fontSize: '0.95rem', color: '#6b7280', margin: 0 }}>Trained on 138 posts. Voice matched to: Rob Miller.</p>
+              <p style={{ fontSize: '0.95rem', color: '#6b7280', margin: 0 }}>Trained on 138 posts. Voice matched to: Mark Davis & Rachael Garnett.</p>
             </div>
             <button 
               id="btn-generate-ai"
