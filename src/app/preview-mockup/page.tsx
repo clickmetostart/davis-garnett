@@ -61,7 +61,7 @@ export default function PreviewMockup() {
     <div className="min-h-screen text-white bg-[#050505] selection:bg-[#D4AF37] selection:text-black font-sans">
       
       {/* ── MINIMAL PREVIEW NAV (Admin/Client View) ── */}
-      <div className="fixed top-0 w-full z-[60] bg-[#D4AF37] text-black h-8 flex items-center justify-between px-8 text-[0.6rem] uppercase tracking-widest font-bold">
+      <div className="absolute top-0 w-full z-[60] bg-[#D4AF37] text-black h-8 flex items-center justify-between px-8 text-[0.6rem] uppercase tracking-widest font-bold">
         <Link href="/" className="flex items-center gap-2 hover:opacity-70 transition-opacity">
           <ArrowLeft className="w-3 h-3" /> Exit Preview
         </Link>
@@ -69,7 +69,7 @@ export default function PreviewMockup() {
       </div>
 
       {/* ── REAL WEBSITE NAVIGATION ── */}
-      <nav className="fixed top-8 w-full z-50 bg-black/40 backdrop-blur-md border-b border-white/5">
+      <nav className="absolute top-8 w-full z-50 bg-black/40 backdrop-blur-md border-b border-white/5">
         <div className="max-w-screen-xl mx-auto px-8 h-20 flex items-center justify-between">
           <DavisGarnettLogo variant="dark" className="w-48 max-w-full" />
           <div className="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest text-white/70">
