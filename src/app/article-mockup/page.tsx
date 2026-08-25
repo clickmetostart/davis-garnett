@@ -1,12 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Clock, Calendar, Share2 } from "lucide-react";
-import GlobalHeader from "@/components/GlobalHeader";
+import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 
 export default function ArticleMockup() {
   return (
     <div className="min-h-screen bg-[#050505] text-white selection:bg-[#D4AF37] selection:text-black">
-      <GlobalHeader title="Knowledge Hub" />
+      <header className="absolute top-0 left-0 w-full z-50 p-6 flex justify-between items-center">
+        <div className="w-16 md:w-20">
+          <DavisGarnettLogo className="text-[#D4AF37]" />
+        </div>
+        <div className="bg-black/20 backdrop-blur-md px-6 py-2 rounded-full border border-white/10">
+          <span className="text-white/80 text-xs uppercase tracking-widest font-bold">Knowledge Hub</span>
+        </div>
+      </header>
       
       <main className="pt-32 pb-24 px-8">
         <div className="max-w-screen-md mx-auto">
