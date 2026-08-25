@@ -289,7 +289,7 @@ export default function PreviewMockup() {
         <div className="max-w-screen-xl mx-auto">
           <div className="text-center mb-20">
             <span className="text-[#F5E6CE] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Unmatched Expertise</span>
-            <h2 className="font-aiveritas text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F5E6CE]">The Dual Advantage</h2>
+            <h2 className="font-aiveritas text-4xl md:text-5xl text-[#D4AF37]">The Dual Advantage</h2>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8">
@@ -362,7 +362,7 @@ export default function PreviewMockup() {
           <div className="grid lg:grid-cols-[1fr_2fr] gap-16 items-center">
             <div>
               <span className="text-[#F5E6CE] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Trusted Excellence</span>
-              <h2 className="font-aiveritas text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F5E6CE] mb-6">Uncompromising Results.</h2>
+              <h2 className="font-aiveritas text-4xl md:text-5xl text-[#D4AF37] mb-6">Uncompromising Results.</h2>
               <p className="text-white/60 font-light leading-relaxed mb-8">
                 Our commitment to our clients goes beyond the transaction. We build lasting partnerships through transparency, market intelligence, and relentless execution across Tampa Bay.
               </p>
@@ -416,7 +416,7 @@ export default function PreviewMockup() {
             {/* Left Column - Section Header */}
             <div className="lg:sticky lg:top-32 lg:self-start">
               <span className="text-[#F5E6CE] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Expert Answers</span>
-              <h2 className="font-aiveritas text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F5E6CE] mb-6">Tampa Bay Real Estate Q&A</h2>
+              <h2 className="font-aiveritas text-4xl md:text-5xl text-[#D4AF37] mb-6">Tampa Bay Real Estate Q&A</h2>
               <p className="text-white/60 font-light leading-relaxed mb-8">
                 Get direct answers from our team on the most commonly asked questions about buying, selling, and investing in Tampa Bay real estate.
               </p>
@@ -598,7 +598,7 @@ export default function PreviewMockup() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
             <div>
               <span className="text-[#F5E6CE] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Market Intelligence</span>
-              <h2 className="font-aiveritas text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F5E6CE]">The Tampa Bay Hub</h2>
+              <h2 className="font-aiveritas text-4xl md:text-5xl text-[#D4AF37]">The Tampa Bay Hub</h2>
             </div>
             <Link href="#" className="flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-white/70 hover:text-white transition-colors">
               Access The Hub <ArrowRight className="w-4 h-4" />
@@ -693,7 +693,7 @@ export default function PreviewMockup() {
           
           <div className="flex-1 text-center md:text-left">
             <span className="text-[#F5E6CE] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Davis & Garnett</span>
-            <h2 className="font-aiveritas text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F5E6CE] mb-6">Dominating Tampa Bay.</h2>
+            <h2 className="font-aiveritas text-4xl md:text-5xl text-[#D4AF37] mb-6">Dominating Tampa Bay.</h2>
             <p className="text-white/60 font-light max-w-2xl leading-relaxed mb-8 mx-auto md:mx-0">
               Our footprint spans the most lucrative and desirable markets in the region. We provide hyper-local expertise, global reach, and a unified approach to real estate across the Gulf Coast.
             </p>
@@ -749,7 +749,7 @@ export default function PreviewMockup() {
         
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <span className="text-[#F5E6CE] text-xs uppercase tracking-[0.3em] font-bold block mb-6">Strategic Advisory</span>
-          <h2 className="font-aiveritas text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F5E6CE] mb-8 leading-tight">
+          <h2 className="font-aiveritas text-4xl md:text-5xl text-[#D4AF37] mb-8 leading-tight">
             Strategic. Precise. Uncompromising.
           </h2>
           <p className="text-white/70 text-lg font-light mb-12 max-w-2xl mx-auto leading-relaxed">
@@ -772,7 +772,7 @@ export default function PreviewMockup() {
           <span className="text-[#F5E6CE] text-xs uppercase tracking-[0.3em] font-bold flex items-center justify-center gap-2 mb-4">
             <Camera className="w-4 h-4 text-[#D4AF37]" /> Connect With Us
           </span>
-          <h2 className="font-aiveritas text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F5E6CE] mb-6">@DavisGarnett</h2>
+          <h2 className="font-aiveritas text-4xl md:text-5xl text-[#D4AF37] mb-6">@DavisGarnett</h2>
           <p className="text-white/60 text-lg font-light max-w-xl mx-auto">
             Follow our latest luxury listings, commercial acquisitions, and market insights across the Tampa Bay area.
           </p>
