@@ -838,9 +838,7 @@ export default function PreviewMockup() {
             <div className="flex flex-col items-center lg:items-start">
               <h4 className="text-[#D4AF37] text-[10px] uppercase tracking-[0.3em] font-bold mb-6">Commercial</h4>
               <ul className="flex flex-col gap-4 text-white/70 text-xs font-medium uppercase tracking-widest">
-                <li><Link href="/preview-mockup" className="hover:text-white transition-colors duration-300">Home Mockup</Link></li>
                 <li><Link href="#" className="hover:text-white transition-colors duration-300">Commercial Listing</Link></li>
-                <li><Link href="#" className="hover:text-white transition-colors duration-300">Mark Davis Bio</Link></li>
               </ul>
             </div>
             
@@ -848,10 +846,7 @@ export default function PreviewMockup() {
             <div className="flex flex-col items-center lg:items-start">
               <h4 className="text-[#D4AF37] text-[10px] uppercase tracking-[0.3em] font-bold mb-6">Residential</h4>
               <ul className="flex flex-col gap-4 text-white/70 text-xs font-medium uppercase tracking-widest">
-                <li><Link href="/locations/st-pete" className="hover:text-white transition-colors duration-300">St. Pete Hub</Link></li>
                 <li><Link href="#" className="hover:text-white transition-colors duration-300">Residential Listing</Link></li>
-                <li><Link href="#" className="hover:text-white transition-colors duration-300">Rachael Garnett Bio</Link></li>
-                <li><Link href="#" className="hover:text-white transition-colors duration-300">Q&A Post Mockup</Link></li>
               </ul>
             </div>
             
