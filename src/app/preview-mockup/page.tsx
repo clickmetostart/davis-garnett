@@ -679,9 +679,16 @@ export default function PreviewMockup() {
       {/* ── 5. LOCAL PRESENCE & GEO-TARGETING ── */}
       <section className="py-24 px-8 bg-[#0a0a0a] border-t border-white/5">
         <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center gap-12">
-          <div className="w-full md:w-1/3 aspect-square relative rounded-full overflow-hidden border-8 border-black shadow-2xl shrink-0">
-             <Image src="/media__1787596947905.jpg" alt="Tampa Bay Area" fill className="object-cover opacity-70 grayscale hover:grayscale-0 transition-all duration-1000" />
-             <div className="absolute inset-0 bg-[#D4AF37]/10 mix-blend-overlay" />
+          <div className="w-full md:w-1/3 aspect-square relative rounded-full overflow-hidden border-4 border-[#D4AF37]/30 shadow-[0_0_40px_rgba(212,175,55,0.2)] shrink-0 transition-shadow duration-700 hover:shadow-[0_0_60px_rgba(212,175,55,0.4)]">
+             <video 
+               src="/hero-videos-homepage/davis-garnett-hero-video-2.mp4" 
+               autoPlay 
+               loop 
+               muted 
+               playsInline 
+               className="absolute inset-0 w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-1000"
+             />
+             <div className="absolute inset-0 bg-[#D4AF37]/10 mix-blend-overlay pointer-events-none" />
           </div>
           
           <div className="flex-1 text-center md:text-left">
