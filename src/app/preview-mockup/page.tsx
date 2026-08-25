@@ -106,7 +106,7 @@ export default function PreviewMockup() {
         </div>
 
         <div className="relative z-20 text-center px-8 flex flex-col items-center w-full max-w-4xl mx-auto pt-16">
-          <DavisGarnettLogo variant="dark" className="w-[90%] md:w-[70%] max-w-[700px] mx-auto mb-16 drop-shadow-2xl" />
+          <DavisGarnettLogo variant="dark" className="w-[90%] md:w-[70%] max-w-[700px] mx-auto mb-4 drop-shadow-2xl" />
 
           <h1 className="font-aiveritas text-5xl md:text-7xl lg:text-8xl mb-6 font-bold tracking-tight text-white drop-shadow-2xl">
             The Tampa <br />
