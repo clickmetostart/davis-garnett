@@ -63,6 +63,15 @@ function ClientFlowContent() {
 
   const [showAddClientModal, setShowAddClientModal] = useState(false);
   const [showAddFlowModal, setShowAddFlowModal] = useState(false);
+  const [showAddCardModal, setShowAddCardModal] = useState(false);
+  const [showAddStageModal, setShowAddStageModal] = useState(false);
+  const [selectedColumnId, setSelectedColumnId] = useState('');
+  const [newCardName, setNewCardName] = useState('');
+  const [newCardBudget, setNewCardBudget] = useState('');
+  const [newStageTitle, setNewStageTitle] = useState('');
+  const [draggedColumnId, setDraggedColumnId] = useState<string | null>(null);
+  const [draggedCardId, setDraggedCardId] = useState<string | null>(null);
+  const [wrapColumns, setWrapColumns] = useState(false);
   const [crmLeads, setCrmLeads] = useState<any[]>([]);
 
   useEffect(() => {
@@ -93,6 +102,121 @@ function ClientFlowContent() {
     setShowAddClientModal(false);
   };
 
+  const handleAddManualCard = (e: React.FormEvent) => {
+    e.preventDefault();
+    const newCard: ClientCard = {
+      id: `c_${Date.now()}`,
+      name: newCardName,
+      budget: newCardBudget,
+      stage: selectedColumnId,
+      flowId: activeFlow.id
+    };
+    setCards([...cards, newCard]);
+    setShowAddCardModal(false);
+    setNewCardName('');
+    setNewCardBudget('');
+  };
+
+  const handleAddStage = (e: React.FormEvent) => {
+    e.preventDefault();
+    const newStage = {
+      id: `stage_${Date.now()}`,
+      title: newStageTitle
+    };
+    setFlows(prevFlows => prevFlows.map(f => {
+      if (f.id === activeFlow.id) {
+        return { ...f, columns: [...f.columns, newStage] };
+      }
+      return f;
+    }));
+    setShowAddStageModal(false);
+    setNewStageTitle('');
+  };
+
+  const handleDeleteStage = (stageId: string) => {
+    const hasCards = cards.some(c => c.stage === stageId && c.flowId === activeFlow.id);
+    if (hasCards) {
+      alert("Cannot remove a stage that contains clients. Please move them first.");
+      return;
+    }
+    
+    setFlows(prevFlows => prevFlows.map(f => {
+      if (f.id === activeFlow.id) {
+        return { ...f, columns: f.columns.filter(c => c.id !== stageId) };
+      }
+      return f;
+    }));
+  };
+
+  const handleColumnDragStart = (e: React.DragEvent, colId: string) => {
+    setDraggedColumnId(colId);
+    e.dataTransfer.effectAllowed = 'move';
+    setTimeout(() => {
+      if (e.target instanceof HTMLElement) {
+        e.target.style.opacity = '0.5';
+      }
+    }, 0);
+  };
+
+  const handleColumnDragEnd = (e: React.DragEvent) => {
+    setDraggedColumnId(null);
+    if (e.target instanceof HTMLElement) {
+      e.target.style.opacity = '1';
+    }
+  };
+
+  const handleColumnDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+  };
+
+  const handleColumnDrop = (e: React.DragEvent, targetColId: string) => {
+    e.preventDefault();
+    if (!draggedColumnId || draggedColumnId === targetColId) return;
+
+    setFlows(prevFlows => prevFlows.map(f => {
+      if (f.id === activeFlow.id) {
+        const newCols = [...f.columns];
+        const draggedIdx = newCols.findIndex(c => c.id === draggedColumnId);
+        const targetIdx = newCols.findIndex(c => c.id === targetColId);
+        
+        const [draggedCol] = newCols.splice(draggedIdx, 1);
+        newCols.splice(targetIdx, 0, draggedCol);
+        
+        return { ...f, columns: newCols };
+      }
+      return f;
+    }));
+  };
+
+  const handleCardDragStart = (e: React.DragEvent, cardId: string) => {
+    e.stopPropagation();
+    setDraggedCardId(cardId);
+    e.dataTransfer.effectAllowed = 'move';
+    setTimeout(() => {
+      if (e.target instanceof HTMLElement) {
+        e.target.style.opacity = '0.5';
+      }
+    }, 0);
+  };
+
+  const handleCardDragEnd = (e: React.DragEvent) => {
+    e.stopPropagation();
+    setDraggedCardId(null);
+    if (e.target instanceof HTMLElement) {
+      e.target.style.opacity = '1';
+    }
+  };
+
+  const handleCardDrop = (e: React.DragEvent, targetColId: string) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (draggedCardId) {
+      moveCard(draggedCardId, targetColId);
+    }
+    setDraggedCardId(null);
+  };
+
   const handleCreateFlow = (e: React.FormEvent) => {
     e.preventDefault();
     const newFlow = {
@@ -120,6 +244,18 @@ function ClientFlowContent() {
         </div>
         
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          {/* View Toggle */}
+          <button 
+            onClick={() => setWrapColumns(!wrapColumns)}
+            style={{ background: wrapColumns ? '#e5e7eb' : 'transparent', color: '#4b5563', border: '1px solid #d1d5db', padding: '0.4rem 0.8rem', borderRadius: '6px', fontSize: '0.8rem', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.3rem' }}
+            title="Toggle column wrapping"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 3v18"></path><path d="M10 18l-3 3-3-3"></path><path d="M7 21V3"></path><path d="M14 6l3-3 3 3"></path></svg>
+            Wrap View
+          </button>
+
+          <div style={{ width: '1px', height: '30px', background: '#e5e7eb' }}></div>
+
           {/* Flow Selector */}
           <div style={{ display: 'flex', alignItems: 'center', background: '#f9fafb', border: '1px solid #d1d5db', borderRadius: '8px', padding: '0.25rem' }}>
             <select 
@@ -154,30 +290,79 @@ function ClientFlowContent() {
       </div>
 
       {/* Kanban Board Area */}
-      <div style={{ flex: 1, overflowX: 'auto', overflowY: 'hidden', padding: '1.5rem' }}>
-        <div style={{ display: 'flex', gap: '1.5rem', height: '100%', alignItems: 'flex-start' }}>
+      <div style={{ flex: 1, overflowX: wrapColumns ? 'hidden' : 'auto', overflowY: wrapColumns ? 'auto' : 'hidden', padding: '1.5rem' }}>
+        <div style={{ display: 'flex', gap: '1.5rem', height: wrapColumns ? 'auto' : '100%', alignItems: 'flex-start', flexWrap: wrapColumns ? 'wrap' : 'nowrap' }}>
           
           {activeFlow.columns.map((col, colIndex) => {
             const columnCards = cards.filter(c => c.stage === col.id && c.flowId === activeFlow.id);
             const nextCol = activeFlow.columns[colIndex + 1];
 
             return (
-              <div key={col.id} style={{ minWidth: '320px', maxWidth: '320px', background: '#e5e7eb', borderRadius: '12px', display: 'flex', flexDirection: 'column', maxHeight: '100%' }}>
+              <div 
+                key={col.id} 
+                draggable
+                onDragStart={(e) => handleColumnDragStart(e, col.id)}
+                onDragEnd={handleColumnDragEnd}
+                onDragOver={handleColumnDragOver}
+                onDrop={(e) => handleColumnDrop(e, col.id)}
+                style={{ 
+                  minWidth: '320px', 
+                  maxWidth: '320px', 
+                  background: draggedColumnId === col.id ? '#f3f4f6' : '#e5e7eb', 
+                  borderRadius: '12px', 
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  maxHeight: '100%',
+                  cursor: 'grab',
+                  transition: 'background 0.2s'
+                }}
+              >
                 
                 {/* Column Header */}
                 <div style={{ padding: '1rem', borderBottom: '2px solid #d1d5db', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <h3 style={{ margin: 0, fontSize: '0.95rem', fontWeight: 800, color: '#374151', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                     {col.title}
                   </h3>
-                  <span style={{ background: '#d1d5db', color: '#4b5563', padding: '0.1rem 0.5rem', borderRadius: '12px', fontSize: '0.8rem', fontWeight: 700 }}>
-                    {columnCards.length}
-                  </span>
+                  <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                    <span style={{ background: '#d1d5db', color: '#4b5563', padding: '0.1rem 0.5rem', borderRadius: '12px', fontSize: '0.8rem', fontWeight: 700 }}>
+                      {columnCards.length}
+                    </span>
+                    <button 
+                      onClick={() => handleDeleteStage(col.id)}
+                      style={{ background: 'transparent', border: 'none', color: '#9ca3af', cursor: 'pointer', padding: '0.2rem', fontSize: '1.2rem', lineHeight: 1 }}
+                      title="Remove Stage"
+                      onMouseEnter={(e) => e.currentTarget.style.color = '#ef4444'}
+                      onMouseLeave={(e) => e.currentTarget.style.color = '#9ca3af'}
+                    >
+                      &times;
+                    </button>
+                  </div>
                 </div>
 
                 {/* Cards Container */}
-                <div style={{ padding: '1rem', flex: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                <div 
+                  onDragOver={(e) => {
+                    if (draggedCardId) {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      e.dataTransfer.dropEffect = 'move';
+                    }
+                  }}
+                  onDrop={(e) => {
+                    if (draggedCardId) {
+                      handleCardDrop(e, col.id);
+                    }
+                  }}
+                  style={{ padding: '1rem', flex: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}
+                >
                   {columnCards.map(card => (
-                    <div key={card.id} style={{ background: '#fff', borderRadius: '8px', padding: '1.25rem', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', cursor: 'grab' }}>
+                    <div 
+                      key={card.id} 
+                      draggable
+                      onDragStart={(e) => handleCardDragStart(e, card.id)}
+                      onDragEnd={handleCardDragEnd}
+                      style={{ background: '#fff', borderRadius: '8px', padding: '1.25rem', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', cursor: 'grab' }}
+                    >
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.5rem' }}>
                         <h4 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 700, color: '#111827' }}>{card.name}</h4>
                       </div>
@@ -189,19 +374,31 @@ function ClientFlowContent() {
 
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid #f3f4f6', paddingTop: '0.75rem' }}>
                         <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#9ca3af' }}>ID: {card.id}</div>
-                        {nextCol && (
-                          <button 
-                            onClick={() => moveCard(card.id, nextCol.id)}
-                            style={{ background: 'transparent', border: 'none', color: '#2563eb', fontSize: '0.8rem', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.2rem' }}
-                            title={`Move to ${nextCol.title}`}
-                          >
-                            Advance
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                          </button>
-                        )}
-                        {!nextCol && (
-                          <span style={{ color: '#10b981', fontSize: '0.8rem', fontWeight: 700 }}>Closed 🎉</span>
-                        )}
+                        <div style={{ display: 'flex', gap: '0.5rem' }}>
+                          {colIndex > 0 && (
+                            <button 
+                              onClick={() => moveCard(card.id, activeFlow.columns[colIndex - 1].id)}
+                              style={{ background: 'transparent', border: 'none', color: '#6b7280', fontSize: '0.8rem', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.2rem' }}
+                              title={`Move back to ${activeFlow.columns[colIndex - 1].title}`}
+                            >
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                              Back
+                            </button>
+                          )}
+                          {nextCol && (
+                            <button 
+                              onClick={() => moveCard(card.id, nextCol.id)}
+                              style={{ background: 'transparent', border: 'none', color: '#2563eb', fontSize: '0.8rem', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.2rem' }}
+                              title={`Move to ${nextCol.title}`}
+                            >
+                              Advance
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            </button>
+                          )}
+                          {!nextCol && (
+                            <span style={{ color: '#10b981', fontSize: '0.8rem', fontWeight: 700 }}>Closed 🎉</span>
+                          )}
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -211,11 +408,34 @@ function ClientFlowContent() {
                       No clients in this stage
                     </div>
                   )}
+
+                  <button 
+                    onClick={() => { setSelectedColumnId(col.id); setShowAddCardModal(true); }}
+                    style={{ background: 'transparent', border: '2px dashed #d1d5db', color: '#6b7280', padding: '0.8rem', borderRadius: '8px', fontWeight: 600, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', marginTop: '0.5rem' }}
+                    onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#9ca3af'; e.currentTarget.style.color = '#4b5563'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#d1d5db'; e.currentTarget.style.color = '#6b7280'; }}
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    Add Card
+                  </button>
                 </div>
 
               </div>
             );
           })}
+          
+          {/* Add Stage Column Placeholder */}
+          <div style={{ minWidth: '320px', maxWidth: '320px', display: 'flex', alignItems: 'flex-start', justifyContent: 'center' }}>
+            <button 
+              onClick={() => setShowAddStageModal(true)}
+              style={{ background: 'transparent', border: '2px dashed #d1d5db', color: '#6b7280', padding: '1.5rem', borderRadius: '12px', fontWeight: 700, cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem', width: '100%' }}
+              onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#9ca3af'; e.currentTarget.style.color = '#4b5563'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#d1d5db'; e.currentTarget.style.color = '#6b7280'; }}
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              Add Custom Stage
+            </button>
+          </div>
           
         </div>
       </div>
@@ -280,6 +500,65 @@ function ClientFlowContent() {
                 <button type="button" onClick={() => setShowAddFlowModal(false)} style={{ background: 'transparent', border: '1px solid #d1d5db', color: '#4b5563', padding: '0.6rem 1.5rem', borderRadius: '6px', fontWeight: 600 }}>Cancel</button>
                 <button type="submit" style={{ background: '#2563eb', color: '#fff', border: 'none', padding: '0.6rem 1.5rem', borderRadius: '6px', fontWeight: 700 }}>
                   Create Pipeline
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Create New Card Modal */}
+      {showAddCardModal && (
+        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(17, 24, 39, 0.7)', zIndex: 100, display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(4px)' }}>
+          <div style={{ background: '#ffffff', width: '100%', maxWidth: '400px', borderRadius: '16px', padding: '2.5rem', boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)', position: 'relative' }}>
+            <button onClick={() => setShowAddCardModal(false)} style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', background: 'transparent', border: 'none', color: '#6b7280', cursor: 'pointer' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#111827', margin: '0 0 0.5rem 0' }}>Add New Card</h2>
+            <p style={{ color: '#6b7280', marginBottom: '2rem' }}>Manually add a deal to this column.</p>
+
+            <form onSubmit={handleAddManualCard}>
+              <div style={{ marginBottom: '1.5rem' }}>
+                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#4b5563', marginBottom: '0.5rem' }}>Client or Deal Name</label>
+                <input type="text" value={newCardName} onChange={(e) => setNewCardName(e.target.value)} placeholder="e.g. John Doe" style={{ width: '100%', padding: '0.8rem', border: '1px solid #d1d5db', borderRadius: '8px', fontSize: '0.95rem' }} required />
+              </div>
+              
+              <div style={{ marginBottom: '2rem' }}>
+                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#4b5563', marginBottom: '0.5rem' }}>Value / Budget</label>
+                <input type="text" value={newCardBudget} onChange={(e) => setNewCardBudget(e.target.value)} placeholder="e.g. $500k" style={{ width: '100%', padding: '0.8rem', border: '1px solid #d1d5db', borderRadius: '8px', fontSize: '0.95rem' }} required />
+              </div>
+
+              <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '1rem' }}>
+                <button type="button" onClick={() => setShowAddCardModal(false)} style={{ background: 'transparent', border: '1px solid #d1d5db', color: '#4b5563', padding: '0.6rem 1.5rem', borderRadius: '6px', fontWeight: 600 }}>Cancel</button>
+                <button type="submit" style={{ background: '#2563eb', color: '#fff', border: 'none', padding: '0.6rem 1.5rem', borderRadius: '6px', fontWeight: 700 }}>
+                  Add Card
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Create New Stage Modal */}
+      {showAddStageModal && (
+        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(17, 24, 39, 0.7)', zIndex: 100, display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(4px)' }}>
+          <div style={{ background: '#ffffff', width: '100%', maxWidth: '400px', borderRadius: '16px', padding: '2.5rem', boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)', position: 'relative' }}>
+            <button onClick={() => setShowAddStageModal(false)} style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', background: 'transparent', border: 'none', color: '#6b7280', cursor: 'pointer' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#111827', margin: '0 0 0.5rem 0' }}>Add Custom Stage</h2>
+            <p style={{ color: '#6b7280', marginBottom: '2rem' }}>Create a new column for this pipeline.</p>
+
+            <form onSubmit={handleAddStage}>
+              <div style={{ marginBottom: '2rem' }}>
+                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#4b5563', marginBottom: '0.5rem' }}>Stage Title</label>
+                <input type="text" value={newStageTitle} onChange={(e) => setNewStageTitle(e.target.value)} placeholder="e.g. Needs Review" style={{ width: '100%', padding: '0.8rem', border: '1px solid #d1d5db', borderRadius: '8px', fontSize: '0.95rem' }} required />
+              </div>
+
+              <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '1rem' }}>
+                <button type="button" onClick={() => setShowAddStageModal(false)} style={{ background: 'transparent', border: '1px solid #d1d5db', color: '#4b5563', padding: '0.6rem 1.5rem', borderRadius: '6px', fontWeight: 600 }}>Cancel</button>
+                <button type="submit" style={{ background: '#2563eb', color: '#fff', border: 'none', padding: '0.6rem 1.5rem', borderRadius: '6px', fontWeight: 700 }}>
+                  Add Stage
                 </button>
               </div>
             </form>

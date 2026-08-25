@@ -254,6 +254,7 @@ function NetworkCRMContent() {
       state: lead.state || '',
       zip: lead.zip || '',
       customLinks: lead.customLinks || [],
+      documents: lead.documents || [],
       customFields: mergedCustomFields
     });
     setNewCustomFieldKey('');
@@ -285,7 +286,8 @@ function NetworkCRMContent() {
       city: '',
       state: '',
       zip: '',
-      customLinks: []
+      customLinks: [],
+      documents: []
     });
     if (isActive) nextStep();
   };
@@ -321,6 +323,7 @@ function NetworkCRMContent() {
         state: editData.state,
         zip: editData.zip,
         customLinks: editData.customLinks,
+        documents: editData.documents,
         isSpam: false,
         isTrashed: false,
       };
@@ -349,6 +352,7 @@ function NetworkCRMContent() {
           state: editData.state,
           zip: editData.zip,
           customLinks: editData.customLinks,
+          documents: editData.documents,
           customFields: cleanCustomFields
         })
       });
@@ -1210,6 +1214,60 @@ function NetworkCRMContent() {
                   </div>
                 ))}
               </div>
+            </div>
+
+            {/* Documents Section */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '0.5rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #e5e7eb', paddingBottom: '0.5rem' }}>
+                <div style={{ fontSize: '0.9rem', fontWeight: 800, color: '#111827' }}>Client Documents</div>
+                <div style={{ position: 'relative' }}>
+                  <label style={{ background: '#f3f4f6', color: '#111827', border: '1px solid #d1d5db', padding: '0.3rem 0.6rem', borderRadius: '6px', fontWeight: 600, cursor: 'pointer', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                    Upload File
+                    <input type="file" style={{ display: 'none' }} onChange={(e) => {
+                      if(e.target.files && e.target.files[0]) {
+                        const file = e.target.files[0];
+                        const newDoc = {
+                          name: file.name,
+                          size: (file.size / 1024 / 1024).toFixed(1) + ' MB',
+                          type: file.name.endsWith('.pdf') ? 'pdf' : (file.name.endsWith('.zip') ? 'archive' : (file.type.includes('image') ? 'image' : 'doc')),
+                          date: new Date().toLocaleDateString('en-US')
+                        };
+                        setEditData({...editData, documents: [...(editData.documents || []), newDoc]});
+                      }
+                    }} />
+                  </label>
+                </div>
+              </div>
+
+              {(!editData.documents || editData.documents.length === 0) ? (
+                <div style={{ fontSize: '0.85rem', color: '#9ca3af', fontStyle: 'italic', textAlign: 'center', padding: '1rem', border: '1px dashed #e5e7eb', borderRadius: '8px' }}>
+                  No documents attached to this client.
+                </div>
+              ) : (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                  {editData.documents.map((doc: any, idx: number) => (
+                    <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#f9fafb', padding: '0.8rem', borderRadius: '6px', border: '1px solid #e5e7eb', gap: '1rem' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', overflow: 'hidden' }}>
+                        <div style={{ p: '0.2rem', color: doc.type === 'pdf' ? '#ef4444' : doc.type === 'image' ? '#10b981' : doc.type === 'archive' ? '#eab308' : '#3b82f6' }}>
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        </div>
+                        <div style={{ overflow: 'hidden' }}>
+                          <div style={{ fontSize: '0.85rem', fontWeight: 600, color: '#111827', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>{doc.name}</div>
+                          <div style={{ fontSize: '0.7rem', color: '#6b7280' }}>{doc.size} &bull; {doc.date}</div>
+                        </div>
+                      </div>
+                      <button onClick={() => {
+                        const newDocs = [...editData.documents];
+                        newDocs.splice(idx, 1);
+                        setEditData({...editData, documents: newDocs});
+                      }} style={{ background: 'transparent', border: 'none', color: '#ef4444', cursor: 'pointer', padding: '0.2rem' }}>
+                        &times;
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Communications History */}
