@@ -48,9 +48,9 @@ export default function ScopePage() {
             <Link href="/coming-soon" className="label-caps text-white/60 hover:text-white transition-colors">
               Coming Soon Preview
             </Link>
-            <span className="label-caps text-white/30 cursor-not-allowed">
+            <Link href="/preview-mockup" className="label-caps text-[#D4AF37] hover:text-[#F6E3B0] transition-colors drop-shadow-md">
               Website Preview
-            </span>
+            </Link>
           </div>
         </div>
       </nav>
@@ -106,6 +106,9 @@ export default function ScopePage() {
             </Link>
             <Link href="/coming-soon" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2 backdrop-blur-md">
               Coming Soon Preview <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link href="/preview-mockup" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2 backdrop-blur-md">
+              Website Preview <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
@@ -508,9 +511,9 @@ export default function ScopePage() {
             <Link href="/coming-soon" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
               Coming Soon Preview <ArrowRight className="w-4 h-4" />
             </Link>
-            <button disabled className="px-6 py-3 rounded-full bg-white/5 border border-white/5 text-white/30 text-sm font-medium cursor-not-allowed flex items-center gap-2">
+            <Link href="/preview-mockup" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
               Website Preview <ArrowRight className="w-4 h-4" />
-            </button>
+            </Link>
           </div>
         </div>
       </section>
