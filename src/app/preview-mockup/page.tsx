@@ -750,10 +750,10 @@ export default function PreviewMockup() {
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <span className="text-[#F5E6CE] text-xs uppercase tracking-[0.3em] font-bold block mb-6">Strategic Advisory</span>
           <h2 className="font-aiveritas text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F5E6CE] mb-8 leading-tight">
-            Discreet. Precise. Uncompromising.
+            Strategic. Precise. Uncompromising.
           </h2>
           <p className="text-white/70 text-lg font-light mb-12 max-w-2xl mx-auto leading-relaxed">
-            Whether navigating complex commercial acquisitions or securing legacy waterfront estates, our advisory syndicate operates with absolute discretion and precision. Schedule a private consultation to discuss your real estate portfolio.
+            Whether navigating complex commercial acquisitions or securing legacy waterfront estates, our advisory syndicate operates with absolute precision and market dominance. Schedule a private consultation to discuss your real estate portfolio.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Link href="/locations/st-pete" className="px-8 py-4 bg-[#D4AF37] hover:bg-white text-black font-bold uppercase tracking-widest text-xs transition-colors rounded-lg w-full sm:w-auto min-w-[240px]">
