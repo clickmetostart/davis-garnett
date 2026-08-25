@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Mouse } from "lucide-react";
 
@@ -65,18 +66,20 @@ export default function FeaturedPortfolioSpillOut() {
               className="absolute w-[200px] h-[200px] sm:w-[260px] sm:h-[260px] rounded-xl overflow-hidden group cursor-pointer shadow-2xl z-10"
               style={{ x, y, scale, opacity }}
             >
-              <Image src={prop.img} alt={prop.title} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
-              
-              {/* IDX / LoopNet Styled Data Overlay */}
-              <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black via-black/80 to-transparent">
-                <span className="text-[#D4AF37] text-[9px] uppercase tracking-widest font-bold mb-1 block">{prop.type}</span>
-                <h3 className="font-aiveritas text-lg text-white mb-1 drop-shadow-md truncate">{prop.title}</h3>
-                <div className="flex justify-between items-end mt-1">
-                  <p className="text-white/60 text-[9px] uppercase tracking-wider">{prop.specs}</p>
-                  <p className="text-[#D4AF37] font-bold text-xs drop-shadow-md">{prop.price}</p>
+              <Link href={prop.type === "Commercial" || prop.type === "Land" ? "/listing/commercial" : "/listing/residential"} className="block w-full h-full relative">
+                <Image src={prop.img} alt={prop.title} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
+                
+                {/* IDX / LoopNet Styled Data Overlay */}
+                <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black via-black/80 to-transparent">
+                  <span className="text-[#D4AF37] text-[9px] uppercase tracking-widest font-bold mb-1 block">{prop.type}</span>
+                  <h3 className="font-aiveritas text-lg text-white mb-1 drop-shadow-md truncate">{prop.title}</h3>
+                  <div className="flex justify-between items-end mt-1">
+                    <p className="text-white/60 text-[9px] uppercase tracking-wider">{prop.specs}</p>
+                    <p className="text-[#D4AF37] font-bold text-xs drop-shadow-md">{prop.price}</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </motion.div>
           );
         })}
@@ -90,28 +93,30 @@ export default function FeaturedPortfolioSpillOut() {
                opacity: useTransform(scrollYProgress, [0.85, 1], [1, 0])
             }}
           >
-          <Image src="/mega_property_pinned_1787632939192.png" alt="Mega Property" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-          
-          <div 
-            className="absolute inset-0 flex flex-col justify-end p-8 md:p-12"
-          >
-            <span className="bg-[#D4AF37] text-black text-[10px] uppercase tracking-[0.2em] font-bold py-1 px-3 self-start mb-4 rounded-sm">Featured Flagship</span>
-            <h2 className="font-aiveritas text-3xl md:text-4xl text-white mb-2 drop-shadow-xl">The Tampa Apex</h2>
-            <p className="text-white/70 font-light text-sm max-w-sm mb-6 leading-relaxed">
-              An architectural masterpiece redefining the Gulf Coast skyline. Mixed-use luxury combining a 5-star resort, elite retail, and bespoke penthouses.
-            </p>
-            <div className="grid grid-cols-2 gap-4 border-t border-white/20 pt-6">
-              <div>
-                <span className="block text-white/50 text-[9px] uppercase tracking-widest">Type</span>
-                <span className="text-white font-bold text-xs">Mixed-Use</span>
+            <Link href="/listing/commercial" className="block w-full h-full relative">
+              <Image src="/mega_property_pinned_1787632939192.png" alt="Mega Property" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+              
+              <div 
+                className="absolute inset-0 flex flex-col justify-end p-8 md:p-12"
+              >
+                <span className="bg-[#D4AF37] text-black text-[10px] uppercase tracking-[0.2em] font-bold py-1 px-3 self-start mb-4 rounded-sm">Featured Flagship</span>
+                <h2 className="font-aiveritas text-3xl md:text-4xl text-white mb-2 drop-shadow-xl">The Tampa Apex</h2>
+                <p className="text-white/70 font-light text-sm max-w-sm mb-6 leading-relaxed">
+                  An architectural masterpiece redefining the Gulf Coast skyline. Mixed-use luxury combining a 5-star resort, elite retail, and bespoke penthouses.
+                </p>
+                <div className="grid grid-cols-2 gap-4 border-t border-white/20 pt-6">
+                  <div>
+                    <span className="block text-white/50 text-[9px] uppercase tracking-widest">Type</span>
+                    <span className="text-white font-bold text-xs">Mixed-Use</span>
+                  </div>
+                  <div>
+                    <span className="block text-white/50 text-[9px] uppercase tracking-widest">Valuation</span>
+                    <span className="text-[#D4AF37] font-bold text-xs">$850M</span>
+                  </div>
+                </div>
               </div>
-              <div>
-                <span className="block text-white/50 text-[9px] uppercase tracking-widest">Valuation</span>
-                <span className="text-[#D4AF37] font-bold text-xs">$850M</span>
-              </div>
-            </div>
-          </div>
+            </Link>
           </motion.div>
 
           {/* Scroll Indicator (Mouse Icon) positioned exactly to the left */}
