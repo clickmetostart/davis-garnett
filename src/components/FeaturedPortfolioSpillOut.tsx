@@ -50,18 +50,7 @@ export default function FeaturedPortfolioSpillOut() {
           <h2 className="font-aiveritas text-5xl md:text-7xl text-white drop-shadow-2xl mb-6">The Bay Collection</h2>
         </motion.div>
 
-        {/* Scroll Indicator (Mouse Icon) on the left side */}
-        <motion.div 
-          className="absolute left-8 md:left-[15vw] lg:left-[20vw] top-1/2 -translate-y-1/2 z-30 pointer-events-none"
-          style={{
-            opacity: useTransform(scrollYProgress, [0, 0.1, 1], [1, 0, 0]),
-            y: useTransform(scrollYProgress, [0, 0.1, 1], [0, -50, -50])
-          }}
-        >
-          <Mouse className="w-8 h-8 text-white animate-bounce drop-shadow-lg opacity-70" />
-        </motion.div>
-
-        {/* The 12 Spilling Properties */}
+        {/* Properties Container */}
         {properties.map((prop, i) => {
           // Calculate individual motion values
           // Expands over the first 30% of the 800vh scroll, then holds firm for the remaining 70%
@@ -92,14 +81,15 @@ export default function FeaturedPortfolioSpillOut() {
           );
         })}
 
-        {/* The Pinned Center Property (MEGA LISTING) */}
-        <motion.div 
-          className="relative w-[80vw] sm:w-[480px] aspect-square rounded-2xl overflow-hidden shadow-2xl z-20 group cursor-pointer border border-[#D4AF37]/30"
-          style={{
-             scale: useTransform(scrollYProgress, [0, 0.3, 1], [1, 1.05, 1.05]),
-             opacity: useTransform(scrollYProgress, [0.85, 1], [1, 0])
-          }}
-        >
+        {/* The Pinned Center Property (MEGA LISTING) & Scroll Indicator */}
+        <div className="relative z-20">
+          <motion.div 
+            className="relative w-[80vw] sm:w-[480px] aspect-square rounded-2xl overflow-hidden shadow-2xl group cursor-pointer border border-[#D4AF37]/30"
+            style={{
+               scale: useTransform(scrollYProgress, [0, 0.3, 1], [1, 1.05, 1.05]),
+               opacity: useTransform(scrollYProgress, [0.85, 1], [1, 0])
+            }}
+          >
           <Image src="/mega_property_pinned_1787632939192.png" alt="Mega Property" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
           
@@ -122,7 +112,19 @@ export default function FeaturedPortfolioSpillOut() {
               </div>
             </div>
           </div>
-        </motion.div>
+          </motion.div>
+
+          {/* Scroll Indicator (Mouse Icon) positioned exactly to the left */}
+          <motion.div 
+            className="absolute -left-12 md:-left-16 top-1/2 -translate-y-1/2 pointer-events-none"
+            style={{
+              opacity: useTransform(scrollYProgress, [0, 0.1, 1], [1, 0, 0]),
+              y: useTransform(scrollYProgress, [0, 0.1, 1], [0, -50, -50])
+            }}
+          >
+            <Mouse className="w-8 h-8 text-white animate-bounce drop-shadow-lg opacity-70" />
+          </motion.div>
+        </div>
 
       </div>
     </section>
