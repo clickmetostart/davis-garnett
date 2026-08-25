@@ -826,35 +826,27 @@ export default function PreviewMockup() {
             </p>
           </div>
           
-          {/* Row 2: 4-Column Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 items-center text-center">
+          {/* Row 2: Justified Horizontal Layout */}
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
             
-            {/* Col 1: Davis & Garnett Logo */}
-            <div className="flex justify-center">
-              <div className="w-56 h-16 relative">
-                <DavisGarnettLogo variant="dark" className="w-full h-full object-contain" />
-              </div>
+            {/* Davis & Garnett Logo (Anchored Left) */}
+            <div className="w-56 h-12 relative flex-shrink-0">
+              <DavisGarnettLogo variant="dark" className="w-full h-full object-contain lg:object-left" />
             </div>
             
-            {/* Col 2: Commercial */}
-            <div className="flex justify-center">
-              <Link href="/preview-mockup/commercial-listing" className="text-white/70 text-xs font-medium uppercase tracking-widest hover:text-white transition-colors duration-300">
-                Commercial Listing
-              </Link>
-            </div>
+            {/* Commercial Link */}
+            <Link href="/preview-mockup/commercial-listing" className="text-white/70 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors duration-300">
+              Commercial Listing
+            </Link>
             
-            {/* Col 3: Residential */}
-            <div className="flex justify-center">
-              <Link href="/preview-mockup/residential-listing" className="text-white/70 text-xs font-medium uppercase tracking-widest hover:text-white transition-colors duration-300">
-                Residential Listing
-              </Link>
-            </div>
+            {/* Residential Link */}
+            <Link href="/preview-mockup/residential-listing" className="text-white/70 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors duration-300">
+              Residential Listing
+            </Link>
             
-            {/* Col 4: Align Right Logo */}
-            <div className="flex justify-center">
-              <div className="w-56 h-16 relative opacity-90">
-                 <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain" />
-              </div>
+            {/* Align Right Logo (Anchored Right) */}
+            <div className="w-56 h-12 relative flex-shrink-0 opacity-90">
+               <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain lg:object-right" />
             </div>
 
           </div>
