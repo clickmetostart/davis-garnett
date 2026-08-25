@@ -692,6 +692,7 @@ export default function PreviewMockup() {
           </div>
           
           <div className="flex-1 text-center md:text-left">
+            <span className="text-[#F5E6CE] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Davis & Garnett</span>
             <h2 className="font-aiveritas text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F5E6CE] mb-6">Dominating Tampa Bay.</h2>
             <p className="text-white/60 font-light max-w-2xl leading-relaxed mb-8 mx-auto md:mx-0">
               Our footprint spans the most lucrative and desirable markets in the region. We provide hyper-local expertise, global reach, and a unified approach to real estate across the Gulf Coast.
