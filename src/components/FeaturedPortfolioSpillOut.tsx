@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Mouse } from "lucide-react";
 
 const properties = [
   // Commercial
@@ -78,7 +79,10 @@ export default function FeaturedPortfolioSpillOut() {
           <Image src="/mega_property_pinned_1787632939192.png" alt="Mega Property" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
           
-          <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12">
+          <motion.div 
+            className="absolute inset-0 flex flex-col justify-end p-8 md:p-12"
+            style={{ opacity: useTransform(scrollYProgress, [0, 0.15, 1], [1, 0, 0]) }}
+          >
             <span className="bg-[#D4AF37] text-black text-[10px] uppercase tracking-[0.2em] font-bold py-1 px-3 self-start mb-4 rounded-sm">Featured Flagship</span>
             <h2 className="font-aiveritas text-3xl md:text-4xl text-white mb-2 drop-shadow-xl">The Tampa Apex</h2>
             <p className="text-white/70 font-light text-sm max-w-sm mb-6 leading-relaxed">
@@ -94,20 +98,24 @@ export default function FeaturedPortfolioSpillOut() {
                 <span className="text-[#D4AF37] font-bold text-xs">$850M</span>
               </div>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Overlay Title that fades out as you scroll */}
         <motion.div 
-          className="absolute top-12 md:top-24 left-0 w-full text-center z-30 pointer-events-none"
+          className="absolute top-12 md:top-24 left-0 w-full text-center z-30 pointer-events-none flex flex-col items-center"
           style={{
             opacity: useTransform(scrollYProgress, [0, 0.1, 1], [1, 0, 0]),
             y: useTransform(scrollYProgress, [0, 0.1, 1], [0, -50, -50])
           }}
         >
-          <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-4 drop-shadow-md">Curated Excellence</span>
-          <h2 className="font-aiveritas text-5xl md:text-7xl text-white drop-shadow-2xl">The Mega Portfolio</h2>
-          <p className="text-white/70 mt-4 uppercase tracking-widest text-sm font-light">Scroll to expand</p>
+          <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-4 drop-shadow-md">Signature Assets</span>
+          <h2 className="font-aiveritas text-5xl md:text-7xl text-white drop-shadow-2xl mb-8">The Tampa Collection</h2>
+          
+          <div className="flex flex-col items-center gap-2 opacity-70">
+            <Mouse className="w-6 h-6 text-white animate-bounce" />
+            <span className="text-white/70 uppercase tracking-[0.2em] text-[10px] font-bold">Scroll Down</span>
+          </div>
         </motion.div>
 
       </div>
