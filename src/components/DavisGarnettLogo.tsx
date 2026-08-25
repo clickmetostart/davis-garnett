@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface DavisGarnettLogoProps {
   variant?: "light" | "dark";
   className?: string;
@@ -27,6 +29,19 @@ export default function DavisGarnettLogo({
 
   const VB_W = 1200;
   const VB_H = 300;
+
+  if (isDark) {
+    return (
+      <Image 
+        src="/davis and garnett logo mobile png.png" 
+        alt="Davis & Garnett" 
+        width={width} 
+        height={Math.round(width * (VB_H / VB_W))} 
+        className={`max-w-full h-auto object-contain ${className}`}
+        priority
+      />
+    );
+  }
 
   return (
     <svg

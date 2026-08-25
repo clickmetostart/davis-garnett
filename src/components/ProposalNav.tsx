@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Menu, X } from "lucide-react";
+import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 
 const NAV_LINKS = [
   { label: "Main Proposal", href: "/" },
@@ -19,13 +19,7 @@ export default function ProposalNav() {
     <nav className="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-xl border-b border-white/5">
       <div className="max-w-screen-xl mx-auto px-8 h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-4 hover:opacity-80 transition-opacity">
-          <Image 
-            src="/davis and garnett logo mobile png.png" 
-            alt="Davis & Garnett" 
-            width={200} 
-            height={60} 
-            className="h-10 w-auto object-contain"
-          />
+          <DavisGarnettLogo variant="dark" className="w-40 max-w-full" />
         </Link>
         <div className="hidden lg:flex items-center gap-6">
           {NAV_LINKS.map((l) => (
