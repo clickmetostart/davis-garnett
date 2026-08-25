@@ -222,7 +222,7 @@ export default function PreviewMockup() {
               }}
             >
               <Image 
-                src="/mark-davis-headshot.png" 
+                src="/mark-commercial-action-2.jfif" 
                 alt="Mark Davis" 
                 fill 
                 className="object-cover"
@@ -257,7 +257,7 @@ export default function PreviewMockup() {
               }}
             >
               <Image 
-                src="/rachael-garnett-headshot.png" 
+                src="/rachael-residential-action-2.jfif" 
                 alt="Rachael Garnett" 
                 fill 
                 className="object-cover"
