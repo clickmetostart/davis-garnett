@@ -1,26 +1,28 @@
-Subject: The shift in real estate search (and your digital masterplan)
+Subject: Your New Client Dashboard & Interactive Tours are Ready!
 
-Mark and Rachael,
+Hi Mark and Rachael,
 
-Something massive has shifted in how clients are finding real estate authority, and almost nobody in the industry has noticed yet.
+We are thrilled to let you know that the custom real estate presentation and your dedicated ClickMe Dashboard are fully built and ready for your review!
 
-Your next high-net-worth client isn't opening Google to scroll through ten pages of blue links anymore. They are opening ChatGPT, Perplexity, and Claude. They are asking AI engines directly: "Who handles luxury relocations in Tampa Bay?" or "Who is the top commercial land acquisition advisor in Wesley Chapel?"
+You can access your new dashboard by heading over to the login portal:
+[Insert Live Vercel URL Here]/login
 
-The problem? Most agents are still paying thousands of dollars for bloated WordPress templates from companies like Luxury Presence or Agent Image — sites that look pretty but are completely invisible to these new AI search engines. 
+Here are your dedicated login credentials to access the system:
 
-To win this new search war, you don't need another generic website template. You need an active digital architecture. 
+**Mark's Login:**
+Email: msdavis118@gmail.com
+Password: Awe$ome
 
-I've put together a comprehensive digital masterplan outlining exactly how we are going to build this infrastructure for you both:
+**Rachael's Login:**
+Email: rachaellgarnett@gmail.com
+Password: Awe$ome
 
-[INSERT_YOUR_VERCEL_LINK_HERE]
+**Unlocking Your Dashboard:**
+When you first log in, you will be guided through a series of interactive tours. These onboarding modules will walk you through the core features of the platform, including the CRM, Content Pipeline, and Inbox. 
 
-I built this proposal specifically for your unique situation — a powerful commercial advisor and a top-tier residential expert operating under one unified ecosystem. 
+As you complete each interactive tour, you will systematically unlock those modules in your dashboard. Don't worry if you miss anything—you can replay these tours at any time from the dashboard hub!
 
-Take a look through the link above. It breaks down the entire scope, the dual command centers you'll be receiving, the Active Content Engine that replaces the need for an SEO agency, and the exact investment options (including the heavily discounted referral rate I applied for Rachael).
+If you have any questions or need anything tweaked, just let us know. Enjoy the tour!
 
-If everything looks good, you can actually select your preferred option, sign the agreement, and securely process the payment directly on the site.
-
-Let me know if you want to jump on a quick call to walk through the architecture!
-
-Best,
-[YOUR NAME]
+Best regards,
+The ClickMe Development Team
