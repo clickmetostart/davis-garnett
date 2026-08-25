@@ -125,7 +125,7 @@ export default function PreviewMockup() {
           <div className="flex flex-col gap-12">
             <div className="w-full">
               <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden mb-6">
-                <Image src="/mark-davis-headshot.png" alt="Mark Davis" fill className="object-cover" />
+                <Image src="/mark-commercial-action-2.jpg" alt="Mark Davis" fill className="object-cover" />
               </div>
               <h3 className="font-aiveritas text-2xl mb-1">Mark Davis</h3>
               <p className="text-[#D4AF37] text-xs uppercase tracking-widest mb-4">Commercial Expert</p>
@@ -136,7 +136,7 @@ export default function PreviewMockup() {
 
             <div className="w-full">
               <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden mb-6">
-                <Image src="/rachael-garnett-headshot.png" alt="Rachael Garnett" fill className="object-cover" />
+                <Image src="/rachael-residential-action-2.jpg" alt="Rachael Garnett" fill className="object-cover" />
               </div>
               <h3 className="font-aiveritas text-2xl mb-1">Rachael Garnett</h3>
               <p className="text-[#D4AF37] text-xs uppercase tracking-widest mb-4">Residential Specialist</p>
