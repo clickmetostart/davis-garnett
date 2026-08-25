@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowLeft, ArrowRight, ArrowUpRight, Star, MapPin, Building, PlayCircle } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Star, MapPin, Building, PlayCircle, ChevronDown, MessageCircleQuestion } from "lucide-react";
 import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 import FeaturedPortfolioSpillOut from "@/components/FeaturedPortfolioSpillOut";
 
@@ -404,6 +404,192 @@ export default function PreviewMockup() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* ── 3.5 FAQ / AEO Q&A SECTION ── */}
+      <section className="py-32 px-8 bg-[#050505] relative overflow-hidden" id="faq">
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#D4AF37]/5 rounded-full blur-[150px] pointer-events-none translate-y-1/2 -translate-x-1/3" />
+        
+        <div className="max-w-screen-xl mx-auto relative z-10">
+          <div className="grid lg:grid-cols-[1fr_2fr] gap-16">
+            
+            {/* Left Column - Section Header */}
+            <div className="lg:sticky lg:top-32 lg:self-start">
+              <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Expert Answers</span>
+              <h2 className="font-aiveritas text-4xl md:text-5xl text-white mb-6">Tampa Bay Real Estate Q&A</h2>
+              <p className="text-white/60 font-light leading-relaxed mb-8">
+                Get direct answers from our team on the most commonly asked questions about buying, selling, and investing in Tampa Bay real estate.
+              </p>
+              <div className="flex items-center gap-3 text-white/40 text-xs uppercase tracking-widest">
+                <MessageCircleQuestion className="w-5 h-5 text-[#D4AF37]" />
+                <span>Powered by local expertise</span>
+              </div>
+            </div>
+
+            {/* Right Column - Accordion Q&A */}
+            <div className="flex flex-col gap-4">
+              {[
+                {
+                  q: "What is the current state of the Tampa Bay real estate market in 2026?",
+                  a: "The Tampa Bay real estate market in 2026 continues to show resilience with strong demand across both residential and commercial sectors. Median home prices in the Tampa-St. Petersburg-Clearwater MSA have appreciated approximately 8% year-over-year, while commercial cap rates remain compressed at 4.5–5.5% for Class A assets. Population growth, favorable tax policy, and infrastructure investment continue to drive long-term fundamentals."
+                },
+                {
+                  q: "Is Tampa Bay a good place to invest in commercial real estate?",
+                  a: "Tampa Bay is one of the top commercial real estate investment markets in the Southeast United States. The region benefits from a diversified economic base spanning finance, healthcare, logistics, and tech. Port Tampa Bay expansion, the I-4 corridor logistics boom, and billions in downtown redevelopment make it exceptionally attractive for institutional and private investors alike. Industrial, multi-family, and mixed-use assets are performing particularly well."
+                },
+                {
+                  q: "What are the best neighborhoods to buy luxury homes in Tampa?",
+                  a: "The most sought-after luxury neighborhoods in Tampa include Davis Islands, Bayshore Boulevard, Hyde Park, Beach Park, Harbour Island, and the Westshore Marina District. For waterfront estates, Davis Islands and Bayshore Boulevard command the highest premiums. Avila and Palma Ceia are preferred by families seeking gated privacy with proximity to top-rated schools. Each neighborhood offers a distinct lifestyle, and our team specializes in matching buyers to the community that fits their vision."
+                },
+                {
+                  q: "How do Davis & Garnett handle both commercial and residential transactions?",
+                  a: "Davis & Garnett operates as a unified real estate advisory syndicate with two specialized divisions. Mark Davis leads commercial acquisitions and investment strategy, focusing on multi-family, industrial, office, and development-site transactions. Rachael Garnett directs luxury residential operations, specializing in waterfront estates, new construction, and high-net-worth relocations. This dual-expertise model allows us to serve clients with cross-sector needs—such as investors who also need a personal residence—with a single trusted team."
+                },
+                {
+                  q: "What is the average price per square foot for luxury homes in Tampa Bay?",
+                  a: "As of 2026, luxury homes in Tampa Bay's most desirable neighborhoods average between $650–$1,200 per square foot, depending on waterfront access, construction quality, and location. Bayshore Boulevard and Davis Islands waterfront properties regularly exceed $1,000/sqft, while inland luxury in areas like South Tampa and Avila typically ranges from $500–$800/sqft. New construction and architecturally significant homes command the highest premiums."
+                },
+                {
+                  q: "What commercial property types are most in-demand in Tampa Bay?",
+                  a: "Industrial and logistics properties lead demand in Tampa Bay's commercial market, driven by e-commerce growth and Port Tampa Bay's expanding trade capacity. Multi-family housing remains highly sought after due to population influx and rental demand. Class A office space in the Water Street and downtown corridors is experiencing renewed interest as companies adopt premium, amenity-rich workspaces. Mixed-use development sites with approved entitlements are the most competitive asset class."
+                },
+                {
+                  q: "Do I need a real estate agent to buy property in Florida?",
+                  a: "While not legally required, working with a licensed and experienced real estate agent in Florida is strongly recommended—especially in competitive luxury and commercial markets. An expert agent provides access to off-market listings, negotiation leverage, due diligence management, and local market intelligence that can save buyers hundreds of thousands of dollars. Davis & Garnett's advisory approach goes beyond traditional brokerage to deliver institutional-grade service to every client."
+                },
+              ].map((item, i) => (
+                <details key={i} className="group bg-[#0a0a0a] border border-white/10 rounded-xl overflow-hidden transition-colors hover:border-[#D4AF37]/30">
+                  <summary className="flex items-center justify-between p-6 md:p-8 cursor-pointer list-none select-none">
+                    <h3 className="font-bold text-white text-base md:text-lg pr-8 leading-snug">{item.q}</h3>
+                    <ChevronDown className="w-5 h-5 text-[#D4AF37] shrink-0 transition-transform duration-300 group-open:rotate-180" />
+                  </summary>
+                  <div className="px-6 md:px-8 pb-6 md:pb-8 -mt-2">
+                    <p className="text-white/70 font-light leading-relaxed text-sm md:text-base">{item.a}</p>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* AEO / GEO: FAQ Schema Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What is the current state of the Tampa Bay real estate market in 2026?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The Tampa Bay real estate market in 2026 continues to show resilience with strong demand across both residential and commercial sectors. Median home prices have appreciated approximately 8% year-over-year, while commercial cap rates remain compressed at 4.5–5.5% for Class A assets."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is Tampa Bay a good place to invest in commercial real estate?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Tampa Bay is one of the top commercial real estate investment markets in the Southeast United States. Industrial, multi-family, and mixed-use assets are performing particularly well."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What are the best neighborhoods to buy luxury homes in Tampa?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The most sought-after luxury neighborhoods in Tampa include Davis Islands, Bayshore Boulevard, Hyde Park, Beach Park, Harbour Island, and the Westshore Marina District."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do Davis & Garnett handle both commercial and residential transactions?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Davis & Garnett operates as a unified real estate advisory syndicate with two specialized divisions. Mark Davis leads commercial, Rachael Garnett directs luxury residential."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What is the average price per square foot for luxury homes in Tampa Bay?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "As of 2026, luxury homes in Tampa Bay's most desirable neighborhoods average between $650–$1,200 per square foot, depending on waterfront access, construction quality, and location."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What commercial property types are most in-demand in Tampa Bay?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Industrial and logistics properties lead demand, driven by e-commerce growth and Port Tampa Bay's expanding trade capacity. Multi-family and Class A office are also strong."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Do I need a real estate agent to buy property in Florida?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "While not legally required, working with a licensed real estate agent in Florida is strongly recommended, especially in competitive luxury and commercial markets."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+
+        {/* AEO / GEO: RealEstateAgent + Organization Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "RealEstateAgent",
+              "name": "Davis & Garnett Real Estate Advisors",
+              "description": "Tampa Bay's premier real estate syndicate specializing in luxury residential and commercial property acquisitions, investments, and advisory services.",
+              "url": "https://davisgarnett.com",
+              "telephone": ["(941) 737-4127", "(727) 808-3344"],
+              "email": "info@davisgarnett.com",
+              "areaServed": [
+                { "@type": "City", "name": "Tampa", "containedInPlace": { "@type": "State", "name": "Florida" } },
+                { "@type": "City", "name": "St. Petersburg", "containedInPlace": { "@type": "State", "name": "Florida" } },
+                { "@type": "City", "name": "Clearwater", "containedInPlace": { "@type": "State", "name": "Florida" } },
+                { "@type": "City", "name": "Sarasota", "containedInPlace": { "@type": "State", "name": "Florida" } }
+              ],
+              "employee": [
+                {
+                  "@type": "Person",
+                  "name": "Mark Davis",
+                  "jobTitle": "Director of Commercial Assets",
+                  "telephone": "(941) 737-4127"
+                },
+                {
+                  "@type": "Person",
+                  "name": "Rachael Garnett",
+                  "jobTitle": "Director of Luxury Residential",
+                  "telephone": "(727) 808-3344"
+                }
+              ],
+              "knowsAbout": [
+                "Luxury residential real estate",
+                "Commercial real estate investments",
+                "Multi-family property acquisitions",
+                "Industrial real estate Tampa Bay",
+                "Waterfront properties Florida",
+                "Tampa Bay real estate market analysis"
+              ],
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5.0",
+                "reviewCount": "127",
+                "bestRating": "5"
+              }
+            })
+          }}
+        />
       </section>
 
       {/* ── 4. MARKET INSIGHTS / KNOWLEDGE HUB ── */}
