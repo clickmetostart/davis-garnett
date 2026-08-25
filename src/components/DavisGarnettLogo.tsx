@@ -34,7 +34,7 @@ export default function DavisGarnettLogo({
       viewBox={`0 0 ${VB_W} ${VB_H}`}
       width={width}
       height={Math.round(width * (VB_H / VB_W))}
-      className={className}
+      className={`max-w-full h-auto ${className}`}
       aria-label="Davis & Garnett — Commercial Residential Advisors"
       role="img"
     >
@@ -149,7 +149,7 @@ export function DavisGarnettMark({
       viewBox="0 0 260 260"
       width={size}
       height={size}
-      className={className}
+      className={`max-w-full h-auto ${className}`}
       aria-label="Davis & Garnett Monogram Mark"
       role="img"
     >
