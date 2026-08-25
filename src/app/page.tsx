@@ -8,6 +8,8 @@ import Link from "next/link";
 const NAV_LINKS = [
   { label: "Why Now", href: "#truth" },
   { label: "Project Scope", href: "/scope" },
+  { label: "Branding", href: "/branding" },
+  { label: "Live Preview", href: "/preview-mockup" },
 ];
 
 const MARKETS = ["Tampa", "Wesley Chapel", "Land O' Lakes", "Lutz", "St. Petersburg", "Clearwater", "New Port Richey", "Sarasota"];

@@ -45,9 +45,7 @@ export default function ScopePage() {
             <Link href="/clickme" className="label-caps text-white/60 hover:text-white transition-colors">
               Dashboard Details
             </Link>
-            <Link href="/coming-soon" className="label-caps text-white/60 hover:text-white transition-colors">
-              Coming Soon Preview
-            </Link>
+
             <Link href="/preview-mockup" className="label-caps text-[#D4AF37] hover:text-[#F6E3B0] transition-colors drop-shadow-md">
               Website Preview
             </Link>
@@ -56,7 +54,7 @@ export default function ScopePage() {
       </nav>
 
       {/* ── HERO SECTION (MULTI-COLUMN VIDEO GRID) ── */}
-      <header className="relative w-full h-screen flex items-center justify-center pt-20 overflow-hidden bg-black border-b border-white/5">
+      <header className="relative w-full min-h-screen flex items-center justify-center pt-32 pb-32 lg:pt-20 lg:pb-0 overflow-hidden bg-black border-b border-white/5">
         
         {/* Background Video Grid */}
         <div className="absolute inset-0 z-0 flex w-full h-full">
@@ -104,9 +102,7 @@ export default function ScopePage() {
             <Link href="/clickme" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2 backdrop-blur-md">
               Dashboard Details <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link href="/coming-soon" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2 backdrop-blur-md">
-              Coming Soon Preview <ArrowRight className="w-4 h-4" />
-            </Link>
+
             <Link href="/preview-mockup" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2 backdrop-blur-md">
               Website Preview <ArrowRight className="w-4 h-4" />
             </Link>
@@ -508,9 +504,7 @@ export default function ScopePage() {
             <Link href="/clickme" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
               Dashboard Details <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link href="/coming-soon" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
-              Coming Soon Preview <ArrowRight className="w-4 h-4" />
-            </Link>
+
             <Link href="/preview-mockup" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
               Website Preview <ArrowRight className="w-4 h-4" />
             </Link>
