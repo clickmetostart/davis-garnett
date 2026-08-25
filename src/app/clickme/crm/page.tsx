@@ -22,6 +22,12 @@ function NetworkCRMContent() {
   const [activeLabel, setActiveLabel] = useState('All Contacts');
   const [searchQuery, setSearchQuery] = useState('');
   const [viewMode, setViewMode] = useState<'my_crm' | 'team_crm'>('my_crm');
+
+  useEffect(() => {
+    const v = searchParams.get('view');
+    if (v === 'team') setViewMode('team_crm');
+    else if (v === 'my') setViewMode('my_crm');
+  }, [searchParams]);
   
   const [selectedLead, setSelectedLead] = useState<any | null>(null);
   const [selectedLeadIds, setSelectedLeadIds] = useState<number[]>([]);

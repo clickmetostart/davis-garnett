@@ -248,15 +248,28 @@ export default function DashboardHub() {
               </div>
             </Link>
 
-            <Link href="/clickme/crm" style={{ textDecoration: 'none' }}>
+            <Link href="/clickme/crm?view=my" style={{ textDecoration: 'none' }}>
+              <div style={{ background: '#ffffff', borderRadius: '16px', border: '1px solid #e5e7eb', padding: '2rem', transition: 'all 0.3s ease', cursor: 'pointer', height: '100%', display: 'flex', flexDirection: 'column', boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.05)' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#4fd1c5'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#e5e7eb'; }}>
+                <div style={{ width: '50px', height: '50px', borderRadius: '12px', background: '#e6fffa', color: '#319795', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                </div>
+                <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#111827', marginBottom: '0.5rem' }}>Agent CRM</h3>
+                <p style={{ color: '#4b5563', fontSize: '0.9rem', lineHeight: '1.6', flex: 1 }}>Manage your personal leads, update statuses, segment marketing lists, and import CSVs.</p>
+                <div style={{ marginTop: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#4fd1c5', fontSize: '0.9rem', fontWeight: 700 }}>
+                  Open My CRM <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/clickme/crm?view=team" style={{ textDecoration: 'none' }}>
               <div style={{ background: '#ffffff', borderRadius: '16px', border: '1px solid #e5e7eb', padding: '2rem', transition: 'all 0.3s ease', cursor: 'pointer', height: '100%', display: 'flex', flexDirection: 'column', boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.05)' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#4fd1c5'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#e5e7eb'; }}>
                 <div style={{ width: '50px', height: '50px', borderRadius: '12px', background: '#e6fffa', color: '#319795', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                 </div>
-                <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#111827', marginBottom: '0.5rem' }}>Network CRM</h3>
-                <p style={{ color: '#4b5563', fontSize: '0.9rem', lineHeight: '1.6', flex: 1 }}>Manage live leads from your web forms, update statuses, segment marketing lists, and import CSVs.</p>
+                <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#111827', marginBottom: '0.5rem' }}>D&G Shared CRM</h3>
+                <p style={{ color: '#4b5563', fontSize: '0.9rem', lineHeight: '1.6', flex: 1 }}>Access the shared team pond, claim incoming web leads, and collaborate on shared clients.</p>
                 <div style={{ marginTop: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#4fd1c5', fontSize: '0.9rem', fontWeight: 700 }}>
-                  Open CRM <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  Open D&G CRM <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </div>
               </div>
             </Link>
