@@ -7,10 +7,18 @@ export async function POST(request: Request) {
   try {
     // 1. Verify user is authenticated
     const cookieStore = await cookies();
-    const userId = cookieStore.get('auth_token')?.value;
+    const sessionCookie = cookieStore.get('mock_session');
 
-    if (!userId) {
+    if (!sessionCookie || !sessionCookie.value) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
+    let userId = 'user';
+    try {
+      const sessionData = JSON.parse(Buffer.from(sessionCookie.value, 'base64').toString('utf-8'));
+      userId = sessionData.email ? sessionData.email.split('@')[0] : 'user';
+    } catch (e) {
+      // Keep default userId
     }
 
     // 2. Parse form data
