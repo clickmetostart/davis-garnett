@@ -10,6 +10,7 @@ const PREVIEW_LINKS = [
   { label: "Residential", href: "#" },
   { label: "Portfolio", href: "#" },
   { label: "Contact", href: "#" },
+  { label: "Dashboard", href: "/clickme" },
 ];
 
 export default function PreviewNav() {

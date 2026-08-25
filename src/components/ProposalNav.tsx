@@ -10,6 +10,7 @@ const NAV_LINKS = [
   { label: "Project Scope", href: "/scope" },
   { label: "Branding", href: "/branding" },
   { label: "Live Preview", href: "/preview-mockup" },
+  { label: "Dashboard", href: "/clickme" },
 ];
 
 export default function ProposalNav() {
