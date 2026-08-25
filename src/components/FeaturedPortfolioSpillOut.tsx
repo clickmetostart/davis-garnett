@@ -111,11 +111,17 @@ export default function FeaturedPortfolioSpillOut() {
         >
           <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-4 drop-shadow-md">Signature Assets - Tampa Area</span>
           <h2 className="font-aiveritas text-5xl md:text-7xl text-white drop-shadow-2xl mb-8">The Bay Collection</h2>
-          
-          <div className="flex flex-col items-center gap-2 opacity-70">
-            <Mouse className="w-6 h-6 text-white animate-bounce" />
-            <span className="text-white/70 uppercase tracking-[0.2em] text-[10px] font-bold">Scroll Down</span>
-          </div>
+        </motion.div>
+
+        {/* Scroll Indicator at bottom center */}
+        <motion.div
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 z-40 pointer-events-none opacity-70"
+          style={{
+            opacity: useTransform(scrollYProgress, [0, 0.1, 1], [0.7, 0, 0]),
+            y: useTransform(scrollYProgress, [0, 0.1, 1], [0, 20, 20])
+          }}
+        >
+          <Mouse className="w-8 h-8 text-white animate-bounce drop-shadow-lg" />
         </motion.div>
 
       </div>
