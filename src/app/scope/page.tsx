@@ -55,40 +55,65 @@ export default function ScopePage() {
         </div>
       </nav>
 
-      {/* ── HEADER ────────────────────────────────────────── */}
-      <header className="relative pt-40 pb-20 px-8 border-b border-white/5">
-        <div className="max-w-screen-xl mx-auto text-center">
-           <div className="inline-flex items-center gap-3 mb-8 bg-white/5 border border-white/10 backdrop-blur-md px-5 py-2.5 rounded-full shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]">
-            <span className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-white/80">Project Scope</span>
+      {/* ── HERO SECTION (MULTI-COLUMN VIDEO GRID) ── */}
+      <header className="relative w-full h-screen flex items-center justify-center pt-20 overflow-hidden bg-black border-b border-white/5">
+        
+        {/* Background Video Grid */}
+        <div className="absolute inset-0 z-0 flex w-full h-full">
+          {[1, 2, 3, 4].map((num) => (
+            <div key={num} className="relative flex-1 h-full border-r border-white/5 last:border-r-0 overflow-hidden group">
+              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/30 transition-colors duration-700 z-10 pointer-events-none" />
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-1000 grayscale opacity-40 group-hover:opacity-80 group-hover:grayscale-0"
+              >
+                <source src={`/hero-videos-homepage/davis-garnett-hero-video-${num}.mp4`} type="video/mp4" />
+              </video>
+            </div>
+          ))}
+          {/* Heavy gradient shadows so the text pops */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent pointer-events-none z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/80 via-transparent to-transparent pointer-events-none z-10" />
+        </div>
+
+        <div className="relative z-20 max-w-screen-xl mx-auto text-center px-8 flex flex-col items-center mt-12">
+           <div className="inline-flex items-center gap-3 mb-8 bg-black/40 border border-white/10 backdrop-blur-md px-5 py-2.5 rounded-full shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]">
+            <span className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-[#D4AF37]">Project Scope</span>
           </div>
-          <h1 className="display-xl mb-8">
+          <h1 className="font-aiveritas text-5xl md:text-7xl lg:text-8xl mb-8 font-bold tracking-tight text-white drop-shadow-2xl">
             The Digital<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F6E3B0]">Masterplan.</span>
+            <span className="text-[#D4AF37]">Masterplan.</span>
           </h1>
-          <p className="text-xl text-white/60 font-light max-w-2xl mx-auto leading-relaxed mb-10">
+          <p className="text-xl text-white/80 font-light max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-lg">
             A complete breakdown of every phase, every deliverable, and every boundary of what we are building for Davis & Garnett.
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="#scope-details" className="px-6 py-3 rounded-full bg-[#D4AF37] text-black text-sm font-bold hover:bg-[#F6E3B0] transition-colors flex items-center gap-2">
+            <Link href="#scope-details" className="px-6 py-3 rounded-full bg-[#D4AF37] text-black text-sm font-bold hover:bg-[#F6E3B0] transition-colors flex items-center gap-2 backdrop-blur-md">
               Scope <ArrowDown className="w-4 h-4" />
             </Link>
-            <Link href="/features" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
+            <Link href="/features" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2 backdrop-blur-md">
               Features <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link href="/branding" className="px-6 py-3 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium hover:bg-[#D4AF37]/20 transition-colors flex items-center gap-2">
+            <Link href="/branding" className="px-6 py-3 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-medium hover:bg-[#D4AF37]/20 transition-colors flex items-center gap-2 backdrop-blur-md">
               Branding <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link href="/clickme" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
+            <Link href="/clickme" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2 backdrop-blur-md">
               Dashboard Details <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link href="/coming-soon" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
+            <Link href="/coming-soon" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2 backdrop-blur-md">
               Coming Soon Preview <ArrowRight className="w-4 h-4" />
             </Link>
-            <button disabled className="px-6 py-3 rounded-full bg-white/5 border border-white/5 text-white/30 text-sm font-medium cursor-not-allowed flex items-center gap-2">
-              Website Preview <ArrowRight className="w-4 h-4" />
-            </button>
           </div>
+        </div>
+
+        {/* Scroller Indicator */}
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-80 z-20 pointer-events-none">
+          <span className="text-[10px] tracking-[0.3em] uppercase font-bold text-[#D4AF37]">Scroll to Discover</span>
+          <div className="w-[2px] h-12 bg-gradient-to-b from-[#D4AF37] to-transparent animate-pulse" />
         </div>
       </header>
 
@@ -387,6 +412,62 @@ export default function ScopePage() {
                   <li className="flex items-start gap-2"><ChevronRight className="w-4 h-4 text-white/40 mt-0.5 shrink-0" /> Outside software subscriptions not in the ClickMe ecosystem</li>
                   <li className="flex items-start gap-2"><ChevronRight className="w-4 h-4 text-white/40 mt-0.5 shrink-0" /> Custom API integrations beyond standard platform connections</li>
                   <li className="flex items-start gap-2"><ChevronRight className="w-4 h-4 text-white/40 mt-0.5 shrink-0" /> Annual third-party integration renewals after year one</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* Phase 5 / Digital Assets & Infrastructure */}
+          <section className="glass-card p-12 lg:p-16">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-12 h-12 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/20 flex items-center justify-center">
+                <Zap className="w-6 h-6 text-[#D4AF37]" />
+              </div>
+              <h2 className="font-serif text-3xl font-semibold text-white">05. Digital Assets & Infrastructure</h2>
+            </div>
+
+            <h3 className="text-2xl font-serif text-white mb-6">Fully Capable. Fully Integrated.</h3>
+
+            <div className="grid md:grid-cols-2 gap-12 text-white/70 font-light leading-relaxed">
+              <div>
+                <p className="mb-6">
+                  We are equipping the Davis & Garnett group with a complete suite of digital assets necessary to operate at scale. This goes far beyond just a website — it encompasses your entire digital ecosystem and marketing technology stack.
+                </p>
+                <div className="grid sm:grid-cols-2 gap-6 mt-8">
+                  <div>
+                    <strong className="text-[#D4AF37] block mb-2 text-sm uppercase tracking-wider">Marketing & CRM</strong>
+                    <ul className="flex flex-col gap-2 text-sm">
+                      <li>• ClickMe CRM integration</li>
+                      <li>• Automated marketing drip campaigns</li>
+                      <li>• Lead capture & routing systems</li>
+                      <li>• Messaging & unified inbox systems</li>
+                      <li>• Dedicated linktrees (Bio Links)</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <strong className="text-[#D4AF37] block mb-2 text-sm uppercase tracking-wider">Listings & Data</strong>
+                    <ul className="flex flex-col gap-2 text-sm">
+                      <li>• IDX capable real estate search</li>
+                      <li>• Featured listings showcase</li>
+                      <li>• Custom property landing pages</li>
+                      <li>• Automated listing syndication</li>
+                      <li>• Local market trend dashboards</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/5 p-8 rounded-xl border border-white/5 h-fit">
+                <h3 className="text-white font-medium mb-6 flex items-center gap-2">
+                  <CheckSquare className="w-5 h-5 text-[#D4AF37]" /> Asset Deliverables
+                </h3>
+                <ul className="flex flex-col gap-4 text-sm">
+                  <li className="flex items-start gap-3"><span className="text-[#D4AF37]">☑</span> CRM dashboards configured for Mark & Rachael</li>
+                  <li className="flex items-start gap-3"><span className="text-[#D4AF37]">☑</span> 12-month automated email/SMS drip sequences</li>
+                  <li className="flex items-start gap-3"><span className="text-[#D4AF37]">☑</span> Custom Linktrees for Instagram & TikTok bios</li>
+                  <li className="flex items-start gap-3"><span className="text-[#D4AF37]">☑</span> Advanced property search (IDX integration ready)</li>
+                  <li className="flex items-start gap-3"><span className="text-[#D4AF37]">☑</span> Unified multi-channel messaging platform</li>
+                  <li className="flex items-start gap-3"><span className="text-[#D4AF37]">☑</span> Custom template suite for featured listings</li>
                 </ul>
               </div>
             </div>
