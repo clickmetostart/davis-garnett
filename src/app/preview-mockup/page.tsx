@@ -840,11 +840,16 @@ export default function PreviewMockup() {
           </div>
         </div>
         
-        <div className="max-w-screen-xl mx-auto border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between text-[0.6rem] uppercase tracking-widest text-white/30">
-          <p>© {new Date().getFullYear()} Davis & Garnett. All Rights Reserved.</p>
-          <div className="flex gap-4 mt-4 md:mt-0">
-            <Link href="#" className="hover:text-white">Privacy Policy</Link>
-            <Link href="#" className="hover:text-white">Terms of Service</Link>
+        <div className="max-w-screen-xl mx-auto border-t border-white/10 pt-8 mt-8 flex flex-col items-center text-center">
+          <p className="text-[0.6rem] uppercase tracking-widest text-white/30 max-w-4xl leading-relaxed mb-6">
+            Davis & Garnett is a commercial and residential real estate advisory group brokered by Align Right Realty. All properties are subject to prior sale, change, or withdrawal. Neither listing broker(s) nor Davis & Garnett shall be responsible for any typographical errors, misinformation, or misprints and shall be held totally harmless. Equal Housing Opportunity.
+          </p>
+          <div className="w-full flex flex-col md:flex-row items-center justify-between text-[0.6rem] uppercase tracking-widest text-white/30">
+            <p>© {new Date().getFullYear()} Davis & Garnett. All Rights Reserved.</p>
+            <div className="flex gap-4 mt-4 md:mt-0">
+              <Link href="#" className="hover:text-white">Privacy Policy</Link>
+              <Link href="#" className="hover:text-white">Terms of Service</Link>
+            </div>
           </div>
         </div>
       </footer>
