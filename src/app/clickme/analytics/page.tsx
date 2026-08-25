@@ -83,7 +83,7 @@ function AnalyticsContent() {
             <div style={{ width: '100%', maxWidth: '400px', background: '#e6fffa', borderRadius: '12px', padding: '1.5rem 2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderLeft: '4px solid #4fd1c5', boxShadow: '0 4px 10px rgba(79, 209, 197, 0.2)' }}>
               <div>
                 <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#319795', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '0.25rem' }}>Bottom Line</div>
-                <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#234e52' }}>Closed Loans</div>
+                <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#234e52' }}>Closed Transactions</div>
               </div>
               <div style={{ fontSize: '2rem', fontWeight: 900, color: '#234e52' }}>14</div>
             </div>
@@ -115,7 +115,7 @@ function AnalyticsContent() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', fontWeight: 600 }}><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="3"><polyline points="20 6 9 17 4 12"></polyline></svg> ClickMe Local Analytics</div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', fontWeight: 600 }}><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Network CRM API</div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', fontWeight: 600 }}><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Encompass Loan Origination System</div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', fontWeight: 600 }}><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="3"><polyline points="20 6 9 17 4 12"></polyline></svg> DotLoop Transaction Management</div>
             </div>
           </div>
         </div>
