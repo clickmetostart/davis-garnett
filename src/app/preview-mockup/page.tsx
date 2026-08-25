@@ -222,8 +222,8 @@ export default function PreviewMockup() {
               }}
             >
               <Image 
-                src="/mark-commercial-action-2.jfif" 
-                alt="Mark Davis" 
+                src="/vert_tampa_commercial.png" 
+                alt="Commercial Real Estate" 
                 fill 
                 className="object-cover"
               />
@@ -234,13 +234,13 @@ export default function PreviewMockup() {
                 className="absolute inset-0 flex flex-col items-center justify-end pb-24 px-12 bg-gradient-to-t from-[#050505] via-[#050505]/50 to-transparent"
                 style={{ opacity: textOpacity, y: textY }}
               >
-                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold mb-4">Real Estate Advisor</span>
-                <h2 className="font-aiveritas text-5xl text-white mb-6">Mark Davis</h2>
+                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold mb-4">Strategic Acquisition</span>
+                <h2 className="font-aiveritas text-5xl text-white mb-6 text-center">Commercial Division</h2>
                 <p className="text-white/70 text-center max-w-md font-light mb-10 leading-relaxed">
-                  An award-winning powerhouse driving high-yield investments and exceptional real estate experiences across Tampa Bay's commercial and residential markets.
+                  Securing high-yield commercial assets, luxury retail spaces, and institutional-grade developments across the Gulf Coast.
                 </p>
                 <button className="flex items-center gap-3 px-8 py-4 bg-white text-black text-xs font-bold uppercase tracking-widest hover:bg-[#D4AF37] transition-colors">
-                  View Mark's Portfolio <ArrowRight className="w-4 h-4" />
+                  View Commercial Listings <ArrowRight className="w-4 h-4" />
                 </button>
               </motion.div>
             </motion.div>
@@ -257,8 +257,8 @@ export default function PreviewMockup() {
               }}
             >
               <Image 
-                src="/rachael-residential-action-2.jfif" 
-                alt="Rachael Garnett" 
+                src="/vert_tampa_residential.png" 
+                alt="Residential Real Estate" 
                 fill 
                 className="object-cover"
               />
@@ -269,13 +269,13 @@ export default function PreviewMockup() {
                 className="absolute inset-0 flex flex-col items-center justify-end pb-24 px-12 bg-gradient-to-t from-[#050505] via-[#050505]/50 to-transparent"
                 style={{ opacity: textOpacity, y: textY }}
               >
-                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold mb-4">Real Estate Advisor</span>
-                <h2 className="font-aiveritas text-5xl text-white mb-6">Rachael Garnett</h2>
+                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold mb-4">Curated Lifestyles</span>
+                <h2 className="font-aiveritas text-5xl text-white mb-6 text-center">Residential Division</h2>
                 <p className="text-white/70 text-center max-w-md font-light mb-10 leading-relaxed">
-                  Delivering unparalleled luxury service. Curating exceptional lifestyles and executing elite residential and commercial transactions with precision.
+                  Sourcing and securing the most exclusive waterfront estates and ultra-luxury residences in Tampa Bay.
                 </p>
                 <button className="flex items-center gap-3 px-8 py-4 bg-white text-black text-xs font-bold uppercase tracking-widest hover:bg-[#D4AF37] transition-colors">
-                  View Rachael's Portfolio <ArrowRight className="w-4 h-4" />
+                  View Residential Listings <ArrowRight className="w-4 h-4" />
                 </button>
               </motion.div>
             </motion.div>
