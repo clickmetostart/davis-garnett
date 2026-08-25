@@ -361,8 +361,8 @@ export default function PreviewMockup() {
         <div className="max-w-screen-xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-[1fr_2fr] gap-16 items-center">
             <div>
-              <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Trusted Excellence</span>
-              <h2 className="font-aiveritas text-4xl md:text-5xl text-white mb-6">Uncompromising Results.</h2>
+              <span className="text-[#F5E6CE] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Trusted Excellence</span>
+              <h2 className="font-aiveritas text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F5E6CE] mb-6">Uncompromising Results.</h2>
               <p className="text-white/60 font-light leading-relaxed mb-8">
                 Our commitment to our clients goes beyond the transaction. We build lasting partnerships through transparency, market intelligence, and relentless execution across Tampa Bay.
               </p>
@@ -415,8 +415,8 @@ export default function PreviewMockup() {
             
             {/* Left Column - Section Header */}
             <div className="lg:sticky lg:top-32 lg:self-start">
-              <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Expert Answers</span>
-              <h2 className="font-aiveritas text-4xl md:text-5xl text-white mb-6">Tampa Bay Real Estate Q&A</h2>
+              <span className="text-[#F5E6CE] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Expert Answers</span>
+              <h2 className="font-aiveritas text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F5E6CE] mb-6">Tampa Bay Real Estate Q&A</h2>
               <p className="text-white/60 font-light leading-relaxed mb-8">
                 Get direct answers from our team on the most commonly asked questions about buying, selling, and investing in Tampa Bay real estate.
               </p>
@@ -597,8 +597,8 @@ export default function PreviewMockup() {
         <div className="max-w-screen-xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
             <div>
-              <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Market Intelligence</span>
-              <h2 className="font-aiveritas text-4xl md:text-5xl text-white">The Tampa Bay Hub</h2>
+              <span className="text-[#F5E6CE] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Market Intelligence</span>
+              <h2 className="font-aiveritas text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F5E6CE]">The Tampa Bay Hub</h2>
             </div>
             <Link href="#" className="flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-white/70 hover:text-white transition-colors">
               Access The Hub <ArrowRight className="w-4 h-4" />
@@ -692,28 +692,48 @@ export default function PreviewMockup() {
           </div>
           
           <div className="flex-1 text-center md:text-left">
-            <h2 className="font-aiveritas text-4xl text-white mb-6">Dominating Tampa Bay.</h2>
+            <h2 className="font-aiveritas text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F5E6CE] mb-6">Dominating Tampa Bay.</h2>
             <p className="text-white/60 font-light max-w-2xl leading-relaxed mb-8 mx-auto md:mx-0">
               Our footprint spans the most lucrative and desirable markets in the region. We provide hyper-local expertise, global reach, and a unified approach to real estate across the Gulf Coast.
             </p>
             
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-white/10">
-              <div className="flex flex-col items-center md:items-start gap-2">
-                <MapPin className="w-5 h-5 text-[#D4AF37]" />
-                <span className="text-white font-bold text-sm tracking-wider uppercase">Tampa</span>
-              </div>
-              <div className="flex flex-col items-center md:items-start gap-2">
-                <MapPin className="w-5 h-5 text-[#D4AF37]" />
-                <span className="text-white font-bold text-sm tracking-wider uppercase">St. Pete</span>
-              </div>
-              <div className="flex flex-col items-center md:items-start gap-2">
-                <MapPin className="w-5 h-5 text-[#D4AF37]" />
-                <span className="text-white font-bold text-sm tracking-wider uppercase">Clearwater</span>
-              </div>
-              <div className="flex flex-col items-center md:items-start gap-2">
-                <MapPin className="w-5 h-5 text-[#D4AF37]" />
-                <span className="text-white font-bold text-sm tracking-wider uppercase">Sarasota</span>
-              </div>
+            <div className="grid grid-cols-2 gap-4 pt-8 border-t border-white/10 mt-8">
+              <Link href="/locations/st-pete" className="group relative aspect-video rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-[#D4AF37]/50 transition-colors">
+                <Image src="/city_tampa_1787662311501.png" alt="Tampa" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-80" />
+                <div className="absolute bottom-3 left-4">
+                  <span className="text-white font-bold text-sm tracking-widest uppercase flex items-center gap-1 group-hover:text-[#D4AF37] transition-colors">
+                    Tampa <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </span>
+                </div>
+              </Link>
+              <Link href="/locations/st-pete" className="group relative aspect-video rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-[#D4AF37]/50 transition-colors">
+                <Image src="/city_st_pete_1787662322779.png" alt="St. Petersburg" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-80" />
+                <div className="absolute bottom-3 left-4">
+                  <span className="text-white font-bold text-sm tracking-widest uppercase flex items-center gap-1 group-hover:text-[#D4AF37] transition-colors">
+                    St. Pete <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </span>
+                </div>
+              </Link>
+              <Link href="/locations/st-pete" className="group relative aspect-video rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-[#D4AF37]/50 transition-colors">
+                <Image src="/city_clearwater_1787662333626.png" alt="Clearwater" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-80" />
+                <div className="absolute bottom-3 left-4">
+                  <span className="text-white font-bold text-sm tracking-widest uppercase flex items-center gap-1 group-hover:text-[#D4AF37] transition-colors">
+                    Clearwater <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </span>
+                </div>
+              </Link>
+              <Link href="/locations/st-pete" className="group relative aspect-video rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-[#D4AF37]/50 transition-colors">
+                <Image src="/city_sarasota_1787662344268.png" alt="Sarasota" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-80" />
+                <div className="absolute bottom-3 left-4">
+                  <span className="text-white font-bold text-sm tracking-widest uppercase flex items-center gap-1 group-hover:text-[#D4AF37] transition-colors">
+                    Sarasota <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </span>
+                </div>
+              </Link>
             </div>
           </div>
         </div>
