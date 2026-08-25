@@ -26,10 +26,17 @@ import { cookies } from 'next/headers';
 // Helper to get current authenticated user
 async function getCurrentUser() {
   const cookieStore = await cookies();
-  const userId = cookieStore.get('auth_token')?.value;
-  if (!userId) return null;
-  const data = readData();
-  return data.users.find((u: any) => u.id === userId) || null;
+  const sessionCookie = cookieStore.get('mock_session');
+  if (!sessionCookie || !sessionCookie.value) return null;
+  
+  try {
+    const sessionData = JSON.parse(Buffer.from(sessionCookie.value, 'base64').toString('utf-8'));
+    const data = readData();
+    // Match by email since sessionData might not have id mapped perfectly yet
+    return data.users.find((u: any) => u.email.toLowerCase() === sessionData.email.toLowerCase()) || null;
+  } catch (e) {
+    return null;
+  }
 }
 
 export async function GET() {

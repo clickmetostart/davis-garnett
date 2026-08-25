@@ -35,6 +35,26 @@
         "logo": "/uploads/avatars/u_top_1_1786745098374.png",
         "themeColor": "#2563eb"
       }
+    },
+    {
+      "id": "mark_davis_1",
+      "firstName": "Mark",
+      "lastName": "Davis",
+      "email": "msdavis118@gmail.com",
+      "password": "Awe$ome",
+      "role": "System Admin",
+      "status": "Active",
+      "joined": "August 25, 2026"
+    },
+    {
+      "id": "rachael_garnett_1",
+      "firstName": "Rachael",
+      "lastName": "Garnett",
+      "email": "rachaellgarnett@gmail.com",
+      "password": "Awe$ome",
+      "role": "System Admin",
+      "status": "Active",
+      "joined": "August 25, 2026"
     }
   ]
 }
