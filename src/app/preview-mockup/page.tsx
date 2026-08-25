@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Star, MapPin, Building, PlayCircle } from "lucide-react";
 import DavisGarnettLogo from "@/components/DavisGarnettLogo";
+import FeaturedPortfolioSpillOut from "@/components/FeaturedPortfolioSpillOut";
 
 export default function PreviewMockup() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -349,62 +350,8 @@ export default function PreviewMockup() {
         </div>
       </section>
 
-      {/* ── 2. REAL ESTATE PORTFOLIO ── */}
-      <section className="py-32 px-8 bg-[#050505]">
-        <div className="max-w-screen-xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
-            <div>
-              <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Curated Offerings</span>
-              <h2 className="font-aiveritas text-4xl md:text-5xl text-white">Featured Portfolio</h2>
-            </div>
-            <Link href="#" className="flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-white/70 hover:text-white transition-colors">
-              View All Properties <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Commercial Prop 1 */}
-            <div className="group relative aspect-[4/5] overflow-hidden cursor-pointer rounded-xl">
-              <Image src="/mark_commercial_banner_1787599103904.png" alt="Commercial Property" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent" />
-              <div className="absolute bottom-0 left-0 w-full p-8">
-                <span className="text-[#D4AF37] text-xs uppercase tracking-widest font-bold mb-2 block">Commercial</span>
-                <h3 className="font-aiveritas text-2xl text-white mb-2">Tampa Riverwalk Tower</h3>
-                <p className="text-white/60 text-sm mb-4">Mixed-Use Development • $42.5M</p>
-                <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover:border-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-black transition-all">
-                  <ArrowUpRight className="w-4 h-4" />
-                </div>
-              </div>
-            </div>
-            {/* Res Prop 1 */}
-            <div className="group relative aspect-[4/5] overflow-hidden cursor-pointer rounded-xl">
-              <Image src="/rachael_residential_banner_1787599113998.png" alt="Residential Property" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent" />
-              <div className="absolute bottom-0 left-0 w-full p-8">
-                <span className="text-[#D4AF37] text-xs uppercase tracking-widest font-bold mb-2 block">Residential</span>
-                <h3 className="font-aiveritas text-2xl text-white mb-2">Davis Islands Estate</h3>
-                <p className="text-white/60 text-sm mb-4">Waterfront Luxury • $8.2M</p>
-                <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover:border-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-black transition-all">
-                  <ArrowUpRight className="w-4 h-4" />
-                </div>
-              </div>
-            </div>
-            {/* Commercial Prop 2 */}
-            <div className="group relative aspect-[4/5] overflow-hidden cursor-pointer rounded-xl">
-              <Image src="/team_commercial_banner_1787599029260.png" alt="Commercial Space" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent" />
-              <div className="absolute bottom-0 left-0 w-full p-8">
-                <span className="text-[#D4AF37] text-xs uppercase tracking-widest font-bold mb-2 block">Commercial</span>
-                <h3 className="font-aiveritas text-2xl text-white mb-2">St. Pete Industrial Park</h3>
-                <p className="text-white/60 text-sm mb-4">Class A Logistics • $18.9M</p>
-                <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover:border-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-black transition-all">
-                  <ArrowUpRight className="w-4 h-4" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* ── 2. REAL ESTATE PORTFOLIO (SPILL OUT) ── */}
+      <FeaturedPortfolioSpillOut />
 
       {/* ── 3. CLIENT SUCCESS / TESTIMONIALS ── */}
       <section className="py-32 px-8 bg-black border-y border-white/5 relative overflow-hidden">
@@ -473,7 +420,7 @@ export default function PreviewMockup() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Article 1 */}
-            <Link href="#" className="group">
+            <Link href="/article-mockup" className="group">
               <div className="relative aspect-video mb-6 overflow-hidden bg-white/5 border border-white/5 rounded-xl">
                 <Image src="/youtube_skyscraper_banner_1787607984987.png" alt="Commercial Forecast" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                 <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1 text-[0.6rem] uppercase tracking-widest text-[#D4AF37] font-bold border border-white/10 rounded-sm">Commercial</div>
@@ -483,9 +430,9 @@ export default function PreviewMockup() {
             </Link>
 
             {/* Article 2 */}
-            <Link href="#" className="group">
+            <Link href="/article-mockup" className="group">
               <div className="relative aspect-video mb-6 overflow-hidden bg-white/5 border border-white/5 rounded-xl">
-                <Image src="/media__1787604060876.jpg" alt="Luxury Market" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+                <Image src="/res_luxury_condo_1787632822869.png" alt="Luxury Market" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                 <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1 text-[0.6rem] uppercase tracking-widest text-[#D4AF37] font-bold border border-white/10 rounded-sm">Residential</div>
               </div>
               <h3 className="font-aiveritas text-2xl text-white mb-3 group-hover:text-[#D4AF37] transition-colors">Navigating Luxury Waterfront Purchases</h3>
@@ -493,13 +440,43 @@ export default function PreviewMockup() {
             </Link>
 
             {/* Article 3 */}
-            <Link href="#" className="group hidden lg:block">
+            <Link href="/article-mockup" className="group">
               <div className="relative aspect-video mb-6 overflow-hidden bg-white/5 border border-white/5 flex items-center justify-center rounded-xl">
-                <Image src="/youtube_banner_1787607058887.png" alt="Video Podcast" fill className="object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700" />
+                <Image src="/team_commercial_banner_1787599029260.png" alt="Video Podcast" fill className="object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700" />
                 <PlayCircle className="w-12 h-12 text-white relative z-10 opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all" />
               </div>
               <h3 className="font-aiveritas text-2xl text-white mb-3 group-hover:text-[#D4AF37] transition-colors">Video: Q3 Investment Strategies</h3>
               <p className="text-white/60 font-light text-sm line-clamp-2">Mark and Rachael discuss synergistic opportunities across their combined portfolios.</p>
+            </Link>
+
+            {/* Article 4 */}
+            <Link href="/article-mockup" className="group">
+              <div className="relative aspect-video mb-6 overflow-hidden bg-white/5 border border-white/5 rounded-xl">
+                <Image src="/com_office_tower_1787632874122.png" alt="Downtown Office Trends" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+                <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1 text-[0.6rem] uppercase tracking-widest text-[#D4AF37] font-bold border border-white/10 rounded-sm">Commercial</div>
+              </div>
+              <h3 className="font-aiveritas text-2xl text-white mb-3 group-hover:text-[#D4AF37] transition-colors">The Return to Class-A Offices</h3>
+              <p className="text-white/60 font-light text-sm line-clamp-2">Why institutional investors are doubling down on downtown Tampa's premium office spaces.</p>
+            </Link>
+
+            {/* Article 5 */}
+            <Link href="/article-mockup" className="group">
+              <div className="relative aspect-video mb-6 overflow-hidden bg-white/5 border border-white/5 rounded-xl">
+                <Image src="/res_golf_course_home_1787632854609.png" alt="Golf Course Communities" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+                <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1 text-[0.6rem] uppercase tracking-widest text-[#D4AF37] font-bold border border-white/10 rounded-sm">Residential</div>
+              </div>
+              <h3 className="font-aiveritas text-2xl text-white mb-3 group-hover:text-[#D4AF37] transition-colors">Exclusive Golf Communities</h3>
+              <p className="text-white/60 font-light text-sm line-clamp-2">A deep dive into the most sought-after gated golf communities in the Greater Tampa region.</p>
+            </Link>
+
+            {/* Article 6 */}
+            <Link href="/article-mockup" className="group">
+              <div className="relative aspect-video mb-6 overflow-hidden bg-white/5 border border-white/5 rounded-xl">
+                <Image src="/land_commercial_development_1787632926636.png" alt="Land Development" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+                <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1 text-[0.6rem] uppercase tracking-widest text-[#D4AF37] font-bold border border-white/10 rounded-sm">Development</div>
+              </div>
+              <h3 className="font-aiveritas text-2xl text-white mb-3 group-hover:text-[#D4AF37] transition-colors">I-4 Corridor Expansion Opportunities</h3>
+              <p className="text-white/60 font-light text-sm line-clamp-2">Analyzing the remaining high-value land plots available for large-scale industrial development.</p>
             </Link>
           </div>
         </div>
