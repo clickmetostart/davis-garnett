@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
-import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 
 const PREVIEW_LINKS = [
   { label: "Commercial", href: "#" },
@@ -19,7 +19,13 @@ export default function PreviewNav() {
     <nav className="absolute top-8 w-full z-50 bg-[#050505]/40 backdrop-blur-md border-b border-white/5">
       <div className="max-w-screen-xl mx-auto px-8 h-20 flex items-center justify-between">
         <Link href="/preview-mockup" onClick={() => setIsOpen(false)} className="hover:opacity-80 transition-opacity">
-          <DavisGarnettLogo variant="dark" className="w-48 max-w-full" />
+          <Image 
+            src="/davis and garnett logo mobile png.png" 
+            alt="Davis & Garnett" 
+            width={200} 
+            height={60} 
+            className="h-10 w-auto object-contain"
+          />
         </Link>
         <div className="hidden lg:flex items-center gap-8 text-xs uppercase tracking-widest text-white/70">
           {PREVIEW_LINKS.map((l) => (

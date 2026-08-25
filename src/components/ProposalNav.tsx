@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
@@ -18,9 +19,13 @@ export default function ProposalNav() {
     <nav className="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-xl border-b border-white/5">
       <div className="max-w-screen-xl mx-auto px-8 h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-4 hover:opacity-80 transition-opacity">
-          <span className="font-serif text-xl font-bold tracking-tight text-white drop-shadow-md">
-            Davis & Garnett
-          </span>
+          <Image 
+            src="/davis and garnett logo mobile png.png" 
+            alt="Davis & Garnett" 
+            width={200} 
+            height={60} 
+            className="h-10 w-auto object-contain"
+          />
         </Link>
         <div className="hidden lg:flex items-center gap-6">
           {NAV_LINKS.map((l) => (
