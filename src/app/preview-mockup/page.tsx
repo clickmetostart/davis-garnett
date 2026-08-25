@@ -812,37 +812,34 @@ export default function PreviewMockup() {
         </div>
       </section>
 
-      {/* ── REAL WEBSITE FOOTER ── */}
+      {/* ── MOCKUP PREVIEW FOOTER ── */}
       <footer className="py-20 px-8 bg-black border-t border-white/5">
-        <div className="max-w-screen-xl mx-auto grid md:grid-cols-4 gap-12 mb-16">
-          <div className="md:col-span-2">
-            <DavisGarnettLogo variant="dark" className="w-64 max-w-full mb-8" />
-            <p className="text-white/50 font-light max-w-sm leading-relaxed mb-8">
+        <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 mb-16">
+          {/* Left: Davis & Garnett */}
+          <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
+            <DavisGarnettLogo variant="dark" className="w-64 max-w-full mb-6" />
+            <p className="text-white/50 font-light max-w-xs leading-relaxed">
               Tampa Bay's premier real estate syndicate. Combining commercial gravity with unmatched residential finesse.
             </p>
-            <div className="w-32 h-8 relative opacity-40 grayscale">
-              <Image src="/align-right-realty-logo.webp" alt="Align Right" fill className="object-contain object-left" />
-            </div>
           </div>
-          <div>
-            <h4 className="text-white font-aiveritas text-lg mb-6">Navigation</h4>
-            <ul className="flex flex-col gap-4 text-white/50 text-sm">
-              <li><Link href="#" className="hover:text-[#D4AF37]">Home</Link></li>
-              <li><Link href="#" className="hover:text-[#D4AF37]">Commercial</Link></li>
-              <li><Link href="#" className="hover:text-[#D4AF37]">Residential</Link></li>
-              <li><Link href="#" className="hover:text-[#D4AF37]">About The Team</Link></li>
+          
+          {/* Middle: Mockup Navigation */}
+          <div className="flex-1 flex flex-col items-center text-center">
+            <h4 className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold mb-6">Preview Navigation</h4>
+            <ul className="flex flex-col md:flex-row items-center gap-6 text-white/70 text-xs font-bold uppercase tracking-widest">
+              <li><Link href="/preview-mockup" className="hover:text-white transition-colors">Home Mockup</Link></li>
+              <li><Link href="/locations/st-pete" className="hover:text-white transition-colors">St. Pete Hub</Link></li>
             </ul>
           </div>
-          <div>
-            <h4 className="text-white font-aiveritas text-lg mb-6">Contact</h4>
-            <ul className="flex flex-col gap-4 text-white/50 text-sm">
-              <li>Mark Davis: (941) 737-4127</li>
-              <li>Rachael Garnett: (727) 808-3344</li>
-              <li>info@davisgarnett.com</li>
-              <li>Tampa Bay, FL</li>
-            </ul>
+
+          {/* Right: Align Right Realty */}
+          <div className="flex-1 flex justify-center md:justify-end">
+             <div className="w-48 h-16 relative bg-white/5 rounded-lg p-4">
+               <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain p-2" />
+             </div>
           </div>
         </div>
+        
         <div className="max-w-screen-xl mx-auto border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between text-[0.6rem] uppercase tracking-widest text-white/30">
           <p>© {new Date().getFullYear()} Davis & Garnett. All Rights Reserved.</p>
           <div className="flex gap-4 mt-4 md:mt-0">
