@@ -812,43 +812,71 @@ export default function PreviewMockup() {
         </div>
       </section>
 
-      {/* ── MOCKUP PREVIEW FOOTER ── */}
-      <footer className="py-20 px-8 bg-black border-t border-white/5">
-        <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 mb-16">
-          {/* Left: Davis & Garnett */}
-          <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
-            <DavisGarnettLogo variant="dark" className="w-64 max-w-full mb-6" />
-            <p className="text-white/50 font-light max-w-xs leading-relaxed">
-              Tampa Bay's premier real estate syndicate. Combining commercial gravity with unmatched residential finesse.
+      {/* ── ULTRA-PREMIUM MOCKUP FOOTER ── */}
+      <footer className="relative py-24 px-8 bg-[#020202] border-t border-[#D4AF37]/20 overflow-hidden">
+        {/* Subtle background glow */}
+        <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-[#D4AF37]/5 rounded-full blur-[120px] pointer-events-none -translate-y-1/2" />
+        
+        <div className="relative z-10 max-w-screen-xl mx-auto flex flex-col lg:flex-row justify-between gap-16 mb-20">
+          
+          {/* Left Brand Identity */}
+          <div className="flex-1 max-w-sm">
+            <DavisGarnettLogo variant="dark" className="w-64 max-w-full mb-8" />
+            <p className="text-white/50 font-light leading-relaxed mb-10 text-sm">
+              Tampa Bay's premier real estate syndicate. Executing high-yield commercial acquisitions and curating elite residential lifestyles with absolute precision.
             </p>
+            {/* Align Right Logo - Clean, no box */}
+            <div className="w-48 h-12 relative opacity-90">
+               <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain object-left" />
+            </div>
           </div>
           
-          {/* Middle: Mockup Navigation */}
-          <div className="flex-1 flex flex-col items-center text-center">
-            <h4 className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold mb-6">Preview Navigation</h4>
-            <ul className="flex flex-col md:flex-row items-center gap-6 text-white/70 text-xs font-bold uppercase tracking-widest">
-              <li><Link href="/preview-mockup" className="hover:text-white transition-colors">Home Mockup</Link></li>
-              <li><Link href="/locations/st-pete" className="hover:text-white transition-colors">St. Pete Hub</Link></li>
-            </ul>
-          </div>
+          {/* Right Navigation Grids */}
+          <div className="flex-[2] grid grid-cols-2 md:grid-cols-3 gap-12">
+            
+            {/* Column 1: Core Navigation */}
+            <div>
+              <h4 className="text-[#D4AF37] text-[10px] uppercase tracking-[0.3em] font-bold mb-6">Experiences</h4>
+              <ul className="flex flex-col gap-4 text-white/70 text-xs font-medium uppercase tracking-widest">
+                <li><Link href="/preview-mockup" className="hover:text-white transition-colors duration-300">Home Experience</Link></li>
+                <li><Link href="/locations/st-pete" className="hover:text-white transition-colors duration-300">St. Pete Hub</Link></li>
+                <li><Link href="#" className="hover:text-white transition-colors duration-300">Q&A Post Mockup</Link></li>
+              </ul>
+            </div>
+            
+            {/* Column 2: Portfolio */}
+            <div>
+              <h4 className="text-[#D4AF37] text-[10px] uppercase tracking-[0.3em] font-bold mb-6">The Portfolio</h4>
+              <ul className="flex flex-col gap-4 text-white/70 text-xs font-medium uppercase tracking-widest">
+                <li><Link href="#" className="hover:text-white transition-colors duration-300">Commercial Listing</Link></li>
+                <li><Link href="#" className="hover:text-white transition-colors duration-300">Residential Listing</Link></li>
+                <li><Link href="#" className="hover:text-white transition-colors duration-300">Past Sales</Link></li>
+              </ul>
+            </div>
+            
+            {/* Column 3: The Syndicate */}
+            <div>
+              <h4 className="text-[#D4AF37] text-[10px] uppercase tracking-[0.3em] font-bold mb-6">The Syndicate</h4>
+              <ul className="flex flex-col gap-4 text-white/70 text-xs font-medium uppercase tracking-widest">
+                <li><Link href="#" className="hover:text-white transition-colors duration-300">Mark Davis Bio</Link></li>
+                <li><Link href="#" className="hover:text-white transition-colors duration-300">Rachael Garnett Bio</Link></li>
+                <li><Link href="#" className="hover:text-white transition-colors duration-300">Contact Us</Link></li>
+              </ul>
+            </div>
 
-          {/* Right: Align Right Realty */}
-          <div className="flex-1 flex justify-center md:justify-end">
-             <div className="w-48 h-16 relative bg-white/5 rounded-lg p-4">
-               <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain p-2" />
-             </div>
           </div>
         </div>
         
-        <div className="max-w-screen-xl mx-auto border-t border-white/10 pt-8 mt-8 flex flex-col items-center text-center">
-          <p className="text-[0.6rem] uppercase tracking-widest text-white/30 max-w-4xl leading-relaxed mb-6">
+        {/* Compliance & Copyright */}
+        <div className="relative z-10 max-w-screen-xl mx-auto border-t border-white/10 pt-10 mt-10">
+          <p className="text-[0.6rem] uppercase tracking-widest text-white/30 max-w-5xl leading-loose mb-10 text-center mx-auto md:text-left md:mx-0">
             Davis & Garnett is a commercial and residential real estate advisory group brokered by Align Right Realty. All properties are subject to prior sale, change, or withdrawal. Neither listing broker(s) nor Davis & Garnett shall be responsible for any typographical errors, misinformation, or misprints and shall be held totally harmless. Equal Housing Opportunity.
           </p>
-          <div className="w-full flex flex-col md:flex-row items-center justify-between text-[0.6rem] uppercase tracking-widest text-white/30">
+          <div className="flex flex-col md:flex-row items-center justify-between text-[0.6rem] uppercase tracking-widest text-white/30">
             <p>© {new Date().getFullYear()} Davis & Garnett. All Rights Reserved.</p>
-            <div className="flex gap-4 mt-4 md:mt-0">
-              <Link href="#" className="hover:text-white">Privacy Policy</Link>
-              <Link href="#" className="hover:text-white">Terms of Service</Link>
+            <div className="flex gap-6 mt-6 md:mt-0">
+              <Link href="#" className="hover:text-[#D4AF37] transition-colors">Privacy Policy</Link>
+              <Link href="#" className="hover:text-[#D4AF37] transition-colors">Terms of Service</Link>
             </div>
           </div>
         </div>
