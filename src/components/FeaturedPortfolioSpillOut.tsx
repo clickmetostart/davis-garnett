@@ -45,7 +45,7 @@ export default function FeaturedPortfolioSpillOut() {
           const x = useTransform(scrollYProgress, [0, 0.3, 1], ["0vw", prop.pos.x, prop.pos.x]);
           const y = useTransform(scrollYProgress, [0, 0.3, 1], ["0vh", prop.pos.y, prop.pos.y]);
           const scale = useTransform(scrollYProgress, [0, 0.3, 1], [0.5, 1, 1]);
-          const opacity = useTransform(scrollYProgress, [0, 0.05, 0.3, 1], [0, 1, 1, 1]);
+          const opacity = useTransform(scrollYProgress, [0, 0.05, 0.3, 0.85, 1], [0, 1, 1, 1, 0]);
           
           return (
             <motion.div
@@ -73,7 +73,8 @@ export default function FeaturedPortfolioSpillOut() {
         <motion.div 
           className="relative w-[80vw] sm:w-[480px] aspect-square rounded-2xl overflow-hidden shadow-2xl z-20 group cursor-pointer border border-[#D4AF37]/30"
           style={{
-             scale: useTransform(scrollYProgress, [0, 0.3, 1], [1, 1.05, 1.05])
+             scale: useTransform(scrollYProgress, [0, 0.3, 1], [1, 1.05, 1.05]),
+             opacity: useTransform(scrollYProgress, [0.85, 1], [1, 0])
           }}
         >
           <Image src="/mega_property_pinned_1787632939192.png" alt="Mega Property" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />

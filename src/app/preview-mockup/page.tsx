@@ -352,6 +352,7 @@ export default function PreviewMockup() {
 
       {/* ── 2. REAL ESTATE PORTFOLIO (SPILL OUT) ── */}
       <FeaturedPortfolioSpillOut />
+      <div className="h-[20vh] bg-black pointer-events-none" />
 
       {/* ── 3. CLIENT SUCCESS / TESTIMONIALS ── */}
       <section className="py-32 px-8 bg-black border-y border-white/5 relative overflow-hidden">
