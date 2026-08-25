@@ -800,11 +800,11 @@ export default function PreviewMockup() {
               <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-6">
                 <div className="flex items-center gap-2 text-white font-bold">
                   <Heart className="w-6 h-6 fill-white" />
-                  <span>{Math.floor(Math.random() * 500) + 100}</span>
+                  <span>{((idx + 1) * 137) % 400 + 150}</span>
                 </div>
                 <div className="flex items-center gap-2 text-white font-bold">
                   <MessageCircle className="w-6 h-6 fill-white" />
-                  <span>{Math.floor(Math.random() * 50) + 5}</span>
+                  <span>{((idx + 1) * 47) % 50 + 12}</span>
                 </div>
               </div>
             </Link>
