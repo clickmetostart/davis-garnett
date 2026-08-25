@@ -33,14 +33,14 @@ export default function FeaturedPortfolioSpillOut() {
 
   return (
     <section ref={containerRef} className="relative h-[800vh] bg-black">
-      <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden">
+      <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
         
         {/* Background Overlay to ensure text visibility when elements scatter */}
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505] pointer-events-none" />
 
         {/* Overlay Title that fades out as you scroll */}
         <motion.div 
-          className="relative z-30 pointer-events-none flex flex-col items-center mb-2"
+          className="absolute top-12 md:top-24 left-0 w-full text-center z-30 pointer-events-none flex flex-col items-center"
           style={{
             opacity: useTransform(scrollYProgress, [0, 0.1, 1], [1, 0, 0]),
             y: useTransform(scrollYProgress, [0, 0.1, 1], [0, -50, -50])
@@ -48,13 +48,21 @@ export default function FeaturedPortfolioSpillOut() {
         >
           <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-4 drop-shadow-md">Signature Assets - Tampa Area</span>
           <h2 className="font-aiveritas text-5xl md:text-7xl text-white drop-shadow-2xl mb-6">The Bay Collection</h2>
-          <Mouse className="w-8 h-8 text-white animate-bounce drop-shadow-lg mx-auto opacity-70" />
         </motion.div>
 
-        {/* Properties Container */}
-        <div className="relative flex items-center justify-center w-full">
-          {/* The 12 Spilling Properties */}
-          {properties.map((prop, i) => {
+        {/* Scroll Indicator (Mouse Icon) on the left side */}
+        <motion.div 
+          className="absolute left-8 md:left-[15vw] lg:left-[20vw] top-1/2 -translate-y-1/2 z-30 pointer-events-none"
+          style={{
+            opacity: useTransform(scrollYProgress, [0, 0.1, 1], [1, 0, 0]),
+            y: useTransform(scrollYProgress, [0, 0.1, 1], [0, -50, -50])
+          }}
+        >
+          <Mouse className="w-8 h-8 text-white animate-bounce drop-shadow-lg opacity-70" />
+        </motion.div>
+
+        {/* The 12 Spilling Properties */}
+        {properties.map((prop, i) => {
           // Calculate individual motion values
           // Expands over the first 30% of the 800vh scroll, then holds firm for the remaining 70%
           const x = useTransform(scrollYProgress, [0, 0.3, 1], ["0vw", prop.pos.x, prop.pos.x]);
@@ -115,7 +123,6 @@ export default function FeaturedPortfolioSpillOut() {
             </div>
           </div>
         </motion.div>
-        </div>
 
       </div>
     </section>
