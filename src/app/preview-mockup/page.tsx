@@ -741,10 +741,10 @@ export default function PreviewMockup() {
       </section>
 
       {/* ── 5.5 ELEGANT ADVISORY CTA ── */}
-      <section className="relative py-32 px-8 bg-[#050505] overflow-hidden border-t border-white/5">
-        <div className="absolute inset-0 z-0 opacity-20">
-           <Image src="/davis-garnett-real-combo.png" alt="Advisory Team" fill className="object-cover object-top" />
-           <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/80 to-[#050505]" />
+      <section className="relative py-32 px-8 overflow-hidden border-t border-[#D4AF37]/20">
+        <div className="absolute inset-0 z-0">
+           <Image src="/golf_networking.png" alt="Advisory Team" fill className="object-cover object-center" />
+           <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
         </div>
         
         <div className="relative z-10 max-w-4xl mx-auto text-center">
