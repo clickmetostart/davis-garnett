@@ -1,0 +1,33 @@
+<html><head><meta charset="UTF-8"><style>
+body{font-family:Calibri,Arial,sans-serif;font-size:11pt;color:#111827;line-height:1.7;max-width:860px;margin:40px auto;padding:0 28px}
+h1{font-size:22pt;color:#111827;border-bottom:3px solid #c5a028;padding-bottom:8px;margin-bottom:4px}
+h2{font-size:14pt;color:#111827;margin-top:30px;margin-bottom:4px;border-left:4px solid #4fd1c5;padding-left:12px;background:#f4fdfc}
+h3{font-size:12pt;color:#374151;margin:16px 0 4px;font-weight:bold}
+p{margin:4px 0 10px}
+.meta{background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:14px 18px;margin-bottom:24px;font-size:10pt}
+.meta p{margin:3px 0}
+.meta strong{color:#b7881c}
+.sec{border-top:1px solid #e5e7eb;margin-top:28px;padding-top:16px}
+.badge{display:inline-block;background:#ecfdf5;color:#065f46;font-size:9pt;font-weight:bold;padding:3px 12px;border-radius:20px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
+.card{background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:14px 16px;margin:10px 0}
+.card-title{font-weight:bold;font-size:11.5pt;color:#111827;margin:0 0 4px}
+.card-sub{font-size:10pt;color:#6b7280;margin:0 0 4px;font-style:italic}
+.card-desc{color:#374151;margin:0;font-size:10.5pt}
+.step{display:flex;gap:14px;align-items:flex-start;padding:12px 14px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;margin:8px 0}
+.step-num{font-size:18pt;font-weight:bold;color:#c5a028;min-width:40px;line-height:1}
+.step-body .step-title{font-weight:bold;font-size:11pt;color:#111827;margin:0 0 3px}
+.step-body .step-desc{font-size:10.5pt;color:#374151;margin:0}
+.faq{border-left:3px solid #4fd1c5;padding:10px 14px;margin:12px 0;background:#f9fafb;border-radius:0 6px 6px 0}
+.faq-q{font-weight:bold;color:#111827;margin:0 0 5px}
+.faq-a{color:#374151;margin:0;font-size:10.5pt}
+.cta{background:#111827;color:#fff;border-radius:10px;padding:20px 24px;margin-top:28px}
+.cta h2{color:#4fd1c5;border:none;padding:0;margin:0 0 8px;background:transparent;font-size:15pt}
+.cta p{color:#d1d5db;margin:4px 0}
+.cta .btn{display:inline-block;background:#4fd1c5;color:#111827;font-weight:bold;padding:7px 16px;border-radius:5px;margin-top:8px;font-size:10pt}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:10.5pt}
+td{padding:7px 10px;border-bottom:1px solid #e5e7eb}
+td:first-child{color:#6b7280}
+td:last-child{font-weight:bold;color:#111827;text-align:right}
+ul{padding-left:18px}
+ul li{padding:2px 0;color:#374151}
+</style></head><body><h1>About</h1><div class="meta"><p><strong>Page Title:</strong> About MadCity Home Loans | Madison, WI Mortgage Team</p><p><strong>Meta Description:</strong> Meet Rob Miller and the MadCity Home Loans team. Learn about our local Madison, WI mortgage expertise, our 12-step loan process, and our strategic partners.</p></div><div class="sec"><h2>About Hub Links</h2><div class="card"><p class="card-title">Meet Rob Miller</p><p class="card-desc">Senior Loan Officer & Branch Manager with 20+ years of Wisconsin mortgage expertise. Experience direct communication, custom strategy, and local care.</p><p class="card-sub"><em>Link: Read Rob's Bio →</em></p></div><div class="card"><p class="card-title">The MadCity Team</p><p class="card-desc">Our dedicated processing, underwriting, and closing coordinators work behind the scenes to deliver lightning-fast, on-time, keys-in-hand closings.</p><p class="card-sub"><em>Link: Meet the Team →</em></p></div><div class="card"><p class="card-title">The 12-Step Process</p><p class="card-desc">We've removed the friction from home financing. Explore our clear, step-by-step roadmap from strategy session to verified pre-approval to closing day.</p><p class="card-sub"><em>Link: View the Roadmap →</em></p></div><div class="card"><p class="card-title">Strategic Partners</p><p class="card-desc">We collaborate with Madison's top real estate agents, home builders, and local professionals to coordinate a seamless home buying experience.</p><p class="card-sub"><em>Link: View Our Partners →</em></p></div><div class="card"><p class="card-title">Client Reviews</p><p class="card-desc">Real people. Real results. Read testimonials and success stories from Wisconsin families and investors who achieved their dreams with Rob.</p><p class="card-sub"><em>Link: Read Client Reviews →</em></p></div></div><div class="sec"><h2>Our Philosophy</h2><div class="card"><p class="card-title">Direct Access & Speed</p><p class="card-desc">No automated call trees or nameless support emails. You get Rob's direct cell phone number, ensuring immediate responses when you need them most.</p></div><div class="card"><p class="card-title">Strategic Amortization</p><p class="card-desc">We look past simple monthly payments. We design custom plans analyzing mortgage insurance, tax deductions, and interest curves over 5 years.</p></div><div class="card"><p class="card-title">Dane County Roots</p><p class="card-desc">We are local Madison residents. We understand local property valuations, school districts, and maintain deep networks with top area Realtors.</p></div></div><div class="sec"><h2>Hero Section</h2><h3>ABOUT MADCITY HOME LOANS.</h3><p>We provide the competitive rates and processing power of a top-tier national lender, delivered with the care, speed, and accountability of a local Madison neighbor.</p></div><div class="sec"><h2>Main Page Content</h2><h3>LENDING DESIGNED FOR LONG-TERM WEALTH.</h3><h3>UNDERWRITING & PROCESSING EXCELLENCE.</h3><h3>MEET THE ADVISORS & PATHWAYS.</h3><p>A mortgage isn't just a loan — it is one of the most powerful wealth-building tools in your financial portfolio. Here is how we approach home financing differently.</p><p>Our administrative structure is designed to eliminate processing friction. Rather than delegating your file to an anonymous national queue, our dedicated coordinators work hand-in-hand with direct underwriting teams.</p><p>This direct liaison allows us to resolve underwriting conditions immediately, verify appraisals quickly, and issue "Clear to Close" notices days before contract deadlines.</p><p>We track contract dates with absolute diligence, coordinating closing packages early to prevent moving delays.</p><p>Read Rob Miller's bio, review our team directories, evaluate our closing process, or inspect our partners and reviews.</p></div></body></html>

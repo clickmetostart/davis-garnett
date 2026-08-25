@@ -134,9 +134,12 @@ export default function DashboardHub() {
           <h1 style={{ fontSize: '2.5rem', fontWeight: 800, margin: '0 0 0.5rem 0', color: '#111827' }}>
             {requiresOnboarding ? `Welcome, ${user?.firstName || 'to ClickMe'}` : 'Command Center'}
           </h1>
-          <p style={{ color: '#6b7280', margin: 0, fontSize: '1.1rem', fontWeight: 500 }}>
+          <p style={{ color: '#6b7280', margin: '0 0 1rem 0', fontSize: '1.1rem', fontWeight: 500 }}>
             {requiresOnboarding ? "Let's build your perfect 100% automated marketing machine." : (user?.companyName || 'ClickMe Template')}
           </p>
+          <div style={{ background: '#fef3c7', color: '#92400e', padding: '1rem', borderRadius: '8px', border: '1px solid #fcd34d', display: 'inline-block', maxWidth: '800px', textAlign: 'left', fontSize: '0.9rem', fontWeight: 500 }}>
+            <strong>Note:</strong> This is the default version of the ClickMe Dashboard for demonstration purposes. Custom real estate modules have not been programmed in yet and will be added when this system is placed onto its own dedicated URL.
+          </div>
         </header>
 
         {/* --- ONBOARDING FUNNEL (Top Priority if Client is Incomplete) --- */}

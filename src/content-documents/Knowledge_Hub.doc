@@ -1,0 +1,33 @@
+<html><head><meta charset="UTF-8"><style>
+body{font-family:Calibri,Arial,sans-serif;font-size:11pt;color:#111827;line-height:1.7;max-width:860px;margin:40px auto;padding:0 28px}
+h1{font-size:22pt;color:#111827;border-bottom:3px solid #c5a028;padding-bottom:8px;margin-bottom:4px}
+h2{font-size:14pt;color:#111827;margin-top:30px;margin-bottom:4px;border-left:4px solid #4fd1c5;padding-left:12px;background:#f4fdfc}
+h3{font-size:12pt;color:#374151;margin:16px 0 4px;font-weight:bold}
+p{margin:4px 0 10px}
+.meta{background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:14px 18px;margin-bottom:24px;font-size:10pt}
+.meta p{margin:3px 0}
+.meta strong{color:#b7881c}
+.sec{border-top:1px solid #e5e7eb;margin-top:28px;padding-top:16px}
+.badge{display:inline-block;background:#ecfdf5;color:#065f46;font-size:9pt;font-weight:bold;padding:3px 12px;border-radius:20px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
+.card{background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:14px 16px;margin:10px 0}
+.card-title{font-weight:bold;font-size:11.5pt;color:#111827;margin:0 0 4px}
+.card-sub{font-size:10pt;color:#6b7280;margin:0 0 4px;font-style:italic}
+.card-desc{color:#374151;margin:0;font-size:10.5pt}
+.step{display:flex;gap:14px;align-items:flex-start;padding:12px 14px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;margin:8px 0}
+.step-num{font-size:18pt;font-weight:bold;color:#c5a028;min-width:40px;line-height:1}
+.step-body .step-title{font-weight:bold;font-size:11pt;color:#111827;margin:0 0 3px}
+.step-body .step-desc{font-size:10.5pt;color:#374151;margin:0}
+.faq{border-left:3px solid #4fd1c5;padding:10px 14px;margin:12px 0;background:#f9fafb;border-radius:0 6px 6px 0}
+.faq-q{font-weight:bold;color:#111827;margin:0 0 5px}
+.faq-a{color:#374151;margin:0;font-size:10.5pt}
+.cta{background:#111827;color:#fff;border-radius:10px;padding:20px 24px;margin-top:28px}
+.cta h2{color:#4fd1c5;border:none;padding:0;margin:0 0 8px;background:transparent;font-size:15pt}
+.cta p{color:#d1d5db;margin:4px 0}
+.cta .btn{display:inline-block;background:#4fd1c5;color:#111827;font-weight:bold;padding:7px 16px;border-radius:5px;margin-top:8px;font-size:10pt}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:10.5pt}
+td{padding:7px 10px;border-bottom:1px solid #e5e7eb}
+td:first-child{color:#6b7280}
+td:last-child{font-weight:bold;color:#111827;text-align:right}
+ul{padding-left:18px}
+ul li{padding:2px 0;color:#374151}
+</style></head><body><h1>Knowledge Hub</h1><div class="meta"><p><strong>Page Title:</strong> Mortgage Knowledge Hub | Madison, WI Real Estate Blog | MadCity</p><p><strong>Meta Description:</strong> Expert mortgage advice, webinars, classroom videos, guidebooks, and community updates from Rob Miller. Stay informed on Wisconsin homebuying.</p></div><div class="sec"><h2>Hero Section</h2><h3>MORTGAGE KNOWLEDGE SIMPLIFIED.</h3><p>Stay ahead in the Wisconsin real estate market. Browse our educational webinars, step-by-step video classroom modules, downloadable guidebooks, community events, and latest expert articles.</p></div><div class="sec"><h2>Main Page Content</h2><h3>Home Loan Webinars</h3><h4>Navigating WHEDA & Down Payment Assistance in WI</h4><h4>Past Webinar Recordings</h4><h3>ProVisor Video Classroom</h3><h4>Module 1: Mortgage Pre-Approval</h4><h4>Module 2: Choosing Your Loan Program</h4><h4>Module 3: Stacking Assistance Programs</h4><h3>Downloadable Guidebooks</h3><h4>First-Time Buyer Checklist</h4><h4>VA Loan Handbook</h4><h3>Community Events & Giving</h3><h4>Madison Community Outreach & Charity Drive</h4><h3>Mortgage Blog & Market Updates</h3><p>Ready to demystify the home buying process? Join Rob Miller for our monthly live webinars, or watch past sessions on demand. We break down down payment assistance, credit preparation, and local market trends.</p><p>Watch bite-sized educational video modules designed to explain the mortgage process simply and clearly. Rob Miller covers common pain points and terms.</p><p>Learn the difference between pre-qualification and pre-approval, and how to verify your documents.</p><p>FHA vs. Conventional vs. USDA vs. VA. Find out which program matches your unique profile and goals.</p><p>Maximize your closing power by combining state assistance (WHEDA) with local programs and gifts.</p><p>Get instant access to our curated PDF resources to guide you through every milestone of home buying, credit building, or refinancing.</p><p>A step-by-step PDF detailing exactly what to prepare and check before house hunting.</p><p>Complete playbook for military families and veterans to maximize zero-down benefits.</p><p>MadCity Home Loans believes in supporting the community we serve. Learn about our upcoming charity events, sponsorships, and volunteer programs in Madison, WI.</p><p>Every quarter, our ProVisor team gathers to support Madison neighborhood projects, housing assistance programs, and local food drives. Check out our strategic partners and ways to get involved!</p><p>Browse our library of expert-written articles covering Wisconsin market updates, mortgage rate buydown strategies, and credit management tips.</p></div></body></html>

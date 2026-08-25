@@ -1,0 +1,33 @@
+<html><head><meta charset="UTF-8"><style>
+body{font-family:Calibri,Arial,sans-serif;font-size:11pt;color:#111827;line-height:1.7;max-width:860px;margin:40px auto;padding:0 28px}
+h1{font-size:22pt;color:#111827;border-bottom:3px solid #c5a028;padding-bottom:8px;margin-bottom:4px}
+h2{font-size:14pt;color:#111827;margin-top:30px;margin-bottom:4px;border-left:4px solid #4fd1c5;padding-left:12px;background:#f4fdfc}
+h3{font-size:12pt;color:#374151;margin:16px 0 4px;font-weight:bold}
+p{margin:4px 0 10px}
+.meta{background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:14px 18px;margin-bottom:24px;font-size:10pt}
+.meta p{margin:3px 0}
+.meta strong{color:#b7881c}
+.sec{border-top:1px solid #e5e7eb;margin-top:28px;padding-top:16px}
+.badge{display:inline-block;background:#ecfdf5;color:#065f46;font-size:9pt;font-weight:bold;padding:3px 12px;border-radius:20px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
+.card{background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:14px 16px;margin:10px 0}
+.card-title{font-weight:bold;font-size:11.5pt;color:#111827;margin:0 0 4px}
+.card-sub{font-size:10pt;color:#6b7280;margin:0 0 4px;font-style:italic}
+.card-desc{color:#374151;margin:0;font-size:10.5pt}
+.step{display:flex;gap:14px;align-items:flex-start;padding:12px 14px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;margin:8px 0}
+.step-num{font-size:18pt;font-weight:bold;color:#c5a028;min-width:40px;line-height:1}
+.step-body .step-title{font-weight:bold;font-size:11pt;color:#111827;margin:0 0 3px}
+.step-body .step-desc{font-size:10.5pt;color:#374151;margin:0}
+.faq{border-left:3px solid #4fd1c5;padding:10px 14px;margin:12px 0;background:#f9fafb;border-radius:0 6px 6px 0}
+.faq-q{font-weight:bold;color:#111827;margin:0 0 5px}
+.faq-a{color:#374151;margin:0;font-size:10.5pt}
+.cta{background:#111827;color:#fff;border-radius:10px;padding:20px 24px;margin-top:28px}
+.cta h2{color:#4fd1c5;border:none;padding:0;margin:0 0 8px;background:transparent;font-size:15pt}
+.cta p{color:#d1d5db;margin:4px 0}
+.cta .btn{display:inline-block;background:#4fd1c5;color:#111827;font-weight:bold;padding:7px 16px;border-radius:5px;margin-top:8px;font-size:10pt}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:10.5pt}
+td{padding:7px 10px;border-bottom:1px solid #e5e7eb}
+td:first-child{color:#6b7280}
+td:last-child{font-weight:bold;color:#111827;text-align:right}
+ul{padding-left:18px}
+ul li{padding:2px 0;color:#374151}
+</style></head><body><h1>Annual Mortgage Review</h1><div class="meta"><p><strong>Page Title:</strong> Annual Mortgage Review | Optimize Your Home Loan | MadCity Home Loans</p><p><strong>Meta Description:</strong> Is your mortgage still the best fit for your life? Get a free Annual Mortgage Review from Rob Miller in Madison, WI. We analyze your rate, equity, and goals every year. Call 608-227-2002.</p></div><div class="sec"><div class="badge">Service Excellence</div><br><h2>Annual Mortgage Review: The 15-Minute Checkup</h2><p>You check your retirement accounts and visit your doctor once a year — why not your largest financial liability? Our Annual Mortgage Review ensures your home loan stays aligned with your life and the current market.</p><p><strong>CTA Button:</strong> Request My Review</p></div><div class="sec"><h2>Main Page Content</h2><h3>Don't Set It and Forget It</h3><h3>What We Cover in Your Review</h3><h4>Review Snapshot</h4><p>Most people get a mortgage and never think about it again until they sell their house. This "set it and forget it" approach can cost you thousands of dollars in unnecessary interest or mortgage insurance.</p><p>A quick 15-minute review with Rob Miller can answer the most important question for any homeowner: **"Is there a better way to structure my mortgage right now?"**</p><p>When was the last time you reviewed your mortgage? Even if you didn't get your original loan with us, we're happy to provide a professional, no-obligation second opinion.</p></div><div class="sec"><h2>Review Snapshot</h2><table><tr><td>Duration</td><td>15 Minutes</td></tr><tr><td>Cost</td><td>$0 (Free)</td></tr><tr><td>Obligation</td><td>None</td></tr><tr><td>Frequency</td><td>Annual</td></tr><tr><td>Local Expertise</td><td>Yes</td></tr></table></div><div class="sec"><h2>Annual Review FAQs</h2><div class="faq"><p class="faq-q">Q: What is an Annual Mortgage Review?</p><p class="faq-a">A: It's a brief, annual "checkup" where we review your current mortgage, your home's current value, and your current financial goals. We look for opportunities to lower your rate, shorten your term, or remove mortgage insurance based on your updated equity position.</p></div><div class="faq"><p class="faq-q">Q: Why do I need to review my mortgage every year?</p><p class="faq-a">A: The market changes and your life changes. A loan that made sense two years ago might be costing you money today. Whether it's a rate drop, a rise in home value, or a change in your family size, an annual review ensures your largest debt is always working for you, not against you.</p></div><div class="faq"><p class="faq-q">Q: Does an annual review cost anything?</p><p class="faq-a">A: No. At MadCity Home Loans, we provide this as a free service to our past clients and any Wisconsin homeowner who wants to ensure they are in the best possible position. There is zero obligation to refinance or take a new loan.</p></div></div><div class="cta"><h2>Ensure Your Mortgage is Still the Best Fit</h2><p>The market moves fast. Make sure your home loan is moving with it. Reach out for a free review today.</p><span class="btn">Book My Review</span></div></body></html>

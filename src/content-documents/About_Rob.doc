@@ -1,0 +1,33 @@
+<html><head><meta charset="UTF-8"><style>
+body{font-family:Calibri,Arial,sans-serif;font-size:11pt;color:#111827;line-height:1.7;max-width:860px;margin:40px auto;padding:0 28px}
+h1{font-size:22pt;color:#111827;border-bottom:3px solid #c5a028;padding-bottom:8px;margin-bottom:4px}
+h2{font-size:14pt;color:#111827;margin-top:30px;margin-bottom:4px;border-left:4px solid #4fd1c5;padding-left:12px;background:#f4fdfc}
+h3{font-size:12pt;color:#374151;margin:16px 0 4px;font-weight:bold}
+p{margin:4px 0 10px}
+.meta{background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:14px 18px;margin-bottom:24px;font-size:10pt}
+.meta p{margin:3px 0}
+.meta strong{color:#b7881c}
+.sec{border-top:1px solid #e5e7eb;margin-top:28px;padding-top:16px}
+.badge{display:inline-block;background:#ecfdf5;color:#065f46;font-size:9pt;font-weight:bold;padding:3px 12px;border-radius:20px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
+.card{background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:14px 16px;margin:10px 0}
+.card-title{font-weight:bold;font-size:11.5pt;color:#111827;margin:0 0 4px}
+.card-sub{font-size:10pt;color:#6b7280;margin:0 0 4px;font-style:italic}
+.card-desc{color:#374151;margin:0;font-size:10.5pt}
+.step{display:flex;gap:14px;align-items:flex-start;padding:12px 14px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;margin:8px 0}
+.step-num{font-size:18pt;font-weight:bold;color:#c5a028;min-width:40px;line-height:1}
+.step-body .step-title{font-weight:bold;font-size:11pt;color:#111827;margin:0 0 3px}
+.step-body .step-desc{font-size:10.5pt;color:#374151;margin:0}
+.faq{border-left:3px solid #4fd1c5;padding:10px 14px;margin:12px 0;background:#f9fafb;border-radius:0 6px 6px 0}
+.faq-q{font-weight:bold;color:#111827;margin:0 0 5px}
+.faq-a{color:#374151;margin:0;font-size:10.5pt}
+.cta{background:#111827;color:#fff;border-radius:10px;padding:20px 24px;margin-top:28px}
+.cta h2{color:#4fd1c5;border:none;padding:0;margin:0 0 8px;background:transparent;font-size:15pt}
+.cta p{color:#d1d5db;margin:4px 0}
+.cta .btn{display:inline-block;background:#4fd1c5;color:#111827;font-weight:bold;padding:7px 16px;border-radius:5px;margin-top:8px;font-size:10pt}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:10.5pt}
+td{padding:7px 10px;border-bottom:1px solid #e5e7eb}
+td:first-child{color:#6b7280}
+td:last-child{font-weight:bold;color:#111827;text-align:right}
+ul{padding-left:18px}
+ul li{padding:2px 0;color:#374151}
+</style></head><body><h1>About Rob</h1><div class="meta"><p><strong>Page Title:</strong> Meet Rob Miller | Expert Mortgage Lender in Madison, WI</p><p><strong>Meta Description:</strong> Meet Rob Miller, Branch Manager at MadCity Home Loans. Licensed in 11 states with 20+ years of experience helping families secure mortgages. Call 608-227-2002.</p></div><div class="sec"><h2>Benefits / Features / Values</h2><div class="card"><p class="card-title">No Surprises</p><p class="card-desc">Transparency is non-negotiable. You'll know exactly what your costs are, what your rate is, and what to expect at every milestone.</p></div><div class="card"><p class="card-title">Always Available</p><p class="card-desc">Rob isn't a 9-to-5 banker. He knows real estate happens on evenings and weekends, and he's there when you need him.</p></div><div class="card"><p class="card-title">High-Speed Closings</p><p class="card-desc">In a hot market, time is currency. Rob's team is optimized for speed, often closing loans in weeks, not months.</p></div><div class="card"><p class="card-title">Truly Local</p><p class="card-desc">Rob lives and works in Madison. He understands the local market dynamics in a way that "big bank" call centers never will.</p></div></div><div class="sec"><h2>Hero Section</h2><h3>Meet Rob Miller</h3><p>Branch Manager & Senior Loan Officer | NMLS #239865</p></div><div class="sec"><h2>Main Page Content</h2><h3>The Rob Miller Difference</h3><h3>Credentials & Community</h3><p>"My goal is simple: to make the most complex financial transaction of your life feel fast, transparent, and stress-free."</p><p>With over 20 years in the Wisconsin mortgage industry, Rob Miller has seen it all. From the market shifts of 2008 to the dynamic environment of 2026, Rob has built his reputation on a foundation of honesty, accessibility, and high-speed execution.</p><p>As a Branch Manager with ProVisor, Inc., Rob leverages the power of a major mortgage platform while maintaining the personalized, "white glove" service of a local boutique lender.</p><p>Why hundreds of Wisconsin families choose Rob as their mortgage partner every year.</p><p>Rob is a proud member of the Madison community and is committed to promoting financial literacy across the state. He regularly hosts first-time homebuyer webinars and provides credit consultation services to help buyers prepare for the long term.</p><ul><li>Licensed in WI, IL, MN, IA, MI, FL, TX, CO, WA, ND, SD</li><li>Branch Manager at ProVisor, Inc.</li><li>Top Producer Awards (Multi-Year Recipient)</li><li>Expert in FHA, VA, USDA, Conventional & WHEDA</li><li>University of Wisconsin-Madison Alumnus</li></ul></div><div class="cta"><h2>Ready to Work with Madison</h2><p>Experience the difference that 20 years of local expertise can make. Reach out to Rob Miller today.</p><span class="btn">Start Your Application</span></div></body></html>

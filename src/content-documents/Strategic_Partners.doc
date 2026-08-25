@@ -1,0 +1,33 @@
+<html><head><meta charset="UTF-8"><style>
+body{font-family:Calibri,Arial,sans-serif;font-size:11pt;color:#111827;line-height:1.7;max-width:860px;margin:40px auto;padding:0 28px}
+h1{font-size:22pt;color:#111827;border-bottom:3px solid #c5a028;padding-bottom:8px;margin-bottom:4px}
+h2{font-size:14pt;color:#111827;margin-top:30px;margin-bottom:4px;border-left:4px solid #4fd1c5;padding-left:12px;background:#f4fdfc}
+h3{font-size:12pt;color:#374151;margin:16px 0 4px;font-weight:bold}
+p{margin:4px 0 10px}
+.meta{background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:14px 18px;margin-bottom:24px;font-size:10pt}
+.meta p{margin:3px 0}
+.meta strong{color:#b7881c}
+.sec{border-top:1px solid #e5e7eb;margin-top:28px;padding-top:16px}
+.badge{display:inline-block;background:#ecfdf5;color:#065f46;font-size:9pt;font-weight:bold;padding:3px 12px;border-radius:20px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
+.card{background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:14px 16px;margin:10px 0}
+.card-title{font-weight:bold;font-size:11.5pt;color:#111827;margin:0 0 4px}
+.card-sub{font-size:10pt;color:#6b7280;margin:0 0 4px;font-style:italic}
+.card-desc{color:#374151;margin:0;font-size:10.5pt}
+.step{display:flex;gap:14px;align-items:flex-start;padding:12px 14px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;margin:8px 0}
+.step-num{font-size:18pt;font-weight:bold;color:#c5a028;min-width:40px;line-height:1}
+.step-body .step-title{font-weight:bold;font-size:11pt;color:#111827;margin:0 0 3px}
+.step-body .step-desc{font-size:10.5pt;color:#374151;margin:0}
+.faq{border-left:3px solid #4fd1c5;padding:10px 14px;margin:12px 0;background:#f9fafb;border-radius:0 6px 6px 0}
+.faq-q{font-weight:bold;color:#111827;margin:0 0 5px}
+.faq-a{color:#374151;margin:0;font-size:10.5pt}
+.cta{background:#111827;color:#fff;border-radius:10px;padding:20px 24px;margin-top:28px}
+.cta h2{color:#4fd1c5;border:none;padding:0;margin:0 0 8px;background:transparent;font-size:15pt}
+.cta p{color:#d1d5db;margin:4px 0}
+.cta .btn{display:inline-block;background:#4fd1c5;color:#111827;font-weight:bold;padding:7px 16px;border-radius:5px;margin-top:8px;font-size:10pt}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:10.5pt}
+td{padding:7px 10px;border-bottom:1px solid #e5e7eb}
+td:first-child{color:#6b7280}
+td:last-child{font-weight:bold;color:#111827;text-align:right}
+ul{padding-left:18px}
+ul li{padding:2px 0;color:#374151}
+</style></head><body><h1>Strategic Partners</h1><div class="meta"><p><strong>Page Title:</strong> Trusted Professionals & Strategic Partners Madison, WI | MadCity</p><p><strong>Meta Description:</strong> Meet Rob Miller's network of trusted Wisconsin professionals. From real estate and insurance to legal and remodeling, we connect you with the best experts in Madison. Call 608-227-2002.</p></div><div class="sec"><h2>Partners</h2><div class="card"><p class="card-title">Jason Stendalen</p><p class="card-desc">Jason helps clients choose the right insurance coverage through a clear and education-focused approach. He makes sure homeowners understand their options and feel confident in their protection.</p></div><div class="card"><p class="card-title">Dera Johnsen-Tracy</p><p class="card-desc">Dera provides expert legal guidance focusing on estate planning, business law, and asset protection. Her tailored approach ensures that your family's future and hard-earned assets are fully secured.</p></div><div class="card"><p class="card-title">Scott Richardson</p><p class="card-desc">Scott and his team offer unparalleled real estate expertise in the Madison area. Whether buying or selling, their deep market knowledge and negotiation skills guarantee a seamless transaction.</p></div><div class="card"><p class="card-title">Al Curran</p><p class="card-desc">Al brings decades of experience in custom cabinetry and interior design. From kitchen remodels to custom built-ins, his craftsmanship elevates the beauty and functionality of any home.</p></div><div class="card"><p class="card-title">Kyle Davies</p><p class="card-desc">Kyle leads a premier home remodeling team specializing in high-end renovations. They turn existing properties into dream homes with meticulous attention to detail and structural integrity.</p></div><div class="card"><p class="card-title">Stephen Lange</p><p class="card-desc">Stephen provides high-quality residential and commercial painting services. His team is known for their precision, clean workspaces, and transforming interiors and exteriors with flawless finishes.</p></div><div class="card"><p class="card-title">Mike Melton</p><p class="card-desc">Mike specializes in professional exterior cleaning and power washing. His services restore the curb appeal of your home, safely removing years of grime from siding, driveways, and decks.</p></div><div class="card"><p class="card-title">Mike Putnam</p><p class="card-desc">Mike is the go-to expert for roofing, siding, and comprehensive exterior renovations. He provides honest estimates and high-quality materials to protect your home from the Wisconsin weather.</p></div><div class="card"><p class="card-title">Joe Cloute</p><p class="card-desc">Joe offers custom window treatments, from elegant blinds to automated shades. His team provides in-home consultations to perfectly match your aesthetic and lighting control needs.</p></div><div class="card"><p class="card-title">Elena Inanov</p><p class="card-desc">Elena leads a full-service digital marketing and web development agency. Syntha Digital helps local businesses thrive online with cutting-edge design and strategic marketing campaigns.</p></div><div class="card"><p class="card-title">Dean Slaby</p><p class="card-desc">Dean brings unparalleled expertise in commercial and large-scale residential construction. KSW is renowned for delivering complex building projects on time and with exceptional quality standards.</p></div><div class="card"><p class="card-title">Eric Fenton</p><p class="card-desc">Eric runs Morgan's SCC, dedicating his time to community service, outreach, and providing essential support networks. He is a pillar of the local community making a real difference everyday.</p></div></div><div class="sec"><h2>Hero Section</h2><h3>Strategic Partners</h3><p>We've spent years building relationships with the most trusted professionals in Wisconsin. These are the experts we trust for our clients.</p></div><div class="sec"><h2>Main Page Content</h2><h3>Need a personal introduction?</h3><p>Rob Miller would be happy to connect you directly with any of our trusted partners to ensure you get priority service.</p></div></body></html>

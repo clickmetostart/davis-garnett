@@ -1,0 +1,32 @@
+[
+  {
+    "name": "General Contacts",
+    "color": "#4b5563",
+    "isSystem": true
+  },
+  {
+    "name": "First-Time Homebuyers",
+    "color": "#059669",
+    "isSystem": false
+  },
+  {
+    "name": "Interest Rate Watch",
+    "color": "#2563eb",
+    "isSystem": false
+  },
+  {
+    "name": "Review Request Pipeline",
+    "color": "#d97706",
+    "isSystem": false
+  },
+  {
+    "name": "Past Clients",
+    "color": "#8b5cf6",
+    "isSystem": false
+  },
+  {
+    "name": "VIP Partners",
+    "color": "#db2777",
+    "isSystem": false
+  }
+]

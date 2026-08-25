@@ -1,0 +1,38 @@
+{
+  "onboarding": {
+    "profileSetup": true,
+    "officeLocationEntered": false,
+    "teamSetupWalkthrough": false,
+    "analyticsAcknowledged": false,
+    "socialTraining": false,
+    "aiContentTraining": false,
+    "dummyClientEntered": false
+  },
+  "formRouting": {
+    "Purchase": [
+      "Purchase"
+    ],
+    "Refinance": [
+      "Refinance"
+    ],
+    "Pre-Approval": [
+      "Purchase",
+      "Apply Now Flow"
+    ],
+    "Coaching": [
+      "Coaching & Partnerships"
+    ],
+    "Agent Coaching": [
+      "Coaching & Partnerships"
+    ],
+    "Strategic Partnership": [
+      "Coaching & Partnerships"
+    ],
+    "Question": [
+      "General Contacts"
+    ],
+    "Apply Now Flow": [
+      "Apply Now Flow"
+    ]
+  }
+}

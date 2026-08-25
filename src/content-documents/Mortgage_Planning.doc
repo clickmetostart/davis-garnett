@@ -1,0 +1,33 @@
+<html><head><meta charset="UTF-8"><style>
+body{font-family:Calibri,Arial,sans-serif;font-size:11pt;color:#111827;line-height:1.7;max-width:860px;margin:40px auto;padding:0 28px}
+h1{font-size:22pt;color:#111827;border-bottom:3px solid #c5a028;padding-bottom:8px;margin-bottom:4px}
+h2{font-size:14pt;color:#111827;margin-top:30px;margin-bottom:4px;border-left:4px solid #4fd1c5;padding-left:12px;background:#f4fdfc}
+h3{font-size:12pt;color:#374151;margin:16px 0 4px;font-weight:bold}
+p{margin:4px 0 10px}
+.meta{background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:14px 18px;margin-bottom:24px;font-size:10pt}
+.meta p{margin:3px 0}
+.meta strong{color:#b7881c}
+.sec{border-top:1px solid #e5e7eb;margin-top:28px;padding-top:16px}
+.badge{display:inline-block;background:#ecfdf5;color:#065f46;font-size:9pt;font-weight:bold;padding:3px 12px;border-radius:20px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
+.card{background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:14px 16px;margin:10px 0}
+.card-title{font-weight:bold;font-size:11.5pt;color:#111827;margin:0 0 4px}
+.card-sub{font-size:10pt;color:#6b7280;margin:0 0 4px;font-style:italic}
+.card-desc{color:#374151;margin:0;font-size:10.5pt}
+.step{display:flex;gap:14px;align-items:flex-start;padding:12px 14px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;margin:8px 0}
+.step-num{font-size:18pt;font-weight:bold;color:#c5a028;min-width:40px;line-height:1}
+.step-body .step-title{font-weight:bold;font-size:11pt;color:#111827;margin:0 0 3px}
+.step-body .step-desc{font-size:10.5pt;color:#374151;margin:0}
+.faq{border-left:3px solid #4fd1c5;padding:10px 14px;margin:12px 0;background:#f9fafb;border-radius:0 6px 6px 0}
+.faq-q{font-weight:bold;color:#111827;margin:0 0 5px}
+.faq-a{color:#374151;margin:0;font-size:10.5pt}
+.cta{background:#111827;color:#fff;border-radius:10px;padding:20px 24px;margin-top:28px}
+.cta h2{color:#4fd1c5;border:none;padding:0;margin:0 0 8px;background:transparent;font-size:15pt}
+.cta p{color:#d1d5db;margin:4px 0}
+.cta .btn{display:inline-block;background:#4fd1c5;color:#111827;font-weight:bold;padding:7px 16px;border-radius:5px;margin-top:8px;font-size:10pt}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:10.5pt}
+td{padding:7px 10px;border-bottom:1px solid #e5e7eb}
+td:first-child{color:#6b7280}
+td:last-child{font-weight:bold;color:#111827;text-align:right}
+ul{padding-left:18px}
+ul li{padding:2px 0;color:#374151}
+</style></head><body><h1>Mortgage Planning</h1><div class="meta"><p><strong>Page Title:</strong> Mortgage Planning & Wealth Strategy Madison, WI | Rob Miller</p><p><strong>Meta Description:</strong> A mortgage is a powerful financial tool. Rob Miller provides expert mortgage planning and long-term strategy for Wisconsin homeowners. Licensed in 11 states. Call 608-227-2002.</p></div><div class="sec"><div class="badge">Strategic Planning</div><br><h2>Mortgage Planning: Your Home as a Financial Tool</h2><p>A mortgage shouldn</p><p><strong>CTA Button:</strong> Book a Planning Session</p></div><div class="sec"><h2>Main Page Content</h2><h3>Beyond the Interest Rate</h3><h3>Our Planning Process</h3><h4>Planning Benefits</h4><p>Most lenders focus on the transaction. They want to get your loan closed and move on to the next one. At MadCity Home Loans, we focus on the **strategy**. We look at how your mortgage fits into your tax situation, your retirement plans, and your family's evolving needs.</p><p>Whether you're a first-time buyer wanting to pay off your home in 15 years instead of 30, or a seasoned investor looking to optimize your portfolio, Rob Miller provides the high-level analysis usually reserved for private wealth management.</p><p>Is your current mortgage working for you? Most homeowners have never had a professional mortgage planning session. A 20-minute review with Rob could reveal thousands in potential savings.</p></div><div class="sec"><h2>Planning Benefits</h2><table><tr><td>Goal Focused</td><td>Yes</td></tr><tr><td>Tax Integration</td><td>Yes</td></tr><tr><td>Equity Tracking</td><td>Yes</td></tr><tr><td>Portfolio Reviews</td><td>Yes</td></tr><tr><td>Debt Strategy</td><td>Yes</td></tr></table></div><div class="sec"><h2>Mortgage Planning FAQs</h2><div class="faq"><p class="faq-q">Q: What is mortgage planning?</p><p class="faq-a">A: Mortgage planning is the process of integrating your home loan into your overall financial plan. It's not just about getting a low rate; it's about choosing a loan structure that helps you pay off debt faster, build wealth through real estate, or maximize your monthly cash flow based on your specific life goals.</p></div><div class="faq"><p class="faq-q">Q: How often should I review my mortgage?</p><p class="faq-a">A: We recommend an Annual Mortgage Review. Just as you meet with a financial advisor or CPA once a year, you should review your mortgage to ensure it's still the most efficient way to manage your home equity and debt in the current market.</p></div><div class="faq"><p class="faq-q">Q: Can a mortgage help me pay for college or retirement?</p><p class="faq-a">A: Absolutely. Strategic use of home equity through cash-out refinances or specific loan terms can provide the capital needed for major life expenses while maintaining a stable long-term financial position. Rob Miller specializes in these complex scenarios.</p></div></div><div class="cta"><h2>Start Building Wealth Through Your Mortgage</h2><p>Don</p><span class="btn">Schedule My Consultation</span></div></body></html>
