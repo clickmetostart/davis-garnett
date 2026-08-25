@@ -109,7 +109,7 @@ export default function Page() {
           </h1>
 
           <p className="fade-up fade-up-delay-3 mt-10 max-w-xl text-lg text-white/60 leading-relaxed font-light">
-            We aren't just selling you a static brochure with an arbitrary "SEO tax." We are engineering the exact active content engine required to merge Mark's commercial gravity and Rachael's residential finesse into Tampa Bay's premier real estate syndicate.
+            We aren't just selling you a static brochure with an arbitrary "SEO tax." We are engineering the exact active content engine required to merge Mark's commercial gravity and Rachael's residential finesse into Tampa Bay's premier real estate group.
           </p>
 
           <div className="fade-up fade-up-delay-4 mt-12 flex flex-wrap gap-4">

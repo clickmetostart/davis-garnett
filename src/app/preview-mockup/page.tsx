@@ -443,7 +443,7 @@ export default function PreviewMockup() {
                 },
                 {
                   q: "How do Davis & Garnett handle both commercial and residential transactions?",
-                  a: "Davis & Garnett operates as a unified real estate advisory syndicate with two specialized divisions. Mark Davis leads commercial acquisitions and investment strategy, focusing on multi-family, industrial, office, and development-site transactions. Rachael Garnett directs luxury residential operations, specializing in waterfront estates, new construction, and high-net-worth relocations. This dual-expertise model allows us to serve clients with cross-sector needs—such as investors who also need a personal residence—with a single trusted team."
+                  a: "Davis & Garnett operates as a unified real estate advisory group with two specialized divisions. Mark Davis leads commercial acquisitions and investment strategy, focusing on multi-family, industrial, office, and development-site transactions. Rachael Garnett directs luxury residential operations, specializing in waterfront estates, new construction, and high-net-worth relocations. This dual-expertise model allows us to serve clients with cross-sector needs—such as investors who also need a personal residence—with a single trusted team."
                 },
                 {
                   q: "What is the average price per square foot for luxury homes in Tampa Bay?",
@@ -509,7 +509,7 @@ export default function PreviewMockup() {
                   "name": "How do Davis & Garnett handle both commercial and residential transactions?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Davis & Garnett operates as a unified real estate advisory syndicate with two specialized divisions. Mark Davis leads commercial, Rachael Garnett directs luxury residential."
+                    "text": "Davis & Garnett operates as a unified real estate advisory group with two specialized divisions. Mark Davis leads commercial, Rachael Garnett directs luxury residential."
                   }
                 },
                 {
@@ -549,7 +549,7 @@ export default function PreviewMockup() {
               "@context": "https://schema.org",
               "@type": "RealEstateAgent",
               "name": "Davis & Garnett Real Estate Advisors",
-              "description": "Tampa Bay's premier real estate syndicate specializing in luxury residential and commercial property acquisitions, investments, and advisory services.",
+              "description": "Tampa Bay's premier real estate group specializing in luxury residential and commercial property acquisitions, investments, and advisory services.",
               "url": "https://davisgarnett.com",
               "telephone": ["(941) 737-4127", "(727) 808-3344"],
               "email": "info@davisgarnett.com",
@@ -753,7 +753,7 @@ export default function PreviewMockup() {
             Strategic. Precise. Uncompromising.
           </h2>
           <p className="text-white/70 text-lg font-light mb-12 max-w-2xl mx-auto leading-relaxed">
-            Whether navigating complex commercial acquisitions or securing legacy waterfront estates, our advisory syndicate operates with absolute precision and market dominance. Schedule a private consultation to discuss your real estate portfolio.
+            Whether navigating complex commercial acquisitions or securing legacy waterfront estates, our advisory group operates with absolute precision and market dominance. Schedule a private consultation to discuss your real estate portfolio.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Link href="/locations/st-pete" className="px-8 py-4 bg-[#D4AF37] hover:bg-white text-black font-bold uppercase tracking-widest text-xs transition-colors rounded-lg w-full sm:w-auto min-w-[240px]">
@@ -822,7 +822,7 @@ export default function PreviewMockup() {
           {/* Row 1: Mission Statement */}
           <div className="text-center border-b border-white/5 pb-16 pt-8">
             <p className="text-white/70 font-light text-xl md:text-2xl leading-relaxed max-w-4xl mx-auto">
-              Tampa Bay's premier real estate syndicate. Combining commercial gravity with unmatched residential finesse.
+              Tampa Bay's premier real estate group. Combining commercial gravity with unmatched residential finesse.
             </p>
           </div>
           

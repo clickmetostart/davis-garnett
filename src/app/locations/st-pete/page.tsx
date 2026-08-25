@@ -177,7 +177,7 @@ export default function StPeteLocationPage() {
               <div className="bg-gradient-to-b from-[#111] to-black border border-white/10 p-8 rounded-2xl text-center">
                 <h3 className="font-aiveritas text-xl text-white mb-4">Interested in St. Pete?</h3>
                 <p className="text-white/50 text-sm font-light mb-6">
-                  Whether you are seeking a waterfront estate or evaluating commercial acquisitions in the Gas Plant District, our syndicate provides unmatched local expertise.
+                  Whether you are seeking a waterfront estate or evaluating commercial acquisitions in the Gas Plant District, our advisory group provides unmatched local expertise.
                 </p>
                 <button className="w-full py-4 bg-[#D4AF37] hover:bg-white text-black font-bold uppercase tracking-widest text-xs transition-colors rounded-lg mb-3">
                   Contact The Team
