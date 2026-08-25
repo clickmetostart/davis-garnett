@@ -21,6 +21,7 @@ function NetworkCRMContent() {
   
   const [activeLabel, setActiveLabel] = useState('All Contacts');
   const [searchQuery, setSearchQuery] = useState('');
+  const [viewMode, setViewMode] = useState<'my_crm' | 'team_crm'>('my_crm');
   
   const [selectedLead, setSelectedLead] = useState<any | null>(null);
   const [selectedLeadIds, setSelectedLeadIds] = useState<number[]>([]);
@@ -324,6 +325,8 @@ function NetworkCRMContent() {
         zip: editData.zip,
         customLinks: editData.customLinks,
         documents: editData.documents,
+        isShared: editData.isShared || false,
+        ownerId: editData.ownerId || user?.id,
         isSpam: false,
         isTrashed: false,
       };
@@ -353,7 +356,9 @@ function NetworkCRMContent() {
           zip: editData.zip,
           customLinks: editData.customLinks,
           documents: editData.documents,
-          customFields: cleanCustomFields
+          customFields: cleanCustomFields,
+          isShared: editData.isShared || false,
+          ownerId: editData.ownerId || user?.id
         })
       });
       fetchLeads();
@@ -504,6 +509,17 @@ function NetworkCRMContent() {
 
   // Filtering Logic
   let displayLeads = leads;
+
+  const isSuperOrOwner = user?.role === 'Super Admin' || user?.role === 'Primary Owner' || user?.role === 'System Admin';
+
+  if (viewMode === 'team_crm') {
+    displayLeads = displayLeads.filter(l => l.isShared === true);
+  } else {
+    // My CRM
+    if (!isSuperOrOwner) {
+      displayLeads = displayLeads.filter(l => l.ownerId === user?.id || !l.ownerId);
+    }
+  }
   if (activeLabel === 'Trash') {
     displayLeads = leads.filter(l => l.isTrashed);
   } else {
@@ -559,7 +575,6 @@ function NetworkCRMContent() {
     return <div style={{ padding: '4rem', textAlign: 'center', color: '#6b7280' }}>Verifying Access...</div>;
   }
   
-  const isSuperOrOwner = user?.role === 'Super Admin' || user?.role === 'Primary Owner' || user?.role === 'System Admin';
   const hasAccess = isSuperOrOwner || user?.role === 'Loan Officer' || user?.role === 'Agent Partner' || user?.role === 'Sales Rep' || user?.hasCrmAccess === true;
 
   if (!hasAccess) {
@@ -935,6 +950,15 @@ function NetworkCRMContent() {
               {isAddingLead ? 'Add New Lead' : (isEditingLead ? 'Edit Lead' : selectedLead.name)}
             </h2>
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+              {!isAddingLead && !isEditingLead && selectedLead?.ownerId !== user?.id && viewMode === 'team_crm' && (
+                <button onClick={() => {
+                  const updatedLead = { ...selectedLead, ownerId: user?.id, isShared: true };
+                  fetch('/api/leads', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(updatedLead) }).then(fetchLeads);
+                  setSelectedLead(updatedLead);
+                }} style={{ background: '#10b981', color: '#fff', border: 'none', padding: '0.4rem 1rem', borderRadius: '6px', fontWeight: 700, cursor: 'pointer', fontSize: '0.85rem' }}>
+                  Add to My CRM
+                </button>
+              )}
               {!isAddingLead && !isEditingLead && (
                 <button onClick={() => setIsEditingLead(true)} style={{ background: '#e5e7eb', color: '#374151', border: 'none', padding: '0.4rem 1rem', borderRadius: '6px', fontWeight: 700, cursor: 'pointer', fontSize: '0.85rem' }}>
                   Edit
@@ -959,7 +983,13 @@ function NetworkCRMContent() {
           <div style={{ flex: 1, overflowY: 'auto', padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             {/* Standard Fields Section */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <div style={{ fontSize: '0.9rem', fontWeight: 800, color: '#111827', borderBottom: '1px solid #e5e7eb', paddingBottom: '0.5rem' }}>Standard Fields</div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #e5e7eb', paddingBottom: '0.5rem' }}>
+                <div style={{ fontSize: '0.9rem', fontWeight: 800, color: '#111827' }}>Standard Fields</div>
+                <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600, color: editData.isShared ? '#2563eb' : '#6b7280' }}>
+                  <input type="checkbox" checked={editData.isShared || false} onChange={(e) => setEditData({...editData, isShared: e.target.checked})} style={{ accentColor: '#2563eb', cursor: 'pointer', width: '16px', height: '16px' }} />
+                  {editData.isShared ? 'Shared in D&G CRM' : 'Share with D&G Team'}
+                </label>
+              </div>
               
               {isAddingLead || isEditingLead ? (
                 <>

@@ -59,3 +59,31 @@ export async function POST(req: Request) {
     return NextResponse.json({ message: 'Error' }, { status: 500 });
   }
 }
+
+export async function PUT(req: Request) {
+  try {
+    const body = await req.json();
+    const dataPath = path.join(process.cwd(), 'src', 'data', 'leads.json');
+    const fileData = await fs.readFile(dataPath, 'utf8').catch(() => '[]');
+    let leads = JSON.parse(fileData);
+
+    if (!body.id) {
+      return NextResponse.json({ message: 'Missing lead ID' }, { status: 400 });
+    }
+
+    const index = leads.findIndex((l: any) => l.id === body.id);
+    if (index === -1) {
+      return NextResponse.json({ message: 'Lead not found' }, { status: 404 });
+    }
+
+    // Update the lead with the new data
+    leads[index] = { ...leads[index], ...body };
+
+    await fs.writeFile(dataPath, JSON.stringify(leads, null, 2));
+
+    return NextResponse.json({ message: 'Success', lead: leads[index] }, { status: 200 });
+  } catch (error) {
+    console.error('Error updating lead:', error);
+    return NextResponse.json({ message: 'Error' }, { status: 500 });
+  }
+}

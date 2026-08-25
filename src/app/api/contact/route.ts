@@ -111,6 +111,7 @@ export async function POST(req: Request) {
           status: 'New',
           isSpam,
           isTrashed: isSpam,
+          isShared: !isSpam, // Drop into D&G CRM unless it's spam
           labels: assignedLabels,
           date: new Date().toISOString()
         };
