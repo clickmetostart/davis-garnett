@@ -837,7 +837,13 @@ export default function PreviewMockup() {
             {/* Col 1: Davis & Garnett Logo */}
             <div className="flex justify-center">
               <div className="w-56 h-16 relative">
-                <DavisGarnettLogo variant="dark" className="w-full h-full object-contain" />
+                <Image 
+                  src="/davis and garnett logo mobile png.png" 
+                  alt="Davis & Garnett" 
+                  width={250} 
+                  height={80} 
+                  className="w-full h-full object-contain opacity-90"
+                />
               </div>
             </div>
 
