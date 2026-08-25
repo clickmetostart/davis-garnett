@@ -31,7 +31,7 @@ export default function FeaturedPortfolioSpillOut() {
   });
 
   return (
-    <section ref={containerRef} className="relative h-[400vh] bg-black">
+    <section ref={containerRef} className="relative h-[800vh] bg-black">
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
         
         {/* Background Overlay to ensure text visibility when elements scatter */}
@@ -40,10 +40,11 @@ export default function FeaturedPortfolioSpillOut() {
         {/* The 12 Spilling Properties */}
         {properties.map((prop, i) => {
           // Calculate individual motion values
-          const x = useTransform(scrollYProgress, [0, 0.5, 1], ["0vw", prop.pos.x, prop.pos.x]);
-          const y = useTransform(scrollYProgress, [0, 0.5, 1], ["0vh", prop.pos.y, prop.pos.y]);
-          const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.5, 1, 1]);
-          const opacity = useTransform(scrollYProgress, [0, 0.1, 0.5], [0, 1, 1]);
+          // Expands over the first 30% of the 800vh scroll, then holds firm for the remaining 70%
+          const x = useTransform(scrollYProgress, [0, 0.3, 1], ["0vw", prop.pos.x, prop.pos.x]);
+          const y = useTransform(scrollYProgress, [0, 0.3, 1], ["0vh", prop.pos.y, prop.pos.y]);
+          const scale = useTransform(scrollYProgress, [0, 0.3, 1], [0.5, 1, 1]);
+          const opacity = useTransform(scrollYProgress, [0, 0.05, 0.3, 1], [0, 1, 1, 1]);
           
           return (
             <motion.div
@@ -71,7 +72,7 @@ export default function FeaturedPortfolioSpillOut() {
         <motion.div 
           className="relative w-[80vw] sm:w-[600px] aspect-square rounded-2xl overflow-hidden shadow-2xl z-20 group cursor-pointer border border-[#D4AF37]/30"
           style={{
-             scale: useTransform(scrollYProgress, [0, 0.5], [1, 1.05])
+             scale: useTransform(scrollYProgress, [0, 0.3, 1], [1, 1.05, 1.05])
           }}
         >
           <Image src="/mega_property_pinned_1787632939192.png" alt="Mega Property" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
