@@ -241,7 +241,7 @@ function NetworkCRMContent() {
     setIsEditingLead(false);
     setSelectedLead(lead);
     const mergedCustomFields = { ...lead.customFields };
-    const standardFields = ['interest', 'loanType', 'modules'];
+    const standardFields = ['propertyType', 'timeline', 'budget', 'location'];
     standardFields.forEach(f => {
       if (!(f in mergedCustomFields)) mergedCustomFields[f] = '';
     });
@@ -285,7 +285,7 @@ function NetworkCRMContent() {
     setIsLabelsDropdownOpen(false);
     setEditData({
       customFields: {
-        interest: '', loanType: '', modules: ''
+        propertyType: '', timeline: '', budget: '', location: ''
       },
       companyWebsite: '',
       street: '',
@@ -1119,9 +1119,10 @@ function NetworkCRMContent() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   {Object.entries(editData.customFields).map(([key, value]) => {
                     const overrides: Record<string, string> = {
-                      interest: "I'm Interested In",
-                      loanType: "Loan Type",
-                      modules: "Modules"
+                      propertyType: "Property Type",
+                      timeline: "Buying/Selling Timeline",
+                      budget: "Estimated Budget",
+                      location: "Target Location"
                     };
                     const formattedKey = overrides[key] || key.replace(/([A-Z])/g, ' $1').trim().replace(/^./, str => str.toUpperCase());
                     
