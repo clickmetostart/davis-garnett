@@ -32,8 +32,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${outfit.variable} ${dmSans.variable} antialiased bg-black text-white`}>
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <body className={`${outfit.variable} ${dmSans.variable} antialiased bg-black text-white`} suppressHydrationWarning>
         <AmbientBackground />
         <main className="w-full relative flex flex-col min-h-screen">
           {children}

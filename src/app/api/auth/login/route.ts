@@ -8,7 +8,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Email and password are required' }, { status: 400 });
     }
 
-    if (password !== 'Awe$ome') {
+    if (password !== 'Awe$omeDG') {
       return NextResponse.json({ error: 'Invalid password' }, { status: 401 });
     }
 

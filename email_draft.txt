@@ -1,28 +1,67 @@
-Subject: Your New Client Dashboard & Interactive Tours are Ready!
+Subject: Your Dashboard Just Got a Massive Upgrade — Come Take a Look 🚀
 
-Hi Mark and Rachael,
+Hi Mark & Rachael,
 
-We are thrilled to let you know that the custom real estate presentation and your dedicated ClickMe Dashboard are fully built and ready for your review!
+Hope you're both having a great day! I wanted to reach out because we've been hard at work on your platform and there's a LOT of new stuff loaded in for you to see.
 
-You can access your new dashboard by heading over to the login portal:
-[Insert Live Vercel URL Here]/login
+---
 
-Here are your dedicated login credentials to access the system:
+🔥 WHAT'S NEW IN YOUR DASHBOARD:
 
-**Mark's Login:**
-Email: msdavis118@gmail.com
-Password: Awe$ome
+We've added a ton of new modules into the dashboard since you last saw it. Here's a quick snapshot of what's live and waiting for you:
 
-**Rachael's Login:**
-Email: rachaellgarnett@gmail.com
-Password: Awe$ome
+• Agent CRM — Your own private pipeline to manage personal leads, track statuses, and segment contacts.
+• D&G Shared CRM — A shared team CRM that syncs across both of you. Website leads from your contact forms drop directly in here so neither of you misses a beat.
+• Agent Flow & D&G Shared Flow — Visual Kanban-style pipeline boards for tracking clients through every stage of a transaction (buyers, sellers, commercial leases — all built in).
+• Asset Storage — Upload and organize documents, blank offer forms, disclosures, etc. — all right from the dashboard.
+• Client Documents — Attach documents directly to individual clients in the CRM so everything lives in one place.
+• AI Content Pipeline — Generate social media posts trained on your brand voice.
+• Marketing Engine, Reputation Engine, Social Planner, BI Analytics — All staged and ready to be configured.
 
-**Unlocking Your Dashboard:**
-When you first log in, you will be guided through a series of interactive tours. These onboarding modules will walk you through the core features of the platform, including the CRM, Content Pipeline, and Inbox. 
+And there's more where that came from. These are the tools we're going to be spending time setting up together during your website build.
 
-As you complete each interactive tour, you will systematically unlock those modules in your dashboard. Don't worry if you miss anything—you can replay these tours at any time from the dashboard hub!
+---
 
-If you have any questions or need anything tweaked, just let us know. Enjoy the tour!
+🎯 HERE'S WHAT MAKES THIS SPECIAL:
 
-Best regards,
-The ClickMe Development Team
+What's awesome about the way we work is that we load all of this up ASAP and start getting things connected right alongside the build. That means by the time we place the code onto your real URL, you're not starting from scratch — you're already using it. The dashboard, the CRM, the content engine — all of it goes live with the site.
+
+You can preview everything right now:
+
+🔗 Your Website Preview: https://davis-garnett.vercel.app
+🔗 Full Feature Breakdown: https://davis-garnett.vercel.app/features
+🔗 Branding & Social Assets: https://davis-garnett.vercel.app/branding
+🔗 Scope of Work: https://davis-garnett.vercel.app/scope
+🔗 Dashboard Login: https://davis-garnett.vercel.app/login
+
+Your login credentials (same as before):
+
+Mark: msdavis118@gmail.com / Awe$ome
+Rachael: rachaellgarnett@gmail.com / Awe$ome
+
+---
+
+💰 LET'S TALK ABOUT GETTING STARTED:
+
+I know I've already dipped pretty low to give you both a great deal, so I want to be transparent about the two options on the table:
+
+✅ Best Value — Annual Plan: $3,000 upfront
+This is the best deal because we front-load a massive amount of content and setup work right out of the gate. You get the full build, the dashboard, and a year of management — all locked in at a significant discount. We're not building and marketing at the same time on this one — we're hitting the ground running.
+
+📋 Monthly Plan: $1,295 to start ($995 setup + $295 first month), then $295/mo
+The monthly is a bit more expensive over time simply because there are more hours involved month-to-month vs. front-loading everything upfront. But it's still a solid option if cash flow is a factor.
+
+🔗 Ready to lock it in? https://davis-garnett.vercel.app/agreement
+
+🤝 BUT HERE'S THE THING —
+If neither of those options can be done right now, give me a call TODAY and I'll work something out for you. Whether that's a payment plan, a middle ground, or something creative — I'm flexible and I want to make this happen for you both. Let's just get on the phone and figure it out.
+
+---
+
+I'm excited about what we're building here. This isn't a cookie-cutter template — this is YOUR platform, built around how you actually work. The sooner we get started, the sooner leads start flowing and your brand starts working for you 24/7.
+
+Talk soon — looking forward to hearing from you!
+
+Best,
+Nick
+ClickMe Development Team
