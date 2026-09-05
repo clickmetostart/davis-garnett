@@ -76,7 +76,7 @@ export default function LoginPage() {
           </h1>
           
           <p className="text-white/70 text-lg md:text-xl leading-relaxed font-light max-w-xl">
-            You have reached the private development area for the Davis & Garnett digital branding, website previews, and custom dashboard.
+            Welcome to the private development workspace for Davis & Garnett. Authenticate to preview your live digital platforms, manage your custom command dashboard, and securely download your complete suite of branding assets.
           </p>
         </div>
       </div>
@@ -141,7 +141,7 @@ export default function LoginPage() {
           </button>
         </div>
         
-        <div className="mt-auto pt-12 text-center">
+        <div className="absolute bottom-8 left-0 right-0 text-center">
           <p className="text-white/30 text-xs font-light tracking-wide">© {new Date().getFullYear()} ClickMe.life. All rights reserved.</p>
         </div>
       </div>

@@ -14,14 +14,14 @@ export default function GlobalFooter() {
       <div className="max-w-screen-xl mx-auto flex flex-col gap-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
-            <span className="font-serif text-xl font-bold tracking-widest text-white/30 uppercase block">
+            <span className="text-xl font-bold tracking-widest text-white/30 uppercase block" style={{ fontFamily: "'AIVeritas', serif" }}>
               Davis & Garnett
             </span>
-            <p className="text-xs font-medium text-white/30 mt-2 tracking-widest uppercase">
+            <p className="text-xs font-medium text-white/30 mt-2 tracking-widest uppercase" style={{ fontFamily: "'Montserrat', sans-serif" }}>
               Align Right Realty Carrollwood
             </p>
           </div>
-          <div className="flex flex-col md:flex-row items-center gap-3 md:gap-6">
+          <div className="flex flex-col md:flex-row items-center gap-3 md:gap-6" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             <a href="mailto:msdavis118@gmail.com" className="text-xs font-semibold text-white/50 hover:text-white transition-colors tracking-widest uppercase">msdavis118@gmail.com</a>
             <a href="mailto:rachaellgarnett@gmail.com" className="text-xs font-semibold text-white/50 hover:text-white transition-colors tracking-widest uppercase">rachaellgarnett@gmail.com</a>
           </div>
