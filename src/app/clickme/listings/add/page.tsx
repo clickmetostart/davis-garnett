@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { ChevronRight, ChevronLeft, Check, Upload, Sparkles, Building, Home, MapPin, Search, Globe } from 'lucide-react';
 import { Listing } from '@/types/listings';
@@ -23,6 +23,34 @@ export default function AddListingWizard() {
   });
 
   const [isGenerating, setIsGenerating] = useState(false);
+  const [folders, setFolders] = useState<string[]>([]);
+  const [newFolderName, setNewFolderName] = useState('');
+
+  useEffect(() => {
+    fetch('/api/listing-folders')
+      .then(res => res.json())
+      .then(data => {
+        if (Array.isArray(data)) setFolders(data);
+      })
+      .catch(console.error);
+  }, []);
+
+  const createFolder = async () => {
+    if (!newFolderName.trim()) return;
+    try {
+      const res = await fetch('/api/listing-folders', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ folder: newFolderName })
+      });
+      const data = await res.json();
+      if (data.folders) setFolders(data.folders);
+      updateField('folder', newFolderName.trim());
+      setNewFolderName('');
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
   const updateField = (field: keyof Listing, value: any) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -109,6 +137,19 @@ export default function AddListingWizard() {
           <div className="col-span-2">
             <label className="block text-sm font-semibold text-gray-700 mb-2">Listing Title</label>
             <input type="text" className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black/5 outline-none" placeholder="e.g. Prime Retail Corner — Westchase" value={formData.title || ''} onChange={e => updateField('title', e.target.value)} />
+          </div>
+          <div className="col-span-2 flex gap-4 items-end">
+            <div className="flex-1">
+              <label className="block text-sm font-semibold text-gray-700 mb-2">Folder / Category</label>
+              <select className="w-full p-3 rounded-lg border border-gray-300 outline-none bg-white" value={formData.folder || ''} onChange={e => updateField('folder', e.target.value)}>
+                <option value="">No Folder (Unassigned)</option>
+                {folders.map(f => <option key={f} value={f}>{f}</option>)}
+              </select>
+            </div>
+            <div className="flex gap-2 w-1/2">
+              <input type="text" placeholder="New Folder Name" className="flex-1 p-3 rounded-lg border border-gray-300 outline-none" value={newFolderName} onChange={e => setNewFolderName(e.target.value)} />
+              <button onClick={createFolder} className="bg-black text-white px-4 py-3 rounded-lg font-bold text-sm whitespace-nowrap">Add</button>
+            </div>
           </div>
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-2">Property Type</label>

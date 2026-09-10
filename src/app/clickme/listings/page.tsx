@@ -12,6 +12,8 @@ export default function ListingsManagerPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [categoryFilter, setCategoryFilter] = useState<'All' | 'Commercial' | 'Residential'>('All');
   const [listings, setListings] = useState<Listing[]>([]);
+  const [folders, setFolders] = useState<string[]>([]);
+  const [folderFilter, setFolderFilter] = useState<string>('All Folders');
   const [isLoading, setIsLoading] = useState(true);
   const [isImportModalOpen, setIsImportModalOpen] = useState(false);
 
@@ -26,13 +28,21 @@ export default function ListingsManagerPage() {
         console.error(err);
         setIsLoading(false);
       });
+
+    fetch('/api/listing-folders')
+      .then(res => res.json())
+      .then(data => {
+        if (Array.isArray(data)) setFolders(data);
+      })
+      .catch(console.error);
   }, [isImportModalOpen]); // refetch when modal closes
 
   const filteredListings = listings.filter(listing => {
     const matchesSearch = (listing.title || '').toLowerCase().includes(searchQuery.toLowerCase()) || 
                           (listing.city || '').toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = categoryFilter === 'All' || listing.category === categoryFilter;
-    return matchesSearch && matchesCategory;
+    const matchesFolder = folderFilter === 'All Folders' || listing.folder === folderFilter || (!listing.folder && folderFilter === 'Unassigned');
+    return matchesSearch && matchesCategory && matchesFolder;
   });
 
   return (
@@ -86,6 +96,18 @@ export default function ListingsManagerPage() {
             </button>
           ))}
         </div>
+
+        <select 
+          value={folderFilter} 
+          onChange={(e) => setFolderFilter(e.target.value)}
+          className="px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm font-semibold text-gray-600 outline-none focus:ring-2 focus:ring-black/5"
+        >
+          <option value="All Folders">All Folders</option>
+          <option value="Unassigned">Unassigned</option>
+          {folders.map(f => (
+            <option key={f} value={f}>{f}</option>
+          ))}
+        </select>
         
         <button className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm font-semibold text-gray-600 hover:bg-gray-50">
           <Filter className="w-4 h-4" /> Filters
@@ -110,6 +132,12 @@ export default function ListingsManagerPage() {
                 {listing.featured && (
                   <div className="absolute top-2 left-2 bg-[#D4AF37] text-black text-xs font-bold px-2 py-1 rounded uppercase tracking-wider">
                     Featured
+                  </div>
+                )}
+                {listing.folder && (
+                  <div className="absolute bottom-2 left-2 bg-black/70 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider flex items-center gap-1">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    {listing.folder}
                   </div>
                 )}
               </div>

@@ -26,6 +26,7 @@ export interface Listing {
   status: ListingStatus;
   slug: string;
   featured: boolean;
+  folder?: string;
   
   // Address
   streetAddress: string;
