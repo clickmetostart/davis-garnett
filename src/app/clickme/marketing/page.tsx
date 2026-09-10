@@ -12,11 +12,24 @@ function MarketingEngineContent() {
   const [selectedLeads, setSelectedLeads] = useState<string[]>([]);
   const [showCrmModal, setShowCrmModal] = useState(false);
 
+  // Listing Injection Mockup
+  const [allListings, setAllListings] = useState<any[]>([]);
+  const [isListingModalOpen, setIsListingModalOpen] = useState(false);
+  const [listingSearchQuery, setListingSearchQuery] = useState('');
+  const [emailListings, setEmailListings] = useState<any[]>([]);
+
   useEffect(() => {
     fetch('/api/leads')
       .then(res => res.json())
       .then(data => {
         if (data.leads) setCrmLeads(data.leads);
+      })
+      .catch(console.error);
+
+    fetch('/api/listings')
+      .then(res => res.json())
+      .then(data => {
+        if (data.listings) setAllListings(data.listings);
       })
       .catch(console.error);
   }, []);
@@ -220,6 +233,12 @@ function MarketingEngineContent() {
               </div>
               <div style={{ background: '#f9fafb', border: '1px dashed #d1d5db', padding: '1rem', borderRadius: '8px', textAlign: 'center', fontSize: '0.9rem', fontWeight: 600, color: '#4b5563', cursor: 'grab' }}>Call to Action Button</div>
               <div style={{ background: '#f9fafb', border: '1px dashed #d1d5db', padding: '1rem', borderRadius: '8px', textAlign: 'center', fontSize: '0.9rem', fontWeight: 600, color: '#4b5563', cursor: 'grab' }}>Divider</div>
+              <div 
+                onClick={() => setIsListingModalOpen(true)}
+                style={{ background: '#eff6ff', border: '1px dashed #2563eb', padding: '1rem', borderRadius: '8px', textAlign: 'center', fontSize: '0.9rem', fontWeight: 600, color: '#1d4ed8', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> Property Listing
+              </div>
             </div>
 
             {/* Email Canvas Mockup */}
@@ -238,6 +257,22 @@ function MarketingEngineContent() {
                   <div style={{ width: '100%', height: '200px', background: '#e5e7eb', borderRadius: '8px', margin: '2rem 0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9ca3af' }}>
                     [ Image Block ]
                   </div>
+
+                  {emailListings.map((listing: any, idx) => (
+                    <div key={idx} style={{ border: '1px solid #e5e7eb', borderRadius: '12px', overflow: 'hidden', margin: '2rem 0' }}>
+                      <div style={{ width: '100%', height: '180px', background: '#e5e7eb', backgroundImage: listing.images && listing.images[0] ? `url(${listing.images[0].url})` : 'none', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+                      <div style={{ padding: '1.5rem', textAlign: 'center' }}>
+                        <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.25rem', fontWeight: 800, color: '#111827' }}>{listing.streetAddress}</h3>
+                        <p style={{ margin: '0 0 1rem 0', color: '#6b7280', fontSize: '0.95rem' }}>{listing.city}, {listing.state} &bull; {listing.askingPrice || listing.askingRent}</p>
+                        <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginBottom: '1.5rem', fontSize: '0.9rem', color: '#4b5563', fontWeight: 600 }}>
+                          <span>{listing.bedrooms || 0} Beds</span>
+                          <span>{listing.bathrooms || 0} Baths</span>
+                          <span>{listing.squareFootage || 0} SqFt</span>
+                        </div>
+                        <button style={{ background: '#111827', color: '#fff', border: 'none', padding: '0.8rem 1.5rem', borderRadius: '6px', fontWeight: 700, cursor: 'pointer', width: '100%' }}>View Property</button>
+                      </div>
+                    </div>
+                  ))}
                   
                   <div style={{ textAlign: 'center' }}>
                     <button style={{ background: '#2563eb', color: '#fff', border: 'none', padding: '1rem 2rem', borderRadius: '6px', fontWeight: 700, fontSize: '1rem' }}>View the Report</button>
@@ -291,6 +326,61 @@ function MarketingEngineContent() {
               <button onClick={() => { alert(`Imported ${selectedLeads.length} leads!`); setShowCrmModal(false); }} style={{ background: '#2563eb', color: '#fff', border: 'none', padding: '0.6rem 1.5rem', borderRadius: '6px', fontWeight: 700 }}>
                 Import {selectedLeads.length} Leads
               </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Listing Selection Modal */}
+      {isListingModalOpen && (
+        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(17, 24, 39, 0.7)', zIndex: 100, display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(4px)' }}>
+          <div style={{ background: '#ffffff', width: '100%', maxWidth: '700px', borderRadius: '16px', padding: '2.5rem', boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)', position: 'relative' }}>
+            <button onClick={() => setIsListingModalOpen(false)} style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', background: 'transparent', border: 'none', color: '#6b7280', cursor: 'pointer' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#111827', margin: '0 0 0.5rem 0' }}>Insert Listing</h2>
+            <p style={{ color: '#6b7280', marginBottom: '2rem' }}>Select a listing to generate a beautifully formatted email card automatically.</p>
+
+            <input 
+              type="text" 
+              placeholder="Search listings by address..." 
+              value={listingSearchQuery}
+              onChange={(e) => setListingSearchQuery(e.target.value)}
+              style={{ width: '100%', padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #d1d5db', outline: 'none', marginBottom: '1rem', fontSize: '0.95rem' }} 
+            />
+
+            <div style={{ maxHeight: '400px', overflowY: 'auto', border: '1px solid #e5e7eb', borderRadius: '8px', display: 'flex', flexDirection: 'column' }}>
+              {allListings
+                .filter(l => l.title?.toLowerCase().includes(listingSearchQuery.toLowerCase()) || l.streetAddress?.toLowerCase().includes(listingSearchQuery.toLowerCase()))
+                .map((listing: any) => {
+                  const isAlreadyAdded = emailListings.some(el => el.id === listing.id);
+                  return (
+                    <div key={listing.id} style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1rem', borderBottom: '1px solid #e5e7eb', background: isAlreadyAdded ? '#f3f4f6' : '#fff' }}>
+                      <div style={{ width: '60px', height: '40px', background: '#e5e7eb', borderRadius: '4px', overflow: 'hidden', flexShrink: 0 }}>
+                        {listing.images && listing.images[0] && (
+                          <img src={listing.images[0].url} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        )}
+                      </div>
+                      <div style={{ flex: 1 }}>
+                        <div style={{ fontWeight: 700, fontSize: '0.9rem', color: '#111827' }}>{listing.streetAddress}</div>
+                        <div style={{ fontSize: '0.8rem', color: '#6b7280' }}>{listing.city}, {listing.state} &bull; {listing.askingPrice || listing.askingRent}</div>
+                      </div>
+                      <button 
+                        disabled={isAlreadyAdded}
+                        onClick={() => {
+                          setEmailListings([...emailListings, listing]);
+                          setIsListingModalOpen(false);
+                        }}
+                        style={{ background: isAlreadyAdded ? '#e5e7eb' : '#2563eb', color: isAlreadyAdded ? '#9ca3af' : '#fff', border: 'none', padding: '0.5rem 1rem', borderRadius: '6px', fontWeight: 600, cursor: isAlreadyAdded ? 'not-allowed' : 'pointer', fontSize: '0.8rem' }}
+                      >
+                        {isAlreadyAdded ? 'Added' : 'Insert'}
+                      </button>
+                    </div>
+                  );
+                })}
+              {allListings.length === 0 && (
+                <div style={{ textAlign: 'center', padding: '2rem', color: '#6b7280', fontSize: '0.9rem' }}>No listings available.</div>
+              )}
             </div>
           </div>
         </div>

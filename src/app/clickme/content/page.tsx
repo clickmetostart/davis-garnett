@@ -15,6 +15,15 @@ function ContentPipelineContent() {
     { id: 3, title: 'Tampa Market Update: Fall 2026', description: 'Analyzing current cap rates and why waiting until spring might cost you in the current Pinellas County inventory squeeze.', date: '2026-08-20', status: 'Queue', platform: 'All Channels' },
   ]);
   const [generating, setGenerating] = useState(false);
+  
+  // Pre-Created Post State
+  const [isPreCreatedModalOpen, setIsPreCreatedModalOpen] = useState(false);
+  const [preCreatedPosts] = useState([
+    { id: 101, title: "Buyer's Guide to Tampa", type: 'Guide', platform: 'LinkedIn & Facebook' },
+    { id: 102, title: "Q&A: Flood Insurance Secrets", type: 'Q&A', platform: 'Blog' },
+    { id: 103, title: "Market Report: Fall 2026", type: 'Report', platform: 'All Channels' },
+    { id: 104, title: "Top 5 Schools in Pinellas", type: 'Article', platform: 'Facebook & Instagram' },
+  ]);
 
   const handleGenerate = () => {
     setGenerating(true);
@@ -87,29 +96,54 @@ function ContentPipelineContent() {
               <h3 style={{ fontSize: '1.4rem', fontWeight: 800, margin: '0 0 0.25rem 0', color: '#111827' }}>AI Generation Engine</h3>
               <p style={{ fontSize: '0.95rem', color: '#6b7280', margin: 0 }}>Trained on 138 posts. Voice matched to: Mark Davis & Rachael Garnett.</p>
             </div>
-            <button 
-              id="btn-generate-ai"
-              onClick={handleGenerate}
-              disabled={generating}
-              style={{
-                background: generating ? '#f3f4f6' : '#4fd1c5',
-                color: generating ? '#9ca3af' : '#fff',
-                border: 'none',
-                padding: '0.8rem 1.5rem',
-                borderRadius: '8px',
-                fontWeight: 700,
-                cursor: generating ? 'not-allowed' : 'pointer',
-                transition: 'all 0.3s ease',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                boxShadow: generating ? 'none' : '0 4px 6px -1px rgba(79, 209, 197, 0.4)'
-              }}
-              onMouseEnter={(e) => { if (!generating) { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(79, 209, 197, 0.5)'; } }}
-              onMouseLeave={(e) => { if (!generating) { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(79, 209, 197, 0.4)'; } }}
-            >
-              {generating ? '🧠 Analyzing Sitemap...' : '✨ Generate AI Post'}
-            </button>
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              <button 
+                onClick={() => setIsPreCreatedModalOpen(true)}
+                style={{
+                  background: '#ffffff',
+                  color: '#4b5563',
+                  border: '1px solid #d1d5db',
+                  padding: '0.8rem 1.5rem',
+                  borderRadius: '8px',
+                  fontWeight: 700,
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  boxShadow: '0 1px 2px rgba(0,0,0,0.05)'
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = '#f9fafb'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = '#ffffff'; }}
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                Schedule Pre-Created Post
+              </button>
+              
+              <button 
+                id="btn-generate-ai"
+                onClick={handleGenerate}
+                disabled={generating}
+                style={{
+                  background: generating ? '#f3f4f6' : '#4fd1c5',
+                  color: generating ? '#9ca3af' : '#fff',
+                  border: 'none',
+                  padding: '0.8rem 1.5rem',
+                  borderRadius: '8px',
+                  fontWeight: 700,
+                  cursor: generating ? 'not-allowed' : 'pointer',
+                  transition: 'all 0.3s ease',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  boxShadow: generating ? 'none' : '0 4px 6px -1px rgba(79, 209, 197, 0.4)'
+                }}
+                onMouseEnter={(e) => { if (!generating) { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(79, 209, 197, 0.5)'; } }}
+                onMouseLeave={(e) => { if (!generating) { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(79, 209, 197, 0.4)'; } }}
+              >
+                {generating ? '🧠 Analyzing Sitemap...' : '✨ Generate AI Post'}
+              </button>
+            </div>
           </div>
         </div>
 
@@ -142,6 +176,53 @@ function ContentPipelineContent() {
           ))}
         </div>
       </div>
+
+      {/* Pre-Created Post Modal */}
+      {isPreCreatedModalOpen && (
+        <div style={{ position: 'fixed', inset: 0, zIndex: 100, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(17, 24, 39, 0.7)', backdropFilter: 'blur(4px)' }}>
+          <div style={{ background: '#ffffff', width: '100%', maxWidth: '600px', borderRadius: '16px', padding: '2.5rem', boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)', position: 'relative' }}>
+            <button onClick={() => setIsPreCreatedModalOpen(false)} style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', background: 'transparent', border: 'none', color: '#6b7280', cursor: 'pointer' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#111827', margin: '0 0 0.5rem 0' }}>Schedule Pre-Created Post</h2>
+            <p style={{ color: '#6b7280', marginBottom: '2rem' }}>Select an existing guide, Q&A, or article to add to your content queue.</p>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+              {preCreatedPosts.map(post => (
+                <div key={post.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem', border: '1px solid #e5e7eb', borderRadius: '8px', background: '#f9fafb' }}>
+                  <div>
+                    <div style={{ fontWeight: 700, color: '#111827', marginBottom: '0.2rem' }}>{post.title}</div>
+                    <div style={{ fontSize: '0.8rem', color: '#6b7280', display: 'flex', gap: '0.8rem' }}>
+                      <span style={{ background: '#e5e7eb', padding: '0.1rem 0.4rem', borderRadius: '4px', fontWeight: 600 }}>{post.type}</span>
+                      <span>{post.platform}</span>
+                    </div>
+                  </div>
+                  <button 
+                    onClick={() => {
+                      setPosts(prev => [
+                        {
+                          id: Date.now(),
+                          title: post.title,
+                          description: `Pre-created ${post.type.toLowerCase()} selected from library.`,
+                          date: new Date().toISOString().split('T')[0],
+                          status: 'Scheduled',
+                          platform: post.platform
+                        },
+                        ...prev
+                      ]);
+                      setIsPreCreatedModalOpen(false);
+                    }}
+                    style={{ background: '#2563eb', color: '#fff', border: 'none', padding: '0.5rem 1rem', borderRadius: '6px', fontWeight: 600, cursor: 'pointer', fontSize: '0.85rem' }}
+                  >
+                    Schedule
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }

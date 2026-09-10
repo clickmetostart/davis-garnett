@@ -18,6 +18,7 @@ function NetworkCRMContent() {
   
   const [leads, setLeads] = useState<any[]>([]);
   const [labelsData, setLabelsData] = useState<any[]>([]);
+  const [allListings, setAllListings] = useState<any[]>([]);
   
   const [activeLabel, setActiveLabel] = useState('All Contacts');
   const [searchQuery, setSearchQuery] = useState('');
@@ -64,6 +65,10 @@ function NetworkCRMContent() {
   const [showBulkLabelMenu, setShowBulkLabelMenu] = useState(false);
   const bulkMenuRef = useRef<HTMLDivElement>(null);
 
+  // Attach Listing Modal State
+  const [isAttachListingModalOpen, setIsAttachListingModalOpen] = useState(false);
+  const [listingSearchQuery, setListingSearchQuery] = useState('');
+
   // Submit state machine for onboarding
   const [submitState, setSubmitState] = useState<'idle' | 'ready' | 'confirming' | 'submitting' | 'completed' | 'hidden'>('hidden');
 
@@ -80,9 +85,16 @@ function NetworkCRMContent() {
     }).catch(err => console.error(err));
   };
 
+  const fetchListings = () => {
+    fetch('/api/listings').then(res => res.json()).then(data => {
+      if (data.listings) setAllListings(data.listings);
+    }).catch(err => console.error(err));
+  };
+
   useEffect(() => {
     fetchLeads();
     fetchLabels();
+    fetchListings();
     document.body.style.overflow = 'hidden';
     
     // Fetch User for RBAC
@@ -262,6 +274,7 @@ function NetworkCRMContent() {
       zip: lead.zip || '',
       customLinks: lead.customLinks || [],
       documents: lead.documents || [],
+      attachedListings: lead.attachedListings || [],
       customFields: mergedCustomFields
     });
     setNewCustomFieldKey('');
@@ -294,7 +307,8 @@ function NetworkCRMContent() {
       state: '',
       zip: '',
       customLinks: [],
-      documents: []
+      documents: [],
+      attachedListings: []
     });
     if (isActive) nextStep();
   };
@@ -331,6 +345,7 @@ function NetworkCRMContent() {
         zip: editData.zip,
         customLinks: editData.customLinks,
         documents: editData.documents,
+        attachedListings: editData.attachedListings,
         isShared: editData.isShared || false,
         ownerId: editData.ownerId || user?.id,
         isSpam: false,
@@ -362,6 +377,7 @@ function NetworkCRMContent() {
           zip: editData.zip,
           customLinks: editData.customLinks,
           documents: editData.documents,
+          attachedListings: editData.attachedListings,
           customFields: cleanCustomFields,
           isShared: editData.isShared || false,
           ownerId: editData.ownerId || user?.id
@@ -1307,6 +1323,56 @@ function NetworkCRMContent() {
               )}
             </div>
 
+            {/* Attached Listings Section */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '0.5rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #e5e7eb', paddingBottom: '0.5rem' }}>
+                <div style={{ fontSize: '0.9rem', fontWeight: 800, color: '#111827' }}>Attached Listings</div>
+                <button 
+                  type="button"
+                  onClick={() => setIsAttachListingModalOpen(true)}
+                  style={{ background: '#f3f4f6', color: '#111827', border: '1px solid #d1d5db', padding: '0.3rem 0.6rem', borderRadius: '6px', fontWeight: 600, cursor: 'pointer', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.3rem' }}
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                  Attach Listing
+                </button>
+              </div>
+
+              {(!editData.attachedListings || editData.attachedListings.length === 0) ? (
+                <div style={{ fontSize: '0.85rem', color: '#9ca3af', fontStyle: 'italic', textAlign: 'center', padding: '1rem', border: '1px dashed #e5e7eb', borderRadius: '8px' }}>
+                  No listings attached to this contact.
+                </div>
+              ) : (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                  {editData.attachedListings.map((listingId: string, idx: number) => {
+                    const listing = allListings.find(l => l.id === listingId);
+                    if (!listing) return null;
+                    return (
+                      <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#f9fafb', padding: '0.8rem', borderRadius: '6px', border: '1px solid #e5e7eb', gap: '1rem' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', overflow: 'hidden' }}>
+                          <div style={{ width: '40px', height: '40px', background: '#e5e7eb', borderRadius: '4px', overflow: 'hidden', flexShrink: 0 }}>
+                            {listing.images && listing.images[0] && (
+                              <img src={listing.images[0].url} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            )}
+                          </div>
+                          <div style={{ overflow: 'hidden' }}>
+                            <div style={{ fontSize: '0.85rem', fontWeight: 600, color: '#111827', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>{listing.streetAddress || listing.title}</div>
+                            <div style={{ fontSize: '0.7rem', color: '#6b7280' }}>{listing.askingPrice || listing.askingRent} &bull; {listing.status}</div>
+                          </div>
+                        </div>
+                        <button onClick={() => {
+                          const newListings = [...editData.attachedListings];
+                          newListings.splice(idx, 1);
+                          setEditData({...editData, attachedListings: newListings});
+                        }} style={{ background: 'transparent', border: 'none', color: '#ef4444', cursor: 'pointer', padding: '0.2rem' }}>
+                          &times;
+                        </button>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+
             {/* Communications History */}
             {!isAddingLead && (
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '0.5rem' }}>
@@ -1424,6 +1490,62 @@ function NetworkCRMContent() {
             >
               Save Changes
             </button>
+          </div>
+        </div>
+      )}
+
+      {/* Attach Listing Modal */}
+      {isAttachListingModalOpen && (
+        <div style={{ position: 'fixed', inset: 0, zIndex: 999999, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(0,0,0,0.4)' }}>
+          <div style={{ background: '#fff', borderRadius: '12px', padding: '2rem', width: '600px', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.25)', maxHeight: '80vh', display: 'flex', flexDirection: 'column' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+              <h3 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 800 }}>Attach Listing to Lead</h3>
+              <button onClick={() => setIsAttachListingModalOpen(false)} style={{ background: 'transparent', border: 'none', color: '#6b7280', cursor: 'pointer' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+            </div>
+            
+            <input 
+              type="text" 
+              placeholder="Search listings by address, title, or MLS..." 
+              value={listingSearchQuery}
+              onChange={(e) => setListingSearchQuery(e.target.value)}
+              style={{ width: '100%', padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #d1d5db', outline: 'none', marginBottom: '1rem', fontSize: '0.95rem' }} 
+            />
+
+            <div style={{ flex: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              {allListings
+                .filter(l => l.title?.toLowerCase().includes(listingSearchQuery.toLowerCase()) || l.streetAddress?.toLowerCase().includes(listingSearchQuery.toLowerCase()))
+                .map((listing: any) => {
+                  const isAlreadyAttached = (editData.attachedListings || []).includes(listing.id);
+                  return (
+                    <div key={listing.id} style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1rem', border: '1px solid #e5e7eb', borderRadius: '8px', background: isAlreadyAttached ? '#f3f4f6' : '#fff' }}>
+                      <div style={{ width: '60px', height: '40px', background: '#e5e7eb', borderRadius: '4px', overflow: 'hidden', flexShrink: 0 }}>
+                        {listing.images && listing.images[0] && (
+                          <img src={listing.images[0].url} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        )}
+                      </div>
+                      <div style={{ flex: 1 }}>
+                        <div style={{ fontWeight: 700, fontSize: '0.9rem', color: '#111827' }}>{listing.streetAddress}</div>
+                        <div style={{ fontSize: '0.8rem', color: '#6b7280' }}>{listing.city}, {listing.state} &bull; {listing.askingPrice || listing.askingRent}</div>
+                      </div>
+                      <button 
+                        disabled={isAlreadyAttached}
+                        onClick={() => {
+                          setEditData({ ...editData, attachedListings: [...(editData.attachedListings || []), listing.id] });
+                          setIsAttachListingModalOpen(false);
+                        }}
+                        style={{ background: isAlreadyAttached ? '#e5e7eb' : '#2563eb', color: isAlreadyAttached ? '#9ca3af' : '#fff', border: 'none', padding: '0.5rem 1rem', borderRadius: '6px', fontWeight: 600, cursor: isAlreadyAttached ? 'not-allowed' : 'pointer', fontSize: '0.8rem' }}
+                      >
+                        {isAlreadyAttached ? 'Attached' : 'Attach'}
+                      </button>
+                    </div>
+                  );
+              })}
+              {allListings.length === 0 && (
+                <div style={{ textAlign: 'center', padding: '2rem', color: '#6b7280', fontSize: '0.9rem' }}>No listings available.</div>
+              )}
+            </div>
           </div>
         </div>
       )}
