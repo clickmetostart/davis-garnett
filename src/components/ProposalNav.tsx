@@ -10,7 +10,6 @@ const NAV_LINKS = [
   { label: "Project Scope", href: "/scope" },
   { label: "Branding", href: "/branding" },
   { label: "Live Preview", href: "/preview-mockup" },
-  { label: "Live Preview v2", href: "/preview-mockup-2" },
   { label: "Dashboard", href: "/clickme" },
 ];
 
