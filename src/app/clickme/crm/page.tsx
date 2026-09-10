@@ -96,7 +96,8 @@ function NetworkCRMContent() {
 
   const fetchListings = () => {
     fetch('/api/listings').then(res => res.json()).then(data => {
-      if (data.listings) setAllListings(data.listings);
+      if (Array.isArray(data)) setAllListings(data);
+      else if (data.listings) setAllListings(data.listings);
     }).catch(err => console.error(err));
   };
 
