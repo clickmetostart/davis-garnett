@@ -2,14 +2,15 @@ import { NextResponse } from 'next/server';
 import fs from 'fs/promises';
 import path from 'path';
 
-export async function PUT(req: Request, { params }: { params: { id: string } }) {
+export async function PUT(req: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     const body = await req.json();
+    const resolvedParams = await params;
     const dataPath = path.join(process.cwd(), 'src', 'data', 'listings.json');
     const fileData = await fs.readFile(dataPath, 'utf8').catch(() => '[]');
     let listings = JSON.parse(fileData);
 
-    const index = listings.findIndex((l: any) => l.id === params.id);
+    const index = listings.findIndex((l: any) => l.id === resolvedParams.id);
     if (index === -1) {
       return NextResponse.json({ message: 'Listing not found' }, { status: 404 });
     }
@@ -26,13 +27,14 @@ export async function PUT(req: Request, { params }: { params: { id: string } }) 
   }
 }
 
-export async function DELETE(req: Request, { params }: { params: { id: string } }) {
+export async function DELETE(req: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
+    const resolvedParams = await params;
     const dataPath = path.join(process.cwd(), 'src', 'data', 'listings.json');
     const fileData = await fs.readFile(dataPath, 'utf8').catch(() => '[]');
     let listings = JSON.parse(fileData);
 
-    const index = listings.findIndex((l: any) => l.id === params.id);
+    const index = listings.findIndex((l: any) => l.id === resolvedParams.id);
     if (index === -1) {
       return NextResponse.json({ message: 'Listing not found' }, { status: 404 });
     }

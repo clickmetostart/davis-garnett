@@ -86,6 +86,8 @@ export interface Listing {
   propertyDescription: string;
   locationDescription: string;
   investmentSummary?: string; // Commercial
+  sourcePlatform?: string;
+  sourceUrl?: string;
 
   // Media
   images: ListingImage[];

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { ChevronRight, ChevronLeft, Check, Upload, Sparkles, Building, Home, MapPin, Search } from 'lucide-react';
+import { ChevronRight, ChevronLeft, Check, Upload, Sparkles, Building, Home, MapPin, Search, Globe } from 'lucide-react';
 import { Listing } from '@/types/listings';
 
 const STAGES = ['Build', 'List', 'Market', 'Review'];

@@ -61,17 +61,10 @@ export default function ListingImporterModal({ isOpen, onClose }: { isOpen: bool
       if (data.photos.length === 0) data.photos = Array.from(imgElements).map(img => img.src).filter(Boolean);
     }
     data.photos = [...new Set(data.photos)].slice(0, 10);
-    alert('Importing to ClickMe CRM...');
-    fetch('http://localhost:3000/api/crm/import-listing', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    }).then(r => r.json()).then(res => {
-      alert('Success! Listing imported.');
-    }).catch(e => {
-      alert('Error importing listing. Make sure your local server is running.');
-    });
-  })();`.replace(/\s+/g, ' ');
+      const payload = btoa(encodeURIComponent(JSON.stringify(data)));
+      window.open('http://localhost:3000/api/crm/import-listing?payload=' + payload, '_blank');
+    })();
+  `.replace(/\s+/g, ' ').trim();
 
   // Poll for recently imported listings
   useEffect(() => {
@@ -156,7 +149,7 @@ export default function ListingImporterModal({ isOpen, onClose }: { isOpen: bool
                 
                 <div className="flex justify-center mb-4" dangerouslySetInnerHTML={{ __html: `
                   <a 
-                    href="${bookmarkletCode}"
+                    href="${encodeURI(bookmarkletCode)}"
                     class="inline-block px-6 py-3 bg-[#111] text-[#D4AF37] font-bold rounded-full shadow-lg shadow-black/20 hover:scale-105 transition-transform border-2 border-[#D4AF37] cursor-grab active:cursor-grabbing"
                     onclick="event.preventDefault()"
                   >
