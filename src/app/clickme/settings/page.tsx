@@ -347,7 +347,7 @@ function ProfileSettingsContent() {
         {/* LEFT COLUMN: FORM */}
         <div>
           <header style={{ marginBottom: '3rem' }}>
-            <h1 style={{ fontSize: '2.5rem', fontWeight: 800, margin: '0 0 0.5rem 0', color: '#111827' }}>Profile Settings</h1>
+            <h1 style={{ fontSize: '2.5rem', fontWeight: 800, margin: '0 0 0.5rem 0', color: '#111827' }}>Profile / Linktree</h1>
             <p style={{ color: '#4b5563', margin: 0 }}>Manage your personal details, contact information, and security credentials.</p>
           </header>
 
