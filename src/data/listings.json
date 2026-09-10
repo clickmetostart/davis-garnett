@@ -1,0 +1,122 @@
+[
+  {
+    "id": "1",
+    "brokerId": "mark-123",
+    "category": "Commercial",
+    "title": "Prime Retail Corner — Westchase",
+    "propertyType": "Retail",
+    "transactionType": "For Lease",
+    "status": "Active",
+    "slug": "prime-retail-corner-westchase",
+    "featured": true,
+    "streetAddress": "12345 Westchase Blvd",
+    "city": "Tampa",
+    "state": "FL",
+    "zip": "33626",
+    "county": "Hillsborough",
+    "lat": 28.0494,
+    "lng": -82.6041,
+    "buildingSizeSqFt": "12,500",
+    "availableSpaceSqFt": "4,000",
+    "zoning": "C-2",
+    "parkingRatio": "5.0",
+    "askingRent": "$35.00",
+    "leaseType": "NNN",
+    "minLeaseTerm": "5 Years",
+    "highlights": [
+      "High visibility end-cap unit",
+      "Over 45,000 VPD traffic count",
+      "Anchored by national grocer",
+      "Ample parking (5/1000)",
+      "",
+      ""
+    ],
+    "propertyDescription": "Exceptional retail opportunity in the heart of Westchase. This end-cap space offers massive frontage, high ceilings, and immediate proximity to major national anchors. Perfect for high-end dining, boutique fitness, or premium retail concepts.",
+    "locationDescription": "Located at the heavily trafficked intersection of Linebaugh and Westchase Blvd, surrounded by affluent residential neighborhoods with average household incomes exceeding $130,000.",
+    "images": [
+      {
+        "id": "img1",
+        "url": "https://images.unsplash.com/photo-1555636222-cae831e670b3?q=80&w=1200&auto=format&fit=crop",
+        "isHero": true,
+        "sortOrder": 1
+      }
+    ],
+    "attachments": [
+      {
+        "id": "att1",
+        "label": "Offering Memorandum",
+        "url": "#",
+        "type": "PDF"
+      },
+      {
+        "id": "att2",
+        "label": "Floor Plan",
+        "url": "#",
+        "type": "PDF"
+      }
+    ],
+    "primaryContact": "Mark",
+    "showEmail": true,
+    "showPhone": true,
+    "createdAt": "2026-09-10T17:47:00.000Z",
+    "updatedAt": "2026-09-10T17:47:00.000Z"
+  },
+  {
+    "id": "2",
+    "brokerId": "rachael-123",
+    "category": "Residential",
+    "title": "4BR Modern Pool Home — Carrollwood",
+    "propertyType": "Single Family",
+    "transactionType": "For Sale",
+    "status": "Active",
+    "slug": "4br-modern-pool-home-carrollwood",
+    "featured": true,
+    "streetAddress": "5678 Carrollwood Dr",
+    "city": "Tampa",
+    "state": "FL",
+    "zip": "33618",
+    "county": "Hillsborough",
+    "lat": 28.0583,
+    "lng": -82.4939,
+    "bedrooms": "4",
+    "bathrooms": "3",
+    "sqFt": "3,200",
+    "lotSize": "0.3 Acres",
+    "yearBuilt": "2018",
+    "pool": true,
+    "garage": "3-Car Attached",
+    "askingPrice": "$1,250,000",
+    "hoaFee": "$150/mo",
+    "highlights": [
+      "Resort-style saltwater pool & spa",
+      "Chef's kitchen with Wolf appliances",
+      "Custom outdoor summer kitchen",
+      "A-rated school district",
+      "",
+      ""
+    ],
+    "propertyDescription": "Stunning contemporary estate in desirable Carrollwood. This open-concept masterpiece features soaring 12-foot ceilings, imported Italian porcelain tile, and a wall of disappearing glass doors that perfectly blend indoor and outdoor luxury living.",
+    "locationDescription": "Situated on a quiet cul-de-sac in a gated community, just minutes from top-rated schools, exclusive country clubs, and fine dining.",
+    "images": [
+      {
+        "id": "img2",
+        "url": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop",
+        "isHero": true,
+        "sortOrder": 1
+      }
+    ],
+    "attachments": [
+      {
+        "id": "att3",
+        "label": "Property Disclosure",
+        "url": "#",
+        "type": "PDF"
+      }
+    ],
+    "primaryContact": "Rachael",
+    "showEmail": true,
+    "showPhone": true,
+    "createdAt": "2026-09-10T17:47:00.000Z",
+    "updatedAt": "2026-09-10T17:47:00.000Z"
+  }
+]

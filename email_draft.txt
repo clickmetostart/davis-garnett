@@ -1,67 +1,17 @@
-Subject: Your Dashboard Just Got a Massive Upgrade — Come Take a Look 🚀
+Subject: Your Private Development Workspace is Live 🚀
 
-Hi Mark & Rachael,
+Hi Rachael & Mark,
 
-Hope you're both having a great day! I wanted to reach out because we've been hard at work on your platform and there's a LOT of new stuff loaded in for you to see.
+Your private development workspace is officially live here:
+https://davis-garnett.vercel.app/
 
----
+We've loaded up 4 different branding paths, matching website previews, and digital assets to give you the "we'll know it when we see it" approach you requested. This secure, locked-down portal is where we'll be collaborating in real-time to customize your dashboard and tweak things exactly the way you like them. 
 
-🔥 WHAT'S NEW IN YOUR DASHBOARD:
+We aren't requiring any formal signatures to get started, but I was a bit surprised we didn't see the initial deposit come through this week as suggested. 
 
-We've added a ton of new modules into the dashboard since you last saw it. Here's a quick snapshot of what's live and waiting for you:
+I just wanted to check in and see where we stand! When you visit the link above, you'll notice the workspace is currently locked. Once the deposit clears, the system will automatically release your access credentials so you can log in, grab your assets, and we can hit the ground running.
 
-• Agent CRM — Your own private pipeline to manage personal leads, track statuses, and segment contacts.
-• D&G Shared CRM — A shared team CRM that syncs across both of you. Website leads from your contact forms drop directly in here so neither of you misses a beat.
-• Agent Flow & D&G Shared Flow — Visual Kanban-style pipeline boards for tracking clients through every stage of a transaction (buyers, sellers, commercial leases — all built in).
-• Asset Storage — Upload and organize documents, blank offer forms, disclosures, etc. — all right from the dashboard.
-• Client Documents — Attach documents directly to individual clients in the CRM so everything lives in one place.
-• AI Content Pipeline — Generate social media posts trained on your brand voice.
-• Marketing Engine, Reputation Engine, Social Planner, BI Analytics — All staged and ready to be configured.
-
-And there's more where that came from. These are the tools we're going to be spending time setting up together during your website build.
-
----
-
-🎯 HERE'S WHAT MAKES THIS SPECIAL:
-
-What's awesome about the way we work is that we load all of this up ASAP and start getting things connected right alongside the build. That means by the time we place the code onto your real URL, you're not starting from scratch — you're already using it. The dashboard, the CRM, the content engine — all of it goes live with the site.
-
-You can preview everything right now:
-
-🔗 Your Website Preview: https://davis-garnett.vercel.app
-🔗 Full Feature Breakdown: https://davis-garnett.vercel.app/features
-🔗 Branding & Social Assets: https://davis-garnett.vercel.app/branding
-🔗 Scope of Work: https://davis-garnett.vercel.app/scope
-🔗 Dashboard Login: https://davis-garnett.vercel.app/login
-
-Your login credentials (same as before):
-
-Mark: msdavis118@gmail.com / Awe$ome
-Rachael: rachaellgarnett@gmail.com / Awe$ome
-
----
-
-💰 LET'S TALK ABOUT GETTING STARTED:
-
-I know I've already dipped pretty low to give you both a great deal, so I want to be transparent about the two options on the table:
-
-✅ Best Value — Annual Plan: $3,000 upfront
-This is the best deal because we front-load a massive amount of content and setup work right out of the gate. You get the full build, the dashboard, and a year of management — all locked in at a significant discount. We're not building and marketing at the same time on this one — we're hitting the ground running.
-
-📋 Monthly Plan: $1,295 to start ($995 setup + $295 first month), then $295/mo
-The monthly is a bit more expensive over time simply because there are more hours involved month-to-month vs. front-loading everything upfront. But it's still a solid option if cash flow is a factor.
-
-🔗 Ready to lock it in? https://davis-garnett.vercel.app/agreement
-
-🤝 BUT HERE'S THE THING —
-If neither of those options can be done right now, give me a call TODAY and I'll work something out for you. Whether that's a payment plan, a middle ground, or something creative — I'm flexible and I want to make this happen for you both. Let's just get on the phone and figure it out.
-
----
-
-I'm excited about what we're building here. This isn't a cookie-cutter template — this is YOUR platform, built around how you actually work. The sooner we get started, the sooner leads start flowing and your brand starts working for you 24/7.
-
-Talk soon — looking forward to hearing from you!
+Let me know if you need the payment link resent.
 
 Best,
 Nick
-ClickMe Development Team
