@@ -3,6 +3,8 @@
 import React, { useState, useEffect, useRef, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useWalkthrough } from '@/components/clickme/WalkthroughProvider';
+import LinktreeProfile from '@/components/LinktreeProfile';
+import { Smartphone, Tablet, Monitor } from 'lucide-react';
 
 function ProfileSettingsContent() {
   const router = useRouter();
@@ -15,6 +17,7 @@ function ProfileSettingsContent() {
   
   const fileInputRef = useRef<HTMLInputElement>(null);
   const logoInputRef = useRef<HTMLInputElement>(null);
+  const coverInputRef = useRef<HTMLInputElement>(null);
 
   const [user, setUser] = useState({
     id: '',
@@ -36,8 +39,15 @@ function ProfileSettingsContent() {
     city: '',
     state: '',
     zip: '',
-    customLinks: [] as {platform: string; url: string}[]
+    socialLinks: { facebook: '', instagram: '', linkedin: '', googleBusiness: '', zillow: '', redfin: '', mls: '', broker: '' },
+    customLinks: [] as {platform: string; url: string; icon?: string}[],
+    featuredListings: [] as string[],
+    reviews: [] as {author: string; text: string; rating: number}[],
+    themeColor: '#111827'
   });
+
+  const [allListings, setAllListings] = useState<any[]>([]);
+  const [previewMode, setPreviewMode] = useState<'desktop' | 'tablet' | 'mobile'>('mobile');
 
   const [generatingAI, setGeneratingAI] = useState(false);
 
@@ -63,23 +73,36 @@ function ProfileSettingsContent() {
   });
 
   useEffect(() => {
-    const fetchUser = async () => {
+    const fetchData = async () => {
       try {
-        const res = await fetch('/api/auth/me');
-        if (res.ok) {
-          const data = await res.json();
-          setUser({
-            ...user,
-            ...data.user
-          });
+        const [userRes, listingsRes] = await Promise.all([
+          fetch('/api/auth/me'),
+          fetch('/api/listings')
+        ]);
+        
+        if (userRes.ok) {
+          const userData = await userRes.json();
+          setUser(prev => ({
+            ...prev,
+            ...userData.user,
+            socialLinks: userData.user.socialLinks || prev.socialLinks,
+            customLinks: userData.user.customLinks || prev.customLinks,
+            featuredListings: userData.user.featuredListings || prev.featuredListings,
+            reviews: userData.user.reviews || prev.reviews,
+          }));
+        }
+
+        if (listingsRes.ok) {
+          const listingsData = await listingsRes.json();
+          setAllListings(listingsData);
         }
       } catch (err) {
-        console.error('Failed to fetch user', err);
+        console.error('Failed to fetch data', err);
       } finally {
         setLoading(false);
       }
     };
-    fetchUser();
+    fetchData();
   }, []);
 
   useEffect(() => {
@@ -197,7 +220,12 @@ function ProfileSettingsContent() {
             city: user.city,
             state: user.state,
             zip: user.zip,
-            customLinks: user.customLinks
+            socialLinks: user.socialLinks,
+            customLinks: user.customLinks,
+            featuredListings: user.featuredListings,
+            reviews: user.reviews,
+            themeColor: user.themeColor,
+            coverImageUrl: user.coverImageUrl
           }
         })
       });
@@ -248,7 +276,7 @@ function ProfileSettingsContent() {
     }
   };
 
-  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>, field: 'avatarUrl' | 'logoUrl') => {
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>, field: 'avatarUrl' | 'logoUrl' | 'coverImageUrl') => {
     const file = e.target.files?.[0];
     if (!file) return;
 
@@ -274,9 +302,9 @@ function ProfileSettingsContent() {
         });
 
         setUser({ ...user, [field]: data.url });
-        setMessage(`${field === 'avatarUrl' ? 'Avatar' : 'Logo'} uploaded successfully!`);
+        setMessage(`${field === 'avatarUrl' ? 'Avatar' : field === 'logoUrl' ? 'Logo' : 'Cover'} uploaded successfully!`);
       } else {
-        setMessage(`Failed to upload ${field === 'avatarUrl' ? 'Avatar' : 'Logo'}.`);
+        setMessage(`Failed to upload ${field === 'avatarUrl' ? 'Avatar' : field === 'logoUrl' ? 'Logo' : 'Cover'}.`);
       }
     } catch (error) {
       setMessage('Upload error.');
@@ -286,7 +314,7 @@ function ProfileSettingsContent() {
     }
   };
 
-  const handleRemoveFile = async (field: 'avatarUrl' | 'logoUrl') => {
+  const handleRemoveFile = async (field: 'avatarUrl' | 'logoUrl' | 'coverImageUrl') => {
     if(!user[field]) return;
     setSaving(true);
     try {
@@ -370,6 +398,41 @@ function ProfileSettingsContent() {
                   </div>
                 </div>
               </div>
+              <div style={{ width: '1px', height: '100px', background: '#e5e7eb' }}></div>
+
+              <div style={{ flex: 1 }}>
+                <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 800, color: '#111827', marginBottom: '1rem' }}>Cover Background</label>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+                    <div style={{ width: '120px', height: '60px', borderRadius: '8px', backgroundColor: '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px dashed #d1d5db', overflow: 'hidden', flexShrink: 0 }}>
+                      {user.coverImageUrl ? (
+                        <img src={user.coverImageUrl} alt="Cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      ) : (
+                        <div style={{ width: '100%', height: '100%', background: `linear-gradient(135deg, ${user.themeColor || '#111827'} 0%, #000000 100%)` }}></div>
+                      )}
+                    </div>
+                    <div>
+                      <input type="file" accept="image/*" ref={coverInputRef} style={{ display: 'none' }} onChange={(e) => handleFileUpload(e, 'coverImageUrl')} />
+                      <button id="btn-upload-cover" disabled={saving} type="button" onClick={() => coverInputRef.current?.click()} style={{ background: '#ffffff', color: '#111827', border: '1px solid #d1d5db', padding: '0.5rem 1rem', borderRadius: '8px', fontWeight: 600, cursor: saving ? 'not-allowed' : 'pointer', transition: 'all 0.2s', fontSize: '0.85rem', marginBottom: user.coverImageUrl ? '0.5rem' : 0, display: 'block' }}>
+                        Upload Image
+                      </button>
+                      {user.coverImageUrl && (
+                        <button disabled={saving} type="button" onClick={() => handleRemoveFile('coverImageUrl')} style={{ background: 'transparent', color: '#ef4444', border: 'none', fontWeight: 600, cursor: saving ? 'not-allowed' : 'pointer', fontSize: '0.85rem' }}>Remove</button>
+                      )}
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, color: '#6b7280', marginBottom: '0.3rem' }}>Or choose a gradient color</label>
+                    <input 
+                      type="color" 
+                      value={user.themeColor || '#111827'} 
+                      onChange={(e) => setUser({...user, themeColor: e.target.value})}
+                      style={{ width: '40px', height: '40px', padding: '0', border: 'none', borderRadius: '8px', cursor: 'pointer', outline: 'none' }} 
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
 
             <form onSubmit={handleSave} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
@@ -428,14 +491,108 @@ function ProfileSettingsContent() {
 
               {/* Social & Custom Links */}
               <div style={{ borderTop: '1px solid #e5e7eb', marginTop: '1rem', paddingTop: '1.5rem' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
                   <div>
                     <label style={{ display: 'block', fontSize: '0.95rem', fontWeight: 800, color: '#111827' }}>Social & Custom Links</label>
                     <p style={{ fontSize: '0.8rem', color: '#6b7280', margin: '0.25rem 0 0 0' }}>Add your LinkedIn, Digital Business Card, Facebook, etc.</p>
                   </div>
+                </div>
+
+                {/* Real Estate Profiles */}
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#374151', marginBottom: '0.5rem' }}>Zillow Profile</label>
+                    <input 
+                      type="url" 
+                      value={user.socialLinks?.zillow || ''} 
+                      onChange={(e) => setUser({...user, socialLinks: {...user.socialLinks, zillow: e.target.value}})} 
+                      placeholder="https://zillow.com/profile/..." 
+                      style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '8px', background: '#f9fafb', border: '1px solid #d1d5db', color: '#111827', outline: 'none', fontSize: '0.9rem' }} 
+                    />
+                  </div>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#374151', marginBottom: '0.5rem' }}>Redfin Profile</label>
+                    <input 
+                      type="url" 
+                      value={user.socialLinks?.redfin || ''} 
+                      onChange={(e) => setUser({...user, socialLinks: {...user.socialLinks, redfin: e.target.value}})} 
+                      placeholder="https://redfin.com/real-estate-agents/..." 
+                      style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '8px', background: '#f9fafb', border: '1px solid #d1d5db', color: '#111827', outline: 'none', fontSize: '0.9rem' }} 
+                    />
+                  </div>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#374151', marginBottom: '0.5rem' }}>MLS Agent Page</label>
+                    <input 
+                      type="url" 
+                      value={user.socialLinks?.mls || ''} 
+                      onChange={(e) => setUser({...user, socialLinks: {...user.socialLinks, mls: e.target.value}})} 
+                      placeholder="https://..." 
+                      style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '8px', background: '#f9fafb', border: '1px solid #d1d5db', color: '#111827', outline: 'none', fontSize: '0.9rem' }} 
+                    />
+                  </div>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#374151', marginBottom: '0.5rem' }}>Brokerage Profile Page</label>
+                    <input 
+                      type="url" 
+                      value={user.socialLinks?.broker || ''} 
+                      onChange={(e) => setUser({...user, socialLinks: {...user.socialLinks, broker: e.target.value}})} 
+                      placeholder="https://..." 
+                      style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '8px', background: '#f9fafb', border: '1px solid #d1d5db', color: '#111827', outline: 'none', fontSize: '0.9rem' }} 
+                    />
+                  </div>
+                </div>
+
+                <div style={{ height: '1px', background: '#e5e7eb', margin: '1rem 0 1.5rem 0' }}></div>
+
+                {/* Standard Social Links */}
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2rem' }}>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#374151', marginBottom: '0.5rem' }}>Facebook URL</label>
+                    <input 
+                      type="url" 
+                      value={user.socialLinks?.facebook || ''} 
+                      onChange={(e) => setUser({...user, socialLinks: {...user.socialLinks, facebook: e.target.value}})} 
+                      placeholder="https://facebook.com/..." 
+                      style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '8px', background: '#f9fafb', border: '1px solid #d1d5db', color: '#111827', outline: 'none', fontSize: '0.9rem' }} 
+                    />
+                  </div>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#374151', marginBottom: '0.5rem' }}>Instagram URL</label>
+                    <input 
+                      type="url" 
+                      value={user.socialLinks?.instagram || ''} 
+                      onChange={(e) => setUser({...user, socialLinks: {...user.socialLinks, instagram: e.target.value}})} 
+                      placeholder="https://instagram.com/..." 
+                      style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '8px', background: '#f9fafb', border: '1px solid #d1d5db', color: '#111827', outline: 'none', fontSize: '0.9rem' }} 
+                    />
+                  </div>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#374151', marginBottom: '0.5rem' }}>LinkedIn URL</label>
+                    <input 
+                      type="url" 
+                      value={user.socialLinks?.linkedin || ''} 
+                      onChange={(e) => setUser({...user, socialLinks: {...user.socialLinks, linkedin: e.target.value}})} 
+                      placeholder="https://linkedin.com/in/..." 
+                      style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '8px', background: '#f9fafb', border: '1px solid #d1d5db', color: '#111827', outline: 'none', fontSize: '0.9rem' }} 
+                    />
+                  </div>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#374151', marginBottom: '0.5rem' }}>Google Business URL</label>
+                    <input 
+                      type="url" 
+                      value={user.socialLinks?.googleBusiness || ''} 
+                      onChange={(e) => setUser({...user, socialLinks: {...user.socialLinks, googleBusiness: e.target.value}})} 
+                      placeholder="https://g.page/..." 
+                      style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '8px', background: '#f9fafb', border: '1px solid #d1d5db', color: '#111827', outline: 'none', fontSize: '0.9rem' }} 
+                    />
+                  </div>
+                </div>
+
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                  <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 800, color: '#374151' }}>Custom Links</label>
                   <button 
                     type="button"
-                    onClick={() => setUser({...user, customLinks: [...(user.customLinks || []), { platform: '', url: '' }]})}
+                    onClick={() => setUser({...user, customLinks: [...(user.customLinks || []), { platform: '', url: '', icon: 'external' }]})}
                     style={{ background: '#f3f4f6', color: '#111827', border: '1px solid #d1d5db', padding: '0.4rem 0.8rem', borderRadius: '6px', fontWeight: 600, cursor: 'pointer', fontSize: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}
                   >
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
@@ -450,11 +607,25 @@ function ProfileSettingsContent() {
                     </div>
                   )}
                   {(user.customLinks || []).map((link, idx) => (
-                    <div key={idx} style={{ display: 'grid', gridTemplateColumns: '1fr 2fr auto', gap: '1rem', alignItems: 'start' }}>
+                    <div key={idx} style={{ display: 'grid', gridTemplateColumns: 'auto 1fr 2fr auto', gap: '0.5rem', alignItems: 'start' }}>
+                      <div>
+                        <select
+                          value={link.icon || 'external'}
+                          onChange={(e) => {
+                            const newLinks = [...user.customLinks];
+                            newLinks[idx].icon = e.target.value;
+                            setUser({...user, customLinks: newLinks});
+                          }}
+                          style={{ padding: '0.7rem', borderRadius: '8px', background: '#f9fafb', border: '1px solid #d1d5db', outline: 'none', fontSize: '0.9rem' }}
+                        >
+                          <option value="external">↗️ Link</option>
+                          <option value="globe">🌐 Web</option>
+                        </select>
+                      </div>
                       <div>
                         <input 
                           type="text" 
-                          placeholder="Platform (e.g. LinkedIn)" 
+                          placeholder="Name (e.g. My Zillow)" 
                           value={link.platform} 
                           onChange={(e) => {
                             const newLinks = [...user.customLinks];
@@ -523,6 +694,131 @@ function ProfileSettingsContent() {
                 </div>
               </div>
 
+              {/* Featured Listings */}
+              <div style={{ borderTop: '1px solid #e5e7eb', marginTop: '1rem', paddingTop: '1.5rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.95rem', fontWeight: 800, color: '#111827' }}>Featured Listings</label>
+                    <p style={{ fontSize: '0.8rem', color: '#6b7280', margin: '0.25rem 0 0 0' }}>Select properties to feature on your digital business card.</p>
+                  </div>
+                </div>
+                
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', maxHeight: '300px', overflowY: 'auto', background: '#f9fafb', border: '1px solid #d1d5db', borderRadius: '8px', padding: '1rem' }}>
+                  {allListings.length === 0 ? (
+                    <p style={{ color: '#6b7280', fontSize: '0.85rem', textAlign: 'center' }}>No listings available.</p>
+                  ) : (
+                    allListings.map(listing => (
+                      <label key={listing.id} style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', cursor: 'pointer', padding: '0.5rem', background: '#fff', border: '1px solid #e5e7eb', borderRadius: '6px' }}>
+                        <input 
+                          type="checkbox"
+                          checked={(user.featuredListings || []).includes(listing.id)}
+                          onChange={(e) => {
+                            const newFeatured = e.target.checked 
+                              ? [...(user.featuredListings || []), listing.id]
+                              : (user.featuredListings || []).filter(id => id !== listing.id);
+                            setUser({...user, featuredListings: newFeatured});
+                          }}
+                          style={{ width: '18px', height: '18px' }}
+                        />
+                        <div style={{ flex: 1 }}>
+                          <div style={{ fontWeight: 700, fontSize: '0.9rem', color: '#111827' }}>{listing.title}</div>
+                          <div style={{ fontSize: '0.8rem', color: '#6b7280' }}>{listing.address?.city} • ${listing.price?.toLocaleString()}</div>
+                        </div>
+                      </label>
+                    ))
+                  )}
+                </div>
+              </div>
+
+              {/* Reviews */}
+              <div style={{ borderTop: '1px solid #e5e7eb', marginTop: '1rem', paddingTop: '1.5rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.95rem', fontWeight: 800, color: '#111827' }}>Client Reviews</label>
+                    <p style={{ fontSize: '0.8rem', color: '#6b7280', margin: '0.25rem 0 0 0' }}>Manually add client testimonials to display on your profile.</p>
+                  </div>
+                  <button 
+                    type="button"
+                    onClick={() => setUser({...user, reviews: [...(user.reviews || []), { author: '', text: '', rating: 5 }]})}
+                    style={{ background: '#f3f4f6', color: '#111827', border: '1px solid #d1d5db', padding: '0.4rem 0.8rem', borderRadius: '6px', fontWeight: 600, cursor: 'pointer', fontSize: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    Add Review
+                  </button>
+                </div>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                  {(!user.reviews || user.reviews.length === 0) && (
+                    <div style={{ background: '#f9fafb', border: '1px dashed #d1d5db', borderRadius: '8px', padding: '1.5rem', textAlign: 'center', color: '#6b7280', fontSize: '0.85rem' }}>
+                      No reviews added yet.
+                    </div>
+                  )}
+                  {(user.reviews || []).map((review, idx) => (
+                    <div key={idx} style={{ background: '#f9fafb', border: '1px solid #d1d5db', borderRadius: '8px', padding: '1rem', position: 'relative' }}>
+                      <button 
+                        type="button" 
+                        onClick={() => {
+                          const newReviews = [...user.reviews];
+                          newReviews.splice(idx, 1);
+                          setUser({...user, reviews: newReviews});
+                        }}
+                        style={{ position: 'absolute', top: '0.5rem', right: '0.5rem', background: '#fee2e2', color: '#ef4444', border: 'none', padding: '0.3rem', borderRadius: '4px', cursor: 'pointer' }}
+                        title="Delete Review"
+                      >
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                      </button>
+
+                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                        <div>
+                          <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, color: '#374151', marginBottom: '0.3rem' }}>Client Name</label>
+                          <input 
+                            type="text" 
+                            value={review.author} 
+                            onChange={(e) => {
+                              const newReviews = [...user.reviews];
+                              newReviews[idx].author = e.target.value;
+                              setUser({...user, reviews: newReviews});
+                            }}
+                            style={{ width: '100%', padding: '0.6rem 0.8rem', borderRadius: '6px', background: '#fff', border: '1px solid #d1d5db', outline: 'none', fontSize: '0.9rem' }} 
+                          />
+                        </div>
+                        <div>
+                          <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, color: '#374151', marginBottom: '0.3rem' }}>Rating</label>
+                          <select 
+                            value={review.rating} 
+                            onChange={(e) => {
+                              const newReviews = [...user.reviews];
+                              newReviews[idx].rating = parseInt(e.target.value);
+                              setUser({...user, reviews: newReviews});
+                            }}
+                            style={{ width: '100%', padding: '0.6rem 0.8rem', borderRadius: '6px', background: '#fff', border: '1px solid #d1d5db', outline: 'none', fontSize: '0.9rem' }}
+                          >
+                            <option value={5}>5 Stars</option>
+                            <option value={4}>4 Stars</option>
+                            <option value={3}>3 Stars</option>
+                            <option value={2}>2 Stars</option>
+                            <option value={1}>1 Star</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div>
+                        <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, color: '#374151', marginBottom: '0.3rem' }}>Review Text</label>
+                        <textarea 
+                          value={review.text} 
+                          onChange={(e) => {
+                            const newReviews = [...user.reviews];
+                            newReviews[idx].text = e.target.value;
+                            setUser({...user, reviews: newReviews});
+                          }}
+                          rows={3} 
+                          style={{ width: '100%', padding: '0.6rem 0.8rem', borderRadius: '6px', background: '#fff', border: '1px solid #d1d5db', outline: 'none', fontSize: '0.9rem', resize: 'vertical' }} 
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               <div style={{ marginTop: '1rem', paddingTop: '1.5rem', borderTop: '1px solid #e5e7eb', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div style={{ color: message.includes('success') ? '#10b981' : '#ef4444', fontWeight: 600, fontSize: '0.9rem' }}>
                   {message}
@@ -563,71 +859,64 @@ function ProfileSettingsContent() {
         {/* RIGHT COLUMN: LIVE PREVIEW CARD */}
         <div style={{ position: 'sticky', top: '3rem', alignSelf: 'start' }}>
           <div style={{ marginBottom: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <h3 style={{ fontSize: '1rem', fontWeight: 800, color: '#111827', margin: 0, textTransform: 'uppercase', letterSpacing: '1px' }}>Live Preview</h3>
-            <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#319795', background: '#e6fffa', padding: '0.2rem 0.6rem', borderRadius: '12px' }}>Digital Card</span>
-          </div>
-          
-          <div style={{ background: '#ffffff', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)', border: '1px solid #e5e7eb' }}>
-            {/* Header Banner */}
-            <div style={{ height: '120px', background: 'linear-gradient(135deg, #4fd1c5 0%, #2c7a7b 100%)', position: 'relative' }}>
-              {user.logoUrl && (
-                <div style={{ position: 'absolute', top: '1rem', right: '1rem', background: 'rgba(255,255,255,0.9)', padding: '0.5rem', borderRadius: '8px', height: '40px', display: 'flex', alignItems: 'center' }}>
-                  <img src={user.logoUrl} alt="Company Logo" style={{ maxHeight: '100%', maxWidth: '100px', objectFit: 'contain' }} />
-                </div>
-              )}
-            </div>
-
-            {/* Avatar overlapping banner */}
-            <div style={{ padding: '0 2rem', display: 'flex', justifyContent: 'center', marginTop: '-60px', position: 'relative' }}>
-               <div style={{ width: '120px', height: '120px', borderRadius: '50%', backgroundColor: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, color: '#319795', fontSize: '3rem', border: '4px solid #ffffff', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)', overflow: 'hidden' }}>
-                {user.avatarUrl ? (
-                  <img src={user.avatarUrl} alt="Avatar" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                ) : (
-                  `${user.firstName?.[0] || ''}${user.lastName?.[0] || ''}`
-                )}
-              </div>
-            </div>
-
-            {/* Profile Info */}
-            <div style={{ padding: '1.5rem 2rem 2rem', textAlign: 'center' }}>
-              <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#111827', margin: '0 0 0.25rem 0' }}>
-                {user.firstName || 'First'} {user.lastName || 'Last'}
-              </h2>
-              <p style={{ fontSize: '0.9rem', fontWeight: 700, color: '#319795', margin: '0 0 0.25rem 0' }}>
-                {user.title || 'Job Title'}
-              </p>
-              <p style={{ fontSize: '0.85rem', color: '#6b7280', margin: '0 0 1.5rem 0', fontWeight: 600 }}>
-                {user.companyName || 'Company Name'}
-              </p>
-
-              <div style={{ width: '40px', height: '4px', background: '#e5e7eb', margin: '0 auto 1.5rem', borderRadius: '2px' }}></div>
-
-              <p style={{ fontSize: '0.9rem', color: '#4b5563', lineHeight: '1.6', margin: '0 0 2rem 0', fontStyle: 'italic' }}>
-                "{user.shortBio || 'Add a short bio to let clients know a little about your expertise and dedication.'}"
-              </p>
-
-              {/* Action Buttons */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                {user.phone && (
-                  <a href={`tel:${user.phone}`} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', width: '100%', background: '#111827', color: '#fff', padding: '0.8rem', borderRadius: '8px', textDecoration: 'none', fontWeight: 700, fontSize: '0.9rem', transition: 'background 0.2s' }}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                    Call {user.firstName || 'Me'}
-                  </a>
-                )}
-                <a href="#message" onClick={(e) => { e.preventDefault(); alert("In the live card, this will open the system's built-in message form."); }} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', width: '100%', background: '#f3f4f6', color: '#111827', padding: '0.8rem', borderRadius: '8px', textDecoration: 'none', fontWeight: 700, fontSize: '0.9rem', transition: 'background 0.2s', border: '1px solid #e5e7eb' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                  Message
-                </a>
-              </div>
+            <div>
+              <h3 style={{ fontSize: '1rem', fontWeight: 800, color: '#111827', margin: 0, textTransform: 'uppercase', letterSpacing: '1px' }}>Live Preview</h3>
+              <a href={`/${user.firstName?.toLowerCase()}-${user.lastName?.toLowerCase()}-links`} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.75rem', color: '#2563eb', textDecoration: 'underline' }}>View Public Page ↗</a>
             </div>
             
-            <div style={{ background: '#f9fafb', padding: '1rem', borderTop: '1px solid #e5e7eb', textAlign: 'center', fontSize: '0.75rem', color: '#9ca3af', fontWeight: 600 }}>
-              {user.street ? (
-                <>
-                  <div>{user.street}{user.street2 ? `, ${user.street2}` : ''}</div>
-                  <div>{user.city ? `${user.city}, ` : ''}{user.state} {user.zip}</div>
-                </>
-              ) : 'Office Address not provided'}
+            {/* Device Toggles */}
+            <div style={{ display: 'flex', background: '#f3f4f6', padding: '0.2rem', borderRadius: '8px', gap: '0.2rem' }}>
+              <button 
+                type="button"
+                onClick={() => setPreviewMode('mobile')}
+                style={{ padding: '0.4rem', borderRadius: '6px', background: previewMode === 'mobile' ? '#fff' : 'transparent', color: previewMode === 'mobile' ? '#111827' : '#6b7280', border: 'none', boxShadow: previewMode === 'mobile' ? '0 1px 3px rgba(0,0,0,0.1)' : 'none', cursor: 'pointer', transition: 'all 0.2s' }}
+                title="Mobile View"
+              >
+                <Smartphone size={16} />
+              </button>
+              <button 
+                type="button"
+                onClick={() => setPreviewMode('tablet')}
+                style={{ padding: '0.4rem', borderRadius: '6px', background: previewMode === 'tablet' ? '#fff' : 'transparent', color: previewMode === 'tablet' ? '#111827' : '#6b7280', border: 'none', boxShadow: previewMode === 'tablet' ? '0 1px 3px rgba(0,0,0,0.1)' : 'none', cursor: 'pointer', transition: 'all 0.2s' }}
+                title="Tablet View"
+              >
+                <Tablet size={16} />
+              </button>
+              <button 
+                type="button"
+                onClick={() => setPreviewMode('desktop')}
+                style={{ padding: '0.4rem', borderRadius: '6px', background: previewMode === 'desktop' ? '#fff' : 'transparent', color: previewMode === 'desktop' ? '#111827' : '#6b7280', border: 'none', boxShadow: previewMode === 'desktop' ? '0 1px 3px rgba(0,0,0,0.1)' : 'none', cursor: 'pointer', transition: 'all 0.2s' }}
+                title="Desktop View"
+              >
+                <Monitor size={16} />
+              </button>
+            </div>
+          </div>
+          
+          <div style={{ 
+            display: 'flex', 
+            justifyContent: 'center', 
+            background: '#e5e7eb', 
+            padding: previewMode === 'desktop' ? '0' : '1rem', 
+            borderRadius: previewMode === 'desktop' ? '12px' : '24px',
+            transition: 'all 0.3s ease',
+            height: previewMode === 'desktop' ? '600px' : 'auto'
+          }}>
+            <div style={{ 
+              width: previewMode === 'mobile' ? '375px' : previewMode === 'tablet' ? '500px' : '100%', 
+              height: previewMode === 'desktop' ? '100%' : '800px', 
+              background: '#ffffff', 
+              borderRadius: previewMode === 'desktop' ? '12px' : '36px', 
+              overflowY: 'auto', 
+              boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)', 
+              border: previewMode === 'desktop' ? '1px solid #d1d5db' : '8px solid #1f2937',
+              transition: 'all 0.3s ease'
+            }}>
+              <LinktreeProfile 
+                user={user} 
+                featuredListingsData={allListings.filter(l => (user.featuredListings || []).includes(l.id))} 
+                previewMode={previewMode as any}
+              />
             </div>
           </div>
         </div>
