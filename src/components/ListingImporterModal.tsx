@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { X, UploadCloud, RefreshCw, Link as LinkIcon, Check, Globe, Building, Home } from 'lucide-react';
+import { X, UploadCloud, RefreshCw, Link as LinkIcon, Check, Globe, Building, Home, MousePointer2 } from 'lucide-react';
 import { Listing } from '@/types/listings';
 import { useRouter } from 'next/navigation';
 
@@ -12,6 +12,66 @@ export default function ListingImporterModal({ isOpen, onClose }: { isOpen: bool
   const [importedListings, setImportedListings] = useState<Listing[]>([]);
   const [isPolling, setIsPolling] = useState(false);
   const [filterType, setFilterType] = useState<'All' | 'COMMERCIAL' | 'RESIDENTIAL'>('All');
+
+  // Bookmarklet Javascript Code (Minified and URI encoded)
+  const bookmarkletCode = `javascript:(function(){
+    const url = window.location.href;
+    const isCommercial = url.includes('loopnet.com') || url.includes('crexi.com');
+    const sourcePlatform = url.includes('loopnet.com') ? 'LoopNet' : url.includes('crexi.com') ? 'Crexi' : url.includes('zillow.com') ? 'Zillow' : url.includes('redfin.com') ? 'Redfin' : 'Web';
+    let data = { listingType: isCommercial ? 'COMMERCIAL' : 'RESIDENTIAL', sourceUrl: url, sourcePlatform: sourcePlatform, address: '', city: '', state: '', zip: '', photos: [] };
+    const jsonLdElements = document.querySelectorAll('script[type="application/ld+json"]');
+    jsonLdElements.forEach(script => {
+      try {
+        const parsed = JSON.parse(script.innerText);
+        const schema = Array.isArray(parsed) ? parsed[0] : parsed;
+        if (schema.address) {
+          data.address = schema.address.streetAddress || data.address;
+          data.city = schema.address.addressLocality || data.city;
+          data.state = schema.address.addressRegion || data.state;
+          data.zip = schema.address.postalCode || data.zip;
+        }
+        data.description = schema.description || data.description;
+        if (schema.photo || schema.image) {
+          let imgs = schema.photo || schema.image;
+          if (typeof imgs === 'string') data.photos.push(imgs);
+          if (Array.isArray(imgs)) data.photos.push(...imgs.map(i => typeof i === 'string' ? i : i.url));
+        }
+      } catch (e) {}
+    });
+    if (url.includes('loopnet.com')) {
+      data.address = data.address || document.querySelector('.property-timestamp-title')?.innerText || document.querySelector('h1')?.innerText;
+      const rentCol = document.querySelector('.rent-data-column');
+      if (rentCol) data.leaseRate = rentCol.innerText;
+      const capRateEl = Array.from(document.querySelectorAll('td')).find(el => el.innerText.includes('Cap Rate'));
+      if (capRateEl && capRateEl.nextElementSibling) data.capRate = parseFloat(capRateEl.nextElementSibling.innerText);
+      const imgElements = document.querySelectorAll('.carousel-hero-image img, .carousel-slide img');
+      data.photos = Array.from(imgElements).map(img => img.src).filter(Boolean);
+    }
+    if (url.includes('zillow.com')) {
+      data.address = data.address || document.querySelector('h1')?.innerText;
+      const priceEl = document.querySelector('[data-testid="price"] span');
+      if (priceEl) data.price = priceEl.innerText;
+      const bedBathElements = document.querySelectorAll('[data-testid="bed-bath-sqft-fact-container"] span');
+      if (bedBathElements.length >= 3) {
+        data.beds = parseInt(bedBathElements[0].innerText) || data.beds;
+        data.baths = parseInt(bedBathElements[1].innerText) || data.baths;
+        data.sqft = parseInt(bedBathElements[2].innerText.replace(/[^0-9]/g,'')) || data.sqft;
+      }
+      const imgElements = document.querySelectorAll('.media-stream li img');
+      if (data.photos.length === 0) data.photos = Array.from(imgElements).map(img => img.src).filter(Boolean);
+    }
+    data.photos = [...new Set(data.photos)].slice(0, 10);
+    alert('Importing to ClickMe CRM...');
+    fetch('http://localhost:3000/api/crm/import-listing', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    }).then(r => r.json()).then(res => {
+      alert('Success! Listing imported.');
+    }).catch(e => {
+      alert('Error importing listing. Make sure your local server is running.');
+    });
+  })();`.replace(/\s+/g, ' ');
 
   // Poll for recently imported listings
   useEffect(() => {
@@ -81,30 +141,37 @@ export default function ListingImporterModal({ isOpen, onClose }: { isOpen: bool
           <div className="grid lg:grid-cols-2 gap-8 h-full">
             {/* Left Col: Extension Sync */}
             <div className="space-y-6 flex flex-col">
+              
               <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-green-500"></div>
+                <div className="absolute top-0 left-0 w-full h-1 bg-blue-500"></div>
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="font-bold text-gray-900 flex items-center gap-2">
-                    <Globe className="w-5 h-5 text-green-500" /> Web Clipper Active
+                    <MousePointer2 className="w-5 h-5 text-blue-500" /> 1-Click Install
                   </h3>
-                  {isPolling && <RefreshCw className="w-4 h-4 text-green-500 animate-spin" />}
+                  {isPolling && <RefreshCw className="w-4 h-4 text-blue-500 animate-spin" />}
                 </div>
-                <p className="text-sm text-gray-600 mb-4 leading-relaxed">
-                  The Chrome Extension is listening. Browse commercial sites (<strong>LoopNet, Crexi</strong>) or residential sites (<strong>Zillow, Redfin, MLS</strong>) and click the floating <strong>"Import to CRM"</strong> button to sync data.
+                <p className="text-sm text-gray-600 mb-6 leading-relaxed">
+                  No extensions required! Just drag the button below into your browser's bookmarks bar. Click it anytime you are viewing a property on LoopNet, Crexi, Zillow, or Redfin to instantly import it.
                 </p>
-                <div className="flex gap-2 mb-6">
-                  <span className="bg-blue-50 text-blue-700 text-xs font-bold px-2 py-1 rounded border border-blue-100 flex items-center gap-1"><Building className="w-3 h-3"/> Commercial</span>
-                  <span className="bg-green-50 text-green-700 text-xs font-bold px-2 py-1 rounded border border-green-100 flex items-center gap-1"><Home className="w-3 h-3"/> Residential</span>
+                
+                <div className="flex justify-center mb-4">
+                  <a 
+                    href={bookmarkletCode}
+                    className="inline-block px-6 py-3 bg-[#111] text-[#D4AF37] font-bold rounded-full shadow-lg shadow-black/20 hover:scale-105 transition-transform border-2 border-[#D4AF37] cursor-grab active:cursor-grabbing"
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    📥 D&G Dash
+                  </a>
                 </div>
-                <button className="w-full py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold rounded-lg text-sm transition-colors border border-gray-300">
-                  Extension Installation Guide
-                </button>
+                <div className="text-center text-xs text-gray-400 font-semibold uppercase tracking-wider">
+                  ↑ Drag me to your bookmarks bar ↑
+                </div>
               </div>
 
               {/* Manual Entry */}
               <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex-1">
                 <h3 className="font-bold text-gray-900 mb-2">Manual Link Import</h3>
-                <p className="text-sm text-gray-500 mb-4">Paste a URL if the extension is unavailable.</p>
+                <p className="text-sm text-gray-500 mb-4">Paste a URL if the Web Clipper is unavailable.</p>
                 
                 <form onSubmit={handleManualImport}>
                   <div className="relative mb-4">

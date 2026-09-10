@@ -26,11 +26,21 @@ export interface CRMPropertyImport {
   tenancy?: 'Single' | 'Multi';
 }
 
+// Add CORS headers to allow Bookmarklet to POST from other domains
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+};
+
+export async function OPTIONS() {
+  return NextResponse.json({}, { headers: corsHeaders });
+}
+
 export async function POST(req: Request) {
   try {
     const payload: CRMPropertyImport = await req.json();
 
-    // Map extension payload to our Listing schema
     const category = payload.listingType === 'COMMERCIAL' ? 'Commercial' : 'Residential';
     const fallbackTitle = category === 'Commercial' 
       ? `Commercial Property in ${payload.city || 'Unknown City'}` 
@@ -70,7 +80,6 @@ export async function POST(req: Request) {
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
       
-      // Custom metadata
       sourcePlatform: payload.sourcePlatform || '',
       sourceUrl: payload.sourceUrl || '',
     };
@@ -86,9 +95,15 @@ export async function POST(req: Request) {
 
     await fs.writeFile(dataPath, JSON.stringify(listings, null, 2));
 
-    return NextResponse.json({ message: 'Listing imported successfully', listing: finalListing }, { status: 201 });
+    return NextResponse.json(
+      { message: 'Listing imported successfully', listing: finalListing }, 
+      { status: 201, headers: corsHeaders }
+    );
   } catch (error) {
     console.error('Error importing listing:', error);
-    return NextResponse.json({ error: 'Failed to import listing' }, { status: 500 });
+    return NextResponse.json(
+      { error: 'Failed to import listing' }, 
+      { status: 500, headers: corsHeaders }
+    );
   }
 }

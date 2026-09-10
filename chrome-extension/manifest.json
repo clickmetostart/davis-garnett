@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "ClickMe CRM Web Clipper",
+  "name": "D&G Dash Web Clipper",
   "version": "1.0",
   "description": "Extracts real estate listings (Commercial and Residential) and sends them to the ClickMe CRM.",
   "permissions": [
