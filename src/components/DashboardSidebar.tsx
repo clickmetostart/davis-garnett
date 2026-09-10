@@ -7,9 +7,11 @@ import { usePathname } from 'next/navigation';
 export default function DashboardSidebar() {
   const [isExpanded, setIsExpanded] = useState(true);
   const [currentUser, setCurrentUser] = useState<any>(null);
+  const [isMounted, setIsMounted] = useState(false);
   const pathname = usePathname();
 
   React.useEffect(() => {
+    setIsMounted(true);
     fetch('/api/auth/me')
       .then(res => res.json())
       .then(data => {
@@ -90,7 +92,7 @@ export default function DashboardSidebar() {
             )}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', padding: isExpanded ? '0 1rem' : '0' }}>
               {group.items.map((item) => {
-                const isActive = pathname === item.href.split('?')[0] && (item.href.includes('?') ? typeof window !== 'undefined' && window.location.search.includes(item.href.split('?')[1]) : true);
+                const isActive = pathname === item.href.split('?')[0] && (item.href.includes('?') ? isMounted && window.location.search.includes(item.href.split('?')[1]) : true);
                 return (
                   <Link key={item.name} href={item.href} style={{ textDecoration: 'none' }}>
                     <div 

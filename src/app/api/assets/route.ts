@@ -31,8 +31,8 @@ export async function GET(req: Request) {
     
     const assets = await Promise.all(
       files.map(async (dirent) => {
-        const filePath = path.join(targetDir, dirent.name);
-        const stats = await fs.stat(filePath);
+        const filePath = path.join(/*turbopackIgnore: true*/ targetDir, dirent.name);
+        const stats = await fs.stat(/*turbopackIgnore: true*/ filePath);
         const isDirectory = dirent.isDirectory();
         
         return {
@@ -75,7 +75,7 @@ export async function POST(req: Request) {
       if (!folderName) return NextResponse.json({ error: 'Folder name required' }, { status: 400 });
       
       const safeFolderName = folderName.replace(/[^a-zA-Z0-9.\-_ ]/g, '_');
-      await fs.mkdir(path.join(targetDir, safeFolderName), { recursive: true });
+      await fs.mkdir(/*turbopackIgnore: true*/ path.join(/*turbopackIgnore: true*/ targetDir, safeFolderName), { recursive: true });
       return NextResponse.json({ success: true });
     }
 
@@ -87,9 +87,9 @@ export async function POST(req: Request) {
 
     const buffer = Buffer.from(await file.arrayBuffer());
     const filename = file.name.replace(/[^a-zA-Z0-9.\-_ ]/g, '_');
-    const filePath = path.join(targetDir, filename);
+    const filePath = path.join(/*turbopackIgnore: true*/ targetDir, filename);
 
-    await fs.writeFile(filePath, buffer);
+    await fs.writeFile(/*turbopackIgnore: true*/ filePath, buffer);
 
     return NextResponse.json({ success: true });
   } catch (error) {
@@ -109,10 +109,10 @@ export async function PUT(req: Request) {
     const destDir = getSafePath(newPath);
     const safeFilename = path.basename(filename);
 
-    const sourceFilePath = path.join(sourceDir, safeFilename);
-    const destFilePath = path.join(destDir, safeFilename);
+    const sourceFilePath = path.join(/*turbopackIgnore: true*/ sourceDir, safeFilename);
+    const destFilePath = path.join(/*turbopackIgnore: true*/ destDir, safeFilename);
 
-    await fs.rename(sourceFilePath, destFilePath);
+    await fs.rename(/*turbopackIgnore: true*/ sourceFilePath, destFilePath);
 
     return NextResponse.json({ success: true });
   } catch (error) {
@@ -130,13 +130,13 @@ export async function DELETE(req: Request) {
 
     const targetDir = getSafePath(subPath || '');
     const safeFilename = path.basename(filename);
-    const filePath = path.join(targetDir, safeFilename);
+    const filePath = path.join(/*turbopackIgnore: true*/ targetDir, safeFilename);
 
-    const stats = await fs.stat(filePath);
+    const stats = await fs.stat(/*turbopackIgnore: true*/ filePath);
     if (stats.isDirectory()) {
-      await fs.rm(filePath, { recursive: true, force: true });
+      await fs.rm(/*turbopackIgnore: true*/ filePath, { recursive: true, force: true });
     } else {
-      await fs.unlink(filePath);
+      await fs.unlink(/*turbopackIgnore: true*/ filePath);
     }
     
     return NextResponse.json({ success: true });
