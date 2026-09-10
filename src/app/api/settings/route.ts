@@ -17,7 +17,14 @@ const readData = () => {
           analyticsAcknowledged: false,
           socialTraining: false,
           aiContentTraining: false,
-          dummyClientEntered: false
+          dummyClientEntered: false,
+          listingsWalkthrough: false,
+          flowWalkthrough: false,
+          assetsWalkthrough: false,
+          marketingWalkthrough: false,
+          schedulerWalkthrough: false,
+          reputationWalkthrough: false,
+          communicationsWalkthrough: false
         }
       };
       fs.writeFileSync(dataFilePath, JSON.stringify(defaultData, null, 2));

@@ -18,6 +18,10 @@ function MarketingEngineContent() {
   const [listingSearchQuery, setListingSearchQuery] = useState('');
   const [emailListings, setEmailListings] = useState<any[]>([]);
 
+  // Create Campaign Modal Mockup
+  const [showCreateCampaignModal, setShowCreateCampaignModal] = useState(false);
+  const [campaignListings, setCampaignListings] = useState<any[]>([]);
+
   useEffect(() => {
     fetch('/api/leads')
       .then(res => res.json())
@@ -89,7 +93,7 @@ function MarketingEngineContent() {
           <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
               <h2 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#111827', margin: 0 }}>Active Campaigns</h2>
-              <button style={{ background: '#2563eb', color: '#fff', border: 'none', padding: '0.6rem 1.2rem', borderRadius: '6px', fontWeight: 700, cursor: 'pointer', fontSize: '0.9rem' }}>+ Create Campaign</button>
+              <button onClick={() => setShowCreateCampaignModal(true)} style={{ background: '#2563eb', color: '#fff', border: 'none', padding: '0.6rem 1.2rem', borderRadius: '6px', fontWeight: 700, cursor: 'pointer', fontSize: '0.9rem' }}>+ Create Campaign</button>
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '2rem' }}>
@@ -368,7 +372,11 @@ function MarketingEngineContent() {
                       <button 
                         disabled={isAlreadyAdded}
                         onClick={() => {
-                          setEmailListings([...emailListings, listing]);
+                          if (showCreateCampaignModal) {
+                            setCampaignListings([...campaignListings, listing]);
+                          } else {
+                            setEmailListings([...emailListings, listing]);
+                          }
                           setIsListingModalOpen(false);
                         }}
                         style={{ background: isAlreadyAdded ? '#e5e7eb' : '#2563eb', color: isAlreadyAdded ? '#9ca3af' : '#fff', border: 'none', padding: '0.5rem 1rem', borderRadius: '6px', fontWeight: 600, cursor: isAlreadyAdded ? 'not-allowed' : 'pointer', fontSize: '0.8rem' }}
@@ -381,6 +389,57 @@ function MarketingEngineContent() {
               {allListings.length === 0 && (
                 <div style={{ textAlign: 'center', padding: '2rem', color: '#6b7280', fontSize: '0.9rem' }}>No listings available.</div>
               )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Create Campaign Modal Overlay */}
+      {showCreateCampaignModal && (
+        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(17, 24, 39, 0.7)', zIndex: 100, display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(4px)' }}>
+          <div style={{ background: '#ffffff', width: '100%', maxWidth: '600px', borderRadius: '16px', padding: '2.5rem', boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)', position: 'relative' }}>
+            <button onClick={() => setShowCreateCampaignModal(false)} style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', background: 'transparent', border: 'none', color: '#6b7280', cursor: 'pointer' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#111827', margin: '0 0 0.5rem 0' }}>Create New Campaign</h2>
+            <p style={{ color: '#6b7280', marginBottom: '2rem' }}>Set up an automated marketing campaign to nurture your leads.</p>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+              <div>
+                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#374151', marginBottom: '0.5rem' }}>Campaign Name</label>
+                <input type="text" placeholder="e.g., Waterfront Properties Drip" style={{ width: '100%', padding: '0.8rem', borderRadius: '8px', border: '1px solid #d1d5db', outline: 'none' }} />
+              </div>
+              <div>
+                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#374151', marginBottom: '0.5rem' }}>Target Audience</label>
+                <select style={{ width: '100%', padding: '0.8rem', borderRadius: '8px', border: '1px solid #d1d5db', outline: 'none', background: '#fff' }}>
+                  <option>High Net-Worth Commercial</option>
+                  <option>Website Leads (Bayshore)</option>
+                  <option>All CRM Contacts</option>
+                </select>
+              </div>
+              
+              <div>
+                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#374151', marginBottom: '0.5rem' }}>Attach Listings (Optional)</label>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1rem' }}>
+                  {campaignListings.map(l => (
+                    <div key={l.id} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: '#f3f4f6', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.8rem', fontWeight: 600 }}>
+                      <span style={{ color: '#374151' }}>{l.streetAddress}</span>
+                      <button onClick={() => setCampaignListings(campaignListings.filter(cl => cl.id !== l.id))} style={{ background: 'transparent', border: 'none', color: '#9ca3af', cursor: 'pointer', padding: 0 }}>&times;</button>
+                    </div>
+                  ))}
+                  <button onClick={() => setIsListingModalOpen(true)} style={{ background: '#eff6ff', color: '#2563eb', border: '1px dashed #3b82f6', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.8rem', fontWeight: 600, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+                    + Add Listing
+                  </button>
+                </div>
+                <p style={{ fontSize: '0.75rem', color: '#9ca3af', margin: 0 }}>Listings selected here will be automatically formatted and injected into your email and social media drip steps.</p>
+              </div>
+            </div>
+
+            <div style={{ marginTop: '2.5rem', display: 'flex', justifyContent: 'flex-end', gap: '1rem' }}>
+              <button onClick={() => setShowCreateCampaignModal(false)} style={{ background: 'transparent', border: '1px solid #d1d5db', color: '#4b5563', padding: '0.6rem 1.5rem', borderRadius: '6px', fontWeight: 600 }}>Cancel</button>
+              <button onClick={() => { alert(`Campaign Created!`); setShowCreateCampaignModal(false); }} style={{ background: '#2563eb', color: '#fff', border: 'none', padding: '0.6rem 1.5rem', borderRadius: '6px', fontWeight: 700 }}>
+                Save & Build Workflow
+              </button>
             </div>
           </div>
         </div>

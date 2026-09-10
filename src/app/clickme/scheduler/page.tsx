@@ -213,6 +213,25 @@ function SocialSchedulerContent() {
                 </div>
 
                 <div>
+                  <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#4b5563', marginBottom: '0.5rem' }}>Attach Existing Content (Optional)</label>
+                  <select style={{ width: '100%', padding: '0.8rem', borderRadius: '8px', border: '1px solid #d1d5db', outline: 'none', background: '#f9fafb', color: '#111827', fontSize: '0.9rem' }}>
+                    <option value="">-- Select a Guide, Article, or Q&A --</option>
+                    <optgroup label="Guides">
+                      <option value="g1">Tampa Commercial Zoning Guide</option>
+                      <option value="g2">First-Time Homebuyer Checklist</option>
+                    </optgroup>
+                    <optgroup label="Articles">
+                      <option value="a1">Q3 Real Estate Market Report</option>
+                      <option value="a2">The ROI on Kitchen Remodels</option>
+                    </optgroup>
+                    <optgroup label="Q&As">
+                      <option value="q1">What is a DSCR Loan?</option>
+                      <option value="q2">How to Win a Bidding War in 2026</option>
+                    </optgroup>
+                  </select>
+                </div>
+
+                <div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
                     <label style={{ fontSize: '0.85rem', fontWeight: 700, color: '#4b5563' }}>Caption</label>
                     <button 

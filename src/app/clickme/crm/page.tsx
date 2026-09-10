@@ -72,6 +72,15 @@ function NetworkCRMContent() {
   // Submit state machine for onboarding
   const [submitState, setSubmitState] = useState<'idle' | 'ready' | 'confirming' | 'submitting' | 'completed' | 'hidden'>('hidden');
 
+  // Email Composer Modal State
+  const [isEmailComposerOpen, setIsEmailComposerOpen] = useState(false);
+  const [emailSubject, setEmailSubject] = useState('');
+  const [emailBody, setEmailBody] = useState('');
+  const [isAiAssisting, setIsAiAssisting] = useState(false);
+  
+  // Listing Attach Modal State
+  const [activeListingList, setActiveListingList] = useState<'listingsShown' | 'listingsToShow' | 'watchlist' | 'emailComposer'>('listingsShown');
+
   // Fetch Data
   const fetchLeads = () => {
     fetch('/api/leads').then(res => res.json()).then(data => {
@@ -275,6 +284,9 @@ function NetworkCRMContent() {
       customLinks: lead.customLinks || [],
       documents: lead.documents || [],
       attachedListings: lead.attachedListings || [],
+      listingsShown: lead.listingsShown || [],
+      listingsToShow: lead.listingsToShow || [],
+      watchlist: lead.watchlist || [],
       customFields: mergedCustomFields
     });
     setNewCustomFieldKey('');
@@ -308,7 +320,10 @@ function NetworkCRMContent() {
       zip: '',
       customLinks: [],
       documents: [],
-      attachedListings: []
+      attachedListings: [],
+      listingsShown: [],
+      listingsToShow: [],
+      watchlist: []
     });
     if (isActive) nextStep();
   };
@@ -346,6 +361,9 @@ function NetworkCRMContent() {
         customLinks: editData.customLinks,
         documents: editData.documents,
         attachedListings: editData.attachedListings,
+        listingsShown: editData.listingsShown,
+        listingsToShow: editData.listingsToShow,
+        watchlist: editData.watchlist,
         isShared: editData.isShared || false,
         ownerId: editData.ownerId || user?.id,
         isSpam: false,
@@ -378,6 +396,9 @@ function NetworkCRMContent() {
           customLinks: editData.customLinks,
           documents: editData.documents,
           attachedListings: editData.attachedListings,
+          listingsShown: editData.listingsShown,
+          listingsToShow: editData.listingsToShow,
+          watchlist: editData.watchlist,
           customFields: cleanCustomFields,
           isShared: editData.isShared || false,
           ownerId: editData.ownerId || user?.id
@@ -964,10 +985,11 @@ function NetworkCRMContent() {
         )}
       </div>
 
-      {/* Slide-out Drawer */}
+      {/* Massive Modal Overlay */}
       {(selectedLead || isAddingLead) && (
-        <div style={{ position: 'fixed', top: 0, right: 0, bottom: 0, width: '450px', background: '#ffffff', borderLeft: '1px solid #e5e7eb', display: 'flex', flexDirection: 'column', boxShadow: '-20px 0 40px rgba(0,0,0,0.05)', zIndex: 100000 }}>
-          <div style={{ padding: '1.5rem 2rem', borderBottom: '1px solid #e5e7eb', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#f9fafb' }}>
+        <div style={{ position: 'fixed', inset: 0, background: 'rgba(17, 24, 39, 0.7)', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100000 }}>
+          <div style={{ width: '90vw', height: '90vh', background: '#ffffff', borderRadius: '16px', display: 'flex', flexDirection: 'column', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.25)', overflow: 'hidden' }}>
+            <div style={{ padding: '1.5rem 2rem', borderBottom: '1px solid #e5e7eb', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#f9fafb' }}>
             <h2 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 800, color: '#111827' }}>
               {isAddingLead ? 'Add New Lead' : (isEditingLead ? 'Edit Lead' : selectedLead.name)}
             </h2>
@@ -979,6 +1001,15 @@ function NetworkCRMContent() {
                   setSelectedLead(updatedLead);
                 }} style={{ background: '#10b981', color: '#fff', border: 'none', padding: '0.4rem 1rem', borderRadius: '6px', fontWeight: 700, cursor: 'pointer', fontSize: '0.85rem' }}>
                   Add to My CRM
+                </button>
+              )}
+              {!isAddingLead && !isEditingLead && (
+                <button 
+                  onClick={() => setIsEmailComposerOpen(true)} 
+                  style={{ background: '#3b82f6', color: '#fff', border: 'none', padding: '0.4rem 1rem', borderRadius: '6px', fontWeight: 700, cursor: 'pointer', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  Email
                 </button>
               )}
               {!isAddingLead && !isEditingLead && (
@@ -1002,9 +1033,11 @@ function NetworkCRMContent() {
             </div>
           </div>
           
-          <div style={{ flex: 1, overflowY: 'auto', padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            {/* Standard Fields Section */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <div style={{ flex: 1, display: 'flex', overflow: 'hidden' }}>
+            {/* Left Column - Details */}
+            <div style={{ width: '450px', borderRight: '1px solid #e5e7eb', overflowY: 'auto', padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1.5rem', background: '#f9fafb' }}>
+              {/* Standard Fields Section */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #e5e7eb', paddingBottom: '0.5rem' }}>
                 <div style={{ fontSize: '0.9rem', fontWeight: 800, color: '#111827' }}>Standard Fields</div>
                 <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600, color: editData.isShared ? '#2563eb' : '#6b7280' }}>
@@ -1323,64 +1356,177 @@ function NetworkCRMContent() {
               )}
             </div>
 
-            {/* Attached Listings Section */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '0.5rem' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #e5e7eb', paddingBottom: '0.5rem' }}>
-                <div style={{ fontSize: '0.9rem', fontWeight: 800, color: '#111827' }}>Attached Listings</div>
-                <button 
-                  type="button"
-                  onClick={() => setIsAttachListingModalOpen(true)}
-                  style={{ background: '#f3f4f6', color: '#111827', border: '1px solid #d1d5db', padding: '0.3rem 0.6rem', borderRadius: '6px', fontWeight: 600, cursor: 'pointer', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.3rem' }}
-                >
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                  Attach Listing
-                </button>
+            </div>
+            
+            {/* Right Column - Activity & Properties */}
+            <div style={{ flex: 1, overflowY: 'auto', padding: '2rem', display: 'flex', flexDirection: 'column', gap: '2rem', background: '#ffffff' }}>
+              {/* Property Categories Section */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '0.5rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #e5e7eb', paddingBottom: '0.5rem' }}>
+                    <div style={{ fontSize: '0.9rem', fontWeight: 800, color: '#111827' }}>Listings To Show (Upcoming)</div>
+                    <button 
+                      type="button"
+                      onClick={() => { setActiveListingList('listingsToShow'); setIsAttachListingModalOpen(true); }}
+                      style={{ background: '#f3f4f6', color: '#111827', border: '1px solid #d1d5db', padding: '0.3rem 0.6rem', borderRadius: '6px', fontWeight: 600, cursor: 'pointer', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.3rem' }}
+                    >
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                      Add Property
+                    </button>
+                  </div>
+
+                  {(!editData.listingsToShow || editData.listingsToShow.length === 0) ? (
+                    <div style={{ fontSize: '0.85rem', color: '#9ca3af', fontStyle: 'italic', textAlign: 'center', padding: '1rem', border: '1px dashed #e5e7eb', borderRadius: '8px' }}>
+                      No listings here yet.
+                    </div>
+                  ) : (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                      {editData.listingsToShow.map((listingId: string, idx: number) => {
+                        const listing = allListings.find(l => l.id === listingId);
+                        if (!listing) return null;
+                        return (
+                          <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#f9fafb', padding: '0.8rem', borderRadius: '6px', border: '1px solid #e5e7eb', gap: '1rem' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', overflow: 'hidden' }}>
+                              <div style={{ width: '40px', height: '40px', background: '#e5e7eb', borderRadius: '4px', overflow: 'hidden', flexShrink: 0 }}>
+                                {listing.images && listing.images[0] && (
+                                  <img src={listing.images[0].url} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                )}
+                              </div>
+                              <div style={{ overflow: 'hidden' }}>
+                                <div style={{ fontSize: '0.85rem', fontWeight: 600, color: '#111827', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>{listing.streetAddress || listing.title}</div>
+                                <div style={{ fontSize: '0.7rem', color: '#6b7280' }}>{listing.askingPrice || listing.askingRent} &bull; {listing.status}</div>
+                              </div>
+                            </div>
+                            <button onClick={() => {
+                              const newListings = [...editData.listingsToShow];
+                              newListings.splice(idx, 1);
+                              setEditData({...editData, listingsToShow: newListings});
+                            }} style={{ background: 'transparent', border: 'none', color: '#ef4444', cursor: 'pointer', padding: '0.2rem' }}>
+                              &times;
+                            </button>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '0.5rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #e5e7eb', paddingBottom: '0.5rem' }}>
+                    <div style={{ fontSize: '0.9rem', fontWeight: 800, color: '#111827' }}>Listings Shown (Past)</div>
+                    <button 
+                      type="button"
+                      onClick={() => { setActiveListingList('listingsShown'); setIsAttachListingModalOpen(true); }}
+                      style={{ background: '#f3f4f6', color: '#111827', border: '1px solid #d1d5db', padding: '0.3rem 0.6rem', borderRadius: '6px', fontWeight: 600, cursor: 'pointer', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.3rem' }}
+                    >
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                      Add Property
+                    </button>
+                  </div>
+
+                  {(!editData.listingsShown || editData.listingsShown.length === 0) ? (
+                    <div style={{ fontSize: '0.85rem', color: '#9ca3af', fontStyle: 'italic', textAlign: 'center', padding: '1rem', border: '1px dashed #e5e7eb', borderRadius: '8px' }}>
+                      No listings here yet.
+                    </div>
+                  ) : (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                      {editData.listingsShown.map((listingId: string, idx: number) => {
+                        const listing = allListings.find(l => l.id === listingId);
+                        if (!listing) return null;
+                        return (
+                          <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#f9fafb', padding: '0.8rem', borderRadius: '6px', border: '1px solid #e5e7eb', gap: '1rem' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', overflow: 'hidden' }}>
+                              <div style={{ width: '40px', height: '40px', background: '#e5e7eb', borderRadius: '4px', overflow: 'hidden', flexShrink: 0 }}>
+                                {listing.images && listing.images[0] && (
+                                  <img src={listing.images[0].url} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                )}
+                              </div>
+                              <div style={{ overflow: 'hidden' }}>
+                                <div style={{ fontSize: '0.85rem', fontWeight: 600, color: '#111827', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>{listing.streetAddress || listing.title}</div>
+                                <div style={{ fontSize: '0.7rem', color: '#6b7280' }}>{listing.askingPrice || listing.askingRent} &bull; {listing.status}</div>
+                              </div>
+                            </div>
+                            <button onClick={() => {
+                              const newListings = [...editData.listingsShown];
+                              newListings.splice(idx, 1);
+                              setEditData({...editData, listingsShown: newListings});
+                            }} style={{ background: 'transparent', border: 'none', color: '#ef4444', cursor: 'pointer', padding: '0.2rem' }}>
+                              &times;
+                            </button>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
               </div>
 
-              {(!editData.attachedListings || editData.attachedListings.length === 0) ? (
-                <div style={{ fontSize: '0.85rem', color: '#9ca3af', fontStyle: 'italic', textAlign: 'center', padding: '1rem', border: '1px dashed #e5e7eb', borderRadius: '8px' }}>
-                  No listings attached to this contact.
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '0.5rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #e5e7eb', paddingBottom: '0.5rem' }}>
+                  <div style={{ fontSize: '0.9rem', fontWeight: 800, color: '#111827' }}>Client Watchlist</div>
+                  <button 
+                    type="button"
+                    onClick={() => { setActiveListingList('watchlist'); setIsAttachListingModalOpen(true); }}
+                    style={{ background: '#f3f4f6', color: '#111827', border: '1px solid #d1d5db', padding: '0.3rem 0.6rem', borderRadius: '6px', fontWeight: 600, cursor: 'pointer', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.3rem' }}
+                  >
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    Add Property
+                  </button>
                 </div>
-              ) : (
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  {editData.attachedListings.map((listingId: string, idx: number) => {
-                    const listing = allListings.find(l => l.id === listingId);
-                    if (!listing) return null;
-                    return (
-                      <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#f9fafb', padding: '0.8rem', borderRadius: '6px', border: '1px solid #e5e7eb', gap: '1rem' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', overflow: 'hidden' }}>
-                          <div style={{ width: '40px', height: '40px', background: '#e5e7eb', borderRadius: '4px', overflow: 'hidden', flexShrink: 0 }}>
-                            {listing.images && listing.images[0] && (
-                              <img src={listing.images[0].url} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                            )}
+
+                {(!editData.watchlist || editData.watchlist.length === 0) ? (
+                  <div style={{ fontSize: '0.85rem', color: '#9ca3af', fontStyle: 'italic', textAlign: 'center', padding: '1rem', border: '1px dashed #e5e7eb', borderRadius: '8px' }}>
+                    No listings here yet.
+                  </div>
+                ) : (
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                    {editData.watchlist.map((listingId: string, idx: number) => {
+                      const listing = allListings.find(l => l.id === listingId);
+                      if (!listing) return null;
+                      return (
+                        <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#f9fafb', padding: '0.8rem', borderRadius: '6px', border: '1px solid #e5e7eb', gap: '1rem' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', overflow: 'hidden' }}>
+                            <div style={{ width: '40px', height: '40px', background: '#e5e7eb', borderRadius: '4px', overflow: 'hidden', flexShrink: 0 }}>
+                              {listing.images && listing.images[0] && (
+                                <img src={listing.images[0].url} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                              )}
+                            </div>
+                            <div style={{ overflow: 'hidden' }}>
+                              <div style={{ fontSize: '0.85rem', fontWeight: 600, color: '#111827', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>{listing.streetAddress || listing.title}</div>
+                              <div style={{ fontSize: '0.7rem', color: '#6b7280' }}>{listing.askingPrice || listing.askingRent} &bull; {listing.status}</div>
+                            </div>
                           </div>
-                          <div style={{ overflow: 'hidden' }}>
-                            <div style={{ fontSize: '0.85rem', fontWeight: 600, color: '#111827', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>{listing.streetAddress || listing.title}</div>
-                            <div style={{ fontSize: '0.7rem', color: '#6b7280' }}>{listing.askingPrice || listing.askingRent} &bull; {listing.status}</div>
-                          </div>
+                          <button onClick={() => {
+                            const newListings = [...editData.watchlist];
+                            newListings.splice(idx, 1);
+                            setEditData({...editData, watchlist: newListings});
+                          }} style={{ background: 'transparent', border: 'none', color: '#ef4444', cursor: 'pointer', padding: '0.2rem' }}>
+                            &times;
+                          </button>
                         </div>
-                        <button onClick={() => {
-                          const newListings = [...editData.attachedListings];
-                          newListings.splice(idx, 1);
-                          setEditData({...editData, attachedListings: newListings});
-                        }} style={{ background: 'transparent', border: 'none', color: '#ef4444', cursor: 'pointer', padding: '0.2rem' }}>
-                          &times;
-                        </button>
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
 
             {/* Communications History */}
             {!isAddingLead && (
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '0.5rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #e5e7eb', paddingBottom: '0.5rem' }}>
                   <div style={{ fontSize: '0.9rem', fontWeight: 800, color: '#111827' }}>Communication History</div>
-                  <button onClick={() => router.push('/clickme/communications')} style={{ background: 'transparent', color: '#2563eb', border: 'none', fontWeight: 600, cursor: 'pointer', fontSize: '0.8rem', textDecoration: 'underline' }}>
-                    Open Inbox &rarr;
-                  </button>
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                    <button 
+                      onClick={() => setIsEmailComposerOpen(true)}
+                      style={{ background: '#111827', color: '#fff', border: 'none', padding: '0.4rem 0.8rem', borderRadius: '6px', fontWeight: 600, cursor: 'pointer', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}
+                    >
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                      Compose Message
+                    </button>
+                    <button onClick={() => router.push('/clickme/communications')} style={{ background: 'transparent', color: '#2563eb', border: 'none', fontWeight: 600, cursor: 'pointer', fontSize: '0.8rem', textDecoration: 'underline' }}>
+                      Open Inbox &rarr;
+                    </button>
+                  </div>
                 </div>
 
                 {loadingEmails ? (
@@ -1480,6 +1626,7 @@ function NetworkCRMContent() {
                 style={{ width: '100%', height: '120px', padding: '0.85rem 1rem', borderRadius: '8px', background: '#f9fafb', border: '1px solid #d1d5db', color: '#111827', outline: 'none', resize: 'vertical', fontSize: '1rem', fontFamily: "'Inter', sans-serif" }}
               />
             </div>
+            </div>
           </div>
 
           <div style={{ padding: '2rem', borderTop: '1px solid #e5e7eb', background: '#f9fafb' }}>
@@ -1491,6 +1638,7 @@ function NetworkCRMContent() {
               Save Changes
             </button>
           </div>
+        </div>
         </div>
       )}
 

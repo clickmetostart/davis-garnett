@@ -3,42 +3,33 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 
-// Define multiple flow templates
-const MOCK_FLOWS = [
-  {
-    id: 'f1',
-    name: 'Residential Buyers',
-    columns: [
-      { id: 'pre_qualified', title: 'Pre-Qualified' },
-      { id: 'searching', title: 'Active Search' },
-      { id: 'under_contract', title: 'Under Contract' },
-      { id: 'inspection', title: 'Inspection/Appraisal' },
-      { id: 'clear_to_close', title: 'Clear to Close' },
-      { id: 'closed', title: 'Closed' }
-    ]
-  },
-  {
-    id: 'f2',
-    name: 'Residential Sellers (Listings)',
-    columns: [
-      { id: 'listing_prep', title: 'Listing Prep' },
-      { id: 'active_market', title: 'Active on Market' },
-      { id: 'under_contract_seller', title: 'Under Contract' },
-      { id: 'closing_seller', title: 'Closing Process' },
-      { id: 'sold', title: 'Sold' }
-    ]
-  },
-  {
-    id: 'f3',
-    name: 'Commercial Leases',
-    columns: [
-      { id: 'prospect', title: 'Prospect' },
-      { id: 'touring', title: 'Touring' },
-      { id: 'loi', title: 'LOI Negotiations' },
-      { id: 'lease_exec', title: 'Lease Execution' },
-      { id: 'tenant_buildout', title: 'Tenant Buildout' }
-    ]
-  }
+// Define the base templates for Residential and Commercial
+const RESIDENTIAL_COLUMNS = [
+  { id: 'res_1', title: 'Phase 1: Pre-Listing & Pricing' },
+  { id: 'res_2', title: 'Phase 2: Content & Media' },
+  { id: 'res_3', title: 'Phase 3: Exposure & Marketing' },
+  { id: 'res_4', title: 'Phase 4: Negotiation' },
+  { id: 'res_5', title: 'Phase 5: Contract to Closing' },
+  { id: 'res_6', title: 'Phase 6: Post-Closing / Retention' }
+];
+
+const COMMERCIAL_COLUMNS = [
+  { id: 'com_1', title: 'Phase 1: Pre-Listing & Valuation' },
+  { id: 'com_2', title: 'Phase 2: Marketing Prep & Packaging' },
+  { id: 'com_3', title: 'Phase 3: Targeted Marketing' },
+  { id: 'com_4', title: 'Phase 4: Tour & Offers' },
+  { id: 'com_5', title: 'Phase 5: LOI / PSA' },
+  { id: 'com_6', title: 'Phase 6: Escrow & Due Diligence' },
+  { id: 'com_7', title: 'Phase 7: Post-Closing / Retention' }
+];
+
+const DEFAULT_COLUMNS = [
+  { id: 'def_1', title: 'New Lead' },
+  { id: 'def_2', title: 'Contacted' },
+  { id: 'def_3', title: 'Meeting Scheduled' },
+  { id: 'def_4', title: 'Proposal Sent' },
+  { id: 'def_5', title: 'Under Contract' },
+  { id: 'def_6', title: 'Closed' }
 ];
 
 interface ClientCard {
@@ -65,17 +56,10 @@ function ClientFlowContent() {
     else if (v === 'my') setViewMode('my_flow');
   }, [searchParams]);
 
-  const [flows, setFlows] = useState(MOCK_FLOWS);
-  const [activeFlowId, setActiveFlowId] = useState('f1');
+  const [flows, setFlows] = useState<any[]>([]);
+  const [activeFlowId, setActiveFlowId] = useState('');
   
-  const [cards, setCards] = useState<ClientCard[]>([
-    { id: 'c1', name: 'James & Sarah Smith', budget: '$650k', stage: 'pre_qualified', flowId: 'f1', ownerId: 'user_123', isShared: false },
-    { id: 'c2', name: 'Michael Chen', budget: '$1.2M', stage: 'searching', flowId: 'f1', ownerId: 'user_123', isShared: true },
-    { id: 'c3', name: 'Emily Roberts', budget: '$450k', stage: 'under_contract', flowId: 'f1', ownerId: null, isShared: true },
-    { id: 'c4', name: 'The Johnson Family', budget: '$850k', stage: 'inspection', flowId: 'f1', ownerId: 'user_123', isShared: false },
-    { id: 'c5', name: 'David Lee', budget: '$920k List', stage: 'active_market', flowId: 'f2', ownerId: 'user_123', isShared: true },
-    { id: 'c6', name: 'TechStartup LLC', budget: '5,000 sqft', stage: 'loi', flowId: 'f3', ownerId: null, isShared: true }
-  ]);
+  const [cards, setCards] = useState<ClientCard[]>([]);
 
   const [showAddClientModal, setShowAddClientModal] = useState(false);
   const [showAddFlowModal, setShowAddFlowModal] = useState(false);
@@ -269,6 +253,123 @@ function ClientFlowContent() {
     setActiveFlowId(newFlow.id);
     setShowAddFlowModal(false);
   };
+
+  const handleLoadTemplate = (type: 'residential' | 'commercial' | 'custom') => {
+    const isRes = type === 'residential';
+    const isCom = type === 'commercial';
+    const newFlow = {
+      id: `f_${Date.now()}`,
+      name: isRes ? 'Residential Pipeline' : isCom ? 'Commercial Pipeline' : 'Custom Pipeline',
+      columns: isRes ? [...RESIDENTIAL_COLUMNS] : isCom ? [...COMMERCIAL_COLUMNS] : [...DEFAULT_COLUMNS]
+    };
+    setFlows([newFlow]);
+    setActiveFlowId(newFlow.id);
+  };
+
+  if (flows.length === 0) {
+    return (
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', backgroundColor: '#f9fafb', height: '100vh', fontFamily: "'Inter', sans-serif" }}>
+        <div style={{ padding: '3rem 2rem', borderBottom: '1px solid #e5e7eb', background: '#fff', textAlign: 'center' }}>
+          <h1 style={{ margin: '0 0 1rem 0', fontSize: '2.5rem', fontWeight: 800, color: '#111827' }}>Select Your Pipeline Workflow</h1>
+          <p style={{ margin: 0, color: '#6b7280', fontSize: '1.1rem', maxWidth: '600px', marginInline: 'auto' }}>
+            To get started with your Agent Flow, please choose a base template. You can customize the stages later, but this will set up the foundational underwriting and marketing phases for your asset class.
+          </p>
+        </div>
+
+        <div style={{ flex: 1, padding: '4rem 2rem', display: 'flex', justifyContent: 'center', gap: '3rem', flexWrap: 'wrap', overflowY: 'auto' }}>
+          {/* Residential Template Card */}
+          <div 
+            style={{ background: '#fff', borderRadius: '16px', border: '1px solid #e5e7eb', width: '400px', padding: '2.5rem', display: 'flex', flexDirection: 'column', boxShadow: '0 10px 25px -5px rgba(0,0,0,0.05)', transition: 'transform 0.2s', cursor: 'pointer' }}
+            onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
+            onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+            onClick={() => handleLoadTemplate('residential')}
+          >
+            <div style={{ width: '64px', height: '64px', borderRadius: '12px', background: '#eff6ff', color: '#3b82f6', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            </div>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#111827', margin: '0 0 1rem 0' }}>Residential Flow</h2>
+            <p style={{ color: '#4b5563', lineHeight: 1.6, marginBottom: '2rem', flex: 1 }}>
+              Optimized for single-family homes, condos, and typical residential buyers/sellers. Focuses on content, exposure, and consumer negotiation.
+            </p>
+            <div style={{ background: '#f9fafb', borderRadius: '8px', padding: '1rem', border: '1px solid #e5e7eb', marginBottom: '2rem' }}>
+              <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#9ca3af', textTransform: 'uppercase', marginBottom: '0.8rem' }}>Included Phases</div>
+              <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                {RESIDENTIAL_COLUMNS.map(c => (
+                  <li key={c.id} style={{ fontSize: '0.85rem', color: '#374151', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    {c.title}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <button style={{ width: '100%', background: '#3b82f6', color: '#fff', border: 'none', padding: '1rem', borderRadius: '8px', fontWeight: 700, fontSize: '1rem', cursor: 'pointer' }}>
+              Load Residential Template
+            </button>
+          </div>
+
+          {/* Commercial Template Card */}
+          <div 
+            style={{ background: '#fff', borderRadius: '16px', border: '1px solid #e5e7eb', width: '400px', padding: '2.5rem', display: 'flex', flexDirection: 'column', boxShadow: '0 10px 25px -5px rgba(0,0,0,0.05)', transition: 'transform 0.2s', cursor: 'pointer' }}
+            onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
+            onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+            onClick={() => handleLoadTemplate('commercial')}
+          >
+            <div style={{ width: '64px', height: '64px', borderRadius: '12px', background: '#fef2f2', color: '#ef4444', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><path d="M9 22v-4h6v4"></path><path d="M8 6h.01"></path><path d="M16 6h.01"></path><path d="M12 6h.01"></path><path d="M12 10h.01"></path><path d="M12 14h.01"></path><path d="M16 10h.01"></path><path d="M16 14h.01"></path><path d="M8 10h.01"></path><path d="M8 14h.01"></path></svg>
+            </div>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#111827', margin: '0 0 1rem 0' }}>Commercial Flow</h2>
+            <p style={{ color: '#4b5563', lineHeight: 1.6, marginBottom: '2rem', flex: 1 }}>
+              Engineered for multi-family, retail, and industrial assets. Emphasizes financial underwriting, offering memorandums, and strict due diligence.
+            </p>
+            <div style={{ background: '#f9fafb', borderRadius: '8px', padding: '1rem', border: '1px solid #e5e7eb', marginBottom: '2rem' }}>
+              <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#9ca3af', textTransform: 'uppercase', marginBottom: '0.8rem' }}>Included Phases</div>
+              <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                {COMMERCIAL_COLUMNS.map(c => (
+                  <li key={c.id} style={{ fontSize: '0.85rem', color: '#374151', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" strokeWidth="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    {c.title}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <button style={{ width: '100%', background: '#ef4444', color: '#fff', border: 'none', padding: '1rem', borderRadius: '8px', fontWeight: 700, fontSize: '1rem', cursor: 'pointer' }}>
+              Load Commercial Template
+            </button>
+          </div>
+
+          {/* Custom Template Card */}
+          <div 
+            style={{ background: '#fff', borderRadius: '16px', border: '1px solid #e5e7eb', width: '400px', padding: '2.5rem', display: 'flex', flexDirection: 'column', boxShadow: '0 10px 25px -5px rgba(0,0,0,0.05)', transition: 'transform 0.2s', cursor: 'pointer' }}
+            onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
+            onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+            onClick={() => handleLoadTemplate('custom')}
+          >
+            <div style={{ width: '64px', height: '64px', borderRadius: '12px', background: '#f3f4f6', color: '#4b5563', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+            </div>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#111827', margin: '0 0 1rem 0' }}>Custom Flow</h2>
+            <p style={{ color: '#4b5563', lineHeight: 1.6, marginBottom: '2rem', flex: 1 }}>
+              A standard sales pipeline that you can customize from the ground up. Perfect for teams with unique workflows or simple transaction processes.
+            </p>
+            <div style={{ background: '#f9fafb', borderRadius: '8px', padding: '1rem', border: '1px solid #e5e7eb', marginBottom: '2rem' }}>
+              <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#9ca3af', textTransform: 'uppercase', marginBottom: '0.8rem' }}>Included Phases</div>
+              <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                {DEFAULT_COLUMNS.map(c => (
+                  <li key={c.id} style={{ fontSize: '0.85rem', color: '#374151', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4b5563" strokeWidth="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    {c.title}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <button style={{ width: '100%', background: '#4b5563', color: '#fff', border: 'none', padding: '1rem', borderRadius: '8px', fontWeight: 700, fontSize: '1rem', cursor: 'pointer' }}>
+              Load Custom Template
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div style={{ flex: 1, display: 'flex', flexDirection: 'column', backgroundColor: '#f3f4f6', height: '100vh', fontFamily: "'Inter', sans-serif", overflow: 'hidden' }}>

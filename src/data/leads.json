@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "id": "lead-001",
+    "firstName": "Jonathan",
+    "lastName": "Braddock",
+    "email": "j.braddock@capitalinvest.com",
+    "phone": "(555) 123-4567",
+    "pipelineStage": "Meeting Scheduled",
+    "owner": "launch@clickme.life",
+    "buySideConfig": {
+      "budget": "$5,000,000",
+      "preApprovalStatus": "Verified Funds",
+      "timeframe": "1-3 Months"
+    },
+    "sellSideConfig": {
+      "propertyAddress": "100 Bayshore Blvd, Tampa, FL",
+      "estimatedValue": "$4,250,000"
+    },
+    "listingsShown": ["1"],
+    "listingsToShow": ["2"],
+    "watchlist": [],
+    "notes": "Interested in multi-family commercial properties near downtown St. Pete."
+  }
+]
