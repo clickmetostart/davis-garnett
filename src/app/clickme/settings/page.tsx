@@ -43,7 +43,8 @@ function ProfileSettingsContent() {
     customLinks: [] as {platform: string; url: string; icon?: string}[],
     featuredListings: [] as string[],
     reviews: [] as {author: string; text: string; rating: number}[],
-    themeColor: '#111827'
+    themeColor: '#111827',
+    coverImageUrl: ''
   });
 
   const [allListings, setAllListings] = useState<any[]>([]);
