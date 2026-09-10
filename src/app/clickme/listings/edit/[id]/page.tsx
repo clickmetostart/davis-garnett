@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useState } from 'react';
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { ChevronRight, ChevronLeft, Check, Upload, Sparkles, Building, Home, MapPin, Search } from 'lucide-react';
@@ -10,11 +9,33 @@ const STAGES = ['Build', 'List', 'Market', 'Review'];
 
 export default function EditListingWizard({ params }: { params: { id: string } }) {
   const router = useRouter();
-  const [stage, setStage] = useState(1);
+  const [currentStage, setCurrentStage] = useState(0);
   const [category, setCategory] = useState<'Commercial' | 'Residential' | null>(null);
+
+  const [isLoadingData, setIsLoadingData] = useState(true);
+  const [formData, setFormData] = useState<Partial<Listing>>({
+    status: 'Draft',
+    featured: false,
+    showEmail: true,
+    showPhone: true,
+    highlights: ['', '', '', '', '', ''],
     images: [],
     attachments: []
   });
+
+
+  useEffect(() => {
+    fetch('/api/listings')
+      .then(res => res.json())
+      .then(data => {
+        const listing = data.find((l: any) => l.id === params.id);
+        if (listing) {
+          setCategory(listing.category || 'Commercial');
+          setFormData(listing);
+        }
+        setIsLoadingData(false);
+      });
+  }, [params.id]);
 
   const [isGenerating, setIsGenerating] = useState(false);
 
@@ -53,19 +74,6 @@ export default function EditListingWizard({ params }: { params: { id: string } }
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ category, ...formData })
       });
-      if (response.ok) {
-        router.push('/clickme/listings');
-      } else {
-        console.error('Failed to update listing');
-      }
-    } catch (e) {
-      console.error(e);
-    }
-  };
-
-  if (isLoadingData) {
-    return <div className="p-8">Loading listing data...</div>;
-  }
       if (response.ok) {
         router.push('/clickme/listings');
       } else {
@@ -488,6 +496,8 @@ export default function EditListingWizard({ params }: { params: { id: string } }
       </div>
     </div>
   );
+
+  if (isLoadingData) return <div className="p-8">Loading listing data...</div>;
 
   return (
     <div className="flex-1 bg-[#f9fafb] text-[#111827] h-screen flex flex-col font-sans">
