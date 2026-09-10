@@ -154,15 +154,15 @@ export default function ListingImporterModal({ isOpen, onClose }: { isOpen: bool
                   No extensions required! Just drag the button below into your browser's bookmarks bar. Click it anytime you are viewing a property on LoopNet, Crexi, Zillow, or Redfin to instantly import it.
                 </p>
                 
-                <div className="flex justify-center mb-4">
+                <div className="flex justify-center mb-4" dangerouslySetInnerHTML={{ __html: `
                   <a 
-                    href={bookmarkletCode}
-                    className="inline-block px-6 py-3 bg-[#111] text-[#D4AF37] font-bold rounded-full shadow-lg shadow-black/20 hover:scale-105 transition-transform border-2 border-[#D4AF37] cursor-grab active:cursor-grabbing"
-                    onClick={(e) => e.preventDefault()}
+                    href="${bookmarkletCode}"
+                    class="inline-block px-6 py-3 bg-[#111] text-[#D4AF37] font-bold rounded-full shadow-lg shadow-black/20 hover:scale-105 transition-transform border-2 border-[#D4AF37] cursor-grab active:cursor-grabbing"
+                    onclick="event.preventDefault()"
                   >
                     📥 D&G Dash
                   </a>
-                </div>
+                ` }} />
                 <div className="text-center text-xs text-gray-400 font-semibold uppercase tracking-wider">
                   ↑ Drag me to your bookmarks bar ↑
                 </div>
