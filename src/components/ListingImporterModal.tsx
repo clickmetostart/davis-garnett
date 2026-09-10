@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { X, UploadCloud, RefreshCw, Link as LinkIcon, Check, Chrome, Building, Home } from 'lucide-react';
+import { X, UploadCloud, RefreshCw, Link as LinkIcon, Check, Globe, Building, Home } from 'lucide-react';
 import { Listing } from '@/types/listings';
 import { useRouter } from 'next/navigation';
 
@@ -85,7 +85,7 @@ export default function ListingImporterModal({ isOpen, onClose }: { isOpen: bool
                 <div className="absolute top-0 left-0 w-full h-1 bg-green-500"></div>
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="font-bold text-gray-900 flex items-center gap-2">
-                    <Chrome className="w-5 h-5 text-green-500" /> Web Clipper Active
+                    <Globe className="w-5 h-5 text-green-500" /> Web Clipper Active
                   </h3>
                   {isPolling && <RefreshCw className="w-4 h-4 text-green-500 animate-spin" />}
                 </div>
