@@ -1665,7 +1665,7 @@ function NetworkCRMContent() {
               {allListings
                 .filter(l => l.title?.toLowerCase().includes(listingSearchQuery.toLowerCase()) || l.streetAddress?.toLowerCase().includes(listingSearchQuery.toLowerCase()))
                 .map((listing: any) => {
-                  const isAlreadyAttached = (editData.attachedListings || []).includes(listing.id);
+                  const isAlreadyAttached = (editData[activeListingList] || []).includes(listing.id);
                   return (
                     <div key={listing.id} style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1rem', border: '1px solid #e5e7eb', borderRadius: '8px', background: isAlreadyAttached ? '#f3f4f6' : '#fff' }}>
                       <div style={{ width: '60px', height: '40px', background: '#e5e7eb', borderRadius: '4px', overflow: 'hidden', flexShrink: 0 }}>
@@ -1680,7 +1680,7 @@ function NetworkCRMContent() {
                       <button 
                         disabled={isAlreadyAttached}
                         onClick={() => {
-                          setEditData({ ...editData, attachedListings: [...(editData.attachedListings || []), listing.id] });
+                          setEditData({ ...editData, [activeListingList]: [...(editData[activeListingList] || []), listing.id] });
                           setIsAttachListingModalOpen(false);
                         }}
                         style={{ background: isAlreadyAttached ? '#e5e7eb' : '#2563eb', color: isAlreadyAttached ? '#9ca3af' : '#fff', border: 'none', padding: '0.5rem 1rem', borderRadius: '6px', fontWeight: 600, cursor: isAlreadyAttached ? 'not-allowed' : 'pointer', fontSize: '0.8rem' }}
