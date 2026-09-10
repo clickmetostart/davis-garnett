@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 200" width="820" height="200">
+  <defs>
+    <style>
+      @font-face {
+        font-family: 'AIVeritas';
+        src: url('/AIVeritas Roman.ttf') format('truetype');
+      }
+      @font-face {
+        font-family: 'Montserrat';
+        src: url('/Montserrat-Regular.otf') format('opentype');
+      }
+    </style>
+  </defs>
+
+  <!-- Monogram Box -->
+  <rect x="10" y="10" width="160" height="180" fill="none" stroke="#888888" stroke-width="2.5"/>
+
+  <!-- D - large background letterform -->
+  <text x="48" y="148" font-family="AIVeritas, serif" font-size="140" fill="#D4AF37" opacity="0.9">D</text>
+
+  <!-- G - overlapping, offset right/down -->
+  <text x="72" y="162" font-family="AIVeritas, serif" font-size="130" fill="#D4AF37">G</text>
+
+  <!-- === WORDMARK === -->
+
+  <!-- DAVIS & GARNETT — using AIVeritas Roman -->
+  <!-- "DAVIS" -->
+  <text x="200" y="105" font-family="AIVeritas, serif" font-size="72" letter-spacing="6" fill="#111111">DAVIS</text>
+
+  <!-- "&" in gold, slightly smaller and raised -->
+  <text x="488" y="100" font-family="AIVeritas, serif" font-size="62" fill="#D4AF37">&amp;</text>
+
+  <!-- "GARNETT" -->
+  <text x="540" y="105" font-family="AIVeritas, serif" font-size="72" letter-spacing="6" fill="#111111">GARNETT</text>
+
+  <!-- Gold divider line above subtitle -->
+  <line x1="200" y1="118" x2="818" y2="118" stroke="#D4AF37" stroke-width="1.5"/>
+
+  <!-- Subtitle: COMMERCIAL RESIDENTIAL ADVISORS -->
+  <text x="200" y="150" font-family="Montserrat, sans-serif" font-size="18" letter-spacing="5" fill="#111111">COMMERCIAL  RESIDENTIAL  ADVISORS</text>
+
+  <!-- Gold divider line below subtitle -->
+  <line x1="200" y1="165" x2="818" y2="165" stroke="#D4AF37" stroke-width="1.5"/>
+</svg>
