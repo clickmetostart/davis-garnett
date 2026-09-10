@@ -163,7 +163,7 @@ function ClientFlowContent() {
     
     setFlows(prevFlows => prevFlows.map(f => {
       if (f.id === activeFlow.id) {
-        return { ...f, columns: f.columns.filter(c => c.id !== stageId) };
+        return { ...f, columns: f.columns.filter((c: any) => c.id !== stageId) };
       }
       return f;
     }));
@@ -431,7 +431,7 @@ function ClientFlowContent() {
       <div style={{ flex: 1, overflowX: wrapColumns ? 'hidden' : 'auto', overflowY: wrapColumns ? 'auto' : 'hidden', padding: '1.5rem' }}>
         <div style={{ display: 'flex', gap: '1.5rem', height: wrapColumns ? 'auto' : '100%', alignItems: 'flex-start', flexWrap: wrapColumns ? 'wrap' : 'nowrap' }}>
           
-          {activeFlow.columns.map((col, colIndex) => {
+          {activeFlow.columns.map((col: any, colIndex: number) => {
             const columnCards = cards.filter(c => c.stage === col.id && c.flowId === activeFlow.id);
             const nextCol = activeFlow.columns[colIndex + 1];
 
