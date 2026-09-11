@@ -586,6 +586,8 @@ export default function PreviewMockup2() {
             })
           }}
         />
+      </section>
+
       {/* ── LIVE MLS IDX SEARCH MOCKUP ── */}
       <IDXSearchMockup />
 
