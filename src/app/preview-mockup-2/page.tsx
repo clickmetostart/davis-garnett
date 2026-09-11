@@ -9,6 +9,7 @@ import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 import FeaturedPortfolioSpillOut from "@/components/FeaturedPortfolioSpillOut";
 import PreviewNav from "@/components/PreviewNav";
 import BackgroundVideo from "@/components/BackgroundVideo";
+import IDXSearchMockup from "@/components/IDXSearchMockup";
 
 export default function PreviewMockup2() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -585,7 +586,8 @@ export default function PreviewMockup2() {
             })
           }}
         />
-      </section>
+      {/* ── LIVE MLS IDX SEARCH MOCKUP ── */}
+      <IDXSearchMockup />
 
       {/* ── 4. MARKET INSIGHTS / KNOWLEDGE HUB ── */}
       <section className="py-32 px-8 bg-[#050505]">
