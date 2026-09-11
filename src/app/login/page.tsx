@@ -164,12 +164,9 @@ export default function LoginPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3" style={{ fontFamily: "'AIVeritas', serif" }}>Access Restricted</h3>
-              <p className="text-white/80 font-light mb-6 text-lg">
-                Deposit not marked as paid in system.
-              </p>
+              <h3 className="text-2xl font-bold text-white mb-3" style={{ fontFamily: "'AIVeritas', serif" }}>Request Access</h3>
               <p className="text-white/50 text-sm mb-8 leading-relaxed">
-                Please email <a href="mailto:clickme.tostart@gmail.com" className="text-[#D4AF37] hover:underline font-medium">clickme.tostart@gmail.com</a> to resolve this issue and unlock your workspace access.
+                Please email <a href="mailto:clickme.tostart@gmail.com" className="text-[#D4AF37] hover:underline font-medium">clickme.tostart@gmail.com</a> to request your workspace access.
               </p>
               <button 
                 onClick={() => setShowAccessModal(false)}
