@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -26,7 +26,38 @@ const properties = [
 
 export default function FeaturedPortfolioSpillOut() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [liveProperties, setLiveProperties] = useState<any[]>(properties);
   
+  useEffect(() => {
+    fetch('/api/lofty/listings')
+      .then(res => {
+        if (!res.ok) {
+          return null; // Return null gracefully
+        }
+        return res.json();
+      })
+      .then(data => {
+        if (data && data.length > 0) {
+          // Map fetched data to our hardcoded scatter positions
+          const mapped = data.slice(0, properties.length).map((l: any, i: number) => ({
+            id: l.id,
+            type: l.propertyType,
+            title: l.title,
+            specs: `${l.bedrooms} Bed • ${l.bathrooms} Bath • ${l.sqFt} SqFt`,
+            price: l.askingPrice,
+            img: l.images[0]?.url || properties[i].img,
+            pos: properties[i].pos
+          }));
+          // Merge with fallback data if API returns fewer items than needed
+          const merged = properties.map((p, i) => mapped[i] || p);
+          setLiveProperties(merged);
+        }
+      })
+      .catch(err => {
+        console.error('Using fallback dummy data:', err);
+      });
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
@@ -52,7 +83,7 @@ export default function FeaturedPortfolioSpillOut() {
         </motion.div>
 
         {/* Properties Container */}
-        {properties.map((prop, i) => {
+        {liveProperties.map((prop, i) => {
           // Calculate individual motion values
           // Expands over the first 30% of the 800vh scroll, then holds firm for the remaining 70%
           const x = useTransform(scrollYProgress, [0, 0.3, 1], ["0vw", prop.pos.x, prop.pos.x]);

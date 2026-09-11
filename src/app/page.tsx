@@ -2,8 +2,9 @@
 
 import { ArrowRight, Check, Sparkles, X, ChevronRight, Activity, Layers, Zap, Search, Box, Database, MessageSquare, Code, Settings, Menu } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import ProposalNav from "@/components/ProposalNav";
 
 const NAV_LINKS = [
@@ -41,9 +42,50 @@ const FEATURES = [
 export default function Page() {
   const [activeFeature, setActiveFeature] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [authStatus, setAuthStatus] = useState<string | null>(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    // Check for Lofty OAuth redirect
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search);
+      const code = urlParams.get('code');
+      
+      if (code) {
+        setAuthStatus('Authenticating with Lofty...');
+        fetch('/api/lofty/auth', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ code })
+        })
+        .then(res => res.json())
+        .then(data => {
+          if (data.error) {
+            setAuthStatus(`Lofty Auth Error: ${data.error}`);
+          } else {
+            setAuthStatus('Successfully Connected to Lofty! You can now view live MLS data on the previews.');
+            setTimeout(() => {
+              setAuthStatus(null);
+              router.replace('/');
+            }, 5000);
+          }
+        })
+        .catch(err => {
+          console.error(err);
+          setAuthStatus('Failed to connect to Lofty.');
+        });
+      }
+    }
+  }, [router]);
 
   return (
     <div className="min-h-screen text-white relative selection:bg-[#D4AF37] selection:text-black font-sans">
+      {/* ── ALERTS ──────────────────────────────────── */}
+      {authStatus && (
+        <div className="fixed top-20 left-1/2 -translate-x-1/2 z-50 bg-[#D4AF37] text-black px-6 py-3 rounded-full font-bold shadow-2xl animate-in fade-in slide-in-from-top-4">
+          {authStatus}
+        </div>
+      )}
 
       {/* ── NAVIGATION ──────────────────────────────────── */}
       <ProposalNav />
