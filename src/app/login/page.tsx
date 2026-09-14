@@ -169,14 +169,13 @@ export default function LoginPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-white/60 text-xs font-light leading-relaxed mb-12 px-6">
 
           {/* Column 1: Davis & Garnett Logo & Info */}
-          <div className="flex flex-col items-center md:items-start text-center md:text-left gap-4">
-            <div className="w-40 mb-2">
-              <DavisGarnettLogo variant="dark" />
-            </div>
-            <p className="leading-loose">
+          <div className="text-left">
+            <p className="leading-loose text-white/60">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/dg-footer-logo-wrap.jpg" alt="Davis & Garnett" className="float-left w-16 h-16 mr-5 mb-1 rounded-sm object-cover border border-[#D4AF37]/20 shadow-md" />
               Mark Davis and Rachael Garnett are Real Estate Advisors & Agents at Align Right Realty, based in Tampa Bay and serving clients across the Gulf Coast. With decades of combined expertise, they specialize in providing elite, transparent real estate solutions, including luxury residential acquisitions and high-yield commercial investments.
             </p>
-            <a href="mailto:list@davisgarnettsells.com" className="text-[#D4AF37] hover:text-white transition-colors font-bold tracking-widest uppercase text-[10px]">
+            <a href="mailto:list@davisgarnettsells.com" className="text-[#D4AF37] hover:text-white transition-colors font-bold tracking-widest uppercase text-[10px] mt-4 block">
               list@davisgarnettsells.com
             </a>
           </div>
