@@ -4,6 +4,11 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import DavisGarnettLogo from '@/components/DavisGarnettLogo';
 
+// Static imports to bypass dev server cache
+import markHeadshot from '../../../public/davis-garnett-headshots/mark-davis-headshot-4.jpg';
+import rachaelHeadshot from '../../../public/davis-garnett-headshots/rachael-garnett-3.jpg';
+import alignRightLogo from '../../../public/align-right-realty-logo.webp';
+
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -179,7 +184,7 @@ export default function LoginPage() {
           {/* Column 2: Mark Davis */}
           <div className="flex flex-row items-center justify-center md:justify-start text-left gap-6">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/davis-garnett-headshots/mark-davis-headshot-4.JPG" alt="Mark Davis" className="w-20 h-20 rounded-full object-cover object-top border border-[#D4AF37]/30 shadow-lg shadow-black/50 shrink-0" />
+            <img src={markHeadshot.src} alt="Mark Davis" className="w-20 h-20 rounded-full object-cover object-top border border-[#D4AF37]/30 shadow-lg shadow-black/50 shrink-0" />
             <div className="flex flex-col gap-1">
               <div>
                 <strong className="text-white text-base block font-serif">Mark Davis</strong>
@@ -195,7 +200,7 @@ export default function LoginPage() {
           {/* Column 3: Rachael Garnett */}
           <div className="flex flex-row items-center justify-center md:justify-start text-left gap-6">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/davis-garnett-headshots/rachael-garnett-3.JPG" alt="Rachael Garnett" className="w-20 h-20 rounded-full object-cover object-[center_30%] border border-[#D4AF37]/30 shadow-lg shadow-black/50 shrink-0" />
+            <img src={rachaelHeadshot.src} alt="Rachael Garnett" className="w-20 h-20 rounded-full object-cover object-[center_30%] border border-[#D4AF37]/30 shadow-lg shadow-black/50 shrink-0" />
             <div className="flex flex-col gap-1">
               <div>
                 <strong className="text-white text-base block font-serif">Rachael Garnett</strong>
@@ -235,7 +240,7 @@ export default function LoginPage() {
           <div className="flex flex-col items-center md:items-end gap-3 text-center md:text-right">
             <a href="https://alignrightcarrollwood.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/align-right-realty-logo.webp" alt="Align Right Realty" className="h-10 w-auto object-contain mb-1" />
+              <img src={alignRightLogo.src} alt="Align Right Realty" className="h-10 w-auto object-contain mb-1" />
             </a>
             <p>
               Align Right Realty Broker Number BK3401606<br />
