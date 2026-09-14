@@ -233,8 +233,10 @@ export default function LoginPage() {
 
           {/* Compliance Col 3 */}
           <div className="flex flex-col items-center md:items-end gap-3 text-center md:text-right">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/align-right-realty-logo.webp" alt="Align Right Realty" className="h-10 w-auto object-contain mb-1" />
+            <a href="https://alignrightcarrollwood.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/align-right-realty-logo.webp" alt="Align Right Realty" className="h-10 w-auto object-contain mb-1" />
+            </a>
             <p>
               Align Right Realty Broker Number BK3401606<br />
               3903 Northdale Blvd Suite 115W, TAMPA, FL 33624<br />
