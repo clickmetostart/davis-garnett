@@ -42,10 +42,10 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen relative flex flex-col md:flex-row text-white selection:bg-[#D4AF37] selection:text-black" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+    <div className="min-h-screen relative flex flex-col bg-black text-white selection:bg-[#D4AF37] selection:text-black overflow-x-hidden" style={{ fontFamily: "'DM Sans', sans-serif" }}>
       
       {/* Deep Gold & Black Gradient Background */}
-      <div className="absolute inset-0 z-0 bg-black">
+      <div className="absolute inset-0 z-0 bg-black pointer-events-none">
         {/* Diagonal Gold to Black */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/30 via-[#8B6914]/10 to-transparent"></div>
         {/* Strong radial gold highlights */}
@@ -55,104 +55,121 @@ export default function LoginPage() {
         <div className="absolute inset-0 opacity-[0.04] mix-blend-overlay" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')" }}></div>
       </div>
 
-      {/* Left side: Branding */}
-      <div className="flex-1 relative z-10 flex flex-col justify-center p-8 md:p-16 lg:p-24 border-b md:border-b-0 md:border-r border-[#D4AF37]/10 bg-black/20 backdrop-blur-md">
+      {/* Main Content Area */}
+      <div className="flex-1 relative z-10 flex flex-col md:flex-row w-full">
         
-        <div className="relative z-10 max-w-2xl flex flex-col items-start">
-          <div className="inline-flex items-center gap-3 mb-10 bg-[#D4AF37]/10 border border-[#D4AF37]/20 backdrop-blur-md px-4 py-2 rounded-full shadow-[inset_0_1px_0_rgba(212,175,55,0.2)]">
-            <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse shadow-[0_0_8px_rgba(212,175,55,0.8)]"></span>
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#D4AF37]" style={{ fontFamily: "'Montserrat', sans-serif" }}>Secured Access</span>
+        {/* Left side: Branding */}
+        <div className="flex-1 relative flex flex-col justify-center p-8 md:p-16 lg:p-24 border-b md:border-b-0 md:border-r border-[#D4AF37]/10 bg-black/20 backdrop-blur-md">
+          
+          <div className="relative z-10 max-w-2xl flex flex-col items-start">
+            <div className="inline-flex items-center gap-3 mb-10 bg-[#D4AF37]/10 border border-[#D4AF37]/20 backdrop-blur-md px-4 py-2 rounded-full shadow-[inset_0_1px_0_rgba(212,175,55,0.2)]">
+              <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse shadow-[0_0_8px_rgba(212,175,55,0.8)]"></span>
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#D4AF37]" style={{ fontFamily: "'Montserrat', sans-serif" }}>Secured Access</span>
+            </div>
+
+            {/* Logo Integration */}
+            <div className="mb-10 w-full max-w-[450px]">
+               <DavisGarnettLogo variant="dark" />
+            </div>
+            
+            <div className="w-20 h-[2px] bg-gradient-to-r from-[#D4AF37] to-transparent mb-8"></div>
+            
+            <h1 className="text-3xl md:text-4xl font-semibold mb-4 text-white drop-shadow-md" style={{ fontFamily: "'AIVeritas', serif" }}>
+              Command the Market.
+            </h1>
+            
+            <p className="text-white/70 text-lg md:text-xl leading-relaxed font-light max-w-xl">
+              Welcome to the private development workspace for Davis & Garnett. Authenticate to preview your live digital platforms, manage your custom command dashboard, and securely download your complete suite of branding assets.
+            </p>
+          </div>
+        </div>
+
+        {/* Right side: Login Form */}
+        <div className="w-full md:w-[480px] lg:w-[540px] bg-black/40 backdrop-blur-xl flex flex-col justify-center p-8 md:p-12 lg:p-16 relative shadow-[-20px_0_50px_rgba(0,0,0,0.5)] border-l border-white/5">
+          
+          <div className="mb-12">
+            <h2 className="font-serif text-3xl font-semibold mb-3 text-white">Sign In</h2>
+            <p className="text-white/50 text-sm font-light">Please authenticate to access the development workspace.</p>
           </div>
 
-          {/* Logo Integration */}
-          <div className="mb-10 w-full max-w-[450px]">
-             <DavisGarnettLogo variant="dark" />
+          {error && (
+            <div className="bg-red-500/10 border border-red-500/30 text-red-400 px-4 py-3 rounded-lg mb-8 text-sm font-medium flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+              </svg>
+              {error}
+            </div>
+          )}
+
+          <form onSubmit={handleLogin} className="flex flex-col gap-6">
+            <div className="bg-red-500/10 border border-red-500/30 text-red-400 px-4 py-3 rounded-lg text-sm font-medium flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mt-0.5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+              </svg>
+              <div>
+                <strong className="block text-white mb-1">System Update in Progress</strong>
+                Please do not log in at this time. We are currently loading large content and tools into the workspace.
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold tracking-wider uppercase text-white/60 mb-2">Email Address</label>
+              <input 
+                required 
+                type="email" 
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder-white/20 focus:outline-none focus:border-[#D4AF37]/50 focus:ring-1 focus:ring-[#D4AF37]/50 transition-all font-light"
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold tracking-wider uppercase text-white/60 mb-2">Password</label>
+              <input 
+                required 
+                type="password" 
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+                placeholder="••••••••••••"
+                className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder-white/20 focus:outline-none focus:border-[#D4AF37]/50 focus:ring-1 focus:ring-[#D4AF37]/50 transition-all font-light"
+              />
+            </div>
+
+            <button 
+              type="submit"
+              disabled={loading}
+              className={`mt-6 w-full bg-gradient-to-r from-[#D4AF37] to-[#8B6914] text-black border-none py-3.5 px-4 rounded-lg font-bold uppercase tracking-wider text-sm transition-all duration-300 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] ${loading ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer hover:scale-[1.02]'}`}
+            >
+              {loading ? 'Authenticating...' : 'Access Workspace'}
+            </button>
+          </form>
+          
+          <div className="mt-8 text-center">
+            <button 
+              onClick={() => setShowAccessModal(true)}
+              className="text-white/50 text-xs tracking-widest uppercase hover:text-[#D4AF37] transition-colors border-b border-transparent hover:border-[#D4AF37] pb-1"
+            >
+              Request Access
+            </button>
           </div>
           
-          <div className="w-20 h-[2px] bg-gradient-to-r from-[#D4AF37] to-transparent mb-8"></div>
-          
-          <h1 className="text-3xl md:text-4xl font-semibold mb-4 text-white drop-shadow-md" style={{ fontFamily: "'AIVeritas', serif" }}>
-            Command the Market.
-          </h1>
-          
-          <p className="text-white/70 text-lg md:text-xl leading-relaxed font-light max-w-xl">
-            Welcome to the private development workspace for Davis & Garnett. Authenticate to preview your live digital platforms, manage your custom command dashboard, and securely download your complete suite of branding assets.
-          </p>
         </div>
       </div>
 
-      {/* Right side: Login Form */}
-      <div className="w-full md:w-[480px] lg:w-[540px] bg-black/40 backdrop-blur-xl flex flex-col justify-center p-8 md:p-12 lg:p-16 relative shadow-[-20px_0_50px_rgba(0,0,0,0.5)] z-20 border-l border-white/5">
-        
-        <div className="mb-12">
-          <h2 className="font-serif text-3xl font-semibold mb-3 text-white">Sign In</h2>
-          <p className="text-white/50 text-sm font-light">Please authenticate to access the development workspace.</p>
+      {/* Compliance Footer */}
+      <div className="w-full bg-[#050505] border-t border-white/10 p-6 flex flex-col md:flex-row items-center justify-between z-20 relative mt-auto">
+        <div className="flex-1 text-white/40 text-[9px] sm:text-[10px] uppercase tracking-widest leading-relaxed max-w-5xl pr-0 md:pr-8 text-center md:text-left mb-6 md:mb-0">
+          Davis & Garnett Commercial and Residential Advisors are licensed real estate agents in the state of Florida. <br className="hidden md:block" />
+          The affiliated real estate brokerage is Align Right Realty. <br className="hidden md:block" />
+          Mark Davis (License #3209459) | Rachael Garnett (License #3378601)
+          <div className="mt-4 pt-4 border-t border-white/10">
+            © {new Date().getFullYear()} ClickMe.life. All rights reserved.
+          </div>
         </div>
-
-        {error && (
-          <div className="bg-red-500/10 border border-red-500/30 text-red-400 px-4 py-3 rounded-lg mb-8 text-sm font-medium flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-            </svg>
-            {error}
-          </div>
-        )}
-
-        <form onSubmit={handleLogin} className="flex flex-col gap-6">
-          <div className="bg-red-500/10 border border-red-500/30 text-red-400 px-4 py-3 rounded-lg text-sm font-medium flex items-start gap-3">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mt-0.5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-            </svg>
-            <div>
-              <strong className="block text-white mb-1">System Update in Progress</strong>
-              Please do not log in at this time. We are currently loading large content and tools into the workspace.
-            </div>
-          </div>
-
-          <div>
-            <label className="block text-xs font-bold tracking-wider uppercase text-white/60 mb-2">Email Address</label>
-            <input 
-              required 
-              type="email" 
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              placeholder="Enter your email"
-              className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder-white/20 focus:outline-none focus:border-[#D4AF37]/50 focus:ring-1 focus:ring-[#D4AF37]/50 transition-all font-light"
-            />
-          </div>
-
-          <div>
-            <label className="block text-xs font-bold tracking-wider uppercase text-white/60 mb-2">Password</label>
-            <input 
-              required 
-              type="password" 
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-              placeholder="••••••••••••"
-              className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder-white/20 focus:outline-none focus:border-[#D4AF37]/50 focus:ring-1 focus:ring-[#D4AF37]/50 transition-all font-light"
-            />
-          </div>
-
-          <button 
-            type="submit"
-            disabled={loading}
-            className={`mt-6 w-full bg-gradient-to-r from-[#D4AF37] to-[#8B6914] text-black border-none py-3.5 px-4 rounded-lg font-bold uppercase tracking-wider text-sm transition-all duration-300 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] ${loading ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer hover:scale-[1.02]'}`}
-          >
-            {loading ? 'Authenticating...' : 'Access Workspace'}
-          </button>
-        </form>
-        
-        <div className="mt-8 text-center">
-          <button 
-            onClick={() => setShowAccessModal(true)}
-            className="text-white/50 text-xs tracking-widest uppercase hover:text-[#D4AF37] transition-colors border-b border-transparent hover:border-[#D4AF37] pb-1"
-          >
-            Request Access
-          </button>
-        </div>
-        
-        <div className="absolute bottom-8 left-0 right-0 text-center">
-          <p className="text-white/30 text-xs font-light tracking-wide">© {new Date().getFullYear()} ClickMe.life. All rights reserved.</p>
+        <div className="opacity-60 hover:opacity-100 transition-opacity flex-shrink-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/align-right-realty-logo.webp" alt="Align Right Realty" className="h-12 w-auto object-contain brightness-0 invert" />
         </div>
       </div>
 
