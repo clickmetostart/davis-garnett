@@ -6,7 +6,7 @@ const publicPaths = [
   '/api/auth/login'
 ];
 
-export function proxy(request: NextRequest) {
+export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   
   // Allow public paths and static assets
