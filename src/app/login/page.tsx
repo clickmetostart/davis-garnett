@@ -240,7 +240,7 @@ export default function LoginPage() {
           <div className="flex flex-col items-center md:items-end gap-3 text-center md:text-right">
             <a href="https://alignrightcarrollwood.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={alignRightLogo.src} alt="Align Right Realty" className="h-10 w-auto object-contain mb-1" />
+              <img src={alignRightLogo.src} alt="Align Right Realty" className="h-14 w-auto object-contain mb-1" />
             </a>
             <p>
               Align Right Realty Broker Number BK3401606<br />
