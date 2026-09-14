@@ -4,7 +4,7 @@ export async function POST() {
   try {
     const response = NextResponse.json({ success: true });
     
-    response.cookies.delete('mock_session');
+    response.cookies.delete('mock_session_v2');
     
     return response;
   } catch (error) {

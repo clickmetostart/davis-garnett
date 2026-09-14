@@ -17,7 +17,7 @@ export function middleware(request: NextRequest) {
   ) {
     // If accessing the login page but already logged in, redirect to root
     if (pathname === '/login') {
-      const sessionCookie = request.cookies.get('mock_session');
+      const sessionCookie = request.cookies.get('mock_session_v2');
       if (sessionCookie && sessionCookie.value) {
         return NextResponse.redirect(new URL('/', request.url));
       }
@@ -26,7 +26,7 @@ export function middleware(request: NextRequest) {
   }
 
   // Check for the authentication cookie
-  const sessionCookie = request.cookies.get('mock_session');
+  const sessionCookie = request.cookies.get('mock_session_v2');
 
   if (!sessionCookie || !sessionCookie.value) {
     // Redirect to login if not authenticated

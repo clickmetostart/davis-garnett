@@ -16,7 +16,7 @@ function readData() {
 export async function GET() {
   try {
     const cookieStore = await cookies();
-    const sessionCookie = cookieStore.get('mock_session');
+    const sessionCookie = cookieStore.get('mock_session_v2');
 
     if (!sessionCookie || !sessionCookie.value) {
       return NextResponse.json({ error: 'Not authenticated' }, { status: 401 });
