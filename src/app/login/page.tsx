@@ -252,7 +252,7 @@ export default function LoginPage() {
               <img src={alignRightLogo.src} alt="Align Right Realty" className="h-14 w-auto object-contain mb-1" />
             </a>
             <p>
-              Align Right Realty Carrollwood<br />
+              <strong className="text-[#ef5728] text-sm font-semibold block mb-0.5">Align Right Realty Carrollwood</strong>
               Broker Number BK3401606<br />
               3903 Northdale Blvd Suite 115W, TAMPA, FL 33624<br />
               (813) 374-6050 &nbsp;|&nbsp; officeadmin@alignrightcarrollwood.com
