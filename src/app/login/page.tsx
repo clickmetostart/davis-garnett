@@ -5,8 +5,8 @@ import { useRouter } from 'next/navigation';
 import DavisGarnettLogo from '@/components/DavisGarnettLogo';
 
 // Static imports to bypass dev server cache
-import markHeadshot from '../../../public/davis-garnett-headshots/mark-davis-headshot-4.jpg';
-import rachaelHeadshot from '../../../public/davis-garnett-headshots/rachael-garnett-3.jpg';
+import markHeadshot from '../../../public/davis-garnett-headshots/mark-davis-headshot-4.JPG';
+import rachaelHeadshot from '../../../public/davis-garnett-headshots/rachael-garnett-3.JPG';
 import alignRightLogo from '../../../public/align-right-realty-logo.webp';
 
 export default function LoginPage() {
