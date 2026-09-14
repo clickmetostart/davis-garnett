@@ -241,7 +241,7 @@ export default function LoginPage() {
           {/* Compliance Col 2 */}
           <div className="flex flex-col gap-4 text-center md:text-left">
             <p>
-              MLS IDX information is for personal, non-commercial use only; data is deemed reliable but not guaranteed. No mobile information, including SMS opt-in data and consent, WILL NOT be shared with third parties or affiliates for marketing purposes.
+              MLS IDX information is for personal, non-commercial use only; data is deemed reliable but not guaranteed. Mobile information, including SMS opt-in data and consent, WILL NOT be shared with third parties or affiliates for marketing purposes.
             </p>
           </div>
 
