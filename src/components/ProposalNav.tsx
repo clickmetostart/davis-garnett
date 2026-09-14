@@ -9,16 +9,7 @@ const NAV_LINKS = [
   { label: "Main Proposal", href: "/" },
   { label: "Project Scope", href: "/scope" },
   { label: "Branding", href: "/branding" },
-  { 
-    label: "Live Previews", 
-    href: "#",
-    subLinks: [
-      { label: "Preview v1", href: "/preview-mockup" },
-      { label: "Preview v2 (loading...)", href: "#", disabled: true },
-      { label: "Preview v3 (loading...)", href: "#", disabled: true },
-      { label: "Preview v4 (loading...)", href: "#", disabled: true }
-    ]
-  },
+  { label: "Live Preview", href: "/preview-mockup" },
   { label: "Dashboard", href: "/clickme" },
 ];
 
