@@ -176,7 +176,7 @@ export default function LoginPage() {
             <p className="leading-loose">
               Mark Davis and Rachael Garnett are Real Estate Advisors & Agents at Align Right Realty, based in Tampa Bay and serving clients across the Gulf Coast. With decades of combined expertise, they specialize in providing elite, transparent real estate solutions, including luxury residential acquisitions and high-yield commercial investments.
             </p>
-            <a href="mailto:list@davisgarnettsells.com" className="text-white hover:text-[#D4AF37] transition-colors font-bold tracking-widest uppercase text-[10px]">
+            <a href="mailto:list@davisgarnettsells.com" className="text-[#D4AF37] hover:text-white transition-colors font-bold tracking-widest uppercase text-[10px]">
               list@davisgarnettsells.com
             </a>
           </div>
@@ -187,13 +187,18 @@ export default function LoginPage() {
             <img src={markHeadshot.src} alt="Mark Davis" className="w-20 h-20 rounded-full object-cover object-top border border-[#D4AF37]/30 shadow-lg shadow-black/50 shrink-0" />
             <div className="flex flex-col gap-1">
               <div>
-                <strong className="text-white text-base block font-serif">Mark Davis</strong>
+                <strong className="text-[#D4AF37] text-base block font-serif">Mark Davis</strong>
                 <span>Commercial & Residential Advisor</span><br />
                 <span className="text-white/40 text-[10px] uppercase tracking-widest mt-1 block">Agent License #3209459</span>
               </div>
-              <a href="mailto:mark@davisgarnettsells.com" className="text-white hover:text-[#D4AF37] transition-colors mt-1">
-                mark@davisgarnettsells.com
-              </a>
+              <div className="flex flex-col gap-0.5 mt-1">
+                <a href="mailto:mark@davisgarnettsells.com" className="text-[#D4AF37] hover:text-white transition-colors">
+                  mark@davisgarnettsells.com
+                </a>
+                <a href="tel:941-737-4127" className="text-[#D4AF37] hover:text-white transition-colors">
+                  941-737-4127
+                </a>
+              </div>
             </div>
           </div>
 
@@ -203,13 +208,18 @@ export default function LoginPage() {
             <img src={rachaelHeadshot.src} alt="Rachael Garnett" className="w-20 h-20 rounded-full object-cover object-[center_30%] border border-[#D4AF37]/30 shadow-lg shadow-black/50 shrink-0" />
             <div className="flex flex-col gap-1">
               <div>
-                <strong className="text-white text-base block font-serif">Rachael Garnett</strong>
+                <strong className="text-[#D4AF37] text-base block font-serif">Rachael Garnett</strong>
                 <span>Commercial & Residential Advisor</span><br />
                 <span className="text-white/40 text-[10px] uppercase tracking-widest mt-1 block">Agent License #3378601</span>
               </div>
-              <a href="mailto:rachael@davisgarnettsells.com" className="text-white hover:text-[#D4AF37] transition-colors mt-1">
-                rachael@davisgarnettsells.com
-              </a>
+              <div className="flex flex-col gap-0.5 mt-1">
+                <a href="mailto:rachael@davisgarnettsells.com" className="text-[#D4AF37] hover:text-white transition-colors">
+                  rachael@davisgarnettsells.com
+                </a>
+                <a href="tel:727-808-3344" className="text-[#D4AF37] hover:text-white transition-colors">
+                  727-808-3344
+                </a>
+              </div>
             </div>
           </div>
 
