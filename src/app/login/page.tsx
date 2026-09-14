@@ -4,6 +4,11 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import DavisGarnettLogo from '@/components/DavisGarnettLogo';
 
+// Static imports to bypass dev server cache
+import markHeadshot from '../../../public/davis-garnett-headshots/mark-davis-headshot-4.jpg';
+import rachaelHeadshot from '../../../public/davis-garnett-headshots/rachael-garnett-3.jpg';
+import alignRightLogo from '../../../public/align-right-realty-logo.webp';
+
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -34,7 +39,7 @@ export default function LoginPage() {
 
       // Success! Redirect to the project proposal (root)
       router.push('/');
-      router.refresh(); 
+      router.refresh();
     } catch (err) {
       setError('An unexpected error occurred. Please try again.');
       setLoading(false);
@@ -43,9 +48,9 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen relative flex flex-col bg-black text-white selection:bg-[#D4AF37] selection:text-black overflow-x-hidden" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-      
+
       {/* Deep Gold & Black Gradient Background */}
-      <div className="absolute inset-0 z-0 bg-black pointer-events-none">
+      <div className="absolute inset-0 z-0 bg-black pointer-events-none overflow-hidden">
         {/* Diagonal Gold to Black */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/30 via-[#8B6914]/10 to-transparent"></div>
         {/* Strong radial gold highlights */}
@@ -57,10 +62,10 @@ export default function LoginPage() {
 
       {/* Main Content Area */}
       <div className="flex-1 relative z-10 flex flex-col md:flex-row w-full">
-        
+
         {/* Left side: Branding */}
         <div className="flex-1 relative flex flex-col justify-center p-8 md:p-16 lg:p-24 border-b md:border-b-0 md:border-r border-[#D4AF37]/10 bg-black/20 backdrop-blur-md">
-          
+
           <div className="relative z-10 max-w-2xl flex flex-col items-start">
             <div className="inline-flex items-center gap-3 mb-10 bg-[#D4AF37]/10 border border-[#D4AF37]/20 backdrop-blur-md px-4 py-2 rounded-full shadow-[inset_0_1px_0_rgba(212,175,55,0.2)]">
               <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse shadow-[0_0_8px_rgba(212,175,55,0.8)]"></span>
@@ -69,15 +74,15 @@ export default function LoginPage() {
 
             {/* Logo Integration */}
             <div className="mb-10 w-full max-w-[450px]">
-               <DavisGarnettLogo variant="dark" />
+              <DavisGarnettLogo variant="dark" />
             </div>
-            
+
             <div className="w-20 h-[2px] bg-gradient-to-r from-[#D4AF37] to-transparent mb-8"></div>
-            
+
             <h1 className="text-3xl md:text-4xl font-semibold mb-4 text-white drop-shadow-md" style={{ fontFamily: "'AIVeritas', serif" }}>
               Command the Market.
             </h1>
-            
+
             <p className="text-white/70 text-lg md:text-xl leading-relaxed font-light max-w-xl">
               Welcome to the private development workspace for Davis & Garnett. Authenticate to preview your live digital platforms, manage your custom command dashboard, and securely download your complete suite of branding assets.
             </p>
@@ -86,7 +91,7 @@ export default function LoginPage() {
 
         {/* Right side: Login Form */}
         <div className="w-full md:w-[480px] lg:w-[540px] bg-black/40 backdrop-blur-xl flex flex-col justify-center p-8 md:p-12 lg:p-16 relative shadow-[-20px_0_50px_rgba(0,0,0,0.5)] border-l border-white/5">
-          
+
           <div className="mb-12">
             <h2 className="font-serif text-3xl font-semibold mb-3 text-white">Sign In</h2>
             <p className="text-white/50 text-sm font-light">Please authenticate to access the development workspace.</p>
@@ -114,9 +119,9 @@ export default function LoginPage() {
 
             <div>
               <label className="block text-xs font-bold tracking-wider uppercase text-white/60 mb-2">Email Address</label>
-              <input 
-                required 
-                type="email" 
+              <input
+                required
+                type="email"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 placeholder="Enter your email"
@@ -126,9 +131,9 @@ export default function LoginPage() {
 
             <div>
               <label className="block text-xs font-bold tracking-wider uppercase text-white/60 mb-2">Password</label>
-              <input 
-                required 
-                type="password" 
+              <input
+                required
+                type="password"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 placeholder="••••••••••••"
@@ -136,7 +141,7 @@ export default function LoginPage() {
               />
             </div>
 
-            <button 
+            <button
               type="submit"
               disabled={loading}
               className={`mt-6 w-full bg-gradient-to-r from-[#D4AF37] to-[#8B6914] text-black border-none py-3.5 px-4 rounded-lg font-bold uppercase tracking-wider text-sm transition-all duration-300 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] ${loading ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer hover:scale-[1.02]'}`}
@@ -144,32 +149,104 @@ export default function LoginPage() {
               {loading ? 'Authenticating...' : 'Access Workspace'}
             </button>
           </form>
-          
+
           <div className="mt-8 text-center">
-            <button 
+            <button
               onClick={() => setShowAccessModal(true)}
               className="text-white/50 text-xs tracking-widest uppercase hover:text-[#D4AF37] transition-colors border-b border-transparent hover:border-[#D4AF37] pb-1"
             >
               Request Access
             </button>
           </div>
-          
+
         </div>
       </div>
 
-      {/* Compliance Footer */}
-      <div className="w-full bg-[#050505] border-t border-white/10 p-6 flex flex-col md:flex-row items-center justify-between z-20 relative mt-auto">
-        <div className="flex-1 text-white/40 text-[9px] sm:text-[10px] uppercase tracking-widest leading-relaxed max-w-5xl pr-0 md:pr-8 text-center md:text-left mb-6 md:mb-0">
-          Davis & Garnett Commercial and Residential Advisors are licensed real estate agents in the state of Florida. <br className="hidden md:block" />
-          The affiliated real estate brokerage is Align Right Realty. <br className="hidden md:block" />
-          Mark Davis (License #3209459) | Rachael Garnett (License #3378601)
-          <div className="mt-4 pt-4 border-t border-white/10">
-            © {new Date().getFullYear()} ClickMe.life. All rights reserved.
+      {/* Footer Area */}
+      <div className="w-full bg-black border-t border-white/10 pt-12 pb-8 z-20 relative mt-auto">
+
+        {/* Tier 1: Agents & Brand (3 Columns) */}
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-white/60 text-xs font-light leading-relaxed mb-12 px-6">
+
+          {/* Column 1: Davis & Garnett Logo & Info */}
+          <div className="flex flex-col items-center md:items-start text-center md:text-left gap-4">
+            <div className="w-40 mb-2">
+              <DavisGarnettLogo variant="dark" />
+            </div>
+            <p className="leading-loose">
+              Mark Davis and Rachael Garnett are Senior Real Estate Advisors at Align Right Realty, based in Tampa Bay and serving clients across the Gulf Coast. With decades of combined expertise, they specialize in providing elite, transparent real estate solutions, including luxury residential acquisitions and high-yield commercial investments.
+            </p>
+            <a href="mailto:list@davisgarnettsells.com" className="text-white hover:text-[#D4AF37] transition-colors font-bold tracking-widest uppercase text-[10px]">
+              list@davisgarnettsells.com
+            </a>
           </div>
+
+          {/* Column 2: Mark Davis */}
+          <div className="flex flex-row items-center text-left gap-6">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={markHeadshot.src} alt="Mark Davis" className="w-20 h-20 rounded-full object-cover object-top border border-[#D4AF37]/30 shadow-lg shadow-black/50 shrink-0" />
+            <div className="flex flex-col gap-1">
+              <div>
+                <strong className="text-white text-base block font-serif">Mark Davis</strong>
+                <span>Commercial & Residential Advisor</span><br />
+                <span className="text-white/40 text-[10px] uppercase tracking-widest mt-1 block">Agent License #3209459</span>
+              </div>
+              <a href="mailto:mark@davisgarnettsells.com" className="text-white hover:text-[#D4AF37] transition-colors mt-1">
+                mark@davisgarnettsells.com
+              </a>
+            </div>
+          </div>
+
+          {/* Column 3: Rachael Garnett */}
+          <div className="flex flex-row items-center text-left gap-6">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={rachaelHeadshot.src} alt="Rachael Garnett" className="w-20 h-20 rounded-full object-cover object-top border border-[#D4AF37]/30 shadow-lg shadow-black/50 shrink-0" />
+            <div className="flex flex-col gap-1">
+              <div>
+                <strong className="text-white text-base block font-serif">Rachael Garnett</strong>
+                <span>Commercial & Residential Advisor</span><br />
+                <span className="text-white/40 text-[10px] uppercase tracking-widest mt-1 block">Agent License #3378601</span>
+              </div>
+              <a href="mailto:rachael@davisgarnettsells.com" className="text-white hover:text-[#D4AF37] transition-colors mt-1">
+                rachael@davisgarnettsells.com
+              </a>
+            </div>
+          </div>
+
         </div>
-        <div className="opacity-60 hover:opacity-100 transition-opacity flex-shrink-0">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/align-right-realty-logo.webp" alt="Align Right Realty" className="h-12 w-auto object-contain brightness-0 invert" />
+
+        {/* Tier 2: Compliance Bottom Horizontal (3-Column like MadCity) */}
+        <div className="max-w-7xl mx-auto border-t border-[#ef5728]/40 pt-8 px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-[#888] text-[11px] leading-snug items-end">
+
+          {/* Compliance Col 1 */}
+          <div className="flex flex-col gap-4 text-center md:text-left">
+            <div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/dg-equal-realtor-gold.png" alt="Realtor and Equal Housing Opportunity" className="h-8 w-auto object-contain mx-auto md:mx-0 mb-3" />
+              <p>
+                © {new Date().getFullYear()} Davis & Garnett. All Rights Reserved.
+              </p>
+            </div>
+          </div>
+
+          {/* Compliance Col 2 */}
+          <div className="flex flex-col gap-4 text-center md:text-left">
+            <p>
+              MLS IDX information is for personal, non-commercial use only; data is deemed reliable but not guaranteed. No mobile information, including SMS opt-in data and consent, WILL NOT be shared with third parties or affiliates for marketing purposes.
+            </p>
+          </div>
+
+          {/* Compliance Col 3 */}
+          <div className="flex flex-col items-center md:items-end gap-3 text-center md:text-right">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={alignRightLogo.src} alt="Align Right Realty" className="h-10 w-auto object-contain mb-1" />
+            <p>
+              Align Right Realty Broker Number BK3401606<br />
+              3903 Northdale Blvd Suite 115W, TAMPA, FL 33624<br />
+              (813) 374-6050 &nbsp;|&nbsp; officeadmin@alignrightcarrollwood.com
+            </p>
+          </div>
+
         </div>
       </div>
 
@@ -177,7 +254,7 @@ export default function LoginPage() {
       {showAccessModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
           <div className="bg-[#0a0a0a] border border-red-500/30 rounded-2xl p-8 max-w-md w-full shadow-[0_0_50px_rgba(239,68,68,0.1)] relative animate-in fade-in zoom-in duration-300">
-            <button 
+            <button
               onClick={() => setShowAccessModal(false)}
               className="absolute top-4 right-4 text-white/50 hover:text-white transition-colors"
             >
@@ -195,7 +272,7 @@ export default function LoginPage() {
               <p className="text-white/50 text-sm mb-8 leading-relaxed">
                 Please email <a href="mailto:clickme.tostart@gmail.com" className="text-[#D4AF37] hover:underline font-medium">clickme.tostart@gmail.com</a> to request your workspace access.
               </p>
-              <button 
+              <button
                 onClick={() => setShowAccessModal(false)}
                 className="w-full bg-white/5 hover:bg-white/10 border border-white/10 text-white py-3 rounded-lg text-sm font-bold uppercase tracking-widest transition-colors"
               >

@@ -39,6 +39,8 @@ const FEATURES = [
   },
 ];
 
+import GlobalFooter from "@/components/GlobalFooter";
+
 export default function Page() {
   const [activeFeature, setActiveFeature] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -569,8 +571,7 @@ export default function Page() {
         </div>
       </section>
 
-
-
+      <GlobalFooter />
     </div>
   );
 }
