@@ -90,7 +90,7 @@ export default function LoginPage() {
         </div>
 
         {/* Right side: Login Form */}
-        <div className="w-full md:w-[480px] lg:w-[540px] bg-black/40 backdrop-blur-xl flex flex-col justify-center p-8 md:p-12 lg:p-16 relative shadow-[-20px_0_50px_rgba(0,0,0,0.5)] border-l border-white/5">
+        <div className="w-full md:w-[480px] lg:w-[540px] bg-black/40 backdrop-blur-xl flex flex-col justify-center p-8 md:p-12 lg:p-16 relative shadow-[-20px_0_50px_rgba(0,0,0,0.5)] md:border-l border-white/5">
 
           <div className="mb-12">
             <h2 className="font-serif text-3xl font-semibold mb-3 text-white">Sign In</h2>
@@ -182,7 +182,7 @@ export default function LoginPage() {
           </div>
 
           {/* Column 2: Mark Davis */}
-          <div className="flex flex-row items-center text-left gap-6">
+          <div className="flex flex-row items-center justify-center md:justify-start text-left gap-6">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={markHeadshot.src} alt="Mark Davis" className="w-20 h-20 rounded-full object-cover object-top border border-[#D4AF37]/30 shadow-lg shadow-black/50 shrink-0" />
             <div className="flex flex-col gap-1">
@@ -198,9 +198,9 @@ export default function LoginPage() {
           </div>
 
           {/* Column 3: Rachael Garnett */}
-          <div className="flex flex-row items-center text-left gap-6">
+          <div className="flex flex-row items-center justify-center md:justify-start text-left gap-6">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={rachaelHeadshot.src} alt="Rachael Garnett" className="w-20 h-20 rounded-full object-cover object-top border border-[#D4AF37]/30 shadow-lg shadow-black/50 shrink-0" />
+            <img src={rachaelHeadshot.src} alt="Rachael Garnett" className="w-20 h-20 rounded-full object-cover object-[center_30%] border border-[#D4AF37]/30 shadow-lg shadow-black/50 shrink-0" />
             <div className="flex flex-col gap-1">
               <div>
                 <strong className="text-white text-base block font-serif">Rachael Garnett</strong>
