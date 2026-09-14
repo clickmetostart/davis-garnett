@@ -173,7 +173,7 @@ export default function LoginPage() {
             <p className="leading-loose text-white/60">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/dg-footer-logo-wrap.jpg" alt="Davis & Garnett" className="float-left w-16 h-16 mr-5 mb-1 rounded-sm object-cover border border-[#D4AF37]/20 shadow-md" />
-              Mark Davis and Rachael Garnett are Real Estate Advisors & Agents at Align Right Realty, based in Tampa Bay and serving clients across the Gulf Coast. With decades of combined expertise, they specialize in providing elite, transparent real estate solutions, including luxury residential acquisitions and high-yield commercial investments.
+              Operating as elite Agents and Advisors at Align Right Realty Carrollwood, Mark Davis and Rachael Garnett specialize in luxury residential acquisitions and high-yield commercial investments. With decades of combined expertise, they deliver transparent, top-tier real estate solutions across Tampa Bay and the Gulf Coast.
             </p>
             <a href="mailto:list@davisgarnettsells.com" className="text-[#D4AF37] hover:text-white transition-colors font-bold tracking-widest uppercase text-[10px] mt-4 block">
               list@davisgarnettsells.com
