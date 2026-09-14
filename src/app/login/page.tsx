@@ -233,7 +233,7 @@ export default function LoginPage() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/dg-equal-realtor-gold.png" alt="Realtor and Equal Housing Opportunity" className="h-8 w-auto object-contain mx-auto md:mx-0 mb-3" />
               <p>
-                © {new Date().getFullYear()} Davis & Garnett. All Rights Reserved.
+                © {new Date().getFullYear()} Davis & Garnett. All Rights Reserved. An independent team affiliated with Align Right Realty Carrollwood. Equal Housing Opportunity.
               </p>
             </div>
           </div>
