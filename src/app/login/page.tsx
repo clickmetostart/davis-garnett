@@ -47,15 +47,15 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen relative flex flex-col bg-black text-white selection:bg-[#D4AF37] selection:text-black overflow-x-hidden" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+    <div className="min-h-screen relative flex flex-col bg-white text-gray-900 selection:bg-[#D4AF37] selection:text-white overflow-x-hidden" style={{ fontFamily: "'DM Sans', sans-serif" }}>
 
-      {/* Deep Gold & Black Gradient Background */}
-      <div className="absolute inset-0 z-0 bg-black pointer-events-none overflow-hidden">
-        {/* Diagonal Gold to Black */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/30 via-[#8B6914]/10 to-transparent"></div>
+      {/* Deep Gold & Light Gradient Background */}
+      <div className="absolute inset-0 z-0 bg-white pointer-events-none overflow-hidden">
+        {/* Diagonal Gold to Light */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-[#faf9f5] to-[#f4f2eb]"></div>
         {/* Strong radial gold highlights */}
-        <div className="absolute top-[-20%] right-[-10%] w-[80%] h-[80%] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#D4AF37]/40 via-[#D4AF37]/5 to-transparent blur-3xl"></div>
-        <div className="absolute bottom-[-10%] left-[-10%] w-[60%] h-[60%] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#D4AF37]/30 via-transparent to-transparent blur-3xl"></div>
+        <div className="absolute top-[-20%] right-[-10%] w-[80%] h-[80%] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#D4AF37]/15 via-transparent to-transparent blur-3xl"></div>
+        <div className="absolute bottom-[-10%] left-[-10%] w-[60%] h-[60%] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#D4AF37]/10 via-transparent to-transparent blur-3xl"></div>
         {/* Texture overlay for that "leathery/matte" subtle noise feel */}
         <div className="absolute inset-0 opacity-[0.04] mix-blend-overlay" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')" }}></div>
       </div>
@@ -64,41 +64,41 @@ export default function LoginPage() {
       <div className="flex-1 relative z-10 flex flex-col md:flex-row w-full">
 
         {/* Left side: Branding */}
-        <div className="flex-1 relative flex flex-col justify-center p-8 md:p-16 lg:p-24 border-b md:border-b-0 md:border-r border-[#D4AF37]/10 bg-black/20 backdrop-blur-md">
+        <div className="flex-1 relative flex flex-col justify-center p-8 md:p-16 lg:p-24 border-b md:border-b-0 md:border-r border-[#D4AF37]/20 bg-white/40 backdrop-blur-md">
 
           <div className="relative z-10 max-w-2xl flex flex-col items-start">
-            <div className="inline-flex items-center gap-3 mb-10 bg-[#D4AF37]/10 border border-[#D4AF37]/20 backdrop-blur-md px-4 py-2 rounded-full shadow-[inset_0_1px_0_rgba(212,175,55,0.2)]">
+            <div className="inline-flex items-center gap-3 mb-10 bg-[#D4AF37]/10 border border-[#D4AF37]/30 backdrop-blur-md px-4 py-2 rounded-full shadow-[inset_0_1px_0_rgba(212,175,55,0.2)]">
               <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse shadow-[0_0_8px_rgba(212,175,55,0.8)]"></span>
               <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#D4AF37]" style={{ fontFamily: "'Montserrat', sans-serif" }}>Secured Access</span>
             </div>
 
             {/* Logo Integration */}
             <div className="mb-10 w-full max-w-[450px]">
-              <DavisGarnettLogo variant="dark" />
+              <DavisGarnettLogo variant="light" />
             </div>
 
             <div className="w-20 h-[2px] bg-gradient-to-r from-[#D4AF37] to-transparent mb-8"></div>
 
-            <h1 className="text-3xl md:text-4xl font-semibold mb-4 text-white drop-shadow-md" style={{ fontFamily: "'AIVeritas', serif" }}>
+            <h1 className="text-3xl md:text-4xl font-semibold mb-4 text-gray-900 drop-shadow-sm" style={{ fontFamily: "'AIVeritas', serif" }}>
               Command the Market.
             </h1>
 
-            <p className="text-white/70 text-lg md:text-xl leading-relaxed font-light max-w-xl">
+            <p className="text-gray-700 text-lg md:text-xl leading-relaxed font-light max-w-xl">
               Welcome to the private development workspace for Davis & Garnett. Authenticate to preview your live digital platforms, manage your custom command dashboard, and securely download your complete suite of branding assets.
             </p>
           </div>
         </div>
 
         {/* Right side: Login Form */}
-        <div className="w-full md:w-[480px] lg:w-[540px] bg-black/40 backdrop-blur-xl flex flex-col justify-center p-8 md:p-12 lg:p-16 relative shadow-[-20px_0_50px_rgba(0,0,0,0.5)] md:border-l border-white/5">
+        <div className="w-full md:w-[480px] lg:w-[540px] bg-white/60 backdrop-blur-xl flex flex-col justify-center p-8 md:p-12 lg:p-16 relative shadow-[-20px_0_50px_rgba(212,175,55,0.15)] md:border-l border-[#D4AF37]/20">
 
           <div className="mb-12">
-            <h2 className="font-serif text-3xl font-semibold mb-3 text-white">Sign In</h2>
-            <p className="text-white/50 text-sm font-light">Please authenticate to access the development workspace.</p>
+            <h2 className="font-serif text-3xl font-semibold mb-3 text-gray-900">Sign In</h2>
+            <p className="text-gray-600 text-sm font-light">Please authenticate to access the development workspace.</p>
           </div>
 
           {error && (
-            <div className="bg-red-500/10 border border-red-500/30 text-red-400 px-4 py-3 rounded-lg mb-8 text-sm font-medium flex items-center gap-2">
+            <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg mb-8 text-sm font-medium flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
               </svg>
@@ -107,37 +107,37 @@ export default function LoginPage() {
           )}
 
           <form onSubmit={handleLogin} className="flex flex-col gap-6">
-            <div className="bg-green-500/10 border border-green-500/30 text-green-400 px-4 py-3 rounded-lg text-sm font-medium flex items-start gap-3">
+            <div className="bg-green-500/10 border border-green-500/30 text-green-700 px-4 py-3 rounded-lg text-sm font-medium flex items-start gap-3">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mt-0.5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
               </svg>
               <div>
-                <strong className="block text-white mb-1">Scheduled Work Review Notice</strong>
-                Please login during our walkthrough. To schedule a time, please contact <a href="mailto:clickme.tostart@gmail.com" className="text-green-300 hover:underline">clickme.tostart@gmail.com</a>.
+                <strong className="block text-gray-900 mb-1">Scheduled Work Review Notice</strong>
+                Please login during our walkthrough. To schedule a time, please contact <a href="mailto:clickme.tostart@gmail.com" className="text-green-600 hover:underline">clickme.tostart@gmail.com</a>.
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-bold tracking-wider uppercase text-white/60 mb-2">Email Address</label>
+              <label className="block text-xs font-bold tracking-wider uppercase text-gray-600 mb-2">Email Address</label>
               <input
                 required
                 type="email"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder-white/20 focus:outline-none focus:border-[#D4AF37]/50 focus:ring-1 focus:ring-[#D4AF37]/50 transition-all font-light"
+                className="w-full px-4 py-3 rounded-lg border border-[#D4AF37]/30 bg-white/50 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all font-light shadow-[inset_0_1px_4px_rgba(0,0,0,0.02)]"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-bold tracking-wider uppercase text-white/60 mb-2">Password</label>
+              <label className="block text-xs font-bold tracking-wider uppercase text-gray-600 mb-2">Password</label>
               <input
                 required
                 type="password"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 placeholder="••••••••••••"
-                className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder-white/20 focus:outline-none focus:border-[#D4AF37]/50 focus:ring-1 focus:ring-[#D4AF37]/50 transition-all font-light"
+                className="w-full px-4 py-3 rounded-lg border border-[#D4AF37]/30 bg-white/50 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all font-light shadow-[inset_0_1px_4px_rgba(0,0,0,0.02)]"
               />
             </div>
 
@@ -153,7 +153,7 @@ export default function LoginPage() {
           <div className="mt-8 text-center">
             <button
               onClick={() => setShowAccessModal(true)}
-              className="text-white/50 text-xs tracking-widest uppercase hover:text-[#D4AF37] transition-colors border-b border-transparent hover:border-[#D4AF37] pb-1"
+              className="text-gray-500 text-xs tracking-widest uppercase hover:text-[#D4AF37] transition-colors border-b border-transparent hover:border-[#D4AF37] pb-1"
             >
               Request Access
             </button>
