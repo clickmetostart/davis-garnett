@@ -144,7 +144,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className={`mt-6 w-full bg-gradient-to-r from-[#D4AF37] to-[#8B6914] text-black border-none py-3.5 px-4 rounded-lg font-bold uppercase tracking-wider text-sm transition-all duration-300 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] ${loading ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer hover:scale-[1.02]'}`}
+              className={`mt-6 w-full bg-gradient-to-r from-[#D4AF37] to-[#8B6914] text-[#FDFCF0] border-none py-3.5 px-4 rounded-lg font-bold uppercase tracking-wider text-sm transition-all duration-300 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] ${loading ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer hover:scale-[1.02]'}`}
             >
               {loading ? 'Authenticating...' : 'Access Workspace'}
             </button>
