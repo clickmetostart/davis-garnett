@@ -38,7 +38,7 @@ export async function POST(request: Request) {
     const mockSessionData = JSON.stringify({ email, firstName, lastName, role: userRole });
     const encodedSession = Buffer.from(mockSessionData).toString('base64');
     
-    response.cookies.set('mock_session_v2', encodedSession, {
+    response.cookies.set('mock_session_v3', encodedSession, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',

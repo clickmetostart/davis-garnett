@@ -7,7 +7,7 @@ export async function POST(request: Request) {
   try {
     // 1. Verify user is authenticated
     const cookieStore = await cookies();
-    const sessionCookie = cookieStore.get('mock_session_v2');
+    const sessionCookie = cookieStore.get('mock_session_v3');
 
     if (!sessionCookie || !sessionCookie.value) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });

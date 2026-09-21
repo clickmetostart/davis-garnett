@@ -26,7 +26,7 @@ import { cookies } from 'next/headers';
 // Helper to get current authenticated user
 async function getCurrentUser() {
   const cookieStore = await cookies();
-  const sessionCookie = cookieStore.get('mock_session_v2');
+  const sessionCookie = cookieStore.get('mock_session_v3');
   if (!sessionCookie || !sessionCookie.value) return null;
   
   try {
