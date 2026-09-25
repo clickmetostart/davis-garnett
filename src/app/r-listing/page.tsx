@@ -206,7 +206,7 @@ export default function ResidentialListing() {
                   <p className="text-[#111]/45 text-sm mt-1">${listing.pricePerSqft}/sqft</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-[#D4AF37] font-bold text-sm uppercase tracking-widest mb-1">{listing.community}</p>
+                  <p className="text-[#D4AF37] font-bold text-sm uppercase tracking-widest mb-1">{listing.address.community}</p>
                 </div>
               </div>
 

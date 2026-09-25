@@ -8,6 +8,7 @@ import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 const NAV_LINKS = [
   { label: "Preview v1", href: "/" },
   { label: "V1-Light", href: "/v1-light" },
+  { label: "Featured", href: "/featured" },
   { label: "Properties", href: "/properties" },
   { label: "R Listing", href: "/r-listing" },
   { label: "C Listing", href: "/c-listing" },
