@@ -153,6 +153,7 @@ export default function ResidentialListing() {
             sizes="100vw"
             className="object-cover transition-all duration-500"
             priority
+            unoptimized
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
@@ -178,7 +179,7 @@ export default function ResidentialListing() {
               onClick={() => setActivePhoto(i)}
               className={`relative shrink-0 w-20 h-14 rounded-lg overflow-hidden border-2 transition-all ${i === activePhoto ? "border-[#D4AF37]" : "border-transparent opacity-50 hover:opacity-100"}`}
             >
-              <Image src={p} alt="" fill className="object-cover" sizes="80px" />
+              <Image src={p} alt="" fill className="object-cover" sizes="80px" unoptimized />
             </button>
           ))}
         </div>
@@ -434,7 +435,7 @@ export default function ResidentialListing() {
               <p className="text-[#9A7D3A] text-[10px] uppercase tracking-[0.25em] font-bold mb-4">Listing Agent</p>
               <div className="flex items-center gap-4 mb-5">
                 <div className="relative w-16 h-16 rounded-full overflow-hidden shrink-0 border-2 border-[#D4AF37]/30">
-                  <Image src={listing.agent.photo} alt={listing.agent.name} fill className="object-cover object-top" sizes="64px" />
+                  <Image src={listing.agent.photo} alt={listing.agent.name} fill className="object-cover object-top" sizes="64px" unoptimized />
                 </div>
                 <div>
                   <p className="font-bold text-[#111] text-lg leading-tight">{listing.agent.name}</p>
