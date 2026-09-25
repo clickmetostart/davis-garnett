@@ -6,10 +6,11 @@ import { Menu, X } from "lucide-react";
 import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 
 const NAV_LINKS = [
-  { label: "Main Proposal", href: "/" },
-  { label: "Project Scope", href: "/scope" },
-  { label: "Branding", href: "/branding" },
-  { label: "Live Preview", href: "/preview-mockup" },
+  { label: "Preview v1", href: "/" },
+  { label: "V1-Light", href: "/v1-light" },
+  { label: "Properties", href: "/properties" },
+  { label: "R Listing", href: "/r-listing" },
+  { label: "C Listing", href: "/c-listing" },
   { label: "Dashboard", href: "/clickme" },
 ];
 
@@ -17,7 +18,7 @@ export default function ProposalNav() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-xl border-b border-white/5">
+    <nav className="fixed top-0 w-full z-50 bg-[#050505] border-b border-white/8">
       <div className="max-w-screen-xl mx-auto px-8 h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-4 hover:opacity-80 transition-opacity">
           <DavisGarnettLogo variant="dark" className="w-40 max-w-full" />
@@ -28,9 +29,7 @@ export default function ProposalNav() {
               {l.label}
             </Link>
           ))}
-          <Link href="/#investment" className="btn-gold text-[0.65rem] py-3 px-6 ml-4">
-            Your Investment
-          </Link>
+
         </div>
 
         <button className="lg:hidden p-2 text-white/60" onClick={() => setIsOpen(!isOpen)}>
@@ -45,9 +44,7 @@ export default function ProposalNav() {
               {l.label}
             </Link>
           ))}
-          <Link href="/#investment" onClick={() => setIsOpen(false)} className="btn-gold text-center py-4 mt-4">
-            Your Investment
-          </Link>
+
         </div>
       )}
     </nav>
