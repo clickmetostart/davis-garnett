@@ -15,10 +15,10 @@ const data = {
   heroImg: "/com_multi_family_1787632895059.png",
   images: [
     "/com_multi_family_1787632895059.png",
-    "/res_modern_mansion_1787632812473.png", // fallback placeholder images
+    "/res_modern_mansion_1787632812473.png", 
     "/res_luxury_condo_1787632822869.png",
   ],
-  description: "A generational opportunity to acquire a stabilizing core-plus asset in Tampa's most dynamic submarket. The Ybor Collection blends historic architectural cues with hyper-modern resort-style amenities, capturing premium rents in a high-barrier-to-entry neighborhood.",
+  executiveSummary: "Davis & Garnett is pleased to present the exclusive opportunity to acquire The Ybor Collection, a 320-unit, Class-A mid-rise multi-family asset located in the rapidly expanding Ybor City historic district of Tampa, Florida. Completed in 2023, the property offers a rare mix of modern luxury and cultural heritage, perfectly positioned to capture Tampa's unprecedented rent growth. The asset is currently 96% stabilized and features assumable agency debt, providing immediate day-one yield with significant upside through minor operational efficiencies and second-generation lease trade-outs.",
   highlights: [
     "320 Luxury Units Delivered 2023",
     "96% Stabilized Occupancy",
@@ -27,12 +27,39 @@ const data = {
     "Historic District Tax Advantages",
     "Walk Score: 92 (Walker's Paradise)",
   ],
+  propertyFacts: {
+    "Property Type": "Multi-Family",
+    "Property Subtype": "Mid-Rise Apartment",
+    "Building Class": "A",
+    "Year Built": "2023",
+    "Buildings": "2",
+    "Stories": "6",
+    "Lot Size": "3.4 Acres",
+    "Zoning": "YC-6 (Ybor Commercial)",
+    "Parking Ratio": "1.5 / 1,000 SF",
+    "Construction": "Concrete Block / Stucco",
+  },
   financials: {
     asking: "Unpriced / Call for Offers",
-    noi: "$4.2M (T-12)",
+    noi: "$4,240,500 (T-12)",
+    proFormaNoi: "$4,850,000",
+    grossIncome: "$8,950,000",
+    operatingExpenses: "$4,709,500",
     avgRent: "$2,450 / unit",
     rentGrowth: "8.5% YoY",
-  }
+  },
+  unitMix: [
+    { type: "Studio", beds: 0, baths: 1, count: 45, avgSqft: 550, currentRent: "$1,850", marketRent: "$1,950" },
+    { type: "1 Bed / 1 Bath", beds: 1, baths: 1, count: 165, avgSqft: 780, currentRent: "$2,250", marketRent: "$2,400" },
+    { type: "2 Bed / 2 Bath", beds: 2, baths: 2, count: 90, avgSqft: 1150, currentRent: "$2,950", marketRent: "$3,150" },
+    { type: "3 Bed / 2.5 Bath (Penthouse)", beds: 3, baths: 2.5, count: 20, avgSqft: 1550, currentRent: "$4,200", marketRent: "$4,500" },
+  ],
+  demographics: [
+    { label: "Population", '1mile': "18,450", '3mile': "115,200", '5mile': "245,600" },
+    { label: "Households", '1mile': "9,800", '3mile': "54,300", '5mile': "108,400" },
+    { label: "Median Age", '1mile': "32.4", '3mile': "34.1", '5mile': "36.5" },
+    { label: "Avg HH Income", '1mile': "$115,400", '3mile': "$98,500", '5mile': "$88,200" },
+  ]
 };
 
 export default function FeaturedListing() {
@@ -100,10 +127,10 @@ export default function FeaturedListing() {
                 <TrendingUp className="w-3 h-3" /> Investment Overview
               </div>
               <h3 className="font-aiveritas text-4xl md:text-5xl lg:text-6xl text-white leading-tight">
-                A Class-A trophy asset in the heart of history.
+                Executive Summary
               </h3>
               <p className="text-white/60 font-light text-lg leading-relaxed">
-                {data.description}
+                {data.executiveSummary}
               </p>
               
               <div className="grid sm:grid-cols-2 gap-6 pt-8 border-t border-white/10">
@@ -113,6 +140,19 @@ export default function FeaturedListing() {
                     <span className="text-sm text-white/80">{h}</span>
                   </div>
                 ))}
+              </div>
+
+              {/* Property Facts Grid */}
+              <div className="pt-8">
+                <h4 className="text-[#D4AF37] text-[10px] uppercase tracking-[0.25em] font-bold mb-6">Property Facts</h4>
+                <div className="grid grid-cols-2 gap-y-4 gap-x-8">
+                  {Object.entries(data.propertyFacts).map(([key, val]) => (
+                    <div key={key} className="flex flex-col border-b border-white/10 pb-2">
+                      <span className="text-white/40 text-xs mb-1">{key}</span>
+                      <span className="text-white font-bold text-sm">{val}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -126,15 +166,27 @@ export default function FeaturedListing() {
               <div className="space-y-6 relative z-10">
                 <div className="flex justify-between items-end border-b border-white/10 pb-4">
                   <span className="text-white/50 text-xs uppercase tracking-widest font-bold">Asking Price</span>
-                  <span className="text-white font-aiveritas text-2xl text-right">{data.financials.asking}</span>
+                  <span className="text-[#D4AF37] font-aiveritas text-2xl text-right">{data.financials.asking}</span>
+                </div>
+                <div className="flex justify-between items-end border-b border-white/10 pb-4 mt-6">
+                  <span className="text-white/50 text-xs uppercase tracking-widest font-bold">Gross Income</span>
+                  <span className="text-white font-bold text-lg text-right">{data.financials.grossIncome}</span>
+                </div>
+                <div className="flex justify-between items-end border-b border-white/10 pb-4">
+                  <span className="text-white/50 text-xs uppercase tracking-widest font-bold">Operating Expenses</span>
+                  <span className="text-white font-bold text-lg text-right">{data.financials.operatingExpenses}</span>
                 </div>
                 <div className="flex justify-between items-end border-b border-white/10 pb-4">
                   <span className="text-white/50 text-xs uppercase tracking-widest font-bold">T-12 NOI</span>
                   <span className="text-white font-aiveritas text-2xl text-right">{data.financials.noi}</span>
                 </div>
                 <div className="flex justify-between items-end border-b border-white/10 pb-4">
+                  <span className="text-white/50 text-xs uppercase tracking-widest font-bold">Pro Forma NOI</span>
+                  <span className="text-white font-aiveritas text-2xl text-right">{data.financials.proFormaNoi}</span>
+                </div>
+                <div className="flex justify-between items-end pb-2 pt-4">
                   <span className="text-white/50 text-xs uppercase tracking-widest font-bold">Avg Rent</span>
-                  <span className="text-[#D4AF37] font-bold text-lg text-right">{data.financials.avgRent}</span>
+                  <span className="text-white font-bold text-lg text-right">{data.financials.avgRent}</span>
                 </div>
                 <div className="flex justify-between items-end pb-2">
                   <span className="text-white/50 text-xs uppercase tracking-widest font-bold">Rent Growth YoY</span>
@@ -184,29 +236,118 @@ export default function FeaturedListing() {
 
 
       {/* ══════════════════════════════════════════════
-          THE LOCATION — YBOR CITY
+          UNIT MIX & RENT ROLL
          ══════════════════════════════════════════════ */}
-      <section className="relative py-32 overflow-hidden bg-black border-t border-white/5">
-        <div className="max-w-screen-xl mx-auto px-8 md:px-16 text-center relative z-10">
-          <MapPin className="w-12 h-12 text-[#D4AF37] mx-auto mb-8" />
-          <h2 className="font-aiveritas text-6xl md:text-7xl text-white mb-6">Historic Ybor City</h2>
-          <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-12">
-            Perfectly positioned directly on the TECO Streetcar line, connecting residents to Downtown Tampa, Water Street, and Channelside within minutes. A thriving epicenter of culture, dining, and massive institutional capital influx.
-          </p>
+      <section className="py-24 bg-[#050505] border-t border-white/5">
+        <div className="max-w-screen-xl mx-auto px-8 md:px-16">
+          <div className="mb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 text-[#D4AF37] text-[10px] font-bold uppercase tracking-widest">
+              <Building2 className="w-3 h-3" /> Financials
+            </div>
+            <h2 className="font-aiveritas text-5xl text-white mb-4">Unit Mix & Rent Summary</h2>
+            <p className="text-white/50 max-w-2xl">A highly diversified unit mix leaning heavily toward premium 1 and 2-bedroom floorplans, strategically matching the demographic demands of young professionals in the Ybor/Downtown submarket.</p>
+          </div>
 
-          <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto text-left">
-             <div className="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-colors">
-               <h4 className="text-[#D4AF37] font-bold text-2xl mb-2">3 Min</h4>
-               <p className="text-white/50 text-sm">Walk to 7th Avenue Dining & Entertainment</p>
-             </div>
-             <div className="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-colors">
-               <h4 className="text-[#D4AF37] font-bold text-2xl mb-2">10 Min</h4>
-               <p className="text-white/50 text-sm">Streetcar ride to Water Street Tampa</p>
-             </div>
-             <div className="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-colors">
-               <h4 className="text-[#D4AF37] font-bold text-2xl mb-2">$1B+</h4>
-               <p className="text-white/50 text-sm">Active commercial developments within 1 mile</p>
-             </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left min-w-[800px]">
+              <thead>
+                <tr className="border-b border-white/10">
+                  <th className="py-4 text-white/50 text-xs font-bold uppercase tracking-widest">Unit Type</th>
+                  <th className="py-4 text-white/50 text-xs font-bold uppercase tracking-widest">No. of Units</th>
+                  <th className="py-4 text-white/50 text-xs font-bold uppercase tracking-widest">Avg Sq Ft</th>
+                  <th className="py-4 text-white/50 text-xs font-bold uppercase tracking-widest">Current Rent</th>
+                  <th className="py-4 text-[#D4AF37] text-xs font-bold uppercase tracking-widest">Pro Forma Rent</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-white/5">
+                {data.unitMix.map((mix, idx) => (
+                  <tr key={idx} className="hover:bg-white/[0.02] transition-colors">
+                    <td className="py-6 font-bold text-white">{mix.type}</td>
+                    <td className="py-6 text-white/80">{mix.count}</td>
+                    <td className="py-6 text-white/80">{mix.avgSqft} SF</td>
+                    <td className="py-6 text-white/80">{mix.currentRent}</td>
+                    <td className="py-6 font-bold text-[#22c55e]">{mix.marketRent}</td>
+                  </tr>
+                ))}
+              </tbody>
+              <tfoot>
+                <tr className="border-t border-[#D4AF37]/30 bg-[#D4AF37]/5">
+                  <td className="py-4 font-bold text-[#D4AF37] pl-4">Totals / Averages</td>
+                  <td className="py-4 font-bold text-white">320</td>
+                  <td className="py-4 font-bold text-white">887 SF</td>
+                  <td className="py-4 font-bold text-white">$2,450</td>
+                  <td className="py-4 font-bold text-[#22c55e]">$2,630</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════
+          THE LOCATION — YBOR CITY & DEMOGRAPHICS
+         ══════════════════════════════════════════════ */}
+      <section className="relative py-32 overflow-hidden bg-[#0c0b09] border-t border-white/5">
+        <div className="max-w-screen-xl mx-auto px-8 md:px-16 relative z-10">
+          
+          <div className="grid lg:grid-cols-[1fr_400px] gap-16">
+            {/* Location Description */}
+            <div>
+              <MapPin className="w-12 h-12 text-[#D4AF37] mb-8" />
+              <h2 className="font-aiveritas text-6xl md:text-7xl text-white mb-6">Historic Ybor City</h2>
+              <p className="text-white/60 text-lg leading-relaxed mb-12">
+                Perfectly positioned directly on the TECO Streetcar line, connecting residents to Downtown Tampa, Water Street, and Channelside within minutes. A thriving epicenter of culture, dining, and massive institutional capital influx. The immediate area has seen a 45% population growth over the last 5 years, vastly outpacing the national average.
+              </p>
+
+              <div className="grid sm:grid-cols-3 gap-6 text-left">
+                <div className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-colors">
+                  <h4 className="text-[#D4AF37] font-bold text-2xl mb-2">3 Min</h4>
+                  <p className="text-white/50 text-xs">Walk to 7th Avenue Dining & Entertainment</p>
+                </div>
+                <div className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-colors">
+                  <h4 className="text-[#D4AF37] font-bold text-2xl mb-2">10 Min</h4>
+                  <p className="text-white/50 text-xs">Streetcar ride to Water Street Tampa</p>
+                </div>
+                <div className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-colors">
+                  <h4 className="text-[#D4AF37] font-bold text-2xl mb-2">$1.2B+</h4>
+                  <p className="text-white/50 text-xs">Active commercial developments within 1 mile</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Demographics Widget */}
+            <div className="bg-black border border-[#D4AF37]/30 rounded-3xl p-8 shadow-2xl relative">
+              <h4 className="text-[#D4AF37] text-[10px] uppercase tracking-[0.25em] font-bold mb-6">Demographics Overview</h4>
+              
+              <div className="overflow-x-auto pb-4">
+                <table className="w-full text-left text-sm">
+                  <thead>
+                    <tr className="border-b border-white/10">
+                      <th className="py-3 text-white/50 font-normal">Metric</th>
+                      <th className="py-3 text-white/80 font-bold">1 Mile</th>
+                      <th className="py-3 text-white/80 font-bold">3 Mile</th>
+                      <th className="py-3 text-white/80 font-bold">5 Mile</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-white/5">
+                    {data.demographics.map((row, idx) => (
+                      <tr key={idx}>
+                        <td className="py-4 text-white/50">{row.label}</td>
+                        <td className="py-4 font-bold text-white">{row['1mile']}</td>
+                        <td className="py-4 font-bold text-white">{row['3mile']}</td>
+                        <td className="py-4 font-bold text-white">{row['5mile']}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="mt-4 pt-6 border-t border-white/10">
+                <p className="text-white/30 text-[10px] uppercase tracking-widest leading-relaxed">
+                  Traffic Count: 42,500 VPD on E Kennedy Blvd.<br/>Data Source: CoStar / Census 2024 Estimates.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
