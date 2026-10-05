@@ -107,13 +107,13 @@ export default function LoginPage() {
           )}
 
           <form onSubmit={handleLogin} className="flex flex-col gap-6">
-            <div className="bg-green-500/10 border border-green-500/30 text-green-700 px-4 py-3 rounded-lg text-sm font-medium flex items-start gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mt-0.5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
+            <div className="bg-yellow-300/40 border border-yellow-400/80 text-amber-950 px-4 py-3 rounded-lg text-sm font-medium flex items-start gap-3 shadow-[0_0_15px_rgba(234,179,8,0.25)]">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mt-0.5 shrink-0 text-amber-700" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
               </svg>
               <div>
-                <strong className="block text-gray-900 mb-1">Scheduled Work Review Notice</strong>
-                Please login during our walkthrough. To schedule a time, please contact <a href="mailto:clickme.tostart@gmail.com" className="text-green-600 hover:underline">clickme.tostart@gmail.com</a>.
+                <strong className="block text-amber-950 mb-1 font-bold">NOTICE 10/5: Loading New Website Development Previews.</strong>
+                Please return later to view.
               </div>
             </div>
 
