@@ -840,7 +840,7 @@ export default function PreviewMockup() {
             {/* Col 4: Align Right Logo */}
             <div className="flex justify-center">
               <div className="w-56 h-16 relative opacity-90">
-                <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain" />
+                <Image src="/align-right-email-logo.png" alt="Align Right Realty" fill className="object-contain" />
               </div>
             </div>
 

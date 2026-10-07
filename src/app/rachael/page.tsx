@@ -88,7 +88,7 @@ export default function RachaelLinktree() {
         {/* Brokerage */}
         <div className="flex flex-col items-center gap-4">
           <div className="relative w-[120px] h-[40px] opacity-50">
-            <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
+            <Image src="/align-right-email-logo.png" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
           </div>
         </div>
 

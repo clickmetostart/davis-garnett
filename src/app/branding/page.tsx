@@ -315,7 +315,7 @@ export default function BrandingBook() {
                 <span className="text-[0.6rem] uppercase tracking-widest text-white/40 block mb-3">On Light Backgrounds</span>
                 <div className="bg-white rounded-xl p-8 flex items-center justify-center">
                   <div className="relative w-[180px] h-[70px]">
-                    <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain" />
+                    <Image src="/align-right-email-logo.png" alt="Align Right Realty" fill className="object-contain" />
                   </div>
                 </div>
               </div>
@@ -325,7 +325,7 @@ export default function BrandingBook() {
                 <span className="text-[0.6rem] uppercase tracking-widest text-white/40 block mb-3">On Dark Backgrounds</span>
                 <div className="bg-[#111] border border-white/10 rounded-xl p-8 flex items-center justify-center">
                   <div className="relative w-[180px] h-[70px]">
-                    <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
+                    <Image src="/align-right-email-logo.png" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
                   </div>
                 </div>
               </div>
@@ -462,7 +462,7 @@ export default function BrandingBook() {
               {/* Compliance Logo */}
               <div className="w-full mt-4 pt-6 border-t border-white/5 flex justify-center">
                 <div className="relative w-32 h-7 opacity-30 hover:opacity-60 transition-opacity grayscale">
-                  <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
+                  <Image src="/align-right-email-logo.png" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
                 </div>
               </div>
             </div>
@@ -502,7 +502,7 @@ export default function BrandingBook() {
               {/* Compliance Logo */}
               <div className="w-full mt-4 pt-6 border-t border-white/5 flex justify-center">
                 <div className="relative w-32 h-7 opacity-30 hover:opacity-60 transition-opacity grayscale">
-                  <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
+                  <Image src="/align-right-email-logo.png" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
                 </div>
               </div>
             </div>
@@ -543,7 +543,7 @@ export default function BrandingBook() {
               {/* Compliance Logo */}
               <div className="w-full mt-4 pt-6 border-t border-white/5 flex justify-center">
                 <div className="relative w-32 h-7 opacity-30 hover:opacity-60 transition-opacity grayscale">
-                  <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
+                  <Image src="/align-right-email-logo.png" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
                 </div>
               </div>
             </div>
@@ -580,7 +580,7 @@ export default function BrandingBook() {
 
                 {/* Compliance Logo - Bottom Right */}
                 <div className="absolute bottom-4 right-4 md:bottom-6 md:right-8 w-24 h-6 md:w-32 md:h-8 opacity-40 grayscale">
-                  <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
+                  <Image src="/align-right-email-logo.png" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
                 </div>
               </div>
             </div>
@@ -605,7 +605,7 @@ export default function BrandingBook() {
 
                 {/* Compliance Logo - Bottom Right */}
                 <div className="absolute bottom-3 right-3 md:bottom-5 md:right-6 w-20 h-5 md:w-28 md:h-7 opacity-40 grayscale">
-                  <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
+                  <Image src="/align-right-email-logo.png" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
                 </div>
               </div>
             </div>
@@ -630,7 +630,7 @@ export default function BrandingBook() {
 
                 {/* Compliance Logo - Bottom Right */}
                 <div className="absolute bottom-3 right-3 md:bottom-5 md:right-6 w-20 h-5 md:w-28 md:h-7 opacity-40 grayscale">
-                  <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
+                  <Image src="/align-right-email-logo.png" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
                 </div>
               </div>
             </div>
@@ -655,7 +655,7 @@ export default function BrandingBook() {
 
                 {/* Compliance Logo - Bottom Right */}
                 <div className="absolute bottom-3 right-3 md:bottom-5 md:right-6 w-20 h-5 md:w-28 md:h-7 opacity-40 grayscale">
-                  <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
+                  <Image src="/align-right-email-logo.png" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
                 </div>
               </div>
             </div>

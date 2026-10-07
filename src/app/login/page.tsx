@@ -7,7 +7,7 @@ import DavisGarnettLogo from '@/components/DavisGarnettLogo';
 // Static imports to bypass dev server cache
 import markHeadshot from '../../../public/davis-garnett-headshots/mark-davis-headshot-4.jpg';
 import rachaelHeadshot from '../../../public/davis-garnett-headshots/rachael-garnett-3.jpg';
-import alignRightLogo from '../../../public/align-right-realty-logo.webp';
+import alignRightLogo from '../../../public/align-right-email-logo.png';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -112,7 +112,7 @@ export default function LoginPage() {
                 <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
               </svg>
               <div>
-                <strong className="block text-amber-950 mb-1 font-bold">NOTICE 10/5: Loading New Website Development Previews.</strong>
+                <strong className="block text-amber-950 mb-1 font-bold">NOTICE 10/7: Loading New Website Development Previews.</strong>
                 Please return later to view.
               </div>
             </div>

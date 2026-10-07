@@ -546,7 +546,7 @@ export default function PreviewV1Light() {
             </div>
             <div className="flex justify-center">
               <div className="w-56 h-16 relative opacity-70">
-                <Image src="/align-right-realty-logo.webp" alt="Align Right Realty" fill className="object-contain invert" />
+                <Image src="/align-right-email-logo.png" alt="Align Right Realty" fill className="object-contain invert" />
               </div>
             </div>
           </div>
