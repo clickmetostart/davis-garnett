@@ -81,11 +81,11 @@ export default function LoginPage() {
             <div className="w-20 h-[2px] bg-gradient-to-r from-[#D4AF37] to-transparent mb-8"></div>
 
             <h1 className="text-3xl md:text-4xl font-semibold mb-4 text-gray-900 drop-shadow-sm" style={{ fontFamily: "'AIVeritas', serif" }}>
-              Command the Market.
+              Let’s get to work.
             </h1>
 
             <p className="text-gray-700 text-lg md:text-xl leading-relaxed font-light max-w-xl">
-              Welcome to the private development workspace for Davis & Garnett. Authenticate to preview your live digital platforms, manage your custom command dashboard, and securely download your complete suite of branding assets.
+              Welcome to your private workspace, Davis & Garnett. We’re excited to walk you through everything we’ve built, and we’d love to do it together. Your workspace opens once we sit down for your review, where we’ll make edits live as we go. I’m available in person Tuesday, November 3 through Friday, November 6. Just email clickme.tostart@gmail.com with a day and time that works for you, and we’ll get it on the calendar.
             </p>
           </div>
         </div>
@@ -113,8 +113,10 @@ export default function LoginPage() {
                 <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
               </svg>
               <div>
-                <strong className="block text-amber-950 mb-1 font-bold">NOTICE 10/23/27: Finalized website ready for review!</strong>
-                YOUR COMPLETE WEBSITE — INCLUDING ALL LISTINGS AND WORKING DASHBOARD MODULES — IS READY FOR YOUR REVIEW. PLEASE SCHEDULE A REVIEW VIA EMAIL: <a href="mailto:clickme.tostart@gmail.com" className="underline text-[#D4AF37]">clickme.tostart@gmail.com</a>
+                <strong className="block text-amber-950 mb-1 font-bold">NOTICE: October 23, 2026</strong>
+                <p className="mb-2">Your Finalized Website Is Ready for Review.</p>
+                <p className="mb-2">Your complete website, including all listings and working dashboard modules, is ready for your review.</p>
+                <p>To schedule a review, please email <a href="mailto:clickme.tostart@gmail.com" className="underline text-[#D4AF37]">clickme.tostart@gmail.com</a>.</p>
               </div>
             </div>
 
