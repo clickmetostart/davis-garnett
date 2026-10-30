@@ -1,0 +1,13 @@
+/* src/app/login/loginStyles.module.css */
+.loginContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5e9d5; /* warm tan/sand base */
+  background-image: url('/tampa-ghost.png');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+  opacity: 0.98; /* slightly less transparent */
+  font-family: 'DM Sans', sans-serif;
+}

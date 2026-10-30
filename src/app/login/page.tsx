@@ -8,6 +8,7 @@ import DavisGarnettLogo from '@/components/DavisGarnettLogo';
 import markHeadshot from '../../../public/mark-davis-gmail-avatar.jpg';
 import rachaelHeadshot from '../../../public/rachael-garnett-gmail-avatar.jpg';
 import alignRightLogo from '../../../public/align-right-email-logo.png';
+import styles from './loginStyles.module.css';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -47,7 +48,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen relative flex flex-col bg-white text-gray-900 selection:bg-[#D4AF37] selection:text-white overflow-x-hidden" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+    <div className="min-h-screen relative flex flex-col bg-white text-gray-900 selection:bg-[#D4AF37] selection:text-white overflow-x-hidden" style={{ fontFamily: "'DM Sans', sans-serif", backgroundImage: "url('/tampa-ghost.png')", backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay", opacity: 0.95 }}>
 
       {/* Deep Gold & Light Gradient Background */}
       <div className="absolute inset-0 z-0 bg-white pointer-events-none overflow-hidden">
@@ -113,7 +114,7 @@ export default function LoginPage() {
               </svg>
               <div>
                 <strong className="block text-amber-950 mb-1 font-bold">NOTICE 10/23/27: Finalized website ready for review!</strong>
-                Your complete website — including all listings and working dashboard modules — is ready for your review. Please log in to explore.
+                YOUR COMPLETE WEBSITE — INCLUDING ALL LISTINGS AND WORKING DASHBOARD MODULES — IS READY FOR YOUR REVIEW. PLEASE SCHEDULE A REVIEW VIA EMAIL: <a href="mailto:clickme.tostart@gmail.com" className="underline text-[#D4AF37]">clickme.tostart@gmail.com</a>
               </div>
             </div>
 
