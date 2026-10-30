@@ -6,7 +6,7 @@ import DavisGarnettLogo from '@/components/DavisGarnettLogo';
 
 // Static imports to bypass dev server cache
 import markHeadshot from '../../../public/mark-davis-gmail-avatar.jpg';
-import rachaelHeadshot from '../../../public/Rachael Garnett Email Avatar.jpg';
+import rachaelHeadshot from '../../../public/rachael-garnett-gmail-avatar.jpg';
 import alignRightLogo from '../../../public/align-right-email-logo.png';
 
 export default function LoginPage() {
