@@ -112,8 +112,8 @@ export default function LoginPage() {
                 <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
               </svg>
               <div>
-                <strong className="block text-amber-950 mb-1 font-bold">NOTICE 10/7: Loading New Website Development Previews.</strong>
-                Please return later to view.
+                <strong className="block text-amber-950 mb-1 font-bold">NOTICE 10/23/27: Finalized website ready for review!</strong>
+                Your complete website — including all listings and working dashboard modules — is ready for your review. Please log in to explore.
               </div>
             </div>
 
@@ -143,10 +143,10 @@ export default function LoginPage() {
 
             <button
               type="submit"
-              disabled={loading}
-              className={`mt-6 w-full bg-gradient-to-r from-[#D4AF37] to-[#8B6914] text-[#FDFCF0] border-none py-3.5 px-4 rounded-lg font-bold uppercase tracking-wider text-sm transition-all duration-300 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] ${loading ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer hover:scale-[1.02]'}`}
+              disabled={true}
+              className={`mt-6 w-full bg-gradient-to-r from-[#D4AF37] to-[#8B6914] text-[#FDFCF0] border-none py-3.5 px-4 rounded-lg font-bold uppercase tracking-wider text-sm transition-all opacity-70 cursor-not-allowed`}
             >
-              {loading ? 'Authenticating...' : 'Access Workspace'}
+              Access Locked
             </button>
           </form>
 
