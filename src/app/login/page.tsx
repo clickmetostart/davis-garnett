@@ -48,7 +48,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen relative flex flex-col bg-white text-gray-900 selection:bg-[#D4AF37] selection:text-white overflow-x-hidden" style={{ fontFamily: "'DM Sans', sans-serif", backgroundImage: "url('/tampa-ghost.png')", backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay", opacity: 0.95 }}>
+<div className="min-h-screen relative flex flex-col bg-[#e6c86a] text-gray-900 selection:bg-[#D4AF37] selection:text-white overflow-x-hidden" style={{ fontFamily: "'DM Sans', sans-serif", backgroundImage: "url('/tampa-ghost.png')", backgroundSize: "cover", backgroundPosition: "center", backgroundBlendMode: "overlay", opacity: 0.95 }}>
 
       {/* Deep Gold & Light Gradient Background */}
       <div className="absolute inset-0 z-0 bg-white pointer-events-none overflow-hidden">
