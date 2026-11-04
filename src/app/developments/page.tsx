@@ -591,18 +591,19 @@ export default function DevelopmentsHubPage() {
               Exclusive Portfolio
             </Link>
           </div>
-          <div className="w-44 h-12 relative opacity-75">
+          <div className="w-44 h-12 relative">
             <Image
               src="/align-right-email-logo.png"
-              alt="Align Right Realty"
+              alt="Align Right Realty Carrollwood"
               fill
-              className="object-contain invert"
+              className="object-contain"
             />
           </div>
         </div>
         <div className="max-w-screen-xl mx-auto pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-white/35 gap-4">
           <p>
-            © {new Date().getFullYear()} Davis &amp; Garnett. Brokered by Align Right Realty. Equal
+            © {new Date().getFullYear()} Davis &amp; Garnett. Brokered by{" "}
+            <span className="text-[#ef5728] font-bold">Align Right Realty Carrollwood</span> (#BK3401606) · 3903 Northdale Blvd Suite 115W, Tampa, FL 33624. Equal
             Housing Opportunity.
           </p>
           <p>

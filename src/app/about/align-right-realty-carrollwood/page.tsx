@@ -123,46 +123,55 @@ export default function AlignRightRealtyCarrollwoodPage() {
             </div>
           </div>
 
-          <div className="bg-[#111111] text-white p-10 md:p-12 rounded-2xl border border-[#C8A951]/30 shadow-2xl relative overflow-hidden">
-            <div className="relative w-56 h-20 mb-8">
+          <div className="bg-[#111111] text-white p-10 md:p-12 rounded-2xl border border-[#ef5728]/40 shadow-2xl relative overflow-hidden">
+            <a
+              href="https://alignrightcarrollwood.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative w-56 h-20 mb-8 block hover:opacity-85 transition-opacity"
+            >
               <Image
                 src="/align-right-email-logo.png"
                 alt="Align Right Realty Carrollwood Logo"
                 fill
-                className="object-contain object-left invert"
+                className="object-contain object-left"
               />
-            </div>
+            </a>
             <div className="space-y-5 border-t border-white/15 pt-6 text-sm">
               <div>
-                <span className="text-[10px] uppercase tracking-[0.22em] text-[#C8A951] font-bold block mb-1">
+                <span className="text-[10px] uppercase tracking-[0.22em] text-[#ef5728] font-bold block mb-1">
                   Registered Florida Brokerage
                 </span>
-                <p className="font-aiveritas text-2xl text-white">
+                <p className="font-aiveritas text-2xl text-[#ef5728]">
                   Align Right Realty Carrollwood
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <span className="text-[10px] uppercase tracking-widest text-white/50 block">
-                    DBPR License
+                    Broker Number
                   </span>
-                  <span className="font-bold text-[#C8A951]">#BK3401606</span>
+                  <span className="font-bold text-[#ef5728]">BK3401606</span>
                 </div>
                 <div>
                   <span className="text-[10px] uppercase tracking-widest text-white/50 block">
-                    Primary Market
+                    Office Line
                   </span>
-                  <span className="font-bold text-white">Tampa Bay & Central FL</span>
+                  <span className="font-bold text-white">(813) 374-6050</span>
                 </div>
+              </div>
+              <div className="text-xs text-white/70">
+                3903 Northdale Blvd Suite 115W, TAMPA, FL 33624<br />
+                officeadmin@alignrightcarrollwood.com
               </div>
               <div className="pt-4 border-t border-white/10 text-xs text-white/70 space-y-2">
                 <p className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#C8A951]" />
-                  Mark Davis — Commercial & Land Advisor (#3209459)
+                  Mark Davis — Commercial &amp; Residential Advisor (#3209459)
                 </p>
                 <p className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#C8A951]" />
-                  Rachael Garnett — Luxury Residential Advisor (#3378601)
+                  Rachael Garnett — Commercial &amp; Residential Advisor (#3378601)
                 </p>
               </div>
             </div>
@@ -253,13 +262,13 @@ export default function AlignRightRealtyCarrollwoodPage() {
 
             <div className="space-y-4">
               <div className="p-5 rounded-xl bg-[#f5f3ef] border border-[#111111]/8 flex items-start gap-4">
-                <MapPin className="w-5 h-5 text-[#9A7D3A] shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-[#ef5728] shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-bold text-sm text-[#111111]">
-                    Align Right Realty Carrollwood • License #BK3401606
+                    Align Right Realty Carrollwood • Broker Number BK3401606
                   </h4>
                   <p className="text-xs text-[#111111]/65 mt-1">
-                    Carrollwood / North Tampa Executive Corridor, Tampa, FL • Private conference rooms available by appointment for closings and portfolio reviews.
+                    3903 Northdale Blvd Suite 115W, TAMPA, FL 33624 • Office: (813) 374-6050 • officeadmin@alignrightcarrollwood.com
                   </p>
                 </div>
               </div>
@@ -271,7 +280,7 @@ export default function AlignRightRealtyCarrollwoodPage() {
                     Direct Principal Advisory Lines
                   </h4>
                   <p className="text-xs text-[#111111]/65 mt-1">
-                    Mark Davis (#3209459): 813-486-9072 • Rachael Garnett (#3378601): 727-254-0244
+                    Mark Davis (#3209459): 941-737-4127 • Rachael Garnett (#3378601): 727-808-3344
                   </p>
                 </div>
               </div>
@@ -280,10 +289,10 @@ export default function AlignRightRealtyCarrollwoodPage() {
                 <Mail className="w-5 h-5 text-[#9A7D3A] shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-bold text-sm text-[#111111]">
-                    Electronic Contract & Escrow Desk
+                    Electronic Contract &amp; Escrow Desk
                   </h4>
                   <p className="text-xs text-[#111111]/65 mt-1">
-                    mark@davisgarnettsells.com • rachael@davisgarnettsells.com
+                    list@davisgarnettsells.com • mark@davisgarnettsells.com • rachael@davisgarnettsells.com
                   </p>
                 </div>
               </div>

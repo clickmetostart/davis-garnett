@@ -528,22 +528,30 @@ export default function DevelopmentDetailSpokePage({
 
               {/* Advisors Mini Badge */}
               <div className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-[#f5f3ef] border border-[#111111]/10 mb-6">
-                <div className="relative w-12 h-12 rounded-full overflow-hidden border border-[#C8A951] shrink-0">
-                  <Image
-                    src="/davis-garnett-real-combo.png"
-                    alt="Mark Davis & Rachael Garnett"
-                    fill
-                    className="object-cover object-top"
-                  />
+                <div className="flex -space-x-2.5 shrink-0">
+                  <div className="relative w-11 h-11 rounded-full overflow-hidden border-2 border-[#C8A951] bg-black">
+                    <Image
+                      src="/mark-davis-gmail-avatar.jpg"
+                      alt="Mark Davis"
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
+                  <div className="relative w-11 h-11 rounded-full overflow-hidden border-2 border-[#C8A951] bg-black">
+                    <Image
+                      src="/rachael-garnett-gmail-avatar.jpg"
+                      alt="Rachael Garnett"
+                      fill
+                      className="object-cover object-[center_30%]"
+                    />
+                  </div>
                 </div>
                 <div>
                   <div className="text-xs font-bold text-[#111111]">
                     Mark Davis &amp; Rachael Garnett
                   </div>
                   <div className="text-[10px] uppercase tracking-wider text-[#9A7D3A] font-bold">
-                    {dev.corridor === "downtown-bayshore"
-                      ? "Luxury Condo & Commercial Advisors"
-                      : "Master-Planned & New Construction Advisors"}
+                    Commercial &amp; Residential Advisors · Align Right Realty
                   </div>
                 </div>
               </div>
@@ -715,7 +723,7 @@ export default function DevelopmentDetailSpokePage({
               href="/developments"
               className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-bold text-[#111111] hover:text-[#9A7D3A]"
             >
-              View All 9 Tampa Bay Developments <ArrowRight className="w-4 h-4" />
+              Explore Full Developments Portfolio <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 

@@ -82,7 +82,7 @@ export default function PropertiesStickyStack() {
           Current Exclusive Offerings
         </h2>
         <p className="text-[#111111]/60 font-light text-sm leading-relaxed">
-          Explore Davis & Garnett&apos;s four active signature properties across Tampa Bay and Central Florida.
+          Explore Davis &amp; Garnett&apos;s signature commercial, residential, luxury waterfront, and land offerings across Tampa Bay and Central Florida.
         </p>
       </div>
 
@@ -123,15 +123,15 @@ export default function PropertiesStickyStack() {
             {/* Portfolio Stats Strip */}
             <div className="flex gap-8 border-t border-[#111111]/10 pt-6">
               <div>
-                <span className="font-aiveritas text-2xl text-[#9A7D3A]">$9.29M</span>
+                <span className="font-aiveritas text-2xl text-[#9A7D3A]">$9.29M+</span>
                 <span className="block text-[10px] uppercase tracking-widest text-[#111111]/45 font-bold mt-1">
                   Active Inventory
                 </span>
               </div>
               <div>
-                <span className="font-aiveritas text-2xl text-[#9A7D3A]">15</span>
+                <span className="font-aiveritas text-2xl text-[#9A7D3A]">Dual-Practice</span>
                 <span className="block text-[10px] uppercase tracking-widest text-[#111111]/45 font-bold mt-1">
-                  2026 Portfolio Assets
+                  Commercial &amp; Residential
                 </span>
               </div>
             </div>
@@ -217,14 +217,14 @@ export default function PropertiesStickyStack() {
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,#1a1810_0%,#0c0b09_70%)]" />
               <div className="relative z-10 flex flex-col items-center w-full max-w-md gap-5 text-center">
                 <span className="text-[#C8A951] text-xs uppercase tracking-[0.3em] font-bold">
-                  Complete Track Record
+                  Active Offerings &amp; Proven Track Record
                 </span>
                 <h3 className="font-aiveritas text-4xl md:text-5xl text-white">
-                  Explore All 15 Properties
+                  Explore Full Portfolio
                 </h3>
                 <div className="w-10 h-[1px] bg-[#C8A951]" />
                 <p className="text-white/60 font-light text-sm leading-relaxed">
-                  Browse our 4 active exclusive offerings alongside 11 recent 2026 closed transactions across St. Petersburg, Brandon, Frostproof, Fort McCoy, Bradenton, and Pasco County.
+                  Browse our exclusive active commercial, residential, and land offerings alongside our proven track record of closed transactions across St. Petersburg, Tampa, Brandon, Frostproof, Fort McCoy, Bradenton, and Pasco County.
                 </p>
                 <div className="flex flex-col w-full gap-3 mt-4">
                   <Link

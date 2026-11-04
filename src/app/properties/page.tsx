@@ -22,6 +22,7 @@ import {
   Mail
 } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
+import SiteFooter from "@/components/SiteFooter";
 import listingsData from "@/data/listings.json";
 import { Listing } from "@/types/listings";
 
@@ -146,17 +147,17 @@ export default function PropertiesPage() {
               {
                 value: "$9.29M+",
                 label: "Active Exclusive Volume",
-                sub: "4 Signature Offerings"
+                sub: "Signature Exclusive Mandates"
               },
               {
-                value: "99.65 Ac",
+                value: "99.65+ Ac",
                 label: "Active Land & Waterfront",
                 sub: "Polk, Marion & Pinellas"
               },
               {
-                value: "11 Closed",
-                label: "2026 Recent Transactions",
-                sub: "Verified Sold Track Record"
+                value: "Proven",
+                label: "2026 Closed Track Record",
+                sub: "Verified Gulf Coast Closings"
               },
               {
                 value: "Dual-Practice",
@@ -294,9 +295,25 @@ export default function PropertiesPage() {
                           <span className="text-[#9A7D3A] text-xs font-bold uppercase tracking-[0.22em]">
                             {listing.propertyType}
                           </span>
-                          <span className="text-xs text-[#111111]/45 font-medium">
-                            Advisor: {listing.agent?.name}
-                          </span>
+                          <div className="flex items-center gap-2">
+                            <div className="flex -space-x-2">
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img
+                                src="/mark-davis-gmail-avatar.jpg"
+                                alt="Mark Davis"
+                                className="w-6 h-6 rounded-full object-cover object-top border border-[#C8A951]"
+                              />
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img
+                                src="/rachael-garnett-gmail-avatar.jpg"
+                                alt="Rachael Garnett"
+                                className="w-6 h-6 rounded-full object-cover object-[center_30%] border border-[#C8A951]"
+                              />
+                            </div>
+                            <span className="text-xs text-[#111111]/60 font-medium">
+                              Mark Davis &amp; Rachael Garnett
+                            </span>
+                          </div>
                         </div>
 
                         <Link href={`/listings/${listing.slug}`}>
@@ -436,7 +453,7 @@ export default function PropertiesPage() {
                 </h2>
               </div>
               <p className="text-[#111111]/60 text-sm max-w-md">
-                From golf course estates in Bradenton and Land O&apos; Lakes to waterfront retreats in Inverness and strategic residential homesites, explore {soldListings.length} recent closings represented by Davis & Garnett.
+                From golf course estates in Bradenton and Land O&apos; Lakes to waterfront retreats in Inverness and strategic residential homesites, explore our recent closed transactions represented by Davis &amp; Garnett across Greater Tampa Bay and Central Florida.
               </p>
             </div>
 
@@ -513,7 +530,23 @@ export default function PropertiesPage() {
                     </div>
 
                     <div className="mt-4 pt-3 border-t border-[#111111]/6 flex items-center justify-between text-[11px] font-bold uppercase tracking-widest text-[#111111]/60 group-hover:text-[#9A7D3A]">
-                      <span>Advised by {sold.agent?.name}</span>
+                      <div className="flex items-center gap-2">
+                        <div className="flex -space-x-1.5">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src="/mark-davis-gmail-avatar.jpg"
+                            alt="Mark Davis"
+                            className="w-5 h-5 rounded-full object-cover object-top border border-[#C8A951]"
+                          />
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src="/rachael-garnett-gmail-avatar.jpg"
+                            alt="Rachael Garnett"
+                            className="w-5 h-5 rounded-full object-cover object-[center_30%] border border-[#C8A951]"
+                          />
+                        </div>
+                        <span>Mark Davis &amp; Rachael Garnett</span>
+                      </div>
                       <span className="flex items-center gap-1">
                         Case Study <ArrowRight className="w-3 h-3" />
                       </span>
@@ -643,37 +676,53 @@ export default function PropertiesPage() {
             </p>
 
             <div className="space-y-4 pt-2">
-              <div className="bg-white p-5 rounded-2xl border border-[#111111]/8 flex items-center justify-between">
-                <div>
-                  <p className="font-bold text-[#111111] text-sm">Mark Davis</p>
-                  <p className="text-xs text-[#9A7D3A] font-semibold">
-                    Commercial, Mixed-Use & Land · FL Lic. #3209459
-                  </p>
-                  <p className="text-xs text-[#111111]/55 mt-0.5">mark@davisgarnettsells.com</p>
+              <div className="bg-white p-5 rounded-2xl border border-[#111111]/8 flex items-center justify-between gap-4">
+                <div className="flex items-center gap-4">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/mark-davis-gmail-avatar.jpg"
+                    alt="Mark Davis"
+                    className="w-14 h-14 rounded-full object-cover object-top border border-[#C8A951] shrink-0"
+                  />
+                  <div>
+                    <p className="font-bold text-[#111111] text-sm">Mark Davis</p>
+                    <p className="text-xs text-[#9A7D3A] font-semibold">
+                      Commercial &amp; Residential Advisor · FL Lic. #3209459
+                    </p>
+                    <p className="text-xs text-[#111111]/55 mt-0.5">mark@davisgarnettsells.com</p>
+                  </div>
                 </div>
                 <a
-                  href="tel:813-486-9072"
-                  className="px-4 py-2.5 bg-[#111111] text-[#C8A951] text-xs font-bold uppercase tracking-widest rounded-xl hover:bg-[#C8A951] hover:text-[#111111] transition-colors flex items-center gap-1.5"
+                  href="tel:941-737-4127"
+                  className="px-4 py-2.5 bg-[#111111] text-[#C8A951] text-xs font-bold uppercase tracking-widest rounded-xl hover:bg-[#C8A951] hover:text-[#111111] transition-colors flex items-center gap-1.5 shrink-0"
                 >
-                  <Phone className="w-3.5 h-3.5" /> 813-486-9072
+                  <Phone className="w-3.5 h-3.5" /> 941-737-4127
                 </a>
               </div>
 
-              <div className="bg-white p-5 rounded-2xl border border-[#111111]/8 flex items-center justify-between">
-                <div>
-                  <p className="font-bold text-[#111111] text-sm">Rachael Garnett</p>
-                  <p className="text-xs text-[#9A7D3A] font-semibold">
-                    Luxury Residential & Waterfront · FL Lic. #3378601
-                  </p>
-                  <p className="text-xs text-[#111111]/55 mt-0.5">
-                    rachael@davisgarnettsells.com
-                  </p>
+              <div className="bg-white p-5 rounded-2xl border border-[#111111]/8 flex items-center justify-between gap-4">
+                <div className="flex items-center gap-4">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/rachael-garnett-gmail-avatar.jpg"
+                    alt="Rachael Garnett"
+                    className="w-14 h-14 rounded-full object-cover object-[center_30%] border border-[#C8A951] shrink-0"
+                  />
+                  <div>
+                    <p className="font-bold text-[#111111] text-sm">Rachael Garnett</p>
+                    <p className="text-xs text-[#9A7D3A] font-semibold">
+                      Commercial &amp; Residential Advisor · FL Lic. #3378601
+                    </p>
+                    <p className="text-xs text-[#111111]/55 mt-0.5">
+                      rachael@davisgarnettsells.com
+                    </p>
+                  </div>
                 </div>
                 <a
-                  href="tel:727-254-0244"
-                  className="px-4 py-2.5 bg-[#111111] text-[#C8A951] text-xs font-bold uppercase tracking-widest rounded-xl hover:bg-[#C8A951] hover:text-[#111111] transition-colors flex items-center gap-1.5"
+                  href="tel:727-808-3344"
+                  className="px-4 py-2.5 bg-[#111111] text-[#C8A951] text-xs font-bold uppercase tracking-widest rounded-xl hover:bg-[#C8A951] hover:text-[#111111] transition-colors flex items-center gap-1.5 shrink-0"
                 >
-                  <Phone className="w-3.5 h-3.5" /> 727-254-0244
+                  <Phone className="w-3.5 h-3.5" /> 727-808-3344
                 </a>
               </div>
             </div>
@@ -870,17 +919,7 @@ export default function PropertiesPage() {
         </div>
       </section>
 
-      {/* ── FOOTER ── */}
-      <footer className="bg-[#111111] py-16 px-6 lg:px-10 border-t border-[#C8A951]/25">
-        <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-white/40 text-[10px] uppercase tracking-widest max-w-2xl leading-relaxed">
-            Davis & Garnett Real Estate Advisors · Mark Davis (FL Lic. #3209459) & Rachael Garnett (FL Lic. #3378601) · Brokered by Align Right Realty. All properties subject to prior sale, change, or withdrawal. Equal Housing Opportunity.
-          </p>
-          <p className="text-white/40 text-[10px] uppercase tracking-widest shrink-0">
-            © {new Date().getFullYear()} Davis & Garnett
-          </p>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

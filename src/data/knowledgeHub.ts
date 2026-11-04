@@ -86,9 +86,9 @@ const MARK_AUTHOR = {
   name: "Mark Davis",
   role: "Commercial & Residential Advisor",
   license: "FL Lic #3209459",
-  phone: "813-486-9072",
+  phone: "941-737-4127",
   email: "mark@davisgarnettsells.com",
-  image: "/mark-commercial-action-2.jpg",
+  image: "/mark-davis-gmail-avatar.jpg",
   profileHref: "/about/mark-davis",
 };
 
@@ -96,9 +96,9 @@ const RACHAEL_AUTHOR = {
   name: "Rachael Garnett",
   role: "Commercial & Residential Advisor",
   license: "FL Lic #3378601",
-  phone: "727-254-0244",
+  phone: "727-808-3344",
   email: "rachael@davisgarnettsells.com",
-  image: "/rachael-residential-action-2.jpg",
+  image: "/rachael-garnett-gmail-avatar.jpg",
   profileHref: "/about/rachael-garnett",
 };
 

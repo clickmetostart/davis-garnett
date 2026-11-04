@@ -41,7 +41,7 @@ const NAV_GROUPS: NavGroup[] = [
       { label: "126 Ridgewood Ave Mixed-Use", desc: "Brandon 2-Building Commercial & Residential • $845,000", href: "/listings/126-ridgewood-ave-brandon" },
       { label: "770 Old Stokes Rd (79.54 Acres)", desc: "Frostproof Prime Central FL Acreage • $3,550,000", href: "/listings/770-old-stokes-rd-frostproof" },
       { label: "NE 90th Street Rd (19.72 Acres)", desc: "Fort McCoy Agricultural Timberland • $350,000", href: "/listings/ne-90th-street-rd-fort-mccoy" },
-      { label: "2026 Sold Track Record", desc: "11 recent residential, waterfront & land closings", href: "/properties?status=Sold" },
+      { label: "2026 Sold Track Record", desc: "Verified residential, waterfront, commercial & land closings", href: "/properties?status=Sold" },
     ],
   },
   {
@@ -242,11 +242,11 @@ export default function ProposalNav() {
                 Schedule Private Consultation
               </button>
               <div className="grid grid-cols-2 gap-3 pt-2 text-[11px] text-white/70">
-                <a href="tel:8134869072" className="flex items-center justify-center gap-1.5 py-2.5 bg-white/5 rounded-lg">
-                  <Phone className="w-3.5 h-3.5 text-[#D4AF37]" /> Mark: 813-486-9072
+                <a href="tel:941-737-4127" className="flex items-center justify-center gap-1.5 py-2.5 bg-white/5 rounded-lg">
+                  <Phone className="w-3.5 h-3.5 text-[#D4AF37]" /> Mark: 941-737-4127
                 </a>
-                <a href="tel:7272540244" className="flex items-center justify-center gap-1.5 py-2.5 bg-white/5 rounded-lg">
-                  <Phone className="w-3.5 h-3.5 text-[#D4AF37]" /> Rachael: 727-254-0244
+                <a href="tel:727-808-3344" className="flex items-center justify-center gap-1.5 py-2.5 bg-white/5 rounded-lg">
+                  <Phone className="w-3.5 h-3.5 text-[#D4AF37]" /> Rachael: 727-808-3344
                 </a>
               </div>
               <Link

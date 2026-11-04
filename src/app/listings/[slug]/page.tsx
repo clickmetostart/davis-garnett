@@ -38,17 +38,32 @@ import ProposalNav from "@/components/ProposalNav";
 import listingsData from "@/data/listings.json";
 import { Listing } from "@/types/listings";
 
-function resolveAgentAvatar(img?: string, name?: string) {
-  if (!img || img === "/rachael-garnett.png") {
-    return name?.toLowerCase().includes("mark")
-      ? "/mark-davis-headshot.png"
-      : "/rachael-garnett-headshot.png";
+const ADVISOR_TEAM = [
+  {
+    key: "Mark",
+    name: "Mark Davis",
+    role: "Commercial & Residential Advisor",
+    email: "mark@davisgarnettsells.com",
+    phone: "941-737-4127",
+    image: "/mark-davis-gmail-avatar.jpg",
+    imagePosition: "object-top",
+    license: "FL Lic. #3209459",
+    brokerage: "Align Right Realty Carrollwood",
+    profileHref: "/about/mark-davis"
+  },
+  {
+    key: "Rachael",
+    name: "Rachael Garnett",
+    role: "Commercial & Residential Advisor",
+    email: "rachael@davisgarnettsells.com",
+    phone: "727-808-3344",
+    image: "/rachael-garnett-gmail-avatar.jpg",
+    imagePosition: "object-[center_30%]",
+    license: "FL Lic. #3378601",
+    brokerage: "Align Right Realty Carrollwood",
+    profileHref: "/about/rachael-garnett"
   }
-  if (img === "/mark-davis.png") {
-    return "/mark-davis-headshot.png";
-  }
-  return img;
-}
+];
 
 export default function ListingDetailPage() {
   const params = useParams<{ slug: string }>();
@@ -157,27 +172,13 @@ export default function ListingDetailPage() {
   const displayPrice = listing.price || listing.askingPrice || listing.askingRent || "Upon Request";
   const displayAddress = listing.address || listing.streetAddress || listing.title;
 
-  const agent = listing.agent || {
-    name: listing.primaryContact === "Mark" ? "Mark Davis" : "Rachael Garnett",
-    role:
-      listing.primaryContact === "Mark"
-        ? "Co-Founder & Commercial Principal"
-        : "Co-Founder & Residential Principal",
-    email:
-      listing.primaryContact === "Mark"
-        ? "mark@davisgarnettsells.com"
-        : "rachael@davisgarnettsells.com",
-    phone: listing.primaryContact === "Mark" ? "813-486-9072" : "727-254-0244",
-    image:
-      listing.primaryContact === "Mark"
-        ? "/mark-davis-headshot.png"
-        : "/rachael-garnett-headshot.png",
-    license:
-      listing.primaryContact === "Mark" ? "FL Lic. #3209459" : "FL Lic. #3378601",
-    brokerage: "Align Right Realty"
-  };
-
-  const agentAvatar = resolveAgentAvatar(agent.image, agent.name);
+  const isMarkPrimary =
+    listing.primaryContact === "Mark" ||
+    listing.agent?.name?.toLowerCase().includes("mark");
+  const orderedAdvisors = isMarkPrimary
+    ? [ADVISOR_TEAM[0], ADVISOR_TEAM[1]]
+    : [ADVISOR_TEAM[1], ADVISOR_TEAM[0]];
+  const agent = orderedAdvisors[0];
 
   const handleSubmitLead = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -582,9 +583,28 @@ export default function ListingDetailPage() {
                     </p>
                   </div>
                 </div>
-                <span className="text-[11px] font-bold uppercase tracking-widest text-[#9A7D3A]">
-                  Advised by {agent.name}
-                </span>
+                <div className="flex items-center gap-3">
+                  <div className="flex -space-x-2">
+                    {orderedAdvisors.map((adv) => (
+                      <div
+                        key={adv.key}
+                        className="relative w-8 h-8 rounded-full overflow-hidden border-2 border-[#C8A951] bg-[#111111]"
+                      >
+                        <Image
+                          src={adv.image}
+                          alt={adv.name}
+                          fill
+                          sizes="32px"
+                          className={`object-cover ${adv.imagePosition}`}
+                          unoptimized
+                        />
+                      </div>
+                    ))}
+                  </div>
+                  <span className="text-[11px] font-bold uppercase tracking-widest text-[#9A7D3A]">
+                    Advised by Mark Davis &amp; Rachael Garnett
+                  </span>
+                </div>
               </div>
             </div>
 
@@ -796,11 +816,12 @@ export default function ListingDetailPage() {
             {/* Brokerage Compliance Disclaimer */}
             <div className="p-6 bg-white/70 border border-[#111111]/8 rounded-xl">
               <p className="text-[10px] uppercase tracking-widest text-[#111111]/45 leading-relaxed">
-                Davis & Garnett Real Estate Advisors is brokered by Align Right Realty.{" "}
+                Davis &amp; Garnett Real Estate Advisors is brokered by{" "}
+                <strong className="text-[#ef5728]">Align Right Realty Carrollwood</strong> (Broker Number BK3401606 · 3903 Northdale Blvd Suite 115W, Tampa, FL 33624 · 813-374-6050).{" "}
                 {listing.mlsId ? `MLS #${listing.mlsId}. ` : ""}All information is deemed
                 reliable but not guaranteed and should be independently verified by prospective
                 purchasers. Properties are subject to prior sale, price change, or withdrawal
-                without notice. Equal Housing Opportunity. Advisor License: {agent.license}.
+                without notice. Equal Housing Opportunity. Advisors: Mark Davis (FL Lic. #3209459) &amp; Rachael Garnett (FL Lic. #3378601).
               </p>
             </div>
           </div>
@@ -841,12 +862,20 @@ export default function ListingDetailPage() {
                     ? "Request Offering Memorandum"
                     : "Schedule Private Showing"}
                 </a>
-                <a
-                  href={`tel:${agent.phone}`}
-                  className="w-full py-3.5 bg-white/10 hover:bg-white/15 text-white text-xs font-bold uppercase tracking-[0.2em] rounded-xl transition-colors flex items-center justify-center gap-2 border border-white/10"
-                >
-                  <Phone className="w-4 h-4 text-[#C8A951]" /> Call {agent.phone}
-                </a>
+                <div className="grid grid-cols-2 gap-2.5">
+                  <a
+                    href="tel:941-737-4127"
+                    className="w-full py-3 bg-white/10 hover:bg-white/15 text-white text-[10px] font-bold uppercase tracking-wider rounded-xl transition-colors flex items-center justify-center gap-1.5 border border-white/10"
+                  >
+                    <Phone className="w-3.5 h-3.5 text-[#C8A951]" /> Mark: 941-737-4127
+                  </a>
+                  <a
+                    href="tel:727-808-3344"
+                    className="w-full py-3 bg-white/10 hover:bg-white/15 text-white text-[10px] font-bold uppercase tracking-wider rounded-xl transition-colors flex items-center justify-center gap-1.5 border border-white/10"
+                  >
+                    <Phone className="w-3.5 h-3.5 text-[#C8A951]" /> Rachael: 727-808-3344
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -859,29 +888,57 @@ export default function ListingDetailPage() {
                 Exclusive Representation
               </p>
 
-              {/* Advisor Profile Header */}
-              <div className="flex items-center gap-4 mb-5 pb-5 border-b border-[#111111]/8">
-                <div className="relative w-16 h-16 rounded-full overflow-hidden shrink-0 border-2 border-[#C8A951]/40 bg-[#f5f3ef]">
-                  <Image
-                    src={agentAvatar}
-                    alt={agent.name}
-                    fill
-                    className="object-cover object-top"
-                    sizes="64px"
-                    unoptimized
-                  />
-                </div>
-                <div>
-                  <p className="font-bold text-[#111111] text-lg leading-tight">
-                    {agent.name}
-                  </p>
-                  <p className="text-[#9A7D3A] text-xs font-semibold mt-0.5">
-                    {agent.role}
-                  </p>
-                  <p className="text-[#111111]/45 text-[11px] mt-0.5">
-                    {agent.license} · Align Right Realty
-                  </p>
-                </div>
+              {/* Dual Advisor Profile Headers (Both Rachael Garnett & Mark Davis) */}
+              <div className="space-y-4 mb-5 pb-5 border-b border-[#111111]/8">
+                {orderedAdvisors.map((adv) => (
+                  <div
+                    key={adv.key}
+                    className="flex items-center gap-4 p-3 rounded-xl bg-[#fbfbf9] border border-[#111111]/8 hover:border-[#C8A951]/50 transition-colors"
+                  >
+                    <Link
+                      href={adv.profileHref}
+                      className="relative w-16 h-16 rounded-full overflow-hidden shrink-0 border-2 border-[#C8A951]/40 bg-[#111111] shadow-md"
+                    >
+                      <Image
+                        src={adv.image}
+                        alt={adv.name}
+                        fill
+                        className={`object-cover ${adv.imagePosition}`}
+                        sizes="64px"
+                        unoptimized
+                      />
+                    </Link>
+                    <div className="min-w-0 flex-1">
+                      <Link
+                        href={adv.profileHref}
+                        className="font-bold text-[#111111] hover:text-[#9A7D3A] text-base leading-tight block transition-colors"
+                      >
+                        {adv.name}
+                      </Link>
+                      <p className="text-[#9A7D3A] text-xs font-semibold mt-0.5">
+                        {adv.role}
+                      </p>
+                      <p className="text-[#111111]/45 text-[10px] uppercase tracking-wider mt-0.5">
+                        {adv.license} · Align Right Realty
+                      </p>
+                      <div className="flex flex-wrap items-center gap-3 mt-1.5 text-[11px]">
+                        <a
+                          href={`tel:${adv.phone}`}
+                          className="text-[#9A7D3A] hover:text-[#111111] font-bold transition-colors"
+                        >
+                          {adv.phone}
+                        </a>
+                        <span className="text-[#111111]/20">|</span>
+                        <a
+                          href={`mailto:${adv.email}`}
+                          className="text-[#111111]/65 hover:text-[#9A7D3A] truncate transition-colors"
+                        >
+                          {adv.email}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
 
               <h3 className="font-aiveritas text-2xl text-[#111111] mb-1.5">
@@ -890,7 +947,7 @@ export default function ListingDetailPage() {
                   : "Schedule Private Showing / Request Offering Memorandum"}
               </h3>
               <p className="text-[#111111]/55 text-xs mb-5 leading-relaxed">
-                Direct confidential inquiry routed to {agent.name}. Receive full property
+                Direct confidential inquiry routed to Mark Davis &amp; Rachael Garnett. Receive full property
                 disclosures, survey/engineering files, or private tour confirmation.
               </p>
 
@@ -902,7 +959,7 @@ export default function ListingDetailPage() {
                   </h4>
                   <p className="text-[#111111]/65 text-xs leading-relaxed mb-4">
                     Thank you, {leadForm.firstName}. Your inquiry for{" "}
-                    <strong>{listing.title}</strong> has been logged for {agent.name}.
+                    <strong>{listing.title}</strong> has been logged for Mark Davis &amp; Rachael Garnett.
                   </p>
                   <button
                     onClick={() => setFormStatus("idle")}
@@ -978,24 +1035,18 @@ export default function ListingDetailPage() {
                   </button>
                   {formStatus === "error" && (
                     <p className="text-red-600 text-xs text-center">
-                      Unable to submit right now. Please call {agent.phone} directly.
+                      Unable to submit right now. Please call 941-737-4127 or 727-808-3344 directly.
                     </p>
                   )}
                 </form>
               )}
 
-              <div className="flex items-center justify-center gap-5 mt-5 pt-4 border-t border-[#111111]/8">
+              <div className="flex flex-wrap items-center justify-center gap-4 mt-5 pt-4 border-t border-[#111111]/8">
                 <a
-                  href={`tel:${agent.phone}`}
-                  className="flex items-center gap-1.5 text-[#111111]/60 hover:text-[#111111] text-xs font-bold uppercase tracking-widest transition-colors"
+                  href="mailto:list@davisgarnettsells.com"
+                  className="flex items-center gap-1.5 text-[#111111]/60 hover:text-[#111111] text-[11px] font-bold uppercase tracking-widest transition-colors"
                 >
-                  <Phone className="w-3.5 h-3.5 text-[#C8A951]" /> {agent.phone}
-                </a>
-                <a
-                  href={`mailto:${agent.email}`}
-                  className="flex items-center gap-1.5 text-[#111111]/60 hover:text-[#111111] text-xs font-bold uppercase tracking-widest transition-colors"
-                >
-                  <Mail className="w-3.5 h-3.5 text-[#C8A951]" /> Email Advisor
+                  <Mail className="w-3.5 h-3.5 text-[#C8A951]" /> list@davisgarnettsells.com
                 </a>
               </div>
             </div>
@@ -1051,7 +1102,7 @@ export default function ListingDetailPage() {
               href="/properties"
               className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#111111] hover:text-[#9A7D3A] border-b border-[#C8A951] pb-1"
             >
-              View All 15 Properties <ArrowRight className="w-3.5 h-3.5" />
+              Explore Full Portfolio <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
 
@@ -1157,15 +1208,30 @@ export default function ListingDetailPage() {
       )}
 
       {/* ── FOOTER ── */}
-      <footer className="bg-[#111111] py-12 px-8 border-t border-[#C8A951]/20 mt-12">
+      <footer className="bg-[#111111] py-12 px-8 border-t border-[#ef5728]/40 mt-12">
         <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-white/40 text-[10px] uppercase tracking-widest max-w-xl leading-relaxed">
-            Davis & Garnett Real Estate Advisors · Brokered by Align Right Realty.{" "}
-            {listing.mlsId ? `MLS #${listing.mlsId}. ` : ""}All properties subject to prior
-            sale. Equal Housing Opportunity.
-          </p>
+          <div className="flex items-center gap-5">
+            <a
+              href="https://alignrightcarrollwood.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 hover:opacity-80 transition-opacity"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/align-right-email-logo.png"
+                alt="Align Right Realty Carrollwood"
+                className="h-12 w-auto object-contain"
+              />
+            </a>
+            <p className="text-white/50 text-[10px] uppercase tracking-widest max-w-xl leading-relaxed">
+              <strong className="text-[#ef5728]">Align Right Realty Carrollwood</strong> · Broker Number BK3401606 · 3903 Northdale Blvd Suite 115W, Tampa, FL 33624 · (813) 374-6050 · officeadmin@alignrightcarrollwood.com.{" "}
+              {listing.mlsId ? `MLS #${listing.mlsId}. ` : ""}All properties subject to prior
+              sale. Equal Housing Opportunity.
+            </p>
+          </div>
           <p className="text-white/40 text-[10px] uppercase tracking-widest shrink-0">
-            © {new Date().getFullYear()} Davis & Garnett
+            © {new Date().getFullYear()} Davis &amp; Garnett
           </p>
         </div>
       </footer>

@@ -638,8 +638,8 @@ export default function HomePageV1Light() {
               description:
                 "Tampa Bay's premier commercial, land, and luxury residential real estate advisory group brokered by Align Right Realty Carrollwood.",
               url: "https://www.davisgarnettsells.com",
-              telephone: ["813-486-9072", "727-254-0244"],
-              email: "mark@davisgarnettsells.com",
+              telephone: ["941-737-4127", "727-808-3344"],
+              email: "list@davisgarnettsells.com",
               parentOrganization: {
                 "@type": "RealEstateAgent",
                 name: "Align Right Realty Carrollwood",
@@ -651,14 +651,14 @@ export default function HomePageV1Light() {
                   name: "Mark Davis",
                   jobTitle: "Commercial & Residential Advisor",
                   identifier: "FL License #3209459",
-                  telephone: "813-486-9072",
+                  telephone: "941-737-4127",
                 },
                 {
                   "@type": "Person",
                   name: "Rachael Garnett",
                   jobTitle: "Commercial & Residential Advisor",
                   identifier: "FL License #3378601",
-                  telephone: "727-254-0244",
+                  telephone: "727-808-3344",
                 },
               ],
             }),

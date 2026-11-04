@@ -14,69 +14,107 @@ export default function SiteFooter() {
         {/* Top Brand & Principal Advisor Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr_1fr] gap-10 pb-16 mb-16 border-b border-white/10 items-center">
           <div>
-            <div className="w-56 h-16 relative mb-6">
+            <div className="w-56 h-16 relative mb-5">
               <DavisGarnettLogo variant="dark" className="w-full h-full object-contain" />
             </div>
-            <p className="text-white/65 font-light text-sm leading-relaxed max-w-md mb-6">
-              Tampa Bay&apos;s unified commercial &amp; luxury residential real estate advisory group. Institutional-grade underwriting meets white-glove private representation.
+            <p className="text-white/65 font-light text-xs leading-relaxed max-w-md mb-4">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/dg-footer-logo-wrap.jpg"
+                alt="Davis & Garnett"
+                className="float-left w-14 h-14 mr-4 mb-1 rounded-sm object-cover border border-[#D4AF37]/20 shadow-md"
+              />
+              Operating as elite Commercial &amp; Residential Advisors at Align Right Realty Carrollwood, Mark Davis and Rachael Garnett specialize in luxury residential acquisitions, commercial mixed-use investments, and strategic Florida land.
             </p>
-            <div className="flex items-center gap-2 text-xs text-white/50">
-              <MapPin className="w-4 h-4 text-[#D4AF37] shrink-0" />
-              <span>Align Right Realty Carrollwood • License #BK3401606 • Greater Tampa Bay, FL</span>
-            </div>
+            <a
+              href="mailto:list@davisgarnettsells.com"
+              className="text-[#D4AF37] hover:text-white transition-colors font-bold tracking-widest uppercase text-[10px] mt-3 block clear-both"
+            >
+              list@davisgarnettsells.com
+            </a>
           </div>
 
           {/* Mark Davis Card */}
-          <div className="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-[#D4AF37]/40 transition-colors">
-            <div className="flex items-center justify-between mb-3">
-              <div>
-                <h4 className="font-aiveritas text-xl text-white">Mark Davis</h4>
-                <span className="text-[10px] uppercase tracking-widest text-[#D4AF37] font-bold block">
-                  Commercial &amp; Residential Advisor • FL Lic #3209459
-                </span>
+          <div className="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-[#D4AF37]/40 transition-colors flex items-center gap-5">
+            <Link href="/about/mark-davis" className="shrink-0">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/mark-davis-gmail-avatar.jpg"
+                alt="Mark Davis"
+                className="w-20 h-20 rounded-full object-cover object-top border border-[#D4AF37]/30 shadow-lg shadow-black/50 shrink-0"
+              />
+            </Link>
+            <div className="flex-1 min-w-0">
+              <div className="flex items-start justify-between gap-2 mb-1">
+                <div>
+                  <Link href="/about/mark-davis" className="font-aiveritas text-xl text-[#D4AF37] hover:text-white transition-colors block">
+                    Mark Davis
+                  </Link>
+                  <span className="text-xs text-white/75 block">
+                    Commercial &amp; Residential Advisor
+                  </span>
+                  <span className="text-[10px] uppercase tracking-widest text-white/40 font-bold block mt-0.5">
+                    Agent License #3209459
+                  </span>
+                </div>
+                <Link
+                  href="/about/mark-davis"
+                  className="p-1.5 rounded-full bg-white/5 hover:bg-[#D4AF37] hover:text-black transition-colors shrink-0"
+                  aria-label="Mark Davis Profile"
+                >
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
-              <Link
-                href="/about/mark-davis"
-                className="p-2 rounded-full bg-white/5 hover:bg-[#D4AF37] hover:text-black transition-colors"
-                aria-label="Mark Davis Profile"
-              >
-                <ArrowUpRight className="w-4 h-4" />
-              </Link>
-            </div>
-            <div className="space-y-1.5 text-xs text-white/70">
-              <a href="tel:8134869072" className="flex items-center gap-2 hover:text-[#D4AF37] transition-colors">
-                <Phone className="w-3.5 h-3.5 text-[#D4AF37]" /> 813-486-9072
-              </a>
-              <a href="mailto:mark@davisgarnettsells.com" className="flex items-center gap-2 hover:text-[#D4AF37] transition-colors">
-                <Mail className="w-3.5 h-3.5 text-[#D4AF37]" /> mark@davisgarnettsells.com
-              </a>
+              <div className="space-y-1 text-xs mt-2">
+                <a href="mailto:mark@davisgarnettsells.com" className="flex items-center gap-2 text-[#D4AF37] hover:text-white transition-colors truncate">
+                  <Mail className="w-3.5 h-3.5 shrink-0" /> mark@davisgarnettsells.com
+                </a>
+                <a href="tel:941-737-4127" className="flex items-center gap-2 text-[#D4AF37] hover:text-white transition-colors">
+                  <Phone className="w-3.5 h-3.5 shrink-0" /> 941-737-4127
+                </a>
+              </div>
             </div>
           </div>
 
           {/* Rachael Garnett Card */}
-          <div className="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-[#D4AF37]/40 transition-colors">
-            <div className="flex items-center justify-between mb-3">
-              <div>
-                <h4 className="font-aiveritas text-xl text-white">Rachael Garnett</h4>
-                <span className="text-[10px] uppercase tracking-widest text-[#D4AF37] font-bold block">
-                  Commercial &amp; Residential Advisor • FL Lic #3378601
-                </span>
+          <div className="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-[#D4AF37]/40 transition-colors flex items-center gap-5">
+            <Link href="/about/rachael-garnett" className="shrink-0">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/rachael-garnett-gmail-avatar.jpg"
+                alt="Rachael Garnett"
+                className="w-20 h-20 rounded-full object-cover object-[center_30%] border border-[#D4AF37]/30 shadow-lg shadow-black/50 shrink-0"
+              />
+            </Link>
+            <div className="flex-1 min-w-0">
+              <div className="flex items-start justify-between gap-2 mb-1">
+                <div>
+                  <Link href="/about/rachael-garnett" className="font-aiveritas text-xl text-[#D4AF37] hover:text-white transition-colors block">
+                    Rachael Garnett
+                  </Link>
+                  <span className="text-xs text-white/75 block">
+                    Commercial &amp; Residential Advisor
+                  </span>
+                  <span className="text-[10px] uppercase tracking-widest text-white/40 font-bold block mt-0.5">
+                    Agent License #3378601
+                  </span>
+                </div>
+                <Link
+                  href="/about/rachael-garnett"
+                  className="p-1.5 rounded-full bg-white/5 hover:bg-[#D4AF37] hover:text-black transition-colors shrink-0"
+                  aria-label="Rachael Garnett Profile"
+                >
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
-              <Link
-                href="/about/rachael-garnett"
-                className="p-2 rounded-full bg-white/5 hover:bg-[#D4AF37] hover:text-black transition-colors"
-                aria-label="Rachael Garnett Profile"
-              >
-                <ArrowUpRight className="w-4 h-4" />
-              </Link>
-            </div>
-            <div className="space-y-1.5 text-xs text-white/70">
-              <a href="tel:7272540244" className="flex items-center gap-2 hover:text-[#D4AF37] transition-colors">
-                <Phone className="w-3.5 h-3.5 text-[#D4AF37]" /> 727-254-0244
-              </a>
-              <a href="mailto:rachael@davisgarnettsells.com" className="flex items-center gap-2 hover:text-[#D4AF37] transition-colors">
-                <Mail className="w-3.5 h-3.5 text-[#D4AF37]" /> rachael@davisgarnettsells.com
-              </a>
+              <div className="space-y-1 text-xs mt-2">
+                <a href="mailto:rachael@davisgarnettsells.com" className="flex items-center gap-2 text-[#D4AF37] hover:text-white transition-colors truncate">
+                  <Mail className="w-3.5 h-3.5 shrink-0" /> rachael@davisgarnettsells.com
+                </a>
+                <a href="tel:727-808-3344" className="flex items-center gap-2 text-[#D4AF37] hover:text-white transition-colors">
+                  <Phone className="w-3.5 h-3.5 shrink-0" /> 727-808-3344
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -162,23 +200,53 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        {/* Brokerage Logo & Compliance */}
-        <div className="flex flex-col items-center text-center">
-          <div className="w-52 h-14 relative opacity-75 mb-8">
-            <Image src="/align-right-email-logo.png" alt="Align Right Realty Carrollwood" fill className="object-contain invert" />
-          </div>
-          <p className="text-[0.65rem] uppercase tracking-widest text-white/30 max-w-4xl leading-relaxed mb-6">
-            Davis &amp; Garnett is a commercial and residential real estate advisory group brokered by Align Right Realty Carrollwood (License #BK3401606). Mark Davis (FL License #3209459) &amp; Rachael Garnett (FL License #3378601). All properties are subject to prior sale, change, or withdrawal. Neither listing broker(s) nor Davis &amp; Garnett shall be responsible for any typographical errors, misinformation, or misprints and shall be held totally harmless. Equal Housing Opportunity.
-          </p>
-          <div className="w-full flex flex-col md:flex-row items-center justify-between text-[0.65rem] uppercase tracking-widest text-white/35 pt-6 border-t border-white/10">
-            <p>© {new Date().getFullYear()} Davis &amp; Garnett Real Estate Advisory. All Rights Reserved.</p>
-            <div className="flex gap-6 mt-4 md:mt-0">
-              <Link href="/about" className="hover:text-[#D4AF37] transition-colors">About</Link>
-              <Link href="/properties" className="hover:text-[#D4AF37] transition-colors">Portfolio</Link>
-              <Link href="/developments" className="hover:text-[#D4AF37] transition-colors">Developments</Link>
-              <Link href="/knowledge-hub" className="hover:text-[#D4AF37] transition-colors">Knowledge Hub</Link>
-              <Link href="/search-mls" className="hover:text-[#D4AF37] transition-colors">Search MLS</Link>
+        {/* Tier 2: Compliance Bottom Horizontal (3-Column matching Login Footer) */}
+        <div className="border-t border-[#ef5728]/40 pt-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-[#888] text-[11px] leading-snug items-end">
+          {/* Compliance Col 1 */}
+          <div className="flex flex-col gap-4 text-center md:text-left">
+            <div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/dg-equal-realtor-gold.png"
+                alt="Realtor and Equal Housing Opportunity"
+                className="h-8 w-auto object-contain mx-auto md:mx-0 mb-3"
+              />
+              <p>
+                © {new Date().getFullYear()} Davis &amp; Garnett. All Rights Reserved. An independent team affiliated with Align Right Realty Carrollwood. Equal Housing Opportunity. REALTOR® is a registered trademark of the National Association of REALTORS®.
+              </p>
             </div>
+          </div>
+
+          {/* Compliance Col 2 */}
+          <div className="flex flex-col gap-4 text-center md:text-left">
+            <p>
+              MLS IDX information is for personal, non-commercial use only; data is deemed reliable but not guaranteed. Mobile information, including SMS opt-in data and consent, WILL NOT be shared with third parties or affiliates for marketing purposes.
+            </p>
+          </div>
+
+          {/* Compliance Col 3 */}
+          <div className="flex flex-col items-center md:items-end gap-3 text-center md:text-right">
+            <a
+              href="https://alignrightcarrollwood.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/align-right-email-logo.png"
+                alt="Align Right Realty Carrollwood"
+                className="h-14 w-auto object-contain mb-1"
+              />
+            </a>
+            <p>
+              <strong className="text-[#ef5728] text-sm font-semibold block mb-0.5">
+                Align Right Realty Carrollwood
+              </strong>
+              Broker Number BK3401606<br />
+              3903 Northdale Blvd Suite 115W, TAMPA, FL 33624<br />
+              (813) 374-6050 &nbsp;|&nbsp; officeadmin@alignrightcarrollwood.com
+            </p>
           </div>
         </div>
       </div>

@@ -28,7 +28,7 @@ const PARTNER_CATEGORIES = [
       {
         firm: "Align Right Realty Carrollwood — Preferred Mortgage & Jumbo Desk",
         specialty: "Portfolio Jumbo Loans, Physician Relocation, Bridge Financing & Conventional/VA",
-        coverage: "11962 N Dale Mabry Hwy, Tampa, FL 33618 • Greater Tampa Bay",
+        coverage: "3903 Northdale Blvd Suite 115W, Tampa, FL 33624 • (813) 374-6050",
         highlight: "Direct warm handoff to Mark & Rachael's vetted senior loan officers offering upfront underwritten pre-approvals and 14-to-21-day clear-to-close execution.",
       },
       {
@@ -70,7 +70,7 @@ const PARTNER_CATEGORIES = [
       {
         firm: "Align Right Realty Carrollwood — Title & Closing Coordination Desk",
         specialty: "Florida Title Commitments, Municipal Lien Searches, Escrow & Remote Online Closings",
-        coverage: "11962 N Dale Mabry Hwy, Tampa, FL 33618 • License #BK3401606",
+        coverage: "3903 Northdale Blvd Suite 115W, Tampa, FL 33624 • Broker Number BK3401606",
         highlight: "On-site conference facilities, encrypted escrow wire verification, and seamless contract-to-close coordination for residential and commercial transactions.",
       },
       {

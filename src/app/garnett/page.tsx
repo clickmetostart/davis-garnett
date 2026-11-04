@@ -100,7 +100,7 @@ export default function GarnettPage() {
       if (!res.ok) throw new Error("Submission failed");
       setSubmitted(true);
     } catch {
-      setError("Unable to submit online right now. Please call Rachael directly at 727-254-0244.");
+      setError("Unable to submit online right now. Please call Rachael directly at 727-808-3344.");
     } finally {
       setSubmitting(false);
     }
@@ -180,11 +180,11 @@ export default function GarnettPage() {
                   Direct Cell
                 </span>
                 <a
-                  href="tel:7272540244"
+                  href="tel:727-808-3344"
                   className="inline-flex items-center gap-2 text-sm font-bold text-[#111111] hover:text-[#9A7D3A]"
                 >
                   <Phone className="w-4 h-4 text-[#9A7D3A]" />
-                  727-254-0244
+                  727-808-3344
                 </a>
               </div>
               <div>
@@ -548,7 +548,7 @@ export default function GarnettPage() {
               Connect With Rachael Garnett
             </h2>
             <p className="text-sm text-[#111111]/65 font-light">
-              FL Real Estate License #3378601 • Direct: 727-254-0244 • rachael@davisgarnettsells.com
+              FL Real Estate License #3378601 • Direct: 727-808-3344 • rachael@davisgarnettsells.com
             </p>
           </div>
 
@@ -691,7 +691,7 @@ export default function GarnettPage() {
             </div>
             <div className="text-xs text-white/60">
               <p className="font-bold text-white">Rachael Garnett • FL License #3378601</p>
-              <p>Align Right Realty Carrollwood (#BK3401606) • 727-254-0244</p>
+              <p><span className="text-[#ef5728] font-bold">Align Right Realty Carrollwood</span> (#BK3401606) • 727-808-3344</p>
             </div>
           </div>
           <div className="flex flex-wrap gap-6 text-xs uppercase tracking-widest text-white/70">

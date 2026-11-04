@@ -189,7 +189,14 @@ export default function KnowledgeItemPage({
             {/* Author Card */}
             <div className="mt-16 p-8 bg-[#111] text-white rounded-2xl flex flex-col sm:flex-row items-center gap-6">
               <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-[#D4AF37] shrink-0">
-                <Image src={item.author.image} alt={item.author.name} fill className="object-cover" />
+                <Image
+                  src={item.author.image}
+                  alt={item.author.name}
+                  fill
+                  className={`object-cover ${
+                    item.author.name.includes("Rachael") ? "object-[center_30%]" : "object-top"
+                  }`}
+                />
               </div>
               <div className="flex-1 text-center sm:text-left">
                 <span className="text-[#D4AF37] text-[10px] uppercase tracking-widest font-bold block mb-1">

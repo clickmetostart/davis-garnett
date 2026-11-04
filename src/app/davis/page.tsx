@@ -139,7 +139,7 @@ export default function DavisPage() {
       if (!res.ok) throw new Error("Submission failed");
       setSubmitted(true);
     } catch {
-      setError("Unable to submit online right now. Please call Mark directly at 813-486-9072.");
+      setError("Unable to submit online right now. Please call Mark directly at 941-737-4127.");
     } finally {
       setSubmitting(false);
     }
@@ -219,11 +219,11 @@ export default function DavisPage() {
                   Direct Cell
                 </span>
                 <a
-                  href="tel:8134869072"
+                  href="tel:941-737-4127"
                   className="inline-flex items-center gap-2 text-sm font-bold text-[#111111] hover:text-[#9A7D3A]"
                 >
                   <Phone className="w-4 h-4 text-[#9A7D3A]" />
-                  813-486-9072
+                  941-737-4127
                 </a>
               </div>
               <div>
@@ -555,7 +555,7 @@ export default function DavisPage() {
               Consult Directly With Mark Davis
             </h2>
             <p className="text-sm text-[#111111]/65 font-light">
-              FL Real Estate License #3209459 • Direct: 813-486-9072 • mark@davisgarnettsells.com
+              FL Real Estate License #3209459 • Direct: 941-737-4127 • mark@davisgarnettsells.com
             </p>
           </div>
 
@@ -700,7 +700,7 @@ export default function DavisPage() {
             </div>
             <div className="text-xs text-white/60">
               <p className="font-bold text-white">Mark Davis • FL License #3209459</p>
-              <p>Align Right Realty Carrollwood (#BK3401606) • 813-486-9072</p>
+              <p><span className="text-[#ef5728] font-bold">Align Right Realty Carrollwood</span> (#BK3401606) • 941-737-4127</p>
             </div>
           </div>
           <div className="flex flex-wrap gap-6 text-xs uppercase tracking-widest text-white/70">

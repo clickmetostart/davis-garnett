@@ -109,10 +109,10 @@ export default function ContactPage() {
 
                 <div className="p-8 md:p-10">
                   <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-8">
-                    {/* Avatar */}
-                    <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-2xl overflow-hidden border-2 border-[#D4AF37] shadow-md shrink-0 bg-[#111]">
+                    {/* Circle Avatar matching Login Footer */}
+                    <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-[#D4AF37] shadow-lg shrink-0 bg-[#111]">
                       <Image
-                        src="/mark-davis-headshot.png"
+                        src="/mark-davis-gmail-avatar.jpg"
                         alt="Mark Davis"
                         fill
                         className="object-cover object-top"
@@ -138,7 +138,7 @@ export default function ContactPage() {
                   {/* Direct Contact Channels */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-6">
                     <a
-                      href="tel:8134869072"
+                      href="tel:941-737-4127"
                       className="flex items-center gap-3.5 p-4 rounded-xl bg-[#f5f3ef] hover:bg-[#111] text-[#111] hover:text-white transition-colors group"
                     >
                       <div className="w-10 h-10 rounded-lg bg-[#D4AF37]/20 text-[#9A7D3A] group-hover:bg-[#D4AF37] group-hover:text-[#111] flex items-center justify-center shrink-0 transition-colors">
@@ -149,7 +149,7 @@ export default function ContactPage() {
                           Direct Mobile
                         </span>
                         <span className="text-sm font-bold tracking-wide block truncate">
-                          (813) 486-9072
+                          941-737-4127
                         </span>
                       </div>
                     </a>
@@ -216,13 +216,13 @@ export default function ContactPage() {
 
                 <div className="p-8 md:p-10">
                   <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-8">
-                    {/* Avatar */}
-                    <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-2xl overflow-hidden border-2 border-[#D4AF37] shadow-md shrink-0 bg-[#111]">
+                    {/* Circle Avatar matching Login Footer */}
+                    <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-[#D4AF37] shadow-lg shrink-0 bg-[#111]">
                       <Image
-                        src="/rachael-garnett-headshot.png"
+                        src="/rachael-garnett-gmail-avatar.jpg"
                         alt="Rachael Garnett"
                         fill
-                        className="object-cover object-top"
+                        className="object-cover object-[center_30%]"
                       />
                     </div>
 
@@ -245,7 +245,7 @@ export default function ContactPage() {
                   {/* Direct Contact Channels */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-6">
                     <a
-                      href="tel:7272540244"
+                      href="tel:727-808-3344"
                       className="flex items-center gap-3.5 p-4 rounded-xl bg-[#f5f3ef] hover:bg-[#111] text-[#111] hover:text-white transition-colors group"
                     >
                       <div className="w-10 h-10 rounded-lg bg-[#D4AF37]/20 text-[#9A7D3A] group-hover:bg-[#D4AF37] group-hover:text-[#111] flex items-center justify-center shrink-0 transition-colors">
@@ -256,7 +256,7 @@ export default function ContactPage() {
                           Direct Mobile
                         </span>
                         <span className="text-sm font-bold tracking-wide block truncate">
-                          (727) 254-0244
+                          727-808-3344
                         </span>
                       </div>
                     </a>
@@ -317,45 +317,50 @@ export default function ContactPage() {
           </div>
 
           {/* Bottom Row: Full-Width Horizontal Brokerage Card Stretching Across Both Columns */}
-          <div className="w-full bg-[#111] text-white rounded-2xl border border-[#D4AF37]/40 shadow-2xl overflow-hidden">
-            <div className="h-1.5 w-full bg-gradient-to-r from-[#9A7D3A] via-[#D4AF37] to-[#9A7D3A]" />
+          <div className="w-full bg-[#111] text-white rounded-2xl border border-[#ef5728]/50 shadow-2xl overflow-hidden">
+            <div className="h-1.5 w-full bg-gradient-to-r from-[#ef5728] via-[#D4AF37] to-[#ef5728]" />
             <div className="p-8 md:p-12">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 {/* Col 1: Brokerage Logo & Identity (4 cols) */}
                 <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left border-b lg:border-b-0 lg:border-r border-white/10 pb-8 lg:pb-0 lg:pr-8">
-                  <div className="relative w-56 h-16 mb-4">
+                  <a
+                    href="https://alignrightcarrollwood.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative w-56 h-16 mb-4 block hover:opacity-85 transition-opacity"
+                  >
                     <Image
                       src="/align-right-email-logo.png"
                       alt="Align Right Realty Carrollwood"
                       fill
-                      className="object-contain invert"
+                      className="object-contain object-center lg:object-left"
                     />
-                  </div>
-                  <span className="text-[10px] uppercase tracking-[0.25em] text-[#D4AF37] font-bold block mb-1">
+                  </a>
+                  <span className="text-[10px] uppercase tracking-[0.25em] text-[#ef5728] font-bold block mb-1">
                     Principal Brokerage Office
                   </span>
-                  <h3 className="font-aiveritas text-2xl text-white mb-2">
+                  <h3 className="font-aiveritas text-2xl text-[#ef5728] mb-1">
                     Align Right Realty Carrollwood
                   </h3>
-                  <p className="text-xs text-white/60 font-light">
-                    Florida Licensed Real Estate Brokerage • License #BK3401606
+                  <p className="text-xs text-white/70 font-light">
+                    Broker Number BK3401606
                   </p>
                 </div>
 
-                {/* Col 2: Office Location, Hours & Compliance Details (5 cols) */}
+                {/* Col 2: Office Location, Phone, Email & Hours (5 cols) */}
                 <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="flex items-start gap-3.5">
-                    <div className="w-10 h-10 rounded-lg bg-[#D4AF37]/15 text-[#D4AF37] flex items-center justify-center shrink-0 mt-0.5">
+                    <div className="w-10 h-10 rounded-lg bg-[#ef5728]/15 text-[#ef5728] flex items-center justify-center shrink-0 mt-0.5">
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="text-[10px] uppercase tracking-widest text-[#D4AF37] font-bold block mb-1">
+                      <span className="text-[10px] uppercase tracking-widest text-[#ef5728] font-bold block mb-1">
                         Carrollwood / Tampa Office
                       </span>
                       <p className="text-sm text-white font-medium leading-snug">
-                        11962 N Dale Mabry Hwy
+                        3903 Northdale Blvd Suite 115W
                         <br />
-                        Tampa, FL 33618
+                        TAMPA, FL 33624
                       </p>
                       <span className="text-[11px] text-white/50 block mt-1">
                         Serving Hillsborough, Pinellas, Pasco, Polk &amp; Marion
@@ -364,20 +369,27 @@ export default function ContactPage() {
                   </div>
 
                   <div className="flex items-start gap-3.5">
-                    <div className="w-10 h-10 rounded-lg bg-[#D4AF37]/15 text-[#D4AF37] flex items-center justify-center shrink-0 mt-0.5">
-                      <Clock className="w-5 h-5" />
+                    <div className="w-10 h-10 rounded-lg bg-[#ef5728]/15 text-[#ef5728] flex items-center justify-center shrink-0 mt-0.5">
+                      <Phone className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="text-[10px] uppercase tracking-widest text-[#D4AF37] font-bold block mb-1">
-                        Office &amp; Advisory Hours
+                      <span className="text-[10px] uppercase tracking-widest text-[#ef5728] font-bold block mb-1">
+                        Brokerage Desk &amp; Admin
                       </span>
-                      <p className="text-sm text-white font-medium leading-snug">
-                        Mon – Fri: 8:30 AM – 6:30 PM
-                        <br />
-                        Sat – Sun: By Private Appointment
-                      </p>
-                      <span className="text-[11px] text-white/50 block mt-1">
-                        Escrow, Title &amp; Conference Facilities On-Site
+                      <a
+                        href="tel:813-374-6050"
+                        className="text-sm text-white hover:text-[#ef5728] font-bold block transition-colors"
+                      >
+                        (813) 374-6050
+                      </a>
+                      <a
+                        href="mailto:officeadmin@alignrightcarrollwood.com"
+                        className="text-xs text-white/75 hover:text-[#ef5728] block mt-1 break-all transition-colors"
+                      >
+                        officeadmin@alignrightcarrollwood.com
+                      </a>
+                      <span className="text-[11px] text-white/45 block mt-1">
+                        Team Desk: list@davisgarnettsells.com
                       </span>
                     </div>
                   </div>
@@ -387,17 +399,17 @@ export default function ContactPage() {
                 <div className="lg:col-span-3 flex flex-col gap-3">
                   <Link
                     href="/about/align-right-realty-carrollwood"
-                    className="w-full py-3.5 px-5 bg-[#D4AF37] hover:bg-white text-[#111] text-xs font-bold uppercase tracking-widest rounded-xl transition-colors flex items-center justify-center gap-2"
+                    className="w-full py-3.5 px-5 bg-[#ef5728] hover:bg-white text-white hover:text-[#111] text-xs font-bold uppercase tracking-widest rounded-xl transition-colors flex items-center justify-center gap-2"
                   >
                     <Building2 className="w-4 h-4" /> About Our Brokerage
                   </Link>
                   <a
-                    href="https://maps.google.com/?q=11962+N+Dale+Mabry+Hwy+Tampa+FL+33618"
+                    href="https://maps.google.com/?q=3903+Northdale+Blvd+Suite+115W+Tampa+FL+33624"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full py-3.5 px-5 bg-white/10 hover:bg-white/20 text-white border border-white/15 text-xs font-bold uppercase tracking-widest rounded-xl transition-colors flex items-center justify-center gap-2"
                   >
-                    <MapPin className="w-4 h-4 text-[#D4AF37]" /> Get Office Directions
+                    <MapPin className="w-4 h-4 text-[#ef5728]" /> Get Office Directions
                   </a>
                 </div>
               </div>
@@ -589,7 +601,7 @@ export default function ContactPage() {
             <div className="rounded-2xl overflow-hidden border border-[#111]/10 shadow-sm h-[320px] bg-[#f5f3ef]">
               <iframe
                 title="Align Right Realty Carrollwood Map"
-                src="https://www.google.com/maps?q=11962+N+Dale+Mabry+Hwy,+Tampa,+FL+33618&output=embed"
+                src="https://www.google.com/maps?q=3903+Northdale+Blvd+Suite+115W,+Tampa,+FL+33624&output=embed"
                 className="w-full h-full border-0"
                 loading="lazy"
               />

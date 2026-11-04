@@ -99,11 +99,11 @@ export default function ConsultationModal({
                 <strong>Davis &amp; Garnett</strong>. Mark or Rachael will reach out personally within 2 business hours.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-xs text-[#111]/70 mb-8">
-                <a href="tel:8134869072" className="flex items-center gap-2 px-4 py-2.5 bg-[#f5f3ef] rounded-lg hover:bg-[#D4AF37]/20 transition-colors">
-                  <Phone className="w-3.5 h-3.5 text-[#9A7D3A]" /> Mark Davis: 813-486-9072
+                <a href="tel:941-737-4127" className="flex items-center gap-2 px-4 py-2.5 bg-[#f5f3ef] rounded-lg hover:bg-[#D4AF37]/20 transition-colors">
+                  <Phone className="w-3.5 h-3.5 text-[#9A7D3A]" /> Mark Davis: 941-737-4127
                 </a>
-                <a href="tel:7272540244" className="flex items-center gap-2 px-4 py-2.5 bg-[#f5f3ef] rounded-lg hover:bg-[#D4AF37]/20 transition-colors">
-                  <Phone className="w-3.5 h-3.5 text-[#9A7D3A]" /> Rachael Garnett: 727-254-0244
+                <a href="tel:727-808-3344" className="flex items-center gap-2 px-4 py-2.5 bg-[#f5f3ef] rounded-lg hover:bg-[#D4AF37]/20 transition-colors">
+                  <Phone className="w-3.5 h-3.5 text-[#9A7D3A]" /> Rachael Garnett: 727-808-3344
                 </a>
               </div>
               <button

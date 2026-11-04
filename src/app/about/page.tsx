@@ -60,7 +60,7 @@ export default function AboutHubPage() {
       if (!res.ok) throw new Error("Failed to submit inquiry");
       setSubmitted(true);
     } catch {
-      setError("We encountered an issue submitting your request. Please call us directly at 813-486-9072.");
+      setError("We encountered an issue submitting your request. Please call us directly at 941-737-4127.");
     } finally {
       setSubmitting(false);
     }
@@ -73,16 +73,16 @@ export default function AboutHubPage() {
     description:
       "A Higher Standard of Real Estate Advisory in Tampa Bay. Combining institutional-grade commercial & land underwriting with white-glove luxury residential representation at Align Right Realty Carrollwood.",
     url: "https://davisgarnettsells.com/about",
-    telephone: "+1-813-486-9072",
-    email: "mark@davisgarnettsells.com",
+    telephone: "+1-941-737-4127",
+    email: "list@davisgarnettsells.com",
     image: "https://davisgarnettsells.com/davis-garnett-real-combo.png",
     priceRange: "$$$-$$$$",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Carrollwood Executive Center",
+      streetAddress: "3903 Northdale Blvd Suite 115W",
       addressLocality: "Tampa",
       addressRegion: "FL",
-      postalCode: "33618",
+      postalCode: "33624",
       addressCountry: "US",
     },
     parentOrganization: {
@@ -96,7 +96,7 @@ export default function AboutHubPage() {
         name: "Mark Davis",
         jobTitle: "Commercial & Residential Advisor",
         identifier: "FL License #3209459",
-        telephone: "+1-813-486-9072",
+        telephone: "+1-941-737-4127",
         email: "mark@davisgarnettsells.com",
         url: "https://davisgarnettsells.com/about/mark-davis",
       },
@@ -105,7 +105,7 @@ export default function AboutHubPage() {
         name: "Rachael Garnett",
         jobTitle: "Commercial & Residential Advisor",
         identifier: "FL License #3378601",
-        telephone: "+1-727-254-0244",
+        telephone: "+1-727-808-3344",
         email: "rachael@davisgarnettsells.com",
         url: "https://davisgarnettsells.com/about/rachael-garnett",
       },
@@ -310,8 +310,8 @@ export default function AboutHubPage() {
                     <div className="space-y-2 text-xs text-[#111111]/75 border-t border-[#111111]/10 pt-4">
                       <div className="flex items-center gap-2">
                         <Phone className="w-3.5 h-3.5 text-[#9A7D3A]" />
-                        <a href="tel:8134869072" className="hover:text-[#9A7D3A] font-medium">
-                          813-486-9072
+                        <a href="tel:941-737-4127" className="hover:text-[#9A7D3A] font-medium">
+                          941-737-4127
                         </a>
                       </div>
                       <div className="flex items-center gap-2">
@@ -390,8 +390,8 @@ export default function AboutHubPage() {
                     <div className="space-y-2 text-xs text-[#111111]/75 border-t border-[#111111]/10 pt-4">
                       <div className="flex items-center gap-2">
                         <Phone className="w-3.5 h-3.5 text-[#9A7D3A]" />
-                        <a href="tel:7272540244" className="hover:text-[#9A7D3A] font-medium">
-                          727-254-0244
+                        <a href="tel:727-808-3344" className="hover:text-[#9A7D3A] font-medium">
+                          727-808-3344
                         </a>
                       </div>
                       <div className="flex items-center gap-2">
@@ -449,37 +449,42 @@ export default function AboutHubPage() {
       <section className="py-28 px-6 md:px-12 bg-white border-b border-[#111111]/10">
         <div className="max-w-screen-xl mx-auto">
           <div className="grid lg:grid-cols-[1fr_1.15fr] gap-16 items-center">
-            <div className="bg-[#111111] text-white p-10 md:p-14 rounded-2xl relative overflow-hidden shadow-xl">
-              <div className="absolute top-0 right-0 w-72 h-72 bg-[#C8A951]/15 rounded-full blur-[90px] pointer-events-none" />
-              <span className="text-[10px] uppercase tracking-[0.25em] text-[#C8A951] font-bold block mb-4">
-                Brokerage Infrastructure · License #BK3401606
+            <div className="bg-[#111111] text-white p-10 md:p-14 rounded-2xl relative overflow-hidden shadow-xl border border-[#ef5728]/35">
+              <div className="absolute top-0 right-0 w-72 h-72 bg-[#ef5728]/15 rounded-full blur-[90px] pointer-events-none" />
+              <span className="text-[10px] uppercase tracking-[0.25em] text-[#ef5728] font-bold block mb-4">
+                Brokerage Infrastructure · Broker Number BK3401606
               </span>
-              <div className="relative w-52 h-16 mb-8">
+              <a
+                href="https://alignrightcarrollwood.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative w-52 h-16 mb-8 block hover:opacity-85 transition-opacity"
+              >
                 <Image
                   src="/align-right-email-logo.png"
                   alt="Align Right Realty Carrollwood"
                   fill
-                  className="object-contain object-left invert"
+                  className="object-contain object-left"
                 />
-              </div>
-              <h3 className="font-aiveritas text-3xl md:text-4xl text-white mb-6 leading-snug">
-                Backed by Align Right Realty Carrollwood
+              </a>
+              <h3 className="font-aiveritas text-3xl md:text-4xl text-[#ef5728] mb-6 leading-snug">
+                Align Right Realty Carrollwood
               </h3>
               <p className="text-white/75 text-sm md:text-base font-light leading-relaxed mb-8">
-                Boutique advisory agility requires institutional compliance, statewide MLS syndication, and modern transaction infrastructure. Our partnership with Align Right Realty Carrollwood gives every Davis & Garnett client full regulatory protection and global listing exposure.
+                Boutique advisory agility requires institutional compliance, statewide MLS syndication, and modern transaction infrastructure. Our partnership with Align Right Realty Carrollwood gives every Davis &amp; Garnett client full regulatory protection and global listing exposure.
               </p>
               <div className="grid grid-cols-2 gap-4 pt-6 border-t border-white/15 text-xs">
                 <div>
-                  <span className="text-[#C8A951] font-bold block uppercase tracking-widest mb-1">
-                    Brokerage License
+                  <span className="text-[#ef5728] font-bold block uppercase tracking-widest mb-1">
+                    Broker Number
                   </span>
-                  <span className="text-white/80">FL #BK3401606</span>
+                  <span className="text-white/80">BK3401606 · (813) 374-6050</span>
                 </div>
                 <div>
-                  <span className="text-[#C8A951] font-bold block uppercase tracking-widest mb-1">
+                  <span className="text-[#ef5728] font-bold block uppercase tracking-widest mb-1">
                     Headquarters
                   </span>
-                  <span className="text-white/80">Carrollwood / Tampa Bay, FL</span>
+                  <span className="text-white/80">3903 Northdale Blvd Suite 115W, Tampa, FL 33624</span>
                 </div>
               </div>
             </div>
@@ -944,22 +949,25 @@ export default function AboutHubPage() {
                 Direct Principal Contact
               </h4>
               <ul className="space-y-2.5 text-xs text-white/70">
-                <li>Mark Davis: 813-486-9072</li>
+                <li>Mark Davis: 941-737-4127</li>
                 <li>mark@davisgarnettsells.com</li>
-                <li className="pt-2">Rachael Garnett: 727-254-0244</li>
+                <li className="pt-2">Rachael Garnett: 727-808-3344</li>
                 <li>rachael@davisgarnettsells.com</li>
+                <li className="pt-2 text-[#D4AF37]">list@davisgarnettsells.com</li>
               </ul>
             </div>
 
             <div>
-              <h4 className="text-[11px] uppercase tracking-[0.2em] text-[#C8A951] font-bold mb-4">
+              <h4 className="text-[11px] uppercase tracking-[0.2em] text-[#ef5728] font-bold mb-4">
                 Brokerage of Record
               </h4>
-              <p className="text-xs text-white/70 leading-relaxed mb-2">
+              <p className="text-xs text-[#ef5728] font-semibold leading-relaxed mb-1">
                 Align Right Realty Carrollwood
               </p>
-              <p className="text-xs text-white/50">
-                Florida Brokerage License #BK3401606
+              <p className="text-xs text-white/60 leading-relaxed">
+                Broker Number BK3401606<br />
+                3903 Northdale Blvd Suite 115W, Tampa, FL 33624<br />
+                (813) 374-6050 | officeadmin@alignrightcarrollwood.com
               </p>
             </div>
           </div>

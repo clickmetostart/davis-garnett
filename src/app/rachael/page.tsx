@@ -12,7 +12,7 @@ const LINKS = [
   { label: "View Residential Listings", href: "/garnett#listings", icon: Home },
   { label: "Neighborhood Guides", href: "/garnett#neighborhoods", icon: MapPin },
   { label: "First-Time Buyer Guide", href: "/garnett#buyers", icon: Users },
-  { label: "Schedule a Showing", href: "mailto:rachaellgarnett@gmail.com", icon: Star },
+  { label: "Schedule a Showing", href: "mailto:rachael@davisgarnettsells.com", icon: Star },
   { label: "Meet Mark Davis", href: "/mark", icon: ArrowRight },
   { label: "Davis & Garnett Main Page", href: "/", icon: ArrowRight },
 ];
@@ -28,32 +28,32 @@ export default function RachaelLinktree() {
 
       {/* Back link */}
       <Link href="/" className="fixed top-6 left-6 z-50 flex items-center gap-2 text-xs text-white/40 hover:text-white transition-colors uppercase tracking-widest">
-        <ArrowLeft className="w-3.5 h-3.5" /> Proposal
+        <ArrowLeft className="w-3.5 h-3.5" /> Home
       </Link>
 
       <div className="relative z-10 flex flex-col items-center justify-start min-h-screen py-20 px-6">
 
         {/* Profile */}
-        <div className="w-28 h-28 relative rounded-full overflow-hidden border-2 border-[#D4AF37]/40 shadow-[0_0_40px_rgba(212,175,55,0.15)] mb-6">
-          <Image src="/rachael-garnett-headshot.png" alt="Rachael Garnett" fill className="object-cover" priority />
+        <div className="w-28 h-28 relative rounded-full overflow-hidden border-2 border-[#D4AF37] shadow-[0_0_40px_rgba(212,175,55,0.15)] mb-6">
+          <Image src="/rachael-garnett-gmail-avatar.jpg" alt="Rachael Garnett" fill className="object-cover object-[center_30%]" priority />
         </div>
 
         <h1 className="font-serif text-3xl text-white mb-1">Rachael Garnett</h1>
-        <p className="text-white/50 text-sm mb-1">Real Estate Advisor · Residential & Commercial</p>
-        <p className="text-white/30 text-xs uppercase tracking-widest mb-2">Align Right Realty Carrollwood</p>
+        <p className="text-[#D4AF37] text-sm mb-1 font-medium">Commercial &amp; Residential Advisor</p>
+        <p className="text-white/40 text-xs uppercase tracking-widest mb-2">FL Lic. #3378601 · <span className="text-[#ef5728]">Align Right Realty Carrollwood</span></p>
 
         {/* Tampa Bay tag */}
         <div className="flex items-center gap-1.5 text-white/40 text-xs mb-10">
           <MapPin className="w-3 h-3" />
-          Tampa Bay, FL
+          3903 Northdale Blvd Suite 115W, Tampa, FL 33624
         </div>
 
         {/* Quick contact */}
         <div className="flex gap-4 mb-10">
           <a href="tel:727-808-3344" className="flex items-center gap-2 px-5 py-2.5 border border-[#D4AF37]/20 bg-[#D4AF37]/5 rounded-full text-xs text-white/80 hover:bg-[#D4AF37]/15 transition-colors">
-            <Phone className="w-3.5 h-3.5 text-[#D4AF37]" /> 727.808.3344
+            <Phone className="w-3.5 h-3.5 text-[#D4AF37]" /> 727-808-3344
           </a>
-          <a href="mailto:rachaellgarnett@gmail.com" className="flex items-center gap-2 px-5 py-2.5 border border-[#D4AF37]/20 bg-[#D4AF37]/5 rounded-full text-xs text-white/80 hover:bg-[#D4AF37]/15 transition-colors">
+          <a href="mailto:rachael@davisgarnettsells.com" className="flex items-center gap-2 px-5 py-2.5 border border-[#D4AF37]/20 bg-[#D4AF37]/5 rounded-full text-xs text-white/80 hover:bg-[#D4AF37]/15 transition-colors">
             <Mail className="w-3.5 h-3.5 text-[#D4AF37]" /> Email Rachael
           </a>
         </div>
@@ -86,10 +86,11 @@ export default function RachaelLinktree() {
         </div>
 
         {/* Brokerage */}
-        <div className="flex flex-col items-center gap-4">
-          <div className="relative w-[120px] h-[40px] opacity-50">
-            <Image src="/align-right-email-logo.png" alt="Align Right Realty" fill className="object-contain brightness-0 invert" />
+        <div className="flex flex-col items-center gap-2">
+          <div className="relative w-[140px] h-[44px]">
+            <Image src="/align-right-email-logo.png" alt="Align Right Realty Carrollwood" fill className="object-contain" />
           </div>
+          <p className="text-[10px] text-white/40 uppercase tracking-widest">Broker Number BK3401606 · (813) 374-6050</p>
         </div>
 
       </div>
