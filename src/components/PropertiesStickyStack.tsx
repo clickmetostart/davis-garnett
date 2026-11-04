@@ -222,31 +222,12 @@ export default function PropertiesStickyStack() {
                 <h3 className="font-aiveritas text-3xl md:text-5xl text-white">
                   Serving Greater Tampa Bay &amp; Central Florida
                 </h3>
-                <div className="w-12 h-[1px] bg-[#C8A951] my-1" />
-                <p className="text-white/70 font-light text-xs md:text-sm leading-relaxed max-w-md">
+                <div className="w-12 h-[1px] bg-[#C8A951] my-2" />
+                <p className="text-white/70 font-light text-sm md:text-base leading-relaxed max-w-md mb-2">
                   Delivering hyper-local commercial, residential, waterfront, and land advisory across Pinellas, Hillsborough, Pasco, Polk, and Marion Counties.
                 </p>
 
-                {/* Key Geographic Coverage Tags */}
-                <div className="flex flex-wrap items-center justify-center gap-2 my-2 max-w-md">
-                  {[
-                    "St. Petersburg",
-                    "Downtown Tampa & Bayshore",
-                    "Wesley Chapel",
-                    "Land O' Lakes",
-                    "Brandon & Riverview",
-                    "Frostproof & Central FL",
-                  ].map((area) => (
-                    <span
-                      key={area}
-                      className="px-3 py-1.5 rounded-full text-[11px] font-medium tracking-wide bg-white/10 text-white/90 border border-white/15"
-                    >
-                      {area}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex flex-col w-full gap-3 mt-2">
+                <div className="flex flex-col w-full gap-3 mt-4">
                   <Link
                     href="/properties"
                     className="w-full text-center py-4 rounded-xl font-bold tracking-[0.2em] uppercase text-xs bg-[#C8A951] text-[#111111] hover:bg-white transition-colors shadow-lg"
