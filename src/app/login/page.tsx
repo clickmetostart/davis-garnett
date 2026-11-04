@@ -85,7 +85,7 @@ export default function LoginPage() {
             </h1>
 
             <p className="text-gray-700 text-lg md:text-xl leading-relaxed font-light max-w-xl">
-              Welcome to your private workspace, Davis & Garnett. We’re excited to walk you through everything we’ve built, and we’d love to do it together. Your workspace opens once we sit down for your review, where we’ll make edits live as we go. I’m available in person Tuesday, November 3 through Friday, November 6. Just email clickme.tostart@gmail.com with a day and time that works for you, and we’ll get it on the calendar.
+              Welcome to your workspace, Davis & Garnett. We are reviewing everything we’ve built together today at 1:00 PM. We look forward to walking through the entire platform, previewing all features, and making any live updates as we go. Access is unlocked for your review session.
             </p>
           </div>
         </div>
@@ -113,10 +113,10 @@ export default function LoginPage() {
                 <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
               </svg>
               <div>
-                <strong className="block text-amber-950 mb-1 font-bold">NOTICE: October 23, 2026</strong>
-                <p className="mb-2">Your Finalized Website Is Ready for Review.</p>
-                <p className="mb-2">Your complete website, including all listings and working dashboard modules, is ready for your review.</p>
-                <p>To schedule a review, please email <a href="mailto:clickme.tostart@gmail.com" className="underline text-[#D4AF37]">clickme.tostart@gmail.com</a>.</p>
+                <strong className="block text-amber-950 mb-1 font-bold">NOTICE: Reviewing Today at 1:00 PM</strong>
+                <p className="mb-2">Your website review session is scheduled for today at 1:00 PM.</p>
+                <p className="mb-2">Your complete website, including all active listings, commercial and residential advisory guides, and full MLS search, is unlocked and ready for review.</p>
+                <p>If you have any questions before we begin, contact us at <a href="mailto:clickme.tostart@gmail.com" className="underline text-[#D4AF37]">clickme.tostart@gmail.com</a>.</p>
               </div>
             </div>
 

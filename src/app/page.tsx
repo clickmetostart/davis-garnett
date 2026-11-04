@@ -821,16 +821,16 @@ export default function HomePageV1Light() {
       {/* ── ADVISORY CTA ── */}
       <section className="relative py-32 px-8 overflow-hidden border-t border-[#D4AF37]/20">
         <div className="absolute inset-0 z-0">
-          <Image src="/new-images/davis-garnett-new-team-1.jpg" alt="Advisory Team" fill className="object-cover object-[center_30%]" />
+          <Image src="/new-images/davis-garnett-coming-soon-2.jpg" alt="Davis & Garnett Advisory" fill className="object-cover object-[center_35%]" />
           <div className="absolute inset-0 bg-black/65" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-6">Knowledge, Stewardship &amp; Strategic Advisory</span>
+          <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-6">Commercial &amp; Residential Real Estate Advisory</span>
           <h2 className="font-aiveritas text-4xl md:text-5xl text-white mb-8 leading-tight">
-            Valuing the Long-Term Impact Every Property Brings to Our Community.
+            Built on Proven Experience. Driven by Real Results.
           </h2>
           <p className="text-white/85 text-lg font-light mb-12 max-w-2xl mx-auto leading-relaxed">
-            From commercial corridors and acreage acquisitions to waterfront residences and luxury towers, Mark Davis and Rachael Garnett offer trusted market insight, rigorous negotiation, and personalized guidance for buyers, sellers, and investors across Tampa Bay.
+            Whether you are acquiring commercial land, navigating complex zoning, or buying or selling a signature residence in Tampa Bay, Mark Davis and Rachael Garnett deliver direct partner access, clear market strategy, and focused advocacy at every step.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <button

@@ -12,21 +12,6 @@ export async function POST(request: Request) {
 
     const cleanEmail = email.trim().toLowerCase();
 
-    // Check if client (Davis & Garnett) is attempting to log in while access is locked
-    if (
-      cleanEmail === 'msdavis118@gmail.com' ||
-      cleanEmail === 'rachaellgarnett@gmail.com' ||
-      cleanEmail.includes('davis') ||
-      cleanEmail.includes('garnett')
-    ) {
-      return NextResponse.json(
-        {
-          error: 'Client workspace access is currently locked pending your scheduled review session. Please email clickme.tostart@gmail.com to schedule.'
-        },
-        { status: 403 }
-      );
-    }
-
     if (!VALID_PASSWORDS.includes(password)) {
       return NextResponse.json({ error: 'Invalid password' }, { status: 401 });
     }
@@ -36,7 +21,23 @@ export async function POST(request: Request) {
     let lastName = 'Me';
     let userEmail = cleanEmail;
 
-    if (cleanEmail.includes('nick')) {
+    if (
+      cleanEmail === 'msdavis118@gmail.com' ||
+      cleanEmail.includes('davis')
+    ) {
+      userRole = 'Partner / Broker-Associate';
+      firstName = 'Mark';
+      lastName = 'Davis';
+      userEmail = cleanEmail;
+    } else if (
+      cleanEmail === 'rachaellgarnett@gmail.com' ||
+      cleanEmail.includes('garnett')
+    ) {
+      userRole = 'Partner / Realtor';
+      firstName = 'Rachael';
+      lastName = 'Garnett';
+      userEmail = cleanEmail;
+    } else if (cleanEmail.includes('nick')) {
       userRole = 'Super User Admin';
       firstName = 'Nick';
       lastName = 'ClickMe';
@@ -51,13 +52,13 @@ export async function POST(request: Request) {
       lastName = 'Me';
       userEmail = cleanEmail.includes('@') ? cleanEmail : 'launch@clickme.life';
     } else {
-      return NextResponse.json(
-        { error: 'Access restricted. Please use your developer login or email clickme.tostart@gmail.com.' },
-        { status: 401 }
-      );
+      userRole = 'Authorized User';
+      firstName = cleanEmail.split('@')[0] || 'User';
+      lastName = '';
+      userEmail = cleanEmail;
     }
 
-    // Successful login for Nick / Click Me
+    // Successful login
     const response = NextResponse.json({ success: true, user: { firstName, lastName, role: userRole } });
 
     const mockSessionData = JSON.stringify({ email: userEmail, firstName, lastName, role: userRole });
