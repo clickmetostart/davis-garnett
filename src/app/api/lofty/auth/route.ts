@@ -5,10 +5,21 @@ import path from 'path';
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { code } = body;
+    const { code, accessToken, apiKey } = body;
+
+    // Support direct token / API key input from Lofty demo or developer settings
+    const directToken = accessToken || apiKey;
+    if (directToken) {
+      const dataPath = path.join(process.cwd(), 'src', 'data', 'loftyToken.json');
+      await fs.writeFile(dataPath, JSON.stringify({
+        access_token: directToken,
+        timestamp: Date.now()
+      }, null, 2));
+      return NextResponse.json({ message: 'Success', source: 'direct_token' }, { status: 200 });
+    }
 
     if (!code) {
-      return NextResponse.json({ error: 'Authorization code is missing.' }, { status: 400 });
+      return NextResponse.json({ error: 'Authorization code, access token, or API key is missing.' }, { status: 400 });
     }
 
     const clientId = process.env.LOFTY_CLIENT_ID;
