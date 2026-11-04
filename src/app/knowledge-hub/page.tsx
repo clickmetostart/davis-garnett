@@ -670,3 +670,4 @@ export default function KnowledgeHubPage() {
     </div>
   );
 }
+
