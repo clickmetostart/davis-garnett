@@ -821,7 +821,7 @@ export default function HomePageV1Light() {
       {/* ── ADVISORY CTA ── */}
       <section className="relative py-32 px-8 overflow-hidden border-t border-[#D4AF37]/20">
         <div className="absolute inset-0 z-0">
-          <Image src="/new-images/davis-garnett-coming-soon-2.jpg" alt="Davis & Garnett Advisory" fill className="object-cover object-[center_35%]" />
+          <Image src="/new-images/davis-garnett-new-team-5.jpg" alt="Davis & Garnett Advisory" fill className="object-cover object-[center_30%]" />
           <div className="absolute inset-0 bg-black/65" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">

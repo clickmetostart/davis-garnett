@@ -10,3 +10,4 @@ export default function robots(): MetadataRoute.Robots {
     sitemap: 'https://www.davisgarnettsells.com/sitemap.xml',
   };
 }
+
