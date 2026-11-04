@@ -1157,7 +1157,7 @@ export default function SearchMlsDiscoveryPortal() {
               Home (V1-Light)
             </Link>
             <Link href="/developments" className="hover:text-[#C8A951] transition-colors">
-              Developments Hub
+              Featured Developments
             </Link>
             <Link href="/search-mls" className="text-[#C8A951] font-bold">
               Search Full MLS

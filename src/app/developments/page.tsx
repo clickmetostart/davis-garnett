@@ -582,7 +582,7 @@ export default function DevelopmentsHubPage() {
               Home (V1-Light)
             </Link>
             <Link href="/developments" className="text-[#C8A951] font-bold">
-              Developments Hub
+              Featured Developments
             </Link>
             <Link href="/search-mls" className="hover:text-[#C8A951] transition-colors">
               Search Full MLS

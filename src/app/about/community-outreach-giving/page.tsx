@@ -115,7 +115,7 @@ export default function CommunityOutreachGivingPage() {
             href="/about"
             className="inline-flex items-center gap-2 font-bold uppercase tracking-[0.2em] text-[#9A7D3A] hover:text-[#111111] transition-colors"
           >
-            <ArrowLeft className="w-3.5 h-3.5" /> Back to About Collective Hub
+            <ArrowLeft className="w-3.5 h-3.5" /> Back to About The Davis &amp; Garnett Team
           </Link>
           <div className="flex flex-wrap items-center gap-4 text-[11px] uppercase tracking-widest text-[#111111]/60 font-semibold">
             <Link href="/about/mark-davis" className="hover:text-[#9A7D3A]">
@@ -169,7 +169,7 @@ export default function CommunityOutreachGivingPage() {
                 href="/about"
                 className="inline-flex items-center gap-2 px-6 py-4 border border-[#111111]/20 text-[#111111] text-xs font-bold uppercase tracking-[0.2em] hover:border-[#C8A951] transition-colors rounded-lg"
               >
-                Return to About Hub
+                About The Davis &amp; Garnett Team
               </Link>
             </div>
           </div>
@@ -416,13 +416,13 @@ export default function CommunityOutreachGivingPage() {
           </div>
           <div className="flex flex-wrap gap-6 text-xs uppercase tracking-widest text-white/70">
             <Link href="/about" className="hover:text-[#C8A951]">
-              About Hub
+              About The Team
             </Link>
             <Link href="/about/mark-davis" className="hover:text-[#C8A951]">
-              Mark Davis
+              Meet Mark Davis
             </Link>
             <Link href="/about/rachael-garnett" className="hover:text-[#C8A951]">
-              Rachael Garnett
+              Meet Rachael Garnett
             </Link>
             <Link href="/about/align-right-realty-carrollwood" className="hover:text-[#C8A951]">
               Align Right Realty

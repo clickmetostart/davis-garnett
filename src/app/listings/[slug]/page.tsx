@@ -148,7 +148,7 @@ export default function ListingDetailPage() {
             href="/properties"
             className="inline-flex items-center gap-2 px-8 py-4 bg-[#111] text-white text-xs font-bold uppercase tracking-[0.2em] rounded-xl hover:bg-[#C8A951] hover:text-black transition-colors"
           >
-            <ArrowLeft className="w-4 h-4" /> Return to Portfolio Hub
+            <ArrowLeft className="w-4 h-4" /> View All Properties
           </Link>
         </div>
       </div>

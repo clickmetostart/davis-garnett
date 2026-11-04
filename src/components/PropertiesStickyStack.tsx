@@ -231,7 +231,7 @@ export default function PropertiesStickyStack() {
                     href="/properties"
                     className="w-full text-center py-4 rounded-xl font-bold tracking-[0.2em] uppercase text-xs bg-[#C8A951] text-[#111111] hover:bg-white transition-colors"
                   >
-                    Open Full Portfolio Hub
+                    View All Properties &amp; Sold Listings
                   </Link>
                   <Link
                     href="/listings/6100-bahama-shores-dr-s-st-petersburg"

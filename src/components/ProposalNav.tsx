@@ -20,12 +20,12 @@ interface NavGroup {
 
 const NAV_GROUPS: NavGroup[] = [
   {
-    label: "About",
+    label: "About Us",
     href: "/about",
     dropdown: [
-      { label: "About Davis & Garnett", desc: "Two powerhouses setting the gold standard in the art of the deal", href: "/about" },
-      { label: "About Mark Davis", desc: "Commercial & Residential Advisor • FL Lic #3209459", href: "/about/mark-davis" },
-      { label: "About Rachael Garnett", desc: "Commercial & Residential Advisor • FL Lic #3378601", href: "/about/rachael-garnett" },
+      { label: "About The Davis & Garnett Team", desc: "Two powerhouses setting the gold standard in the art of the deal", href: "/about" },
+      { label: "Meet Mark Davis", desc: "Commercial & Residential Advisor • FL Lic #3209459", href: "/about/mark-davis" },
+      { label: "Meet Rachael Garnett", desc: "Commercial & Residential Advisor • FL Lic #3378601", href: "/about/rachael-garnett" },
       { label: "Align Right Realty Carrollwood", desc: "Our brokerage heritage, compliance & statewide reach (#BK3401606)", href: "/about/align-right-realty-carrollwood" },
       { label: "Meet Our Strategic Partners", desc: "Preferred lenders, title counsel, inspectors & luxury stagers", href: "/about/strategic-partners" },
       { label: "Community Outreach & Causes", desc: "Our commitment to Tampa Bay church & youth initiatives", href: "/about/community-outreach-giving" },
@@ -61,7 +61,7 @@ const NAV_GROUPS: NavGroup[] = [
     label: "Knowledge Hub",
     href: "/knowledge-hub",
     dropdown: [
-      { label: "Real Estate Knowledge Simplified", desc: "Master Hub: Playbooks, Q&A Classroom, Areas, Events & Reports", href: "/knowledge-hub" },
+      { label: "Real Estate Knowledge Simplified", desc: "Buyer & seller guides, real estate Q&A, neighborhoods & market reports", href: "/knowledge-hub" },
       { label: "Advisory Playbooks & Guides", desc: "Luxury buying, seller strategy, CRE investing & CDD guides", href: "/knowledge-hub#guides" },
       { label: "The D&G Q&A Classroom", desc: "Direct answers to top Florida buying, selling & tax questions", href: "/knowledge-hub#questions" },
       { label: "Areas We Work In", desc: "St. Pete, Downtown Tampa, Wesley Chapel, Land O' Lakes & Brandon", href: "/knowledge-hub#areas" },
@@ -139,13 +139,6 @@ export default function ProposalNav() {
             ))}
 
             <Link
-              href="/contact"
-              className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/75 hover:text-[#D4AF37] transition-colors py-6"
-            >
-              Contact
-            </Link>
-
-            <Link
               href="/search-mls"
               className="flex items-center gap-1.5 text-[10px] font-bold tracking-[0.2em] uppercase text-[#D4AF37] hover:text-white transition-colors py-2 px-3.5 border border-[#D4AF37]/40 rounded-lg bg-[#D4AF37]/10"
             >
@@ -157,16 +150,8 @@ export default function ProposalNav() {
               onClick={() => setModalOpen(true)}
               className="px-4 py-2.5 bg-[#D4AF37] hover:bg-white text-[#111] text-[10px] font-bold uppercase tracking-[0.2em] rounded-lg transition-colors"
             >
-              Schedule Advisory
+              Need Advice?
             </button>
-
-            <Link
-              href="/clickme"
-              className="text-[9px] font-bold tracking-[0.2em] uppercase text-white/40 hover:text-white transition-colors"
-              title="Advisor CRM Workspace"
-            >
-              CRM
-            </Link>
           </div>
 
           {/* Mobile Hamburger */}
@@ -216,14 +201,6 @@ export default function ProposalNav() {
               </div>
             ))}
 
-            <Link
-              href="/contact"
-              onClick={() => setIsOpen(false)}
-              className="text-lg font-serif text-white hover:text-[#D4AF37] border-b border-white/10 pb-3"
-            >
-              Contact Us
-            </Link>
-
             <div className="flex flex-col gap-3 pt-2">
               <Link
                 href="/search-mls"
@@ -239,7 +216,7 @@ export default function ProposalNav() {
                 }}
                 className="w-full py-3.5 bg-[#D4AF37] text-[#111] text-center text-xs font-bold uppercase tracking-widest rounded-lg"
               >
-                Schedule Private Consultation
+                Need Advice?
               </button>
               <div className="grid grid-cols-2 gap-3 pt-2 text-[11px] text-white/70">
                 <a href="tel:941-737-4127" className="flex items-center justify-center gap-1.5 py-2.5 bg-white/5 rounded-lg">
@@ -249,13 +226,6 @@ export default function ProposalNav() {
                   <Phone className="w-3.5 h-3.5 text-[#D4AF37]" /> Rachael: 727-808-3344
                 </a>
               </div>
-              <Link
-                href="/clickme"
-                onClick={() => setIsOpen(false)}
-                className="text-center text-[10px] uppercase tracking-widest text-white/40 pt-2"
-              >
-                Advisor CRM Workspace
-              </Link>
             </div>
           </div>
         )}

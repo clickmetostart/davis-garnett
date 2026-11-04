@@ -138,20 +138,20 @@ export default function AboutHubPage() {
         <div className="absolute top-0 right-0 w-[680px] h-[680px] bg-[#C8A951]/8 rounded-full blur-[130px] pointer-events-none -translate-y-1/3 translate-x-1/4" />
 
         <div className="max-w-screen-xl mx-auto relative z-10">
-          {/* Quick Spoke Jump Bar */}
+          {/* Quick Navigation Bar */}
           <div className="flex flex-wrap items-center gap-2 md:gap-3 pb-10 mb-10 border-b border-[#111111]/10 text-[11px] uppercase tracking-[0.2em] font-bold">
-            <span className="text-[#9A7D3A] mr-2">About Hub Spokes:</span>
+            <span className="text-[#9A7D3A] mr-2">Meet Our Team:</span>
             <Link
               href="/about/mark-davis"
               className="px-3.5 py-1.5 rounded-full bg-[#f5f3ef] hover:bg-[#111111] hover:text-white transition-colors"
             >
-              Mark Davis (#3209459)
+              Meet Mark Davis (#3209459)
             </Link>
             <Link
               href="/about/rachael-garnett"
               className="px-3.5 py-1.5 rounded-full bg-[#f5f3ef] hover:bg-[#111111] hover:text-white transition-colors"
             >
-              Rachael Garnett (#3378601)
+              Meet Rachael Garnett (#3378601)
             </Link>
             <Link
               href="/about/align-right-realty-carrollwood"
@@ -169,7 +169,7 @@ export default function AboutHubPage() {
               href="/about/community-outreach-giving"
               className="px-3.5 py-1.5 rounded-full bg-[#f5f3ef] hover:bg-[#111111] hover:text-white transition-colors"
             >
-              Community & Faith Giving
+              Community &amp; Faith Giving
             </Link>
           </div>
 
@@ -178,7 +178,7 @@ export default function AboutHubPage() {
               <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#f5f3ef] border border-[#C8A951]/40 mb-6">
                 <Sparkles className="w-3.5 h-3.5 text-[#9A7D3A]" />
                 <span className="text-[11px] uppercase tracking-[0.25em] font-bold text-[#9A7D3A]">
-                  The Davis & Garnett Collective Hub
+                  About The Davis &amp; Garnett Team
                 </span>
               </div>
 
@@ -350,14 +350,14 @@ export default function AboutHubPage() {
                   href="/about/mark-davis"
                   className="inline-flex items-center justify-center gap-2 flex-1 py-4 px-6 bg-[#111111] text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C8A951] hover:text-[#111111] transition-colors rounded-lg"
                 >
-                  Explore Mark&apos;s Spoke Profile
+                  Meet Mark Davis
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
-                  href="/davis"
+                  href="/properties?category=Commercial"
                   className="inline-flex items-center justify-center py-4 px-5 border border-[#111111]/20 text-[#111111] text-xs font-bold uppercase tracking-[0.18em] hover:border-[#C8A951] transition-colors rounded-lg"
                 >
-                  Direct Portfolio (/davis)
+                  Commercial &amp; Land Listings
                 </Link>
               </div>
             </div>
@@ -430,14 +430,14 @@ export default function AboutHubPage() {
                   href="/about/rachael-garnett"
                   className="inline-flex items-center justify-center gap-2 flex-1 py-4 px-6 bg-[#111111] text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C8A951] hover:text-[#111111] transition-colors rounded-lg"
                 >
-                  Explore Rachael&apos;s Spoke Profile
+                  Meet Rachael Garnett
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
-                  href="/garnett"
+                  href="/properties?category=Residential"
                   className="inline-flex items-center justify-center py-4 px-5 border border-[#111111]/20 text-[#111111] text-xs font-bold uppercase tracking-[0.18em] hover:border-[#C8A951] transition-colors rounded-lg"
                 >
-                  Direct Portfolio (/garnett)
+                  Residential &amp; Waterfront Listings
                 </Link>
               </div>
             </div>
@@ -542,7 +542,7 @@ export default function AboutHubPage() {
                 href="/about/align-right-realty-carrollwood"
                 className="inline-flex items-center gap-3 px-8 py-4 bg-[#111111] text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C8A951] hover:text-[#111111] transition-colors rounded-lg"
               >
-                Explore Align Right Realty Carrollwood Spoke
+                About Align Right Realty Carrollwood
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -579,7 +579,7 @@ export default function AboutHubPage() {
               {
                 icon: Landmark,
                 category: "Preferred Residential & Jumbo Lending",
-                desc: "Private wealth mortgage bankers and portfolio lenders offering rapid underwriting for waterfront estates,医師/executive relocations, and jumbo bridge structures.",
+                desc: "Private wealth mortgage bankers and portfolio lenders offering rapid underwriting for waterfront estates, physician & executive relocations, and jumbo bridge structures.",
               },
               {
                 icon: Building2,
@@ -908,22 +908,22 @@ export default function AboutHubPage() {
 
             <div>
               <h4 className="text-[11px] uppercase tracking-[0.2em] text-[#C8A951] font-bold mb-4">
-                About Hub Spokes
+                About The Davis &amp; Garnett Team
               </h4>
               <ul className="space-y-2.5 text-xs text-white/70">
                 <li>
                   <Link href="/about" className="hover:text-white">
-                    About Collective Hub
+                    About The Davis &amp; Garnett Team
                   </Link>
                 </li>
                 <li>
                   <Link href="/about/mark-davis" className="hover:text-white">
-                    Mark Davis — Commercial & Land (#3209459)
+                    Meet Mark Davis (#3209459)
                   </Link>
                 </li>
                 <li>
                   <Link href="/about/rachael-garnett" className="hover:text-white">
-                    Rachael Garnett — Luxury Residential (#3378601)
+                    Meet Rachael Garnett (#3378601)
                   </Link>
                 </li>
                 <li>
@@ -938,7 +938,7 @@ export default function AboutHubPage() {
                 </li>
                 <li>
                   <Link href="/about/community-outreach-giving" className="hover:text-white">
-                    Community Outreach & Faith-Based Giving
+                    Community Outreach &amp; Faith-Based Giving
                   </Link>
                 </li>
               </ul>

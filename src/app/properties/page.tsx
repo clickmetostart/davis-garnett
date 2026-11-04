@@ -131,7 +131,7 @@ export default function PropertiesPage() {
         <div className="relative z-10 max-w-screen-xl mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
-              Davis & Garnett · Master Portfolio Hub
+              Davis &amp; Garnett · Tampa Bay Real Estate Listings
             </span>
             <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-[#111111] leading-none mb-6">
               The Portfolio

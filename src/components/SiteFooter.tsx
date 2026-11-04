@@ -119,12 +119,12 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        {/* 5-Column Master Hub Sitemap Links */}
+        {/* 5-Column Sitemap Links */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 pb-16 mb-16 border-b border-white/10">
-          {/* Col 1: Portfolio Hub */}
+          {/* Col 1: Featured Portfolio */}
           <div>
             <Link href="/properties" className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4AF37] block mb-4 hover:text-white transition-colors">
-              Portfolio Hub
+              Featured Properties
             </Link>
             <ul className="space-y-2.5 text-xs text-white/60">
               <li><Link href="/properties" className="hover:text-white transition-colors">All Active &amp; Sold Listings</Link></li>
@@ -185,12 +185,12 @@ export default function SiteFooter() {
           {/* Col 5: About & Search MLS */}
           <div>
             <Link href="/about" className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4AF37] block mb-4 hover:text-white transition-colors">
-              About &amp; Resources
+              About Us
             </Link>
             <ul className="space-y-2.5 text-xs text-white/60">
-              <li><Link href="/about" className="hover:text-white transition-colors">About Davis &amp; Garnett</Link></li>
-              <li><Link href="/about/mark-davis" className="hover:text-white transition-colors">Mark Davis Profile</Link></li>
-              <li><Link href="/about/rachael-garnett" className="hover:text-white transition-colors">Rachael Garnett Profile</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors">About The Davis &amp; Garnett Team</Link></li>
+              <li><Link href="/about/mark-davis" className="hover:text-white transition-colors">Meet Mark Davis</Link></li>
+              <li><Link href="/about/rachael-garnett" className="hover:text-white transition-colors">Meet Rachael Garnett</Link></li>
               <li><Link href="/about/align-right-realty-carrollwood" className="hover:text-white transition-colors">Align Right Carrollwood</Link></li>
               <li><Link href="/about/strategic-partners" className="hover:text-white transition-colors">Meet Our Strategic Partners</Link></li>
               <li><Link href="/about/community-outreach-giving" className="hover:text-white transition-colors">Our Causes &amp; Community</Link></li>
