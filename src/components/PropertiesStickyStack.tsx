@@ -211,39 +211,53 @@ export default function PropertiesStickyStack() {
 
             {/* ── Closing Portfolio Hub Card ── */}
             <div
-              className="sticky rounded-2xl overflow-hidden shadow-xl bg-[#111111] flex flex-col items-center justify-center p-10 border border-[#C8A951]/25"
+              className="sticky rounded-2xl overflow-hidden shadow-xl bg-[#111111] flex flex-col items-center justify-center p-8 md:p-12 border border-[#C8A951]/25"
               style={{ top: CARD_TOP, height: CARD_H, zIndex: 20 }}
             >
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,#1a1810_0%,#0c0b09_70%)]" />
-              <div className="relative z-10 flex flex-col items-center w-full max-w-md gap-5 text-center">
+              <div className="relative z-10 flex flex-col items-center w-full max-w-lg gap-4 text-center">
                 <span className="text-[#C8A951] text-xs uppercase tracking-[0.3em] font-bold">
-                  Active Offerings &amp; Proven Track Record
+                  Regional Advisory &amp; Local Market Authority
                 </span>
-                <h3 className="font-aiveritas text-4xl md:text-5xl text-white">
-                  Explore Full Portfolio
+                <h3 className="font-aiveritas text-3xl md:text-5xl text-white">
+                  Serving Greater Tampa Bay &amp; Central Florida
                 </h3>
-                <div className="w-10 h-[1px] bg-[#C8A951]" />
-                <p className="text-white/60 font-light text-sm leading-relaxed">
-                  Browse our exclusive active commercial, residential, and land offerings alongside our proven track record of closed transactions across St. Petersburg, Tampa, Brandon, Frostproof, Fort McCoy, Bradenton, and Pasco County.
+                <div className="w-12 h-[1px] bg-[#C8A951] my-1" />
+                <p className="text-white/70 font-light text-xs md:text-sm leading-relaxed max-w-md">
+                  Delivering hyper-local commercial, residential, waterfront, and land advisory across Pinellas, Hillsborough, Pasco, Polk, and Marion Counties.
                 </p>
-                <div className="flex flex-col w-full gap-3 mt-4">
+
+                {/* Key Geographic Coverage Tags */}
+                <div className="flex flex-wrap items-center justify-center gap-2 my-2 max-w-md">
+                  {[
+                    "St. Petersburg",
+                    "Downtown Tampa & Bayshore",
+                    "Wesley Chapel",
+                    "Land O' Lakes",
+                    "Brandon & Riverview",
+                    "Frostproof & Central FL",
+                  ].map((area) => (
+                    <span
+                      key={area}
+                      className="px-3 py-1.5 rounded-full text-[11px] font-medium tracking-wide bg-white/10 text-white/90 border border-white/15"
+                    >
+                      {area}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex flex-col w-full gap-3 mt-2">
                   <Link
                     href="/properties"
-                    className="w-full text-center py-4 rounded-xl font-bold tracking-[0.2em] uppercase text-xs bg-[#C8A951] text-[#111111] hover:bg-white transition-colors"
+                    className="w-full text-center py-4 rounded-xl font-bold tracking-[0.2em] uppercase text-xs bg-[#C8A951] text-[#111111] hover:bg-white transition-colors shadow-lg"
                   >
-                    View All Properties &amp; Sold Listings
+                    Explore Full Portfolio &amp; Track Record
                   </Link>
                   <Link
-                    href="/listings/6100-bahama-shores-dr-s-st-petersburg"
-                    className="w-full text-center py-3.5 rounded-xl font-bold tracking-[0.2em] uppercase text-xs border border-white/20 text-white hover:border-[#C8A951] hover:text-[#C8A951] transition-colors"
+                    href="/knowledge-hub"
+                    className="w-full text-center py-3 rounded-xl font-bold tracking-[0.2em] uppercase text-xs border border-white/20 text-white/90 hover:border-[#C8A951] hover:text-[#C8A951] transition-colors"
                   >
-                    6100 Bahama Shores Dr S ($4.55M)
-                  </Link>
-                  <Link
-                    href="/listings/770-old-stokes-rd-frostproof"
-                    className="w-full text-center py-3.5 rounded-xl font-bold tracking-[0.2em] uppercase text-xs border border-white/20 text-white hover:border-[#C8A951] hover:text-[#C8A951] transition-colors"
-                  >
-                    770 Old Stokes Rd (79.54 Acres)
+                    Explore Neighborhood &amp; Market Guides
                   </Link>
                 </div>
               </div>
