@@ -182,12 +182,13 @@ export default function SiteFooter() {
             </ul>
           </div>
 
-          {/* Col 5: About & Search MLS */}
+          {/* Col 5: Why Us? & Search MLS */}
           <div>
-            <Link href="/about" className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4AF37] block mb-4 hover:text-white transition-colors">
-              About Us
+            <Link href="/about/our-every-listing-approach" className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4AF37] block mb-4 hover:text-white transition-colors">
+              Why Us?
             </Link>
             <ul className="space-y-2.5 text-xs text-white/60">
+              <li><Link href="/about/our-every-listing-approach" className="text-white hover:text-[#D4AF37] transition-colors font-medium">Our Every Listing Approach</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">About The Davis &amp; Garnett Team</Link></li>
               <li><Link href="/about/mark-davis" className="hover:text-white transition-colors">Meet Mark Davis</Link></li>
               <li><Link href="/about/rachael-garnett" className="hover:text-white transition-colors">Meet Rachael Garnett</Link></li>

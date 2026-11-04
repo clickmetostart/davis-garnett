@@ -20,9 +20,10 @@ interface NavGroup {
 
 const NAV_GROUPS: NavGroup[] = [
   {
-    label: "About Us",
-    href: "/about",
+    label: "Why Us?",
+    href: "/about/our-every-listing-approach",
     dropdown: [
+      { label: "Our Every Listing Approach", desc: "Our why, full checklist & how we take care of every property we list", href: "/about/our-every-listing-approach" },
       { label: "About The Davis & Garnett Team", desc: "Real estate powerhouses of local knowledge, grateful for the opportunity to serve", href: "/about" },
       { label: "Meet Mark Davis", desc: "Commercial & Residential Advisor • FL Lic #3209459", href: "/about/mark-davis" },
       { label: "Meet Rachael Garnett", desc: "Commercial & Residential Advisor • FL Lic #3378601", href: "/about/rachael-garnett" },
