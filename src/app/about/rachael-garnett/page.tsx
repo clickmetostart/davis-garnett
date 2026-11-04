@@ -711,6 +711,87 @@ export default function RachaelGarnettAdvisorPage() {
         </div>
       </section>
 
+      {/* ── TOP 10 CLIENT QUESTIONS (AEO / GEO / SEO) ───────────────────── */}
+      <section className="py-24 px-6 md:px-12 bg-white border-t border-[#111111]/10">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
+              Direct &amp; Transparent Answers
+            </span>
+            <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111111] mb-4">
+              Rachael Garnett: Top 10 Questions
+            </h2>
+            <p className="text-[#111111]/60 font-light text-sm md:text-base leading-relaxed">
+              Straightforward answers to the questions clients ask most when buying, selling, or investing across Tampa Bay.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: "What areas of Tampa Bay do you serve?",
+                a: "I work throughout Hillsborough, Pinellas, and Pasco counties, including Tampa, Carrollwood, Brandon, St. Petersburg, Clearwater, and Wesley Chapel. If you're looking in a nearby market, I'm happy to help or connect you with a trusted partner.",
+              },
+              {
+                q: "Do you work with both residential and commercial clients?",
+                a: "Yes. I help with single-family homes, condos, and investment properties, as well as commercial space for businesses and investors.",
+              },
+              {
+                q: "How do you help buyers compete in a fast-moving market?",
+                a: "We get you pre-approved early, set clear priorities, and move quickly when the right property appears. I'll also help you build a strong offer, not just a high one.",
+              },
+              {
+                q: "How do you determine the right price to list my home?",
+                a: "I use recent comparable sales, current competition, and local market trends, then walk you through the numbers so you understand the strategy behind the price.",
+              },
+              {
+                q: "How will you market my property?",
+                a: "Professional photography, strong online exposure through the MLS and major listing sites, social media, and targeted outreach to buyers and agents.",
+              },
+              {
+                q: "What should I know about flood zones, insurance, and hurricane season?",
+                a: "These matter a great deal in Tampa Bay. I'll help you check flood zone status, understand insurance costs before you make an offer, and know what inspections to request.",
+              },
+              {
+                q: "What does the process look like from start to close?",
+                a: "We start with a conversation about your goals, then move through strategy, search or listing, offer, inspections, financing, and closing. I'll keep you updated at every step.",
+              },
+              {
+                q: "How do we communicate during the process?",
+                a: "However works best for you: call, text, or email. You'll always know where things stand.",
+              },
+              {
+                q: "What are the costs involved in buying or selling?",
+                a: "Costs vary by deal, but typically include agent commission, title and closing fees, inspections, and prorated taxes. I'll give you a clear estimate up front so there are no surprises.",
+              },
+              {
+                q: "How do I get started?",
+                a: "Reach out by phone, email, or the contact form on this page. We'll have a no-pressure conversation about your goals and timeline.",
+              },
+            ].map((faq, i) => (
+              <div
+                key={i}
+                className="p-6 md:p-8 rounded-2xl bg-[#fbfbf9] border border-[#111111]/8 hover:border-[#C8A951] transition-colors"
+              >
+                <div className="flex items-start gap-4">
+                  <span className="font-aiveritas text-xl md:text-2xl text-[#9A7D3A] shrink-0 font-bold">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h3 className="font-aiveritas text-lg md:text-xl text-[#111111] mb-2 font-bold">
+                      {faq.q}
+                    </h3>
+                    <p className="text-xs md:text-sm text-[#111111]/75 font-light leading-relaxed">
+                      {faq.a}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── FOOTER ───────────────────────────────────────────────────────── */}
       <footer className="py-16 px-6 md:px-12 bg-[#111111] text-white border-t border-[#C8A951]/20">
         <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">

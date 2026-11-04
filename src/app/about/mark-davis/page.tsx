@@ -695,6 +695,87 @@ export default function MarkDavisAdvisorPage() {
         </div>
       </section>
 
+      {/* ── TOP 10 CLIENT QUESTIONS (AEO / GEO / SEO) ───────────────────── */}
+      <section className="py-24 px-6 md:px-12 bg-white border-t border-[#111111]/10">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
+              Direct &amp; Transparent Answers
+            </span>
+            <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111111] mb-4">
+              Mark Davis: Top 10 Questions
+            </h2>
+            <p className="text-[#111111]/60 font-light text-sm md:text-base leading-relaxed">
+              Straightforward answers to the questions clients ask most when buying, selling, or investing in commercial and residential properties.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: "What areas of Tampa Bay do you serve?",
+                a: "I work across Hillsborough, Pinellas, and Pasco counties, from Tampa and Carrollwood to St. Petersburg, Clearwater, and Wesley Chapel.",
+              },
+              {
+                q: "Do you handle both commercial and residential real estate?",
+                a: "Yes. I advise homebuyers and sellers as well as business owners, investors, and tenants looking for commercial space.",
+              },
+              {
+                q: "What should I know before buying a home in Tampa Bay?",
+                a: "Know your budget, get pre-approved, and factor in insurance, HOA fees, and flood zone status early. Those costs can change what a home really costs each month.",
+              },
+              {
+                q: "How do you help sellers get the best result?",
+                a: "Smart pricing, strong presentation, and wide exposure. I'll advise you on what's worth fixing before listing and what isn't.",
+              },
+              {
+                q: "How do you approach commercial real estate for businesses?",
+                a: "I start with your business needs: location, size, traffic, zoning, and budget. Then I search for options, including listings on commercial platforms like LoopNet.",
+              },
+              {
+                q: "Can you help me find an investment property?",
+                a: "Yes. I'll help you evaluate properties based on location, rental demand, expenses, and long-term potential, so you can make a decision based on the numbers.",
+              },
+              {
+                q: "What's the market like right now?",
+                a: "Conditions vary by neighborhood and property type, so I'll show you current data for the specific area you're considering rather than a general headline.",
+              },
+              {
+                q: "Should I buy first or sell first?",
+                a: "It depends on your finances, timeline, and comfort with risk. We'll map out the options and choose the approach that fits your situation.",
+              },
+              {
+                q: "What are the closing costs, and who pays what?",
+                a: "Typical costs include title and closing fees, inspections, lender fees, and prorated taxes. I'll provide an estimate early so you can plan.",
+              },
+              {
+                q: "How do I get started?",
+                a: "Call, email, or use the contact form on this page. We'll talk through your goals, timeline, and next steps with no pressure.",
+              },
+            ].map((faq, i) => (
+              <div
+                key={i}
+                className="p-6 md:p-8 rounded-2xl bg-[#fbfbf9] border border-[#111111]/8 hover:border-[#C8A951] transition-colors"
+              >
+                <div className="flex items-start gap-4">
+                  <span className="font-aiveritas text-xl md:text-2xl text-[#9A7D3A] shrink-0 font-bold">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h3 className="font-aiveritas text-lg md:text-xl text-[#111111] mb-2 font-bold">
+                      {faq.q}
+                    </h3>
+                    <p className="text-xs md:text-sm text-[#111111]/75 font-light leading-relaxed">
+                      {faq.a}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── FOOTER ───────────────────────────────────────────────────────── */}
       <footer className="py-16 px-6 md:px-12 bg-[#111111] text-white border-t border-[#C8A951]/20">
         <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">

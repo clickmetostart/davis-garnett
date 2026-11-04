@@ -893,6 +893,87 @@ export default function AboutHubPage() {
         </div>
       </section>
 
+      {/* ── TOP 10 TEAM QUESTIONS (AEO / GEO / SEO) ─────────────────────── */}
+      <section className="py-24 px-6 md:px-12 bg-white border-t border-[#111111]/10">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
+              Direct &amp; Transparent Answers
+            </span>
+            <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111111] mb-4">
+              Davis &amp; Garnett Team: Top 10 Questions
+            </h2>
+            <p className="text-[#111111]/60 font-light text-sm md:text-base leading-relaxed">
+              Clear, practical answers about how our dual-advisor team operates and delivers results across Tampa Bay.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: "Why work with a team instead of a single agent?",
+                a: "You get two advisors, double the availability, and a wider range of experience. Someone is always available to answer questions and keep your deal moving.",
+              },
+              {
+                q: "What areas do you cover?",
+                a: "We serve Hillsborough, Pinellas, and Pasco counties, including Tampa, Carrollwood, Brandon, St. Petersburg, Clearwater, and Wesley Chapel.",
+              },
+              {
+                q: "Do you work with both residential and commercial clients?",
+                a: "Yes. We help homebuyers, sellers, investors, and business owners, all under one team.",
+              },
+              {
+                q: "Who will I be working with day to day?",
+                a: "You'll have a primary point of contact, with the other partner always in the loop. Either of us can step in when needed.",
+              },
+              {
+                q: "What does your process look like?",
+                a: "We begin with a conversation about your goals, build a plan, execute it, and stay with you through closing and beyond.",
+              },
+              {
+                q: "How do you market listings?",
+                a: "Professional photos, MLS exposure, online listing sites, social media, and direct outreach to agents and buyers.",
+              },
+              {
+                q: "How do you help buyers in a competitive market?",
+                a: "We prepare you early with financing and priorities, move quickly on new listings, and craft offers that stand out for more than price.",
+              },
+              {
+                q: "How do you handle Tampa Bay risks like flooding and insurance?",
+                a: "We review flood zones, insurance costs, and property condition before you commit, so you know the full picture before making an offer.",
+              },
+              {
+                q: "How do we stay in touch during the process?",
+                a: "By phone, text, or email, whichever you prefer. You'll get regular updates and quick responses.",
+              },
+              {
+                q: "How do we get started?",
+                a: "Contact either of us or use the form on this page. The first conversation is free and there's no pressure.",
+              },
+            ].map((faq, i) => (
+              <div
+                key={i}
+                className="p-6 md:p-8 rounded-2xl bg-[#fbfbf9] border border-[#111111]/8 hover:border-[#C8A951] transition-colors"
+              >
+                <div className="flex items-start gap-4">
+                  <span className="font-aiveritas text-xl md:text-2xl text-[#9A7D3A] shrink-0 font-bold">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h3 className="font-aiveritas text-lg md:text-xl text-[#111111] mb-2 font-bold">
+                      {faq.q}
+                    </h3>
+                    <p className="text-xs md:text-sm text-[#111111]/75 font-light leading-relaxed">
+                      {faq.a}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── DARK CONTRAST FOOTER ─────────────────────────────────────────── */}
       <footer className="py-20 px-6 md:px-12 bg-[#111111] text-white border-t border-[#C8A951]/20">
         <div className="max-w-screen-xl mx-auto">
