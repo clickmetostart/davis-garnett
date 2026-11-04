@@ -32,7 +32,7 @@ export default function SiteFooter() {
               <div>
                 <h4 className="font-aiveritas text-xl text-white">Mark Davis</h4>
                 <span className="text-[10px] uppercase tracking-widest text-[#D4AF37] font-bold block">
-                  Commercial &amp; Land Advisor • FL Lic #3209459
+                  Commercial &amp; Residential Advisor • FL Lic #3209459
                 </span>
               </div>
               <Link
@@ -59,7 +59,7 @@ export default function SiteFooter() {
               <div>
                 <h4 className="font-aiveritas text-xl text-white">Rachael Garnett</h4>
                 <span className="text-[10px] uppercase tracking-widest text-[#D4AF37] font-bold block">
-                  Luxury Residential Advisor • FL Lic #3378601
+                  Commercial &amp; Residential Advisor • FL Lic #3378601
                 </span>
               </div>
               <Link
@@ -156,6 +156,7 @@ export default function SiteFooter() {
               <li><Link href="/about/align-right-realty-carrollwood" className="hover:text-white transition-colors">Align Right Carrollwood</Link></li>
               <li><Link href="/about/strategic-partners" className="hover:text-white transition-colors">Meet Our Strategic Partners</Link></li>
               <li><Link href="/about/community-outreach-giving" className="hover:text-white transition-colors">Our Causes &amp; Community</Link></li>
+              <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us &amp; Office</Link></li>
               <li><Link href="/search-mls" className="text-[#D4AF37] hover:text-white transition-colors font-bold">Search Full Tampa Bay MLS →</Link></li>
             </ul>
           </div>

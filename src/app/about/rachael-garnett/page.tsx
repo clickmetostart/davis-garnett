@@ -23,39 +23,68 @@ import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 
 const SOLD_2026_PORTFOLIO = [
   {
-    address: "3537 Valencia Cove Ct",
-    submarket: "Land O' Lakes / Lutz, FL",
-    category: "Gated Enclave Residence",
+    address: "3537 Valencia Cove Ct, Land O' Lakes, FL 34639",
+    submarket: "Plantation Palms Golf Club • $550,000",
+    category: "4BD / 3BA • 2,518 SqFt • 3-Car Garage",
     status: "2026 Sold",
-    notes: "Precision pricing strategy & curated staging presentation",
+    image: "/listings/valencia-cove-lol-1.webp",
+    notes: "Executive cul-de-sac golf community estate closed at $550,000.",
   },
   {
-    address: "3037 Downan Point Dr",
-    submarket: "Greater Tampa Bay, FL",
-    category: "Executive Single-Family Home",
+    address: "3037 Downan Point Dr, Land O' Lakes, FL 34638",
+    submarket: "Ballantrae • $450,000 (MLS# TB8490089)",
+    category: "5BD / 3BA • 2,260 SqFt • Screened Lanai",
     status: "2026 Sold",
-    notes: "Seamless contract-to-close representation",
+    image: "/listings/d-g-residential-1.webp",
+    notes: "Updated 2-story residence with first-floor primary suite & 3D Matterport tour.",
   },
   {
-    address: "7608 Teal Trce",
-    submarket: "Tampa Bay Corridor, FL",
-    category: "Residential Lifestyle Property",
+    address: "7608 Teal Trce, Bradenton, FL 34203",
+    submarket: "Tara Preserve Golf Community • $450,000 (MLS# TB8418770)",
+    category: "2BD + Den / 2BA • 1,788 SqFt",
     status: "2026 Sold",
-    notes: "Strong buyer matching & inspection navigation",
+    image: "/listings/teal-trce-bradenton-1.webp",
+    notes: "Championship golf community residence near UTC & Lakewood Ranch.",
   },
   {
-    address: "1106 S Otto Pt",
-    submarket: "Citrus / Gulf Coast Region, FL",
-    category: "Coastal / Retreat Residence",
+    address: "1106 S Otto Pt, Inverness, FL 34450",
+    submarket: "Gospel Island Waterfront • $340,000",
+    category: "2BD / 2BA • 1,301 SqFt • Waterfront",
     status: "2026 Sold",
-    notes: "Full-service relocation & negotiation advocacy",
+    image: "/listings/otto-pt-inverness-2.webp",
+    notes: "Direct Tsala Apopka Chain of Lakes boating access on 0.31 acres.",
   },
   {
-    address: "8136 Wheat Stone Dr",
-    submarket: "Master-Planned Community, FL",
-    category: "Modern Family Residence",
+    address: "8136 Wheat Stone Dr, Zephyrhills, FL 33540",
+    submarket: "Abbott Park • $319,900",
+    category: "4BD / 2BA • 2,048 SqFt • 2020 Build",
     status: "2026 Sold",
-    notes: "Top-of-market comp execution",
+    image: "/listings/wheat-stone-zephyrhills-1.webp",
+    notes: "Contemporary open-concept single-family home in eastern Pasco County.",
+  },
+  {
+    address: "2402 16th St W, Palmetto, FL 34221",
+    submarket: "Bahia Vista • $318,000",
+    category: "3BD / 2BA • 1,704 SqFt • Manatee River Corridor",
+    status: "2026 Sold",
+    image: "/listings/16th-st-palmetto-1.webp",
+    notes: "Coastal residence minutes from Emerson Point Preserve & Regatta Pointe Marina.",
+  },
+  {
+    address: "4603 Stonehaven Pl, New Port Richey, FL 34652",
+    submarket: "Trouble Creek Villas • $256,000",
+    category: "2BD / 2BA • 1,378 SqFt • Attached Villa",
+    status: "2026 Sold",
+    image: "/listings/stonehaven-npr-1.jpg",
+    notes: "Maintenance-friendly villa with vaulted ceilings & enclosed Florida room.",
+  },
+  {
+    address: "10609 Raffia Dr, Port Richey, FL 34668",
+    submarket: "Jasmine Lakes • $185,000",
+    category: "2BD / 1BA • 900 SqFt • 7,000 SqFt Lot",
+    status: "2026 Sold",
+    image: "/listings/raffia-port-richey-1.webp",
+    notes: "Turnkey coastal concrete-block residence with no HOA or CDD fees.",
   },
 ];
 
@@ -158,19 +187,19 @@ export default function RachaelGarnettAdvisorPage() {
 
           <div>
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-              Principal Advisor · Luxury Residential, Waterfront & Relocation Division
+              Co-Founder &amp; Principal · Commercial &amp; Residential Advisor
             </span>
             <h1 className="font-aiveritas text-5xl md:text-6xl text-[#111111] leading-[1.08] mb-6">
               Rachael Garnett
             </h1>
             <p className="text-xl text-[#9A7D3A] font-light mb-6">
-              Waterfront Estates, Master-Planned Luxury & Executive Relocation Across Tampa Bay
+              Commercial &amp; Residential Advisor • Mastering the Art of the Deal Across Luxury Estates, Waterfront, Condos, Residential &amp; Commercial
             </p>
             <p className="text-base text-[#111111]/75 font-light leading-relaxed mb-6">
-              Rachael Garnett is the trusted residential strategist for discerning buyers, sellers, and relocating executives across St. Petersburg, Tampa, Carrollwood, Lutz, Land O&apos; Lakes, and Wesley Chapel. Known for her white-glove discretion, architectural eye, and relentless contract advocacy, Rachael transforms complex waterfront and luxury residential transactions into an effortless, elevated client experience.
+              Rachael Garnett is a full-spectrum <strong className="font-semibold text-[#111111]">Commercial &amp; Residential Advisor</strong> representing buyers, sellers, and investors across commercial, residential, land, downtown condominiums, and luxury waterfront estates across St. Petersburg, Tampa, Carrollwood, Lutz, Land O&apos; Lakes, Bradenton, and Wesley Chapel. Known for her personal flair in high-impact property positioning and <strong className="font-semibold text-[#111111]">the art of the deal</strong>, Rachael delivers white-glove execution at every price point.
             </p>
             <p className="text-base text-[#111111]/70 font-light leading-relaxed mb-8">
-              Paired with commercial and land partner Mark Davis (#3209459) at <strong className="font-semibold text-[#111111]">Davis & Garnett</strong>, Rachael provides families and executives with a complete 360-degree advisory relationship—from private school and yacht basin nuance in Pinellas and Hillsborough counties to long-term real estate wealth building.
+              Co-founding <strong className="font-semibold text-[#111111]">Davis &amp; Garnett</strong> alongside fellow Commercial &amp; Residential Advisor Mark Davis (#3209459), working with Rachael individually or as a combined force gives you <strong className="font-semibold text-[#111111]">two powerhouses</strong>—creating the gold standard for customer service and real estate advising. Whether commercial or residential, big or small, land or condo, we treat every listing like it is <strong className="font-semibold text-[#111111]">hot, new, needs attention, needs relentless servicing, and needs Davis &amp; Garnett</strong>.
             </p>
 
             {/* Direct Contact Bar */}
@@ -249,7 +278,7 @@ export default function RachaelGarnettAdvisorPage() {
           <div className="bg-white rounded-2xl overflow-hidden border border-[#111111]/10 shadow-xl grid lg:grid-cols-[1.15fr_0.85fr]">
             <div className="relative min-h-[380px] lg:min-h-[520px] bg-[#111111]">
               <Image
-                src="/res_waterfront_estate_1787632802890.png"
+                src="/listings/bahama-shores-1.webp"
                 alt="6100 Bahama Shores Dr S, St. Petersburg, FL — $4,553,900 Waterfront Estate"
                 fill
                 className="object-cover"

@@ -24,78 +24,81 @@ import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 
 const ACTIVE_LISTINGS = [
   {
-    address: "126 Ridgewood Ave, Brandon, FL 33510",
+    address: "126 Ridgewood Ave (& 613 E Morgan St), Brandon, FL 33510",
+    slug: "126-ridgewood-ave-brandon",
     price: "$845,000",
-    category: "Commercial Mixed-Use / Office-Retail",
-    specs: "High-Visibility Brandon Corridor • Turnkey Commercial Asset • Flexible C-1 / Mixed-Use Zoning",
-    image: "/com_luxury_retail_1787632885082.png",
+    category: "Commercial & Residential Mixed-Use (2 Buildings • MLS# TB8479570)",
+    specs: "2,872 Total SqFt • 0.39 Acres • 1 Block Off Brandon Blvd (Hwy 60) • Separate Meters",
+    image: "/listings/ridgewood-brandon-2.jpg",
     highlights: [
-      "Prime frontage minutes from SR-60 (Brandon Blvd) and I-75 commercial node",
-      "Ideal for owner-occupant professional headquarters or multi-tenant NNN income",
-      "Ample private surface parking and modernized mechanical systems",
+      "Building 1 (126 Ridgewood Ave): 1,832 SqFt block residential/office with 2BD/2BA, full kitchen & flex room",
+      "Building 2 (613 E Morgan St): 1,040 SqFt commercial office with 4 private offices, 2 waiting rooms & 6 paved spaces",
+      "Independent electric and water meters for effortless dual-tenancy or owner-user occupancy",
     ],
   },
   {
     address: "770 Old Stokes Rd, Frostproof, FL 33843",
+    slug: "770-old-stokes-rd-frostproof",
     price: "$3,550,000",
-    category: "79.54 Acres • Large-Scale Land & Agricultural Investment",
-    specs: "79.54 Contiguous Acres • Central Florida Growth Path • Agricultural / Future Development",
-    image: "/land_commercial_development_1787632926636.png",
+    category: "79.54 Acres MOL • Central FL Commercial & Development Tract (MLS# TB8506525)",
+    specs: "79.54 Contiguous Acres (3,464,762 SqFt) • US Hwy 98 Just West of US Hwy 27 • $44,632/Acre",
+    image: "/listings/old-stokes-frostproof-1.jpg",
     highlights: [
-      "Expansive 79.54-acre tract positioned in high-demand Polk County land corridor",
-      "Strong soil, road access, and long-term land banking or residential/agro-industrial potential",
-      "Eligible for 1031 exchange deployment and agricultural tax classification strategies",
+      "Direct frontage along US Hwy 98 just west of US Hwy 27 in Polk County's central logistics spine",
+      "Within 90 minutes of Tampa, Orlando, major deepwater ports, and international airports",
+      "Ideal for residential subdivision, commercial/industrial logistics, or 1031 exchange land banking",
     ],
   },
   {
     address: "NE 90th Street Rd, Fort McCoy, FL 32134",
+    slug: "ne-90th-street-rd-fort-mccoy",
     price: "$350,000",
-    category: "19.72 Acres • Marion County Land Parcel",
-    specs: "19.72 High & Dry Acres • Equestrian / Recreational / Homestead or Land Banking",
-    image: "/land_waterfront_plot_1787632916432.png",
+    category: "19.72 Acres • Gated Agricultural & Timberland Tract (MLS# TB8520776)",
+    specs: "19.72 High & Dry Acres (858,823 SqFt) • A-1 General Agriculture • No HOA / No CDD",
+    image: "/listings/d-g-land-listing-1.webp",
     highlights: [
-      "Nearly 20 acres of natural Florida acreage in Marion County's Ocala National Forest gateway",
-      "Flexible rural zoning suited for private estate compound, agricultural use, or timber investment",
-      "Clean boundary survey availability and direct road frontage",
+      "Pristine Old Florida timberland near Ocala National Forest and the Ocklawaha River",
+      "Mature merchantable pine and native hardwood canopy with A-1 General Agriculture zoning",
+      "Secured gated access with motion-sensor security monitoring ($17,750/Acre)",
     ],
   },
 ];
 
 const SOLD_2026_TRANSACTIONS = [
   {
-    property: "Brandon / Hwy 60 Flex Commercial Warehouse",
-    location: "Brandon, FL",
-    type: "Industrial / Flex Acquisition",
-    year: "2026 Closed",
-    role: "Buyer & Investor Advisory",
+    property: "9635 Joe Ebert Rd, Seffner, FL 33584",
+    location: "Seffner / Hillsborough County",
+    type: "3BD/2BA • 1,867 SqFt No-HOA Residence ($450,000)",
+    year: "2026 Sold",
+    role: "Commercial & Residential Advisor",
   },
   {
-    property: "Polk County Citrus & Ranch Assemblage Tract",
-    location: "Central Florida Corridor",
-    type: "Acreage / Land Disposition",
-    year: "2026 Closed",
-    role: "Exclusive Seller Representation",
+    property: "3537 Valencia Cove Ct, Land O' Lakes, FL 34639",
+    location: "Plantation Palms Golf Club • Pasco County",
+    type: "4BD/3BA • 2,518 SqFt Golf Community Estate ($550,000)",
+    year: "2026 Sold",
+    role: "Davis & Garnett Team Representation",
   },
   {
-    property: "North Tampa Professional Medical / Office Suite",
-    location: "Carrollwood / Tampa, FL",
-    type: "Owner-User Commercial",
-    year: "2026 Closed",
-    role: "Transaction Structuring & SBA Coordination",
+    property: "3037 Downan Point Dr, Land O' Lakes, FL 34638",
+    location: "Ballantrae • Pasco County (MLS# TB8490089)",
+    type: "5BD/3BA • 2,260 SqFt Residence ($450,000)",
+    year: "2026 Sold",
+    role: "Davis & Garnett Team Representation",
   },
   {
-    property: "Pasco County Commercial Development Outparcel",
-    location: "Wesley Chapel / Lutz, FL",
-    type: "Retail / Mixed-Use Pad",
-    year: "2026 Closed",
-    role: "Site Selection & Entitlement Advisory",
+    property: "5764 Meadowlane St, New Port Richey, FL 34652",
+    location: "New Port Richey • Pasco County (MLS# TB8300827)",
+    type: "0.11-Acre (5,000 SqFt) Residential Infill Lot ($56,000)",
+    year: "2026 Sold",
+    role: "Commercial & Residential Advisor",
   },
   {
-    property: "South Hillsborough Multi-Family Investment Portfolio",
-    location: "Riverview / Gibsonton, FL",
-    type: "1031 Exchange Placement",
-    year: "2026 Closed",
-    role: "Buy-Side Underwriting",
+    property: "133rd Ave SE, Dunnellon, FL 34431",
+    location: "Rainbow Lakes Estates • Marion County",
+    type: "0.25-Acre (10,890 SqFt) Buildable Homesite ($9,000)",
+    year: "2026 Sold",
+    role: "Commercial & Residential Advisor",
   },
 ];
 
@@ -198,19 +201,19 @@ export default function MarkDavisAdvisorPage() {
 
           <div>
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-              Principal Advisor · Commercial, Mixed-Use & Land Division
+              Co-Founder &amp; Principal · Commercial &amp; Residential Advisor
             </span>
             <h1 className="font-aiveritas text-5xl md:text-6xl text-[#111111] leading-[1.08] mb-6">
               Mark Davis
             </h1>
             <p className="text-xl text-[#9A7D3A] font-light mb-6">
-              Commercial, Land Assemblage & Investment Specialist in Tampa Bay & Central Florida
+              Commercial &amp; Residential Advisor • Mastering the Art of the Deal Across Commercial, Residential, Land, Condos &amp; Luxury Estates
             </p>
             <p className="text-base text-[#111111]/75 font-light leading-relaxed mb-6">
-              Mark Davis brings disciplined commercial underwriting, site selection intelligence, and off-market land sourcing to business owners, developers, family offices, and private investors across Florida. Whether structuring a mixed-use retail/office acquisition in Brandon, assembling 80+ acres of agricultural and transitional development land in Polk County, or guiding a 1031 tax-deferred exchange, Mark protects investor yield at every stage of the transaction.
+              Mark Davis is a full-spectrum <strong className="font-semibold text-[#111111]">Commercial &amp; Residential Advisor</strong> who represents buyers, sellers, and investors across commercial mixed-use, single-family residential, agricultural/development land, condos, and luxury estates. Known for his command of <strong className="font-semibold text-[#111111]">the art of the deal</strong>, Mark brings disciplined underwriting, creative deal structuring, and personal flair to every listing—whether structuring a dual-building mixed-use asset in Brandon, assembling 80 acres in Polk County, or closing residential homes across Hillsborough and Pasco counties.
             </p>
             <p className="text-base text-[#111111]/70 font-light leading-relaxed mb-8">
-              As co-founder of <strong className="font-semibold text-[#111111]">Davis & Garnett</strong> alongside luxury residential specialist Rachael Garnett, Mark gives business owners and high-net-worth families a single, unified advisory partnership capable of handling both their corporate real estate footprint and their personal residential portfolio.
+              As co-founder of <strong className="font-semibold text-[#111111]">Davis &amp; Garnett</strong> alongside fellow Commercial &amp; Residential Advisor Rachael Garnett, working with Mark individually or as a combined force gives clients <strong className="font-semibold text-[#111111]">two powerhouses</strong>—setting the gold standard in customer service where every listing, big or small, land or condo, is treated like it is <strong className="font-semibold text-[#111111]">hot, new, needs attention, needs relentless servicing, and needs Davis &amp; Garnett</strong>.
             </p>
 
             {/* Direct Contact Bar */}

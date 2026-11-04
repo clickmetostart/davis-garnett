@@ -20,6 +20,19 @@ interface NavGroup {
 
 const NAV_GROUPS: NavGroup[] = [
   {
+    label: "About",
+    href: "/about",
+    dropdown: [
+      { label: "About Davis & Garnett", desc: "Two powerhouses setting the gold standard in the art of the deal", href: "/about" },
+      { label: "About Mark Davis", desc: "Commercial & Residential Advisor • FL Lic #3209459", href: "/about/mark-davis" },
+      { label: "About Rachael Garnett", desc: "Commercial & Residential Advisor • FL Lic #3378601", href: "/about/rachael-garnett" },
+      { label: "Align Right Realty Carrollwood", desc: "Our brokerage heritage, compliance & statewide reach (#BK3401606)", href: "/about/align-right-realty-carrollwood" },
+      { label: "Meet Our Strategic Partners", desc: "Preferred lenders, title counsel, inspectors & luxury stagers", href: "/about/strategic-partners" },
+      { label: "Community Outreach & Causes", desc: "Our commitment to Tampa Bay church & youth initiatives", href: "/about/community-outreach-giving" },
+      { label: "Contact Us", desc: "Direct principal contact cards & Carrollwood office directory", href: "/contact" },
+    ],
+  },
+  {
     label: "Portfolio",
     href: "/properties",
     dropdown: [
@@ -54,18 +67,6 @@ const NAV_GROUPS: NavGroup[] = [
       { label: "Areas We Work In", desc: "St. Pete, Downtown Tampa, Wesley Chapel, Land O' Lakes & Brandon", href: "/knowledge-hub#areas" },
       { label: "Community Events & Previews", desc: "VIP condo previews, builder showcases & giving days", href: "/knowledge-hub#events" },
       { label: "Market Intelligence Reports", desc: "2026 Tampa Bay market forecasts & executive migration insights", href: "/knowledge-hub#articles" },
-    ],
-  },
-  {
-    label: "About",
-    href: "/about",
-    dropdown: [
-      { label: "About Davis & Garnett", desc: "Our dual commercial & residential advisory philosophy", href: "/about" },
-      { label: "About Mark Davis", desc: "Principal Advisor — Commercial, Land & Investments (#3209459)", href: "/about/mark-davis" },
-      { label: "About Rachael Garnett", desc: "Principal Advisor — Luxury Residential & Relocation (#3378601)", href: "/about/rachael-garnett" },
-      { label: "Align Right Realty Carrollwood", desc: "Our brokerage heritage, compliance & statewide reach (#BK3401606)", href: "/about/align-right-realty-carrollwood" },
-      { label: "Meet Our Strategic Partners", desc: "Preferred lenders, title counsel, inspectors & luxury stagers", href: "/about/strategic-partners" },
-      { label: "Community Outreach & Causes", desc: "Our commitment to Tampa Bay church & youth initiatives", href: "/about/community-outreach-giving" },
     ],
   },
 ];
@@ -110,7 +111,7 @@ export default function ProposalNav() {
                 </Link>
 
                 {group.dropdown && activeDropdown === group.label && (
-                  <div className="absolute top-full left-0 w-[380px] bg-white text-[#111] rounded-xl shadow-2xl border border-[#111]/10 p-3 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+                  <div className="absolute top-full left-0 w-[390px] bg-white text-[#111] rounded-xl shadow-2xl border border-[#111]/10 p-3 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
                     <div className="h-1 w-full bg-gradient-to-r from-[#9A7D3A] via-[#D4AF37] to-[#9A7D3A] rounded-t-lg mb-2" />
                     <div className="flex flex-col divide-y divide-[#111]/5">
                       {group.dropdown.map((item) => (
@@ -136,6 +137,13 @@ export default function ProposalNav() {
                 )}
               </div>
             ))}
+
+            <Link
+              href="/contact"
+              className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/75 hover:text-[#D4AF37] transition-colors py-6"
+            >
+              Contact
+            </Link>
 
             <Link
               href="/search-mls"
@@ -207,6 +215,14 @@ export default function ProposalNav() {
                 )}
               </div>
             ))}
+
+            <Link
+              href="/contact"
+              onClick={() => setIsOpen(false)}
+              className="text-lg font-serif text-white hover:text-[#D4AF37] border-b border-white/10 pb-3"
+            >
+              Contact Us
+            </Link>
 
             <div className="flex flex-col gap-3 pt-2">
               <Link

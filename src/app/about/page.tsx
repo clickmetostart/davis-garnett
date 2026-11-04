@@ -94,7 +94,7 @@ export default function AboutHubPage() {
       {
         "@type": "Person",
         name: "Mark Davis",
-        jobTitle: "Principal Advisor — Commercial, Land & Investment Specialist",
+        jobTitle: "Commercial & Residential Advisor",
         identifier: "FL License #3209459",
         telephone: "+1-813-486-9072",
         email: "mark@davisgarnettsells.com",
@@ -103,7 +103,7 @@ export default function AboutHubPage() {
       {
         "@type": "Person",
         name: "Rachael Garnett",
-        jobTitle: "Principal Advisor — Luxury Residential & Relocation Specialist",
+        jobTitle: "Commercial & Residential Advisor",
         identifier: "FL License #3378601",
         telephone: "+1-727-254-0244",
         email: "rachael@davisgarnettsells.com",
@@ -188,19 +188,11 @@ export default function AboutHubPage() {
               </h1>
 
               <p className="text-lg md:text-xl text-[#111111]/75 font-light leading-relaxed mb-6">
-                Real estate rarely fits neatly inside a single box. Business owners acquiring commercial flex space also purchase waterfront residences. Families relocating to Tampa Bay often seek acreage, income-producing parcels, or long-term portfolio guidance.
+                Both Mark Davis and Rachael Garnett are full-spectrum <strong className="font-semibold text-[#111111]">Commercial &amp; Residential Advisors</strong>—equally fluent in commercial mixed-use, single-family residential, raw land, downtown condominiums, and luxury waterfront estates.
               </p>
 
               <p className="text-base text-[#111111]/65 font-light leading-relaxed mb-10">
-                Davis & Garnett was founded to bridge that divide—combining{" "}
-                <strong className="font-semibold text-[#111111]">
-                  institutional-grade commercial & land underwriting
-                </strong>{" "}
-                led by Mark Davis with{" "}
-                <strong className="font-semibold text-[#111111]">
-                  white-glove luxury residential & relocation representation
-                </strong>{" "}
-                led by Rachael Garnett. Brokered by Align Right Realty Carrollwood, we provide one seamless, fiduciary-first advisory table for every asset class in Florida.
+                Their team power comes from <strong className="font-semibold text-[#111111]">the art of the deal</strong>. Each brings their own personal flair, market instincts, and transaction experience to the table—and whether you work with Mark or Rachael on an individual or combo basis, you get <strong className="font-semibold text-[#111111]">two powerhouses</strong> creating the gold standard for customer service and real estate advising. Commercial or residential, big or small, land or condo—we treat every listing like it is <strong className="font-semibold text-[#111111]">hot, new, needs immediate attention, needs relentless servicing, and needs Davis &amp; Garnett</strong>.
               </p>
 
               <div className="flex flex-wrap items-center gap-4">
@@ -304,7 +296,7 @@ export default function AboutHubPage() {
                   </div>
                   <div className="p-8 flex flex-col justify-center">
                     <span className="inline-block text-[10px] uppercase tracking-[0.22em] font-bold text-[#9A7D3A] mb-2">
-                      Commercial, Land & Investment Specialist
+                      Commercial &amp; Residential Advisor
                     </span>
                     <h3 className="font-aiveritas text-3xl text-[#111111] mb-1">
                       Mark Davis
@@ -313,7 +305,7 @@ export default function AboutHubPage() {
                       FL Real Estate License #3209459
                     </p>
                     <p className="text-sm text-[#111111]/70 font-light leading-relaxed mb-6">
-                      Specializing in income-producing commercial assets, mixed-use developments, industrial flex corridors, and strategic Florida land assemblage from Hillsborough to Polk and Marion counties.
+                      Advising across commercial, residential, land, condos, and luxury estates—bringing his personal flair for deal structuring, mixed-use commercial assets, and strategic Florida land assemblage from Hillsborough to Polk and Marion counties.
                     </p>
                     <div className="space-y-2 text-xs text-[#111111]/75 border-t border-[#111111]/10 pt-4">
                       <div className="flex items-center gap-2">
@@ -384,7 +376,7 @@ export default function AboutHubPage() {
                   </div>
                   <div className="p-8 flex flex-col justify-center">
                     <span className="inline-block text-[10px] uppercase tracking-[0.22em] font-bold text-[#9A7D3A] mb-2">
-                      Luxury Residential & Relocation Specialist
+                      Commercial &amp; Residential Advisor
                     </span>
                     <h3 className="font-aiveritas text-3xl text-[#111111] mb-1">
                       Rachael Garnett
@@ -393,7 +385,7 @@ export default function AboutHubPage() {
                       FL Real Estate License #3378601
                     </p>
                     <p className="text-sm text-[#111111]/70 font-light leading-relaxed mb-6">
-                      Curating premier waterfront estates, gated country club residences, and seamless executive relocations across St. Petersburg, South Tampa, Carrollwood, Lutz, and Wesley Chapel.
+                      Advising across commercial, residential, land, condos, and luxury waterfront—bringing her personal flair for bespoke property positioning, gated country club and master-planned communities, and executive relocations across Tampa Bay.
                     </p>
                     <div className="space-y-2 text-xs text-[#111111]/75 border-t border-[#111111]/10 pt-4">
                       <div className="flex items-center gap-2">

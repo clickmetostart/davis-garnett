@@ -138,8 +138,11 @@ export default function HomePageV1Light() {
       {isMobile ? (
         <section className="py-24 px-6 bg-white">
           <div className="text-center mb-16">
-            <span className="text-[#9A7D3A] text-[0.65rem] tracking-[0.2em] uppercase font-bold block mb-4">The Advisors</span>
-            <h2 className="font-aiveritas text-4xl text-[#111]">Your Power Combo.</h2>
+            <span className="text-[#9A7D3A] text-[0.65rem] tracking-[0.2em] uppercase font-bold block mb-4">The Art of the Deal • Two Powerhouses</span>
+            <h2 className="font-aiveritas text-4xl text-[#111] mb-4">Your Power Combo.</h2>
+            <p className="text-[#111]/65 text-sm font-light max-w-md mx-auto leading-relaxed">
+              Working with Mark or Rachael individually or as a combined force gives you two powerhouses setting the gold standard across commercial, residential, land, condos, and luxury estates.
+            </p>
           </div>
           <div className="flex flex-col gap-12">
             <div className="w-full">
@@ -147,12 +150,15 @@ export default function HomePageV1Light() {
                 <Image src="/mark-commercial-action-2.jpg" alt="Mark Davis" fill className="object-cover" />
               </div>
               <h3 className="font-aiveritas text-2xl text-[#111] mb-1">Mark Davis</h3>
-              <p className="text-[#D4AF37] text-xs uppercase tracking-widest mb-4">Commercial &amp; Land Specialist • FL Lic #3209459</p>
+              <p className="text-[#D4AF37] text-xs uppercase tracking-widest mb-3">Commercial &amp; Residential Advisor • FL Lic #3209459</p>
+              <p className="text-[#111]/65 text-sm font-light mb-4 leading-relaxed">
+                Advising across commercial, residential, land, condos, and luxury properties—with signature flair in deal structuring, mixed-use assets, and strategic land acquisitions.
+              </p>
               <Link
                 href="/about/mark-davis"
                 className="block text-center w-full py-4 border border-[#111]/20 text-[#111] text-xs uppercase tracking-widest hover:bg-[#111] hover:text-white transition-colors"
               >
-                View Mark&apos;s Portfolio
+                View Mark&apos;s Profile &amp; Portfolio
               </Link>
             </div>
             <div className="w-full">
@@ -160,12 +166,15 @@ export default function HomePageV1Light() {
                 <Image src="/rachael-residential-action-2.jpg" alt="Rachael Garnett" fill className="object-cover" />
               </div>
               <h3 className="font-aiveritas text-2xl text-[#111] mb-1">Rachael Garnett</h3>
-              <p className="text-[#D4AF37] text-xs uppercase tracking-widest mb-4">Luxury Residential Specialist • FL Lic #3378601</p>
+              <p className="text-[#D4AF37] text-xs uppercase tracking-widest mb-3">Commercial &amp; Residential Advisor • FL Lic #3378601</p>
+              <p className="text-[#111]/65 text-sm font-light mb-4 leading-relaxed">
+                Advising across commercial, residential, land, condos, and luxury estates—with signature flair in high-impact positioning, waterfront properties, and master-planned communities.
+              </p>
               <Link
                 href="/about/rachael-garnett"
                 className="block text-center w-full py-4 border border-[#111]/20 text-[#111] text-xs uppercase tracking-widest hover:bg-[#111] hover:text-white transition-colors"
               >
-                View Rachael&apos;s Portfolio
+                View Rachael&apos;s Profile &amp; Portfolio
               </Link>
             </div>
           </div>
@@ -179,10 +188,10 @@ export default function HomePageV1Light() {
               style={{ width: "30vw", height: "75vh", scale: centerScale }}
             >
               <Image src="/davis-garnett-real-combo.png" alt="Davis & Garnett Team" fill className="object-cover object-top" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-              <div className="absolute bottom-10 left-0 right-0 text-center">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
+              <div className="absolute bottom-10 left-0 right-0 text-center px-4">
                 <h3 className="font-aiveritas text-3xl text-white drop-shadow-md mb-2">The Power Combo</h3>
-                <p className="text-[#D4AF37] text-xs uppercase tracking-widest">Tampa Bay Real Estate</p>
+                <p className="text-[#D4AF37] text-xs uppercase tracking-widest">Commercial &amp; Residential Advisors</p>
               </div>
             </motion.div>
 
@@ -192,8 +201,8 @@ export default function HomePageV1Light() {
               style={{ left: "17%", x: "-50%", opacity: initialTextOpacity }}
             >
               <h3 className="font-aiveritas text-5xl font-bold text-[#D4AF37] mb-4">Two Powerhouses</h3>
-              <p className="text-[#111]/60 text-sm font-light leading-relaxed max-w-xs mx-auto">
-                Combining decades of award-winning expertise in Tampa Bay real estate.
+              <p className="text-[#111]/65 text-sm font-light leading-relaxed max-w-xs mx-auto">
+                Working with Mark or Rachael individually or as a combo delivers the gold standard in customer service and the art of the deal.
               </p>
             </motion.div>
 
@@ -203,8 +212,8 @@ export default function HomePageV1Light() {
               style={{ left: "83%", x: "-50%", opacity: initialTextOpacity }}
             >
               <h3 className="font-aiveritas text-5xl font-bold text-[#D4AF37] mb-4">One Unified Force</h3>
-              <p className="text-[#111]/60 text-sm font-light leading-relaxed max-w-xs mx-auto">
-                Unmatched strategic service across both commercial and residential markets.
+              <p className="text-[#111]/65 text-sm font-light leading-relaxed max-w-xs mx-auto">
+                Commercial or residential, big or small, land or condo—we treat every listing like it is hot, new, and demands relentless attention.
               </p>
             </motion.div>
 
@@ -215,13 +224,13 @@ export default function HomePageV1Light() {
             >
               <Image src="/mark-commercial-action-2.jpg" alt="Mark Davis" fill className="object-cover" />
               <motion.div
-                className="absolute inset-0 flex flex-col items-center justify-end pb-24 px-12 bg-gradient-to-t from-[#050505] via-[#050505]/50 to-transparent"
+                className="absolute inset-0 flex flex-col items-center justify-end pb-24 px-12 bg-gradient-to-t from-[#050505] via-[#050505]/55 to-transparent"
                 style={{ opacity: textOpacity, y: textY }}
               >
-                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold mb-4">Commercial &amp; Land Advisor • #3209459</span>
+                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold mb-4">Commercial &amp; Residential Advisor • #3209459</span>
                 <h2 className="font-aiveritas text-5xl text-white mb-6">Mark Davis</h2>
-                <p className="text-white/70 text-center max-w-md font-light mb-10 leading-relaxed">
-                  An award-winning powerhouse driving high-yield investments, commercial mixed-use assets, and strategic land acquisitions across Tampa Bay and Central Florida.
+                <p className="text-white/80 text-center max-w-md font-light mb-10 leading-relaxed">
+                  Selling across commercial, residential, land, condos, and luxury estates—bringing his personal flair for deal architecture, commercial mixed-use underwriting, and high-growth acreage across Tampa Bay.
                 </p>
                 <Link
                   href="/about/mark-davis"
@@ -239,13 +248,13 @@ export default function HomePageV1Light() {
             >
               <Image src="/rachael-residential-action-2.jpg" alt="Rachael Garnett" fill className="object-cover" />
               <motion.div
-                className="absolute inset-0 flex flex-col items-center justify-end pb-24 px-12 bg-gradient-to-t from-[#050505] via-[#050505]/50 to-transparent"
+                className="absolute inset-0 flex flex-col items-center justify-end pb-24 px-12 bg-gradient-to-t from-[#050505] via-[#050505]/55 to-transparent"
                 style={{ opacity: textOpacity, y: textY }}
               >
-                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold mb-4">Luxury Residential Advisor • #3378601</span>
+                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold mb-4">Commercial &amp; Residential Advisor • #3378601</span>
                 <h2 className="font-aiveritas text-5xl text-white mb-6">Rachael Garnett</h2>
-                <p className="text-white/70 text-center max-w-md font-light mb-10 leading-relaxed">
-                  Delivering unparalleled luxury service. Curating exceptional waterfront estates, master-planned communities, and executive relocations with precision.
+                <p className="text-white/80 text-center max-w-md font-light mb-10 leading-relaxed">
+                  Selling across commercial, residential, land, condos, and luxury waterfront—bringing her signature flair for bespoke property positioning, fierce contract negotiation, and white-glove client service.
                 </p>
                 <Link
                   href="/about/rachael-garnett"
@@ -263,8 +272,11 @@ export default function HomePageV1Light() {
       <section className="relative z-10 py-32 px-8 bg-white border-t border-[#111]/10">
         <div className="max-w-screen-xl mx-auto">
           <div className="text-center mb-20">
-            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Unmatched Expertise</span>
-            <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111]">The Dual Advantage</h2>
+            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Two Powerhouses • The Art of the Deal</span>
+            <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111] mb-5">The Gold Standard in Real Estate Advising</h2>
+            <p className="text-[#111]/65 font-light max-w-3xl mx-auto leading-relaxed">
+              Both Mark Davis and Rachael Garnett advise across commercial, residential, land, condos, and luxury estates. Whether you work with them individually or as a combined force, you get two powerhouses who treat every listing like it is hot, new, needs attention, needs relentless servicing, and needs Davis &amp; Garnett.
+            </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             <Link
@@ -274,7 +286,7 @@ export default function HomePageV1Light() {
               <Image src="/vert_tampa_commercial.png" alt="Commercial" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
               <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
-                <h3 className="font-aiveritas text-3xl text-white mb-3 drop-shadow-lg">Commercial &amp; Land Acquisitions</h3>
+                <h3 className="font-aiveritas text-3xl text-white mb-3 drop-shadow-lg">Commercial, Mixed-Use &amp; Land</h3>
                 <p className="text-white/80 font-light max-w-sm mb-6 opacity-100 md:opacity-0 md:translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
                   Mixed-use buildings, commercial corridors, agricultural timberland, and development tracts across Tampa Bay &amp; Central Florida.
                 </p>
@@ -291,12 +303,12 @@ export default function HomePageV1Light() {
               <Image src="/vert_tampa_residential.png" alt="Residential" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
               <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
-                <h3 className="font-aiveritas text-3xl text-white mb-3 drop-shadow-lg">Luxury Residential &amp; Waterfront</h3>
+                <h3 className="font-aiveritas text-3xl text-white mb-3 drop-shadow-lg">Residential, Condos &amp; Luxury Estates</h3>
                 <p className="text-white/80 font-light max-w-sm mb-6 opacity-100 md:opacity-0 md:translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
-                  Custom waterfront estates, golf course residences, and master-planned communities tailored to your lifestyle.
+                  Custom waterfront estates, downtown luxury condos, golf course residences, and master-planned homes of every size.
                 </p>
                 <div className="flex items-center gap-2 text-[#D4AF37] text-xs uppercase tracking-widest font-bold">
-                  Explore Residential <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
+                  Explore Residential &amp; Condos <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
                 </div>
               </div>
             </Link>
@@ -637,14 +649,14 @@ export default function HomePageV1Light() {
                 {
                   "@type": "Person",
                   name: "Mark Davis",
-                  jobTitle: "Principal Commercial & Land Advisor",
+                  jobTitle: "Commercial & Residential Advisor",
                   identifier: "FL License #3209459",
                   telephone: "813-486-9072",
                 },
                 {
                   "@type": "Person",
                   name: "Rachael Garnett",
-                  jobTitle: "Principal Luxury Residential Advisor",
+                  jobTitle: "Commercial & Residential Advisor",
                   identifier: "FL License #3378601",
                   telephone: "727-254-0244",
                 },
@@ -799,40 +811,40 @@ export default function HomePageV1Light() {
       <section className="relative py-32 px-8 overflow-hidden border-t border-[#D4AF37]/20">
         <div className="absolute inset-0 z-0">
           <Image src="/davis-garnett-coming-soon-2.jpg" alt="Advisory Team" fill className="object-cover object-[center_30%]" />
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-black/65" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-6">Strategic Advisory</span>
+          <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-6">Two Powerhouses • The Gold Standard</span>
           <h2 className="font-aiveritas text-4xl md:text-5xl text-white mb-8 leading-tight">
-            Strategic. Precise. Uncompromising.
+            Every Listing Treated Like It&apos;s Hot, New &amp; Demands Attention.
           </h2>
-          <p className="text-white/80 text-lg font-light mb-12 max-w-2xl mx-auto leading-relaxed">
-            Whether navigating complex commercial acquisitions, evaluating Central Florida land tracts, or securing legacy waterfront estates, our advisory group operates with absolute precision.
+          <p className="text-white/85 text-lg font-light mb-12 max-w-2xl mx-auto leading-relaxed">
+            Whether commercial or residential, big or small, land or condo—working with Mark Davis and Rachael Garnett individually or as a combined force gives you the art of the deal, relentless servicing, and the full powerhouse advantage of Davis &amp; Garnett.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <button
               onClick={() =>
                 openConsultation(
                   "Commercial / Mixed-Use Acquisition",
-                  "Mark Davis (Commercial & Land)",
+                  "Mark Davis & Rachael Garnett",
                   "Schedule a Commercial & Land Consultation"
                 )
               }
               className="px-8 py-4 bg-[#D4AF37] hover:bg-white text-black font-bold uppercase tracking-widest text-xs transition-colors rounded-lg w-full sm:w-auto min-w-[250px]"
             >
-              Commercial Consultation
+              Commercial &amp; Land Advisory
             </button>
             <button
               onClick={() =>
                 openConsultation(
                   "Luxury Residential Purchase",
-                  "Rachael Garnett (Luxury Residential)",
-                  "Schedule a Luxury Residential Consultation"
+                  "Mark Davis & Rachael Garnett",
+                  "Schedule a Residential & Condo Consultation"
                 )
               }
               className="px-8 py-4 bg-transparent border border-white/40 hover:border-[#D4AF37] hover:bg-[#D4AF37] text-white hover:text-black font-bold uppercase tracking-widest text-xs transition-colors rounded-lg w-full sm:w-auto min-w-[250px]"
             >
-              Residential Consultation
+              Residential &amp; Condo Advisory
             </button>
           </div>
         </div>
@@ -851,14 +863,14 @@ export default function HomePageV1Light() {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-0">
           {[
+            "/listings/bahama-shores-1.webp",
+            "/listings/ridgewood-brandon-2.jpg",
             "/listings/d-g-residential-1.webp",
             "/listings/d-g-land-listing-1.webp",
-            "/listings/d-g-residential-3.webp",
-            "/listings/d-g-land-listing-3.webp",
-            "/listings/d-g-residential-5.webp",
-            "/listings/d-g-land-listing-5.webp",
-            "/listings/d-g-residential-7.webp",
-            "/listings/d-g-land-listing-7.webp",
+            "/listings/valencia-cove-lol-1.webp",
+            "/listings/teal-trce-bradenton-1.webp",
+            "/listings/wheat-stone-zephyrhills-1.webp",
+            "/listings/bahama-shores-2.webp",
           ].map((imgSrc, idx) => (
             <Link key={idx} href="/properties" className="group relative aspect-square w-full overflow-hidden block bg-[#111]">
               <Image src={imgSrc} alt="Davis & Garnett Portfolio" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />

@@ -90,45 +90,79 @@
       }
     ],
     "schools": [
-      { "name": "Lakeview Fundamental Elementary", "rating": "8/10", "grades": "K–5", "distance": "1.4 mi" },
-      { "name": "Bay Point Middle School", "rating": "7/10", "grades": "6–8", "distance": "1.1 mi" },
-      { "name": "Lakewood High School (CAT Program)", "rating": "7/10", "grades": "9–12", "distance": "1.3 mi" }
+      {
+        "name": "Lakeview Fundamental Elementary",
+        "rating": "8/10",
+        "grades": "K–5",
+        "distance": "1.4 mi"
+      },
+      {
+        "name": "Bay Point Middle School",
+        "rating": "7/10",
+        "grades": "6–8",
+        "distance": "1.1 mi"
+      },
+      {
+        "name": "Lakewood High School (CAT Program)",
+        "rating": "7/10",
+        "grades": "9–12",
+        "distance": "1.3 mi"
+      }
     ],
     "financials": [
-      { "label": "Offering Price", "value": "$4,553,900" },
-      { "label": "Price / Heated SqFt", "value": "$1,041 / SqFt" },
-      { "label": "Lot Acreage", "value": "0.51 Acres (22,216 SqFt)" },
-      { "label": "Waterfront Footage", "value": "~90 Linear Feet (Tampa Bay)" },
-      { "label": "MLS Identification", "value": "V4951050" },
-      { "label": "Delivery / Year Built", "value": "2026 Custom Estate (\"The Vistara\")" }
+      {
+        "label": "Offering Price",
+        "value": "$4,553,900"
+      },
+      {
+        "label": "Price / Heated SqFt",
+        "value": "$1,041 / SqFt"
+      },
+      {
+        "label": "Lot Acreage",
+        "value": "0.51 Acres (22,216 SqFt)"
+      },
+      {
+        "label": "Waterfront Footage",
+        "value": "~90 Linear Feet (Tampa Bay)"
+      },
+      {
+        "label": "MLS Identification",
+        "value": "V4951050"
+      },
+      {
+        "label": "Delivery / Year Built",
+        "value": "2026 Custom Estate (\"The Vistara\")"
+      }
     ],
     "images": {
-      "main": "/listings/bahama-shores-1.jpg",
-      "gallery": [
-        "/listings/bahama-shores-1.jpg",
-        "/listings/bahama-shores-2.jpg",
-        "/listings/bahama-shores-3.jpg",
-        "/listings/bahama-shores-4.jpg",
-        "/res_waterfront_estate_1787632802890.png",
-        "/listings/d-g-residential-1.webp",
-        "/listings/d-g-residential-2.webp",
-        "/listings/d-g-residential-3.webp"
-      ],
       "0": {
         "id": "img-bahama-1",
-        "url": "/listings/bahama-shores-1.jpg",
+        "url": "/listings/bahama-shores-1.webp",
         "isHero": true,
         "sortOrder": 1
-      }
+      },
+      "main": "/listings/bahama-shores-1.webp",
+      "gallery": [
+        "/listings/bahama-shores-1.webp",
+        "/listings/bahama-shores-2.webp",
+        "/listings/bahama-shores-real-1.webp",
+        "/listings/bahama-shores-3.webp",
+        "/listings/bahama-shores-4.webp",
+        "/listings/bahama-shores-5.webp",
+        "/listings/bahama-shores-6.webp",
+        "/listings/bahama-shores-7.webp",
+        "/listings/bahama-shores-8.webp"
+      ]
     },
     "agent": {
       "name": "Rachael Garnett",
-      "role": "Co-Founder & Residential Principal",
+      "role": "Commercial & Residential Advisor",
       "email": "rachael@davisgarnettsells.com",
       "phone": "727-254-0244",
       "image": "/rachael-garnett.png",
       "license": "FL Lic. #3378601",
-      "brokerage": "Align Right Realty"
+      "brokerage": "Align Right Realty Carrollwood"
     },
     "primaryContact": "Rachael",
     "createdAt": "2026-11-01T12:00:00.000Z",
@@ -213,38 +247,62 @@
       }
     ],
     "financials": [
-      { "label": "Offering Price", "value": "$845,000" },
-      { "label": "Total Combined GLA", "value": "2,872 SqFt (2 Buildings)" },
-      { "label": "Price / SqFt", "value": "$294.22 / SqFt" },
-      { "label": "Building 1 Size", "value": "1,832 SqFt (126 Ridgewood Ave)" },
-      { "label": "Building 2 Size", "value": "1,040 SqFt (613 E Morgan St)" },
-      { "label": "Lot Size & Metering", "value": "0.39 Acres · Separate Electric & Water Meters" },
-      { "label": "MLS Identification", "value": "TB8479570" }
+      {
+        "label": "Offering Price",
+        "value": "$845,000"
+      },
+      {
+        "label": "Total Combined GLA",
+        "value": "2,872 SqFt (2 Buildings)"
+      },
+      {
+        "label": "Price / SqFt",
+        "value": "$294.22 / SqFt"
+      },
+      {
+        "label": "Building 1 Size",
+        "value": "1,832 SqFt (126 Ridgewood Ave)"
+      },
+      {
+        "label": "Building 2 Size",
+        "value": "1,040 SqFt (613 E Morgan St)"
+      },
+      {
+        "label": "Lot Size & Metering",
+        "value": "0.39 Acres · Separate Electric & Water Meters"
+      },
+      {
+        "label": "MLS Identification",
+        "value": "TB8479570"
+      }
     ],
     "images": {
-      "main": "/listings/ridgewood-1.jpg",
-      "gallery": [
-        "/listings/ridgewood-1.jpg",
-        "/listings/ridgewood-2.jpg",
-        "/listings/ridgewood-3.jpg",
-        "/com_office_tower_1787632874122.png",
-        "/com_luxury_retail_1787632885082.png"
-      ],
       "0": {
         "id": "img-ridgewood-1",
-        "url": "/listings/ridgewood-1.jpg",
+        "url": "/listings/ridgewood-brandon-2.jpg",
         "isHero": true,
         "sortOrder": 1
-      }
+      },
+      "main": "/listings/ridgewood-brandon-2.jpg",
+      "gallery": [
+        "/listings/ridgewood-brandon-2.jpg",
+        "/listings/ridgewood-brandon-1.jpg",
+        "/listings/ridgewood-brandon-3.jpg",
+        "/listings/ridgewood-brandon-4.jpg",
+        "/listings/ridgewood-brandon-5.jpg",
+        "/listings/ridgewood-brandon-6.jpg",
+        "/listings/ridgewood-brandon-7.jpg",
+        "/listings/ridgewood-brandon-8.jpg"
+      ]
     },
     "agent": {
       "name": "Mark Davis",
-      "role": "Co-Founder & Commercial Principal",
+      "role": "Commercial & Residential Advisor",
       "email": "mark@davisgarnettsells.com",
       "phone": "813-486-9072",
       "image": "/mark-davis.png",
       "license": "FL Lic. #3209459",
-      "brokerage": "Align Right Realty"
+      "brokerage": "Align Right Realty Carrollwood"
     },
     "primaryContact": "Mark",
     "createdAt": "2026-10-28T12:00:00.000Z",
@@ -284,12 +342,36 @@
     "propertyDescription": "19.72 acres of pristine Old Florida timberland near Ocala National Forest & Ocklawaha River with A-1 General Agriculture zoning, gated security, and mature pine & hardwood timber.",
     "accessNotice": "This property is protected by active motion sensor alarms and security cameras. Prospective buyers and agents must contact Mark Davis in advance to have the alarm system disarmed prior to entering through the gated access.",
     "useCases": [
-      { "icon": "🏡", "title": "Private Estate Compound", "desc": "Build a custom main residence and guest structures with complete wooded privacy." },
-      { "icon": "🐴", "title": "Equestrian & Ranch Facility", "desc": "Marion County A-1 zoning supports stables, paddocks, arenas, and grazing." },
-      { "icon": "🌲", "title": "Merchantable Timber Yield", "desc": "Dense stands of mature pine and hardwood offer immediate and recurring timber value." },
-      { "icon": "🌾", "title": "Working Agricultural Farm", "desc": "Eligible for agricultural tax exemption with nurseries, apiaries, or livestock." },
-      { "icon": "🏕️", "title": "Recreational Sanctuary", "desc": "Minutes from Ocala National Forest trails, springs, and Ocklawaha River boating." },
-      { "icon": "📈", "title": "Strategic Land Banking", "desc": "Low holding costs with zero HOA or CDD fees in an appreciating Marion County corridor." }
+      {
+        "icon": "🏡",
+        "title": "Private Estate Compound",
+        "desc": "Build a custom main residence and guest structures with complete wooded privacy."
+      },
+      {
+        "icon": "🐴",
+        "title": "Equestrian & Ranch Facility",
+        "desc": "Marion County A-1 zoning supports stables, paddocks, arenas, and grazing."
+      },
+      {
+        "icon": "🌲",
+        "title": "Merchantable Timber Yield",
+        "desc": "Dense stands of mature pine and hardwood offer immediate and recurring timber value."
+      },
+      {
+        "icon": "🌾",
+        "title": "Working Agricultural Farm",
+        "desc": "Eligible for agricultural tax exemption with nurseries, apiaries, or livestock."
+      },
+      {
+        "icon": "🏕️",
+        "title": "Recreational Sanctuary",
+        "desc": "Minutes from Ocala National Forest trails, springs, and Ocklawaha River boating."
+      },
+      {
+        "icon": "📈",
+        "title": "Strategic Land Banking",
+        "desc": "Low holding costs with zero HOA or CDD fees in an appreciating Marion County corridor."
+      }
     ],
     "highlights": [
       "19.72 acres (858,823 SqFt) of pristine Old Florida timberland",
@@ -340,14 +422,38 @@
       }
     ],
     "financials": [
-      { "label": "Offering Price", "value": "$350,000" },
-      { "label": "Price Per Acre", "value": "$17,750 / Acre" },
-      { "label": "Total Land Area", "value": "19.72 Acres (858,823 SqFt)" },
-      { "label": "Zoning Classification", "value": "A-1 General Agriculture" },
-      { "label": "HOA / CDD Assessments", "value": "$0 (None)" },
-      { "label": "MLS Identification", "value": "TB8520776" }
+      {
+        "label": "Offering Price",
+        "value": "$350,000"
+      },
+      {
+        "label": "Price Per Acre",
+        "value": "$17,750 / Acre"
+      },
+      {
+        "label": "Total Land Area",
+        "value": "19.72 Acres (858,823 SqFt)"
+      },
+      {
+        "label": "Zoning Classification",
+        "value": "A-1 General Agriculture"
+      },
+      {
+        "label": "HOA / CDD Assessments",
+        "value": "$0 (None)"
+      },
+      {
+        "label": "MLS Identification",
+        "value": "TB8520776"
+      }
     ],
     "images": {
+      "0": {
+        "id": "img-mccoy-1",
+        "url": "/listings/d-g-land-listing-1.webp",
+        "isHero": true,
+        "sortOrder": 1
+      },
       "main": "/listings/d-g-land-listing-1.webp",
       "gallery": [
         "/listings/d-g-land-listing-1.webp",
@@ -359,22 +465,16 @@
         "/listings/d-g-land-listing-7.webp",
         "/listings/d-g-land-listing-8.webp",
         "/listings/d-g-land-listing-9.webp"
-      ],
-      "0": {
-        "id": "img-mccoy-1",
-        "url": "/listings/d-g-land-listing-1.webp",
-        "isHero": true,
-        "sortOrder": 1
-      }
+      ]
     },
     "agent": {
       "name": "Mark Davis",
-      "role": "Co-Founder & Commercial Principal",
+      "role": "Commercial & Residential Advisor",
       "email": "mark@davisgarnettsells.com",
       "phone": "813-486-9072",
       "image": "/mark-davis.png",
       "license": "FL Lic. #3209459",
-      "brokerage": "Align Right Realty"
+      "brokerage": "Align Right Realty Carrollwood"
     },
     "primaryContact": "Mark",
     "createdAt": "2026-10-25T12:00:00.000Z",
@@ -413,12 +513,36 @@
     "description": "Strategically situated on US Highway 98 just west of the US Highway 27 intersection in Polk County, 770 Old Stokes Road represents an institutional-scale 79.54-acre (MOL) Central Florida land acquisition opportunity priced at $3,550,000 ($44,632 per acre).\n\nPositioned at the geographic pivot point of Florida's peninsula, the tract commands exceptional highway connectivity along the US-98 and US-27 freight and commuter spine — placing the site within a 90-minute radius of both Tampa and Orlando, major CSX intermodal terminals, Port Tampa Bay, and two international airports.\n\nAs Central Florida's residential and industrial development wave continues expanding southward along the US-27 ridge corridor, this contiguous ~80-acre assemblage offers developers, land bankers, agribusiness operators, and institutional capital a high-visibility footprint suitable for master-planned residential subdivision, commercial/industrial logistics, solar infrastructure, or continued agricultural production.",
     "propertyDescription": "Expansive 79.54-acre Central Florida land investment positioned on US Hwy 98 just west of US Hwy 27 in Polk County within 90 minutes of Tampa and Orlando.",
     "useCases": [
-      { "icon": "🏗️", "title": "Master-Planned Residential", "desc": "Contiguous ~80-acre scale ideal for single-family subdivision or build-to-rent community." },
-      { "icon": "🚛", "title": "Logistics & Distribution", "desc": "Direct US Hwy 98 frontage just west of US Hwy 27 serving both Tampa and Orlando markets." },
-      { "icon": "☀️", "title": "Solar & Infrastructure", "desc": "Expansive flat topography in Polk County's primary utility and freight corridor." },
-      { "icon": "🍊", "title": "Agribusiness & Citrus/Cattle", "desc": "Maintain agricultural tax classification while holding for appreciation." },
-      { "icon": "🏢", "title": "Commercial Highway Frontage", "desc": "High-visibility US-98 corridor suitable for commercial outparcels and service centers." },
-      { "icon": "🏦", "title": "1031 Exchange Land Bank", "desc": "Institutional-grade Central Florida acreage with strong demographic tailwinds." }
+      {
+        "icon": "🏗️",
+        "title": "Master-Planned Residential",
+        "desc": "Contiguous ~80-acre scale ideal for single-family subdivision or build-to-rent community."
+      },
+      {
+        "icon": "🚛",
+        "title": "Logistics & Distribution",
+        "desc": "Direct US Hwy 98 frontage just west of US Hwy 27 serving both Tampa and Orlando markets."
+      },
+      {
+        "icon": "☀️",
+        "title": "Solar & Infrastructure",
+        "desc": "Expansive flat topography in Polk County's primary utility and freight corridor."
+      },
+      {
+        "icon": "🍊",
+        "title": "Agribusiness & Citrus/Cattle",
+        "desc": "Maintain agricultural tax classification while holding for appreciation."
+      },
+      {
+        "icon": "🏢",
+        "title": "Commercial Highway Frontage",
+        "desc": "High-visibility US-98 corridor suitable for commercial outparcels and service centers."
+      },
+      {
+        "icon": "🏦",
+        "title": "1031 Exchange Land Bank",
+        "desc": "Institutional-grade Central Florida acreage with strong demographic tailwinds."
+      }
     ],
     "highlights": [
       "79.54 Acres MOL (3,464,762 SqFt) contiguous Polk County land assemblage",
@@ -460,37 +584,48 @@
       }
     ],
     "financials": [
-      { "label": "Offering Price", "value": "$3,550,000" },
-      { "label": "Price Per Acre", "value": "$44,632 / Acre" },
-      { "label": "Total Acreage", "value": "79.54 Acres MOL (3,464,762 SqFt)" },
-      { "label": "Corridor", "value": "US Hwy 98 & US Hwy 27 (Polk County)" },
-      { "label": "MLS Identification", "value": "TB8506525" }
+      {
+        "label": "Offering Price",
+        "value": "$3,550,000"
+      },
+      {
+        "label": "Price Per Acre",
+        "value": "$44,632 / Acre"
+      },
+      {
+        "label": "Total Acreage",
+        "value": "79.54 Acres MOL (3,464,762 SqFt)"
+      },
+      {
+        "label": "Corridor",
+        "value": "US Hwy 98 & US Hwy 27 (Polk County)"
+      },
+      {
+        "label": "MLS Identification",
+        "value": "TB8506525"
+      }
     ],
     "images": {
-      "main": "/listings/frostproof-1.jpg",
-      "gallery": [
-        "/listings/frostproof-1.jpg",
-        "/listings/frostproof-2.jpg",
-        "/listings/frostproof-3.jpg",
-        "/land_commercial_development_1787632926636.png",
-        "/listings/d-g-land-listing-3.webp",
-        "/listings/d-g-land-listing-6.webp"
-      ],
       "0": {
         "id": "img-frostproof-1",
-        "url": "/listings/frostproof-1.jpg",
+        "url": "/listings/old-stokes-frostproof-1.jpg",
         "isHero": true,
         "sortOrder": 1
-      }
+      },
+      "main": "/listings/old-stokes-frostproof-1.jpg",
+      "gallery": [
+        "/listings/old-stokes-frostproof-1.jpg",
+        "/listings/old-stokes-frostproof-2.jpg"
+      ]
     },
     "agent": {
       "name": "Mark Davis",
-      "role": "Co-Founder & Commercial Principal",
+      "role": "Commercial & Residential Advisor",
       "email": "mark@davisgarnettsells.com",
       "phone": "813-486-9072",
       "image": "/mark-davis.png",
       "license": "FL Lic. #3209459",
-      "brokerage": "Align Right Realty"
+      "brokerage": "Align Right Realty Carrollwood"
     },
     "primaryContact": "Mark",
     "createdAt": "2026-10-20T12:00:00.000Z",
@@ -544,37 +679,62 @@
     "categorizedFeatures": [
       {
         "category": "Interior & Layout",
-        "items": ["4 Bedrooms · 2 Bathrooms", "2,048 SqFt Heated", "Open Great Room Concept", "Split Bedroom Floor Plan"]
+        "items": [
+          "4 Bedrooms · 2 Bathrooms",
+          "2,048 SqFt Heated",
+          "Open Great Room Concept",
+          "Split Bedroom Floor Plan"
+        ]
       },
       {
         "category": "Community & Exterior",
-        "items": ["Built in 2020", "Abbott Park Master-Planned Community", "2-Car Attached Garage", "Pasco County (Zephyrhills, FL 33540)"]
+        "items": [
+          "Built in 2020",
+          "Abbott Park Master-Planned Community",
+          "2-Car Attached Garage",
+          "Pasco County (Zephyrhills, FL 33540)"
+        ]
       }
     ],
     "financials": [
-      { "label": "Closed Price", "value": "$319,900" },
-      { "label": "Price / SqFt", "value": "$156 / SqFt" },
-      { "label": "Year Built", "value": "2020" },
-      { "label": "Transaction Status", "value": "Sold — 2026 Track Record" }
+      {
+        "label": "Closed Price",
+        "value": "$319,900"
+      },
+      {
+        "label": "Price / SqFt",
+        "value": "$156 / SqFt"
+      },
+      {
+        "label": "Year Built",
+        "value": "2020"
+      },
+      {
+        "label": "Transaction Status",
+        "value": "Sold — 2026 Track Record"
+      }
     ],
     "images": {
-      "main": "/listings/zephyrhills-1.jpg",
+      "0": {
+        "id": "img-5",
+        "url": "/listings/wheat-stone-zephyrhills-1.webp",
+        "isHero": true,
+        "sortOrder": 1
+      },
+      "main": "/listings/wheat-stone-zephyrhills-1.webp",
       "gallery": [
-        "/listings/zephyrhills-1.jpg",
-        "/listings/d-g-residential-2.webp",
-        "/listings/d-g-residential-4.webp",
-        "/listings/d-g-residential-6.webp"
-      ],
-      "0": { "id": "img-5", "url": "/listings/zephyrhills-1.jpg", "isHero": true, "sortOrder": 1 }
+        "/listings/wheat-stone-zephyrhills-1.webp",
+        "/listings/wheat-stone-zephyrhills-2.webp"
+      ]
     },
     "agent": {
       "name": "Rachael Garnett",
-      "role": "Co-Founder & Residential Principal",
+      "role": "Commercial & Residential Advisor",
       "email": "rachael@davisgarnettsells.com",
       "phone": "727-254-0244",
       "image": "/rachael-garnett.png",
       "license": "FL Lic. #3378601",
-      "brokerage": "Align Right Realty"
+      "brokerage": "Align Right Realty Carrollwood"
     },
     "primaryContact": "Rachael",
     "createdAt": "2026-08-15T12:00:00.000Z",
@@ -621,31 +781,50 @@
     "categorizedFeatures": [
       {
         "category": "Parcel Specifications",
-        "items": ["0.25 Acres (10,890 SqFt)", "Site-Built Homes Permitted", "No HOA Assessments", "Rainbow Lakes Estates Community"]
+        "items": [
+          "0.25 Acres (10,890 SqFt)",
+          "Site-Built Homes Permitted",
+          "No HOA Assessments",
+          "Rainbow Lakes Estates Community"
+        ]
       }
     ],
     "financials": [
-      { "label": "Closed Price", "value": "$9,000" },
-      { "label": "Parcel Size", "value": "0.25 Acres (10,890 SqFt)" },
-      { "label": "Transaction Status", "value": "Sold — 2026 Track Record" }
+      {
+        "label": "Closed Price",
+        "value": "$9,000"
+      },
+      {
+        "label": "Parcel Size",
+        "value": "0.25 Acres (10,890 SqFt)"
+      },
+      {
+        "label": "Transaction Status",
+        "value": "Sold — 2026 Track Record"
+      }
     ],
     "images": {
-      "main": "/listings/dunnellon-1.jpg",
+      "0": {
+        "id": "img-6",
+        "url": "/listings/133rd-ave-dunnellon-1.jpg",
+        "isHero": true,
+        "sortOrder": 1
+      },
+      "main": "/listings/133rd-ave-dunnellon-1.jpg",
       "gallery": [
-        "/listings/dunnellon-1.jpg",
-        "/listings/d-g-land-listing-2.webp",
-        "/listings/d-g-land-listing-5.webp"
-      ],
-      "0": { "id": "img-6", "url": "/listings/dunnellon-1.jpg", "isHero": true, "sortOrder": 1 }
+        "/listings/133rd-ave-dunnellon-1.jpg",
+        "/listings/133rd-ave-dunnellon-2.jpg",
+        "/listings/133rd-ave-dunnellon-3.jpg"
+      ]
     },
     "agent": {
       "name": "Mark Davis",
-      "role": "Co-Founder & Commercial Principal",
+      "role": "Commercial & Residential Advisor",
       "email": "mark@davisgarnettsells.com",
       "phone": "813-486-9072",
       "image": "/mark-davis.png",
       "license": "FL Lic. #3209459",
-      "brokerage": "Align Right Realty"
+      "brokerage": "Align Right Realty Carrollwood"
     },
     "primaryContact": "Mark",
     "createdAt": "2026-07-20T12:00:00.000Z",
@@ -695,32 +874,53 @@
     "categorizedFeatures": [
       {
         "category": "Property Overview",
-        "items": ["2 Bedrooms · 1 Bathroom", "900 Heated SqFt", "7,000 SqFt Lot", "No HOA / No CDD"]
+        "items": [
+          "2 Bedrooms · 1 Bathroom",
+          "900 Heated SqFt",
+          "7,000 SqFt Lot",
+          "No HOA / No CDD"
+        ]
       }
     ],
     "financials": [
-      { "label": "Closed Price", "value": "$185,000" },
-      { "label": "Price / SqFt", "value": "$206 / SqFt" },
-      { "label": "Lot Size", "value": "7,000 SqFt" },
-      { "label": "Transaction Status", "value": "Sold — 2026 Track Record" }
+      {
+        "label": "Closed Price",
+        "value": "$185,000"
+      },
+      {
+        "label": "Price / SqFt",
+        "value": "$206 / SqFt"
+      },
+      {
+        "label": "Lot Size",
+        "value": "7,000 SqFt"
+      },
+      {
+        "label": "Transaction Status",
+        "value": "Sold — 2026 Track Record"
+      }
     ],
     "images": {
-      "main": "/listings/port-richey-1.jpg",
+      "0": {
+        "id": "img-7",
+        "url": "/listings/raffia-port-richey-1.webp",
+        "isHero": true,
+        "sortOrder": 1
+      },
+      "main": "/listings/raffia-port-richey-1.webp",
       "gallery": [
-        "/listings/port-richey-1.jpg",
-        "/listings/d-g-residential-3.webp",
-        "/listings/d-g-residential-5.webp"
-      ],
-      "0": { "id": "img-7", "url": "/listings/port-richey-1.jpg", "isHero": true, "sortOrder": 1 }
+        "/listings/raffia-port-richey-1.webp",
+        "/listings/raffia-port-richey-2.webp"
+      ]
     },
     "agent": {
       "name": "Rachael Garnett",
-      "role": "Co-Founder & Residential Principal",
+      "role": "Commercial & Residential Advisor",
       "email": "rachael@davisgarnettsells.com",
       "phone": "727-254-0244",
       "image": "/rachael-garnett.png",
       "license": "FL Lic. #3378601",
-      "brokerage": "Align Right Realty"
+      "brokerage": "Align Right Realty Carrollwood"
     },
     "primaryContact": "Rachael",
     "createdAt": "2026-07-10T12:00:00.000Z",
@@ -770,32 +970,53 @@
     "categorizedFeatures": [
       {
         "category": "Waterfront & Interior",
-        "items": ["Gospel Island Canal / Lake Access", "2 Bedrooms · 2 Full Baths", "1,301 Heated SqFt", "Waterfront Sunroom & Private Dock"]
+        "items": [
+          "Gospel Island Canal / Lake Access",
+          "2 Bedrooms · 2 Full Baths",
+          "1,301 Heated SqFt",
+          "Waterfront Sunroom & Private Dock"
+        ]
       }
     ],
     "financials": [
-      { "label": "Closed Price", "value": "$340,000" },
-      { "label": "Price / SqFt", "value": "$261 / SqFt" },
-      { "label": "Location", "value": "Gospel Island Waterfront, Inverness" },
-      { "label": "Transaction Status", "value": "Sold — 2026 Track Record" }
+      {
+        "label": "Closed Price",
+        "value": "$340,000"
+      },
+      {
+        "label": "Price / SqFt",
+        "value": "$261 / SqFt"
+      },
+      {
+        "label": "Location",
+        "value": "Gospel Island Waterfront, Inverness"
+      },
+      {
+        "label": "Transaction Status",
+        "value": "Sold — 2026 Track Record"
+      }
     ],
     "images": {
-      "main": "/listings/inverness-1.jpg",
+      "0": {
+        "id": "img-8",
+        "url": "/listings/otto-pt-inverness-2.webp",
+        "isHero": true,
+        "sortOrder": 1
+      },
+      "main": "/listings/otto-pt-inverness-2.webp",
       "gallery": [
-        "/listings/inverness-1.jpg",
-        "/listings/d-g-residential-7.webp",
-        "/listings/d-g-residential-8.webp"
-      ],
-      "0": { "id": "img-8", "url": "/listings/inverness-1.jpg", "isHero": true, "sortOrder": 1 }
+        "/listings/otto-pt-inverness-2.webp",
+        "/listings/otto-pt-inverness-1.webp"
+      ]
     },
     "agent": {
       "name": "Rachael Garnett",
-      "role": "Co-Founder & Residential Principal",
+      "role": "Commercial & Residential Advisor",
       "email": "rachael@davisgarnettsells.com",
       "phone": "727-254-0244",
       "image": "/rachael-garnett.png",
       "license": "FL Lic. #3378601",
-      "brokerage": "Align Right Realty"
+      "brokerage": "Align Right Realty Carrollwood"
     },
     "primaryContact": "Rachael",
     "createdAt": "2026-06-28T12:00:00.000Z",
@@ -844,32 +1065,53 @@
     "categorizedFeatures": [
       {
         "category": "Residence Highlights",
-        "items": ["2 Bedrooms · 2 Bathrooms", "1,378 Heated SqFt", "Trouble Creek Villas Community", "Attached Garage & Florida Lanai"]
+        "items": [
+          "2 Bedrooms · 2 Bathrooms",
+          "1,378 Heated SqFt",
+          "Trouble Creek Villas Community",
+          "Attached Garage & Florida Lanai"
+        ]
       }
     ],
     "financials": [
-      { "label": "Closed Price", "value": "$256,000" },
-      { "label": "Price / SqFt", "value": "$186 / SqFt" },
-      { "label": "Community", "value": "Trouble Creek Villas" },
-      { "label": "Transaction Status", "value": "Sold — 2026 Track Record" }
+      {
+        "label": "Closed Price",
+        "value": "$256,000"
+      },
+      {
+        "label": "Price / SqFt",
+        "value": "$186 / SqFt"
+      },
+      {
+        "label": "Community",
+        "value": "Trouble Creek Villas"
+      },
+      {
+        "label": "Transaction Status",
+        "value": "Sold — 2026 Track Record"
+      }
     ],
     "images": {
-      "main": "/listings/stonehaven-1.jpg",
+      "0": {
+        "id": "img-9",
+        "url": "/listings/stonehaven-npr-1.jpg",
+        "isHero": true,
+        "sortOrder": 1
+      },
+      "main": "/listings/stonehaven-npr-1.jpg",
       "gallery": [
-        "/listings/stonehaven-1.jpg",
-        "/listings/d-g-residential-4.webp",
-        "/listings/d-g-residential-9.webp"
-      ],
-      "0": { "id": "img-9", "url": "/listings/stonehaven-1.jpg", "isHero": true, "sortOrder": 1 }
+        "/listings/stonehaven-npr-1.jpg",
+        "/listings/stonehaven-npr-2.webp"
+      ]
     },
     "agent": {
       "name": "Rachael Garnett",
-      "role": "Co-Founder & Residential Principal",
+      "role": "Commercial & Residential Advisor",
       "email": "rachael@davisgarnettsells.com",
       "phone": "727-254-0244",
       "image": "/rachael-garnett.png",
       "license": "FL Lic. #3378601",
-      "brokerage": "Align Right Realty"
+      "brokerage": "Align Right Realty Carrollwood"
     },
     "primaryContact": "Rachael",
     "createdAt": "2026-06-12T12:00:00.000Z",
@@ -920,37 +1162,62 @@
     "categorizedFeatures": [
       {
         "category": "Interior & Design",
-        "items": ["2 Bedrooms + Private Den", "2 Full Bathrooms", "1,788 Heated SqFt", "Screened Lanai & Preserve Views"]
+        "items": [
+          "2 Bedrooms + Private Den",
+          "2 Full Bathrooms",
+          "1,788 Heated SqFt",
+          "Screened Lanai & Preserve Views"
+        ]
       },
       {
         "category": "Community & Location",
-        "items": ["Tara Preserve Golf Community", "MLS# TB8418770", "Resort Pool, Tennis & Pickleball", "Minutes to UTC Mall & Sarasota"]
+        "items": [
+          "Tara Preserve Golf Community",
+          "MLS# TB8418770",
+          "Resort Pool, Tennis & Pickleball",
+          "Minutes to UTC Mall & Sarasota"
+        ]
       }
     ],
     "financials": [
-      { "label": "Closed Price", "value": "$450,000" },
-      { "label": "Price / SqFt", "value": "$252 / SqFt" },
-      { "label": "MLS Identification", "value": "TB8418770" },
-      { "label": "Transaction Status", "value": "Sold — 2026 Track Record" }
+      {
+        "label": "Closed Price",
+        "value": "$450,000"
+      },
+      {
+        "label": "Price / SqFt",
+        "value": "$252 / SqFt"
+      },
+      {
+        "label": "MLS Identification",
+        "value": "TB8418770"
+      },
+      {
+        "label": "Transaction Status",
+        "value": "Sold — 2026 Track Record"
+      }
     ],
     "images": {
-      "main": "/listings/bradenton-1.jpg",
+      "0": {
+        "id": "img-10",
+        "url": "/listings/teal-trce-bradenton-1.webp",
+        "isHero": true,
+        "sortOrder": 1
+      },
+      "main": "/listings/teal-trce-bradenton-1.webp",
       "gallery": [
-        "/listings/bradenton-1.jpg",
-        "/res_golf_course_home_1787632854609.png",
-        "/listings/d-g-residential-5.webp",
-        "/listings/d-g-residential-6.webp"
-      ],
-      "0": { "id": "img-10", "url": "/listings/bradenton-1.jpg", "isHero": true, "sortOrder": 1 }
+        "/listings/teal-trce-bradenton-1.webp",
+        "/listings/teal-trce-bradenton-2.jpg"
+      ]
     },
     "agent": {
       "name": "Rachael Garnett",
-      "role": "Co-Founder & Residential Principal",
+      "role": "Commercial & Residential Advisor",
       "email": "rachael@davisgarnettsells.com",
       "phone": "727-254-0244",
       "image": "/rachael-garnett.png",
       "license": "FL Lic. #3378601",
-      "brokerage": "Align Right Realty"
+      "brokerage": "Align Right Realty Carrollwood"
     },
     "primaryContact": "Rachael",
     "createdAt": "2026-05-25T12:00:00.000Z",
@@ -999,31 +1266,49 @@
     "categorizedFeatures": [
       {
         "category": "Property Details",
-        "items": ["3 Bedrooms · 2 Bathrooms", "1,867 Heated SqFt", "No HOA / Deed Restrictions", "Hillsborough County (Seffner, FL 33584)"]
+        "items": [
+          "3 Bedrooms · 2 Bathrooms",
+          "1,867 Heated SqFt",
+          "No HOA / Deed Restrictions",
+          "Hillsborough County (Seffner, FL 33584)"
+        ]
       }
     ],
     "financials": [
-      { "label": "Closed Price", "value": "$450,000" },
-      { "label": "Price / SqFt", "value": "$241 / SqFt" },
-      { "label": "Transaction Status", "value": "Sold — 2026 Track Record" }
+      {
+        "label": "Closed Price",
+        "value": "$450,000"
+      },
+      {
+        "label": "Price / SqFt",
+        "value": "$241 / SqFt"
+      },
+      {
+        "label": "Transaction Status",
+        "value": "Sold — 2026 Track Record"
+      }
     ],
     "images": {
-      "main": "/listings/seffner-1.jpg",
+      "0": {
+        "id": "img-11",
+        "url": "/listings/joe-ebert-seffner-1.webp",
+        "isHero": true,
+        "sortOrder": 1
+      },
+      "main": "/listings/joe-ebert-seffner-1.webp",
       "gallery": [
-        "/listings/seffner-1.jpg",
-        "/listings/d-g-residential-8.webp",
-        "/listings/d-g-residential-10.webp"
-      ],
-      "0": { "id": "img-11", "url": "/listings/seffner-1.jpg", "isHero": true, "sortOrder": 1 }
+        "/listings/joe-ebert-seffner-1.webp",
+        "/listings/joe-ebert-seffner-2.jpg"
+      ]
     },
     "agent": {
       "name": "Mark Davis",
-      "role": "Co-Founder & Commercial Principal",
+      "role": "Commercial & Residential Advisor",
       "email": "mark@davisgarnettsells.com",
       "phone": "813-486-9072",
       "image": "/mark-davis.png",
       "license": "FL Lic. #3209459",
-      "brokerage": "Align Right Realty"
+      "brokerage": "Align Right Realty Carrollwood"
     },
     "primaryContact": "Mark",
     "createdAt": "2026-05-10T12:00:00.000Z",
@@ -1072,32 +1357,53 @@
     "categorizedFeatures": [
       {
         "category": "Residence Highlights",
-        "items": ["3 Bedrooms · 2 Bathrooms", "1,704 Heated SqFt", "Bahia Vista Neighborhood", "Manatee County (Palmetto, FL 34221)"]
+        "items": [
+          "3 Bedrooms · 2 Bathrooms",
+          "1,704 Heated SqFt",
+          "Bahia Vista Neighborhood",
+          "Manatee County (Palmetto, FL 34221)"
+        ]
       }
     ],
     "financials": [
-      { "label": "Closed Price", "value": "$318,000" },
-      { "label": "Price / SqFt", "value": "$187 / SqFt" },
-      { "label": "Neighborhood", "value": "Bahia Vista, Palmetto" },
-      { "label": "Transaction Status", "value": "Sold — 2026 Track Record" }
+      {
+        "label": "Closed Price",
+        "value": "$318,000"
+      },
+      {
+        "label": "Price / SqFt",
+        "value": "$187 / SqFt"
+      },
+      {
+        "label": "Neighborhood",
+        "value": "Bahia Vista, Palmetto"
+      },
+      {
+        "label": "Transaction Status",
+        "value": "Sold — 2026 Track Record"
+      }
     ],
     "images": {
-      "main": "/listings/palmetto-1.jpg",
+      "0": {
+        "id": "img-12",
+        "url": "/listings/16th-st-palmetto-1.webp",
+        "isHero": true,
+        "sortOrder": 1
+      },
+      "main": "/listings/16th-st-palmetto-1.webp",
       "gallery": [
-        "/listings/palmetto-1.jpg",
-        "/listings/d-g-residential-2.webp",
-        "/listings/d-g-residential-7.webp"
-      ],
-      "0": { "id": "img-12", "url": "/listings/palmetto-1.jpg", "isHero": true, "sortOrder": 1 }
+        "/listings/16th-st-palmetto-1.webp",
+        "/listings/16th-st-palmetto-2.jpg"
+      ]
     },
     "agent": {
       "name": "Rachael Garnett",
-      "role": "Co-Founder & Residential Principal",
+      "role": "Commercial & Residential Advisor",
       "email": "rachael@davisgarnettsells.com",
       "phone": "727-254-0244",
       "image": "/rachael-garnett.png",
       "license": "FL Lic. #3378601",
-      "brokerage": "Align Right Realty"
+      "brokerage": "Align Right Realty Carrollwood"
     },
     "primaryContact": "Rachael",
     "createdAt": "2026-04-18T12:00:00.000Z",
@@ -1148,37 +1454,62 @@
     "categorizedFeatures": [
       {
         "category": "Interior & Architecture",
-        "items": ["4 Bedrooms · 3 Full Baths", "2,518 Heated SqFt", "3-Car Attached Garage", "Cul-de-Sac Homesite"]
+        "items": [
+          "4 Bedrooms · 3 Full Baths",
+          "2,518 Heated SqFt",
+          "3-Car Attached Garage",
+          "Cul-de-Sac Homesite"
+        ]
       },
       {
         "category": "Community & Location",
-        "items": ["Gated Plantation Palms Golf Club", "18-Hole Championship Course & Clubhouse", "Land O' Lakes, FL 34639", "Low HOA · No CDD Fees"]
+        "items": [
+          "Gated Plantation Palms Golf Club",
+          "18-Hole Championship Course & Clubhouse",
+          "Land O' Lakes, FL 34639",
+          "Low HOA · No CDD Fees"
+        ]
       }
     ],
     "financials": [
-      { "label": "Closed Price", "value": "$550,000" },
-      { "label": "Price / SqFt", "value": "$218 / SqFt" },
-      { "label": "Community", "value": "Plantation Palms Golf Club" },
-      { "label": "Transaction Status", "value": "Sold — 2026 Track Record" }
+      {
+        "label": "Closed Price",
+        "value": "$550,000"
+      },
+      {
+        "label": "Price / SqFt",
+        "value": "$218 / SqFt"
+      },
+      {
+        "label": "Community",
+        "value": "Plantation Palms Golf Club"
+      },
+      {
+        "label": "Transaction Status",
+        "value": "Sold — 2026 Track Record"
+      }
     ],
     "images": {
-      "main": "/listings/valencia-cove-1.jpg",
+      "0": {
+        "id": "img-13",
+        "url": "/listings/valencia-cove-lol-1.webp",
+        "isHero": true,
+        "sortOrder": 1
+      },
+      "main": "/listings/valencia-cove-lol-1.webp",
       "gallery": [
-        "/listings/valencia-cove-1.jpg",
-        "/listings/d-g-residential-1.webp",
-        "/listings/d-g-residential-6.webp",
-        "/listings/d-g-residential-9.webp"
-      ],
-      "0": { "id": "img-13", "url": "/listings/valencia-cove-1.jpg", "isHero": true, "sortOrder": 1 }
+        "/listings/valencia-cove-lol-1.webp",
+        "/listings/valencia-cove-lol-2.jpg"
+      ]
     },
     "agent": {
       "name": "Rachael Garnett",
-      "role": "Co-Founder & Residential Principal",
+      "role": "Commercial & Residential Advisor",
       "email": "rachael@davisgarnettsells.com",
       "phone": "727-254-0244",
       "image": "/rachael-garnett.png",
       "license": "FL Lic. #3378601",
-      "brokerage": "Align Right Realty"
+      "brokerage": "Align Right Realty Carrollwood"
     },
     "primaryContact": "Rachael",
     "createdAt": "2026-04-02T12:00:00.000Z",
@@ -1225,32 +1556,52 @@
     "categorizedFeatures": [
       {
         "category": "Lot Specifications",
-        "items": ["0.11 Acres (5,000 SqFt)", "MLS# TB8300827", "Public Utilities Nearby", "No HOA Assessments"]
+        "items": [
+          "0.11 Acres (5,000 SqFt)",
+          "MLS# TB8300827",
+          "Public Utilities Nearby",
+          "No HOA Assessments"
+        ]
       }
     ],
     "financials": [
-      { "label": "Closed Price", "value": "$56,000" },
-      { "label": "Lot Area", "value": "0.11 Acres (5,000 SqFt)" },
-      { "label": "MLS Identification", "value": "TB8300827" },
-      { "label": "Transaction Status", "value": "Sold — 2026 Track Record" }
+      {
+        "label": "Closed Price",
+        "value": "$56,000"
+      },
+      {
+        "label": "Lot Area",
+        "value": "0.11 Acres (5,000 SqFt)"
+      },
+      {
+        "label": "MLS Identification",
+        "value": "TB8300827"
+      },
+      {
+        "label": "Transaction Status",
+        "value": "Sold — 2026 Track Record"
+      }
     ],
     "images": {
-      "main": "/listings/meadowlane-1.jpg",
+      "0": {
+        "id": "img-14",
+        "url": "/listings/meadowlane-npr-1.jpg",
+        "isHero": true,
+        "sortOrder": 1
+      },
+      "main": "/listings/meadowlane-npr-1.jpg",
       "gallery": [
-        "/listings/meadowlane-1.jpg",
-        "/listings/d-g-land-listing-4.webp",
-        "/listings/d-g-land-listing-7.webp"
-      ],
-      "0": { "id": "img-14", "url": "/listings/meadowlane-1.jpg", "isHero": true, "sortOrder": 1 }
+        "/listings/meadowlane-npr-1.jpg"
+      ]
     },
     "agent": {
       "name": "Mark Davis",
-      "role": "Co-Founder & Commercial Principal",
+      "role": "Commercial & Residential Advisor",
       "email": "mark@davisgarnettsells.com",
       "phone": "813-486-9072",
       "image": "/mark-davis.png",
       "license": "FL Lic. #3209459",
-      "brokerage": "Align Right Realty"
+      "brokerage": "Align Right Realty Carrollwood"
     },
     "primaryContact": "Mark",
     "createdAt": "2026-03-14T12:00:00.000Z",
@@ -1306,34 +1657,93 @@
     "categorizedFeatures": [
       {
         "category": "Interior",
-        "items": ["5 Bedrooms · 3 Full Bathrooms", "2,260 SqFt Heated", "Primary Suite on Main Floor", "Upstairs Bonus / Flex Room", "Open-Plan Kitchen & Living", "Vaulted Ceilings"]
+        "items": [
+          "5 Bedrooms · 3 Full Bathrooms",
+          "2,260 SqFt Heated",
+          "Primary Suite on Main Floor",
+          "Upstairs Bonus / Flex Room",
+          "Open-Plan Kitchen & Living",
+          "Vaulted Ceilings"
+        ]
       },
       {
         "category": "Exterior",
-        "items": ["Oversized Screened Lanai", "Fully Fenced Backyard", "0.13-Acre (5,663 SqFt) Lot", "2-Car Attached Garage", "Paved Driveway"]
+        "items": [
+          "Oversized Screened Lanai",
+          "Fully Fenced Backyard",
+          "0.13-Acre (5,663 SqFt) Lot",
+          "2-Car Attached Garage",
+          "Paved Driveway"
+        ]
       },
       {
         "category": "Utilities & Systems",
-        "items": ["Whole-House Water Filtration", "Brand New Roof", "Newer High-Efficiency AC Unit", "Public Water & Sewer"]
+        "items": [
+          "Whole-House Water Filtration",
+          "Brand New Roof",
+          "Newer High-Efficiency AC Unit",
+          "Public Water & Sewer"
+        ]
       },
       {
         "category": "Community",
-        "items": ["Ballantrae Master-Planned Community", "Low HOA — $170/Quarter", "Resort Pool, Playground & Walking Trails", "Top-Rated Pasco County School District"]
+        "items": [
+          "Ballantrae Master-Planned Community",
+          "Low HOA — $170/Quarter",
+          "Resort Pool, Playground & Walking Trails",
+          "Top-Rated Pasco County School District"
+        ]
       }
     ],
     "schools": [
-      { "name": "Oakstead Elementary School", "rating": "8/10", "grades": "K–5", "distance": "0.6 mi" },
-      { "name": "Charles S. Rushe Middle School", "rating": "7/10", "grades": "6–8", "distance": "1.2 mi" },
-      { "name": "Sunlake High School", "rating": "8/10", "grades": "9–12", "distance": "1.5 mi" }
+      {
+        "name": "Oakstead Elementary School",
+        "rating": "8/10",
+        "grades": "K–5",
+        "distance": "0.6 mi"
+      },
+      {
+        "name": "Charles S. Rushe Middle School",
+        "rating": "7/10",
+        "grades": "6–8",
+        "distance": "1.2 mi"
+      },
+      {
+        "name": "Sunlake High School",
+        "rating": "8/10",
+        "grades": "9–12",
+        "distance": "1.5 mi"
+      }
     ],
     "financials": [
-      { "label": "Closed Price", "value": "$450,000" },
-      { "label": "Price / SqFt", "value": "$199 / SqFt" },
-      { "label": "HOA Assessment", "value": "$170 / Quarter" },
-      { "label": "MLS Identification", "value": "TB8490089" },
-      { "label": "Transaction Status", "value": "Sold — 2026 Track Record" }
+      {
+        "label": "Closed Price",
+        "value": "$450,000"
+      },
+      {
+        "label": "Price / SqFt",
+        "value": "$199 / SqFt"
+      },
+      {
+        "label": "HOA Assessment",
+        "value": "$170 / Quarter"
+      },
+      {
+        "label": "MLS Identification",
+        "value": "TB8490089"
+      },
+      {
+        "label": "Transaction Status",
+        "value": "Sold — 2026 Track Record"
+      }
     ],
     "images": {
+      "0": {
+        "id": "img-15",
+        "url": "/listings/d-g-residential-1.webp",
+        "isHero": true,
+        "sortOrder": 1
+      },
       "main": "/listings/d-g-residential-1.webp",
       "gallery": [
         "/listings/d-g-residential-1.webp",
@@ -1346,17 +1756,16 @@
         "/listings/d-g-residential-8.webp",
         "/listings/d-g-residential-9.webp",
         "/listings/d-g-residential-10.webp"
-      ],
-      "0": { "id": "img-15", "url": "/listings/d-g-residential-1.webp", "isHero": true, "sortOrder": 1 }
+      ]
     },
     "agent": {
       "name": "Rachael Garnett",
-      "role": "Co-Founder & Residential Principal",
+      "role": "Commercial & Residential Advisor",
       "email": "rachael@davisgarnettsells.com",
       "phone": "727-254-0244",
       "image": "/rachael-garnett.png",
       "license": "FL Lic. #3378601",
-      "brokerage": "Align Right Realty"
+      "brokerage": "Align Right Realty Carrollwood"
     },
     "primaryContact": "Rachael",
     "createdAt": "2026-09-15T12:00:00.000Z",

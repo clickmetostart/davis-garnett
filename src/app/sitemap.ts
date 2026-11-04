@@ -13,6 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about/align-right-realty-carrollwood",
     "/about/strategic-partners",
     "/about/community-outreach-giving",
+    "/about/contact",
+    "/contact",
     "/davis",
     "/garnett",
     "/properties",

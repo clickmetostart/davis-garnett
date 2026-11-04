@@ -16,8 +16,8 @@ const activeSignatureProperties = [
     location: "Bahama Shores · St. Petersburg, FL 33705",
     specs: "4 Bed • 4.5 Bath • 4,376 SqFt • 0.51 Acres (~90 ft Waterfront)",
     price: "$4,553,900",
-    advisor: "Rachael Garnett",
-    img: "/listings/bahama-shores-1.jpg",
+    advisor: "Rachael Garnett & Mark Davis",
+    img: "/listings/bahama-shores-1.webp",
     isFlagship: true
   },
   {
@@ -31,8 +31,8 @@ const activeSignatureProperties = [
     location: "Frostproof · Polk County, FL 33843",
     specs: "79.54 Acres MOL • US Hwy 98 Frontage • Development / Ag",
     price: "$3,550,000",
-    advisor: "Mark Davis",
-    img: "/listings/frostproof-1.jpg",
+    advisor: "Mark Davis & Rachael Garnett",
+    img: "/listings/old-stokes-frostproof-1.jpg",
     isFlagship: false
   },
   {
@@ -46,8 +46,8 @@ const activeSignatureProperties = [
     location: "Brandon · Hillsborough County, FL 33510",
     specs: "2 Buildings • 2,872 Total SqFt • 0.39 Acres • Separate Meters",
     price: "$845,000",
-    advisor: "Mark Davis",
-    img: "/listings/ridgewood-1.jpg",
+    advisor: "Mark Davis & Rachael Garnett",
+    img: "/listings/ridgewood-brandon-2.jpg",
     isFlagship: false
   },
   {
@@ -61,7 +61,7 @@ const activeSignatureProperties = [
     location: "Fort McCoy · Marion County, FL 32134",
     specs: "19.72 Acres (858,823 SqFt) • A-1 Agriculture • No HOA / No CDD",
     price: "$350,000",
-    advisor: "Mark Davis",
+    advisor: "Mark Davis & Rachael Garnett",
     img: "/listings/d-g-land-listing-1.webp",
     isFlagship: false
   }
@@ -101,7 +101,7 @@ export default function PropertiesStickyStack() {
             <div className="w-10 h-[2px] bg-[#C8A951] mb-6" />
 
             <p className="text-[#111111]/65 font-light leading-relaxed max-w-xs mb-8 text-sm">
-              Every property represented by Mark Davis and Rachael Garnett is backed by institutional underwriting, bespoke editorial marketing, and direct principal-level representation.
+              Whether commercial or residential, big or small, raw land or luxury waterfront condo—we treat every listing like it is hot, new, needs immediate attention, relentless servicing, and the full powerhouse force of Davis &amp; Garnett.
             </p>
 
             <div className="flex flex-col gap-2.5 mb-10">
