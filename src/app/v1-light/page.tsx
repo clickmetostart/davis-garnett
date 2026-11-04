@@ -285,35 +285,37 @@ export default function HomePageV1Light() {
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             <Link
-              href="/properties?category=Commercial"
-              className="group relative min-h-[400px] md:min-h-0 md:aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer block"
+              href="/commercial-advisory-guide"
+              className="group relative min-h-[400px] md:min-h-0 md:aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer block shadow-lg hover:shadow-2xl transition-shadow"
             >
               <Image src="/vert_tampa_commercial.png" alt="Commercial" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
               <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
+                <span className="text-[#D4AF37] text-[10px] uppercase tracking-[0.25em] font-bold mb-2">Advisory Roadmap &amp; Sourcing</span>
                 <h3 className="font-aiveritas text-3xl text-white mb-3 drop-shadow-lg">Commercial, Mixed-Use &amp; Land</h3>
-                <p className="text-white/80 font-light max-w-sm mb-6 opacity-100 md:opacity-0 md:translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
-                  Mixed-use buildings, commercial corridors, agricultural timberland, and development tracts across Tampa Bay &amp; Central Florida.
+                <p className="text-white/80 font-light max-w-sm mb-6 opacity-100 md:opacity-0 md:translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 text-sm">
+                  Mixed-use assets, commercial corridors, 1031 exchanges, and acreage tracts. See how clients start their commercial journey with us.
                 </p>
                 <div className="flex items-center gap-2 text-[#D4AF37] text-xs uppercase tracking-widest font-bold">
-                  Explore Commercial &amp; Land <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
+                  View Commercial Guide &amp; How to Start <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
                 </div>
               </div>
             </Link>
 
             <Link
-              href="/properties?category=Residential"
-              className="group relative min-h-[400px] md:min-h-0 md:aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer block"
+              href="/residential-advisory-guide"
+              className="group relative min-h-[400px] md:min-h-0 md:aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer block shadow-lg hover:shadow-2xl transition-shadow"
             >
               <Image src="/vert_tampa_residential.png" alt="Residential" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
               <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
+                <span className="text-[#D4AF37] text-[10px] uppercase tracking-[0.25em] font-bold mb-2">Client Journey &amp; Protection</span>
                 <h3 className="font-aiveritas text-3xl text-white mb-3 drop-shadow-lg">Residential, Condos &amp; Luxury Estates</h3>
-                <p className="text-white/80 font-light max-w-sm mb-6 opacity-100 md:opacity-0 md:translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
-                  Custom waterfront estates, downtown luxury condos, golf course residences, and master-planned homes of every size.
+                <p className="text-white/80 font-light max-w-sm mb-6 opacity-100 md:opacity-0 md:translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 text-sm">
+                  Waterfront estates, master-planned communities, and downtown skyline condos. See our step-by-step home buyer and seller roadmap.
                 </p>
                 <div className="flex items-center gap-2 text-[#D4AF37] text-xs uppercase tracking-widest font-bold">
-                  Explore Residential &amp; Condos <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
+                  View Residential Guide &amp; How to Start <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
                 </div>
               </div>
             </Link>
