@@ -1,451 +1,882 @@
 "use client";
 
-import { useState, useRef } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowLeft, ChevronRight, ChevronLeft, MapPin, Bed, Bath, Maximize, Heart, MessageCircle, ExternalLink } from "lucide-react";
-import PropertiesStickyStack from "@/components/PropertiesStickyStack";
+import {
+  ArrowRight,
+  MapPin,
+  Bed,
+  Bath,
+  Maximize,
+  Trees,
+  Building2,
+  Waves,
+  CheckCircle,
+  ShieldCheck,
+  TrendingUp,
+  Compass,
+  Award,
+  Send,
+  Phone,
+  Mail
+} from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
+import listingsData from "@/data/listings.json";
+import { Listing } from "@/types/listings";
 
-/* ─── DATA ─────────────────────────────────────────────────────────── */
+type FilterTab =
+  | "All"
+  | "Residential"
+  | "Commercial & Mixed-Use"
+  | "Land & Acreage"
+  | "Recent Transactions (Sold)";
 
-const featuredProperty = {
-  type: "Residential",
-  tag: "Featured Listing",
-  title: "Villa Azzurra",
-  address: "Davis Islands, Tampa, FL 33606",
-  beds: 6, baths: 7, sqft: "12,400",
-  price: "$14,200,000",
-  pricePerSqft: "$1,145/sqft",
-  description: "Set on the most coveted stretch of Davis Islands waterfront, Villa Azzurra is a landmark estate that redefines Gulf Coast luxury. Designed by a celebrated Tampa architect and completed in 2023, this six-bedroom masterpiece offers unobstructed Tampa Bay views from nearly every room.",
-  highlights: ["120ft Private Dock", "Infinity Pool & Spa", "Smart Home Automation", "6-Car Motor Court"],
-  img: "/res_waterfront_estate_1787632802890.png",
+const FILTER_TABS: FilterTab[] = [
+  "All",
+  "Residential",
+  "Commercial & Mixed-Use",
+  "Land & Acreage",
+  "Recent Transactions (Sold)"
+];
+
+const CATEGORY_BADGE_STYLE: Record<string, string> = {
+  Residential: "bg-[#111111] text-[#C8A951] border border-[#C8A951]/40",
+  Commercial: "bg-[#1E3A5F] text-white",
+  Land: "bg-[#2D4A3E] text-white"
 };
-
-const sliderCards = [
-  { type: "Residential", title: "Bayshore Modern Estate",      price: "$8,900,000", beds: 5, baths: 6, sqft: "8,500",  img: "/res_modern_mansion_1787632812473.png",    address: "Bayshore Blvd, Tampa" },
-  { type: "Commercial",  title: "Tampa Riverwalk Tower",       price: "Lease: $45/SF", beds: 0, baths: 0, sqft: "450,000", img: "/com_office_tower_1787632874122.png",  address: "Downtown Tampa" },
-  { type: "Residential", title: "Downtown Penthouse",          price: "$6,500,000", beds: 4, baths: 4, sqft: "5,000",  img: "/res_luxury_condo_1787632822869.png",      address: "Water Street, Tampa" },
-  { type: "Commercial",  title: "Channelside Retail Center",   price: "5.2% Cap",   beds: 0, baths: 0, sqft: "98,000", img: "/com_luxury_retail_1787632885082.png",    address: "Channelside, Tampa" },
-  { type: "Residential", title: "Hyde Park Historic Estate",   price: "$5,800,000", beds: 7, baths: 7, sqft: "9,100",  img: "/res_historic_estate_1787632833084.png",   address: "Hyde Park, Tampa" },
-  { type: "Residential", title: "Clearwater Beach Villa",      price: "$11,500,000",beds: 5, baths: 5, sqft: "6,000",  img: "/res_beachfront_villa_1787632843222.png",  address: "Clearwater Beach, FL" },
-  { type: "Land",        title: "Apollo Beach Marina Site",    price: "$22,000,000",beds: 0, baths: 0, sqft: "24ac",   img: "/land_waterfront_plot_1787632916432.png",  address: "Apollo Beach, FL" },
-  { type: "Commercial",  title: "St. Pete Industrial Hub",     price: "$18,500,000",beds: 0, baths: 0, sqft: "1.2M",  img: "/com_industrial_park_1787632905437.png",   address: "St. Petersburg, FL" },
-];
-
-const gridImages = [
-  "/res_waterfront_estate_1787632802890.png",
-  "/com_office_tower_1787632874122.png",
-  "/res_modern_mansion_1787632812473.png",
-  "/com_luxury_retail_1787632885082.png",
-  "/res_luxury_condo_1787632822869.png",
-  "/land_commercial_development_1787632926636.png",
-  "/res_historic_estate_1787632833084.png",
-  "/com_multi_family_1787632895059.png",
-  "/res_beachfront_villa_1787632843222.png",
-  "/res_golf_course_home_1787632854609.png",
-  "/land_waterfront_plot_1787632916432.png",
-  "/com_industrial_park_1787632905437.png",
-];
-
-const allCards = [
-  { type: "Residential", title: "Davis Islands Estate",    price: "$14,200,000", beds: 6, baths: 7, sqft: "12,400", img: "/res_waterfront_estate_1787632802890.png",  address: "Davis Islands, Tampa" },
-  { type: "Commercial",  title: "Tampa Riverwalk Tower",   price: "Lease: $45/SF",beds:0, baths:0,  sqft:"450,000", img: "/com_office_tower_1787632874122.png",        address: "Downtown Tampa" },
-  { type: "Residential", title: "Bayshore Modern",         price: "$8,900,000",  beds: 5, baths: 6, sqft: "8,500", img: "/res_modern_mansion_1787632812473.png",       address: "Bayshore Blvd, Tampa" },
-  { type: "Residential", title: "Downtown Penthouse",      price: "$6,500,000",  beds: 4, baths: 4, sqft: "5,000", img: "/res_luxury_condo_1787632822869.png",          address: "Water Street, Tampa" },
-  { type: "Commercial",  title: "Channelside Retail",      price: "5.2% Cap",    beds:0, baths:0,   sqft:"98,000", img: "/com_luxury_retail_1787632885082.png",        address: "Channelside, Tampa" },
-  { type: "Residential", title: "Hyde Park Historic",      price: "$5,800,000",  beds: 7, baths: 7, sqft: "9,100", img: "/res_historic_estate_1787632833084.png",      address: "Hyde Park, Tampa" },
-  { type: "Residential", title: "Clearwater Beach Villa",  price: "$11,500,000", beds: 5, baths: 5, sqft: "6,000", img: "/res_beachfront_villa_1787632843222.png",     address: "Clearwater Beach, FL" },
-  { type: "Residential", title: "Avila Golf Estate",       price: "$7,200,000",  beds: 6, baths: 7, sqft:"10,500", img: "/res_golf_course_home_1787632854609.png",     address: "Avila, Tampa" },
-  { type: "Land",        title: "Apollo Beach Marina",     price: "$22,000,000", beds:0, baths:0,  sqft: "24ac",   img: "/land_waterfront_plot_1787632916432.png",     address: "Apollo Beach, FL" },
-  { type: "Commercial",  title: "Ybor Multi-Family",       price: "4.8% Cap",    beds:0, baths:0,  sqft: "320 un", img: "/com_multi_family_1787632895059.png",         address: "Ybor City, Tampa" },
-  { type: "Land",        title: "I-4 Corridor Site",       price: "$35,000,000", beds:0, baths:0,  sqft:"150ac",   img: "/land_commercial_development_1787632926636.png", address: "I-4 Corridor, FL" },
-  { type: "Commercial",  title: "St. Pete Industrial Hub", price: "$18,500,000", beds:0, baths:0,  sqft: "1.2M",   img: "/com_industrial_park_1787632905437.png",      address: "St. Petersburg, FL" },
-];
-
-const PAGE_SIZE = 6;
-
-const TYPE_COLOR: Record<string, string> = {
-  Residential: "bg-[#1B4332] text-white",
-  Commercial:  "bg-[#1E3A5F] text-white",
-  Land:        "bg-[#5C3A1E] text-white",
-};
-
-/* ─── COMPONENT ─────────────────────────────────────────────────────── */
 
 export default function PropertiesPage() {
-  const sliderRef = useRef<HTMLDivElement>(null);
-  const [sliderIndex, setSliderIndex] = useState(0);
-  const [shown, setShown] = useState(PAGE_SIZE);
+  const allListings = listingsData as unknown as Listing[];
+  const [selectedTab, setSelectedTab] = useState<FilterTab>("All");
 
-  const CARD_W = 340; // px — approximate card width + gap for scroll calc
+  // Valuation / Portfolio Review Form State
+  const [valForm, setValForm] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    propertyAddress: "",
+    assetCategory: "Residential Estate",
+    inquiryType: "Confidential Property Valuation",
+    notes: ""
+  });
+  const [valStatus, setValStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
-  const scrollSlider = (dir: "prev" | "next") => {
-    const el = sliderRef.current;
-    if (!el) return;
-    const maxIndex = sliderCards.length - 1;
-    const next = dir === "next"
-      ? Math.min(sliderIndex + 1, maxIndex)
-      : Math.max(sliderIndex - 1, 0);
-    setSliderIndex(next);
-    el.scrollTo({ left: next * (CARD_W + 24), behavior: "smooth" });
+  // Filter logic for Active vs Sold sections
+  const matchesTab = (listing: Listing) => {
+    if (selectedTab === "All") return true;
+    if (selectedTab === "Residential") return listing.category === "Residential";
+    if (selectedTab === "Commercial & Mixed-Use") return listing.category === "Commercial";
+    if (selectedTab === "Land & Acreage") return listing.category === "Land";
+    if (selectedTab === "Recent Transactions (Sold)") return listing.status === "Sold";
+    return true;
+  };
+
+  const activeListings = allListings.filter(
+    (l) => l.status === "Active" && (selectedTab === "Recent Transactions (Sold)" ? false : matchesTab(l))
+  );
+
+  const soldListings = allListings.filter(
+    (l) => l.status === "Sold" && matchesTab(l)
+  );
+
+  const handleValuationSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setValStatus("submitting");
+    try {
+      const fullName = `${valForm.firstName} ${valForm.lastName}`.trim();
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName: valForm.firstName,
+          lastName: valForm.lastName,
+          name: fullName,
+          email: valForm.email,
+          phone: valForm.phone,
+          propertyInterest: `${valForm.inquiryType} — ${valForm.propertyAddress || valForm.assetCategory}`,
+          notes: `Asset Category: ${valForm.assetCategory} | Address: ${valForm.propertyAddress} | Notes: ${valForm.notes}`,
+          message: valForm.notes,
+          source: "Portfolio Hub — Confidential Valuation & Portfolio Review",
+          labels: ["Portfolio Review", valForm.assetCategory, valForm.inquiryType]
+        })
+      });
+      if (!res.ok) throw new Error("Failed");
+      setValStatus("success");
+    } catch (err) {
+      console.error(err);
+      setValStatus("error");
+    }
   };
 
   return (
-    <div className="min-h-screen bg-white text-[#111] font-sans">
+    <div className="min-h-screen bg-[#ffffff] text-[#111111] font-sans selection:bg-[#C8A951] selection:text-black">
       <ProposalNav />
 
-      {/* ══════════════════════════════════════════════
-          1. HERO — property style categories
-         ══════════════════════════════════════════════ */}
-      <section className="relative w-full min-h-[70vh] flex flex-col items-center justify-center pt-20 pb-16 px-8 bg-[#f5f3ef] overflow-hidden">
-        {/* Subtle tiled background motif */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url('/dg-favicon-fat.png')", backgroundSize: "200px", backgroundRepeat: "repeat" }} />
+      {/* ══════════════════════════════════════════════════════════════════
+          HERO SECTION + EXECUTIVE STATS RIBBON + CATEGORY FILTER TABS
+         ══════════════════════════════════════════════════════════════════ */}
+      <section className="relative w-full pt-32 pb-16 px-6 lg:px-10 bg-[#f5f3ef] border-b border-[#111111]/10 overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-[0.03] pointer-events-none"
+          style={{
+            backgroundImage: "url('/dg-favicon-fat.png')",
+            backgroundSize: "200px",
+            backgroundRepeat: "repeat"
+          }}
+        />
 
-        <div className="relative z-10 max-w-screen-xl mx-auto w-full">
-          <div className="text-center mb-16">
-            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-5">Davis & Garnett</span>
-            <h1 className="font-aiveritas text-6xl md:text-8xl text-[#111] leading-tight mb-6">
+        <div className="relative z-10 max-w-screen-xl mx-auto">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
+              Davis & Garnett · Master Portfolio Hub
+            </span>
+            <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-[#111111] leading-none mb-6">
               The Portfolio
             </h1>
-            <p className="text-[#111]/55 font-light text-lg max-w-xl mx-auto leading-relaxed">
-              Curated commercial acquisitions and luxury residential estates across Tampa Bay's most sought-after markets.
+            <p className="text-[#111111]/65 font-light text-base sm:text-lg leading-relaxed">
+              Bespoke waterfront estates, dual-building commercial mixed-use assets, institutional Central Florida acreage, and our verified 2026 transaction track record across Tampa Bay.
             </p>
           </div>
 
-          {/* Property type pills */}
-          <div className="flex flex-wrap items-center justify-center gap-3">
+          {/* Executive Stats Ribbon */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto mb-12">
             {[
-              { label: "All Properties", active: true },
-              { label: "Residential" },
-              { label: "Commercial" },
-              { label: "Land & Development" },
-              { label: "Waterfront" },
-              { label: "New Construction" },
-            ].map(({ label, active }) => (
-              <button
-                key={label}
-                className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-[0.15em] border transition-colors ${
-                  active
-                    ? "bg-[#111] text-white border-[#111]"
-                    : "bg-transparent text-[#111]/60 border-[#111]/20 hover:border-[#111] hover:text-[#111]"
-                }`}
+              {
+                value: "$9.29M+",
+                label: "Active Exclusive Volume",
+                sub: "4 Signature Offerings"
+              },
+              {
+                value: "99.65 Ac",
+                label: "Active Land & Waterfront",
+                sub: "Polk, Marion & Pinellas"
+              },
+              {
+                value: "11 Closed",
+                label: "2026 Recent Transactions",
+                sub: "Verified Sold Track Record"
+              },
+              {
+                value: "Dual-Practice",
+                label: "Advisory Representation",
+                sub: "Residential · Commercial · Land"
+              }
+            ].map((stat) => (
+              <div
+                key={stat.label}
+                className="bg-white/90 backdrop-blur border border-[#111111]/8 rounded-2xl p-5 text-center shadow-sm"
               >
-                {label}
-              </button>
+                <p className="font-aiveritas text-3xl sm:text-4xl text-[#111111] mb-1">
+                  {stat.value}
+                </p>
+                <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#9A7D3A]">
+                  {stat.label}
+                </p>
+                <p className="text-[11px] text-[#111111]/45 mt-0.5">{stat.sub}</p>
+              </div>
             ))}
+          </div>
+
+          {/* Category Filter Tabs */}
+          <div className="flex flex-wrap items-center justify-center gap-2.5">
+            {FILTER_TABS.map((tab) => {
+              const isActive = selectedTab === tab;
+              return (
+                <button
+                  key={tab}
+                  onClick={() => setSelectedTab(tab)}
+                  className={`px-5 py-3 rounded-full text-xs font-bold uppercase tracking-[0.15em] border transition-all ${
+                    isActive
+                      ? "bg-[#111111] text-[#C8A951] border-[#111111] shadow-md"
+                      : "bg-white text-[#111111]/70 border-[#111111]/15 hover:border-[#C8A951] hover:text-[#111111]"
+                  }`}
+                >
+                  {tab}
+                </button>
+              );
+            })}
           </div>
         </div>
       </section>
 
-
-      {/* ══════════════════════════════════════════════
-          2. FEATURED PROPERTY — col 1 editorial, col 2 image
-         ══════════════════════════════════════════════ */}
-      <section className="w-full bg-white border-b border-[#111]/8">
-        <div className="max-w-screen-xl mx-auto px-8 py-20 grid md:grid-cols-2 gap-0 items-stretch">
-
-          {/* Col 1 — Editorial listing summary */}
-          <div className="flex flex-col justify-center pr-0 md:pr-16 py-8 order-2 md:order-1">
-            <div className="flex items-center gap-3 mb-6">
-              <span className="bg-[#D4AF37] text-white text-[10px] uppercase tracking-[0.2em] font-bold py-1 px-3 rounded-sm">
-                {featuredProperty.tag}
-              </span>
-              <span className="text-[#9A7D3A] text-[10px] uppercase tracking-[0.2em] font-bold">
-                {featuredProperty.type}
-              </span>
+      {/* ══════════════════════════════════════════════════════════════════
+          COLLECTIVE SECTION 1: ACTIVE SIGNATURE LISTINGS
+         ══════════════════════════════════════════════════════════════════ */}
+      {activeListings.length > 0 && (
+        <section className="py-20 px-6 lg:px-10 bg-white border-b border-[#111111]/8">
+          <div className="max-w-screen-xl mx-auto">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+              <div>
+                <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
+                  Current Exclusive Offerings · As of 11/01/2026
+                </span>
+                <h2 className="font-aiveritas text-4xl sm:text-5xl text-[#111111]">
+                  Active Signature Listings
+                </h2>
+              </div>
+              <p className="text-[#111111]/55 text-sm max-w-md">
+                Click any offering below to inspect its full bespoke property dossier, interactive photo gallery, underwriting metrics, and due diligence documents.
+              </p>
             </div>
 
-            <h2 className="font-aiveritas text-5xl md:text-6xl xl:text-7xl text-[#111] leading-tight mb-4">
-              {featuredProperty.title}
-            </h2>
+            <div className="space-y-12">
+              {activeListings.map((listing, idx) => {
+                const isEven = idx % 2 === 1;
+                return (
+                  <div
+                    key={listing.id}
+                    className="group bg-[#fbfbf9] rounded-3xl overflow-hidden border border-[#111111]/10 hover:border-[#C8A951]/60 hover:shadow-xl transition-all duration-500 grid lg:grid-cols-12"
+                  >
+                    {/* Image Column */}
+                    <div
+                      className={`relative min-h-[340px] sm:min-h-[420px] lg:col-span-6 overflow-hidden ${
+                        isEven ? "lg:order-2" : "lg:order-1"
+                      }`}
+                    >
+                      <Link href={`/listings/${listing.slug}`} className="block w-full h-full">
+                        <Image
+                          src={listing.images?.main || "/listings/bahama-shores-1.jpg"}
+                          alt={listing.title}
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 50vw"
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
+                          priority={idx < 2}
+                          unoptimized
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
 
-            <div className="flex items-center gap-2 text-[#111]/50 text-sm mb-8">
-              <MapPin className="w-4 h-4 text-[#D4AF37]" />
-              {featuredProperty.address}
+                        <div className="absolute top-5 left-5 flex flex-wrap gap-2">
+                          <span className="bg-[#22c55e] text-white text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-sm">
+                            ● Active Exclusive
+                          </span>
+                          <span
+                            className={`text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-sm ${
+                              CATEGORY_BADGE_STYLE[listing.category] || "bg-black text-white"
+                            }`}
+                          >
+                            {listing.category}
+                          </span>
+                          {listing.mlsId && (
+                            <span className="bg-black/65 backdrop-blur text-white text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-sm">
+                              MLS# {listing.mlsId}
+                            </span>
+                          )}
+                        </div>
+
+                        <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between text-white">
+                          <div>
+                            <span className="text-[#C8A951] text-[10px] uppercase tracking-[0.25em] font-bold block">
+                              {listing.neighborhood || listing.county}
+                            </span>
+                            <span className="font-aiveritas text-3xl sm:text-4xl">
+                              {listing.price}
+                            </span>
+                          </div>
+                          {listing.images?.gallery && (
+                            <span className="bg-black/60 backdrop-blur text-white/90 text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">
+                              {listing.images.gallery.length} Photos
+                            </span>
+                          )}
+                        </div>
+                      </Link>
+                    </div>
+
+                    {/* Editorial Details Column */}
+                    <div
+                      className={`p-8 sm:p-10 lg:p-12 lg:col-span-6 flex flex-col justify-between ${
+                        isEven ? "lg:order-1" : "lg:order-2"
+                      }`}
+                    >
+                      <div>
+                        <div className="flex items-center justify-between gap-2 mb-3">
+                          <span className="text-[#9A7D3A] text-xs font-bold uppercase tracking-[0.22em]">
+                            {listing.propertyType}
+                          </span>
+                          <span className="text-xs text-[#111111]/45 font-medium">
+                            Advisor: {listing.agent?.name}
+                          </span>
+                        </div>
+
+                        <Link href={`/listings/${listing.slug}`}>
+                          <h3 className="font-aiveritas text-3xl sm:text-4xl text-[#111111] group-hover:text-[#9A7D3A] transition-colors mb-2">
+                            {listing.title}
+                          </h3>
+                        </Link>
+
+                        <p className="text-[#111111]/60 text-sm flex items-center gap-1.5 mb-5">
+                          <MapPin className="w-4 h-4 text-[#C8A951] shrink-0" />
+                          {listing.address}, {listing.city}, {listing.state} {listing.zip} ({listing.county})
+                        </p>
+
+                        <p className="text-[#111111]/70 font-light text-sm leading-relaxed mb-6 line-clamp-3">
+                          {listing.description}
+                        </p>
+
+                        {/* Highlights 2-col checklist */}
+                        <div className="grid sm:grid-cols-2 gap-2.5 mb-6">
+                          {listing.highlights.slice(0, 4).map((h) => (
+                            <div
+                              key={h}
+                              className="flex items-start gap-2 text-xs text-[#111111]/75"
+                            >
+                              <CheckCircle className="w-3.5 h-3.5 text-[#C8A951] shrink-0 mt-0.5" />
+                              <span className="line-clamp-2">{h}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div>
+                        {/* Executive Specs Strip */}
+                        <div className="flex flex-wrap gap-6 border-t border-[#111111]/10 pt-5 mb-6 text-xs">
+                          {listing.specs?.beds !== undefined && (
+                            <div>
+                              <span className="text-[#111111]/45 uppercase tracking-wider block text-[10px] font-bold">
+                                Bedrooms
+                              </span>
+                              <span className="font-bold text-[#111111] text-sm">
+                                {listing.specs.beds} Beds
+                              </span>
+                            </div>
+                          )}
+                          {listing.specs?.baths !== undefined && (
+                            <div>
+                              <span className="text-[#111111]/45 uppercase tracking-wider block text-[10px] font-bold">
+                                Bathrooms
+                              </span>
+                              <span className="font-bold text-[#111111] text-sm">
+                                {listing.specs.baths} Baths
+                              </span>
+                            </div>
+                          )}
+                          {listing.specs?.buildings !== undefined && (
+                            <div>
+                              <span className="text-[#111111]/45 uppercase tracking-wider block text-[10px] font-bold">
+                                Structures
+                              </span>
+                              <span className="font-bold text-[#111111] text-sm">
+                                {listing.specs.buildings} Buildings
+                              </span>
+                            </div>
+                          )}
+                          {listing.specs?.sqft && (
+                            <div>
+                              <span className="text-[#111111]/45 uppercase tracking-wider block text-[10px] font-bold">
+                                Area / SqFt
+                              </span>
+                              <span className="font-bold text-[#111111] text-sm">
+                                {listing.specs.sqft} SqFt
+                              </span>
+                            </div>
+                          )}
+                          {listing.specs?.lotSize && (
+                            <div>
+                              <span className="text-[#111111]/45 uppercase tracking-wider block text-[10px] font-bold">
+                                Acreage / Lot
+                              </span>
+                              <span className="font-bold text-[#111111] text-sm">
+                                {listing.specs.lotSize}
+                              </span>
+                            </div>
+                          )}
+                          {listing.specs?.waterfrontFeet && (
+                            <div>
+                              <span className="text-[#111111]/45 uppercase tracking-wider block text-[10px] font-bold">
+                                Waterfront
+                              </span>
+                              <span className="font-bold text-[#9A7D3A] text-sm">
+                                ~{listing.specs.waterfrontFeet} Linear Ft
+                              </span>
+                            </div>
+                          )}
+                        </div>
+
+                        {/* CTA Buttons */}
+                        <div className="flex flex-wrap items-center gap-3">
+                          <Link
+                            href={`/listings/${listing.slug}`}
+                            className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#111111] text-white text-xs font-bold uppercase tracking-[0.2em] rounded-xl hover:bg-[#C8A951] hover:text-[#111111] transition-colors"
+                          >
+                            Explore Custom Showcase <ArrowRight className="w-4 h-4" />
+                          </Link>
+                          <Link
+                            href={`/listings/${listing.slug}#crm-lead-form`}
+                            className="inline-flex items-center gap-2 px-6 py-3.5 border border-[#111111]/20 text-[#111111] text-xs font-bold uppercase tracking-[0.2em] rounded-xl hover:border-[#111111] transition-colors"
+                          >
+                            {listing.category === "Residential"
+                              ? "Schedule Showing"
+                              : "Request Offering Memo"}
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ══════════════════════════════════════════════════════════════════
+          COLLECTIVE SECTION 2: 2026 PROVEN TRACK RECORD — RECENT TRANSACTIONS
+         ══════════════════════════════════════════════════════════════════ */}
+      {soldListings.length > 0 && (
+        <section className="py-24 px-6 lg:px-10 bg-[#f5f3ef] border-b border-[#111111]/10">
+          <div className="max-w-screen-xl mx-auto">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+              <div>
+                <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
+                  Verified Closed Closings · 2026 Portfolio Activity
+                </span>
+                <h2 className="font-aiveritas text-4xl sm:text-5xl text-[#111111]">
+                  2026 Proven Track Record — Recent Transactions
+                </h2>
+              </div>
+              <p className="text-[#111111]/60 text-sm max-w-md">
+                From golf course estates in Bradenton and Land O&apos; Lakes to waterfront retreats in Inverness and strategic residential homesites, explore {soldListings.length} recent closings represented by Davis & Garnett.
+              </p>
             </div>
 
-            <p className="text-[#111]/65 font-light leading-relaxed text-base mb-8 max-w-lg">
-              {featuredProperty.description}
-            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+              {soldListings.map((sold) => (
+                <Link
+                  key={sold.id}
+                  href={`/listings/${sold.slug}`}
+                  className="group bg-white rounded-2xl overflow-hidden border border-[#111111]/8 hover:border-[#C8A951]/60 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
+                >
+                  {/* Image */}
+                  <div className="relative aspect-[16/10] overflow-hidden bg-[#eae6df]">
+                    <Image
+                      src={sold.images?.main || "/listings/d-g-residential-1.webp"}
+                      alt={sold.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      unoptimized
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
 
-            {/* Highlights */}
-            <div className="grid grid-cols-2 gap-3 mb-10">
-              {featuredProperty.highlights.map(h => (
-                <div key={h} className="flex items-center gap-2 text-sm text-[#111]/70">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] shrink-0" />
-                  {h}
-                </div>
+                    <div className="absolute top-3.5 left-3.5 flex flex-wrap gap-1.5">
+                      <span className="bg-[#111111] text-[#C8A951] text-[10px] font-bold uppercase tracking-[0.18em] px-2.5 py-1 rounded-sm border border-[#C8A951]/40">
+                        Sold · 2026
+                      </span>
+                      <span className="bg-white/90 text-[#111111] text-[10px] font-bold uppercase tracking-[0.15em] px-2.5 py-1 rounded-sm">
+                        {sold.category}
+                      </span>
+                    </div>
+
+                    <div className="absolute bottom-3.5 left-3.5 right-3.5 flex items-center justify-between text-white">
+                      <span className="font-aiveritas text-2xl text-white drop-shadow">
+                        {sold.price}
+                      </span>
+                      {sold.mlsId && (
+                        <span className="text-[10px] uppercase tracking-widest text-white/80 bg-black/50 px-2.5 py-1 rounded">
+                          MLS# {sold.mlsId}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Card Body */}
+                  <div className="p-6 flex flex-col flex-1">
+                    <p className="text-[#9A7D3A] text-[10px] font-bold uppercase tracking-[0.2em] mb-1">
+                      {sold.neighborhood || sold.county}
+                    </p>
+                    <h3 className="font-aiveritas text-2xl text-[#111111] group-hover:text-[#9A7D3A] transition-colors mb-1">
+                      {sold.title}
+                    </h3>
+                    <p className="text-xs text-[#111111]/55 flex items-center gap-1 mb-4">
+                      <MapPin className="w-3.5 h-3.5 text-[#C8A951]" /> {sold.city}, {sold.state} {sold.zip}
+                    </p>
+
+                    <div className="flex flex-wrap gap-4 text-xs text-[#111111]/65 border-t border-[#111111]/8 pt-4 mt-auto">
+                      {sold.specs?.beds !== undefined ? (
+                        <>
+                          <span className="flex items-center gap-1">
+                            <Bed className="w-3.5 h-3.5 text-[#C8A951]" /> {sold.specs.beds} Bed
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <Bath className="w-3.5 h-3.5 text-[#C8A951]" /> {sold.specs.baths} Bath
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <Maximize className="w-3.5 h-3.5 text-[#C8A951]" /> {sold.specs.sqft} SqFt
+                          </span>
+                        </>
+                      ) : (
+                        <span className="flex items-center gap-1">
+                          <Trees className="w-3.5 h-3.5 text-[#C8A951]" /> {sold.specs?.lotSize} ({sold.specs?.sqft} SqFt)
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="mt-4 pt-3 border-t border-[#111111]/6 flex items-center justify-between text-[11px] font-bold uppercase tracking-widest text-[#111111]/60 group-hover:text-[#9A7D3A]">
+                      <span>Advised by {sold.agent?.name}</span>
+                      <span className="flex items-center gap-1">
+                        Case Study <ArrowRight className="w-3 h-3" />
+                      </span>
+                    </div>
+                  </div>
+                </Link>
               ))}
             </div>
-
-            {/* Specs row */}
-            <div className="flex gap-8 border-t border-[#111]/10 pt-8 mb-10">
-              <div>
-                <span className="flex items-center gap-1.5 text-[#111]/40 text-[10px] uppercase tracking-widest mb-1"><Bed className="w-3 h-3" /> Beds</span>
-                <span className="font-bold text-[#111] text-lg">{featuredProperty.beds}</span>
-              </div>
-              <div>
-                <span className="flex items-center gap-1.5 text-[#111]/40 text-[10px] uppercase tracking-widest mb-1"><Bath className="w-3 h-3" /> Baths</span>
-                <span className="font-bold text-[#111] text-lg">{featuredProperty.baths}</span>
-              </div>
-              <div>
-                <span className="flex items-center gap-1.5 text-[#111]/40 text-[10px] uppercase tracking-widest mb-1"><Maximize className="w-3 h-3" /> SqFt</span>
-                <span className="font-bold text-[#111] text-lg">{featuredProperty.sqft}</span>
-              </div>
-              <div>
-                <span className="text-[#111]/40 text-[10px] uppercase tracking-widest mb-1 block">Price</span>
-                <span className="font-aiveritas text-xl text-[#D4AF37]">{featuredProperty.price}</span>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <Link href="#" className="flex items-center gap-2 px-8 py-4 bg-[#111] text-white text-xs font-bold uppercase tracking-[0.2em] rounded-lg hover:bg-[#D4AF37] transition-colors">
-                Schedule Viewing <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link href="#" className="flex items-center gap-2 px-8 py-4 border border-[#111]/20 text-[#111] text-xs font-bold uppercase tracking-[0.2em] rounded-lg hover:border-[#111] transition-colors">
-                Full Details <ExternalLink className="w-4 h-4" />
-              </Link>
-            </div>
           </div>
+        </section>
+      )}
 
-          {/* Col 2 — Featured image */}
-          <div className="relative order-1 md:order-2 min-h-[50vh] md:min-h-[700px] rounded-2xl overflow-hidden">
-            <Image
-              src={featuredProperty.img}
-              alt={featuredProperty.title}
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover"
-              priority
-            />
-            {/* Just a subtle dark vignette at bottom — no white wash */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-            <div className="absolute bottom-6 left-6">
-              <span className="text-white/70 text-xs font-bold uppercase tracking-widest">{featuredProperty.pricePerSqft}</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      {/* ══════════════════════════════════════════════
-          3. STICKY STACK SPILLOUT
-         ══════════════════════════════════════════════ */}
-      <section className="bg-[#f5f3ef]">
-        <PropertiesStickyStack />
-      </section>
-
-
-      {/* ══════════════════════════════════════════════
-          4. PROPERTY CARD SLIDER
-         ══════════════════════════════════════════════ */}
-      <section className="py-24 bg-white border-t border-[#111]/8 overflow-hidden">
-        <div className="max-w-screen-xl mx-auto px-8 mb-10 flex items-end justify-between">
-          <div>
-            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">Browse All Types</span>
-            <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111]">Active Listings</h2>
-          </div>
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => scrollSlider("prev")}
-              disabled={sliderIndex === 0}
-              className="w-11 h-11 rounded-full border border-[#111]/20 flex items-center justify-center hover:bg-[#111] hover:text-white hover:border-[#111] transition-all disabled:opacity-30 disabled:cursor-not-allowed"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button
-              onClick={() => scrollSlider("next")}
-              disabled={sliderIndex >= sliderCards.length - 1}
-              className="w-11 h-11 rounded-full border border-[#111]/20 flex items-center justify-center hover:bg-[#111] hover:text-white hover:border-[#111] transition-all disabled:opacity-30 disabled:cursor-not-allowed"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
-        </div>
-
-        {/* Slider track — scrollable, hidden scrollbar */}
-        <div
-          ref={sliderRef}
-          className="flex gap-6 pl-8 overflow-x-auto scroll-smooth"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-        >
-          {sliderCards.map((card, i) => (
-            <Link
-              key={i}
-              href="#"
-              className="group shrink-0 w-[320px] md:w-[340px] rounded-2xl overflow-hidden bg-[#f5f3ef] border border-[#111]/8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
-            >
-              {/* Image */}
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
-                  src={card.img}
-                  alt={card.title}
-                  fill
-                  sizes="340px"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                <span className={`absolute top-4 left-4 text-[10px] font-bold uppercase tracking-[0.15em] py-1 px-2.5 rounded-sm ${TYPE_COLOR[card.type] || "bg-black text-white"}`}>
-                  {card.type}
-                </span>
-                <span className="absolute bottom-4 right-4 text-white font-bold text-sm drop-shadow-lg">
-                  {card.price}
-                </span>
-              </div>
-
-              {/* Card body */}
-              <div className="p-6 flex flex-col flex-1">
-                <h3 className="font-aiveritas text-xl text-[#111] mb-1 group-hover:text-[#D4AF37] transition-colors">
-                  {card.title}
-                </h3>
-                <div className="flex items-center gap-1.5 text-[#111]/45 text-xs mb-4">
-                  <MapPin className="w-3 h-3" /> {card.address}
-                </div>
-                {card.beds > 0 && (
-                  <div className="flex gap-5 text-xs text-[#111]/60 border-t border-[#111]/8 pt-4 mt-auto">
-                    <span className="flex items-center gap-1"><Bed className="w-3.5 h-3.5" /> {card.beds} Bed</span>
-                    <span className="flex items-center gap-1"><Bath className="w-3.5 h-3.5" /> {card.baths} Bath</span>
-                    <span className="flex items-center gap-1"><Maximize className="w-3.5 h-3.5" /> {card.sqft} SF</span>
-                  </div>
-                )}
-                {card.beds === 0 && (
-                  <div className="flex gap-5 text-xs text-[#111]/60 border-t border-[#111]/8 pt-4 mt-auto">
-                    <span className="flex items-center gap-1"><Maximize className="w-3.5 h-3.5" /> {card.sqft} GLA</span>
-                  </div>
-                )}
-              </div>
-            </Link>
-          ))}
-          {/* Right padding */}
-          <div className="shrink-0 w-8" />
-        </div>
-      </section>
-
-
-      {/* ══════════════════════════════════════════════
-          5. INSTAGRAM-STYLE FULL-WIDTH GRID
-         ══════════════════════════════════════════════ */}
-      <section className="bg-[#f5f3ef] border-t border-[#111]/8">
-        <div className="max-w-screen-xl mx-auto px-8 pt-20 pb-10 text-center">
-          <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">@DavisGarnett</span>
-          <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111]">The Portfolio Gallery</h2>
-        </div>
-
-        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-0">
-          {gridImages.map((src, i) => (
-            <Link key={i} href="#" className="group relative aspect-square overflow-hidden bg-[#ddd] block">
-              <Image
-                src={src}
-                alt="Property"
-                fill
-                sizes="(max-width: 768px) 33vw, 17vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100">
-                <span className="flex items-center gap-1.5 text-white text-sm font-bold">
-                  <Heart className="w-4 h-4 fill-white" />
-                  {((i + 1) * 137) % 400 + 150}
-                </span>
-                <span className="flex items-center gap-1.5 text-white text-sm font-bold">
-                  <MessageCircle className="w-4 h-4 fill-white" />
-                  {((i + 1) * 47) % 50 + 12}
-                </span>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-
-      {/* ══════════════════════════════════════════════
-          6. 3-COLUMN GRID + LOAD MORE
-         ══════════════════════════════════════════════ */}
-      <section className="py-24 px-8 bg-white border-t border-[#111]/8">
+      {/* ══════════════════════════════════════════════════════════════════
+          COLLECTIVE SECTION 3: THE DAVIS & GARNETT REPRESENTATION STANDARD
+         ══════════════════════════════════════════════════════════════════ */}
+      <section className="py-24 px-6 lg:px-10 bg-white border-b border-[#111111]/10">
         <div className="max-w-screen-xl mx-auto">
-
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-            <div>
-              <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">Full Inventory</span>
-              <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111]">All Properties</h2>
-            </div>
-            <p className="text-[#111]/45 text-sm">{allCards.length} listings available</p>
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
+              Bespoke Advisory Methodology
+            </span>
+            <h2 className="font-aiveritas text-4xl sm:text-5xl text-[#111111] mb-4">
+              The Davis & Garnett Representation Standard
+            </h2>
+            <p className="text-[#111111]/65 font-light text-base leading-relaxed">
+              Unlike single-track residential agents or volume commercial brokerages, Mark Davis and Rachael Garnett unite institutional commercial underwriting with luxury residential storytelling under one coordinated practice.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-            {allCards.slice(0, shown).map((card, i) => (
-              <Link
-                key={i}
-                href="#"
-                className="group bg-[#f5f3ef] border border-[#111]/8 rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <Award className="w-7 h-7 text-[#C8A951]" />,
+                tag: "01 · Luxury Residential Estates",
+                title: "Architectural Positioning & Editorial Marketing",
+                lead: "Led by Rachael Garnett (FL Lic. #3378601)",
+                description:
+                  "Every residential listing — from custom Tampa Bay waterfront estates like 'The Vistara' in Bahama Shores to golf course homes in Bradenton and Land O' Lakes — receives bespoke digital dossiers, architectural photography, 3D Matterport walkthroughs, and targeted syndication to qualified Gulf Coast and out-of-state cash buyers.",
+                bullets: [
+                  "Pre-listing structural, seawall & inspection readiness",
+                  "Dedicated custom property showcase pages & private tour curation",
+                  "Data-backed comparative pricing to maximize net seller proceeds"
+                ]
+              },
+              {
+                icon: <TrendingUp className="w-7 h-7 text-[#C8A951]" />,
+                tag: "02 · Commercial & Mixed-Use Assets",
+                title: "Institutional Underwriting & Deal Structuring",
+                lead: "Led by Mark Davis (FL Lic. #3209459)",
+                description:
+                  "Commercial and mixed-use dispositions such as our dual-building Brandon corridor offering require rigorous financial packaging. We prepare comprehensive Offering Memorandums detailing utility separation, zoning flexibility, traffic counts, ADA compliance, and owner-user vs. multi-tenant yield scenarios.",
+                bullets: [
+                  "Full Offering Memorandum (OM) & pro-forma underwriting",
+                  "Direct outreach to 1031 exchange buyers, medical/legal practices & family offices",
+                  "Lease structuring, zoning verification & environmental coordination"
+                ]
+              },
+              {
+                icon: <Compass className="w-7 h-7 text-[#C8A951]" />,
+                tag: "03 · Land, Acreage & Off-Market Sourcing",
+                title: "Corridor Entitlement & Strategic Land Banking",
+                lead: "Joint Commercial & Residential Land Advisory",
+                description:
+                  "From 79.54-acre Central Florida highway development tracts in Polk County to gated 19.72-acre timberland sanctuaries in Marion County, we advise land owners and developers on highest-and-best-use analysis, agricultural tax exemptions, and off-market parcel assemblages.",
+                bullets: [
+                  "FDOT corridor analysis, FLU/zoning entitlement & density mapping",
+                  "Agricultural (Greenbelt) tax preservation & timber valuation",
+                  "Confidential off-market acquisition sourcing across Central & West Florida"
+                ]
+              }
+            ].map((pillar) => (
+              <div
+                key={pillar.title}
+                className="bg-[#fbfbf9] rounded-2xl p-8 border border-[#111111]/8 flex flex-col justify-between hover:border-[#C8A951]/50 transition-colors"
               >
-                {/* Image */}
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <Image
-                    src={card.img}
-                    alt={card.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                  <span className={`absolute top-4 left-4 text-[10px] font-bold uppercase tracking-[0.15em] py-1 px-2.5 rounded-sm ${TYPE_COLOR[card.type] || "bg-black text-white"}`}>
-                    {card.type}
+                <div>
+                  <div className="w-14 h-14 rounded-2xl bg-[#111111] flex items-center justify-center mb-6">
+                    {pillar.icon}
+                  </div>
+                  <span className="text-[#9A7D3A] text-[10px] font-bold uppercase tracking-[0.25em] block mb-2">
+                    {pillar.tag}
                   </span>
-                </div>
-
-                {/* Body */}
-                <div className="p-6 flex flex-col flex-1">
-                  <div className="flex items-center gap-1.5 text-[#111]/45 text-xs mb-2">
-                    <MapPin className="w-3 h-3" /> {card.address}
-                  </div>
-                  <h3 className="font-aiveritas text-2xl text-[#111] mb-1 group-hover:text-[#D4AF37] transition-colors">
-                    {card.title}
+                  <h3 className="font-aiveritas text-2xl sm:text-3xl text-[#111111] mb-2">
+                    {pillar.title}
                   </h3>
-                  <p className="text-[#D4AF37] font-bold text-lg mb-4">{card.price}</p>
-
-                  <div className="flex gap-5 text-xs text-[#111]/50 border-t border-[#111]/8 pt-4 mt-auto">
-                    {card.beds > 0 ? (
-                      <>
-                        <span className="flex items-center gap-1"><Bed className="w-3.5 h-3.5" /> {card.beds} Bed</span>
-                        <span className="flex items-center gap-1"><Bath className="w-3.5 h-3.5" /> {card.baths} Bath</span>
-                        <span className="flex items-center gap-1"><Maximize className="w-3.5 h-3.5" /> {card.sqft} SF</span>
-                      </>
-                    ) : (
-                      <span className="flex items-center gap-1"><Maximize className="w-3.5 h-3.5" /> {card.sqft} GLA</span>
-                    )}
-                  </div>
+                  <p className="text-xs font-bold text-[#111111]/55 mb-4">{pillar.lead}</p>
+                  <p className="text-[#111111]/70 font-light text-sm leading-relaxed mb-6">
+                    {pillar.description}
+                  </p>
                 </div>
-              </Link>
+
+                <ul className="space-y-2.5 border-t border-[#111111]/8 pt-5">
+                  {pillar.bullets.map((b) => (
+                    <li
+                      key={b}
+                      className="flex items-start gap-2.5 text-xs text-[#111111]/75 font-medium"
+                    >
+                      <CheckCircle className="w-4 h-4 text-[#C8A951] shrink-0 mt-0.5" />
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
-
-          {/* Load More */}
-          {shown < allCards.length && (
-            <div className="flex justify-center">
-              <button
-                onClick={() => setShown(s => Math.min(s + PAGE_SIZE, allCards.length))}
-                className="flex items-center gap-2 px-10 py-4 border-2 border-[#111] text-[#111] text-xs font-bold uppercase tracking-[0.2em] rounded-lg hover:bg-[#111] hover:text-white transition-colors"
-              >
-                Load More Properties
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-          )}
-          {shown >= allCards.length && (
-            <p className="text-center text-[#111]/35 text-xs uppercase tracking-widest">All {allCards.length} properties shown</p>
-          )}
         </div>
       </section>
 
+      {/* ══════════════════════════════════════════════════════════════════
+          COLLECTIVE SECTION 4: REQUEST A CONFIDENTIAL PROPERTY VALUATION OR PORTFOLIO REVIEW
+         ══════════════════════════════════════════════════════════════════ */}
+      <section
+        id="valuation-request"
+        className="py-24 px-6 lg:px-10 bg-[#f5f3ef]"
+      >
+        <div className="max-w-screen-xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
+          {/* Left Column: Advisory Pitch & Direct Contacts */}
+          <div className="lg:col-span-5 space-y-6">
+            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block">
+              Confidential Advisory Consultation
+            </span>
+            <h2 className="font-aiveritas text-4xl sm:text-5xl text-[#111111] leading-tight">
+              Request a Confidential Property Valuation or Portfolio Review
+            </h2>
+            <p className="text-[#111111]/70 font-light text-base leading-relaxed">
+              Considering the disposition of a waterfront residence, commercial office/retail asset, or Central Florida land parcel? Mark Davis and Rachael Garnett provide complimentary, institutionally researched broker opinion of value (BOV) and comparative market analyses (CMA).
+            </p>
+
+            <div className="space-y-4 pt-2">
+              <div className="bg-white p-5 rounded-2xl border border-[#111111]/8 flex items-center justify-between">
+                <div>
+                  <p className="font-bold text-[#111111] text-sm">Mark Davis</p>
+                  <p className="text-xs text-[#9A7D3A] font-semibold">
+                    Commercial, Mixed-Use & Land · FL Lic. #3209459
+                  </p>
+                  <p className="text-xs text-[#111111]/55 mt-0.5">mark@davisgarnettsells.com</p>
+                </div>
+                <a
+                  href="tel:813-486-9072"
+                  className="px-4 py-2.5 bg-[#111111] text-[#C8A951] text-xs font-bold uppercase tracking-widest rounded-xl hover:bg-[#C8A951] hover:text-[#111111] transition-colors flex items-center gap-1.5"
+                >
+                  <Phone className="w-3.5 h-3.5" /> 813-486-9072
+                </a>
+              </div>
+
+              <div className="bg-white p-5 rounded-2xl border border-[#111111]/8 flex items-center justify-between">
+                <div>
+                  <p className="font-bold text-[#111111] text-sm">Rachael Garnett</p>
+                  <p className="text-xs text-[#9A7D3A] font-semibold">
+                    Luxury Residential & Waterfront · FL Lic. #3378601
+                  </p>
+                  <p className="text-xs text-[#111111]/55 mt-0.5">
+                    rachael@davisgarnettsells.com
+                  </p>
+                </div>
+                <a
+                  href="tel:727-254-0244"
+                  className="px-4 py-2.5 bg-[#111111] text-[#C8A951] text-xs font-bold uppercase tracking-widest rounded-xl hover:bg-[#C8A951] hover:text-[#111111] transition-colors flex items-center gap-1.5"
+                >
+                  <Phone className="w-3.5 h-3.5" /> 727-254-0244
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Interactive Lead Form Wired to POST /api/leads */}
+          <div className="lg:col-span-7">
+            <div className="bg-white rounded-3xl p-8 sm:p-10 shadow-lg border border-[#111111]/10">
+              {valStatus === "success" ? (
+                <div className="py-12 text-center space-y-4">
+                  <CheckCircle className="w-14 h-14 text-[#C8A951] mx-auto" />
+                  <h3 className="font-aiveritas text-3xl text-[#111111]">
+                    Valuation Request Logged
+                  </h3>
+                  <p className="text-[#111111]/65 text-sm max-w-md mx-auto leading-relaxed">
+                    Thank you, {valForm.firstName}. Mark Davis and Rachael Garnett have received your confidential request and will prepare your custom valuation dossier.
+                  </p>
+                  <button
+                    onClick={() => setValStatus("idle")}
+                    className="px-6 py-3 bg-[#111111] text-white text-xs font-bold uppercase tracking-widest rounded-xl"
+                  >
+                    Submit Another Request
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleValuationSubmit} className="space-y-4">
+                  <div className="flex items-center justify-between border-b border-[#111111]/8 pb-4 mb-2">
+                    <div>
+                      <span className="text-[#9A7D3A] text-[10px] font-bold uppercase tracking-[0.25em] block">
+                        Direct Principal Intake
+                      </span>
+                      <h3 className="font-aiveritas text-2xl text-[#111111]">
+                        Property & Portfolio Valuation Dossier
+                      </h3>
+                    </div>
+                    <ShieldCheck className="w-6 h-6 text-[#C8A951]" />
+                  </div>
+
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-[10px] font-bold uppercase tracking-widest text-[#111111]/60 mb-1.5">
+                        First Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="First Name"
+                        value={valForm.firstName}
+                        onChange={(e) =>
+                          setValForm((f) => ({ ...f, firstName: e.target.value }))
+                        }
+                        className="w-full px-4 py-3 bg-[#f5f3ef] border border-[#111111]/10 rounded-xl text-sm text-[#111111] focus:outline-none focus:border-[#C8A951]"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[10px] font-bold uppercase tracking-widest text-[#111111]/60 mb-1.5">
+                        Last Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="Last Name"
+                        value={valForm.lastName}
+                        onChange={(e) =>
+                          setValForm((f) => ({ ...f, lastName: e.target.value }))
+                        }
+                        className="w-full px-4 py-3 bg-[#f5f3ef] border border-[#111111]/10 rounded-xl text-sm text-[#111111] focus:outline-none focus:border-[#C8A951]"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-[10px] font-bold uppercase tracking-widest text-[#111111]/60 mb-1.5">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        placeholder="you@company.com"
+                        value={valForm.email}
+                        onChange={(e) =>
+                          setValForm((f) => ({ ...f, email: e.target.value }))
+                        }
+                        className="w-full px-4 py-3 bg-[#f5f3ef] border border-[#111111]/10 rounded-xl text-sm text-[#111111] focus:outline-none focus:border-[#C8A951]"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[10px] font-bold uppercase tracking-widest text-[#111111]/60 mb-1.5">
+                        Phone Number *
+                      </label>
+                      <input
+                        type="tel"
+                        required
+                        placeholder="(813) 000-0000"
+                        value={valForm.phone}
+                        onChange={(e) =>
+                          setValForm((f) => ({ ...f, phone: e.target.value }))
+                        }
+                        className="w-full px-4 py-3 bg-[#f5f3ef] border border-[#111111]/10 rounded-xl text-sm text-[#111111] focus:outline-none focus:border-[#C8A951]"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-[10px] font-bold uppercase tracking-widest text-[#111111]/60 mb-1.5">
+                        Asset Classification
+                      </label>
+                      <select
+                        value={valForm.assetCategory}
+                        onChange={(e) =>
+                          setValForm((f) => ({ ...f, assetCategory: e.target.value }))
+                        }
+                        className="w-full px-4 py-3 bg-[#f5f3ef] border border-[#111111]/10 rounded-xl text-sm text-[#111111] focus:outline-none focus:border-[#C8A951]"
+                      >
+                        <option value="Residential Estate">Luxury Residential / Waterfront</option>
+                        <option value="Commercial / Mixed-Use">Commercial / Mixed-Use Asset</option>
+                        <option value="Land & Development Acreage">Land & Development Acreage</option>
+                        <option value="Multi-Property Portfolio">Multi-Property Portfolio</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-[10px] font-bold uppercase tracking-widest text-[#111111]/60 mb-1.5">
+                        Consultation Objective
+                      </label>
+                      <select
+                        value={valForm.inquiryType}
+                        onChange={(e) =>
+                          setValForm((f) => ({ ...f, inquiryType: e.target.value }))
+                        }
+                        className="w-full px-4 py-3 bg-[#f5f3ef] border border-[#111111]/10 rounded-xl text-sm text-[#111111] focus:outline-none focus:border-[#C8A951]"
+                      >
+                        <option value="Confidential Property Valuation">
+                          Confidential Property Valuation (BOV / CMA)
+                        </option>
+                        <option value="Exclusive Seller Representation">
+                          Exclusive Seller Representation
+                        </option>
+                        <option value="Buyer / 1031 Acquisition Search">
+                          Buyer / 1031 Exchange Acquisition Search
+                        </option>
+                        <option value="Portfolio Advisory Review">
+                          Hold / Sell Portfolio Advisory Review
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-[10px] font-bold uppercase tracking-widest text-[#111111]/60 mb-1.5">
+                      Property Street Address or Parcel ID / County
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="e.g. St. Petersburg Waterfront, Hwy 60 Brandon, or Polk County Parcel"
+                      value={valForm.propertyAddress}
+                      onChange={(e) =>
+                        setValForm((f) => ({ ...f, propertyAddress: e.target.value }))
+                      }
+                      className="w-full px-4 py-3 bg-[#f5f3ef] border border-[#111111]/10 rounded-xl text-sm text-[#111111] focus:outline-none focus:border-[#C8A951]"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-[10px] font-bold uppercase tracking-widest text-[#111111]/60 mb-1.5">
+                      Additional Context or Timeline
+                    </label>
+                    <textarea
+                      rows={3}
+                      placeholder="Share any relevant property specifications, target timeline, or questions for Mark & Rachael..."
+                      value={valForm.notes}
+                      onChange={(e) =>
+                        setValForm((f) => ({ ...f, notes: e.target.value }))
+                      }
+                      className="w-full px-4 py-3 bg-[#f5f3ef] border border-[#111111]/10 rounded-xl text-sm text-[#111111] focus:outline-none focus:border-[#C8A951] resize-none"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={valStatus === "submitting"}
+                    className="w-full py-4 bg-[#111111] hover:bg-[#C8A951] hover:text-[#111111] text-white text-xs font-bold uppercase tracking-[0.2em] rounded-xl transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+                  >
+                    <Send className="w-4 h-4" />
+                    {valStatus === "submitting"
+                      ? "Transmitting Request..."
+                      : "Request Confidential Valuation / Portfolio Review"}
+                  </button>
+                </form>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ── FOOTER ── */}
-      <footer className="bg-[#0c0b09] py-16 px-8 border-t border-[#D4AF37]/20">
+      <footer className="bg-[#111111] py-16 px-6 lg:px-10 border-t border-[#C8A951]/25">
         <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-white/30 text-[10px] uppercase tracking-widest max-w-xl leading-relaxed">
-            Davis & Garnett is a commercial and residential real estate advisory group brokered by Align Right Realty. All properties subject to prior sale. Equal Housing Opportunity.
+          <p className="text-white/40 text-[10px] uppercase tracking-widest max-w-2xl leading-relaxed">
+            Davis & Garnett Real Estate Advisors · Mark Davis (FL Lic. #3209459) & Rachael Garnett (FL Lic. #3378601) · Brokered by Align Right Realty. All properties subject to prior sale, change, or withdrawal. Equal Housing Opportunity.
           </p>
-          <p className="text-white/30 text-[10px] uppercase tracking-widest shrink-0">
+          <p className="text-white/40 text-[10px] uppercase tracking-widest shrink-0">
             © {new Date().getFullYear()} Davis & Garnett
           </p>
         </div>

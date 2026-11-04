@@ -1,122 +1,1365 @@
 [
   {
     "id": "1",
-    "brokerId": "mark-123",
-    "category": "Commercial",
-    "title": "Prime Retail Corner — Westchase",
-    "propertyType": "Retail",
-    "transactionType": "For Lease",
-    "status": "Active",
-    "slug": "prime-retail-corner-westchase",
-    "featured": true,
-    "streetAddress": "12345 Westchase Blvd",
-    "city": "Tampa",
+    "slug": "6100-bahama-shores-dr-s-st-petersburg",
+    "mlsId": "V4951050",
+    "title": "6100 Bahama Shores Dr S",
+    "subtitle": "Waterfront Custom Estate — \"The Vistara\" in Bahama Shores",
+    "price": "$4,553,900",
+    "priceNumeric": 4553900,
+    "address": "6100 Bahama Shores Dr S",
+    "streetAddress": "6100 Bahama Shores Dr S",
+    "city": "St. Petersburg",
     "state": "FL",
-    "zip": "33626",
-    "county": "Hillsborough",
-    "lat": 28.0494,
-    "lng": -82.6041,
-    "buildingSizeSqFt": "12,500",
-    "availableSpaceSqFt": "4,000",
-    "zoning": "C-2",
-    "parkingRatio": "5.0",
-    "askingRent": "$35.00",
-    "leaseType": "NNN",
-    "minLeaseTerm": "5 Years",
+    "zip": "33705",
+    "neighborhood": "Bahama Shores",
+    "county": "Pinellas County",
+    "category": "Residential",
+    "propertyType": "Waterfront Custom Estate (\"The Vistara\")",
+    "transactionType": "For Sale",
+    "status": "Active",
+    "representation": "Exclusive Listing",
+    "featured": true,
+    "specs": {
+      "beds": 4,
+      "baths": 4.5,
+      "sqft": "4,376",
+      "lotSize": "0.51 Acres",
+      "yearBuilt": 2026,
+      "waterfrontFeet": 90,
+      "garage": "3+ Car Tandem",
+      "stories": 3,
+      "pricePerSqft": "$1,041/SqFt"
+    },
+    "bedrooms": "4",
+    "bathrooms": "4.5",
+    "sqFt": "4,376",
+    "askingPrice": "$4,553,900",
+    "description": "Positioned along one of St. Petersburg's most coveted deepwater enclaves, 6100 Bahama Shores Drive South presents a rare opportunity to acquire 'The Vistara' — a bespoke 4,376-square-foot coastal modern waterfront residence on an expansive 0.51-acre homesite with approximately 90 feet of direct Tampa Bay frontage.\n\nArchitecturally conceived to capture panoramic open-water vistas and sunrise-to-sunset horizons over Tampa Bay and the Sunshine Skyway Bridge, the estate seamlessly unites elevated hurricane-resilient engineering with resort-caliber indoor-outdoor living. A private four-stop commercial-grade elevator connects the ground-level 3+ car tandem motor court through two levels of refined living quarters up to an expansive rooftop sky lounge complete with a custom wet bar and observation terrace.\n\nAll pre-construction structural engineering, soil borings, architectural blueprints, and seawall due diligence have been meticulously completed, allowing discerning buyers to customize final interior finishes while bypassing years of entitlement and design delays.",
+    "propertyDescription": "Custom luxury waterfront estate ('The Vistara') on 0.51 acres in Bahama Shores with ~90 feet of open Tampa Bay frontage, 4-stop commercial-grade elevator, and rooftop sky lounge.",
     "highlights": [
-      "High visibility end-cap unit",
-      "Over 45,000 VPD traffic count",
-      "Anchored by national grocer",
-      "Ample parking (5/1000)",
-      "",
-      ""
+      "Custom luxury waterfront estate ('The Vistara') in prestigious Bahama Shores",
+      "0.51-acre lot with ~90 feet of direct open Tampa Bay waterfrontage",
+      "Panoramic views of Tampa Bay & the Sunshine Skyway Bridge",
+      "Expansive rooftop lounge with custom wet bar & sunset observation deck",
+      "4-stop commercial-grade private elevator serving all levels to rooftop",
+      "Multi-level outdoor living terraces, resort pool deck & summer kitchen",
+      "Oversized 3+ car tandem garage with elevated coastal storage",
+      "Full pre-construction engineering, soil testing & seawall due diligence completed"
     ],
-    "propertyDescription": "Exceptional retail opportunity in the heart of Westchase. This end-cap space offers massive frontage, high ceilings, and immediate proximity to major national anchors. Perfect for high-end dining, boutique fitness, or premium retail concepts.",
-    "locationDescription": "Located at the heavily trafficked intersection of Linebaugh and Westchase Blvd, surrounded by affluent residential neighborhoods with average household incomes exceeding $130,000.",
-    "images": [
+    "categorizedFeatures": [
       {
-        "id": "img1",
-        "url": "https://images.unsplash.com/photo-1555636222-cae831e670b3?q=80&w=1200&auto=format&fit=crop",
+        "category": "Architecture & Interior",
+        "items": [
+          "4 Bedrooms · 4 Full & 1 Half Bathrooms",
+          "4,376 SqFt Under Air (2026 Custom Build)",
+          "4-Stop Commercial-Grade Elevator",
+          "Chef's Exhibition Kitchen + Walk-In Scullery Pantry",
+          "Floor-to-Ceiling Impact Glass Window Walls",
+          "Primary Sanctuary with Private Bayfront Balcony & Spa Bath"
+        ]
+      },
+      {
+        "category": "Waterfront & Exterior",
+        "items": [
+          "~90 Linear Feet of Tampa Bay Waterfront",
+          "Oversized 0.51-Acre (22,216 SqFt) Parcel",
+          "Rooftop Sky Lounge with Wet Bar",
+          "Resort Infinity-Edge Pool & Covered Lanai",
+          "Seawall & Marine Engineering Due Diligence Completed",
+          "3+ Car Tandem Garage + Private Motor Court"
+        ]
+      },
+      {
+        "category": "Engineering & Systems",
+        "items": [
+          "Elevated Concrete Block & Steel Coastal Construction",
+          "Complete Architectural & Structural Plans Included",
+          "Multi-Zone High-Efficiency Climate Control",
+          "Smart Home Automation Pre-Wire"
+        ]
+      },
+      {
+        "category": "Location & Lifestyle",
+        "items": [
+          "Bahama Shores Waterfront Enclave",
+          "10 Minutes to Downtown St. Petersburg & Beach Drive",
+          "Direct Boating Access to Tampa Bay & Gulf of Mexico",
+          "25 Minutes to Tampa International Airport"
+        ]
+      }
+    ],
+    "schools": [
+      { "name": "Lakeview Fundamental Elementary", "rating": "8/10", "grades": "K–5", "distance": "1.4 mi" },
+      { "name": "Bay Point Middle School", "rating": "7/10", "grades": "6–8", "distance": "1.1 mi" },
+      { "name": "Lakewood High School (CAT Program)", "rating": "7/10", "grades": "9–12", "distance": "1.3 mi" }
+    ],
+    "financials": [
+      { "label": "Offering Price", "value": "$4,553,900" },
+      { "label": "Price / Heated SqFt", "value": "$1,041 / SqFt" },
+      { "label": "Lot Acreage", "value": "0.51 Acres (22,216 SqFt)" },
+      { "label": "Waterfront Footage", "value": "~90 Linear Feet (Tampa Bay)" },
+      { "label": "MLS Identification", "value": "V4951050" },
+      { "label": "Delivery / Year Built", "value": "2026 Custom Estate (\"The Vistara\")" }
+    ],
+    "images": {
+      "main": "/listings/bahama-shores-1.jpg",
+      "gallery": [
+        "/listings/bahama-shores-1.jpg",
+        "/listings/bahama-shores-2.jpg",
+        "/listings/bahama-shores-3.jpg",
+        "/listings/bahama-shores-4.jpg",
+        "/res_waterfront_estate_1787632802890.png",
+        "/listings/d-g-residential-1.webp",
+        "/listings/d-g-residential-2.webp",
+        "/listings/d-g-residential-3.webp"
+      ],
+      "0": {
+        "id": "img-bahama-1",
+        "url": "/listings/bahama-shores-1.jpg",
         "isHero": true,
         "sortOrder": 1
       }
-    ],
-    "attachments": [
-      {
-        "id": "att1",
-        "label": "Offering Memorandum",
-        "url": "#",
-        "type": "PDF"
-      },
-      {
-        "id": "att2",
-        "label": "Floor Plan",
-        "url": "#",
-        "type": "PDF"
-      }
-    ],
-    "primaryContact": "Mark",
-    "showEmail": true,
-    "showPhone": true,
-    "createdAt": "2026-09-10T17:47:00.000Z",
-    "updatedAt": "2026-09-10T17:47:00.000Z"
+    },
+    "agent": {
+      "name": "Rachael Garnett",
+      "role": "Co-Founder & Residential Principal",
+      "email": "rachael@davisgarnettsells.com",
+      "phone": "727-254-0244",
+      "image": "/rachael-garnett.png",
+      "license": "FL Lic. #3378601",
+      "brokerage": "Align Right Realty"
+    },
+    "primaryContact": "Rachael",
+    "createdAt": "2026-11-01T12:00:00.000Z",
+    "updatedAt": "2026-11-01T12:00:00.000Z"
   },
   {
     "id": "2",
-    "brokerId": "rachael-123",
-    "category": "Residential",
-    "title": "4BR Modern Pool Home — Carrollwood",
-    "propertyType": "Single Family",
+    "slug": "126-ridgewood-ave-brandon",
+    "mlsId": "TB8479570",
+    "title": "126 Ridgewood Ave (& 613 E Morgan St)",
+    "subtitle": "Dual-Building Commercial & Residential Mixed-Use Asset — 1 Block Off Hwy 60",
+    "price": "$845,000",
+    "priceNumeric": 845000,
+    "address": "126 Ridgewood Ave & 613 E Morgan St",
+    "streetAddress": "126 Ridgewood Ave",
+    "city": "Brandon",
+    "state": "FL",
+    "zip": "33510",
+    "neighborhood": "Central Brandon Corridor",
+    "county": "Hillsborough County",
+    "category": "Commercial",
+    "propertyType": "Commercial & Residential Mixed-Use (2 Buildings)",
     "transactionType": "For Sale",
     "status": "Active",
-    "slug": "4br-modern-pool-home-carrollwood",
+    "representation": "Exclusive Listing",
     "featured": true,
-    "streetAddress": "5678 Carrollwood Dr",
-    "city": "Tampa",
-    "state": "FL",
-    "zip": "33618",
-    "county": "Hillsborough",
-    "lat": 28.0583,
-    "lng": -82.4939,
-    "bedrooms": "4",
-    "bathrooms": "3",
-    "sqFt": "3,200",
-    "lotSize": "0.3 Acres",
-    "yearBuilt": "2018",
-    "pool": true,
-    "garage": "3-Car Attached",
-    "askingPrice": "$1,250,000",
-    "hoaFee": "$150/mo",
+    "specs": {
+      "buildings": 2,
+      "sqft": "2,872",
+      "lotSize": "0.39 Acres",
+      "zoning": "Mixed-Use Commercial/Residential",
+      "units": 2,
+      "pricePerSqft": "$294/SqFt"
+    },
+    "buildingSizeSqFt": "2,872",
+    "availableSpaceSqFt": "2,872",
+    "sqFt": "2,872",
+    "askingPrice": "$845,000",
+    "description": "An exceptional dual-building mixed-use commercial and residential investment positioned just one block north of East Brandon Boulevard (State Road 60) in the heart of Hillsborough County's primary commercial artery. Comprising two detached concrete-block structures totaling 2,872 heated square feet on a 0.39-acre corner assemblage, this property offers unmatched versatility for owner-occupants, medical/legal practices, or multi-tenant income investors.\n\nBuilding 1 (126 Ridgewood Ave) spans 1,832 SqFt and features a well-appointed 2-bedroom, 2-bathroom layout with a full residential kitchen, expansive flex/conference room, and covered patio — ideal for executive live-work quarters, boutique office conversion, or immediate rental cash flow.\n\nBuilding 2 (613 E Morgan St) is a turnkey 1,040 SqFt commercial office facility purposefully configured with 4 private offices, 2 reception/waiting rooms, 2 ADA-accessible half-baths, a galley breakroom kitchen, ADA entry ramp, prominent monument signage, and 6 dedicated paved parking spaces. Both buildings operate on independent electric and water meters, enabling seamless dual-tenant leasing or owner-user occupancy with supplemental income.",
+    "propertyDescription": "Rare dual-building commercial and residential mixed-use asset totaling 2,872 SqFt on 0.39 acres just 1 block off Brandon Blvd (Hwy 60) with independent utilities, monument signage, and paved parking.",
     "highlights": [
-      "Resort-style saltwater pool & spa",
-      "Chef's kitchen with Wolf appliances",
-      "Custom outdoor summer kitchen",
-      "A-rated school district",
-      "",
-      ""
+      "Rare 2-building mixed-use assemblage 1 block north of Brandon Blvd (Hwy 60)",
+      "Total 2,872 SqFt across two freestanding structures on 0.39 acres",
+      "Building 1 (126 Ridgewood Ave): 1,832 SqFt block residential/office with 2BD/2BA, full kitchen, flex room & covered patio",
+      "Building 2 (613 E Morgan St): 1,040 SqFt commercial office with 4 private offices, 2 waiting rooms, 2 half-baths & galley kitchen",
+      "Independent electric and water meters for effortless dual-tenancy",
+      "Dedicated 6-space paved commercial parking lot + ADA ramp & monument signage",
+      "Ideal for owner-user professional practice (legal, CPA, medical, real estate) with income-producing second building",
+      "High-visibility Hillsborough County corridor with immediate access to I-75 and Crosstown Expressway"
     ],
-    "propertyDescription": "Stunning contemporary estate in desirable Carrollwood. This open-concept masterpiece features soaring 12-foot ceilings, imported Italian porcelain tile, and a wall of disappearing glass doors that perfectly blend indoor and outdoor luxury living.",
-    "locationDescription": "Situated on a quiet cul-de-sac in a gated community, just minutes from top-rated schools, exclusive country clubs, and fine dining.",
-    "images": [
+    "categorizedFeatures": [
       {
-        "id": "img2",
-        "url": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop",
+        "category": "Building 1 — 126 Ridgewood Ave (1,832 SqFt)",
+        "items": [
+          "1,832 Heated SqFt Concrete Block Structure",
+          "2 Bedrooms · 2 Full Bathrooms",
+          "Full Kitchen & Dining Area",
+          "Large Flex / Conference Room",
+          "Covered Rear Patio & Private Driveway",
+          "Live/Work, Residential Rental, or Office Use"
+        ]
+      },
+      {
+        "category": "Building 2 — 613 E Morgan St (1,040 SqFt)",
+        "items": [
+          "1,040 Heated SqFt Dedicated Commercial Office",
+          "4 Private Executive Offices",
+          "2 Separate Waiting / Reception Areas",
+          "2 Half Bathrooms + Galley Kitchenette",
+          "ADA Compliant Access Ramp",
+          "Dedicated Monument Signage & 6 Paved Parking Spaces"
+        ]
+      },
+      {
+        "category": "Site & Infrastructure",
+        "items": [
+          "0.39-Acre (16,988 SqFt) Dual-Frontage Lot",
+          "Separate Water & Electric Meters per Building",
+          "Mixed-Use Commercial / Residential Zoning",
+          "1 Block North of SR-60 (Brandon Blvd — 55,000+ AADT)"
+        ]
+      }
+    ],
+    "financials": [
+      { "label": "Offering Price", "value": "$845,000" },
+      { "label": "Total Combined GLA", "value": "2,872 SqFt (2 Buildings)" },
+      { "label": "Price / SqFt", "value": "$294.22 / SqFt" },
+      { "label": "Building 1 Size", "value": "1,832 SqFt (126 Ridgewood Ave)" },
+      { "label": "Building 2 Size", "value": "1,040 SqFt (613 E Morgan St)" },
+      { "label": "Lot Size & Metering", "value": "0.39 Acres · Separate Electric & Water Meters" },
+      { "label": "MLS Identification", "value": "TB8479570" }
+    ],
+    "images": {
+      "main": "/listings/ridgewood-1.jpg",
+      "gallery": [
+        "/listings/ridgewood-1.jpg",
+        "/listings/ridgewood-2.jpg",
+        "/listings/ridgewood-3.jpg",
+        "/com_office_tower_1787632874122.png",
+        "/com_luxury_retail_1787632885082.png"
+      ],
+      "0": {
+        "id": "img-ridgewood-1",
+        "url": "/listings/ridgewood-1.jpg",
         "isHero": true,
         "sortOrder": 1
       }
+    },
+    "agent": {
+      "name": "Mark Davis",
+      "role": "Co-Founder & Commercial Principal",
+      "email": "mark@davisgarnettsells.com",
+      "phone": "813-486-9072",
+      "image": "/mark-davis.png",
+      "license": "FL Lic. #3209459",
+      "brokerage": "Align Right Realty"
+    },
+    "primaryContact": "Mark",
+    "createdAt": "2026-10-28T12:00:00.000Z",
+    "updatedAt": "2026-11-01T12:00:00.000Z"
+  },
+  {
+    "id": "3",
+    "slug": "ne-90th-street-rd-fort-mccoy",
+    "mlsId": "TB8520776",
+    "title": "NE 90th Street Rd",
+    "subtitle": "19.72-Acre Gated Old Florida Agricultural & Timberland Sanctuary",
+    "price": "$350,000",
+    "priceNumeric": 350000,
+    "address": "NE 90th Street Rd",
+    "streetAddress": "NE 90th Street Rd",
+    "city": "Fort McCoy",
+    "state": "FL",
+    "zip": "32134",
+    "neighborhood": "Ocala National Forest Corridor",
+    "county": "Marion County",
+    "category": "Land",
+    "propertyType": "Agricultural & Timberland Tract",
+    "transactionType": "For Sale",
+    "status": "Active",
+    "representation": "Exclusive Listing",
+    "featured": true,
+    "specs": {
+      "lotSize": "19.72 Acres",
+      "sqft": "858,823",
+      "zoning": "A-1 General Agriculture",
+      "pricePerAcre": "$17,750/Acre"
+    },
+    "sqFt": "858,823",
+    "lotSize": "19.72 Acres",
+    "askingPrice": "$350,000",
+    "description": "Spanning 19.72 acres (858,823 square feet) of pristine, mature-timbered land in Marion County's renowned equestrian and conservation belt, this gated tract on NE 90th Street Road offers genuine Old Florida seclusion just minutes from the Ocala National Forest and the Ocklawaha River.\n\nBlanketed in merchantable pine and native hardwood canopy, the parcel carries flexible A-1 General Agriculture zoning with zero HOA restrictions and zero CDD assessments. Whether envisioned as a multi-structure family compound, private equestrian estate, working agricultural homestead, merchantable timber harvest, or long-term land bank in one of North Central Florida's fastest-appreciating rural corridors, the site provides an extraordinary natural canvas.\n\nThe property is secured via a heavy-duty gated entrance equipped with active motion-sensor security alarms and cellular trail cameras, preserving complete privacy and untouched natural topography.",
+    "propertyDescription": "19.72 acres of pristine Old Florida timberland near Ocala National Forest & Ocklawaha River with A-1 General Agriculture zoning, gated security, and mature pine & hardwood timber.",
+    "accessNotice": "This property is protected by active motion sensor alarms and security cameras. Prospective buyers and agents must contact Mark Davis in advance to have the alarm system disarmed prior to entering through the gated access.",
+    "useCases": [
+      { "icon": "🏡", "title": "Private Estate Compound", "desc": "Build a custom main residence and guest structures with complete wooded privacy." },
+      { "icon": "🐴", "title": "Equestrian & Ranch Facility", "desc": "Marion County A-1 zoning supports stables, paddocks, arenas, and grazing." },
+      { "icon": "🌲", "title": "Merchantable Timber Yield", "desc": "Dense stands of mature pine and hardwood offer immediate and recurring timber value." },
+      { "icon": "🌾", "title": "Working Agricultural Farm", "desc": "Eligible for agricultural tax exemption with nurseries, apiaries, or livestock." },
+      { "icon": "🏕️", "title": "Recreational Sanctuary", "desc": "Minutes from Ocala National Forest trails, springs, and Ocklawaha River boating." },
+      { "icon": "📈", "title": "Strategic Land Banking", "desc": "Low holding costs with zero HOA or CDD fees in an appreciating Marion County corridor." }
     ],
-    "attachments": [
+    "highlights": [
+      "19.72 acres (858,823 SqFt) of pristine Old Florida timberland",
+      "Offered at $17,750 per acre ($350,000 total)",
+      "Flexible A-1 General Agriculture zoning (Marion County)",
+      "Minutes to Ocala National Forest & the Ocklawaha River",
+      "Gated & secured entrance with active motion-sensor trail cameras",
+      "Mature merchantable pine & hardwood timber throughout",
+      "No HOA fees, no deed restrictions, and no CDD assessments",
+      "Strong potential for Agricultural (Greenbelt) tax exemption"
+    ],
+    "categorizedFeatures": [
       {
-        "id": "att3",
-        "label": "Property Disclosure",
-        "url": "#",
-        "type": "PDF"
+        "category": "Acreage & Topography",
+        "items": [
+          "19.72 Total Acres (858,823 SqFt)",
+          "$17,750 Per Acre Valuation",
+          "Mature Pine & Native Hardwood Canopy",
+          "High & Dry Natural Wooded Terrain"
+        ]
+      },
+      {
+        "category": "Zoning & Entitlements",
+        "items": [
+          "A-1 General Agriculture Zoning",
+          "Single-Family Homestead & Agricultural Buildings Permitted",
+          "Livestock, Horses, & Timber Harvesting Allowed",
+          "No HOA · No CDD Fees"
+        ]
+      },
+      {
+        "category": "Security & Utilities",
+        "items": [
+          "Secured Gated Entrance",
+          "Active Motion-Sensor Alarms & Camera Monitoring",
+          "Well & Septic Required",
+          "Overhead Electric Utility Nearby"
+        ]
+      },
+      {
+        "category": "Regional Access",
+        "items": [
+          "Fort McCoy, FL 32134 (Marion County)",
+          "Minutes to Ocala National Forest & Salt Springs",
+          "Minutes to Ocklawaha River Boat Ramps",
+          "25 Minutes to Downtown Ocala & World Equestrian Center Corridor"
+        ]
       }
     ],
+    "financials": [
+      { "label": "Offering Price", "value": "$350,000" },
+      { "label": "Price Per Acre", "value": "$17,750 / Acre" },
+      { "label": "Total Land Area", "value": "19.72 Acres (858,823 SqFt)" },
+      { "label": "Zoning Classification", "value": "A-1 General Agriculture" },
+      { "label": "HOA / CDD Assessments", "value": "$0 (None)" },
+      { "label": "MLS Identification", "value": "TB8520776" }
+    ],
+    "images": {
+      "main": "/listings/d-g-land-listing-1.webp",
+      "gallery": [
+        "/listings/d-g-land-listing-1.webp",
+        "/listings/d-g-land-listing-2.webp",
+        "/listings/d-g-land-listing-3.webp",
+        "/listings/d-g-land-listing-4.webp",
+        "/listings/d-g-land-listing-5.webp",
+        "/listings/d-g-land-listing-6.webp",
+        "/listings/d-g-land-listing-7.webp",
+        "/listings/d-g-land-listing-8.webp",
+        "/listings/d-g-land-listing-9.webp"
+      ],
+      "0": {
+        "id": "img-mccoy-1",
+        "url": "/listings/d-g-land-listing-1.webp",
+        "isHero": true,
+        "sortOrder": 1
+      }
+    },
+    "agent": {
+      "name": "Mark Davis",
+      "role": "Co-Founder & Commercial Principal",
+      "email": "mark@davisgarnettsells.com",
+      "phone": "813-486-9072",
+      "image": "/mark-davis.png",
+      "license": "FL Lic. #3209459",
+      "brokerage": "Align Right Realty"
+    },
+    "primaryContact": "Mark",
+    "createdAt": "2026-10-25T12:00:00.000Z",
+    "updatedAt": "2026-11-01T12:00:00.000Z"
+  },
+  {
+    "id": "4",
+    "slug": "770-old-stokes-rd-frostproof",
+    "mlsId": "TB8506525",
+    "title": "770 Old Stokes Rd",
+    "subtitle": "79.54-Acre Central Florida Commercial, Logistics & Residential Development Tract",
+    "price": "$3,550,000",
+    "priceNumeric": 3550000,
+    "address": "770 Old Stokes Rd",
+    "streetAddress": "770 Old Stokes Rd",
+    "city": "Frostproof",
+    "state": "FL",
+    "zip": "33843",
+    "neighborhood": "US Hwy 98 / US Hwy 27 Corridor",
+    "county": "Polk County",
+    "category": "Land",
+    "propertyType": "Commercial & Agricultural Acreage",
+    "transactionType": "For Sale",
+    "status": "Active",
+    "representation": "Exclusive Listing",
+    "featured": true,
+    "specs": {
+      "lotSize": "79.54 Acres MOL",
+      "sqft": "3,464,762",
+      "zoning": "Agricultural / Development Tract",
+      "pricePerAcre": "$44,632/Acre"
+    },
+    "sqFt": "3,464,762",
+    "lotSize": "79.54 Acres MOL",
+    "askingPrice": "$3,550,000",
+    "description": "Strategically situated on US Highway 98 just west of the US Highway 27 intersection in Polk County, 770 Old Stokes Road represents an institutional-scale 79.54-acre (MOL) Central Florida land acquisition opportunity priced at $3,550,000 ($44,632 per acre).\n\nPositioned at the geographic pivot point of Florida's peninsula, the tract commands exceptional highway connectivity along the US-98 and US-27 freight and commuter spine — placing the site within a 90-minute radius of both Tampa and Orlando, major CSX intermodal terminals, Port Tampa Bay, and two international airports.\n\nAs Central Florida's residential and industrial development wave continues expanding southward along the US-27 ridge corridor, this contiguous ~80-acre assemblage offers developers, land bankers, agribusiness operators, and institutional capital a high-visibility footprint suitable for master-planned residential subdivision, commercial/industrial logistics, solar infrastructure, or continued agricultural production.",
+    "propertyDescription": "Expansive 79.54-acre Central Florida land investment positioned on US Hwy 98 just west of US Hwy 27 in Polk County within 90 minutes of Tampa and Orlando.",
+    "useCases": [
+      { "icon": "🏗️", "title": "Master-Planned Residential", "desc": "Contiguous ~80-acre scale ideal for single-family subdivision or build-to-rent community." },
+      { "icon": "🚛", "title": "Logistics & Distribution", "desc": "Direct US Hwy 98 frontage just west of US Hwy 27 serving both Tampa and Orlando markets." },
+      { "icon": "☀️", "title": "Solar & Infrastructure", "desc": "Expansive flat topography in Polk County's primary utility and freight corridor." },
+      { "icon": "🍊", "title": "Agribusiness & Citrus/Cattle", "desc": "Maintain agricultural tax classification while holding for appreciation." },
+      { "icon": "🏢", "title": "Commercial Highway Frontage", "desc": "High-visibility US-98 corridor suitable for commercial outparcels and service centers." },
+      { "icon": "🏦", "title": "1031 Exchange Land Bank", "desc": "Institutional-grade Central Florida acreage with strong demographic tailwinds." }
+    ],
+    "highlights": [
+      "79.54 Acres MOL (3,464,762 SqFt) contiguous Polk County land assemblage",
+      "Direct frontage and access along US Hwy 98 just west of US Hwy 27",
+      "Strategic Central Florida distribution & residential growth corridor",
+      "Within 90 minutes of Tampa, Orlando, major deepwater ports & international airports",
+      "Offered at $44,632 per acre ($3,550,000 total)",
+      "Flexible agricultural & future commercial/residential development potential",
+      "High-elevation Central Florida Ridge geography",
+      "Ideal for 1031 Exchange, residential land bank, or commercial/industrial entitlement"
+    ],
+    "categorizedFeatures": [
+      {
+        "category": "Site & Acreage Overview",
+        "items": [
+          "79.54 Acres MOL (3,464,762 SqFt)",
+          "$44,632 Per Acre Offering Basis",
+          "Contiguous Tract with Highway Access",
+          "Polk County Jurisdiction (Frostproof, FL 33843)"
+        ]
+      },
+      {
+        "category": "Transportation & Logistics",
+        "items": [
+          "Positioned on US Highway 98",
+          "Immediate Proximity to US Highway 27 Spine",
+          "~75–90 Minutes to Tampa & Port Tampa Bay",
+          "~75–90 Minutes to Orlando & I-4 Corridor"
+        ]
+      },
+      {
+        "category": "Entitlement & Investment Profile",
+        "items": [
+          "Agricultural / Development Tract Classification",
+          "Low Agricultural Carrying Costs",
+          "Strong Regional Population Growth in Polk County",
+          "Subdivision, Commercial, or Industrial Potential"
+        ]
+      }
+    ],
+    "financials": [
+      { "label": "Offering Price", "value": "$3,550,000" },
+      { "label": "Price Per Acre", "value": "$44,632 / Acre" },
+      { "label": "Total Acreage", "value": "79.54 Acres MOL (3,464,762 SqFt)" },
+      { "label": "Corridor", "value": "US Hwy 98 & US Hwy 27 (Polk County)" },
+      { "label": "MLS Identification", "value": "TB8506525" }
+    ],
+    "images": {
+      "main": "/listings/frostproof-1.jpg",
+      "gallery": [
+        "/listings/frostproof-1.jpg",
+        "/listings/frostproof-2.jpg",
+        "/listings/frostproof-3.jpg",
+        "/land_commercial_development_1787632926636.png",
+        "/listings/d-g-land-listing-3.webp",
+        "/listings/d-g-land-listing-6.webp"
+      ],
+      "0": {
+        "id": "img-frostproof-1",
+        "url": "/listings/frostproof-1.jpg",
+        "isHero": true,
+        "sortOrder": 1
+      }
+    },
+    "agent": {
+      "name": "Mark Davis",
+      "role": "Co-Founder & Commercial Principal",
+      "email": "mark@davisgarnettsells.com",
+      "phone": "813-486-9072",
+      "image": "/mark-davis.png",
+      "license": "FL Lic. #3209459",
+      "brokerage": "Align Right Realty"
+    },
+    "primaryContact": "Mark",
+    "createdAt": "2026-10-20T12:00:00.000Z",
+    "updatedAt": "2026-11-01T12:00:00.000Z"
+  },
+  {
+    "id": "5",
+    "slug": "8136-wheat-stone-dr-zephyrhills",
+    "mlsId": "TB8461120",
+    "title": "8136 Wheat Stone Dr",
+    "subtitle": "Contemporary 4-Bedroom Residence in Abbott Park",
+    "price": "$319,900",
+    "priceNumeric": 319900,
+    "address": "8136 Wheat Stone Dr",
+    "streetAddress": "8136 Wheat Stone Dr",
+    "city": "Zephyrhills",
+    "state": "FL",
+    "zip": "33540",
+    "neighborhood": "Abbott Park",
+    "county": "Pasco County",
+    "category": "Residential",
+    "propertyType": "Single Family Residence",
+    "transactionType": "Sold",
+    "status": "Sold",
+    "representation": "Seller Representation",
+    "soldDate": "2026",
+    "featured": false,
+    "specs": {
+      "beds": 4,
+      "baths": 2,
+      "sqft": "2,048",
+      "lotSize": "0.14 Acres",
+      "yearBuilt": 2020,
+      "garage": "2-Car Attached",
+      "pricePerSqft": "$156/SqFt"
+    },
+    "bedrooms": "4",
+    "bathrooms": "2",
+    "sqFt": "2,048",
+    "askingPrice": "$319,900",
+    "description": "Successfully closed in 2026 in Zephyrhills' desirable Abbott Park community. Built in 2020, this 4-bedroom, 2-bathroom contemporary single-family residence spans 2,048 heated square feet with an open-concept great room, granite chef's island kitchen, split-bedroom floor plan, and private backyard lanai.\n\nPositioned in eastern Pasco County's high-growth residential corridor with convenient access to US-301, SR-54, and Wesley Chapel retail centers, Davis & Garnett delivered strategic pricing and targeted buyer marketing to achieve a seamless closing.",
+    "propertyDescription": "Modern 2020-built 4-bedroom, 2-bathroom single-family home spanning 2,048 SqFt in Zephyrhills' Abbott Park community.",
+    "highlights": [
+      "2026 Closed Transaction — Abbott Park Community",
+      "4 Bedrooms · 2 Full Bathrooms · 2,048 Heated SqFt",
+      "Modern 2020 concrete block construction",
+      "Open-concept kitchen with center island & stainless appliances",
+      "Spacious primary suite with dual vanities & walk-in closet",
+      "Community pool, cabanas, playground & dog park amenities"
+    ],
+    "categorizedFeatures": [
+      {
+        "category": "Interior & Layout",
+        "items": ["4 Bedrooms · 2 Bathrooms", "2,048 SqFt Heated", "Open Great Room Concept", "Split Bedroom Floor Plan"]
+      },
+      {
+        "category": "Community & Exterior",
+        "items": ["Built in 2020", "Abbott Park Master-Planned Community", "2-Car Attached Garage", "Pasco County (Zephyrhills, FL 33540)"]
+      }
+    ],
+    "financials": [
+      { "label": "Closed Price", "value": "$319,900" },
+      { "label": "Price / SqFt", "value": "$156 / SqFt" },
+      { "label": "Year Built", "value": "2020" },
+      { "label": "Transaction Status", "value": "Sold — 2026 Track Record" }
+    ],
+    "images": {
+      "main": "/listings/zephyrhills-1.jpg",
+      "gallery": [
+        "/listings/zephyrhills-1.jpg",
+        "/listings/d-g-residential-2.webp",
+        "/listings/d-g-residential-4.webp",
+        "/listings/d-g-residential-6.webp"
+      ],
+      "0": { "id": "img-5", "url": "/listings/zephyrhills-1.jpg", "isHero": true, "sortOrder": 1 }
+    },
+    "agent": {
+      "name": "Rachael Garnett",
+      "role": "Co-Founder & Residential Principal",
+      "email": "rachael@davisgarnettsells.com",
+      "phone": "727-254-0244",
+      "image": "/rachael-garnett.png",
+      "license": "FL Lic. #3378601",
+      "brokerage": "Align Right Realty"
+    },
     "primaryContact": "Rachael",
-    "showEmail": true,
-    "showPhone": true,
-    "createdAt": "2026-09-10T17:47:00.000Z",
-    "updatedAt": "2026-09-10T17:47:00.000Z"
+    "createdAt": "2026-08-15T12:00:00.000Z",
+    "updatedAt": "2026-08-15T12:00:00.000Z"
+  },
+  {
+    "id": "6",
+    "slug": "133rd-ave-se-dunnellon",
+    "mlsId": "TB8432190",
+    "title": "133rd Ave SE",
+    "subtitle": "Quarter-Acre Residential Homesite in Rainbow Lakes Estates",
+    "price": "$9,000",
+    "priceNumeric": 9000,
+    "address": "133rd Ave SE",
+    "streetAddress": "133rd Ave SE",
+    "city": "Dunnellon",
+    "state": "FL",
+    "zip": "34431",
+    "neighborhood": "Rainbow Lakes Estates",
+    "county": "Marion / Levy County",
+    "category": "Land",
+    "propertyType": "Residential Homesite Lot",
+    "transactionType": "Sold",
+    "status": "Sold",
+    "representation": "Seller Representation",
+    "soldDate": "2026",
+    "featured": false,
+    "specs": {
+      "lotSize": "0.25 Acres",
+      "sqft": "10,890",
+      "zoning": "R-1 Single Family Residential"
+    },
+    "sqFt": "10,890",
+    "lotSize": "0.25 Acres (10,890 SqFt)",
+    "askingPrice": "$9,000",
+    "description": "Closed in 2026 by Mark Davis, this 0.25-acre (10,890 SqFt) wooded residential homesite in Rainbow Lakes Estates in Dunnellon offered a high-and-dry buildable parcel with no HOA fees near the crystal-clear waters of Rainbow Springs State Park and Tiger Lake.",
+    "propertyDescription": "0.25-acre (10,890 SqFt) buildable residential homesite in Dunnellon's Rainbow Lakes Estates with no HOA fees.",
+    "highlights": [
+      "2026 Closed Land Transaction — Rainbow Lakes Estates",
+      "0.25 Acres (10,890 SqFt) buildable homesite",
+      "No HOA fees & no time limit to build",
+      "Close to Rainbow Springs State Park & Lake Rousseau"
+    ],
+    "categorizedFeatures": [
+      {
+        "category": "Parcel Specifications",
+        "items": ["0.25 Acres (10,890 SqFt)", "Site-Built Homes Permitted", "No HOA Assessments", "Rainbow Lakes Estates Community"]
+      }
+    ],
+    "financials": [
+      { "label": "Closed Price", "value": "$9,000" },
+      { "label": "Parcel Size", "value": "0.25 Acres (10,890 SqFt)" },
+      { "label": "Transaction Status", "value": "Sold — 2026 Track Record" }
+    ],
+    "images": {
+      "main": "/listings/dunnellon-1.jpg",
+      "gallery": [
+        "/listings/dunnellon-1.jpg",
+        "/listings/d-g-land-listing-2.webp",
+        "/listings/d-g-land-listing-5.webp"
+      ],
+      "0": { "id": "img-6", "url": "/listings/dunnellon-1.jpg", "isHero": true, "sortOrder": 1 }
+    },
+    "agent": {
+      "name": "Mark Davis",
+      "role": "Co-Founder & Commercial Principal",
+      "email": "mark@davisgarnettsells.com",
+      "phone": "813-486-9072",
+      "image": "/mark-davis.png",
+      "license": "FL Lic. #3209459",
+      "brokerage": "Align Right Realty"
+    },
+    "primaryContact": "Mark",
+    "createdAt": "2026-07-20T12:00:00.000Z",
+    "updatedAt": "2026-07-20T12:00:00.000Z"
+  },
+  {
+    "id": "7",
+    "slug": "10609-raffia-dr-port-richey",
+    "mlsId": "TB8440512",
+    "title": "10609 Raffia Dr",
+    "subtitle": "Turnkey Coastal Residence in Jasmine Lakes",
+    "price": "$185,000",
+    "priceNumeric": 185000,
+    "address": "10609 Raffia Dr",
+    "streetAddress": "10609 Raffia Dr",
+    "city": "Port Richey",
+    "state": "FL",
+    "zip": "34668",
+    "neighborhood": "Jasmine Lakes",
+    "county": "Pasco County",
+    "category": "Residential",
+    "propertyType": "Single Family Residence",
+    "transactionType": "Sold",
+    "status": "Sold",
+    "representation": "Seller Representation",
+    "soldDate": "2026",
+    "featured": false,
+    "specs": {
+      "beds": 2,
+      "baths": 1,
+      "sqft": "900",
+      "lotSize": "7,000 SqFt",
+      "pricePerSqft": "$206/SqFt"
+    },
+    "bedrooms": "2",
+    "bathrooms": "1",
+    "sqFt": "900",
+    "askingPrice": "$185,000",
+    "description": "Successfully sold in 2026 in Port Richey's established Jasmine Lakes neighborhood. Positioned on a generous 7,000-square-foot fenced homesite outside of flood zones, this 2-bedroom, 1-bathroom concrete-block residence offered an ideal starter home or turnkey rental portfolio addition near US-19 and Gulf Coast beaches.",
+    "propertyDescription": "2-bedroom, 1-bathroom concrete-block residence on a 7,000 SqFt lot in Port Richey's Jasmine Lakes community.",
+    "highlights": [
+      "2026 Closed Transaction — Jasmine Lakes",
+      "2 Bedrooms · 1 Full Bathroom · 900 Heated SqFt",
+      "Generous 7,000 SqFt fenced lot with no HOA fees",
+      "Solid concrete block construction near Gulf Coast amenities"
+    ],
+    "categorizedFeatures": [
+      {
+        "category": "Property Overview",
+        "items": ["2 Bedrooms · 1 Bathroom", "900 Heated SqFt", "7,000 SqFt Lot", "No HOA / No CDD"]
+      }
+    ],
+    "financials": [
+      { "label": "Closed Price", "value": "$185,000" },
+      { "label": "Price / SqFt", "value": "$206 / SqFt" },
+      { "label": "Lot Size", "value": "7,000 SqFt" },
+      { "label": "Transaction Status", "value": "Sold — 2026 Track Record" }
+    ],
+    "images": {
+      "main": "/listings/port-richey-1.jpg",
+      "gallery": [
+        "/listings/port-richey-1.jpg",
+        "/listings/d-g-residential-3.webp",
+        "/listings/d-g-residential-5.webp"
+      ],
+      "0": { "id": "img-7", "url": "/listings/port-richey-1.jpg", "isHero": true, "sortOrder": 1 }
+    },
+    "agent": {
+      "name": "Rachael Garnett",
+      "role": "Co-Founder & Residential Principal",
+      "email": "rachael@davisgarnettsells.com",
+      "phone": "727-254-0244",
+      "image": "/rachael-garnett.png",
+      "license": "FL Lic. #3378601",
+      "brokerage": "Align Right Realty"
+    },
+    "primaryContact": "Rachael",
+    "createdAt": "2026-07-10T12:00:00.000Z",
+    "updatedAt": "2026-07-10T12:00:00.000Z"
+  },
+  {
+    "id": "8",
+    "slug": "1106-s-otto-pt-inverness",
+    "mlsId": "TB8451208",
+    "title": "1106 S Otto Pt",
+    "subtitle": "Gospel Island Waterfront Residence on the Tsala Apopka Chain of Lakes",
+    "price": "$340,000",
+    "priceNumeric": 340000,
+    "address": "1106 S Otto Pt",
+    "streetAddress": "1106 S Otto Pt",
+    "city": "Inverness",
+    "state": "FL",
+    "zip": "34450",
+    "neighborhood": "Gospel Island Waterfront",
+    "county": "Citrus County",
+    "category": "Residential",
+    "propertyType": "Waterfront Single Family Residence",
+    "transactionType": "Sold",
+    "status": "Sold",
+    "representation": "Seller Representation",
+    "soldDate": "2026",
+    "featured": false,
+    "specs": {
+      "beds": 2,
+      "baths": 2,
+      "sqft": "1,301",
+      "lotSize": "0.31 Acres Waterfront",
+      "pricePerSqft": "$261/SqFt"
+    },
+    "bedrooms": "2",
+    "bathrooms": "2",
+    "sqFt": "1,301",
+    "askingPrice": "$340,000",
+    "description": "Closed in 2026 for $340,000, 1106 S Otto Point is a serene Gospel Island waterfront retreat in Inverness featuring direct boating access to the Tsala Apopka Chain of Lakes. Offering 2 bedrooms, 2 bathrooms, and 1,301 heated square feet with panoramic water views, private dockage, and an enclosed waterfront sunroom, this transaction highlights Davis & Garnett's reach across Florida's Nature Coast waterfront markets.",
+    "propertyDescription": "Gospel Island waterfront home in Inverness featuring 2 bedrooms, 2 bathrooms, 1,301 SqFt, and direct boating access.",
+    "highlights": [
+      "2026 Closed Waterfront Transaction — Gospel Island, Inverness",
+      "2 Bedrooms · 2 Bathrooms · 1,301 Heated SqFt",
+      "Direct waterfrontage with access to the Tsala Apopka Chain of Lakes",
+      "Minutes from historic Downtown Inverness & the Withlacoochee State Trail"
+    ],
+    "categorizedFeatures": [
+      {
+        "category": "Waterfront & Interior",
+        "items": ["Gospel Island Canal / Lake Access", "2 Bedrooms · 2 Full Baths", "1,301 Heated SqFt", "Waterfront Sunroom & Private Dock"]
+      }
+    ],
+    "financials": [
+      { "label": "Closed Price", "value": "$340,000" },
+      { "label": "Price / SqFt", "value": "$261 / SqFt" },
+      { "label": "Location", "value": "Gospel Island Waterfront, Inverness" },
+      { "label": "Transaction Status", "value": "Sold — 2026 Track Record" }
+    ],
+    "images": {
+      "main": "/listings/inverness-1.jpg",
+      "gallery": [
+        "/listings/inverness-1.jpg",
+        "/listings/d-g-residential-7.webp",
+        "/listings/d-g-residential-8.webp"
+      ],
+      "0": { "id": "img-8", "url": "/listings/inverness-1.jpg", "isHero": true, "sortOrder": 1 }
+    },
+    "agent": {
+      "name": "Rachael Garnett",
+      "role": "Co-Founder & Residential Principal",
+      "email": "rachael@davisgarnettsells.com",
+      "phone": "727-254-0244",
+      "image": "/rachael-garnett.png",
+      "license": "FL Lic. #3378601",
+      "brokerage": "Align Right Realty"
+    },
+    "primaryContact": "Rachael",
+    "createdAt": "2026-06-28T12:00:00.000Z",
+    "updatedAt": "2026-06-28T12:00:00.000Z"
+  },
+  {
+    "id": "9",
+    "slug": "4603-stonehaven-pl-new-port-richey",
+    "mlsId": "TB8429801",
+    "title": "4603 Stonehaven Pl",
+    "subtitle": "Maintenance-Free Villa Residence in Trouble Creek Villas",
+    "price": "$256,000",
+    "priceNumeric": 256000,
+    "address": "4603 Stonehaven Pl",
+    "streetAddress": "4603 Stonehaven Pl",
+    "city": "New Port Richey",
+    "state": "FL",
+    "zip": "34652",
+    "neighborhood": "Trouble Creek Villas",
+    "county": "Pasco County",
+    "category": "Residential",
+    "propertyType": "Villa / Single Family Attached",
+    "transactionType": "Sold",
+    "status": "Sold",
+    "representation": "Seller Representation",
+    "soldDate": "2026",
+    "featured": false,
+    "specs": {
+      "beds": 2,
+      "baths": 2,
+      "sqft": "1,378",
+      "pricePerSqft": "$186/SqFt"
+    },
+    "bedrooms": "2",
+    "bathrooms": "2",
+    "sqFt": "1,378",
+    "askingPrice": "$256,000",
+    "description": "Closed in 2026 in New Port Richey's sought-after Trouble Creek Villas community. Spanning 1,378 heated square feet with 2 spacious bedrooms, 2 full bathrooms, vaulted living room ceilings, an enclosed Florida room, and attached garage, this maintenance-friendly coastal villa closed at $256,000 under Rachael Garnett's representation.",
+    "propertyDescription": "Spacious 2-bedroom, 2-bathroom villa spanning 1,378 SqFt in New Port Richey's Trouble Creek Villas.",
+    "highlights": [
+      "2026 Closed Transaction — Trouble Creek Villas",
+      "2 Bedrooms · 2 Full Bathrooms · 1,378 Heated SqFt",
+      "Vaulted ceilings, split-bedroom layout & enclosed Florida room",
+      "Minutes to historic Downtown New Port Richey & Sims Park"
+    ],
+    "categorizedFeatures": [
+      {
+        "category": "Residence Highlights",
+        "items": ["2 Bedrooms · 2 Bathrooms", "1,378 Heated SqFt", "Trouble Creek Villas Community", "Attached Garage & Florida Lanai"]
+      }
+    ],
+    "financials": [
+      { "label": "Closed Price", "value": "$256,000" },
+      { "label": "Price / SqFt", "value": "$186 / SqFt" },
+      { "label": "Community", "value": "Trouble Creek Villas" },
+      { "label": "Transaction Status", "value": "Sold — 2026 Track Record" }
+    ],
+    "images": {
+      "main": "/listings/stonehaven-1.jpg",
+      "gallery": [
+        "/listings/stonehaven-1.jpg",
+        "/listings/d-g-residential-4.webp",
+        "/listings/d-g-residential-9.webp"
+      ],
+      "0": { "id": "img-9", "url": "/listings/stonehaven-1.jpg", "isHero": true, "sortOrder": 1 }
+    },
+    "agent": {
+      "name": "Rachael Garnett",
+      "role": "Co-Founder & Residential Principal",
+      "email": "rachael@davisgarnettsells.com",
+      "phone": "727-254-0244",
+      "image": "/rachael-garnett.png",
+      "license": "FL Lic. #3378601",
+      "brokerage": "Align Right Realty"
+    },
+    "primaryContact": "Rachael",
+    "createdAt": "2026-06-12T12:00:00.000Z",
+    "updatedAt": "2026-06-12T12:00:00.000Z"
+  },
+  {
+    "id": "10",
+    "slug": "7608-teal-trce-bradenton",
+    "mlsId": "TB8418770",
+    "title": "7608 Teal Trce",
+    "subtitle": "Golf Course Community Residence in Tara Preserve",
+    "price": "$450,000",
+    "priceNumeric": 450000,
+    "address": "7608 Teal Trce",
+    "streetAddress": "7608 Teal Trce",
+    "city": "Bradenton",
+    "state": "FL",
+    "zip": "34203",
+    "neighborhood": "Tara Preserve Golf Community",
+    "county": "Manatee County",
+    "category": "Residential",
+    "propertyType": "Golf Community Residence (2BD + Den)",
+    "transactionType": "Sold",
+    "status": "Sold",
+    "representation": "Seller Representation",
+    "soldDate": "2026",
+    "featured": false,
+    "specs": {
+      "beds": 2,
+      "baths": 2,
+      "sqft": "1,788",
+      "garage": "2-Car Attached",
+      "pricePerSqft": "$252/SqFt"
+    },
+    "bedrooms": "2",
+    "bathrooms": "2",
+    "sqFt": "1,788",
+    "askingPrice": "$450,000",
+    "description": "Closed at $450,000 in Bradenton's premier Tara Preserve golf community (MLS# TB8418770). This refined 1,788-square-foot residence features 2 bedrooms plus an executive den/study, 2 full bathrooms, high ceilings, crown molding, and a screened lanai overlooking lush preserve and fairway surroundings — without mandatory golf equity membership requirements.\n\nLocated just off I-75 near University Town Center (UTC), Lakewood Ranch, and Sarasota/Bradenton beaches, this transaction exemplifies Davis & Garnett's premier representation across Manatee and Sarasota counties.",
+    "propertyDescription": "Refined 2-bedroom + den, 2-bathroom golf community home spanning 1,788 SqFt in Bradenton's Tara Preserve (MLS# TB8418770).",
+    "highlights": [
+      "2026 Closed Transaction — Tara Preserve Golf Community (MLS# TB8418770)",
+      "2 Bedrooms + Executive Den/Office · 2 Full Bathrooms · 1,788 SqFt",
+      "Championship Ted McAnlis-designed golf course community with no mandatory membership",
+      "Resort-style heated community pool, tennis, pickleball & clubhouse",
+      "Prime Bradenton / Lakewood Ranch / UTC corridor location"
+    ],
+    "categorizedFeatures": [
+      {
+        "category": "Interior & Design",
+        "items": ["2 Bedrooms + Private Den", "2 Full Bathrooms", "1,788 Heated SqFt", "Screened Lanai & Preserve Views"]
+      },
+      {
+        "category": "Community & Location",
+        "items": ["Tara Preserve Golf Community", "MLS# TB8418770", "Resort Pool, Tennis & Pickleball", "Minutes to UTC Mall & Sarasota"]
+      }
+    ],
+    "financials": [
+      { "label": "Closed Price", "value": "$450,000" },
+      { "label": "Price / SqFt", "value": "$252 / SqFt" },
+      { "label": "MLS Identification", "value": "TB8418770" },
+      { "label": "Transaction Status", "value": "Sold — 2026 Track Record" }
+    ],
+    "images": {
+      "main": "/listings/bradenton-1.jpg",
+      "gallery": [
+        "/listings/bradenton-1.jpg",
+        "/res_golf_course_home_1787632854609.png",
+        "/listings/d-g-residential-5.webp",
+        "/listings/d-g-residential-6.webp"
+      ],
+      "0": { "id": "img-10", "url": "/listings/bradenton-1.jpg", "isHero": true, "sortOrder": 1 }
+    },
+    "agent": {
+      "name": "Rachael Garnett",
+      "role": "Co-Founder & Residential Principal",
+      "email": "rachael@davisgarnettsells.com",
+      "phone": "727-254-0244",
+      "image": "/rachael-garnett.png",
+      "license": "FL Lic. #3378601",
+      "brokerage": "Align Right Realty"
+    },
+    "primaryContact": "Rachael",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z"
+  },
+  {
+    "id": "11",
+    "slug": "9635-joe-ebert-rd-seffner",
+    "mlsId": "TB8410334",
+    "title": "9635 Joe Ebert Rd",
+    "subtitle": "Spacious Private-Lot Residence in Seffner",
+    "price": "$450,000",
+    "priceNumeric": 450000,
+    "address": "9635 Joe Ebert Rd",
+    "streetAddress": "9635 Joe Ebert Rd",
+    "city": "Seffner",
+    "state": "FL",
+    "zip": "33584",
+    "neighborhood": "Seffner / Mango Corridor",
+    "county": "Hillsborough County",
+    "category": "Residential",
+    "propertyType": "Single Family Residence",
+    "transactionType": "Sold",
+    "status": "Sold",
+    "representation": "Seller Representation",
+    "soldDate": "2026",
+    "featured": false,
+    "specs": {
+      "beds": 3,
+      "baths": 2,
+      "sqft": "1,867",
+      "pricePerSqft": "$241/SqFt"
+    },
+    "bedrooms": "3",
+    "bathrooms": "2",
+    "sqFt": "1,867",
+    "askingPrice": "$450,000",
+    "description": "Closed at $450,000 in 2026 by Mark Davis, 9635 Joe Ebert Road in Seffner delivered 1,867 square feet of updated 3-bedroom, 2-bathroom living space on an oversized Hillsborough County parcel with no HOA restrictions and immediate proximity to I-4 and I-75 toward Downtown Tampa.",
+    "propertyDescription": "3-bedroom, 2-bathroom single-family residence spanning 1,867 SqFt in Seffner with no HOA restrictions.",
+    "highlights": [
+      "2026 Closed Transaction — Seffner (Hillsborough County)",
+      "3 Bedrooms · 2 Full Bathrooms · 1,867 Heated SqFt",
+      "Expansive lot with no HOA or CDD restrictions",
+      "Minutes to I-4, I-75, and Downtown Tampa commuter routes"
+    ],
+    "categorizedFeatures": [
+      {
+        "category": "Property Details",
+        "items": ["3 Bedrooms · 2 Bathrooms", "1,867 Heated SqFt", "No HOA / Deed Restrictions", "Hillsborough County (Seffner, FL 33584)"]
+      }
+    ],
+    "financials": [
+      { "label": "Closed Price", "value": "$450,000" },
+      { "label": "Price / SqFt", "value": "$241 / SqFt" },
+      { "label": "Transaction Status", "value": "Sold — 2026 Track Record" }
+    ],
+    "images": {
+      "main": "/listings/seffner-1.jpg",
+      "gallery": [
+        "/listings/seffner-1.jpg",
+        "/listings/d-g-residential-8.webp",
+        "/listings/d-g-residential-10.webp"
+      ],
+      "0": { "id": "img-11", "url": "/listings/seffner-1.jpg", "isHero": true, "sortOrder": 1 }
+    },
+    "agent": {
+      "name": "Mark Davis",
+      "role": "Co-Founder & Commercial Principal",
+      "email": "mark@davisgarnettsells.com",
+      "phone": "813-486-9072",
+      "image": "/mark-davis.png",
+      "license": "FL Lic. #3209459",
+      "brokerage": "Align Right Realty"
+    },
+    "primaryContact": "Mark",
+    "createdAt": "2026-05-10T12:00:00.000Z",
+    "updatedAt": "2026-05-10T12:00:00.000Z"
+  },
+  {
+    "id": "12",
+    "slug": "2402-16th-st-w-palmetto",
+    "mlsId": "TB8402195",
+    "title": "2402 16th St W",
+    "subtitle": "Coastal Manatee River Corridor Residence in Bahia Vista",
+    "price": "$318,000",
+    "priceNumeric": 318000,
+    "address": "2402 16th St W",
+    "streetAddress": "2402 16th St W",
+    "city": "Palmetto",
+    "state": "FL",
+    "zip": "34221",
+    "neighborhood": "Bahia Vista",
+    "county": "Manatee County",
+    "category": "Residential",
+    "propertyType": "Single Family Residence",
+    "transactionType": "Sold",
+    "status": "Sold",
+    "representation": "Seller Representation",
+    "soldDate": "2026",
+    "featured": false,
+    "specs": {
+      "beds": 3,
+      "baths": 2,
+      "sqft": "1,704",
+      "pricePerSqft": "$187/SqFt"
+    },
+    "bedrooms": "3",
+    "bathrooms": "2",
+    "sqFt": "1,704",
+    "askingPrice": "$318,000",
+    "description": "Closed in 2026 for $318,000 in Palmetto's coastal Bahia Vista enclave. This 3-bedroom, 2-bathroom home offers 1,704 square feet of bright, open living space just minutes from Emerson Point Preserve, the Manatee River, Regatta Pointe Marina, and Anna Maria Island beaches.",
+    "propertyDescription": "3-bedroom, 2-bathroom coastal home spanning 1,704 SqFt in Palmetto's Bahia Vista neighborhood.",
+    "highlights": [
+      "2026 Closed Transaction — Bahia Vista, Palmetto",
+      "3 Bedrooms · 2 Full Bathrooms · 1,704 Heated SqFt",
+      "Minutes to the Manatee River, Emerson Point Preserve & Regatta Pointe Marina",
+      "Easy access to Downtown Bradenton, St. Petersburg & Anna Maria Island"
+    ],
+    "categorizedFeatures": [
+      {
+        "category": "Residence Highlights",
+        "items": ["3 Bedrooms · 2 Bathrooms", "1,704 Heated SqFt", "Bahia Vista Neighborhood", "Manatee County (Palmetto, FL 34221)"]
+      }
+    ],
+    "financials": [
+      { "label": "Closed Price", "value": "$318,000" },
+      { "label": "Price / SqFt", "value": "$187 / SqFt" },
+      { "label": "Neighborhood", "value": "Bahia Vista, Palmetto" },
+      { "label": "Transaction Status", "value": "Sold — 2026 Track Record" }
+    ],
+    "images": {
+      "main": "/listings/palmetto-1.jpg",
+      "gallery": [
+        "/listings/palmetto-1.jpg",
+        "/listings/d-g-residential-2.webp",
+        "/listings/d-g-residential-7.webp"
+      ],
+      "0": { "id": "img-12", "url": "/listings/palmetto-1.jpg", "isHero": true, "sortOrder": 1 }
+    },
+    "agent": {
+      "name": "Rachael Garnett",
+      "role": "Co-Founder & Residential Principal",
+      "email": "rachael@davisgarnettsells.com",
+      "phone": "727-254-0244",
+      "image": "/rachael-garnett.png",
+      "license": "FL Lic. #3378601",
+      "brokerage": "Align Right Realty"
+    },
+    "primaryContact": "Rachael",
+    "createdAt": "2026-04-18T12:00:00.000Z",
+    "updatedAt": "2026-04-18T12:00:00.000Z"
+  },
+  {
+    "id": "13",
+    "slug": "3537-valencia-cove-ct-land-o-lakes",
+    "mlsId": "TB8472910",
+    "title": "3537 Valencia Cove Ct",
+    "subtitle": "Executive 4-Bedroom Estate in Gated Plantation Palms Golf Community",
+    "price": "$550,000",
+    "priceNumeric": 550000,
+    "address": "3537 Valencia Cove Ct",
+    "streetAddress": "3537 Valencia Cove Ct",
+    "city": "Land O' Lakes",
+    "state": "FL",
+    "zip": "34639",
+    "neighborhood": "Plantation Palms Golf Club",
+    "county": "Pasco County",
+    "category": "Residential",
+    "propertyType": "Golf Community Executive Home",
+    "transactionType": "Sold",
+    "status": "Sold",
+    "representation": "Seller Representation",
+    "soldDate": "2026",
+    "featured": false,
+    "specs": {
+      "beds": 4,
+      "baths": 3,
+      "sqft": "2,518",
+      "garage": "3-Car Attached",
+      "pricePerSqft": "$218/SqFt"
+    },
+    "bedrooms": "4",
+    "bathrooms": "3",
+    "sqFt": "2,518",
+    "askingPrice": "$550,000",
+    "description": "Closed at $550,000 in 2026 in Land O' Lakes' premier gated Plantation Palms Golf Club community. Situated on a quiet cul-de-sac street, 3537 Valencia Cove Court features 4 bedrooms, 3 full bathrooms, a 3-car garage, and 2,518 heated square feet with soaring ceilings, gourmet kitchen, and an expansive screened outdoor entertaining lanai.\n\nResidents enjoy a Dave Harman-designed championship 18-hole golf course, lighted miniature golf, driving range, and Mulligan's Irish Pub & Grille right inside the gates.",
+    "propertyDescription": "Executive 4-bedroom, 3-bathroom residence with 2,518 SqFt and 3-car garage in gated Plantation Palms Golf Club.",
+    "highlights": [
+      "2026 Closed Transaction — Gated Plantation Palms Golf Community",
+      "4 Bedrooms · 3 Full Bathrooms · 2,518 Heated SqFt",
+      "Oversized 3-car garage on a private cul-de-sac lot",
+      "Championship 18-hole golf course & clubhouse dining community",
+      "Top-rated Land O' Lakes school zone near Tampa Premium Outlets"
+    ],
+    "categorizedFeatures": [
+      {
+        "category": "Interior & Architecture",
+        "items": ["4 Bedrooms · 3 Full Baths", "2,518 Heated SqFt", "3-Car Attached Garage", "Cul-de-Sac Homesite"]
+      },
+      {
+        "category": "Community & Location",
+        "items": ["Gated Plantation Palms Golf Club", "18-Hole Championship Course & Clubhouse", "Land O' Lakes, FL 34639", "Low HOA · No CDD Fees"]
+      }
+    ],
+    "financials": [
+      { "label": "Closed Price", "value": "$550,000" },
+      { "label": "Price / SqFt", "value": "$218 / SqFt" },
+      { "label": "Community", "value": "Plantation Palms Golf Club" },
+      { "label": "Transaction Status", "value": "Sold — 2026 Track Record" }
+    ],
+    "images": {
+      "main": "/listings/valencia-cove-1.jpg",
+      "gallery": [
+        "/listings/valencia-cove-1.jpg",
+        "/listings/d-g-residential-1.webp",
+        "/listings/d-g-residential-6.webp",
+        "/listings/d-g-residential-9.webp"
+      ],
+      "0": { "id": "img-13", "url": "/listings/valencia-cove-1.jpg", "isHero": true, "sortOrder": 1 }
+    },
+    "agent": {
+      "name": "Rachael Garnett",
+      "role": "Co-Founder & Residential Principal",
+      "email": "rachael@davisgarnettsells.com",
+      "phone": "727-254-0244",
+      "image": "/rachael-garnett.png",
+      "license": "FL Lic. #3378601",
+      "brokerage": "Align Right Realty"
+    },
+    "primaryContact": "Rachael",
+    "createdAt": "2026-04-02T12:00:00.000Z",
+    "updatedAt": "2026-04-02T12:00:00.000Z"
+  },
+  {
+    "id": "14",
+    "slug": "5764-meadowlane-st-new-port-richey",
+    "mlsId": "TB8300827",
+    "title": "5764 Meadowlane St",
+    "subtitle": "Coastal Infill Residential Homesite Near Downtown New Port Richey",
+    "price": "$56,000",
+    "priceNumeric": 56000,
+    "address": "5764 Meadowlane St",
+    "streetAddress": "5764 Meadowlane St",
+    "city": "New Port Richey",
+    "state": "FL",
+    "zip": "34652",
+    "neighborhood": "Downtown New Port Richey Corridor",
+    "county": "Pasco County",
+    "category": "Land",
+    "propertyType": "Residential Infill Homesite",
+    "transactionType": "Sold",
+    "status": "Sold",
+    "representation": "Seller Representation",
+    "soldDate": "2026",
+    "featured": false,
+    "specs": {
+      "lotSize": "0.11 Acres",
+      "sqft": "5,000",
+      "zoning": "Residential Single-Family"
+    },
+    "sqFt": "5,000",
+    "lotSize": "0.11 Acres (5,000 SqFt)",
+    "askingPrice": "$56,000",
+    "description": "Closed at $56,000 in 2026 by Mark Davis (MLS# TB8300827), 5764 Meadowlane Street is a cleared 5,000-square-foot (0.11-acre) residential infill homesite in New Port Richey with city water and sewer availability, no HOA restrictions, and close proximity to the Cotee River, Sims Park, and Gulf beaches.",
+    "propertyDescription": "0.11-acre (5,000 SqFt) infill residential homesite in New Port Richey (MLS# TB8300827).",
+    "highlights": [
+      "2026 Closed Land Transaction — New Port Richey (MLS# TB8300827)",
+      "0.11 Acres (5,000 SqFt) cleared residential infill homesite",
+      "No HOA fees or deed restrictions",
+      "Minutes from Downtown New Port Richey, Sims Park & Gulf Coast marinas"
+    ],
+    "categorizedFeatures": [
+      {
+        "category": "Lot Specifications",
+        "items": ["0.11 Acres (5,000 SqFt)", "MLS# TB8300827", "Public Utilities Nearby", "No HOA Assessments"]
+      }
+    ],
+    "financials": [
+      { "label": "Closed Price", "value": "$56,000" },
+      { "label": "Lot Area", "value": "0.11 Acres (5,000 SqFt)" },
+      { "label": "MLS Identification", "value": "TB8300827" },
+      { "label": "Transaction Status", "value": "Sold — 2026 Track Record" }
+    ],
+    "images": {
+      "main": "/listings/meadowlane-1.jpg",
+      "gallery": [
+        "/listings/meadowlane-1.jpg",
+        "/listings/d-g-land-listing-4.webp",
+        "/listings/d-g-land-listing-7.webp"
+      ],
+      "0": { "id": "img-14", "url": "/listings/meadowlane-1.jpg", "isHero": true, "sortOrder": 1 }
+    },
+    "agent": {
+      "name": "Mark Davis",
+      "role": "Co-Founder & Commercial Principal",
+      "email": "mark@davisgarnettsells.com",
+      "phone": "813-486-9072",
+      "image": "/mark-davis.png",
+      "license": "FL Lic. #3209459",
+      "brokerage": "Align Right Realty"
+    },
+    "primaryContact": "Mark",
+    "createdAt": "2026-03-14T12:00:00.000Z",
+    "updatedAt": "2026-03-14T12:00:00.000Z"
+  },
+  {
+    "id": "15",
+    "slug": "3037-downan-point-dr-land-o-lakes",
+    "mlsId": "TB8490089",
+    "title": "3037 Downan Point Dr",
+    "subtitle": "Updated 5-Bedroom Residence with Screened Lanai in Ballantrae",
+    "price": "$450,000",
+    "priceNumeric": 450000,
+    "address": "3037 Downan Point Dr",
+    "streetAddress": "3037 Downan Point Dr",
+    "city": "Land O' Lakes",
+    "state": "FL",
+    "zip": "34638",
+    "neighborhood": "Ballantrae",
+    "county": "Pasco County",
+    "category": "Residential",
+    "propertyType": "Single Family Residence",
+    "transactionType": "Sold",
+    "status": "Sold",
+    "representation": "Seller Representation",
+    "soldDate": "2026",
+    "featured": false,
+    "matterportUrl": "https://my.matterport.com/show/?m=fYa2ezJ6zqX&brand=0&mls=1",
+    "specs": {
+      "beds": 5,
+      "baths": 3,
+      "sqft": "2,260",
+      "lotSize": "0.13 Acres (5,663 SqFt)",
+      "yearBuilt": 2005,
+      "garage": "2-Car Attached",
+      "stories": 2,
+      "pricePerSqft": "$199/SqFt"
+    },
+    "bedrooms": "5",
+    "bathrooms": "3",
+    "sqFt": "2,260",
+    "askingPrice": "$450,000",
+    "description": "Successfully sold at $450,000 in 2026 in Ballantrae — one of Land O' Lakes' most sought-after master-planned communities (MLS# TB8490089). This beautifully updated two-story home delivers five bedrooms, three full bathrooms, and 2,260 square feet of thoughtfully designed living space.\n\nThe primary suite is conveniently located on the main floor, offering everyday ease. Upstairs features four generous bedrooms plus a spacious bonus/flex area perfect for a home office, playroom, or media room. Outside features a fully fenced backyard and oversized screened lanai ideal for year-round Florida entertaining. Recent capital improvements included a brand-new roof, newer AC system, fresh interior paint, and a whole-house water filtration system.",
+    "propertyDescription": "Updated 5-bedroom, 3-bathroom residence spanning 2,260 SqFt in Land O' Lakes' Ballantrae community (MLS# TB8490089).",
+    "highlights": [
+      "2026 Closed Transaction — Ballantrae Community (MLS# TB8490089)",
+      "5 Bedrooms · 3 Full Bathrooms · 2,260 Heated SqFt",
+      "Brand New Roof, Newer AC System & Whole-House Water Filtration",
+      "First-Floor Primary Suite + Upstairs Bonus/Flex Room",
+      "Oversized Screened Lanai & Fully Fenced Backyard",
+      "Low HOA ($170/Quarter) with Community Pool, Parks & Trails"
+    ],
+    "categorizedFeatures": [
+      {
+        "category": "Interior",
+        "items": ["5 Bedrooms · 3 Full Bathrooms", "2,260 SqFt Heated", "Primary Suite on Main Floor", "Upstairs Bonus / Flex Room", "Open-Plan Kitchen & Living", "Vaulted Ceilings"]
+      },
+      {
+        "category": "Exterior",
+        "items": ["Oversized Screened Lanai", "Fully Fenced Backyard", "0.13-Acre (5,663 SqFt) Lot", "2-Car Attached Garage", "Paved Driveway"]
+      },
+      {
+        "category": "Utilities & Systems",
+        "items": ["Whole-House Water Filtration", "Brand New Roof", "Newer High-Efficiency AC Unit", "Public Water & Sewer"]
+      },
+      {
+        "category": "Community",
+        "items": ["Ballantrae Master-Planned Community", "Low HOA — $170/Quarter", "Resort Pool, Playground & Walking Trails", "Top-Rated Pasco County School District"]
+      }
+    ],
+    "schools": [
+      { "name": "Oakstead Elementary School", "rating": "8/10", "grades": "K–5", "distance": "0.6 mi" },
+      { "name": "Charles S. Rushe Middle School", "rating": "7/10", "grades": "6–8", "distance": "1.2 mi" },
+      { "name": "Sunlake High School", "rating": "8/10", "grades": "9–12", "distance": "1.5 mi" }
+    ],
+    "financials": [
+      { "label": "Closed Price", "value": "$450,000" },
+      { "label": "Price / SqFt", "value": "$199 / SqFt" },
+      { "label": "HOA Assessment", "value": "$170 / Quarter" },
+      { "label": "MLS Identification", "value": "TB8490089" },
+      { "label": "Transaction Status", "value": "Sold — 2026 Track Record" }
+    ],
+    "images": {
+      "main": "/listings/d-g-residential-1.webp",
+      "gallery": [
+        "/listings/d-g-residential-1.webp",
+        "/listings/d-g-residential-2.webp",
+        "/listings/d-g-residential-3.webp",
+        "/listings/d-g-residential-4.webp",
+        "/listings/d-g-residential-5.webp",
+        "/listings/d-g-residential-6.webp",
+        "/listings/d-g-residential-7.webp",
+        "/listings/d-g-residential-8.webp",
+        "/listings/d-g-residential-9.webp",
+        "/listings/d-g-residential-10.webp"
+      ],
+      "0": { "id": "img-15", "url": "/listings/d-g-residential-1.webp", "isHero": true, "sortOrder": 1 }
+    },
+    "agent": {
+      "name": "Rachael Garnett",
+      "role": "Co-Founder & Residential Principal",
+      "email": "rachael@davisgarnettsells.com",
+      "phone": "727-254-0244",
+      "image": "/rachael-garnett.png",
+      "license": "FL Lic. #3378601",
+      "brokerage": "Align Right Realty"
+    },
+    "primaryContact": "Rachael",
+    "createdAt": "2026-09-15T12:00:00.000Z",
+    "updatedAt": "2026-09-15T12:00:00.000Z"
   }
 ]

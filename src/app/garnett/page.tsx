@@ -1,229 +1,718 @@
-import { ArrowRight, Home, MapPin, Search, Star, Map, Users, BarChart } from "lucide-react";
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import type { Metadata } from "next";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Home,
+  Sparkles,
+  MapPin,
+  Phone,
+  Mail,
+  ShieldCheck,
+  Star,
+  CheckCircle2,
+  Compass,
+  Anchor,
+  HeartHandshake,
+} from "lucide-react";
+import ProposalNav from "@/components/ProposalNav";
+import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 
-export const metadata: Metadata = {
-  title: "Rachael Garnett | Real Estate Advisor | Tampa Bay",
-  description: "Rachael Garnett is a full-service real estate advisor at Align Right Realty Carrollwood, serving residential and commercial clients across Tampa Bay with deep local market expertise.",
-  openGraph: {
-    images: ["/rachael-garnett-headshot.png"],
+const SOLD_2026_PORTFOLIO = [
+  {
+    address: "3537 Valencia Cove Ct",
+    submarket: "Land O' Lakes / Lutz, FL",
+    category: "Gated Enclave Residence",
+    status: "2026 Sold",
+    notes: "Precision pricing strategy & curated staging presentation",
   },
-};
+  {
+    address: "3037 Downan Point Dr",
+    submarket: "Greater Tampa Bay, FL",
+    category: "Executive Single-Family Home",
+    status: "2026 Sold",
+    notes: "Seamless contract-to-close representation",
+  },
+  {
+    address: "7608 Teal Trce",
+    submarket: "Tampa Bay Corridor, FL",
+    category: "Residential Lifestyle Property",
+    status: "2026 Sold",
+    notes: "Strong buyer matching & inspection navigation",
+  },
+  {
+    address: "1106 S Otto Pt",
+    submarket: "Citrus / Gulf Coast Region, FL",
+    category: "Coastal / Retreat Residence",
+    status: "2026 Sold",
+    notes: "Full-service relocation & negotiation advocacy",
+  },
+  {
+    address: "8136 Wheat Stone Dr",
+    submarket: "Master-Planned Community, FL",
+    category: "Modern Family Residence",
+    status: "2026 Sold",
+    notes: "Top-of-market comp execution",
+  },
+];
 
 export default function GarnettPage() {
-  return (
-    <div className="min-h-screen text-white relative selection:bg-[#D4AF37] selection:text-black font-sans">
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    inquiryFocus: "Private Showing: 6100 Bahama Shores Dr S, St. Petersburg ($4,553,900)",
+    targetCommunities: "",
+    notes: "",
+  });
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
-      {/* ── NAVIGATION ──────────────────────────────────── */}
-      <nav className="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-xl border-b border-white/5">
-        <div className="max-w-screen-xl mx-auto px-8 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <span className="font-serif text-xl font-bold tracking-tight text-white drop-shadow-md">
-              Davis & Garnett
-            </span>
-          </div>
-          <div className="hidden lg:flex items-center gap-10">
-            <Link href="/" className="label-caps text-white/60 hover:text-white transition-colors">
-              ← Back to Main Page
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitting(true);
+    setError("");
+    try {
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          source: "Rachael Garnett Direct Advisor Page (/garnett)",
+          owner: "rachael@davisgarnettsells.com",
+          pipelineStage: "New Luxury Residential Lead",
+          buySideConfig: {
+            budget: formData.targetCommunities || "Luxury Residential",
+            preApprovalStatus: formData.inquiryFocus,
+            timeframe: "Immediate Consultation",
+          },
+          notes: `[Rachael Garnett Direct Inquiry (/garnett) — ${formData.inquiryFocus}] Communities: ${formData.targetCommunities}. ${formData.notes}`,
+        }),
+      });
+      if (!res.ok) throw new Error("Submission failed");
+      setSubmitted(true);
+    } catch {
+      setError("Unable to submit online right now. Please call Rachael directly at 727-254-0244.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-[#fbfbf9] text-[#111111] selection:bg-[#C8A951] selection:text-white font-sans">
+      <ProposalNav />
+
+      {/* ── BREADCRUMB & SPOKE BAR ───────────────────────────────────────── */}
+      <div className="pt-28 pb-4 px-6 md:px-12 bg-white border-b border-[#111111]/8">
+        <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between gap-4 text-xs">
+          <Link
+            href="/about"
+            className="inline-flex items-center gap-2 font-bold uppercase tracking-[0.2em] text-[#9A7D3A] hover:text-[#111111] transition-colors"
+          >
+            <ArrowLeft className="w-3.5 h-3.5" /> Explore the Davis & Garnett About Hub
+          </Link>
+          <div className="flex flex-wrap items-center gap-4 text-[11px] uppercase tracking-widest text-[#111111]/60 font-semibold">
+            <Link href="/davis" className="hover:text-[#9A7D3A]">
+              ← Meet Mark Davis (#3209459)
             </Link>
-            <Link href="/davis" className="label-caps text-white/60 hover:text-white transition-colors">
-              Meet Mark →
-            </Link>
-            <Link href="/scope" className="label-caps text-white/60 hover:text-white transition-colors">
-              Project Scope
+            <span>|</span>
+            <Link href="/about/align-right-realty-carrollwood" className="hover:text-[#9A7D3A]">
+              Align Right Carrollwood (#BK3401606)
             </Link>
           </div>
         </div>
-      </nav>
+      </div>
 
-      {/* ── HERO ────────────────────────────────────────── */}
-      <header className="relative pt-40 pb-20 px-8 border-b border-white/5">
-        <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center gap-16">
-          <div className="relative w-64 h-64 md:w-80 md:h-80 shrink-0 rounded-full overflow-hidden border-4 border-white/10 shadow-[0_0_50px_rgba(212,175,55,0.2)]">
-            <Image
-              src="/rachael-garnett-headshot.png"
-              alt="Rachael Garnett"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-          <div>
-            <div className="inline-flex items-center gap-3 mb-6 bg-[#D4AF37]/10 border border-[#D4AF37]/20 backdrop-blur-md px-5 py-2.5 rounded-full shadow-[inset_0_1px_0_rgba(212,175,55,0.2)]">
-              <span className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-[#D4AF37]">Real Estate Advisor — Tampa Bay</span>
+      {/* ── EXECUTIVE HERO ───────────────────────────────────────────────── */}
+      <header className="py-20 px-6 md:px-12 bg-white border-b border-[#111111]/10">
+        <div className="max-w-screen-xl mx-auto grid lg:grid-cols-[0.85fr_1.15fr] gap-14 items-center">
+          <div className="relative">
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-[#111111]/10 bg-[#111111]">
+              <Image
+                src="/rachael-garnett-headshot.png"
+                alt="Rachael Garnett — Luxury Residential & Relocation Specialist (#3378601)"
+                fill
+                priority
+                className="object-cover object-top"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/80 via-transparent to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 text-white">
+                <span className="inline-block px-3 py-1 rounded bg-[#C8A951] text-[#111111] text-[10px] font-bold uppercase tracking-[0.2em] mb-2">
+                  FL License #3378601
+                </span>
+                <p className="font-aiveritas text-2xl">Rachael Garnett</p>
+                <p className="text-xs text-white/75">
+                  Align Right Realty Carrollwood • License #BK3401606
+                </p>
+              </div>
             </div>
-            <h1 className="font-serif text-6xl lg:text-7xl font-bold text-white mb-4">Rachael Garnett</h1>
-            <p className="text-2xl text-white/70 font-light mb-6">Real Estate Advisor — Residential & Commercial</p>
-            <ul className="flex flex-col gap-2 text-white/50 text-sm">
-              <li>Align Right Realty Carrollwood</li>
-              <li>Tampa Bay, FL</li>
-              <li><a href="mailto:rachaellgarnett@gmail.com" className="hover:text-white transition-colors">rachaellgarnett@gmail.com</a></li>
-            </ul>
+          </div>
+
+          <div>
+            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
+              Principal Advisor · Luxury Residential, Waterfront & Relocation Division
+            </span>
+            <h1 className="font-aiveritas text-5xl md:text-6xl text-[#111111] leading-[1.08] mb-6">
+              Rachael Garnett
+            </h1>
+            <p className="text-xl text-[#9A7D3A] font-light mb-6">
+              Waterfront Estates, Master-Planned Luxury & Executive Relocation Across Tampa Bay
+            </p>
+            <p className="text-base text-[#111111]/75 font-light leading-relaxed mb-6">
+              Rachael Garnett is the trusted residential strategist for discerning buyers, sellers, and relocating executives across St. Petersburg, Tampa, Carrollwood, Lutz, Land O&apos; Lakes, and Wesley Chapel. Known for her white-glove discretion, architectural eye, and relentless contract advocacy, Rachael transforms complex waterfront and luxury residential transactions into an effortless, elevated client experience.
+            </p>
+            <p className="text-base text-[#111111]/70 font-light leading-relaxed mb-8">
+              Paired with commercial and land partner Mark Davis (#3209459) at <strong className="font-semibold text-[#111111]">Davis & Garnett</strong>, Rachael provides families and executives with a complete 360-degree advisory relationship—from private school and yacht basin nuance in Pinellas and Hillsborough counties to long-term real estate wealth building.
+            </p>
+
+            {/* Direct Contact Bar */}
+            <div className="grid sm:grid-cols-3 gap-4 p-6 rounded-xl bg-[#f5f3ef] border border-[#111111]/10 mb-8">
+              <div>
+                <span className="text-[10px] uppercase tracking-[0.2em] text-[#9A7D3A] font-bold block mb-1">
+                  Direct Cell
+                </span>
+                <a
+                  href="tel:7272540244"
+                  className="inline-flex items-center gap-2 text-sm font-bold text-[#111111] hover:text-[#9A7D3A]"
+                >
+                  <Phone className="w-4 h-4 text-[#9A7D3A]" />
+                  727-254-0244
+                </a>
+              </div>
+              <div>
+                <span className="text-[10px] uppercase tracking-[0.2em] text-[#9A7D3A] font-bold block mb-1">
+                  Direct Email
+                </span>
+                <a
+                  href="mailto:rachael@davisgarnettsells.com"
+                  className="inline-flex items-center gap-2 text-sm font-bold text-[#111111] hover:text-[#9A7D3A] break-all"
+                >
+                  <Mail className="w-4 h-4 text-[#9A7D3A] shrink-0" />
+                  rachael@davisgarnettsells.com
+                </a>
+              </div>
+              <div>
+                <span className="text-[10px] uppercase tracking-[0.2em] text-[#9A7D3A] font-bold block mb-1">
+                  Credentials
+                </span>
+                <span className="inline-flex items-center gap-2 text-sm font-bold text-[#111111]">
+                  <ShieldCheck className="w-4 h-4 text-[#9A7D3A]" />
+                  FL Lic. #3378601
+                </span>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="#rachael-consultation"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-[#111111] text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C8A951] hover:text-[#111111] transition-colors rounded-lg"
+              >
+                Schedule Private Residential Consultation
+                <ArrowRight className="w-4 h-4" />
+              </a>
+              <a
+                href="#flagship-estate"
+                className="inline-flex items-center gap-2 px-6 py-4 border border-[#111111]/20 text-[#111111] text-xs font-bold uppercase tracking-[0.2em] hover:border-[#C8A951] transition-colors rounded-lg"
+              >
+                Explore $4.55M Bahama Shores Estate
+              </a>
+            </div>
           </div>
         </div>
       </header>
 
-      {/* ── ABOUT RACHAEL ────────────────────────────────── */}
-      <section className="py-24 px-8 relative">
-        <div className="max-w-screen-xl mx-auto grid lg:grid-cols-[1fr_1.5fr] gap-16">
-          <div>
-            <h2 className="display-md sticky top-32">
-              The Advisor Who Knows<br />
-              Tampa Bay Like<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F6E3B0]">It's Home.</span>
-            </h2>
-          </div>
-          <div className="flex flex-col gap-8 text-white/70 text-lg leading-relaxed font-light">
-            <p>
-              Rachael Garnett is a full-service real estate advisor serving both residential and commercial clients across Tampa Bay. From first-time buyers and luxury home sellers to investors and business owners looking for the right space — Rachael brings the same care, market expertise, and unwavering advocacy to every client relationship.
-            </p>
-            <p>
-              Her residential depth is her signature strength. Rachael has an instinctive ability to match clients with the right home in the right neighborhood at the right time — and her familiarity with Tampa Bay communities, school districts, and lifestyle dynamics means she's not just selling houses. She's placing people into the right chapter of their lives.
-            </p>
-            <p>
-              Rachael's content engine leans heavily into residential neighborhood guides, buyer education, and lifestyle content — not because that's the only space she works in, but because it differentiates her output from Mark's and builds a broader, non-overlapping authority footprint for Davis & Garnett as a team.
-            </p>
-            <p>
-              As one half of Davis & Garnett, Rachael's residential expertise pairs with Mark Davis's commercial depth to give their clients a single point of contact for every real estate need in Tampa Bay — a combined authority no individual agent can replicate.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ── SPECIALTIES ──────────────────────────────────── */}
-      <section className="py-24 px-8 bg-white/[0.02] border-y border-white/5">
+      {/* ── FLAGSHIP ACTIVE WATERFRONT LISTING ───────────────────────────── */}
+      <section id="flagship-estate" className="py-28 px-6 md:px-12 bg-[#f5f3ef] border-b border-[#111111]/10">
         <div className="max-w-screen-xl mx-auto">
-          <h3 className="font-serif text-4xl text-white mb-16 text-center">Rachael's Areas of Expertise</h3>
-          <p className="text-white/50 text-center max-w-2xl mx-auto -mt-10 mb-16 font-light text-sm">Rachael serves both residential and commercial clients. Her content engine focuses primarily on residential neighborhoods and lifestyle to differentiate from the commercial-led output.</p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
-            <div className="glass-card p-8 flex flex-col gap-4">
-              <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-2">
-                <Home className="w-5 h-5 text-[#D4AF37]" />
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div>
+              <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
+                Signature Waterfront Representation · Active Offering
+              </span>
+              <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111111]">
+                6100 Bahama Shores Dr S, St. Petersburg
+              </h2>
+            </div>
+            <div className="font-aiveritas text-3xl md:text-4xl text-[#9A7D3A]">
+              $4,553,900
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl overflow-hidden border border-[#111111]/10 shadow-xl grid lg:grid-cols-[1.15fr_0.85fr]">
+            <div className="relative min-h-[380px] lg:min-h-[520px] bg-[#111111]">
+              <Image
+                src="/res_waterfront_estate_1787632802890.png"
+                alt="6100 Bahama Shores Dr S, St. Petersburg, FL — $4,553,900 Waterfront Estate"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/75 via-transparent to-transparent" />
+              <div className="absolute top-6 left-6 bg-white/95 px-4 py-1.5 rounded text-[10px] uppercase tracking-[0.22em] font-bold text-[#9A7D3A]">
+                Premier St. Petersburg Waterfront Estate
               </div>
-              <h4 className="font-serif text-xl text-white">Buyer Representation</h4>
-              <p className="text-white/60 text-sm leading-relaxed">Guiding first-time buyers and experienced purchasers through every step of finding and securing their ideal Tampa Bay home.</p>
+              <div className="absolute bottom-6 left-6 right-6 text-white">
+                <p className="text-xs uppercase tracking-widest text-[#C8A951] font-bold mb-1">
+                  Bahama Shores • Tampa Bay Deep-Water Access
+                </p>
+                <p className="font-aiveritas text-2xl">
+                  6100 Bahama Shores Dr S, St. Petersburg, FL 33705
+                </p>
+              </div>
             </div>
 
-            <div className="glass-card p-8 flex flex-col gap-4">
-              <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-2">
-                <BarChart className="w-5 h-5 text-[#D4AF37]" />
-              </div>
-              <h4 className="font-serif text-xl text-white">Seller Strategy</h4>
-              <p className="text-white/60 text-sm leading-relaxed">Positioning homes to sell quickly and at maximum value — pricing strategy, presentation, marketing, and negotiation.</p>
-            </div>
+            <div className="p-8 md:p-12 flex flex-col justify-between">
+              <div>
+                <span className="text-[11px] uppercase tracking-[0.22em] text-[#9A7D3A] font-bold block mb-3">
+                  Exclusive Luxury Mandate
+                </span>
+                <h3 className="font-aiveritas text-3xl text-[#111111] mb-4">
+                  Unrivaled Coastal Architecture & Open-Bay Lifestyle
+                </h3>
+                <p className="text-sm text-[#111111]/70 font-light leading-relaxed mb-6">
+                  Positioned in St. Petersburg&apos;s coveted Bahama Shores enclave, 6100 Bahama Shores Dr S offers commanding water vistas, private boating access to Tampa Bay and the Gulf of Mexico, and resort-caliber indoor-outdoor living minutes from vibrant downtown St. Pete.
+                </p>
 
-            <div className="glass-card p-8 flex flex-col gap-4">
-              <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-2">
-                <MapPin className="w-5 h-5 text-[#D4AF37]" />
-              </div>
-              <h4 className="font-serif text-xl text-white">Relocation Specialist</h4>
-              <p className="text-white/60 text-sm leading-relaxed">Full-service relocation guidance for families and individuals moving to Tampa Bay — neighborhoods, schools, commutes, and lifestyle matched to each client.</p>
-            </div>
+                <div className="grid grid-cols-2 gap-4 p-5 rounded-xl bg-[#fbfbf9] border border-[#111111]/8 mb-6">
+                  <div>
+                    <span className="text-[10px] uppercase tracking-widest text-[#111111]/50 block">
+                      Offering Price
+                    </span>
+                    <span className="font-aiveritas text-xl text-[#9A7D3A]">$4,553,900</span>
+                  </div>
+                  <div>
+                    <span className="text-[10px] uppercase tracking-widest text-[#111111]/50 block">
+                      Enclave
+                    </span>
+                    <span className="font-bold text-sm text-[#111111]">Bahama Shores, St. Pete</span>
+                  </div>
+                  <div>
+                    <span className="text-[10px] uppercase tracking-widest text-[#111111]/50 block">
+                      Property Type
+                    </span>
+                    <span className="font-bold text-sm text-[#111111]">Luxury Waterfront Estate</span>
+                  </div>
+                  <div>
+                    <span className="text-[10px] uppercase tracking-widest text-[#111111]/50 block">
+                      Showing Protocol
+                    </span>
+                    <span className="font-bold text-sm text-[#111111]">Private Appointment Only</span>
+                  </div>
+                </div>
 
-            <div className="glass-card p-8 flex flex-col gap-4">
-              <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-2">
-                <Star className="w-5 h-5 text-[#D4AF37]" />
+                <ul className="space-y-2.5 text-xs text-[#111111]/75 mb-8">
+                  <li className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#9A7D3A] shrink-0" />
+                    <span>Protected boating access & panoramic sunrise/sunset water views</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#9A7D3A] shrink-0" />
+                    <span>Minutes to Downtown St. Petersburg dining, museums, and Albert Whitted Airport</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#9A7D3A] shrink-0" />
+                    <span>Comprehensive seawall, marine, and structural inspection dossier available</span>
+                  </li>
+                </ul>
               </div>
-              <h4 className="font-serif text-xl text-white">Luxury Residential</h4>
-              <p className="text-white/60 text-sm leading-relaxed">High-end residential transactions across Tampa Bay's most prestigious communities — handled with the discretion and expertise luxury buyers and sellers expect.</p>
-            </div>
 
-            <div className="glass-card p-8 flex flex-col gap-4">
-              <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-2">
-                <Map className="w-5 h-5 text-[#D4AF37]" />
-              </div>
-              <h4 className="font-serif text-xl text-white">Neighborhood Expertise</h4>
-              <p className="text-white/60 text-sm leading-relaxed">Unmatched depth across Tampa Bay's most sought-after residential communities — from Lutz and Land O' Lakes to South Tampa and St. Pete.</p>
+              <a
+                href="#rachael-consultation"
+                onClick={() =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    inquiryFocus:
+                      "Private Showing: 6100 Bahama Shores Dr S, St. Petersburg ($4,553,900)",
+                  }))
+                }
+                className="w-full inline-flex items-center justify-center gap-2 py-4 px-6 bg-[#111111] text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C8A951] hover:text-[#111111] transition-colors rounded-lg"
+              >
+                Request Private Waterfront Showing <ArrowRight className="w-4 h-4" />
+              </a>
             </div>
-
-            <div className="glass-card p-8 flex flex-col gap-4">
-              <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-2">
-                <Users className="w-5 h-5 text-[#D4AF37]" />
-              </div>
-              <h4 className="font-serif text-xl text-white">First-Time Buyers</h4>
-              <p className="text-white/60 text-sm leading-relaxed">Patient, thorough guidance for first-time buyers — demystifying the process and advocating fiercely for their best interests from offer to close.</p>
-            </div>
-
           </div>
         </div>
       </section>
 
-      {/* ── MARKET AUTHORITY ─────────────────────────────── */}
-      <section className="py-24 px-8">
-        <div className="max-w-screen-xl mx-auto text-center">
-          <h3 className="font-serif text-4xl text-white mb-8">Rachael's Territory.</h3>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto mb-12 font-light">
-            Rachael serves residential and commercial clients across the full Tampa Bay market — with particular expertise in:
-          </p>
-          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto mb-16">
-            {["Tampa", "Lutz", "Land O' Lakes", "Wesley Chapel", "New Tampa", "Carrollwood", "Odessa", "Palm Harbor", "St. Petersburg", "Clearwater", "Dunedin", "Safety Harbor", "Brandon", "Riverview", "Seminole", "South Tampa", "Westchase", "Citrus Park", "Valrico", "Lithia"].map(loc => (
-              <span key={loc} className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-white/80 text-sm backdrop-blur-sm">
-                {loc}
+      {/* ── 2026 SOLD TRACK RECORD ───────────────────────────────────────── */}
+      <section className="py-24 px-6 md:px-12 bg-[#111111] text-white border-b border-[#C8A951]/20">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div>
+              <span className="text-[#C8A951] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
+                Verified Closing Velocity
               </span>
+              <h2 className="font-aiveritas text-4xl md:text-5xl text-white">
+                2026 Sold Residential Track Record
+              </h2>
+            </div>
+            <p className="text-sm text-white/65 max-w-md font-light">
+              Selected 2026 residential closings demonstrating Rachael&apos;s hyper-local pricing precision and buyer matching across Tampa Bay.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {SOLD_2026_PORTFOLIO.map((sold) => (
+              <div
+                key={sold.address}
+                className="p-7 rounded-2xl bg-white/5 border border-white/10 hover:border-[#C8A951]/50 transition-colors flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-4">
+                    <span className="px-3 py-1 rounded-full bg-[#C8A951]/20 text-[#C8A951] text-[10px] font-bold uppercase tracking-widest">
+                      {sold.status}
+                    </span>
+                    <span className="text-xs text-white/50">{sold.submarket}</span>
+                  </div>
+                  <h3 className="font-aiveritas text-2xl text-white mb-2">
+                    {sold.address}
+                  </h3>
+                  <p className="text-xs uppercase tracking-widest text-[#C8A951] font-semibold mb-3">
+                    {sold.category}
+                  </p>
+                  <p className="text-xs text-white/70 font-light leading-relaxed">
+                    {sold.notes}
+                  </p>
+                </div>
+                <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-[11px] text-white/50">
+                  <span>Represented by Rachael Garnett</span>
+                  <span>#3378601</span>
+                </div>
+              </div>
+            ))}
+
+            <div className="p-7 rounded-2xl bg-[#C8A951] text-[#111111] flex flex-col justify-between">
+              <div>
+                <span className="text-[10px] uppercase tracking-[0.22em] font-bold block mb-2">
+                  Curious What Your Home Is Worth in 2026?
+                </span>
+                <h3 className="font-aiveritas text-2xl mb-3">
+                  Request a Bespoke Equity & Pricing Valuation
+                </h3>
+                <p className="text-xs text-[#111111]/80 leading-relaxed mb-6">
+                  Automated algorithms miss waterfront seawall upgrades, school boundary premiums, and custom architectural finishes. Receive a true advisor-built valuation.
+                </p>
+              </div>
+              <a
+                href="#rachael-consultation"
+                className="inline-flex items-center justify-center gap-2 py-3.5 px-5 bg-[#111111] text-white text-xs font-bold uppercase tracking-[0.18em] rounded-lg hover:bg-white hover:text-[#111111] transition-colors"
+              >
+                Request Home Valuation <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SPECIALIZATION PILLARS ───────────────────────────────────────── */}
+      <section className="py-28 px-6 md:px-12 bg-white border-b border-[#111111]/10">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
+              White-Glove Residential Advisory
+            </span>
+            <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111111] mb-4">
+              Rachael&apos;s Core Specializations
+            </h2>
+            <p className="text-base text-[#111111]/65 font-light">
+              Every residential move is a major life transition. Rachael pairs warmth and family-first care with data-backed negotiation.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Anchor,
+                title: "Waterfront & Coastal Estates",
+                desc: "Navigating bridge clearances, deep-water dockage, seawall integrity, flood elevation certificates, and riparian rights across St. Petersburg, Pinellas, and South Tampa.",
+              },
+              {
+                icon: Compass,
+                title: "Master-Planned & Executive Relocation",
+                desc: "Concierge relocation tours matching out-of-state families with top-tier school districts, country clubs, and gated enclaves in Lutz, Land O' Lakes, Wesley Chapel, and Carrollwood.",
+              },
+              {
+                icon: Sparkles,
+                title: "Architectural Staging & Seller Positioning",
+                desc: "Coordinating pre-list cosmetic enhancements, editorial photography, cinematic drone video, and private broker previews to command record price-per-square-foot exits.",
+              },
+              {
+                icon: Home,
+                title: "New Construction & Custom Builder Advocacy",
+                desc: "Representing buyers at the builder table—negotiating lot premiums, structural design upgrades, and third-party phase inspections before drywall and closing.",
+              },
+              {
+                icon: MapPin,
+                title: "Hyper-Local Micro-Neighborhood Intelligence",
+                desc: "Block-by-block knowledge of CDD fees, HOA reserves, commute corridors, and off-market pocket inventory across Hillsborough, Pinellas, and Pasco counties.",
+              },
+              {
+                icon: HeartHandshake,
+                title: "Multi-Generational & Family Transitions",
+                desc: "Patient, compassionate guidance for upsizing families, empty-nest downsizers, and estate transitions requiring trusted vendor coordination.",
+              },
+            ].map((pillar) => (
+              <div
+                key={pillar.title}
+                className="p-8 rounded-2xl bg-[#fbfbf9] border border-[#111111]/8 hover:border-[#C8A951] transition-colors"
+              >
+                <div className="w-12 h-12 rounded-xl bg-[#f5f3ef] flex items-center justify-center mb-6">
+                  <pillar.icon className="w-5 h-5 text-[#9A7D3A]" />
+                </div>
+                <h3 className="font-aiveritas text-2xl text-[#111111] mb-3">
+                  {pillar.title}
+                </h3>
+                <p className="text-sm text-[#111111]/65 font-light leading-relaxed">
+                  {pillar.desc}
+                </p>
+              </div>
             ))}
           </div>
-          <div className="max-w-3xl mx-auto glass-card p-8 border-l-4 border-l-[#D4AF37]">
-            <p className="text-xl text-white font-serif italic">
-              "When AI engines are asked about residential real estate in these communities — this page is part of why Rachael's name is already in the answer."
-            </p>
+        </div>
+      </section>
+
+      {/* ── CLIENT REVIEWS ───────────────────────────────────────────────── */}
+      <section className="py-28 px-6 md:px-12 bg-[#f5f3ef] border-b border-[#111111]/10">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
+              5.0-Star Client Advocacy
+            </span>
+            <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111111]">
+              Client Stories & Reviews
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                quote:
+                  "Rachael treated our family's relocation to Tampa Bay as if we were her own family. She knew every gated neighborhood in Lutz and Land O' Lakes inside and out, and negotiated repairs we wouldn't have known to ask for.",
+                author: "Brandon & Victoria H.",
+                role: "Executive Relocation Clients",
+              },
+              {
+                quote:
+                  "When selling our residence on Valencia Cove Ct, Rachael's staging consultation and marketing launch brought qualified buyers immediately. She communicated every single day from listing to closing.",
+                author: "Lauren S.",
+                role: "2026 Residential Seller",
+              },
+              {
+                quote:
+                  "Exploring waterfront homes in St. Petersburg requires an advisor who truly understands seawalls, flood insurance, and boating water depth. Rachael's expertise and patience are second to none.",
+                author: "Dr. Gregory & Claire K.",
+                role: "Pinellas Waterfront Buyers",
+              },
+            ].map((item) => (
+              <div
+                key={item.author}
+                className="p-8 rounded-2xl bg-white border border-[#111111]/8 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex gap-1 text-[#C8A951] mb-5">
+                    {[...Array(5)].map((_, idx) => (
+                      <Star key={idx} className="w-4 h-4 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-sm text-[#111111]/80 italic leading-relaxed mb-6">
+                    &ldquo;{item.quote}&rdquo;
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-[#111111]/10">
+                  <div className="font-aiveritas text-lg text-[#111111]">{item.author}</div>
+                  <div className="text-[11px] uppercase tracking-widest text-[#9A7D3A] font-bold">
+                    {item.role}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── AEO AUTHORITY ────────────────────────────────── */}
-      <section className="py-24 px-8 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-[#D4AF37]/5 to-black pointer-events-none" />
-        <div className="max-w-screen-xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
-          <div>
-            <h3 className="font-serif text-5xl text-white mb-8 leading-tight">
-              Always Found.<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F6E3B0]">By Every Client Who's Looking.</span>
-            </h3>
-            <p className="text-white/70 text-lg font-light leading-relaxed mb-6">
-              Rachael's entire digital presence runs on the ClickMe Active Content Engine™ — continuously building her authority across every AI search platform that your next client is already using.
-            </p>
-            <p className="text-white/70 text-lg font-light leading-relaxed">
-              ChatGPT. Perplexity. Gemini. Claude. Copilot. Siri. Every engine that pulls directly from the web. Every query about Tampa Bay residential real estate. Rachael's content is there — structured, authoritative, and impossible to ignore.
+      {/* ── DIRECT CONSULTATION FORM FOR RACHAEL GARNETT ─────────────────── */}
+      <section id="rachael-consultation" className="py-28 px-6 md:px-12 bg-white">
+        <div className="max-w-4xl mx-auto bg-[#fbfbf9] rounded-2xl p-8 md:p-14 border border-[#111111]/10 shadow-lg">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
+              Direct Luxury Residential & Relocation Desk
+            </span>
+            <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111111] mb-4">
+              Connect With Rachael Garnett
+            </h2>
+            <p className="text-sm text-[#111111]/65 font-light">
+              FL Real Estate License #3378601 • Direct: 727-254-0244 • rachael@davisgarnettsells.com
             </p>
           </div>
-          <div className="flex flex-col gap-4">
-            <div className="glass-card p-6 flex items-center justify-between">
-              <span className="font-medium text-white">AEO Ready</span>
-              <span className="text-white/50 text-sm">Every page structured for AI answer engines</span>
+
+          {submitted ? (
+            <div className="p-10 rounded-xl bg-white border border-[#C8A951] text-center">
+              <CheckCircle2 className="w-12 h-12 text-[#9A7D3A] mx-auto mb-4" />
+              <h3 className="font-aiveritas text-2xl text-[#111111] mb-2">
+                Inquiry Routed to Rachael Garnett (#3378601)
+              </h3>
+              <p className="text-sm text-[#111111]/70 max-w-md mx-auto mb-6">
+                Thank you, {formData.firstName}. Rachael has received your message and will reach out personally.
+              </p>
+              <button
+                type="button"
+                onClick={() => setSubmitted(false)}
+                className="px-6 py-3 bg-[#111111] text-white text-xs font-bold uppercase tracking-widest rounded-lg"
+              >
+                Send Another Inquiry
+              </button>
             </div>
-            <div className="glass-card p-6 flex items-center justify-between">
-              <span className="font-medium text-white">GEO Ready</span>
-              <span className="text-white/50 text-sm">Generative engine optimization built in</span>
-            </div>
-            <div className="glass-card p-6 flex items-center justify-between bg-[#D4AF37]/10 border-[#D4AF37]/30">
-              <span className="font-bold text-[#D4AF37]">Always On</span>
-              <span className="text-[#D4AF37]/80 text-sm">Content engine runs 24/7/365</span>
-            </div>
-          </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-[11px] uppercase tracking-[0.18em] font-bold text-[#111111]/70 mb-2">
+                    First Name *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.firstName}
+                    onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                    className="w-full px-4 py-3.5 rounded-lg bg-white border border-[#111111]/15 text-sm text-[#111111] focus:outline-none focus:border-[#C8A951]"
+                  />
+                </div>
+                <div>
+                  <label className="block text-[11px] uppercase tracking-[0.18em] font-bold text-[#111111]/70 mb-2">
+                    Last Name *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.lastName}
+                    onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                    className="w-full px-4 py-3.5 rounded-lg bg-white border border-[#111111]/15 text-sm text-[#111111] focus:outline-none focus:border-[#C8A951]"
+                  />
+                </div>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-[11px] uppercase tracking-[0.18em] font-bold text-[#111111]/70 mb-2">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full px-4 py-3.5 rounded-lg bg-white border border-[#111111]/15 text-sm text-[#111111] focus:outline-none focus:border-[#C8A951]"
+                  />
+                </div>
+                <div>
+                  <label className="block text-[11px] uppercase tracking-[0.18em] font-bold text-[#111111]/70 mb-2">
+                    Direct Phone *
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    className="w-full px-4 py-3.5 rounded-lg bg-white border border-[#111111]/15 text-sm text-[#111111] focus:outline-none focus:border-[#C8A951]"
+                  />
+                </div>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-[11px] uppercase tracking-[0.18em] font-bold text-[#111111]/70 mb-2">
+                    How Can Rachael Help?
+                  </label>
+                  <select
+                    value={formData.inquiryFocus}
+                    onChange={(e) => setFormData({ ...formData, inquiryFocus: e.target.value })}
+                    className="w-full px-4 py-3.5 rounded-lg bg-white border border-[#111111]/15 text-sm text-[#111111] focus:outline-none focus:border-[#C8A951]"
+                  >
+                    <option>Private Showing: 6100 Bahama Shores Dr S, St. Petersburg ($4,553,900)</option>
+                    <option>Luxury Residential Home Search & Buyer Representation</option>
+                    <option>Executive Relocation Consultation to Tampa Bay</option>
+                    <option>Confidential Seller Equity Valuation & Staging Strategy</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-[11px] uppercase tracking-[0.18em] font-bold text-[#111111]/70 mb-2">
+                    Target Communities or Current Address
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.targetCommunities}
+                    onChange={(e) => setFormData({ ...formData, targetCommunities: e.target.value })}
+                    placeholder="e.g., St. Pete Waterfront, Lutz, Carrollwood, South Tampa"
+                    className="w-full px-4 py-3.5 rounded-lg bg-white border border-[#111111]/15 text-sm text-[#111111] focus:outline-none focus:border-[#C8A951]"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-[11px] uppercase tracking-[0.18em] font-bold text-[#111111]/70 mb-2">
+                  Lifestyle Goals, Timeline & Notes
+                </label>
+                <textarea
+                  rows={4}
+                  value={formData.notes}
+                  onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+                  placeholder="Share your ideal move timeframe, school or boating requirements, or property details..."
+                  className="w-full px-4 py-3.5 rounded-lg bg-white border border-[#111111]/15 text-sm text-[#111111] focus:outline-none focus:border-[#C8A951]"
+                />
+              </div>
+
+              {error && <p className="text-xs text-red-600 font-medium">{error}</p>}
+
+              <button
+                type="submit"
+                disabled={submitting}
+                className="w-full py-4 px-8 bg-[#111111] text-white text-xs font-bold uppercase tracking-[0.22em] hover:bg-[#C8A951] hover:text-[#111111] transition-colors rounded-lg disabled:opacity-50"
+              >
+                {submitting ? "Routing to Rachael Garnett..." : "Schedule Consultation With Rachael Garnett"}
+              </button>
+            </form>
+          )}
         </div>
       </section>
 
-      {/* ── CTA ──────────────────────────────────────────── */}
-      <section className="py-24 px-8 bg-black border-t border-white/5">
-        <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-          <h3 className="font-serif text-4xl text-white mb-6">Ready to find your place in Tampa Bay?</h3>
-          <p className="text-white/60 text-lg mb-10 font-light max-w-xl">
-            Whether you're buying a home, selling a property, relocating, or exploring investment opportunities — Rachael brings the full picture to every client conversation.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <a href="mailto:rachaellgarnett@gmail.com" className="btn-gold flex items-center gap-2">
-              Email Rachael Directly <ArrowRight className="w-4 h-4" />
-            </a>
-            <Link href="/davis" className="btn-ghost">
-              Meet Mark Davis →
+      {/* ── FOOTER ───────────────────────────────────────────────────────── */}
+      <footer className="py-16 px-6 md:px-12 bg-[#111111] text-white border-t border-[#C8A951]/20">
+        <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="flex items-center gap-6">
+            <div className="w-40">
+              <DavisGarnettLogo variant="dark" className="w-full" />
+            </div>
+            <div className="text-xs text-white/60">
+              <p className="font-bold text-white">Rachael Garnett • FL License #3378601</p>
+              <p>Align Right Realty Carrollwood (#BK3401606) • 727-254-0244</p>
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-6 text-xs uppercase tracking-widest text-white/70">
+            <Link href="/about" className="hover:text-[#C8A951]">
+              About Hub
+            </Link>
+            <Link href="/davis" className="hover:text-[#C8A951]">
+              Mark Davis
+            </Link>
+            <Link href="/about/align-right-realty-carrollwood" className="hover:text-[#C8A951]">
+              Align Right Realty
+            </Link>
+            <Link href="/about/strategic-partners" className="hover:text-[#C8A951]">
+              Partners
+            </Link>
+            <Link href="/about/community-outreach-giving" className="hover:text-[#C8A951]">
+              Community Giving
             </Link>
           </div>
         </div>
-      </section>
-
+      </footer>
     </div>
   );
 }
-
