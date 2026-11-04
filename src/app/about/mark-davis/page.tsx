@@ -180,7 +180,7 @@ export default function MarkDavisAdvisorPage() {
           <div className="relative">
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-[#111111]/10 bg-[#111111]">
               <Image
-                src="/new-images/davis-garnett-mark-1.jpg"
+                src="/new-images/davis-garnett-new-team-mark.jpg"
                 alt="Mark Davis — Commercial, Mixed-Use & Land Advisor (#3209459)"
                 fill
                 priority

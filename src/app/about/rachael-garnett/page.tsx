@@ -166,7 +166,7 @@ export default function RachaelGarnettAdvisorPage() {
           <div className="relative">
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-[#111111]/10 bg-[#111111]">
               <Image
-                src="/new-images/davis-garnett-rachael-1.jpg"
+                src="/new-images/davis-garnett-new-team-rachael.jpg"
                 alt="Rachael Garnett — Luxury Residential & Relocation Specialist (#3378601)"
                 fill
                 priority
