@@ -9,10 +9,14 @@ const publicPaths = [
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   
-  // Allow static assets
+  // Allow static assets (images, videos, fonts, documents, Next.js assets)
   if (
-    pathname.match(/\.(png|jpg|jpeg|gif|svg|ico)$/) ||
-    pathname.startsWith('/_next/')
+    pathname.match(/\.(png|jpg|jpeg|webp|gif|svg|ico|mp4|webm|pdf|otf|ttf|woff|woff2)$/i) ||
+    pathname.startsWith('/_next/') ||
+    pathname.startsWith('/hero-videos-homepage/') ||
+    pathname.startsWith('/new-images/') ||
+    pathname.startsWith('/city-photos/') ||
+    pathname.startsWith('/listings/')
   ) {
     return NextResponse.next();
   }
