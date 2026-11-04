@@ -369,8 +369,8 @@ export default function HomePageV1Light() {
             <div className="bg-[#f5f3ef] border border-[#111]/10 rounded-2xl overflow-hidden flex flex-col justify-between">
               <div className="relative aspect-[16/9] w-full overflow-hidden">
                 <Image
-                  src="/res_luxury_condo_1787632822869.png"
-                  alt="Downtown Tampa & Bayshore Luxury Towers"
+                  src="/city-photos/tampa-downtown-towers-real.png"
+                  alt="Downtown Tampa, Water Street & Bayshore Luxury Towers"
                   fill
                   className="object-cover"
                 />
@@ -421,7 +421,7 @@ export default function HomePageV1Light() {
             <div className="bg-[#f5f3ef] border border-[#111]/10 rounded-2xl overflow-hidden flex flex-col justify-between">
               <div className="relative aspect-[16/9] w-full overflow-hidden">
                 <Image
-                  src="/res_golf_course_home_1787632854609.png"
+                  src="/city-photos/wesley-chapel-master-planned-real.jpg"
                   alt="Wesley Chapel & Land O' Lakes Master-Planned Communities"
                   fill
                   className="object-cover"
