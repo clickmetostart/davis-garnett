@@ -90,11 +90,16 @@ export default function HomePageV1Light() {
       {/* ── HERO (video grid — dark overlay stays, white text over it) ── */}
       <section className="relative w-full h-screen flex items-center justify-center pt-16 bg-[#050505] overflow-hidden">
         <div className="absolute inset-0 z-0 flex w-full h-full">
-          {[1, 2, 3, 4].map((num) => (
-            <div key={num} className="relative flex-1 h-full border-r border-white/5 last:border-r-0 overflow-hidden group">
+          {[
+            { id: 1, src: "/new-images/davis-garnett-team-video-1.mp4" },
+            { id: 2, src: "/new-images/davis-garnett-team-video-1.mp4" },
+            { id: 3, src: "/hero-videos-homepage/davis-garnett-hero-video-3.mp4" },
+            { id: 4, src: "/hero-videos-homepage/davis-garnett-hero-video-4.mp4" },
+          ].map((v) => (
+            <div key={v.id} className="relative flex-1 h-full border-r border-white/5 last:border-r-0 overflow-hidden group">
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-700 z-10 pointer-events-none" />
               <BackgroundVideo
-                src={`/hero-videos-homepage/davis-garnett-hero-video-${num}.mp4`}
+                src={v.src}
                 className="absolute inset-0 w-full h-full scale-105 group-hover:scale-110 transition-transform duration-1000"
               />
             </div>
