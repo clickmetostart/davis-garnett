@@ -221,7 +221,7 @@ export default function AboutHubPage() {
             <div className="relative">
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-[#111111]/10 bg-[#111111]">
                 <Image
-                  src="/davis-garnett-real-combo.png"
+                  src="/new-images/davis-garnett-team-2.jpg"
                   alt="Mark Davis and Rachael Garnett — Principal Advisors at Davis & Garnett"
                   fill
                   priority
@@ -288,7 +288,7 @@ export default function AboutHubPage() {
                 <div className="grid sm:grid-cols-[0.9fr_1.1fr] bg-[#fbfbf9] border-b border-[#111111]/8">
                   <div className="relative aspect-[4/5] sm:aspect-auto sm:min-h-[340px] bg-[#111111]">
                     <Image
-                      src="/mark-davis-headshot.png"
+                      src="/new-images/davis-garnett-mark-1.jpg"
                       alt="Mark Davis — Commercial, Land & Investment Specialist"
                       fill
                       className="object-cover object-top"
@@ -368,7 +368,7 @@ export default function AboutHubPage() {
                 <div className="grid sm:grid-cols-[0.9fr_1.1fr] bg-[#fbfbf9] border-b border-[#111111]/8">
                   <div className="relative aspect-[4/5] sm:aspect-auto sm:min-h-[340px] bg-[#111111]">
                     <Image
-                      src="/rachael-garnett-headshot.png"
+                      src="/new-images/davis-garnett-rachael-1.jpg"
                       alt="Rachael Garnett — Luxury Residential & Relocation Specialist"
                       fill
                       className="object-cover object-top"
