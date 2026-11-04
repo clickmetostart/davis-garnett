@@ -193,13 +193,13 @@ export default function RachaelGarnettAdvisorPage() {
               Rachael Garnett
             </h1>
             <p className="text-xl text-[#9A7D3A] font-light mb-6">
-              Commercial &amp; Residential Advisor • Mastering the Art of the Deal Across Luxury Estates, Waterfront, Condos, Residential &amp; Commercial
+              Commercial &amp; Residential Advisor • Deep Local Knowledge &amp; Dedicated Care Across Waterfront Estates, Condos, Residential &amp; Commercial
             </p>
             <p className="text-base text-[#111111]/75 font-light leading-relaxed mb-6">
-              Rachael Garnett is a full-spectrum <strong className="font-semibold text-[#111111]">Commercial &amp; Residential Advisor</strong> representing buyers, sellers, and investors across commercial, residential, land, downtown condominiums, and luxury waterfront estates across St. Petersburg, Tampa, Carrollwood, Lutz, Land O&apos; Lakes, Bradenton, and Wesley Chapel. Known for her personal flair in high-impact property positioning and <strong className="font-semibold text-[#111111]">the art of the deal</strong>, Rachael delivers white-glove execution at every price point.
+              Rachael Garnett is a full-spectrum <strong className="font-semibold text-[#111111]">Commercial &amp; Residential Advisor</strong> representing buyers, sellers, and investors across commercial, residential, land, downtown condominiums, and luxury waterfront estates across St. Petersburg, Tampa, Carrollwood, Lutz, Land O&apos; Lakes, Bradenton, and Wesley Chapel. Known for her thoughtful property positioning, local market expertise, and genuine care for her clients, Rachael delivers attentive guidance at every price point.
             </p>
             <p className="text-base text-[#111111]/70 font-light leading-relaxed mb-8">
-              Co-founding <strong className="font-semibold text-[#111111]">Davis &amp; Garnett</strong> alongside fellow Commercial &amp; Residential Advisor Mark Davis (#3209459), working with Rachael individually or as a combined force gives you <strong className="font-semibold text-[#111111]">two powerhouses</strong>—creating the gold standard for customer service and real estate advising. Whether commercial or residential, big or small, land or condo, we treat every listing like it is <strong className="font-semibold text-[#111111]">hot, new, needs attention, needs relentless servicing, and needs Davis &amp; Garnett</strong>.
+              Co-founding <strong className="font-semibold text-[#111111]">Davis &amp; Garnett</strong> alongside fellow Commercial &amp; Residential Advisor Mark Davis (#3209459), Rachael and Mark serve as <strong className="font-semibold text-[#111111]">wholesome real estate powerhouses of knowledge and expertise</strong>—modestly waiting for the opportunity to serve, treating every client with the same respect for the value their property brings to our community, and happy to help navigate those waters.
             </p>
 
             {/* Direct Contact Bar */}

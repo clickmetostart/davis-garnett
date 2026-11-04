@@ -128,7 +128,7 @@ const PARTNER_CATEGORIES = [
     icon: Sparkles,
     category: "06 · Architectural Staging, 3D Media & Listing Launch Concierge",
     summary:
-      "High-impact visual production and pre-list preparation so every Davis & Garnett listing launches like it is hot, new, and demands immediate market attention.",
+      "Thoughtful visual presentation and pre-list preparation that honors the unique character and community value of every Davis & Garnett property.",
     partners: [
       {
         firm: "Stellar MLS (StellarMLS.com) & Matterport 3D Architectural Media",
@@ -140,7 +140,7 @@ const PARTNER_CATEGORIES = [
         firm: "Davis & Garnett White-Glove Pre-List Staging & Preparation Concierge",
         specialty: "Interior Staging, Curb-Appeal Refresh, Lighting & Editorial Launch Strategy",
         coverage: "Greater Tampa Bay • Coordinated Directly by Rachael Garnett & Mark Davis",
-        highlight: "We treat every listing—commercial or residential, big or small, land or condo—like it is hot, new, and deserves maximum visual polish before hitting the market.",
+        highlight: "We treat every property—commercial or residential, big or small, land or condo—with genuine respect for the value it brings to the neighborhood and community.",
       },
     ],
   },

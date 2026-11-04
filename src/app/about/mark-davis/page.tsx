@@ -207,13 +207,13 @@ export default function MarkDavisAdvisorPage() {
               Mark Davis
             </h1>
             <p className="text-xl text-[#9A7D3A] font-light mb-6">
-              Commercial &amp; Residential Advisor • Mastering the Art of the Deal Across Commercial, Residential, Land, Condos &amp; Luxury Estates
+              Commercial &amp; Residential Advisor • Deep Local Knowledge &amp; Dedicated Stewardship Across Commercial, Residential, Land, Condos &amp; Luxury Estates
             </p>
             <p className="text-base text-[#111111]/75 font-light leading-relaxed mb-6">
-              Mark Davis is a full-spectrum <strong className="font-semibold text-[#111111]">Commercial &amp; Residential Advisor</strong> who represents buyers, sellers, and investors across commercial mixed-use, single-family residential, agricultural/development land, condos, and luxury estates. Known for his command of <strong className="font-semibold text-[#111111]">the art of the deal</strong>, Mark brings disciplined underwriting, creative deal structuring, and personal flair to every listing—whether structuring a dual-building mixed-use asset in Brandon, assembling 80 acres in Polk County, or closing residential homes across Hillsborough and Pasco counties.
+              Mark Davis is a full-spectrum <strong className="font-semibold text-[#111111]">Commercial &amp; Residential Advisor</strong> who represents buyers, sellers, and investors across commercial mixed-use, single-family residential, agricultural/development land, condos, and luxury estates. Grounded in deep market knowledge and thoughtful guidance, Mark brings disciplined underwriting, clear communication, and personal care to every client—whether structuring a dual-building mixed-use asset in Brandon, evaluating 80 acres in Polk County, or helping a family buy or sell a home across Hillsborough and Pasco counties.
             </p>
             <p className="text-base text-[#111111]/70 font-light leading-relaxed mb-8">
-              As co-founder of <strong className="font-semibold text-[#111111]">Davis &amp; Garnett</strong> alongside fellow Commercial &amp; Residential Advisor Rachael Garnett, working with Mark individually or as a combined force gives clients <strong className="font-semibold text-[#111111]">two powerhouses</strong>—setting the gold standard in customer service where every listing, big or small, land or condo, is treated like it is <strong className="font-semibold text-[#111111]">hot, new, needs attention, needs relentless servicing, and needs Davis &amp; Garnett</strong>.
+              As co-founder of <strong className="font-semibold text-[#111111]">Davis &amp; Garnett</strong> alongside fellow Commercial &amp; Residential Advisor Rachael Garnett, Mark and Rachael serve as <strong className="font-semibold text-[#111111]">real estate powerhouses of knowledge and expertise</strong>—modestly grateful for every opportunity to serve, treating every client with genuine respect for the value their property brings to the community, and happy to help navigate those waters.
             </p>
 
             {/* Direct Contact Bar */}

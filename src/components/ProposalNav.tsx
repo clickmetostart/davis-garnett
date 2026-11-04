@@ -23,7 +23,7 @@ const NAV_GROUPS: NavGroup[] = [
     label: "About Us",
     href: "/about",
     dropdown: [
-      { label: "About The Davis & Garnett Team", desc: "Two powerhouses setting the gold standard in the art of the deal", href: "/about" },
+      { label: "About The Davis & Garnett Team", desc: "Real estate powerhouses of local knowledge, grateful for the opportunity to serve", href: "/about" },
       { label: "Meet Mark Davis", desc: "Commercial & Residential Advisor • FL Lic #3209459", href: "/about/mark-davis" },
       { label: "Meet Rachael Garnett", desc: "Commercial & Residential Advisor • FL Lic #3378601", href: "/about/rachael-garnett" },
       { label: "Align Right Realty Carrollwood", desc: "Our brokerage heritage, compliance & statewide reach (#BK3401606)", href: "/about/align-right-realty-carrollwood" },

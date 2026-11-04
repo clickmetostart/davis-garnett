@@ -138,10 +138,10 @@ export default function HomePageV1Light() {
       {isMobile ? (
         <section className="py-24 px-6 bg-white">
           <div className="text-center mb-16">
-            <span className="text-[#9A7D3A] text-[0.65rem] tracking-[0.2em] uppercase font-bold block mb-4">The Art of the Deal • Two Powerhouses</span>
-            <h2 className="font-aiveritas text-4xl text-[#111] mb-4">Your Power Combo.</h2>
+            <span className="text-[#9A7D3A] text-[0.65rem] tracking-[0.2em] uppercase font-bold block mb-4">Knowledge, Expertise &amp; Heart to Serve</span>
+            <h2 className="font-aiveritas text-4xl text-[#111] mb-4">Your Trusted Advisors.</h2>
             <p className="text-[#111]/65 text-sm font-light max-w-md mx-auto leading-relaxed">
-              Working with Mark or Rachael individually or as a combined force gives you two powerhouses setting the gold standard across commercial, residential, land, condos, and luxury estates.
+              Two real estate powerhouses of local knowledge and expertise, grateful for the opportunity to serve and committed to respecting the lasting value every property brings to our community.
             </p>
           </div>
           <div className="flex flex-col gap-12">
@@ -200,9 +200,9 @@ export default function HomePageV1Light() {
               className="absolute top-1/2 -translate-y-1/2 z-0 text-center w-[30vw]"
               style={{ left: "17%", x: "-50%", opacity: initialTextOpacity }}
             >
-              <h3 className="font-aiveritas text-5xl font-bold text-[#D4AF37] mb-4">Two Powerhouses</h3>
+              <h3 className="font-aiveritas text-5xl font-bold text-[#D4AF37] mb-4">Deep Local Knowledge</h3>
               <p className="text-[#111]/65 text-sm font-light leading-relaxed max-w-xs mx-auto">
-                Working with Mark or Rachael individually or as a combo delivers the gold standard in customer service and the art of the deal.
+                Real estate powerhouses of local knowledge and expertise, modestly waiting for the opportunity to serve you across Tampa Bay.
               </p>
             </motion.div>
 
@@ -211,9 +211,9 @@ export default function HomePageV1Light() {
               className="absolute top-1/2 -translate-y-1/2 z-0 text-center w-[30vw]"
               style={{ left: "83%", x: "-50%", opacity: initialTextOpacity }}
             >
-              <h3 className="font-aiveritas text-5xl font-bold text-[#D4AF37] mb-4">One Unified Force</h3>
+              <h3 className="font-aiveritas text-5xl font-bold text-[#D4AF37] mb-4">Here to Serve</h3>
               <p className="text-[#111]/65 text-sm font-light leading-relaxed max-w-xs mx-auto">
-                Commercial or residential, big or small, land or condo—we treat every listing like it is hot, new, and demands relentless attention.
+                Treating every client with genuine respect for the value their property brings to our community—and happy to help navigate those waters.
               </p>
             </motion.div>
 
@@ -272,10 +272,10 @@ export default function HomePageV1Light() {
       <section className="relative z-10 py-32 px-8 bg-white border-t border-[#111]/10">
         <div className="max-w-screen-xl mx-auto">
           <div className="text-center mb-20">
-            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Two Powerhouses • The Art of the Deal</span>
-            <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111] mb-5">The Gold Standard in Real Estate Advising</h2>
+            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Deep Local Knowledge &amp; Proven Expertise</span>
+            <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111] mb-5">Dedicated to Serving Tampa Bay</h2>
             <p className="text-[#111]/65 font-light max-w-3xl mx-auto leading-relaxed">
-              Both Mark Davis and Rachael Garnett advise across commercial, residential, land, condos, and luxury estates. Whether you work with them individually or as a combined force, you get two powerhouses who treat every listing like it is hot, new, needs attention, needs relentless servicing, and needs Davis &amp; Garnett.
+              Mark Davis and Rachael Garnett provide comprehensive advisory across commercial, residential, land, new developments, and luxury waterfront estates. Combining decades of local market intelligence with a client-first approach, we are committed to delivering exceptional guidance and genuine value across every community we serve.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
@@ -814,12 +814,12 @@ export default function HomePageV1Light() {
           <div className="absolute inset-0 bg-black/65" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-6">Two Powerhouses • The Gold Standard</span>
+          <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-6">Knowledge, Stewardship &amp; Strategic Advisory</span>
           <h2 className="font-aiveritas text-4xl md:text-5xl text-white mb-8 leading-tight">
-            Every Listing Treated Like It&apos;s Hot, New &amp; Demands Attention.
+            Valuing the Long-Term Impact Every Property Brings to Our Community.
           </h2>
           <p className="text-white/85 text-lg font-light mb-12 max-w-2xl mx-auto leading-relaxed">
-            Whether commercial or residential, big or small, land or condo—working with Mark Davis and Rachael Garnett individually or as a combined force gives you the art of the deal, relentless servicing, and the full powerhouse advantage of Davis &amp; Garnett.
+            From commercial corridors and acreage acquisitions to waterfront residences and luxury towers, Mark Davis and Rachael Garnett offer trusted market insight, rigorous negotiation, and personalized guidance for buyers, sellers, and investors across Tampa Bay.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <button
@@ -863,17 +863,17 @@ export default function HomePageV1Light() {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-0">
           {[
-            "/listings/bahama-shores-1.webp",
-            "/listings/ridgewood-brandon-2.jpg",
-            "/listings/d-g-residential-1.webp",
-            "/listings/d-g-land-listing-1.webp",
-            "/listings/valencia-cove-lol-1.webp",
-            "/listings/teal-trce-bradenton-1.webp",
-            "/listings/wheat-stone-zephyrhills-1.webp",
-            "/listings/bahama-shores-2.webp",
-          ].map((imgSrc, idx) => (
-            <Link key={idx} href="/properties" className="group relative aspect-square w-full overflow-hidden block bg-[#111]">
-              <Image src={imgSrc} alt="Davis & Garnett Portfolio" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+            { img: "/listings/bahama-shores-1.webp", href: "/properties", alt: "6100 Bahama Shores Dr S - Waterfront Luxury Estate" },
+            { img: "/res_luxury_condo_1787632822869.png", href: "/developments", alt: "Downtown Tampa Luxury Highrise Condos" },
+            { img: "/listings/ridgewood-brandon-2.jpg", href: "/properties", alt: "126 Ridgewood Ave - Commercial Mixed-Use Asset" },
+            { img: "/listings/bahama-shores-lot-1.jpg", href: "/properties", alt: "6100 Bahama Shores Lot 10 - Pre-Construction Homesite" },
+            { img: "/res_waterfront_estate_1787632802890.png", href: "/developments", alt: "Tampa Bay Waterfront Pre-Construction Developments" },
+            { img: "/listings/justamere-tampa-1.jpg", href: "/properties", alt: "3012 Justamere Ln - Lakefront Estate Closed" },
+            { img: "/res_golf_course_home_1787632854609.png", href: "/developments", alt: "Wesley Chapel Master-Planned Communities" },
+            { img: "/listings/beverly-hills-zephyrhills-1.jpg", href: "/properties", alt: "6389 Beverly Hills Dr - Abbott Square Closed" },
+          ].map((item, idx) => (
+            <Link key={idx} href={item.href} className="group relative aspect-square w-full overflow-hidden block bg-[#111]">
+              <Image src={item.img} alt={item.alt} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100">
                 <div className="flex items-center gap-2 text-white font-bold">
                   <Heart className="w-5 h-5 fill-white" />

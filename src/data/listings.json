@@ -169,6 +169,150 @@
     "updatedAt": "2026-11-01T12:00:00.000Z"
   },
   {
+    "id": "lot-10-bahama-shores",
+    "slug": "6100-bahama-shores-dr-s-lot-10-st-petersburg",
+    "mlsId": "V4951113",
+    "title": "6100 Bahama Shores Dr S (Lot 10)",
+    "subtitle": "Cleared & Build-Ready Waterfront Lot / Pre-Construction Homesite",
+    "price": "$1,399,000",
+    "priceNumeric": 1399000,
+    "address": "6100 Bahama Shores Dr S (Lot 10)",
+    "streetAddress": "6100 Bahama Shores Dr S",
+    "city": "St. Petersburg",
+    "state": "FL",
+    "zip": "33705",
+    "neighborhood": "Bahama Shores",
+    "county": "Pinellas County",
+    "category": "Land",
+    "propertyType": "Waterfront Homesite / Pre-Construction Lot",
+    "transactionType": "For Sale",
+    "status": "Active",
+    "representation": "Exclusive Listing",
+    "featured": true,
+    "specs": {
+      "beds": 0,
+      "baths": 0,
+      "sqft": "0",
+      "lotSize": "0.51 Acres (22,115 SqFt)",
+      "lotDimensions": "247' x 90'",
+      "yearBuilt": 2026,
+      "waterfrontFeet": 90,
+      "pricePerSqft": "$63 / SqFt of Land"
+    },
+    "bedrooms": "N/A",
+    "bathrooms": "N/A",
+    "sqFt": "22,115 Lot SqFt",
+    "askingPrice": "$1,399,000",
+    "description": "Rare opportunity to acquire a pristine, cleared 0.51-acre (22,115 sqft) waterfront homesite with approximately 90 feet of direct open Tampa Bay frontage in St. Petersburg's historic Bahama Shores neighborhood.\n\nAll critical due diligence has been completed, including boundary and topographic surveys, geotechnical soil borings, and seawall engineering evaluations. The lot is fully cleared and ready for your custom luxury estate blueprint or to build 'The Vistara' pre-approved waterfront concept.\n\nEnjoy panoramic views across Tampa Bay toward the Sunshine Skyway Bridge, deep-water access for boating, and convenient minutes-away proximity to downtown St. Petersburg's world-class dining, arts, and marinas.",
+    "propertyDescription": "Build-ready 0.51-acre waterfront homesite in Bahama Shores featuring ~90 feet of direct Tampa Bay frontage with engineering surveys and seawall assessments completed.",
+    "highlights": [
+      "0.51-acre (22,115 SqFt) cleared & build-ready waterfront lot",
+      "~90 linear feet of direct open Tampa Bay waterfront frontage",
+      "Sweeping views across Tampa Bay and the Sunshine Skyway Bridge",
+      "Completed boundary survey, topography & geotechnical soil borings",
+      "Engineering seawall review and building envelope ready",
+      "Historic Bahama Shores enclave with tree-lined coastal streets",
+      "Direct boating access to Tampa Bay and the Gulf of Mexico",
+      "10 minutes to Downtown St. Petersburg & Beach Drive"
+    ],
+    "categorizedFeatures": [
+      {
+        "category": "Site & Engineering",
+        "items": [
+          "0.51 Acres · 22,115 SqFt Parcel Dimensions 247' x 90'",
+          "~90 Linear Feet of Open Water Tampa Bay Frontage",
+          "Geotechnical Soil Testing & Soil Borings Completed",
+          "Topographical & Boundary Surveys Finalized",
+          "Seawall Structural Evaluation Complete",
+          "Cleared High-and-Dry Coastal Building Envelope"
+        ]
+      },
+      {
+        "category": "Location & Enclave",
+        "items": [
+          "Historic Bahama Shores Neighborhood",
+          "Minutes to Downtown St. Petersburg Dining, Museums & Marinas",
+          "Quick Access to I-275, Tampa International Airport & Gulf Beaches",
+          "Quiet Tree-Lined Residential Street with Luxury Waterfront Homes"
+        ]
+      }
+    ],
+    "schools": [
+      {
+        "name": "Lakeview Fundamental Elementary",
+        "rating": "8/10",
+        "grades": "K–5",
+        "distance": "1.4 mi"
+      },
+      {
+        "name": "Bay Point Middle School",
+        "rating": "7/10",
+        "grades": "6–8",
+        "distance": "1.1 mi"
+      },
+      {
+        "name": "Lakewood High School",
+        "rating": "7/10",
+        "grades": "9–12",
+        "distance": "1.3 mi"
+      }
+    ],
+    "financials": [
+      {
+        "label": "Offering Price",
+        "value": "$1,399,000"
+      },
+      {
+        "label": "Parcel Size",
+        "value": "0.51 Acres (22,115 SqFt)"
+      },
+      {
+        "label": "Waterfront Footage",
+        "value": "~90 Linear Feet (Tampa Bay)"
+      },
+      {
+        "label": "Price / Lot SqFt",
+        "value": "$63.26 / SqFt"
+      },
+      {
+        "label": "MLS Identification",
+        "value": "V4951113"
+      },
+      {
+        "label": "Transaction Status",
+        "value": "Active — Exclusive Offering"
+      }
+    ],
+    "images": {
+      "0": {
+        "id": "img-lot-1",
+        "url": "/listings/bahama-shores-lot-1.jpg",
+        "isHero": true,
+        "sortOrder": 1
+      },
+      "main": "/listings/bahama-shores-lot-1.jpg",
+      "gallery": [
+        "/listings/bahama-shores-lot-1.jpg",
+        "/listings/bahama-shores-lot-2.jpg",
+        "/listings/bahama-shores-lot-3.jpg",
+        "/listings/bahama-shores-lot-4.jpg",
+        "/listings/bahama-shores-lot-5.jpg"
+      ]
+    },
+    "agent": {
+      "name": "Rachael Garnett & Mark Davis",
+      "role": "Commercial & Residential Advisors",
+      "email": "advisory@davisgarnettsells.com",
+      "phone": "727-808-3344",
+      "image": "/rachael-garnett-gmail-avatar.jpg",
+      "license": "FL Lic. #3378601 & #3209459",
+      "brokerage": "Align Right Realty Carrollwood"
+    },
+    "primaryContact": "Rachael",
+    "createdAt": "2026-10-01T12:00:00.000Z",
+    "updatedAt": "2026-10-01T12:00:00.000Z"
+  },
+  {
     "id": "2",
     "slug": "126-ridgewood-ave-brandon",
     "mlsId": "TB8479570",
@@ -1770,5 +1914,414 @@
     "primaryContact": "Rachael",
     "createdAt": "2026-09-15T12:00:00.000Z",
     "updatedAt": "2026-09-15T12:00:00.000Z"
+  },
+  {
+    "id": "sold-beverly-hills",
+    "slug": "6389-beverly-hills-dr-zephyrhills",
+    "mlsId": "T3507691",
+    "title": "6389 Beverly Hills Dr",
+    "subtitle": "Contemporary 4-Bedroom Home in Abbott Square",
+    "price": "$349,000",
+    "priceNumeric": 349000,
+    "address": "6389 Beverly Hills Dr",
+    "streetAddress": "6389 Beverly Hills Dr",
+    "city": "Zephyrhills",
+    "state": "FL",
+    "zip": "33541",
+    "neighborhood": "Abbott Square",
+    "county": "Pasco County",
+    "category": "Residential",
+    "propertyType": "Single Family Home",
+    "transactionType": "Sold",
+    "status": "Sold",
+    "representation": "Represented Seller & Buyer",
+    "featured": false,
+    "specs": {
+      "beds": 4,
+      "baths": 2.5,
+      "sqft": "1,764",
+      "lotSize": "0.11 Acres (4,792 SqFt)",
+      "yearBuilt": 2022,
+      "garage": "2-Car Attached",
+      "stories": 2,
+      "pricePerSqft": "$198 / SqFt",
+      "soldDate": "June 14, 2024"
+    },
+    "bedrooms": "4",
+    "bathrooms": "2.5",
+    "sqFt": "1,764",
+    "askingPrice": "$349,000",
+    "description": "Successfully represented in Abbott Square, this move-in-ready 2022 two-story residence features 4 spacious bedrooms, 2.5 bathrooms, and a modern open-concept floor plan across 1,764 square feet.\n\nThe gourmet kitchen opens seamlessly into the dining and great room spaces, highlighted by clean stone surfaces, stainless steel appliances, and abundant natural light. The Abbott Square community offers resort-style amenities, including a clubhouse, swimming pool, fitness center, and playground, situated just minutes from Wesley Chapel shopping, dining, and I-75 access.",
+    "propertyDescription": "4-bedroom, 2.5-bathroom contemporary residence built in 2022 in Abbott Square, Zephyrhills, featuring open-concept living and community resort amenities.",
+    "highlights": [
+      "4 Bedrooms, 2.5 Bathrooms, 1,764 Heated SqFt",
+      "Built in 2022 with modern energy-efficient building standards",
+      "Open kitchen with expansive stone island and stainless steel appliances",
+      "Private primary suite with walk-in closet and en-suite bath",
+      "Abbott Square community pool, fitness center & playground",
+      "Closed at $349,000 ($198/SqFt) with seamless advisory execution"
+    ],
+    "categorizedFeatures": [
+      {
+        "category": "Interior & Comfort",
+        "items": [
+          "4 Bedrooms · 2.5 Bathrooms",
+          "1,764 SqFt Under Air",
+          "Spacious Primary Suite with En-Suite Bath",
+          "Upstairs Laundry & Flexible Guest Bedrooms",
+          "Ceramic Tile Flooring in Main Living Areas"
+        ]
+      },
+      {
+        "category": "Community & Amenities",
+        "items": [
+          "Abbott Square Master-Planned Community",
+          "Resort-Style Swimming Pool & Clubhouse",
+          "Fully-Equipped Fitness Center & Play Parks",
+          "Convenient Access to SR 54, SR 56, and Wesley Chapel"
+        ]
+      }
+    ],
+    "schools": [
+      {
+        "name": "Woodland Elementary School",
+        "rating": "6/10",
+        "grades": "PK–5",
+        "distance": "2.2 mi"
+      },
+      {
+        "name": "Raymond B. Stewart Middle School",
+        "rating": "5/10",
+        "grades": "6–8",
+        "distance": "2.8 mi"
+      },
+      {
+        "name": "Zephyrhills High School",
+        "rating": "5/10",
+        "grades": "9–12",
+        "distance": "3.1 mi"
+      }
+    ],
+    "financials": [
+      {
+        "label": "Closing Sold Price",
+        "value": "$349,000"
+      },
+      {
+        "label": "Sold Price / SqFt",
+        "value": "$198 / SqFt"
+      },
+      {
+        "label": "Closed Date",
+        "value": "June 14, 2024"
+      },
+      {
+        "label": "MLS Identification",
+        "value": "T3507691"
+      },
+      {
+        "label": "Transaction Status",
+        "value": "Sold — Closed Transaction"
+      }
+    ],
+    "images": {
+      "0": {
+        "id": "img-bev-1",
+        "url": "/listings/beverly-hills-zephyrhills-1.jpg",
+        "isHero": true,
+        "sortOrder": 1
+      },
+      "main": "/listings/beverly-hills-zephyrhills-1.jpg",
+      "gallery": [
+        "/listings/beverly-hills-zephyrhills-1.jpg",
+        "/listings/beverly-hills-zephyrhills-2.jpg",
+        "/listings/beverly-hills-zephyrhills-3.jpg",
+        "/listings/beverly-hills-zephyrhills-hero.webp"
+      ]
+    },
+    "agent": {
+      "name": "Rachael Garnett",
+      "role": "Commercial & Residential Advisor",
+      "email": "rachael@davisgarnettsells.com",
+      "phone": "727-808-3344",
+      "image": "/rachael-garnett-gmail-avatar.jpg",
+      "license": "FL Lic. #3378601",
+      "brokerage": "Align Right Realty Carrollwood"
+    },
+    "primaryContact": "Rachael",
+    "createdAt": "2024-06-15T12:00:00.000Z",
+    "updatedAt": "2024-06-15T12:00:00.000Z"
+  },
+  {
+    "id": "sold-colonnade-tampa",
+    "slug": "9907-colonnade-dr-tampa",
+    "mlsId": "T3498074",
+    "title": "9907 Colonnade Dr",
+    "subtitle": "Pebble Creek Pool Home with Fireplace in New Tampa",
+    "price": "$438,000",
+    "priceNumeric": 438000,
+    "address": "9907 Colonnade Dr",
+    "streetAddress": "9907 Colonnade Dr",
+    "city": "Tampa",
+    "state": "FL",
+    "zip": "33647",
+    "neighborhood": "Pebble Creek",
+    "county": "Hillsborough County",
+    "category": "Residential",
+    "propertyType": "Single Family Pool Home",
+    "transactionType": "Sold",
+    "status": "Sold",
+    "representation": "Represented Seller",
+    "featured": false,
+    "specs": {
+      "beds": 3,
+      "baths": 2,
+      "sqft": "2,058",
+      "lotSize": "0.19 Acres (8,449 SqFt)",
+      "yearBuilt": 1994,
+      "garage": "2-Car Attached",
+      "pool": "Private In-Ground Screened Pool",
+      "pricePerSqft": "$212 / SqFt",
+      "soldDate": "June 5, 2024"
+    },
+    "bedrooms": "3",
+    "bathrooms": "2",
+    "sqFt": "2,058",
+    "askingPrice": "$438,000",
+    "description": "Charming single-story pool home located in the heart of New Tampa's established Pebble Creek neighborhood. Offering 2,058 square feet of comfortable living space, this 3-bedroom, 2-bathroom layout features soaring vaulted ceilings, a cozy wood-burning fireplace, and dedicated formal living and dining zones.\n\nThe private backyard retreat is fully screened and features a sparkling swimming pool, expansive covered lanai, and fenced perimeter. Convenient to top New Tampa schools, Flatwoods Wilderness Park, shopping centers, and I-75.",
+    "propertyDescription": "3-bedroom, 2-bath pool home in Pebble Creek, New Tampa, featuring screened pool lanai, fireplace, and 2,058 sqft of living space.",
+    "highlights": [
+      "3 Bedrooms, 2 Bathrooms, 2,058 Heated SqFt",
+      "Private screened pool and covered entertaining lanai",
+      "Wood-burning fireplace and soaring vaulted ceilings",
+      "Spacious 8,449 SqFt fenced lot in Pebble Creek",
+      "2-car garage with expanded driveway parking",
+      "Sold for $438,000 ($212/SqFt) with dedicated advisory guidance"
+    ],
+    "categorizedFeatures": [
+      {
+        "category": "Interior Features",
+        "items": [
+          "3 Bedrooms · 2 Bathrooms",
+          "2,058 SqFt Under Air",
+          "Wood-Burning Fireplace in Family Room",
+          "Vaulted Ceilings & Abundant Windows",
+          "Spacious Primary Suite with Walk-In Closet"
+        ]
+      },
+      {
+        "category": "Outdoor & Yard",
+        "items": [
+          "Private In-Ground Swimming Pool",
+          "Full Screen Enclosure & Covered Lanai",
+          "Fully Fenced Backyard Oasis (8,449 SqFt Lot)",
+          "Mature Landscaping & Quiet Neighborhood Street"
+        ]
+      }
+    ],
+    "schools": [
+      {
+        "name": "Pebble Creek Elementary",
+        "rating": "7/10",
+        "grades": "PK–5",
+        "distance": "0.8 mi"
+      },
+      {
+        "name": "Benito Middle School",
+        "rating": "7/10",
+        "grades": "6–8",
+        "distance": "1.9 mi"
+      },
+      {
+        "name": "Wharton High School",
+        "rating": "6/10",
+        "grades": "9–12",
+        "distance": "2.4 mi"
+      }
+    ],
+    "financials": [
+      {
+        "label": "Closing Sold Price",
+        "value": "$438,000"
+      },
+      {
+        "label": "Sold Price / SqFt",
+        "value": "$212 / SqFt"
+      },
+      {
+        "label": "Closed Date",
+        "value": "June 5, 2024"
+      },
+      {
+        "label": "MLS Identification",
+        "value": "T3498074"
+      },
+      {
+        "label": "Transaction Status",
+        "value": "Sold — Closed Transaction"
+      }
+    ],
+    "images": {
+      "0": {
+        "id": "img-col-1",
+        "url": "/listings/colonnade-tampa-1.jpg",
+        "isHero": true,
+        "sortOrder": 1
+      },
+      "main": "/listings/colonnade-tampa-1.jpg",
+      "gallery": [
+        "/listings/colonnade-tampa-1.jpg",
+        "/listings/colonnade-tampa-2.jpg",
+        "/listings/colonnade-tampa-3.jpg",
+        "/listings/colonnade-tampa-4.jpg"
+      ]
+    },
+    "agent": {
+      "name": "Rachael Garnett",
+      "role": "Commercial & Residential Advisor",
+      "email": "rachael@davisgarnettsells.com",
+      "phone": "727-808-3344",
+      "image": "/rachael-garnett-gmail-avatar.jpg",
+      "license": "FL Lic. #3378601",
+      "brokerage": "Align Right Realty Carrollwood"
+    },
+    "primaryContact": "Rachael",
+    "createdAt": "2024-06-06T12:00:00.000Z",
+    "updatedAt": "2024-06-06T12:00:00.000Z"
+  },
+  {
+    "id": "sold-justamere-tampa",
+    "slug": "3012-justamere-ln-tampa",
+    "mlsId": "T3474782",
+    "title": "3012 Justamere Ln",
+    "subtitle": "Egypt Lake / Carrollwood Waterfront Oasis on 0.37 Acres",
+    "price": "$390,000",
+    "priceNumeric": 390000,
+    "address": "3012 Justamere Ln",
+    "streetAddress": "3012 Justamere Ln",
+    "city": "Tampa",
+    "state": "FL",
+    "zip": "33614",
+    "neighborhood": "Egypt Lake / Carrollwood Area",
+    "county": "Hillsborough County",
+    "category": "Residential",
+    "propertyType": "Single Family Lakefront Home",
+    "transactionType": "Sold",
+    "status": "Sold",
+    "representation": "Represented Seller",
+    "featured": false,
+    "specs": {
+      "beds": 3,
+      "baths": 2,
+      "sqft": "2,168",
+      "lotSize": "0.37 Acres (16,047 SqFt)",
+      "yearBuilt": 1955,
+      "pricePerSqft": "$179 / SqFt",
+      "waterfrontFeet": 120,
+      "soldDate": "February 20, 2024"
+    },
+    "bedrooms": "3",
+    "bathrooms": "2",
+    "sqFt": "2,168",
+    "askingPrice": "$390,000",
+    "description": "Prime 0.37-acre (16,047 SqFt) waterfront homesite located along tranquil lakefront waters in Tampa's central Egypt Lake / Carrollwood corridor. Offering 2,168 square feet of living space with 3 bedrooms and 2 bathrooms, this expansive property delivered an exceptional canvas for restoration or waterfront redevelopment.\n\nEnjoy mature oak canopies, expansive water frontage, and immediate access to Dale Mabry Hwy, Raymond James Stadium, Downtown Tampa, and Tampa International Airport.",
+    "propertyDescription": "3-bedroom, 2-bath waterfront residence on a sprawling 0.37-acre lakefront lot in the Egypt Lake / Carrollwood area.",
+    "highlights": [
+      "Expansive 0.37-Acre (16,047 SqFt) lakefront lot in central Tampa",
+      "3 Bedrooms, 2 Bathrooms, 2,168 Heated SqFt",
+      "Generous water frontage with serene natural views and birdlife",
+      "No HOA, No CDD restrictions",
+      "Minutes to Carrollwood, Dale Mabry Hwy, Midtown, and Downtown Tampa",
+      "Successfully closed at $390,000 ($179/SqFt)"
+    ],
+    "categorizedFeatures": [
+      {
+        "category": "Site & Waterfront",
+        "items": [
+          "0.37-Acre Lot (16,047 SqFt)",
+          "Direct Freshwater Lakefrontage",
+          "Mature Oak Trees & Scenic Water Views",
+          "High-Potential Central Tampa Location"
+        ]
+      },
+      {
+        "category": "Interior & Layout",
+        "items": [
+          "3 Bedrooms · 2 Bathrooms",
+          "2,168 SqFt Under Air",
+          "Open Living Room with Water Views",
+          "Flexible Floorplan Ready for Personalization"
+        ]
+      }
+    ],
+    "schools": [
+      {
+        "name": "Twin Lakes Elementary",
+        "rating": "6/10",
+        "grades": "PK–5",
+        "distance": "1.0 mi"
+      },
+      {
+        "name": "Memorial Middle School",
+        "rating": "5/10",
+        "grades": "6–8",
+        "distance": "2.1 mi"
+      },
+      {
+        "name": "Alonso High School",
+        "rating": "6/10",
+        "grades": "9–12",
+        "distance": "4.5 mi"
+      }
+    ],
+    "financials": [
+      {
+        "label": "Closing Sold Price",
+        "value": "$390,000"
+      },
+      {
+        "label": "Sold Price / SqFt",
+        "value": "$179 / SqFt"
+      },
+      {
+        "label": "Closed Date",
+        "value": "February 20, 2024"
+      },
+      {
+        "label": "MLS Identification",
+        "value": "T3474782"
+      },
+      {
+        "label": "Transaction Status",
+        "value": "Sold — Closed Transaction"
+      }
+    ],
+    "images": {
+      "0": {
+        "id": "img-jus-1",
+        "url": "/listings/justamere-tampa-1.jpg",
+        "isHero": true,
+        "sortOrder": 1
+      },
+      "main": "/listings/justamere-tampa-1.jpg",
+      "gallery": [
+        "/listings/justamere-tampa-1.jpg",
+        "/listings/justamere-tampa-2.jpg",
+        "/listings/justamere-tampa-3.jpg",
+        "/listings/justamere-tampa-4.jpg"
+      ]
+    },
+    "agent": {
+      "name": "Rachael Garnett",
+      "role": "Commercial & Residential Advisor",
+      "email": "rachael@davisgarnettsells.com",
+      "phone": "727-808-3344",
+      "image": "/rachael-garnett-gmail-avatar.jpg",
+      "license": "FL Lic. #3378601",
+      "brokerage": "Align Right Realty Carrollwood"
+    },
+    "primaryContact": "Rachael",
+    "createdAt": "2024-02-21T12:00:00.000Z",
+    "updatedAt": "2024-02-21T12:00:00.000Z"
   }
 ]

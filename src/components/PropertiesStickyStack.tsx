@@ -101,7 +101,7 @@ export default function PropertiesStickyStack() {
             <div className="w-10 h-[2px] bg-[#C8A951] mb-6" />
 
             <p className="text-[#111111]/65 font-light leading-relaxed max-w-xs mb-8 text-sm">
-              Whether commercial or residential, big or small, raw land or luxury waterfront condo—we treat every listing like it is hot, new, needs immediate attention, relentless servicing, and the full powerhouse force of Davis &amp; Garnett.
+              Providing comprehensive advisory across commercial, residential, waterfront developments, and raw acreage throughout Greater Tampa Bay and Central Florida.
             </p>
 
             <div className="flex flex-col gap-2.5 mb-10">

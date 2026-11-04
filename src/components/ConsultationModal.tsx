@@ -123,7 +123,7 @@ export default function ConsultationModal({
                   {title}
                 </h2>
                 <p className="text-[#111]/60 text-sm font-light leading-relaxed">
-                  Connect directly with Commercial &amp; Residential Advisors Mark Davis (#3209459) and Rachael Garnett (#3378601). Working with either or both gives you two powerhouses dedicated to the art of the deal.
+                  Connect directly with Commercial &amp; Residential Advisors Mark Davis (#3209459) and Rachael Garnett (#3378601). We look forward to learning more about your property goals and delivering tailored guidance for your Tampa Bay real estate journey.
                 </p>
               </div>
 
@@ -214,7 +214,7 @@ export default function ConsultationModal({
                       onChange={(e) => setAdvisor(e.target.value)}
                       className="w-full px-4 py-3 bg-[#f5f3ef] border border-[#111]/10 rounded-lg text-sm text-[#111] focus:outline-none focus:border-[#D4AF37]"
                     >
-                      <option value="Mark Davis & Rachael Garnett">Both Principals (Two Powerhouses)</option>
+                      <option value="Mark Davis & Rachael Garnett">Both Advisors (Mark Davis &amp; Rachael Garnett)</option>
                       <option value="Mark Davis (Commercial & Residential Advisor)">Mark Davis — Commercial &amp; Residential Advisor (#3209459)</option>
                       <option value="Rachael Garnett (Commercial & Residential Advisor)">Rachael Garnett — Commercial &amp; Residential Advisor (#3378601)</option>
                     </select>

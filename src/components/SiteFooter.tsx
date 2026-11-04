@@ -12,7 +12,7 @@ export default function SiteFooter() {
 
       <div className="relative z-10 max-w-screen-xl mx-auto">
         {/* Top Brand & Principal Advisor Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr_1fr] gap-10 pb-16 mb-16 border-b border-white/10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr_1fr] gap-10 pb-16 mb-16 border-b border-[#D4AF37]/25 items-center">
           <div>
             <div className="w-56 h-16 relative mb-5">
               <DavisGarnettLogo variant="dark" className="w-full h-full object-contain" />
@@ -120,7 +120,7 @@ export default function SiteFooter() {
         </div>
 
         {/* 5-Column Sitemap Links */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 pb-16 mb-16 border-b border-white/10">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12">
           {/* Col 1: Featured Portfolio */}
           <div>
             <Link href="/properties" className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4AF37] block mb-4 hover:text-white transition-colors">

@@ -7,8 +7,9 @@ import { Listing } from '@/types/listings';
 
 const STAGES = ['Build', 'List', 'Market', 'Review'];
 
-export default function EditListingWizard({ params }: { params: { id: string } }) {
+export default function EditListingWizard({ params }: { params: Promise<{ id: string }> }) {
   const router = useRouter();
+  const [resolvedId, setResolvedId] = useState<string>('');
   const [currentStage, setCurrentStage] = useState(0);
   const [category, setCategory] = useState<'Commercial' | 'Residential' | null>(null);
 
@@ -23,19 +24,23 @@ export default function EditListingWizard({ params }: { params: { id: string } }
     attachments: []
   });
 
+  useEffect(() => {
+    params.then(p => setResolvedId(p.id));
+  }, [params]);
 
   useEffect(() => {
+    if (!resolvedId) return;
     fetch('/api/listings')
       .then(res => res.json())
       .then(data => {
-        const listing = data.find((l: any) => l.id === params.id);
+        const listing = data.find((l: any) => l.id === resolvedId);
         if (listing) {
           setCategory(listing.category || 'Commercial');
           setFormData(listing);
         }
         setIsLoadingData(false);
       });
-  }, [params.id]);
+  }, [resolvedId]);
 
   const [isGenerating, setIsGenerating] = useState(false);
 
@@ -69,7 +74,7 @@ export default function EditListingWizard({ params }: { params: { id: string } }
 
   const handlePublish = async () => {
     try {
-      const response = await fetch(`/api/listings/${params.id}`, {
+      const response = await fetch(`/api/listings/${resolvedId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ category, ...formData })

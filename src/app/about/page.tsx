@@ -192,7 +192,7 @@ export default function AboutHubPage() {
               </p>
 
               <p className="text-base text-[#111111]/65 font-light leading-relaxed mb-10">
-                Their team power comes from <strong className="font-semibold text-[#111111]">the art of the deal</strong>. Each brings their own personal flair, market instincts, and transaction experience to the table—and whether you work with Mark or Rachael on an individual or combo basis, you get <strong className="font-semibold text-[#111111]">two powerhouses</strong> creating the gold standard for customer service and real estate advising. Commercial or residential, big or small, land or condo—we treat every listing like it is <strong className="font-semibold text-[#111111]">hot, new, needs immediate attention, needs relentless servicing, and needs Davis &amp; Garnett</strong>.
+                Together, they are <strong className="font-semibold text-[#111111]">wholesome real estate powerhouses of local knowledge and expertise</strong>, modestly waiting for the opportunity to serve. Whether you work with Mark or Rachael individually or as a team, we treat every client with the same genuine respect for the value their property brings to the Tampa Bay community—and we are always happy to help navigate those waters across commercial, residential, land, condos, and waterfront homes.
               </p>
 
               <div className="flex flex-wrap items-center gap-4">
