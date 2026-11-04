@@ -763,9 +763,13 @@ export default function HomePageV1Light() {
       <section className="py-24 px-8 bg-white border-t border-[#111]/5">
         <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center gap-12">
           <div className="w-full lg:w-1/3 aspect-square max-w-[380px] relative rounded-full overflow-hidden border-4 border-[#D4AF37]/30 shadow-[0_0_40px_rgba(212,175,55,0.15)] shrink-0">
-            <BackgroundVideo
-              src="/hero-videos-homepage/davis-garnett-hero-video-2.mp4"
-              className="absolute inset-0 w-full h-full scale-105 opacity-90 hover:opacity-100 transition-opacity duration-1000"
+            <video
+              src="/new-images/davis-garnett-team-video-1.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover scale-105"
             />
           </div>
           <div className="flex-1 text-center lg:text-left">
@@ -780,12 +784,12 @@ export default function HomePageV1Light() {
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 border-t border-[#111]/10">
               {[
-                { img: "/city_st_pete_1787662322779.png", label: "St. Petersburg", sub: "Bahama Shores & Snell Isle", href: "/knowledge-hub/areas/st-petersburg" },
-                { img: "/city_tampa_1787662311501.png", label: "Downtown Tampa", sub: "Water Street & Bayshore", href: "/knowledge-hub/areas/tampa-downtown-water-street" },
-                { img: "/res_golf_course_home_1787632854609.png", label: "Wesley Chapel", sub: "Two Rivers & Lagoons", href: "/knowledge-hub/areas/wesley-chapel" },
-                { img: "/res_modern_mansion_1787632812473.png", label: "Land O' Lakes", sub: "Angeline & Connerton", href: "/knowledge-hub/areas/land-o-lakes" },
-                { img: "/com_luxury_retail_1787632885082.png", label: "Brandon & Riverview", sub: "Hwy 60 Commercial & Mixed-Use", href: "/knowledge-hub/areas/brandon-riverview" },
-                { img: "/land_commercial_development_1787632926636.png", label: "Central FL Acreage", sub: "Ocala, Fort McCoy & Frostproof", href: "/knowledge-hub/areas/central-florida-acreage" },
+                { img: "/city-photos/st-petersburg-waterfront.jpg", label: "St. Petersburg", sub: "Bahama Shores & Snell Isle", href: "/knowledge-hub/areas/st-petersburg" },
+                { img: "/city-photos/downtown-tampa-skyline.jpg", label: "Downtown Tampa", sub: "Water Street & Bayshore", href: "/knowledge-hub/areas/tampa-downtown-water-street" },
+                { img: "/city-photos/wesley-chapel-suburban.jpg", label: "Wesley Chapel", sub: "Two Rivers & Lagoons", href: "/knowledge-hub/areas/wesley-chapel" },
+                { img: "/city-photos/land-o-lakes-luxury.jpg", label: "Land O' Lakes", sub: "Angeline & Connerton", href: "/knowledge-hub/areas/land-o-lakes" },
+                { img: "/city-photos/brandon-riverview-commercial.jpg", label: "Brandon & Riverview", sub: "Hwy 60 Commercial & Mixed-Use", href: "/knowledge-hub/areas/brandon-riverview" },
+                { img: "/city-photos/central-fl-acreage.jpg", label: "Central FL Acreage", sub: "Ocala, Fort McCoy & Frostproof", href: "/knowledge-hub/areas/central-florida-acreage" },
               ].map(({ img, label, sub, href }) => (
                 <Link
                   key={label}
