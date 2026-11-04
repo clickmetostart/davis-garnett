@@ -9,30 +9,55 @@ const publicPaths = [
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   
-  // Allow public paths and static assets
+  // Allow static assets
   if (
-    publicPaths.includes(pathname) ||
     pathname.match(/\.(png|jpg|jpeg|gif|svg|ico)$/) ||
     pathname.startsWith('/_next/')
   ) {
-    // If accessing the login page but already logged in, redirect to root
-    if (pathname === '/login') {
-      const sessionCookie = request.cookies.get('mock_session_v4');
-      if (sessionCookie && sessionCookie.value) {
-        return NextResponse.redirect(new URL('/', request.url));
+    return NextResponse.next();
+  }
+
+  const sessionCookie = request.cookies.get('mock_session_v4');
+  let isValidAdmin = false;
+
+  if (sessionCookie && sessionCookie.value) {
+    try {
+      const sessionData = JSON.parse(Buffer.from(sessionCookie.value, 'base64').toString('utf-8'));
+      const email = (sessionData?.email || '').toLowerCase();
+      const role = sessionData?.role || '';
+      
+      // If it's a client account (Davis & Garnett), do not allow internal site access while locked
+      const isClient = email === 'msdavis118@gmail.com' || 
+                       email === 'rachaellgarnett@gmail.com' || 
+                       email.includes('davis') || 
+                       email.includes('garnett');
+
+      if (!isClient && (role.includes('Admin') || email.includes('clickme') || email.includes('nick'))) {
+        isValidAdmin = true;
       }
+    } catch {
+      isValidAdmin = false;
+    }
+  }
+
+  // Allow public paths
+  if (publicPaths.includes(pathname)) {
+    // If accessing the login page but already logged in as valid admin, redirect to root
+    if (pathname === '/login' && isValidAdmin) {
+      return NextResponse.redirect(new URL('/', request.url));
     }
     return NextResponse.next();
   }
 
-  // Check for the authentication cookie
-  const sessionCookie = request.cookies.get('mock_session_v4');
-
-  if (!sessionCookie || !sessionCookie.value) {
-    // Redirect to login if not authenticated
+  // If not authenticated as an authorized developer/admin, redirect to login
+  if (!isValidAdmin) {
     const url = request.nextUrl.clone();
     url.pathname = '/login';
-    return NextResponse.redirect(url);
+    const response = NextResponse.redirect(url);
+    if (sessionCookie) {
+      response.cookies.delete('mock_session_v4');
+    }
+    return response;
   }
 
   return NextResponse.next();

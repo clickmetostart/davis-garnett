@@ -124,7 +124,9 @@ export default function LoginPage() {
               <label className="block text-xs font-bold tracking-wider uppercase text-gray-600 mb-2">Email Address</label>
               <input
                 required
-                type="email"
+                type="text"
+                autoCapitalize="none"
+                autoCorrect="off"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 placeholder="Enter your email"
@@ -146,10 +148,10 @@ export default function LoginPage() {
 
             <button
               type="submit"
-              disabled={true}
-              className={`mt-6 w-full bg-gradient-to-r from-[#D4AF37] to-[#8B6914] text-[#FDFCF0] border-none py-3.5 px-4 rounded-lg font-bold uppercase tracking-wider text-sm transition-all opacity-70 cursor-not-allowed`}
+              disabled={loading}
+              className={`mt-6 w-full bg-gradient-to-r from-[#D4AF37] to-[#8B6914] text-[#FDFCF0] border-none py-3.5 px-4 rounded-lg font-bold uppercase tracking-wider text-sm transition-all duration-300 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] ${loading ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer hover:scale-[1.02]'}`}
             >
-              Access Locked
+              {loading ? 'Authenticating...' : 'Access Workspace'}
             </button>
           </form>
 
