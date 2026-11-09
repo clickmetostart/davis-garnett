@@ -152,7 +152,7 @@ export default function HomePageV1Light() {
           <div className="flex flex-col gap-12">
             <div className="w-full">
               <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden mb-6">
-                <Image src="/new-images/davis-garnett-new-team-mark.jpg" alt="Mark Davis" fill className="object-cover object-top" />
+                <Image src="/new-images/new-2/mark-davis-residential-commerical-advisor-tampa-real-estate-3.jpg" alt="Mark Davis" fill className="object-cover object-top" />
               </div>
               <h3 className="font-aiveritas text-2xl text-[#111] mb-1">Mark Davis</h3>
               <p className="text-[#D4AF37] text-xs uppercase tracking-widest mb-3">Commercial &amp; Residential Advisor • FL Lic #3209459</p>
@@ -168,7 +168,7 @@ export default function HomePageV1Light() {
             </div>
             <div className="w-full">
               <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden mb-6">
-                <Image src="/new-images/davis-garnett-new-team-rachael.jpg" alt="Rachael Garnett" fill className="object-cover object-top" />
+                <Image src="/new-images/new-2/rachael-garnett-residential-commerical-advisor-tampa-real-estate-2.jpg" alt="Rachael Garnett" fill className="object-cover object-top" />
               </div>
               <h3 className="font-aiveritas text-2xl text-[#111] mb-1">Rachael Garnett</h3>
               <p className="text-[#D4AF37] text-xs uppercase tracking-widest mb-3">Commercial &amp; Residential Advisor • FL Lic #3378601</p>
@@ -192,7 +192,7 @@ export default function HomePageV1Light() {
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 rounded-2xl overflow-hidden shadow-2xl"
               style={{ width: "30vw", height: "75vh", scale: centerScale }}
             >
-              <Image src="/new-images/davis-garnett-new-team-1.jpg" alt="Davis & Garnett Team" fill className="object-cover object-top" />
+              <Image src="/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-3.jpg" alt="Davis & Garnett Team" fill className="object-cover object-top" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
               <div className="absolute bottom-10 left-0 right-0 text-center px-4">
                 <h3 className="font-aiveritas text-3xl text-white drop-shadow-md mb-2">The Power Combo</h3>
@@ -227,7 +227,7 @@ export default function HomePageV1Light() {
               className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden group cursor-pointer shadow-2xl"
               style={{ left: leftLeft, width: leftWidth, height: leftHeight, zIndex: leftZIndex, borderRadius }}
             >
-              <Image src="/new-images/davis-garnett-new-team-mark.jpg" alt="Mark Davis" fill className="object-cover object-top" />
+              <Image src="/new-images/new-2/mark-davis-residential-commerical-advisor-tampa-real-estate-3.jpg" alt="Mark Davis" fill className="object-cover object-top" />
               <motion.div
                 className="absolute inset-0 flex flex-col items-center justify-end pb-24 px-12 bg-gradient-to-t from-[#050505] via-[#050505]/55 to-transparent"
                 style={{ opacity: textOpacity, y: textY }}
@@ -251,7 +251,7 @@ export default function HomePageV1Light() {
               className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden group cursor-pointer shadow-2xl"
               style={{ left: rightLeft, width: rightWidth, height: rightHeight, zIndex: rightZIndex, borderRadius }}
             >
-              <Image src="/new-images/davis-garnett-new-team-rachael.jpg" alt="Rachael Garnett" fill className="object-cover object-top" />
+              <Image src="/new-images/new-2/rachael-garnett-residential-commerical-advisor-tampa-real-estate-2.jpg" alt="Rachael Garnett" fill className="object-cover object-top" />
               <motion.div
                 className="absolute inset-0 flex flex-col items-center justify-end pb-24 px-12 bg-gradient-to-t from-[#050505] via-[#050505]/55 to-transparent"
                 style={{ opacity: textOpacity, y: textY }}
@@ -821,7 +821,7 @@ export default function HomePageV1Light() {
       {/* ── ADVISORY CTA ── */}
       <section className="relative py-32 px-8 overflow-hidden border-t border-[#D4AF37]/20">
         <div className="absolute inset-0 z-0">
-          <Image src="/new-images/davis-garnett-real-combo.png" alt="Davis & Garnett Advisory" fill className="object-cover object-[center_30%]" />
+          <Image src="/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-3.jpg" alt="Davis & Garnett Advisory" fill className="object-cover object-[center_30%]" />
           <div className="absolute inset-0 bg-black/65" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
