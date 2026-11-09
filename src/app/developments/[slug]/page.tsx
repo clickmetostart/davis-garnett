@@ -19,6 +19,8 @@ import {
   PhoneCall,
   ShieldCheck,
   Sparkles,
+  ExternalLink,
+  Globe,
 } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
 import DavisGarnettLogo from "@/components/DavisGarnettLogo";
@@ -190,16 +192,28 @@ export default function DevelopmentDetailSpokePage({
               </div>
               <a
                 href="#spoke-vip-form"
-                className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 bg-[#111111] hover:bg-[#C8A951] text-white hover:text-[#111111] text-xs uppercase tracking-[0.2em] font-bold rounded-xl transition-colors"
+                className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 bg-[#111111] hover:bg-[#C8A951] text-white hover:text-[#111111] text-xs uppercase tracking-[0.2em] font-bold rounded-xl transition-colors mb-2.5"
               >
                 Request Floor Plans &amp; VIP Pricing <ArrowRight className="w-4 h-4" />
               </a>
+              {dev.officialWebsiteUrl && (
+                <a
+                  href={dev.officialWebsiteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 bg-white hover:bg-[#111111] text-[#111111] hover:text-[#C8A951] text-[11px] uppercase tracking-[0.16em] font-bold rounded-xl border border-[#111111]/15 hover:border-[#111111] transition-all shadow-sm"
+                >
+                  <Globe className="w-3.5 h-3.5 text-[#C8A951]" />
+                  <span>Official Development Site</span>
+                  <ExternalLink className="w-3 h-3 opacity-60" />
+                </a>
+              )}
             </div>
           </div>
 
           {/* Interactive Gallery Grid */}
           <div className="grid lg:grid-cols-12 gap-4">
-            <div className="lg:col-span-9 relative aspect-[16/10] rounded-3xl overflow-hidden bg-[#111111] border border-[#111111]/10">
+            <div className="lg:col-span-9 relative aspect-[16/10] rounded-3xl overflow-hidden bg-[#111111] border border-[#111111]/10 shadow-sm">
               <Image
                 src={selectedImage}
                 alt={dev.name}
@@ -216,12 +230,12 @@ export default function DevelopmentDetailSpokePage({
                   <span className="text-sm md:text-base font-medium">{dev.unitsOrAcreage}</span>
                 </div>
                 <span className="text-[11px] uppercase tracking-widest bg-black/70 backdrop-blur-md px-3.5 py-1.5 rounded-lg border border-white/15">
-                  Click Thumbnails to Preview Gallery
+                  Click Thumbnails to Preview ({dev.gallery.length} Images)
                 </span>
               </div>
             </div>
 
-            <div className="lg:col-span-3 grid grid-cols-4 lg:grid-cols-1 gap-3">
+            <div className="lg:col-span-3 grid grid-cols-3 sm:grid-cols-6 lg:grid-cols-2 gap-2.5">
               {dev.gallery.map((imgUrl, idx) => {
                 const isSelected = selectedImage === imgUrl;
                 return (
@@ -229,9 +243,9 @@ export default function DevelopmentDetailSpokePage({
                     key={idx}
                     type="button"
                     onClick={() => setSelectedImage(imgUrl)}
-                    className={`relative aspect-[16/10] lg:aspect-auto lg:h-full rounded-2xl overflow-hidden border-2 transition-all ${
+                    className={`relative aspect-[16/10] rounded-xl overflow-hidden border-2 transition-all ${
                       isSelected
-                        ? "border-[#C8A951] ring-2 ring-[#C8A951]/40 scale-[0.99]"
+                        ? "border-[#C8A951] ring-2 ring-[#C8A951]/40 scale-[0.98]"
                         : "border-transparent opacity-75 hover:opacity-100"
                     }`}
                   >
@@ -702,6 +716,64 @@ export default function DevelopmentDetailSpokePage({
                   </p>
                 </form>
               )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── * OFFICIAL SOURCE ATTRIBUTION & DEVELOPER DISCLOSURE ── */}
+      <section className="py-16 px-6 md:px-12 bg-white border-t border-[#111111]/10">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="bg-[#fbfbf9] border border-[#C8A951]/40 rounded-3xl p-8 md:p-12 shadow-sm">
+            <div className="flex items-start gap-5">
+              <span className="text-4xl text-[#C8A951] font-serif leading-none select-none shrink-0">*</span>
+              <div className="space-y-5">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2 mb-2">
+                    <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#9A7D3A]">
+                      * Official Development Sources &amp; Verification
+                    </span>
+                    <span className="px-2.5 py-0.5 rounded-full bg-[#111111]/5 text-[#111111]/70 text-[10px] font-bold uppercase tracking-wider">
+                      Official Source
+                    </span>
+                  </div>
+                  <h3 className="font-aiveritas text-2xl md:text-3xl text-[#111111]">
+                    Direct Sourcing For {dev.name}
+                  </h3>
+                </div>
+
+                <p className="text-sm md:text-base text-[#111111]/85 font-light leading-relaxed max-w-4xl">
+                  {dev.sourceAttributionNotice ||
+                    `All development specifications, architectural renderings, residential amenities, floor plan configurations, and milestone projections published on this page are strictly sourced from and verified against the official developer websites.`}
+                </p>
+
+                {dev.officialSources && dev.officialSources.length > 0 && (
+                  <div className="space-y-3 pt-2">
+                    <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#111111]/60">
+                      Official Developer URLs:
+                    </div>
+                    <div className="flex flex-wrap gap-3">
+                      {dev.officialSources.map((src, i) => (
+                        <a
+                          key={i}
+                          href={src.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-5 py-3 bg-white hover:bg-[#111111] text-[#111111] hover:text-[#C8A951] border border-[#111111]/15 hover:border-[#111111] rounded-xl text-xs font-semibold tracking-wide transition-all shadow-sm"
+                        >
+                          <Globe className="w-3.5 h-3.5 text-[#C8A951]" />
+                          <span>{src.title}</span>
+                          <ExternalLink className="w-3 h-3 opacity-60" />
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                <div className="pt-5 border-t border-[#111111]/10 text-xs text-[#111111]/60 leading-relaxed">
+                  <strong className="text-[#111111]/85 font-semibold">* Independent Buyer Advisory Notice:</strong> Mark Davis and Rachael Garnett (Davis &amp; Garnett, brokered by Align Right Realty) provide independent advisory and representation to prospective purchasers, private investors, and contract assignees. Davis &amp; Garnett is not the exclusive developer sales listing agency or project sponsor of {dev.name}. Independent buyer representation is provided at zero commission cost to the buyer, ensuring unbiased stack selection, contract review, and market comparison.
+                </div>
+              </div>
             </div>
           </div>
         </div>

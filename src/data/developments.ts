@@ -15,6 +15,12 @@ export interface FloorPlanTier {
   startingPrice: string;
 }
 
+export interface DevelopmentSource {
+  title: string;
+  url: string;
+  note?: string;
+}
+
 export interface Development {
   slug: string;
   name: string;
@@ -48,6 +54,9 @@ export interface Development {
     lat: number;
     lng: number;
   };
+  officialWebsiteUrl?: string;
+  officialSources?: DevelopmentSource[];
+  sourceAttributionNotice?: string;
 }
 
 export const DEVELOPMENTS: Development[] = [
@@ -70,13 +79,29 @@ export const DEVELOPMENTS: Development[] = [
     delivery: "2027",
     unitsOrAcreage: "38 Stories | 207 Private Residences above 5-Star Pendry Hotel",
     propertyTypes: ["Luxury Condominiums", "Sky Penthouses", "Branded Hotel Residences"],
-    heroImage: "/res_luxury_condo_1787632822869.png",
+    heroImage: "/developments/pendry/downtown-tampa-luxury-living-pendry-residences-davis-garnett-residential-commercial-advisors-1.jpg",
     gallery: [
-      "/res_luxury_condo_1787632822869.png",
-      "/com_office_tower_1787632874122.png",
-      "/res_waterfront_estate_1787632802890.png",
-      "/davis-garnett-listings-3.jpg",
+      "/developments/pendry/downtown-tampa-luxury-living-pendry-residences-davis-garnett-residential-commercial-advisors-1.jpg",
+      "/developments/pendry/downtown-tampa-luxury-living-pendry-residences-davis-garnett-residential-commercial-advisors-2.jpg",
+      "/developments/pendry/downtown-tampa-luxury-living-pendry-residences-davis-garnett-residential-commercial-advisors-3.jpg",
+      "/developments/pendry/downtown-tampa-luxury-living-pendry-residences-davis-garnett-residential-commercial-advisors-4.jpg",
+      "/developments/pendry/downtown-tampa-luxury-living-pendry-residences-davis-garnett-residential-commercial-advisors-5.jpg",
+      "/developments/pendry/downtown-tampa-luxury-living-pendry-residences-davis-garnett-residential-commercial-advisors-6.jpg",
     ],
+    officialWebsiteUrl: "https://www.pendry.com/tampa/",
+    officialSources: [
+      {
+        title: "Pendry Hotels & Resorts — Pendry Tampa Official Site",
+        url: "https://www.pendry.com/tampa/",
+        note: "Official hotel, spa, dining concepts, and brand specifications",
+      },
+      {
+        title: "Pendry Residences Tampa — Official Residential Sales Portal",
+        url: "https://pendrytampa.com/",
+        note: "Official residential floor plans, tower levels 15–37, finishes by Studio Munge, and concierge programming",
+      },
+    ],
+    sourceAttributionNotice: "All renderings, architectural plans, specifications, residential services, and building timelines for Pendry Residences Tampa are sourced directly from the official developer publications at pendry.com/tampa and pendrytampa.com.",
     summary:
       "Rising 38 stories directly along the Hillsborough River and the iconic Tampa Riverwalk, Pendry Residences Tampa fuses Montage International's five-star hospitality with 207 ultra-private sky residences featuring private elevators and expansive river-to-bay terraces.",
     description:
@@ -186,13 +211,24 @@ export const DEVELOPMENTS: Development[] = [
     delivery: "Tower I Immediate | Tower II 2026–2027",
     unitsOrAcreage: "Twin 27-Story Towers | 183 Total Residences + 12 Bayshore Villas",
     propertyTypes: ["Bayfront Luxury Condominiums", "Townhome Villas", "Penthouses"],
-    heroImage: "/res_waterfront_estate_1787632802890.png",
+    heroImage: "/developments/ritz-carlton/downtown-tampa-luxury-living-ritz-carlton-residences-davis-garnett-residential-commercial-advisors-1.jpg",
     gallery: [
-      "/res_waterfront_estate_1787632802890.png",
-      "/res_luxury_condo_1787632822869.png",
-      "/davis-garnett-listings-4.jpg",
-      "/davis-garnett-listings-6.jpg",
+      "/developments/ritz-carlton/downtown-tampa-luxury-living-ritz-carlton-residences-davis-garnett-residential-commercial-advisors-1.jpg",
+      "/developments/ritz-carlton/downtown-tampa-luxury-living-ritz-carlton-residences-davis-garnett-residential-commercial-advisors-2.jpg",
+      "/developments/ritz-carlton/downtown-tampa-luxury-living-ritz-carlton-residences-davis-garnett-residential-commercial-advisors-3.jpg",
+      "/developments/ritz-carlton/downtown-tampa-luxury-living-ritz-carlton-residences-davis-garnett-residential-commercial-advisors-4.jpg",
+      "/developments/ritz-carlton/downtown-tampa-luxury-living-ritz-carlton-residences-davis-garnett-residential-commercial-advisors-5.jpg",
+      "/developments/ritz-carlton/downtown-tampa-luxury-living-ritz-carlton-residences-davis-garnett-residential-commercial-advisors-6.jpg",
     ],
+    officialWebsiteUrl: "https://theresidencestampa.com/",
+    officialSources: [
+      {
+        title: "The Ritz-Carlton Residences, Tampa — Official Developer Website",
+        url: "https://theresidencestampa.com/",
+        note: "Official architectural details by Arquitectonica, Meyer Davis interior design, Enzo Enea landscape master plan, Delos wellness technology, and residential services",
+      },
+    ],
+    sourceAttributionNotice: "All photography, architectural specifications, amenity descriptions, and floor plans for The Ritz-Carlton Residences, Tampa are sourced directly from the developer's official website at theresidencestampa.com.",
     summary:
       "Commanding five lush acres along South Tampa's iconic Bayshore Boulevard, The Ritz-Carlton Residences by Related Group deliver unobstructed panoramic views of Hillsborough Bay, Meyer Davis interiors, and legendary Ritz-Carlton residential management.",
     description:
@@ -298,17 +334,33 @@ export const DEVELOPMENTS: Development[] = [
     architectOrPlanner: "Nichols Architects & MAWD Interior Design",
     builders: ["Strategic Property Partners (SPP)"],
     priceRange: "$1.2M – $5.0M+",
-    status: "Pre-Construction Reservation Phase",
-    delivery: "2027–2028",
-    unitsOrAcreage: "33 Stories | 400-Ft Tower | Curated Luxury Condominium Collection",
-    propertyTypes: ["Urban Luxury Condominiums", "Sky Penthouses", "Mixed-Use Retail Podium"],
-    heroImage: "/com_office_tower_1787632874122.png",
+    status: "Pre-Construction Planning & Reservations",
+    delivery: "Spring 2027 Groundbreaking | Late 2029 Delivery",
+    unitsOrAcreage: "33 Stories | ~400-Ft Tower | 452 Residences | ~37,000 SqFt Ground-Floor Retail",
+    propertyTypes: ["Urban Luxury Condominiums", "Sky Penthouses", "Flagship Retail Promenade"],
+    heroImage: "/developments/water-st-phase-2/downtown-tampa-luxury-living-water-street-phase-two-residences-davis-garnett-residential-commercial-advisors-1.jpg",
     gallery: [
-      "/com_office_tower_1787632874122.png",
-      "/res_luxury_condo_1787632822869.png",
-      "/com_luxury_retail_1787632885082.png",
-      "/davis-garnett-listings-2.jpg",
+      "/developments/water-st-phase-2/downtown-tampa-luxury-living-water-street-phase-two-residences-davis-garnett-residential-commercial-advisors-1.jpg",
+      "/developments/water-st-phase-2/downtown-tampa-luxury-living-water-street-phase-two-residences-davis-garnett-residential-commercial-advisors-2.jpg",
+      "/developments/water-st-phase-2/downtown-tampa-luxury-living-water-street-phase-two-residences-davis-garnett-residential-commercial-advisors-3.jpg",
+      "/developments/water-st-phase-2/downtown-tampa-luxury-living-water-street-phase-two-residences-davis-garnett-residential-commercial-advisors-4.jpg",
+      "/developments/water-st-phase-2/downtown-tampa-luxury-living-water-street-phase-two-residences-davis-garnett-residential-commercial-advisors-5.jpg",
+      "/developments/water-st-phase-2/downtown-tampa-luxury-living-water-street-phase-two-residences-davis-garnett-residential-commercial-advisors-6.jpg",
     ],
+    officialWebsiteUrl: "https://www.waterstreettampa.com/",
+    officialSources: [
+      {
+        title: "Water Street Tampa — Official Master District Portal",
+        url: "https://www.waterstreettampa.com/",
+        note: "Official neighborhood master plan, WELL Community Gold standard certifications, culinary and lifestyle district directory",
+      },
+      {
+        title: "Water Street Tampa — Official Project Progress & Construction Updates",
+        url: "https://www.waterstreettampa.com/project-progress",
+        note: "Official Phase Two construction status, 33-story tower milestones, infrastructure development, and timeline projections",
+      },
+    ],
+    sourceAttributionNotice: "All Phase Two tower specifications, master-planned neighborhood metrics, WELL certifications, and construction progress milestones are sourced directly from Strategic Property Partners at waterstreettampa.com and waterstreettampa.com/project-progress.",
     summary:
       "Following the rapid sell-out of The Tampa EDITION Residences and Cora/Heron towers, Strategic Property Partners launches Water Street Tampa Phase 2—a 33-story, 400-foot luxury residential tower designed by Nichols Architects and MAWD.",
     description:

@@ -875,10 +875,10 @@ export default function HomePageV1Light() {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-0">
           {[
             { img: "/listings/bahama-shores-1.webp", href: "/properties", alt: "6100 Bahama Shores Dr S - Waterfront Luxury Estate" },
-            { img: "/res_luxury_condo_1787632822869.png", href: "/developments", alt: "Downtown Tampa Luxury Highrise Condos" },
+            { img: "/developments/pendry/downtown-tampa-luxury-living-pendry-residences-davis-garnett-residential-commercial-advisors-1.jpg", href: "/developments/pendry-residences-tampa", alt: "Downtown Tampa Luxury Living - Pendry Residences" },
             { img: "/listings/ridgewood-brandon-2.jpg", href: "/properties", alt: "126 Ridgewood Ave - Commercial Mixed-Use Asset" },
             { img: "/listings/bahama-shores-lot-1.jpg", href: "/properties", alt: "6100 Bahama Shores Lot 10 - Pre-Construction Homesite" },
-            { img: "/res_waterfront_estate_1787632802890.png", href: "/developments", alt: "Tampa Bay Waterfront Pre-Construction Developments" },
+            { img: "/developments/ritz-carlton/downtown-tampa-luxury-living-ritz-carlton-residences-davis-garnett-residential-commercial-advisors-1.jpg", href: "/developments/the-ritz-carlton-residences-bayshore", alt: "Bayshore Boulevard Luxury Living - The Ritz-Carlton Residences" },
             { img: "/listings/justamere-tampa-1.jpg", href: "/properties", alt: "3012 Justamere Ln - Lakefront Estate Closed" },
             { img: "/res_golf_course_home_1787632854609.png", href: "/developments", alt: "Wesley Chapel Master-Planned Communities" },
             { img: "/listings/beverly-hills-zephyrhills-1.jpg", href: "/properties", alt: "6389 Beverly Hills Dr - Abbott Square Closed" },

@@ -12,6 +12,7 @@ export function proxy(request: NextRequest) {
     pathname.startsWith('/new-images/') ||
     pathname.startsWith('/city-photos/') ||
     pathname.startsWith('/listings/') ||
+    pathname.startsWith('/developments/') ||
     pathname === '/sitemap.xml' ||
     pathname === '/robots.txt'
   ) {

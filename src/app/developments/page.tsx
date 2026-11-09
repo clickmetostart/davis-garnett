@@ -17,6 +17,8 @@ import {
   PhoneCall,
   Layers,
   Trees,
+  ExternalLink,
+  Globe,
 } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
 import DavisGarnettLogo from "@/components/DavisGarnettLogo";
@@ -571,6 +573,129 @@ export default function DevelopmentsHubPage() {
         </div>
       </section>
 
+      {/* ── * OFFICIAL SOURCES ATTRIBUTION & REGULATORY DISCLOSURE ── */}
+      <section className="py-16 px-6 md:px-12 bg-white border-t border-[#111111]/10">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="bg-[#fbfbf9] border border-[#C8A951]/40 rounded-3xl p-8 md:p-12 shadow-sm">
+            <div className="flex items-start gap-5">
+              <span className="text-4xl text-[#C8A951] font-serif leading-none select-none shrink-0">*</span>
+              <div className="space-y-6">
+                <div>
+                  <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#9A7D3A] block mb-2">
+                    * Official Development Sources &amp; Verification
+                  </span>
+                  <h3 className="font-aiveritas text-2xl md:text-3xl text-[#111111]">
+                    Direct Sourcing From Official Sponsor Portals
+                  </h3>
+                </div>
+
+                <p className="text-sm md:text-base text-[#111111]/80 font-light leading-relaxed max-w-4xl">
+                  To ensure 100% accuracy, transparency, and consumer protection, all architectural specifications, tower elevations, unit counts, amenity descriptions, and construction milestone projections published across the Davis &amp; Garnett Developments Hub are sourced and verified exclusively from official developer and master district websites:
+                </p>
+
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
+                  <div className="p-5 rounded-2xl bg-white border border-[#111111]/10 flex flex-col justify-between">
+                    <div>
+                      <div className="text-[10px] uppercase tracking-wider text-[#9A7D3A] font-bold mb-1">
+                        Riverwalk Luxury Tower
+                      </div>
+                      <h4 className="font-aiveritas text-lg text-[#111111] mb-2">Pendry Residences Tampa</h4>
+                      <p className="text-xs text-[#111111]/65 mb-4 leading-relaxed">
+                        38 stories, 207 private residences, Montage hospitality, Spa Pendry, and curated dining.
+                      </p>
+                    </div>
+                    <div className="flex flex-col gap-1.5 pt-2 border-t border-[#111111]/8">
+                      <a
+                        href="https://www.pendry.com/tampa/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-xs font-bold text-[#111111] hover:text-[#C8A951] transition-colors"
+                      >
+                        <Globe className="w-3.5 h-3.5 text-[#C8A951]" />
+                        <span>pendry.com/tampa</span>
+                        <ExternalLink className="w-3.5 h-3.5 opacity-60" />
+                      </a>
+                      <a
+                        href="https://pendrytampa.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-[11px] font-semibold text-[#9A7D3A] hover:text-[#111111] transition-colors"
+                      >
+                        <Globe className="w-3 h-3 text-[#9A7D3A]" />
+                        <span>pendrytampa.com (Sales)</span>
+                        <ExternalLink className="w-3 h-3 opacity-60" />
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="p-5 rounded-2xl bg-white border border-[#111111]/10 flex flex-col justify-between">
+                    <div>
+                      <div className="text-[10px] uppercase tracking-wider text-[#9A7D3A] font-bold mb-1">
+                        Bayshore Boulevard Towers
+                      </div>
+                      <h4 className="font-aiveritas text-lg text-[#111111] mb-2">The Ritz-Carlton Residences</h4>
+                      <p className="text-xs text-[#111111]/65 mb-4 leading-relaxed">
+                        4.5-acre waterfront enclave, twin towers by Arquitectonica, Meyer Davis, and Enzo Enea.
+                      </p>
+                    </div>
+                    <div className="pt-2 border-t border-[#111111]/8">
+                      <a
+                        href="https://theresidencestampa.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-xs font-bold text-[#111111] hover:text-[#C8A951] transition-colors"
+                      >
+                        <Globe className="w-3.5 h-3.5 text-[#C8A951]" />
+                        <span>theresidencestampa.com</span>
+                        <ExternalLink className="w-3.5 h-3.5 opacity-60" />
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="p-5 rounded-2xl bg-white border border-[#111111]/10 flex flex-col justify-between">
+                    <div>
+                      <div className="text-[10px] uppercase tracking-wider text-[#9A7D3A] font-bold mb-1">
+                        WELL Community Gold District
+                      </div>
+                      <h4 className="font-aiveritas text-lg text-[#111111] mb-2">Water Street Tampa Phase 2</h4>
+                      <p className="text-xs text-[#111111]/65 mb-4 leading-relaxed">
+                        33-story tower, 452 residences, 37K SF retail, and district construction progress.
+                      </p>
+                    </div>
+                    <div className="flex flex-col gap-1.5 pt-2 border-t border-[#111111]/8">
+                      <a
+                        href="https://www.waterstreettampa.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-xs font-bold text-[#111111] hover:text-[#C8A951] transition-colors"
+                      >
+                        <Globe className="w-3.5 h-3.5 text-[#C8A951]" />
+                        <span>waterstreettampa.com</span>
+                        <ExternalLink className="w-3.5 h-3.5 opacity-60" />
+                      </a>
+                      <a
+                        href="https://www.waterstreettampa.com/project-progress"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-[11px] font-semibold text-[#9A7D3A] hover:text-[#111111] transition-colors"
+                      >
+                        <Globe className="w-3 h-3 text-[#9A7D3A]" />
+                        <span>waterstreettampa.com/project-progress</span>
+                        <ExternalLink className="w-3 h-3 opacity-60" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-6 border-t border-[#111111]/10 text-xs text-[#111111]/60 leading-relaxed">
+                  <strong className="text-[#111111]/85 font-semibold">* Legal Disclosure &amp; Independent Agency Notice:</strong> Davis &amp; Garnett (Mark Davis &amp; Rachael Garnett, brokered by Align Right Realty) is an independent licensed real estate advisory group representing prospective buyers, assignees, and investors. Davis &amp; Garnett is not the exclusive developer sales listing agency, project sponsor, or affiliate of Two Roads Development, Montage International, The Related Group, or Strategic Property Partners. All trademarks, project names, logos, and architectural renderings are the property of their respective owners and are displayed strictly for editorial evaluation and buyer identification purposes.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── FOOTER ── */}
       <footer className="py-20 px-6 md:px-12 bg-[#0c0b09] text-white border-t border-[#C8A951]/20">
         <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 pb-12 border-b border-white/10">
@@ -719,12 +844,26 @@ function DevelopmentTowerShowcaseCard({ dev, index }: { dev: Development; index:
           </div>
 
           <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-[#111111]/10">
-            <Link
-              href={`/developments/${dev.slug}`}
-              className="inline-flex items-center gap-3 px-7 py-3.5 bg-[#111111] hover:bg-[#C8A951] text-white hover:text-[#111111] text-xs uppercase tracking-[0.2em] font-bold rounded-xl transition-colors"
-            >
-              Explore {dev.name} <ArrowRight className="w-4 h-4" />
-            </Link>
+            <div className="flex flex-wrap items-center gap-3">
+              <Link
+                href={`/developments/${dev.slug}`}
+                className="inline-flex items-center gap-3 px-7 py-3.5 bg-[#111111] hover:bg-[#C8A951] text-white hover:text-[#111111] text-xs uppercase tracking-[0.2em] font-bold rounded-xl transition-colors"
+              >
+                Explore {dev.name} <ArrowRight className="w-4 h-4" />
+              </Link>
+              {dev.officialWebsiteUrl && (
+                <a
+                  href={dev.officialWebsiteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-3.5 bg-[#f5f3ef] hover:bg-white border border-[#111111]/15 hover:border-[#C8A951] text-[#111111] text-xs font-semibold rounded-xl transition-colors"
+                >
+                  <Globe className="w-3.5 h-3.5 text-[#C8A951]" />
+                  <span>Official Site</span>
+                  <ExternalLink className="w-3 h-3 opacity-60" />
+                </a>
+              )}
+            </div>
             <a
               href="#vip-pricing-form"
               className="text-xs uppercase tracking-[0.18em] font-bold text-[#9A7D3A] hover:text-[#111111] transition-colors"
