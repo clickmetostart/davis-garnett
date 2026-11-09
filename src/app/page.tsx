@@ -192,7 +192,7 @@ export default function HomePageV1Light() {
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 rounded-2xl overflow-hidden shadow-2xl"
               style={{ width: "30vw", height: "75vh", scale: centerScale }}
             >
-              <Image src="/new-images/new-2/mark-davis-rachael-garnett-residential-commerical-advisors-tampa-real-estate-2.jpg" alt="Davis & Garnett Team" fill className="object-cover object-top" />
+              <Image src="/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-8.jpg" alt="Davis & Garnett Team" fill unoptimized className="object-cover object-top" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
               <div className="absolute bottom-10 left-0 right-0 text-center px-4">
                 <h3 className="font-aiveritas text-3xl text-white drop-shadow-md mb-2">The Power Combo</h3>

@@ -186,9 +186,10 @@ export default function EveryListingApproachPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-[#111111]/10 bg-[#111111]">
               <Image
-                src="/new-images/davis-garnett-new-team-1.jpg"
+                src="/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-9.jpg"
                 alt="Mark Davis and Rachael Garnett — Principal Advisors"
                 fill
+                unoptimized
                 className="object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />

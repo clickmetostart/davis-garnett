@@ -371,7 +371,7 @@ export default function AboutHubPage() {
                 <div className="grid sm:grid-cols-[0.9fr_1.1fr] bg-[#fbfbf9] border-b border-[#111111]/8">
                   <div className="relative aspect-[4/5] sm:aspect-auto sm:min-h-[340px] bg-[#111111]">
                     <Image
-                      src="/new-images/new-2/rachael-garnett-residential-commerical-advisor-tampa-real-estate-1.jpg"
+                      src="/new-images/new-2/rachael-garnett-residential-commerical-advisor-tampa-real-estate-6.jpg"
                       alt="Rachael Garnett — Luxury Residential & Relocation Specialist"
                       fill
                       unoptimized
