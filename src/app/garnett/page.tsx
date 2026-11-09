@@ -138,10 +138,11 @@ export default function GarnettPage() {
           <div className="relative">
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-[#111111]/10 bg-[#111111]">
               <Image
-                src="/rachael-garnett-headshot.png"
+                src="/new-images/new-2/rachael-garnett-residential-commerical-advisor-tampa-real-estate-1.jpg"
                 alt="Rachael Garnett — Luxury Residential & Relocation Specialist (#3378601)"
                 fill
                 priority
+                unoptimized
                 className="object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/80 via-transparent to-transparent" />

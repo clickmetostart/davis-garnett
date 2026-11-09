@@ -222,10 +222,11 @@ export default function AboutHubPage() {
             <div className="relative">
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-[#111111]/10 bg-[#111111]">
                 <Image
-                  src="/new-images/davis-garnett-new-team-1.jpg"
+                  src="/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-3.jpg"
                   alt="Mark Davis and Rachael Garnett — Principal Advisors at Davis & Garnett"
                   fill
                   priority
+                  unoptimized
                   className="object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/85 via-transparent to-transparent" />
@@ -289,9 +290,10 @@ export default function AboutHubPage() {
                 <div className="grid sm:grid-cols-[0.9fr_1.1fr] bg-[#fbfbf9] border-b border-[#111111]/8">
                   <div className="relative aspect-[4/5] sm:aspect-auto sm:min-h-[340px] bg-[#111111]">
                     <Image
-                      src="/new-images/davis-garnett-new-team-mark.jpg"
+                      src="/new-images/new-2/mark-davis-residential-commerical-advisor-tampa-real-estate-3.jpg"
                       alt="Mark Davis — Commercial, Land & Investment Specialist"
                       fill
+                      unoptimized
                       className="object-cover object-top"
                     />
                   </div>
@@ -369,9 +371,10 @@ export default function AboutHubPage() {
                 <div className="grid sm:grid-cols-[0.9fr_1.1fr] bg-[#fbfbf9] border-b border-[#111111]/8">
                   <div className="relative aspect-[4/5] sm:aspect-auto sm:min-h-[340px] bg-[#111111]">
                     <Image
-                      src="/new-images/davis-garnett-new-team-rachael.jpg"
+                      src="/new-images/new-2/rachael-garnett-residential-commerical-advisor-tampa-real-estate-1.jpg"
                       alt="Rachael Garnett — Luxury Residential & Relocation Specialist"
                       fill
+                      unoptimized
                       className="object-cover object-top"
                     />
                   </div>

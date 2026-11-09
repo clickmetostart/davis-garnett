@@ -88,7 +88,7 @@ const MARK_AUTHOR = {
   license: "FL Lic #3209459",
   phone: "941-737-4127",
   email: "mark@davisgarnettsells.com",
-  image: "/mark-davis-gmail-avatar.jpg",
+  image: "/davis-garnett-headshots/mark-davis-avatar-footer.JPG",
   profileHref: "/about/mark-davis",
 };
 
@@ -98,7 +98,7 @@ const RACHAEL_AUTHOR = {
   license: "FL Lic #3378601",
   phone: "727-808-3344",
   email: "rachael@davisgarnettsells.com",
-  image: "/rachael-garnett-gmail-avatar.jpg",
+  image: "/davis-garnett-headshots/rachael-garnett-avatar-footer.webp",
   profileHref: "/about/rachael-garnett",
 };
 

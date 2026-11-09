@@ -112,9 +112,10 @@ export default function ContactPage() {
                     {/* Circle Avatar matching Login Footer */}
                     <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-[#D4AF37] shadow-lg shrink-0 bg-[#111]">
                       <Image
-                        src="/mark-davis-gmail-avatar.jpg"
+                        src="/davis-garnett-headshots/mark-davis-avatar-footer.JPG"
                         alt="Mark Davis"
                         fill
+                        unoptimized
                         className="object-cover object-top"
                       />
                     </div>
@@ -219,9 +220,10 @@ export default function ContactPage() {
                     {/* Circle Avatar matching Login Footer */}
                     <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-[#D4AF37] shadow-lg shrink-0 bg-[#111]">
                       <Image
-                        src="/rachael-garnett-gmail-avatar.jpg"
+                        src="/davis-garnett-headshots/rachael-garnett-avatar-footer.webp"
                         alt="Rachael Garnett"
                         fill
+                        unoptimized
                         className="object-cover object-[center_30%]"
                       />
                     </div>

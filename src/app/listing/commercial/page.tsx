@@ -125,7 +125,7 @@ export default function CommercialListing() {
             {/* Agent Contact Card */}
             <div className="bg-[#111] border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
               <div className="relative h-48 w-full">
-                <Image src="/mark-davis-headshot.png" alt="Mark Davis" fill className="object-cover object-top" />
+                <Image src="/new-images/new-2/mark-davis-residential-commerical-advisor-tampa-real-estate-3.jpg" alt="Mark Davis" fill className="object-cover object-top" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#111] to-transparent" />
               </div>
               <div className="p-8 relative -mt-16">

@@ -132,7 +132,7 @@ export default function ResidentialListing() {
             {/* Agent Contact Card */}
             <div className="bg-[#111] border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
               <div className="relative h-48 w-full">
-                <Image src="/rachael-garnett-headshot.png" alt="Rachael Garnett" fill className="object-cover object-top" />
+                <Image src="/new-images/new-2/rachael-garnett-residential-commerical-advisor-tampa-real-estate-1.jpg" alt="Rachael Garnett" fill className="object-cover object-top" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#111] to-transparent" />
               </div>
               <div className="p-8 relative -mt-16">

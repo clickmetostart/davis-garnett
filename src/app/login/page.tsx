@@ -4,9 +4,6 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import DavisGarnettLogo from '@/components/DavisGarnettLogo';
 
-// Static imports to bypass dev server cache
-import markHeadshot from '../../../public/mark-davis-gmail-avatar.jpg';
-import rachaelHeadshot from '../../../public/rachael-garnett-gmail-avatar.jpg';
 import alignRightLogo from '../../../public/align-right-email-logo.png';
 import styles from './loginStyles.module.css';
 
@@ -188,7 +185,7 @@ export default function LoginPage() {
           {/* Column 2: Mark Davis */}
           <div className="flex flex-row items-center justify-center md:justify-start text-left gap-6">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={markHeadshot.src} alt="Mark Davis" className="w-20 h-20 rounded-full object-cover object-top border border-[#D4AF37]/30 shadow-lg shadow-black/50 shrink-0" />
+            <img src="/davis-garnett-headshots/mark-davis-avatar-footer.JPG" alt="Mark Davis" className="w-20 h-20 rounded-full object-cover object-top border border-[#D4AF37]/30 shadow-lg shadow-black/50 shrink-0" />
             <div className="flex flex-col gap-1">
               <div>
                 <strong className="text-[#D4AF37] text-base block font-serif">Mark Davis</strong>
@@ -209,7 +206,7 @@ export default function LoginPage() {
           {/* Column 3: Rachael Garnett */}
           <div className="flex flex-row items-center justify-center md:justify-start text-left gap-6">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={rachaelHeadshot.src} alt="Rachael Garnett" className="w-20 h-20 rounded-full object-cover object-[center_30%] border border-[#D4AF37]/30 shadow-lg shadow-black/50 shrink-0" />
+            <img src="/davis-garnett-headshots/rachael-garnett-avatar-footer.webp" alt="Rachael Garnett" className="w-20 h-20 rounded-full object-cover object-[center_30%] border border-[#D4AF37]/30 shadow-lg shadow-black/50 shrink-0" />
             <div className="flex flex-col gap-1">
               <div>
                 <strong className="text-[#D4AF37] text-base block font-serif">Rachael Garnett</strong>

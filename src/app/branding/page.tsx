@@ -470,7 +470,7 @@ export default function BrandingBook() {
             {/* Mark */}
             <div className="glass-card p-8 flex flex-col items-center gap-4 border border-[#D4AF37]/20">
               <div className="w-20 h-20 relative rounded-full overflow-hidden border-2 border-[#D4AF37]">
-                <Image src="/mark-davis-headshot.png" alt="Mark Davis" fill className="object-cover" />
+                <Image src="/davis-garnett-headshots/mark-davis-avatar-footer.JPG" alt="Mark Davis" fill unoptimized className="object-cover object-top" />
               </div>
               <div className="text-center">
                 <h3 className="font-serif text-xl">Mark Davis</h3>
@@ -510,7 +510,7 @@ export default function BrandingBook() {
             {/* Rachael */}
             <div className="glass-card p-8 flex flex-col items-center gap-4 border border-[#D4AF37]/20">
               <div className="w-20 h-20 relative rounded-full overflow-hidden border-2 border-[#D4AF37]">
-                <Image src="/rachael-garnett-headshot.png" alt="Rachael Garnett" fill className="object-cover" />
+                <Image src="/davis-garnett-headshots/rachael-garnett-avatar-footer.webp" alt="Rachael Garnett" fill unoptimized className="object-cover object-[center_30%]" />
               </div>
               <div className="text-center">
                 <h3 className="font-serif text-xl">Rachael Garnett</h3>

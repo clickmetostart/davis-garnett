@@ -551,17 +551,19 @@ export default function DevelopmentDetailSpokePage({
                 <div className="flex -space-x-2.5 shrink-0">
                   <div className="relative w-11 h-11 rounded-full overflow-hidden border-2 border-[#C8A951] bg-black">
                     <Image
-                      src="/mark-davis-gmail-avatar.jpg"
+                      src="/davis-garnett-headshots/mark-davis-avatar-footer.JPG"
                       alt="Mark Davis"
                       fill
+                      unoptimized
                       className="object-cover object-top"
                     />
                   </div>
                   <div className="relative w-11 h-11 rounded-full overflow-hidden border-2 border-[#C8A951] bg-black">
                     <Image
-                      src="/rachael-garnett-gmail-avatar.jpg"
+                      src="/davis-garnett-headshots/rachael-garnett-avatar-footer.webp"
                       alt="Rachael Garnett"
                       fill
+                      unoptimized
                       className="object-cover object-[center_30%]"
                     />
                   </div>

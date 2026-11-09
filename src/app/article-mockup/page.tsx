@@ -37,7 +37,7 @@ export default function ArticleMockup() {
             <div className="flex items-center justify-between border-y border-white/10 py-6">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full overflow-hidden relative">
-                  <Image src="/mark-davis-headshot.png" alt="Mark Davis" fill className="object-cover" />
+                  <Image src="/davis-garnett-headshots/mark-davis-avatar-footer.JPG" alt="Mark Davis" fill unoptimized className="object-cover object-top" />
                 </div>
                 <div>
                   <p className="font-bold">Mark Davis</p>

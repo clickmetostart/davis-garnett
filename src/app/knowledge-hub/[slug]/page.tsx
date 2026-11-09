@@ -193,6 +193,7 @@ export default function KnowledgeItemPage({
                   src={item.author.image}
                   alt={item.author.name}
                   fill
+                  unoptimized
                   className={`object-cover ${
                     item.author.name.includes("Rachael") ? "object-[center_30%]" : "object-top"
                   }`}

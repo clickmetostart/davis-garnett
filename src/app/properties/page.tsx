@@ -299,13 +299,13 @@ export default function PropertiesPage() {
                             <div className="flex -space-x-2">
                               {/* eslint-disable-next-line @next/next/no-img-element */}
                               <img
-                                src="/mark-davis-gmail-avatar.jpg"
+                                src="/davis-garnett-headshots/mark-davis-avatar-footer.JPG"
                                 alt="Mark Davis"
                                 className="w-6 h-6 rounded-full object-cover object-top border border-[#C8A951]"
                               />
                               {/* eslint-disable-next-line @next/next/no-img-element */}
                               <img
-                                src="/rachael-garnett-gmail-avatar.jpg"
+                                src="/davis-garnett-headshots/rachael-garnett-avatar-footer.webp"
                                 alt="Rachael Garnett"
                                 className="w-6 h-6 rounded-full object-cover object-[center_30%] border border-[#C8A951]"
                               />
@@ -534,13 +534,13 @@ export default function PropertiesPage() {
                         <div className="flex -space-x-1.5">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
-                            src="/mark-davis-gmail-avatar.jpg"
+                            src="/davis-garnett-headshots/mark-davis-avatar-footer.JPG"
                             alt="Mark Davis"
                             className="w-5 h-5 rounded-full object-cover object-top border border-[#C8A951]"
                           />
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
-                            src="/rachael-garnett-gmail-avatar.jpg"
+                            src="/davis-garnett-headshots/rachael-garnett-avatar-footer.webp"
                             alt="Rachael Garnett"
                             className="w-5 h-5 rounded-full object-cover object-[center_30%] border border-[#C8A951]"
                           />
@@ -680,7 +680,7 @@ export default function PropertiesPage() {
                 <div className="flex items-center gap-4">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="/mark-davis-gmail-avatar.jpg"
+                    src="/davis-garnett-headshots/mark-davis-avatar-footer.JPG"
                     alt="Mark Davis"
                     className="w-14 h-14 rounded-full object-cover object-top border border-[#C8A951] shrink-0"
                   />
@@ -704,7 +704,7 @@ export default function PropertiesPage() {
                 <div className="flex items-center gap-4">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="/rachael-garnett-gmail-avatar.jpg"
+                    src="/davis-garnett-headshots/rachael-garnett-avatar-footer.webp"
                     alt="Rachael Garnett"
                     className="w-14 h-14 rounded-full object-cover object-[center_30%] border border-[#C8A951] shrink-0"
                   />

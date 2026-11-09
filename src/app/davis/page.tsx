@@ -177,10 +177,11 @@ export default function DavisPage() {
           <div className="relative">
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-[#111111]/10 bg-[#111111]">
               <Image
-                src="/mark-davis-headshot.png"
+                src="/new-images/new-2/mark-davis-residential-commerical-advisor-tampa-real-estate-3.jpg"
                 alt="Mark Davis — Commercial, Mixed-Use & Land Advisor (#3209459)"
                 fill
                 priority
+                unoptimized
                 className="object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/80 via-transparent to-transparent" />
