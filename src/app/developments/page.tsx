@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
 import DavisGarnettLogo from "@/components/DavisGarnettLogo";
+import DevelopmentImageSlider from "@/components/DevelopmentImageSlider";
 import { DEVELOPMENTS, Development } from "@/data/developments";
 
 type FilterOption = "all" | "downtown-bayshore" | "north-tampa";
@@ -780,14 +781,9 @@ function DevelopmentTowerShowcaseCard({ dev, index }: { dev: Development; index:
             isReversed ? "lg:order-2" : ""
           }`}
         >
-          <Image
-            src={dev.heroImage}
-            alt={dev.name}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-700"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-          <div className="absolute top-5 left-5 flex flex-wrap gap-2">
+          <DevelopmentImageSlider images={dev.gallery} alt={dev.name} />
+          <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+          <div className="absolute top-5 left-5 flex flex-wrap gap-2 pointer-events-none">
             <span className="px-3.5 py-1.5 rounded-full bg-[#111111]/90 backdrop-blur-md text-[#C8A951] text-[10px] uppercase tracking-[0.2em] font-bold border border-[#C8A951]/40">
               {dev.status}
             </span>
@@ -797,7 +793,7 @@ function DevelopmentTowerShowcaseCard({ dev, index }: { dev: Development; index:
               </span>
             )}
           </div>
-          <div className="absolute bottom-5 left-5 right-5 text-white">
+          <div className="absolute bottom-5 left-5 right-5 text-white pointer-events-none">
             <div className="text-[10px] uppercase tracking-[0.22em] text-[#C8A951] font-bold mb-1">
               Starting Price Range
             </div>
@@ -915,14 +911,9 @@ function MasterPlannedCommunityCard({ dev }: { dev: Development }) {
       <div>
         {/* Image Header */}
         <div className="relative h-72 w-full overflow-hidden">
-          <Image
-            src={dev.heroImage}
-            alt={dev.name}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-700"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
-          <div className="absolute top-4 left-4 right-4 flex items-center justify-between gap-2">
+          <DevelopmentImageSlider images={dev.gallery} alt={dev.name} sizes="(min-width: 1024px) 33vw, 100vw" />
+          <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+          <div className="absolute top-4 left-4 right-4 flex items-center justify-between gap-2 pointer-events-none">
             <span className="px-3.5 py-1.5 rounded-full bg-white/95 text-[#111111] text-[10px] uppercase tracking-[0.18em] font-bold shadow">
               {dev.neighborhoodOrSubmarket}
             </span>
@@ -930,7 +921,7 @@ function MasterPlannedCommunityCard({ dev }: { dev: Development }) {
               {dev.specs[0]?.value}
             </span>
           </div>
-          <div className="absolute bottom-4 left-6 right-6 flex items-end justify-between text-white">
+          <div className="absolute bottom-4 left-6 right-6 flex items-end justify-between text-white pointer-events-none">
             <div>
               <span className="text-[10px] uppercase tracking-[0.2em] text-[#C8A951] font-bold block">
                 Master Developer: {dev.developer}
