@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
 import DavisGarnettLogo from "@/components/DavisGarnettLogo";
+import SiteFooter from "@/components/SiteFooter";
 
 const SOLD_2026_PORTFOLIO = [
   {
@@ -793,36 +794,7 @@ export default function RachaelGarnettAdvisorPage() {
       </section>
 
       {/* ── FOOTER ───────────────────────────────────────────────────────── */}
-      <footer className="py-16 px-6 md:px-12 bg-[#111111] text-white border-t border-[#C8A951]/20">
-        <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="flex items-center gap-6">
-            <div className="w-40">
-              <DavisGarnettLogo variant="dark" className="w-full" />
-            </div>
-            <div className="text-xs text-white/60">
-              <p className="font-bold text-white">Rachael Garnett • FL License #3378601</p>
-              <p>Align Right Realty Carrollwood (#BK3401606) • 727-808-3344</p>
-            </div>
-          </div>
-          <div className="flex flex-wrap gap-6 text-xs uppercase tracking-widest text-white/70">
-            <Link href="/about" className="hover:text-[#C8A951]">
-              About The Team
-            </Link>
-            <Link href="/about/mark-davis" className="hover:text-[#C8A951]">
-              Meet Mark Davis
-            </Link>
-            <Link href="/about/align-right-realty-carrollwood" className="hover:text-[#C8A951]">
-              Align Right Realty
-            </Link>
-            <Link href="/about/strategic-partners" className="hover:text-[#C8A951]">
-              Partners
-            </Link>
-            <Link href="/about/community-outreach-giving" className="hover:text-[#C8A951]">
-              Community Giving
-            </Link>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

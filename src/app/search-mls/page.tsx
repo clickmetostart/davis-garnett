@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
 import DavisGarnettLogo from "@/components/DavisGarnettLogo";
+import SiteFooter from "@/components/SiteFooter";
 
 interface MlsPropertyItem {
   id: string;
@@ -1147,30 +1148,7 @@ export default function SearchMlsDiscoveryPortal() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="py-16 px-6 md:px-12 bg-[#0c0b09] text-white border-t border-[#C8A951]/20">
-        <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="w-44 h-12 relative">
-            <DavisGarnettLogo variant="dark" className="w-full h-full object-contain" />
-          </div>
-          <div className="flex flex-wrap justify-center gap-6 text-xs uppercase tracking-[0.2em] text-white/70">
-            <Link href="/v1-light" className="hover:text-[#C8A951] transition-colors">
-              Home (V1-Light)
-            </Link>
-            <Link href="/developments" className="hover:text-[#C8A951] transition-colors">
-              Featured Developments
-            </Link>
-            <Link href="/search-mls" className="text-[#C8A951] font-bold">
-              Search Full MLS
-            </Link>
-            <Link href="/listings" className="hover:text-[#C8A951] transition-colors">
-              Exclusive Portfolio
-            </Link>
-          </div>
-          <p className="text-[10px] uppercase tracking-widest text-white/40">
-            © {new Date().getFullYear()} Davis &amp; Garnett • Brokered by Align Right Realty
-          </p>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

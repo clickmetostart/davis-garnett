@@ -23,6 +23,7 @@ import {
 import ProposalNav from "@/components/ProposalNav";
 import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 import DevelopmentImageSlider from "@/components/DevelopmentImageSlider";
+import SiteFooter from "@/components/SiteFooter";
 import { DEVELOPMENTS, Development } from "@/data/developments";
 
 type FilterOption = "all" | "downtown-bayshore" | "north-tampa";
@@ -724,46 +725,7 @@ export default function DevelopmentsHubPage() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="py-20 px-6 md:px-12 bg-[#0c0b09] text-white border-t border-[#C8A951]/20">
-        <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 pb-12 border-b border-white/10">
-          <div className="w-48 h-14 relative">
-            <DavisGarnettLogo variant="dark" className="w-full h-full object-contain" />
-          </div>
-          <div className="flex flex-wrap justify-center gap-6 text-xs uppercase tracking-[0.2em] text-white/70">
-            <Link href="/v1-light" className="hover:text-[#C8A951] transition-colors">
-              Home (V1-Light)
-            </Link>
-            <Link href="/developments" className="text-[#C8A951] font-bold">
-              Featured Developments
-            </Link>
-            <Link href="/search-mls" className="hover:text-[#C8A951] transition-colors">
-              Search Full MLS
-            </Link>
-            <Link href="/listings" className="hover:text-[#C8A951] transition-colors">
-              Exclusive Portfolio
-            </Link>
-          </div>
-          <div className="w-44 h-12 relative">
-            <Image
-              src="/align-right-email-logo.png"
-              alt="Align Right Realty Carrollwood"
-              fill
-              className="object-contain"
-            />
-          </div>
-        </div>
-        <div className="max-w-screen-xl mx-auto pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-white/35 gap-4">
-          <p>
-            © {new Date().getFullYear()} Davis &amp; Garnett. Brokered by{" "}
-            <span className="text-[#ef5728] font-bold">Align Right Realty Carrollwood</span> (#BK3401606) · 3903 Northdale Blvd Suite 115W, Tampa, FL 33624. Equal
-            Housing Opportunity.
-          </p>
-          <p>
-            Developer prices, floor plans, HOA/CDD estimates, and delivery timelines subject to change
-            without notice.
-          </p>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

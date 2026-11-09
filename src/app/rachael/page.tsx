@@ -35,7 +35,7 @@ export default function RachaelLinktree() {
 
         {/* Profile */}
         <div className="w-28 h-28 relative rounded-full overflow-hidden border-2 border-[#D4AF37] shadow-[0_0_40px_rgba(212,175,55,0.15)] mb-6">
-          <Image src="/rachael-garnett-gmail-avatar.jpg" alt="Rachael Garnett" fill className="object-cover object-[center_30%]" priority />
+          <Image src="/davis-garnett-headshots/rachael-garnett-avatar-footer.webp" alt="Rachael Garnett" fill className="object-cover object-[center_30%]" priority />
         </div>
 
         <h1 className="font-serif text-3xl text-white mb-1">Rachael Garnett</h1>

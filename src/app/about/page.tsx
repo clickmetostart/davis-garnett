@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
 import DavisGarnettLogo from "@/components/DavisGarnettLogo";
+import SiteFooter from "@/components/SiteFooter";
 
 export default function AboutHubPage() {
   const [formData, setFormData] = useState({
@@ -974,101 +975,8 @@ export default function AboutHubPage() {
         </div>
       </section>
 
-      {/* ── DARK CONTRAST FOOTER ─────────────────────────────────────────── */}
-      <footer className="py-20 px-6 md:px-12 bg-[#111111] text-white border-t border-[#C8A951]/20">
-        <div className="max-w-screen-xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-10 pb-14 border-b border-white/10">
-            <div className="md:col-span-1">
-              <div className="w-48 mb-4">
-                <DavisGarnettLogo variant="dark" className="w-full" />
-              </div>
-              <p className="text-xs text-white/60 font-light leading-relaxed">
-                Institutional commercial & land underwriting paired with white-glove luxury residential advisory across Tampa Bay.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="text-[11px] uppercase tracking-[0.2em] text-[#C8A951] font-bold mb-4">
-                About The Davis &amp; Garnett Team
-              </h4>
-              <ul className="space-y-2.5 text-xs text-white/70">
-                <li>
-                  <Link href="/about" className="hover:text-white">
-                    About The Davis &amp; Garnett Team
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about/mark-davis" className="hover:text-white">
-                    Meet Mark Davis (#3209459)
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about/rachael-garnett" className="hover:text-white">
-                    Meet Rachael Garnett (#3378601)
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about/align-right-realty-carrollwood" className="hover:text-white">
-                    Align Right Realty Carrollwood (#BK3401606)
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about/strategic-partners" className="hover:text-white">
-                    Meet Our Strategic Partners
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about/community-outreach-giving" className="hover:text-white">
-                    Community Outreach &amp; Faith-Based Giving
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-[11px] uppercase tracking-[0.2em] text-[#C8A951] font-bold mb-4">
-                Direct Principal Contact
-              </h4>
-              <ul className="space-y-2.5 text-xs text-white/70">
-                <li>Mark Davis: 941-737-4127</li>
-                <li>mark@davisgarnettsells.com</li>
-                <li className="pt-2">Rachael Garnett: 727-808-3344</li>
-                <li>rachael@davisgarnettsells.com</li>
-                <li className="pt-2 text-[#D4AF37]">list@davisgarnettsells.com</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-[11px] uppercase tracking-[0.2em] text-[#ef5728] font-bold mb-4">
-                Brokerage of Record
-              </h4>
-              <p className="text-xs text-[#ef5728] font-semibold leading-relaxed mb-1">
-                Align Right Realty Carrollwood
-              </p>
-              <p className="text-xs text-white/60 leading-relaxed">
-                Broker Number BK3401606<br />
-                3903 Northdale Blvd Suite 115W, Tampa, FL 33624<br />
-                (813) 374-6050 | officeadmin@alignrightcarrollwood.com
-              </p>
-            </div>
-          </div>
-
-          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[10px] uppercase tracking-widest text-white/40 gap-4">
-            <p>© {new Date().getFullYear()} Davis & Garnett Real Estate Advisors. Equal Housing Opportunity.</p>
-            <div className="flex gap-6">
-              <Link href="/davis" className="hover:text-[#C8A951]">
-                /davis
-              </Link>
-              <Link href="/garnett" className="hover:text-[#C8A951]">
-                /garnett
-              </Link>
-              <Link href="/v1-light" className="hover:text-[#C8A951]">
-                V1-Light Home
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      {/* ── FOOTER ── */}
+      <SiteFooter />
     </div>
   );
 }

@@ -39,7 +39,7 @@ export default function SiteFooter() {
             <Link href="/about/mark-davis" className="shrink-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/mark-davis-gmail-avatar.jpg"
+                src="/davis-garnett-headshots/mark-davis-avatar-footer.JPG"
                 alt="Mark Davis"
                 className="w-20 h-20 rounded-full object-cover object-top border border-[#D4AF37]/30 shadow-lg shadow-black/50 shrink-0"
               />
@@ -81,7 +81,7 @@ export default function SiteFooter() {
             <Link href="/about/rachael-garnett" className="shrink-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/rachael-garnett-gmail-avatar.jpg"
+                src="/davis-garnett-headshots/rachael-garnett-avatar-footer.webp"
                 alt="Rachael Garnett"
                 className="w-20 h-20 rounded-full object-cover object-[center_30%] border border-[#D4AF37]/30 shadow-lg shadow-black/50 shrink-0"
               />

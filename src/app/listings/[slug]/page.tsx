@@ -35,6 +35,7 @@ import {
   Expand
 } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
+import SiteFooter from "@/components/SiteFooter";
 import listingsData from "@/data/listings.json";
 import { Listing } from "@/types/listings";
 
@@ -1208,33 +1209,7 @@ export default function ListingDetailPage() {
       )}
 
       {/* ── FOOTER ── */}
-      <footer className="bg-[#111111] py-12 px-8 border-t border-[#ef5728]/40 mt-12">
-        <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-5">
-            <a
-              href="https://alignrightcarrollwood.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="shrink-0 hover:opacity-80 transition-opacity"
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/align-right-email-logo.png"
-                alt="Align Right Realty Carrollwood"
-                className="h-12 w-auto object-contain"
-              />
-            </a>
-            <p className="text-white/50 text-[10px] uppercase tracking-widest max-w-xl leading-relaxed">
-              <strong className="text-[#ef5728]">Align Right Realty Carrollwood</strong> · Broker Number BK3401606 · 3903 Northdale Blvd Suite 115W, Tampa, FL 33624 · (813) 374-6050 · officeadmin@alignrightcarrollwood.com.{" "}
-              {listing.mlsId ? `MLS #${listing.mlsId}. ` : ""}All properties subject to prior
-              sale. Equal Housing Opportunity.
-            </p>
-          </div>
-          <p className="text-white/40 text-[10px] uppercase tracking-widest shrink-0">
-            © {new Date().getFullYear()} Davis &amp; Garnett
-          </p>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

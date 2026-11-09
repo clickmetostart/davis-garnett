@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { ArrowDown, MapPin, TrendingUp, Building2, ShieldCheck, Play, ArrowRight, Camera } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
+import SiteFooter from "@/components/SiteFooter";
 
 /* ─── YBOR MULTI-FAMILY PREMIUM DATA ─── */
 const data = {
@@ -358,14 +359,7 @@ export default function FeaturedListing() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="bg-[#050505] py-12 px-8 border-t border-white/10">
-        <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-white/30 text-[10px] uppercase tracking-widest max-w-xl leading-relaxed text-center md:text-left">
-            Davis & Garnett is a commercial and residential real estate advisory group brokered by Align Right Realty. All properties subject to prior sale. Equal Housing Opportunity.
-          </p>
-          <p className="text-[#D4AF37] text-[10px] font-bold uppercase tracking-widest shrink-0">© {new Date().getFullYear()} Davis & Garnett</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

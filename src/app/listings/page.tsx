@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import ProposalNav from '@/components/ProposalNav';
+import SiteFooter from '@/components/SiteFooter';
 import { MapPin, Search, SlidersHorizontal, ArrowRight } from 'lucide-react';
 import { Listing } from '@/types/listings';
 
@@ -177,6 +178,8 @@ export default function PublicListingsPage() {
           )}
         </div>
       </section>
+
+      <SiteFooter />
     </div>
   );
 }

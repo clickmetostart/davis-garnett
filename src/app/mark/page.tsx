@@ -34,7 +34,7 @@ export default function MarkLinktree() {
 
         {/* Profile */}
         <div className="w-28 h-28 relative rounded-full overflow-hidden border-2 border-[#D4AF37] shadow-[0_0_40px_rgba(212,175,55,0.15)] mb-6">
-          <Image src="/mark-davis-gmail-avatar.jpg" alt="Mark Davis" fill className="object-cover object-top" priority />
+          <Image src="/davis-garnett-headshots/mark-davis-avatar-footer.JPG" alt="Mark Davis" fill className="object-cover object-top" priority />
         </div>
 
         <h1 className="font-serif text-3xl text-white mb-1">Mark Davis</h1>
