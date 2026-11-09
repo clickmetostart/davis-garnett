@@ -93,7 +93,7 @@ export default function HomePageV1Light() {
           {[
             { id: 1, src: "/hero-videos-homepage/davis-garnett-hero-video-3.mp4" },
             { id: 2, src: "/new-images/davis-garnett-tampa-one-construction.mp4" },
-            { id: 3, src: "/new-images/davis-garnett-team-new-video-3.mp4" },
+            { id: 3, src: "/new-images/new-2/davis-garnett-hero-video-3spot.mp4" },
             { id: 4, src: "/hero-videos-homepage/davis-garnett-hero-video-4.mp4" },
           ].map((v) => (
             <div key={v.id} className="relative flex-1 h-full border-r border-white/5 last:border-r-0 overflow-hidden group">
