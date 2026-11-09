@@ -167,6 +167,11 @@ export default function DevelopmentDetailSpokePage({
                 <span className="px-3.5 py-1 rounded-full bg-[#f5f3ef] border border-[#111111]/15 text-[#111111] text-[10px] uppercase tracking-[0.2em] font-bold">
                   {dev.status}
                 </span>
+                {dev.isMixedUseCommercialResidential && (
+                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white border-2 border-[#C8A951] text-[#111111] text-[10px] uppercase tracking-[0.2em] font-bold">
+                    <Building2 className="w-3 h-3 text-[#9A7D3A]" /> Mixed-Use: Residential + Commercial
+                  </span>
+                )}
               </div>
               <h1 className="font-aiveritas text-4xl sm:text-5xl lg:text-6xl text-[#111111] leading-[1.08] mb-3">
                 {dev.name}

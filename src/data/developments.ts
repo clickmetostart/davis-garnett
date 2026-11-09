@@ -57,6 +57,7 @@ export interface Development {
   officialWebsiteUrl?: string;
   officialSources?: DevelopmentSource[];
   sourceAttributionNotice?: string;
+  isMixedUseCommercialResidential?: boolean;
 }
 
 export const DEVELOPMENTS: Development[] = [
@@ -348,6 +349,7 @@ export const DEVELOPMENTS: Development[] = [
       "/developments/water-st-phase-2/downtown-tampa-luxury-living-water-street-phase-two-residences-davis-garnett-residential-commercial-advisors-6.jpg",
     ],
     officialWebsiteUrl: "https://www.waterstreettampa.com/",
+    isMixedUseCommercialResidential: true,
     officialSources: [
       {
         title: "Water Street Tampa — Official Master District Portal",
@@ -477,6 +479,15 @@ export const DEVELOPMENTS: Development[] = [
       "/com_luxury_retail_1787632885082.png",
       "/davis-garnett-listings-5.jpg",
     ],
+    officialWebsiteUrl: "https://ora-hotel.com/",
+    officialSources: [
+      {
+        title: "Hotel ORA + Private Residences — Official Developer Portal",
+        url: "https://ora-hotel.com/",
+        note: "Official 39-story tower architecture, condo-hotel rental program, 31 private penthouses, and amenities",
+      },
+    ],
+    sourceAttributionNotice: "All project specifications, rendering visuals, hospitality services, and tower details for Hotel ORA + Private Residences are sourced directly from the official developer site at ora-hotel.com.",
     summary:
       "A $675 million, 39-story hospitality and residential powerhouse featuring a rooftop infinity pool overlooking Downtown Tampa, a flagship celebrity steakhouse, convention facility, and flexible short-term rental management for investors.",
     description:
@@ -593,6 +604,20 @@ export const DEVELOPMENTS: Development[] = [
       "/land_commercial_development_1787632926636.png",
       "/davis-garnett-listing-1.jpg",
     ],
+    officialWebsiteUrl: "https://gasworx.com/",
+    officialSources: [
+      {
+        title: "Gasworx — Official Master District Portal",
+        url: "https://gasworx.com/",
+        note: "Official 50-acre master plan, transit streetcar stop, Class-A office, and central marketplace",
+      },
+      {
+        title: "Gasworx Residences — Official Residential Portal",
+        url: "https://gasworx.com/residences/",
+        note: "Official urban residential offerings, live-work townhomes, floor plans, and residential phase releases",
+      },
+    ],
+    sourceAttributionNotice: "All master plan metrics, acreage details, residential specifications, and commercial buildout data for Gasworx are sourced directly from KETTLER and Darryl Shaw at gasworx.com and gasworx.com/residences.",
     summary:
       "Master-planned by Darryl Shaw and KETTLER across 50 contiguous acres, Gasworx seamlessly stitches Historic Ybor City to the Channel District and Water Street with brick-paved promenades, a central marketplace food hall, TECO Streetcar stops, and boutique residences.",
     description:
@@ -721,6 +746,15 @@ export const DEVELOPMENTS: Development[] = [
       "/land_waterfront_plot_1787632916432.png",
       "/davis-garnett-listings-7.jpg",
     ],
+    officialWebsiteUrl: "https://tworiversfl.com/",
+    officialSources: [
+      {
+        title: "Two Rivers — Official Community Website",
+        url: "https://tworiversfl.com/",
+        note: "Official master plan, builders, amenities, and community updates",
+      },
+    ],
+    sourceAttributionNotice: "All community specifications, builder rosters, and amenity details for Two Rivers are sourced directly from the official community website at tworiversfl.com.",
     summary:
       "Spanning 3,400+ pristine acres bordered by Hillsborough River state parklands off the booming SR-56 extension in Wesley Chapel, Two Rivers is ranked among the Top 15 Master-Planned Communities in the United States—featuring seven premier builders, *The Nest* & *The Landing* social clubs, and the upcoming *Peak Surf Park*.",
     description:
@@ -842,6 +876,15 @@ export const DEVELOPMENTS: Development[] = [
       "/res_modern_mansion_1787632812473.png",
       "/davis-garnett-listing-2.jpg",
     ],
+    officialWebsiteUrl: "https://metrodevelopmentgroup.com/communities/angeline/",
+    officialSources: [
+      {
+        title: "Angeline — Official Metro Development Group Community Page",
+        url: "https://metrodevelopmentgroup.com/communities/angeline/",
+        note: "Official master plan, builders, amenities, and community details",
+      },
+    ],
+    sourceAttributionNotice: "All community specifications, builder rosters, and amenity details for Angeline are sourced directly from Metro Development Group at metrodevelopmentgroup.com/communities/angeline.",
     summary:
       "Spanning 6,200+ acres along the Suncoast Parkway in Land O' Lakes, Angeline is a next-generation health, wellness, and agri-hood city anchored by Moffitt Cancer Center's 775-acre Speros FL global biotech campus, HCA Florida Hospital, a professional community farm, and a future Crystal Lagoon.",
     description:
@@ -965,6 +1008,20 @@ export const DEVELOPMENTS: Development[] = [
       "/res_golf_course_home_1787632854609.png",
       "/davis-garnett-listing-3.jpg",
     ],
+    officialWebsiteUrl: "https://metrodevelopmentgroup.com/epperson/",
+    officialSources: [
+      {
+        title: "Epperson — Official Metro Development Group Community Page",
+        url: "https://metrodevelopmentgroup.com/epperson/",
+        note: "Official Epperson Crystal Lagoon community details, builders, and amenities",
+      },
+      {
+        title: "Mirada — Official Metro Development Group Community Page",
+        url: "https://metrodevelopmentgroup.com/communities/mirada/",
+        note: "Official Mirada Crystal Lagoon community details, builders, and amenities",
+      },
+    ],
+    sourceAttributionNotice: "All community specifications, builder rosters, and amenity details for Epperson and Mirada are sourced directly from Metro Development Group at metrodevelopmentgroup.com/epperson and metrodevelopmentgroup.com/communities/mirada.",
     summary:
       "Developed by MetroPlaces in Wesley Chapel and adjacent San Antonio, Epperson (featuring America's first 7.5-acre Crystal Lagoon) and Mirada (featuring the nation's largest 15-acre Crystal Lagoon) deliver white-sand beach living, swim-up tiki bars, kayaking, and golf-cart paths minutes from I-75.",
     description:
@@ -1086,6 +1143,15 @@ export const DEVELOPMENTS: Development[] = [
       "/res_golf_course_home_1787632854609.png",
       "/davis-garnett-listings.jpg",
     ],
+    officialWebsiteUrl: "https://www.lennar.com/new-homes/florida/tampa-manatee/land-o-lakes/connerton",
+    officialSources: [
+      {
+        title: "Connerton — Official Lennar Community Page",
+        url: "https://www.lennar.com/new-homes/florida/tampa-manatee/land-o-lakes/connerton",
+        note: "Official Lennar floor plans, quick move-in homes, and community details",
+      },
+    ],
+    sourceAttributionNotice: "All community specifications, floor plans, and builder details for Connerton are sourced directly from the official Lennar community page at lennar.com.",
     summary:
       "Designated as one of Florida's only official 'New Town' conservation communities, Connerton spans 4,800 acres in Land O' Lakes—dedicating over 3,000 acres to permanent nature preserves alongside Club Connerton's resort waterpark, amphitheater, and oversized estate homesites by Homes by WestBay and Taylor Morrison.",
     description:
@@ -1178,6 +1244,210 @@ export const DEVELOPMENTS: Development[] = [
       },
     ],
     coordinates: { lat: 28.2684, lng: -82.4561 },
+  },
+  {
+    slug: "one-tampa-riverwalk",
+    name: "ONE Tampa",
+    subtitle: "42-Story Riverwalk Residential Tower — Tampa's Tallest Residential Building",
+    corridor: "downtown-bayshore",
+    corridorLabel: "Downtown & Bayshore Luxury Towers",
+    location: "N Ashley Dr & N Tampa St — Downtown Tampa / Riverwalk, FL 33602",
+    neighborhoodOrSubmarket: "Downtown Tampa / Riverwalk & Curtis Hixon Park",
+    developer: "Kolter Urban",
+    architectOrPlanner: "Adache Group Architects & ID & Design International",
+    builders: ["Kolter Urban"],
+    priceRange: "Contact Davis & Garnett for Current Pricing",
+    status: "Under Construction — See Official Site for Current Availability",
+    delivery: "See Official Site for Current Timeline",
+    unitsOrAcreage: "42 Stories | ~494 Feet | 225 Residences",
+    propertyTypes: ["Luxury Condominiums", "Estate Residences", "Penthouses"],
+    heroImage: "/res_luxury_condo_1787632822869.png",
+    gallery: [
+      "/res_luxury_condo_1787632822869.png",
+      "/com_office_tower_1787632874122.png",
+      "/res_waterfront_estate_1787632802890.png",
+    ],
+    officialWebsiteUrl: "https://liveonetampa.com/",
+    officialSources: [
+      {
+        title: "ONE Tampa — Official Residential Website",
+        url: "https://liveonetampa.com/",
+        note: "Official floor plans, amenities, design team, and availability",
+      },
+    ],
+    sourceAttributionNotice: "All tower specifications, residence details, and amenity descriptions for ONE Tampa are sourced directly from the official website at liveonetampa.com. Please confirm current pricing and availability with the official site or with Davis & Garnett.",
+    summary:
+      "A 42-story, roughly 494-foot residential tower beside the Tampa Riverwalk and Curtis Hixon Waterfront Park, ONE Tampa by Kolter Urban offers 225 residences with floor-to-ceiling windows and private terraces.",
+    description:
+      "ONE Tampa rises in the heart of Downtown Tampa next to the Tampa Riverwalk, steps from the Straz Center and the Tampa Museum of Art. Developed by Kolter Urban and designed by Adache Group Architects with interiors by ID & Design International, the tower offers 225 residences ranging from one- to three-bedroom plans plus upper-level estate residences and penthouses. A street-level brick facade with industrial-style arched windows nods to the neighborhood's history.",
+    highlights: [
+      "42-story tower of roughly 494 feet, among Tampa's tallest residential buildings",
+      "225 residences from 1 to 3 bedrooms, plus estate residences and penthouses",
+      "Adjacent to the Tampa Riverwalk and Curtis Hixon Waterfront Park",
+      "11th-level amenity terrace with pool, spa, cabanas, firepit, and summer grills",
+      "Skyline Bistro, social club room, and two-level fitness center",
+      "Roughly 5,000 SqFt of planned restaurant space at street level",
+    ],
+    amenities: [
+      "11th-Level Amenity Terrace with Pool & Spa",
+      "Private Cabanas, Firepit & Summer Grill Stations",
+      "Skyline Bistro & Social Club Room",
+      "Two-Level Fitness Center with Yoga/Spin Studio",
+      "Business Lounge & Video Conference Rooms",
+      "Covered Pet Park with Washing Station",
+      "24-Hour Valet & Full-Time Concierge",
+      "Dedicated Lifestyle Director & Private Storage Rooms",
+    ],
+    specs: [
+      { label: "Stories", value: "42 Stories" },
+      { label: "Height", value: "~494 Feet" },
+      { label: "Residences", value: "225 Units" },
+      { label: "Developer", value: "Kolter Urban" },
+      { label: "Architect", value: "Adache Group Architects" },
+      { label: "Interiors", value: "ID & Design International" },
+    ],
+    floorPlanTiers: [
+      {
+        tierName: "One- to Three-Bedroom Residences",
+        configuration: "1–3 Bed + Den Options",
+        sqFtRange: "~1,200 – 2,700 SqFt",
+        startingPrice: "Contact for Pricing",
+      },
+      {
+        tierName: "Estate Residences & Penthouses",
+        configuration: "Upper-Level Estates",
+        sqFtRange: "~3,600 – 4,000 SqFt",
+        startingPrice: "Contact for Pricing",
+      },
+    ],
+    hoaCddInfo: {
+      hoaEstimate: "Confirm with the official sales team",
+      cddEstimate: "Confirm with the official sales team",
+      estimatedTaxMillage: "City of Tampa / Hillsborough County millage",
+      masterIncludes: [
+        "24-Hour Valet & Concierge",
+        "Amenity Terrace, Fitness & Social Spaces",
+        "On-Site Property Management",
+      ],
+      financialNote:
+        "HOA, tax, and deposit details should be confirmed with the official sales team. Davis & Garnett reviews the condominium documents and budget with you before you sign.",
+    },
+    whyBuyWithDG: [
+      {
+        title: "Independent Contract & Prospectus Review",
+        detail:
+          "We walk through the condominium declaration, budget, and reserves with you before you commit.",
+      },
+      {
+        title: "Stack & View Selection",
+        detail:
+          "We compare floors and view corridors so you choose the best fit for your goals.",
+      },
+      {
+        title: "Downtown Market Context",
+        detail:
+          "We compare ONE Tampa against Pendry, Water Street, and other downtown towers.",
+      },
+    ],
+    coordinates: { lat: 27.9528, lng: -82.4600 },
+  },
+  {
+    slug: "sunrise-hills-brooksville",
+    name: "Sunrise Hills",
+    subtitle: "1,100-Acre Master-Planned Community with a Metro Lagoon in Brooksville",
+    corridor: "north-tampa",
+    corridorLabel: "North Tampa Master-Planned Communities",
+    location: "Cortez Blvd (SR-50) near I-75 — Brooksville, Hernando County, FL",
+    neighborhoodOrSubmarket: "Brooksville / Hernando County SR-50 Corridor",
+    developer: "Metro Development Group (MetroPlaces)",
+    architectOrPlanner: "Metro Development Group",
+    builders: ["DRB Homes", "D.R. Horton", "Lennar"],
+    priceRange: "See Official Site for Current Pricing",
+    status: "Master-Planned Community — See Official Site for Current Phases",
+    delivery: "See Official Site for Current Availability",
+    unitsOrAcreage: "1,100 Acres | Nearly 4,000 Planned Homes",
+    propertyTypes: ["Single-Family Homes", "Villas", "Townhomes"],
+    heroImage: "/res_golf_course_home_1787632854609.png",
+    gallery: [
+      "/res_golf_course_home_1787632854609.png",
+      "/land_waterfront_plot_1787632916432.png",
+      "/res_beachfront_villa_1787632843222.png",
+    ],
+    officialWebsiteUrl: "https://metrodevelopmentgroup.com/sunrise-hills/",
+    officialSources: [
+      {
+        title: "Sunrise Hills — Official Metro Development Group Community Page",
+        url: "https://metrodevelopmentgroup.com/sunrise-hills/",
+        note: "Official master plan, builders, Metro Lagoon, and community details",
+      },
+    ],
+    sourceAttributionNotice: "All community specifications, builder rosters, and amenity details for Sunrise Hills are sourced directly from Metro Development Group at metrodevelopmentgroup.com/sunrise-hills. Please confirm current pricing and availability with the official site or with Davis & Garnett.",
+    summary:
+      "Sunrise Hills spans 1,100 acres along Cortez Boulevard near I-75 in Brooksville, with nearly 4,000 planned homes, a sand-bottom Metro Lagoon, and miles of trails and parks.",
+    description:
+      "Sunrise Hills by Metro Development Group (MetroPlaces) brings lagoon-style living to Brooksville in Hernando County. At full buildout the community is planned for nearly 4,000 single-family homes, villas, and townhomes from builders including DRB Homes, D.R. Horton, and Lennar. Planned amenities include a sand-bottom Metro Lagoon, walking and scenic trails, parks, dog parks, and ULTRAFi connectivity.",
+    highlights: [
+      "1,100 acres along Cortez Boulevard (SR-50) near Interstate 75",
+      "Nearly 4,000 planned homes at full buildout",
+      "Signature sand-bottom Metro Lagoon",
+      "Builders include DRB Homes, D.R. Horton, and Lennar",
+      "Miles of walking trails, parks, and dog parks",
+      "ULTRAFi connectivity and smart-home features",
+    ],
+    amenities: [
+      "Sand-Bottom Metro Lagoon",
+      "Miles of Walking & Scenic Trails",
+      "Parks, Green Spaces & Dog Parks",
+      "ULTRAFi High-Speed Connectivity",
+      "Solar-Powered Streetleaf Streetlights",
+      "Golf-Cart-Friendly Layout",
+    ],
+    specs: [
+      { label: "Total Acreage", value: "1,100 Acres" },
+      { label: "Planned Homes", value: "Nearly 4,000" },
+      { label: "Master Developer", value: "Metro Development Group" },
+      { label: "Builders", value: "DRB Homes, D.R. Horton, Lennar" },
+      { label: "Signature Amenity", value: "Metro Lagoon" },
+      { label: "Location", value: "Brooksville, FL" },
+    ],
+    floorPlanTiers: [
+      {
+        tierName: "Single-Family Homes, Villas & Townhomes",
+        configuration: "Varies by builder",
+        sqFtRange: "See official builder pages",
+        startingPrice: "See official site",
+      },
+    ],
+    hoaCddInfo: {
+      hoaEstimate: "Confirm with the builder or official site",
+      cddEstimate: "Confirm with the builder or official site",
+      estimatedTaxMillage: "Hernando County millage",
+      masterIncludes: [
+        "Access to Community Amenities & Trails",
+        "ULTRAFi Connectivity (Where Offered)",
+        "Common Area Maintenance",
+      ],
+      financialNote:
+        "HOA, CDD, and pricing vary by builder and phase. Davis & Garnett helps you compare builders and carrying costs before you sign.",
+    },
+    whyBuyWithDG: [
+      {
+        title: "Builder-by-Builder Comparison",
+        detail:
+          "We compare DRB Homes, D.R. Horton, and Lennar floor plans, incentives, and carrying costs side by side.",
+      },
+      {
+        title: "Independent Construction Inspections",
+        detail:
+          "We coordinate pre-drywall and final inspections so your new home is built to standard.",
+      },
+      {
+        title: "Hernando vs. Pasco Market Context",
+        detail:
+          "We compare Sunrise Hills against Wesley Chapel and Land O' Lakes communities for value and commute.",
+      },
+    ],
+    coordinates: { lat: 28.5530, lng: -82.3900 },
   },
 ];
 

@@ -367,7 +367,7 @@ export default function HomePageV1Light() {
               href="/developments"
               className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#111] text-white text-xs font-bold uppercase tracking-widest rounded-lg hover:bg-[#D4AF37] hover:text-[#111] transition-colors shrink-0"
             >
-              Explore All 9 Developments <ArrowRight className="w-4 h-4" />
+              Explore More Developments <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 

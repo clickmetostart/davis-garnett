@@ -56,6 +56,8 @@ const NAV_GROUPS: NavGroup[] = [
       { label: "Two Rivers (Wesley Chapel)", desc: "3,400-acre master plan with Peak Surf Park & resort clubs", href: "/developments/two-rivers-wesley-chapel" },
       { label: "Angeline (Land O' Lakes)", desc: "6,200-acre innovation city anchored by Moffitt Speros FL", href: "/developments/angeline-land-o-lakes" },
       { label: "Epperson & Mirada Lagoons", desc: "Crystal Lagoon resort communities in Wesley Chapel", href: "/developments/epperson-mirada-lagoon-wesley-chapel" },
+      { label: "ONE Tampa", desc: "42-story Riverwalk residential tower by Kolter Urban", href: "/developments/one-tampa-riverwalk" },
+      { label: "Sunrise Hills (Brooksville)", desc: "1,100-acre Metro Lagoon community in Hernando County", href: "/developments/sunrise-hills-brooksville" },
     ],
   },
   {

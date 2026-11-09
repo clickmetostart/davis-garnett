@@ -118,15 +118,15 @@ export default function DevelopmentsHubPage() {
               {[
                 {
                   id: "all" as FilterOption,
-                  label: "All Developments (9)",
+                  label: "All Developments (11)",
                 },
                 {
                   id: "downtown-bayshore" as FilterOption,
-                  label: "Downtown & Bayshore Luxury Towers (5)",
+                  label: "Downtown & Bayshore Luxury Towers (6)",
                 },
                 {
                   id: "north-tampa" as FilterOption,
-                  label: "North Tampa Master-Planned Communities (4)",
+                  label: "North Tampa Master-Planned Communities (5)",
                 },
               ].map((btn) => {
                 const isActive = activeFilter === btn.id;
@@ -687,6 +687,32 @@ export default function DevelopmentsHubPage() {
                   </div>
                 </div>
 
+                <div className="pt-4">
+                  <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#111111]/60 mb-3">
+                    More Official Development Sources:
+                  </div>
+                  <div className="grid sm:grid-cols-2 gap-x-6 gap-y-2">
+                    {DEVELOPMENTS.filter(
+                      (d) =>
+                        !["pendry-residences-tampa", "the-ritz-carlton-residences-bayshore", "water-street-tampa-phase-2"].includes(d.slug)
+                    ).flatMap((d) =>
+                      (d.officialSources || []).map((src) => (
+                        <a
+                          key={`${d.slug}-${src.url}`}
+                          href={src.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-xs font-semibold text-[#111111] hover:text-[#C8A951] transition-colors"
+                        >
+                          <Globe className="w-3 h-3 text-[#C8A951] shrink-0" />
+                          <span>{d.name}: {src.url.replace(/^https?:\/\/(www\.)?/, "")}</span>
+                          <ExternalLink className="w-3 h-3 opacity-60 shrink-0" />
+                        </a>
+                      ))
+                    )}
+                  </div>
+                </div>
+
                 <div className="pt-6 border-t border-[#111111]/10 text-xs text-[#111111]/60 leading-relaxed">
                   <strong className="text-[#111111]/85 font-semibold">* Legal Disclosure &amp; Independent Agency Notice:</strong> Davis &amp; Garnett (Mark Davis &amp; Rachael Garnett, brokered by Align Right Realty) is an independent licensed real estate advisory group representing prospective buyers, assignees, and investors. Davis &amp; Garnett is not the exclusive developer sales listing agency, project sponsor, or affiliate of Two Roads Development, Montage International, The Related Group, or Strategic Property Partners. All trademarks, project names, logos, and architectural renderings are the property of their respective owners and are displayed strictly for editorial evaluation and buyer identification purposes.
                 </div>
@@ -765,6 +791,11 @@ function DevelopmentTowerShowcaseCard({ dev, index }: { dev: Development; index:
             <span className="px-3.5 py-1.5 rounded-full bg-[#111111]/90 backdrop-blur-md text-[#C8A951] text-[10px] uppercase tracking-[0.2em] font-bold border border-[#C8A951]/40">
               {dev.status}
             </span>
+            {dev.isMixedUseCommercialResidential && (
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#C8A951] text-[#111111] text-[10px] uppercase tracking-[0.2em] font-bold border border-[#111111]/30 shadow">
+                <Building2 className="w-3 h-3" /> Mixed-Use: Residential + Commercial
+              </span>
+            )}
           </div>
           <div className="absolute bottom-5 left-5 right-5 text-white">
             <div className="text-[10px] uppercase tracking-[0.22em] text-[#C8A951] font-bold mb-1">

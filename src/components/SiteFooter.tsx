@@ -149,6 +149,8 @@ export default function SiteFooter() {
               <li><Link href="/developments/two-rivers-wesley-chapel" className="hover:text-white transition-colors">Two Rivers (Wesley Chapel)</Link></li>
               <li><Link href="/developments/angeline-land-o-lakes" className="hover:text-white transition-colors">Angeline (Land O&apos; Lakes)</Link></li>
               <li><Link href="/developments/epperson-mirada-lagoon-wesley-chapel" className="hover:text-white transition-colors">Epperson &amp; Mirada Lagoons</Link></li>
+              <li><Link href="/developments/one-tampa-riverwalk" className="hover:text-white transition-colors">ONE Tampa</Link></li>
+              <li><Link href="/developments/sunrise-hills-brooksville" className="hover:text-white transition-colors">Sunrise Hills (Brooksville)</Link></li>
             </ul>
           </div>
 
