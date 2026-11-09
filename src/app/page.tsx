@@ -376,7 +376,7 @@ export default function HomePageV1Light() {
             <div className="bg-[#f5f3ef] border border-[#111]/10 rounded-2xl overflow-hidden flex flex-col justify-between">
               <div className="relative aspect-[16/9] w-full overflow-hidden">
                 <Image
-                  src="/city-photos/tampa-downtown-towers-real.png"
+                  src="/developments/pendry/downtown-tampa-luxury-living-pendry-residences-davis-garnett-residential-commercial-advisors-1.jpg"
                   alt="Downtown Tampa, Water Street & Bayshore Luxury Towers"
                   fill
                   className="object-cover"
@@ -399,8 +399,8 @@ export default function HomePageV1Light() {
                   {[
                     { name: "Pendry Residences Tampa", sub: "38-Story Riverwalk Hotel & Condos", slug: "pendry-residences-tampa" },
                     { name: "The Ritz-Carlton Residences", sub: "Bayshore Blvd Waterfront Towers", slug: "the-ritz-carlton-residences-bayshore" },
-                    { name: "Water Street Phase 2 Tower", sub: "33-Story WELL-Certified District", slug: "water-street-tampa-phase-2" },
-                    { name: "Hotel ORA + Private Residences", sub: "39-Story Short-Term Rental Approved", slug: "hotel-ora-private-residences" },
+                    { name: "Water Street Phase 2 Tower", sub: "33-Story Mixed-Use District", slug: "water-street-tampa-phase-2" },
+                    { name: "ONE Tampa", sub: "42-Story Tallest Riverwalk Tower", slug: "one-tampa-riverwalk" },
                   ].map((d) => (
                     <Link
                       key={d.slug}
@@ -428,7 +428,7 @@ export default function HomePageV1Light() {
             <div className="bg-[#f5f3ef] border border-[#111]/10 rounded-2xl overflow-hidden flex flex-col justify-between">
               <div className="relative aspect-[16/9] w-full overflow-hidden">
                 <Image
-                  src="/city-photos/wesley-chapel-master-planned-real.jpg"
+                  src="/developments/epperson-mirada/tampa-bay-new-development-epperson-mirada-davis-garnett-residential-commercial-advisors-1.jpg"
                   alt="Wesley Chapel & Land O' Lakes Master-Planned Communities"
                   fill
                   className="object-cover"
@@ -452,7 +452,7 @@ export default function HomePageV1Light() {
                     { name: "Two Rivers (Wesley Chapel)", sub: "3,400 Acres • Peak Surf Park & The Nest", slug: "two-rivers-wesley-chapel" },
                     { name: "Angeline (Land O' Lakes)", sub: "6,200 Acres • Moffitt Speros & Del Webb", slug: "angeline-land-o-lakes" },
                     { name: "Epperson & Mirada Lagoons", sub: "7.5 & 15-Acre Crystal Lagoon Living", slug: "epperson-mirada-lagoon-wesley-chapel" },
-                    { name: "Connerton (Land O' Lakes)", sub: "4,800-Acre Nature Reserve & Estates", slug: "connerton-land-o-lakes" },
+                    { name: "Sunrise Hills (Brooksville)", sub: "1,100 Acres • Metro Lagoon & DRB/Lennar", slug: "sunrise-hills-brooksville" },
                   ].map((d) => (
                     <Link
                       key={d.slug}
@@ -695,42 +695,42 @@ export default function HomePageV1Light() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                img: "/res_waterfront_estate_1787632802890.png",
+                img: "/developments/ritz-carlton/downtown-tampa-luxury-living-ritz-carlton-residences-davis-garnett-residential-commercial-advisors-2.jpg",
                 tag: "Buyer Playbook",
                 title: "The Tampa Bay Luxury Home Buyer's Playbook",
                 desc: "Essential strategies for seawall inspections, dock permits, flood insurance, and securing waterfront estates.",
                 href: "/knowledge-hub/tampa-bay-luxury-home-buying-guide",
               },
               {
-                img: "/com_office_tower_1787632874122.png",
+                img: "/developments/water-st-phase-2/downtown-tampa-luxury-living-water-street-phase-two-residences-davis-garnett-residential-commercial-advisors-1.jpg",
                 tag: "Commercial Guide",
                 title: "Commercial & Mixed-Use Investing in Central Florida",
                 desc: "An executive guide to cap rates, 1031 exchanges, mixed-use zoning, and agricultural land banking.",
                 href: "/knowledge-hub/commercial-real-estate-investing-florida",
               },
               {
-                img: "/res_golf_course_home_1787632854609.png",
+                img: "/developments/epperson-mirada/tampa-bay-new-development-epperson-mirada-davis-garnett-residential-commercial-advisors-1.jpg",
                 tag: "Q&A Classroom",
                 title: "Understanding CDD Fees vs. HOA in Pasco & Hillsborough",
                 desc: "How Community Development District bonds work in Wesley Chapel and Land O' Lakes master-planned communities.",
                 href: "/knowledge-hub/understanding-cdd-fees-in-pasco-and-hillsborough",
               },
               {
-                img: "/res_luxury_condo_1787632822869.png",
+                img: "/developments/one-tampa/tampa-bay-new-development-one-tampa-davis-garnett-residential-commercial-advisors-1.png",
                 tag: "Market Report",
                 title: "2026 Tampa Bay Real Estate Market Outlook",
                 desc: "In-depth analysis of inventory, interest rates, and executive migration into Downtown Tampa and St. Pete.",
                 href: "/knowledge-hub/articles/tampa-bay-real-estate-market-outlook-2026",
               },
               {
-                img: "/res_modern_mansion_1787632812473.png",
+                img: "/developments/two-rivers/tampa-bay-new-development-two-rivers-davis-garnett-residential-commercial-advisors-1.jpg",
                 tag: "Relocation Guide",
                 title: "The Executive Relocation Guide to Tampa Bay",
                 desc: "Moving from New York, California, or the Midwest: Homestead tax exemptions, school districts, and neighborhoods.",
                 href: "/knowledge-hub/relocating-to-tampa-bay-handbook",
               },
               {
-                img: "/land_commercial_development_1787632926636.png",
+                img: "/developments/sunrise-hills/tampa-bay-new-development-sunrise-hills-davis-garnett-residential-commercial-advisors-2.png",
                 tag: "Land & Acreage",
                 title: "Due Diligence When Buying Rural Acreage in Florida",
                 desc: "What every investor must verify regarding A-1 zoning, wetlands, timber exemptions, and access easements.",
@@ -880,7 +880,7 @@ export default function HomePageV1Light() {
             { img: "/listings/bahama-shores-lot-1.jpg", href: "/properties", alt: "6100 Bahama Shores Lot 10 - Pre-Construction Homesite" },
             { img: "/developments/ritz-carlton/downtown-tampa-luxury-living-ritz-carlton-residences-davis-garnett-residential-commercial-advisors-1.jpg", href: "/developments/the-ritz-carlton-residences-bayshore", alt: "Bayshore Boulevard Luxury Living - The Ritz-Carlton Residences" },
             { img: "/listings/justamere-tampa-1.jpg", href: "/properties", alt: "3012 Justamere Ln - Lakefront Estate Closed" },
-            { img: "/res_golf_course_home_1787632854609.png", href: "/developments", alt: "Wesley Chapel Master-Planned Communities" },
+            { img: "/developments/epperson-mirada/tampa-bay-new-development-epperson-mirada-davis-garnett-residential-commercial-advisors-1.jpg", href: "/developments/epperson-mirada-lagoon-wesley-chapel", alt: "Wesley Chapel Lagoon Communities - Epperson & Mirada" },
             { img: "/listings/beverly-hills-zephyrhills-1.jpg", href: "/properties", alt: "6389 Beverly Hills Dr - Abbott Square Closed" },
           ].map((item, idx) => (
             <Link key={idx} href={item.href} className="group relative aspect-square w-full overflow-hidden block bg-[#111]">

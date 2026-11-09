@@ -84,7 +84,7 @@ export default function DevelopmentsHubPage() {
       <section className="relative pt-36 pb-24 px-6 md:px-12 bg-[#111111] text-white overflow-hidden border-b border-[#C8A951]/30">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/res_luxury_condo_1787632822869.png"
+            src="/developments/pendry/downtown-tampa-luxury-living-pendry-residences-davis-garnett-residential-commercial-advisors-1.jpg"
             alt="Tampa Bay Luxury Developments"
             fill
             priority
