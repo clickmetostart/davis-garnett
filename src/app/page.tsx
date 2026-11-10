@@ -795,7 +795,7 @@ export default function HomePageV1Light() {
                 { img: "/city-photos/downtown-tampa-skyline.jpg", label: "Downtown Tampa", sub: "Water Street & Bayshore", href: "/knowledge-hub/areas/tampa-downtown-water-street" },
                 { img: "/city-photos/wesley-chapel-suburban.jpg", label: "Wesley Chapel", sub: "Two Rivers & Lagoons", href: "/knowledge-hub/areas/wesley-chapel" },
                 { img: "/city-photos/land-o-lakes-luxury.jpg", label: "Land O' Lakes", sub: "Angeline & Connerton", href: "/knowledge-hub/areas/land-o-lakes" },
-                { img: "/city-photos/brandon-riverview-commercial.jpg", label: "Brandon & Riverview", sub: "Hwy 60 Commercial & Mixed-Use", href: "/knowledge-hub/areas/brandon-riverview" },
+                { img: "/new-images/new-2/dg-brandon-hwy60.jpg", label: "Brandon & Riverview", sub: "Hwy 60 Commercial & Mixed-Use", href: "/knowledge-hub/areas/brandon-riverview" },
                 { img: "/city-photos/central-fl-acreage.jpg", label: "Central FL Acreage", sub: "Ocala, Fort McCoy & Frostproof", href: "/knowledge-hub/areas/central-florida-acreage" },
               ].map(({ img, label, sub, href }) => (
                 <Link
