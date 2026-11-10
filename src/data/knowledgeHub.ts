@@ -482,7 +482,7 @@ export const QUESTIONS: KnowledgeItem[] = [
     subtitle: "Essential checklist for evaluating A-1 agricultural zoning, wetlands delineation, timber exemptions, soil tests, and access easements in Marion and Polk counties.",
     readTime: "6 Min Read",
     publishDate: "November 2026",
-    heroImage: "/listings/d-g-land-listing-1.webp",
+    heroImage: "/listings/d-g-land-listing-cover.webp",
     author: MARK_AUTHOR,
     keyTakeaways: [
       "Always verify legal and physical road access—confirming public right-of-way or recorded perpetual ingress/egress easements.",
@@ -700,7 +700,7 @@ export const AREAS: AreaItem[] = [
     name: "Central Florida Acreage, Timberland & Development Tracts",
     tagline: "Agricultural Tax Exemptions, Equestrian Timberland & Strategic Highway Corridors",
     county: "Polk, Marion & Citrus Counties, FL",
-    heroImage: "/listings/d-g-land-listing-1.webp",
+    heroImage: "/listings/d-g-land-listing-cover.webp",
     medianPrice: "$17,750 – $45,000+ / Acre",
     yoyGrowth: "+11.4% YoY",
     vibe: "Old Florida Timberland, US-27/US-98 Development Tracts, Equestrian & Recreational Estates",

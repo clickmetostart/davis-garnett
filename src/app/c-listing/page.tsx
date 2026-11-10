@@ -66,6 +66,7 @@ const listing = {
 
   // Real property photos from listings folder
   photos: [
+    "/listings/d-g-land-listing-cover.webp",
     "/listings/d-g-land-listing-1.webp",
     "/listings/d-g-land-listing-2.webp",
     "/listings/d-g-land-listing-3.webp",

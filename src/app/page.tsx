@@ -288,7 +288,7 @@ export default function HomePageV1Light() {
               href="/commercial-advisory-guide"
               className="group relative min-h-[400px] md:min-h-0 md:aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer block shadow-lg hover:shadow-2xl transition-shadow"
             >
-              <Image src="/vert_tampa_commercial.png" alt="Commercial" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+              <Image src="/new-images/new-2/davis-garnett-tampa-commercial-real-estate-1.jpg" alt="Commercial Real Estate Advisory" fill unoptimized className="object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
               <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
                 <span className="text-[#D4AF37] text-[10px] uppercase tracking-[0.25em] font-bold mb-2">Advisory Roadmap &amp; Sourcing</span>
@@ -306,7 +306,7 @@ export default function HomePageV1Light() {
               href="/residential-advisory-guide"
               className="group relative min-h-[400px] md:min-h-0 md:aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer block shadow-lg hover:shadow-2xl transition-shadow"
             >
-              <Image src="/vert_tampa_residential.png" alt="Residential" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+              <Image src="/new-images/new-2/davis-garnett-tampa-residential-real-estate-1.jpg" alt="Residential Real Estate Advisory" fill unoptimized className="object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
               <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
                 <span className="text-[#D4AF37] text-[10px] uppercase tracking-[0.25em] font-bold mb-2">Client Journey &amp; Protection</span>

@@ -593,13 +593,14 @@
     ],
     "images": {
       "0": {
-        "id": "img-mccoy-1",
-        "url": "/listings/d-g-land-listing-1.webp",
+        "id": "img-mccoy-cover",
+        "url": "/listings/d-g-land-listing-cover.webp",
         "isHero": true,
         "sortOrder": 1
       },
-      "main": "/listings/d-g-land-listing-1.webp",
+      "main": "/listings/d-g-land-listing-cover.webp",
       "gallery": [
+        "/listings/d-g-land-listing-cover.webp",
         "/listings/d-g-land-listing-1.webp",
         "/listings/d-g-land-listing-2.webp",
         "/listings/d-g-land-listing-3.webp",
@@ -751,15 +752,19 @@
     ],
     "images": {
       "0": {
-        "id": "img-frostproof-1",
-        "url": "/listings/old-stokes-frostproof-1.jpg",
+        "id": "img-frostproof-cover",
+        "url": "/listings/old-stokes-road-cover-image-davis-garnett.jpg",
         "isHero": true,
         "sortOrder": 1
       },
-      "main": "/listings/old-stokes-frostproof-1.jpg",
+      "main": "/listings/old-stokes-road-cover-image-davis-garnett.jpg",
       "gallery": [
+        "/listings/old-stokes-road-cover-image-davis-garnett.jpg",
         "/listings/old-stokes-frostproof-1.jpg",
-        "/listings/old-stokes-frostproof-2.jpg"
+        "/listings/old-stokes-frostproof-2.jpg",
+        "/listings/old-stokes-frostproof-3.jpg",
+        "/listings/old-stokes-frostproof-4.jpg",
+        "/listings/old-stokes-frostproof-5.jpg"
       ]
     },
     "agent": {

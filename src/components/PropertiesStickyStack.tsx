@@ -32,7 +32,7 @@ const activeSignatureProperties = [
     specs: "79.54 Acres MOL • US Hwy 98 Frontage • Development / Ag",
     price: "$3,550,000",
     advisor: "Mark Davis & Rachael Garnett",
-    img: "/listings/old-stokes-frostproof-1.jpg",
+    img: "/listings/old-stokes-road-cover-image-davis-garnett.jpg",
     isFlagship: false
   },
   {
@@ -62,7 +62,7 @@ const activeSignatureProperties = [
     specs: "19.72 Acres (858,823 SqFt) • A-1 Agriculture • No HOA / No CDD",
     price: "$350,000",
     advisor: "Mark Davis & Rachael Garnett",
-    img: "/listings/d-g-land-listing-1.webp",
+    img: "/listings/d-g-land-listing-cover.webp",
     isFlagship: false
   }
 ];

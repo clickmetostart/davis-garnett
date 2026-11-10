@@ -43,7 +43,7 @@ const ACTIVE_LISTINGS = [
     price: "$3,550,000",
     category: "79.54 Acres MOL • Central FL Commercial & Development Tract (MLS# TB8506525)",
     specs: "79.54 Contiguous Acres (3,464,762 SqFt) • US Hwy 98 Just West of US Hwy 27 • $44,632/Acre",
-    image: "/listings/old-stokes-frostproof-1.jpg",
+    image: "/listings/old-stokes-road-cover-image-davis-garnett.jpg",
     highlights: [
       "Direct frontage along US Hwy 98 just west of US Hwy 27 in Polk County's central logistics spine",
       "Within 90 minutes of Tampa, Orlando, major deepwater ports, and international airports",
@@ -56,7 +56,7 @@ const ACTIVE_LISTINGS = [
     price: "$350,000",
     category: "19.72 Acres • Gated Agricultural & Timberland Tract (MLS# TB8520776)",
     specs: "19.72 High & Dry Acres (858,823 SqFt) • A-1 General Agriculture • No HOA / No CDD",
-    image: "/listings/d-g-land-listing-1.webp",
+    image: "/listings/d-g-land-listing-cover.webp",
     highlights: [
       "Pristine Old Florida timberland near Ocala National Forest and the Ocklawaha River",
       "Mature merchantable pine and native hardwood canopy with A-1 General Agriculture zoning",

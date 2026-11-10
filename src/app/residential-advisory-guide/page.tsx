@@ -71,9 +71,10 @@ export default function ResidentialAdvisoryGuidePage() {
       <section className="pt-36 pb-20 px-6 md:px-12 bg-[#111111] text-white relative overflow-hidden border-b border-[#D4AF37]/25">
         <div className="absolute inset-0 z-0 opacity-25">
           <Image
-            src="/vert_tampa_residential.png"
+            src="/new-images/new-2/davis-garnett-tampa-residential-real-estate-1.jpg"
             alt="Residential Luxury Homes Tampa Bay"
             fill
+            unoptimized
             className="object-cover"
           />
         </div>
