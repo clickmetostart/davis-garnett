@@ -92,9 +92,9 @@ export default function HomePageV1Light() {
         <div className="absolute inset-0 z-0 flex w-full h-full">
           {[
             { id: 1, src: "/hero-videos-homepage/davis-garnett-hero-video-3.mp4" },
-            { id: 2, src: "/new-images/davis-garnett-tampa-one-construction.mp4" },
-            { id: 3, src: "/new-images/new-2/davis-garnett-hero-video-3spot.mp4" },
-            { id: 4, src: "/hero-videos-homepage/davis-garnett-hero-video-4.mp4" },
+            { id: 2, src: "/new-images/new-2/davis-garnett-residential-commercial-real-estate-advisors-tampa-fl-sp2.mp4" },
+            { id: 3, src: "/hero-videos-homepage/davis-garnett-hero-video-4.mp4" },
+            { id: 4, src: "/new-images/new-2/davis-garnett-residential-commercial-real-estate-advisors-tampa-fl-sp4.mp4" },
           ].map((v) => (
             <div key={v.id} className="relative flex-1 h-full border-r border-white/5 last:border-r-0 overflow-hidden group">
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-700 z-10 pointer-events-none" />
