@@ -30,12 +30,12 @@ export default function KnowledgeHubPage() {
   const [questionText, setQuestionText] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [visibleArticlesCount, setVisibleArticlesCount] = useState(6);
 
   const guidesRef = useRef<HTMLDivElement>(null);
   const qaRef = useRef<HTMLDivElement>(null);
   const areasRef = useRef<HTMLDivElement>(null);
   const eventsRef = useRef<HTMLDivElement>(null);
-  const articlesRef = useRef<HTMLDivElement>(null);
 
   const scrollSlider = (ref: React.RefObject<HTMLDivElement | null>, dir: "left" | "right") => {
     if (!ref.current) return;
@@ -560,6 +560,11 @@ export default function KnowledgeHubPage() {
                     <p className="text-[#111]/65 text-sm font-light leading-relaxed line-clamp-3">
                       {ev.summary}
                     </p>
+                    {ev.externalAction && (
+                      <span className="inline-flex items-center gap-1.5 mt-3 text-[10px] uppercase tracking-wider font-bold text-[#ef5728]">
+                        ✦ {ev.externalAction.type === "donate" ? "Charity Donation / Official Site" : ev.externalAction.type === "register" ? "Official Builder Registration" : "Official Tickets Portal"}
+                      </span>
+                    )}
                   </div>
                 </div>
                 <div className="px-7 pb-6 pt-4 border-t border-[#111]/8 flex items-center justify-between">
@@ -574,7 +579,7 @@ export default function KnowledgeHubPage() {
         </div>
       </section>
 
-      {/* ── SLIDER 5: MARKET INTELLIGENCE & EDITORIAL REPORTS ── */}
+      {/* ── SECTION 05: MARKET INTELLIGENCE & EDITORIAL REPORTS (LOAD MORE GRID) ── */}
       <section id="articles" className="py-24 px-8 bg-white border-b border-[#111]/8">
         <div className="max-w-screen-xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
@@ -589,34 +594,15 @@ export default function KnowledgeHubPage() {
                 In-depth market analyses, demographic migration reports, and commercial investment commentary across the Florida Gulf Coast.
               </p>
             </div>
-            <div className="flex items-center gap-3 shrink-0">
-              <button
-                onClick={() => scrollSlider(articlesRef, "left")}
-                className="p-3 rounded-full border border-[#111]/15 hover:bg-[#111] hover:text-white transition-colors"
-                aria-label="Scroll Articles Left"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-              <button
-                onClick={() => scrollSlider(articlesRef, "right")}
-                className="p-3 rounded-full border border-[#111]/15 hover:bg-[#111] hover:text-white transition-colors"
-                aria-label="Scroll Articles Right"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
-            </div>
           </div>
 
-          <div
-            ref={articlesRef}
-            className="flex gap-7 overflow-x-auto pb-6 snap-x snap-mandatory"
-            style={{ scrollbarWidth: "none" }}
-          >
-            {filteredArticles.map((art) => (
+          {/* 2 Rows of 3 Columns Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredArticles.slice(0, visibleArticlesCount).map((art) => (
               <Link
                 key={art.slug}
                 href={`/knowledge-hub/articles/${art.slug}`}
-                className="group min-w-[320px] md:min-w-[390px] max-w-[390px] snap-start bg-[#f5f3ef] border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl shrink-0"
+                className="group bg-[#f5f3ef] border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl"
               >
                 <div>
                   <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#111]">
@@ -649,6 +635,20 @@ export default function KnowledgeHubPage() {
               </Link>
             ))}
           </div>
+
+          {/* Load More Button (+3 articles / 1 row each click) */}
+          {visibleArticlesCount < filteredArticles.length && (
+            <div className="mt-14 text-center">
+              <button
+                type="button"
+                onClick={() => setVisibleArticlesCount((prev) => prev + 3)}
+                className="inline-flex items-center gap-3 px-8 py-4 bg-[#111] hover:bg-[#ef5728] text-white text-xs font-bold uppercase tracking-widest rounded-xl transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 cursor-pointer border border-[#ef5728]/30 group"
+              >
+                <span>Load More</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
+          )}
         </div>
       </section>
 

@@ -61,6 +61,13 @@ export interface EventItem {
   description: string;
   agenda: string[];
   host: string;
+  externalAction?: {
+    url: string;
+    label: string;
+    subtext: string;
+    type: "donate" | "register" | "tickets";
+    organization: string;
+  };
 }
 
 export interface ArticleItem {
@@ -111,7 +118,7 @@ export const GUIDES: KnowledgeItem[] = [
     subtitle: "Waterfront due diligence, seawall engineering, flood elevation certificates, and off-market acquisition strategies in St. Petersburg and Tampa.",
     readTime: "8 Min Read",
     publishDate: "November 2026",
-    heroImage: "/res_waterfront_estate_1787632802890.png",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-6.jpg",
     author: RACHAEL_AUTHOR,
     keyTakeaways: [
       "Always conduct an independent marine & seawall structural inspection alongside your residential home inspection on Tampa Bay waterfront estates.",
@@ -157,7 +164,7 @@ export const GUIDES: KnowledgeItem[] = [
     subtitle: "Why custom editorial marketing outperforms generic MLS templates and commands top-of-market offers across Tampa Bay.",
     readTime: "7 Min Read",
     publishDate: "November 2026",
-    heroImage: "/res_modern_mansion_1787632812473.png",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-12.jpg",
     author: RACHAEL_AUTHOR,
     keyTakeaways: [
       "Custom editorial property showcases hold buyer attention 4x longer than generic IDX templates.",
@@ -193,7 +200,7 @@ export const GUIDES: KnowledgeItem[] = [
     subtitle: "Underwriting cap rates, mixed-use live/work parcels, 1031 tax-deferred exchanges, and strategic land banking along the I-4, US-60, and US-27 corridors.",
     readTime: "9 Min Read",
     publishDate: "November 2026",
-    heroImage: "/com_office_tower_1787632874122.png",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-8.jpg",
     author: MARK_AUTHOR,
     keyTakeaways: [
       "Dual-building mixed-use parcels (such as 126 Ridgewood Ave in Brandon) offer diversified cash flow and SBA 504 owner-user financing.",
@@ -229,7 +236,7 @@ export const GUIDES: KnowledgeItem[] = [
     subtitle: "Comparing Downtown Tampa, St. Petersburg, Wesley Chapel, and Land O' Lakes for executives and families moving to Florida.",
     readTime: "8 Min Read",
     publishDate: "November 2026",
-    heroImage: "/city_tampa_1787662311501.png",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-1.jpg",
     author: RACHAEL_AUTHOR,
     keyTakeaways: [
       "Florida has 0% state personal income tax, 0% state estate tax, and a 3% annual Homestead property tax assessment cap.",
@@ -260,7 +267,7 @@ export const GUIDES: KnowledgeItem[] = [
     subtitle: "How to save thousands annually on Tampa Bay property taxes and transfer up to $500,000 in tax assessment savings when upgrading homes in Florida.",
     readTime: "6 Min Read",
     publishDate: "November 2026",
-    heroImage: "/res_historic_estate_1787632833084.png",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-11.jpg",
     author: RACHAEL_AUTHOR,
     keyTakeaways: [
       "The Florida Homestead Exemption reduces your property's assessed value by up to $50,000 for primary residents.",
@@ -292,7 +299,7 @@ export const GUIDES: KnowledgeItem[] = [
     subtitle: "A complete breakdown of Community Development District bonds, operations assessments, and true monthly carrying costs in Wesley Chapel and Land O' Lakes.",
     readTime: "7 Min Read",
     publishDate: "November 2026",
-    heroImage: "/res_golf_course_home_1787632854609.png",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-2.jpg",
     author: RACHAEL_AUTHOR,
     keyTakeaways: [
       "CDD fees finance world-class infrastructure—such as Crystal Lagoons, resort clubhouses, and multi-million-dollar trail networks—in master-planned communities.",
@@ -327,7 +334,7 @@ export const QUESTIONS: KnowledgeItem[] = [
     subtitle: "How to transition seamlessly between homes in Tampa Bay using equity bridge strategies, contingent offers, or post-closing occupancy agreements.",
     readTime: "5 Min Read",
     publishDate: "November 2026",
-    heroImage: "/listings/d-g-residential-1.webp",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-13.jpg",
     author: RACHAEL_AUTHOR,
     keyTakeaways: [
       "Yes—4 proven strategies allow you to buy your next Florida home without moving twice or carrying two long-term mortgages.",
@@ -361,7 +368,7 @@ export const QUESTIONS: KnowledgeItem[] = [
     subtitle: "Direct comparison of how HOA dues and CDD assessments work in Wesley Chapel, Land O' Lakes, and Hillsborough County communities.",
     readTime: "5 Min Read",
     publishDate: "November 2026",
-    heroImage: "/res_golf_course_home_1787632854609.png",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-4.jpg",
     author: RACHAEL_AUTHOR,
     keyTakeaways: [
       "HOA (Homeowners Association) is a private corporation governing architectural standards and deed restrictions, paid monthly or quarterly.",
@@ -392,7 +399,7 @@ export const QUESTIONS: KnowledgeItem[] = [
     subtitle: "Exact itemization of Florida documentary stamp taxes, title insurance customs, municipal lien searches, and net sheet calculations.",
     readTime: "5 Min Read",
     publishDate: "November 2026",
-    heroImage: "/listings/d-g-residential-4.webp",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-3.jpg",
     author: RACHAEL_AUTHOR,
     keyTakeaways: [
       "Florida Documentary Stamp Tax on the Deed is $0.70 per $100 of the sale price (0.7%), paid by the seller by standard custom.",
@@ -427,7 +434,7 @@ export const QUESTIONS: KnowledgeItem[] = [
     subtitle: "Comparing lifestyle, waterfront boating access, urban condo living, school corridors, and appreciation trends across both sides of the Bay.",
     readTime: "6 Min Read",
     publishDate: "November 2026",
-    heroImage: "/city_st_pete_1787662322779.png",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-15.jpg",
     author: RACHAEL_AUTHOR,
     keyTakeaways: [
       "St. Petersburg offers a walkable waterfront downtown, world-class arts (Dalí Museum, Beach Drive), Gulf beach proximity, and premier boating neighborhoods like Bahama Shores and Snell Isle.",
@@ -454,7 +461,7 @@ export const QUESTIONS: KnowledgeItem[] = [
     subtitle: "How business owners and investors use dual-building parcels near Highway 60 for professional office operations and rental cash flow.",
     readTime: "6 Min Read",
     publishDate: "November 2026",
-    heroImage: "/listings/ridgewood-1.jpg",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-10.jpg",
     author: MARK_AUTHOR,
     keyTakeaways: [
       "Mixed-use commercial/residential parcels allow a business owner to operate a professional office (law, CPA, medical, real estate, construction) while leasing a second building on site.",
@@ -482,7 +489,7 @@ export const QUESTIONS: KnowledgeItem[] = [
     subtitle: "Essential checklist for evaluating A-1 agricultural zoning, wetlands delineation, timber exemptions, soil tests, and access easements in Marion and Polk counties.",
     readTime: "6 Min Read",
     publishDate: "November 2026",
-    heroImage: "/listings/d-g-land-listing-cover.webp",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-5.jpg",
     author: MARK_AUTHOR,
     keyTakeaways: [
       "Always verify legal and physical road access—confirming public right-of-way or recorded perpetual ingress/egress easements.",
@@ -517,7 +524,7 @@ export const QUESTIONS: KnowledgeItem[] = [
     subtitle: "How to unlock 4.99%–5.50% fixed promotional interest rates and up to $25,000 in flex closing cash in Two Rivers, Angeline, and Epperson.",
     readTime: "5 Min Read",
     publishDate: "November 2026",
-    heroImage: "/listings/d-g-residential-6.webp",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-2.jpg",
     author: RACHAEL_AUTHOR,
     keyTakeaways: [
       "National builders purchase forward mortgage rate commitments in bulk, offering below-market fixed rates on quick-move-in inventory homes.",
@@ -544,7 +551,7 @@ export const QUESTIONS: KnowledgeItem[] = [
     subtitle: "Navigating Pinellas County Water and Navigation regulations, boat lift setbacks, and seawall reconstruction standards.",
     readTime: "5 Min Read",
     publishDate: "November 2026",
-    heroImage: "/listings/bahama-shores-1.jpg",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-18.jpg",
     author: RACHAEL_AUTHOR,
     keyTakeaways: [
       "Pinellas County Water and Navigation Control Authority regulates dock length, width, and side-property riparian setbacks.",
@@ -830,7 +837,7 @@ export const EVENTS: EventItem[] = [
     time: "Evening Riverwalk Festivities & Private Corridor Tours",
     location: "Curtis Hixon Waterfront Park & The Tampa Riverwalk",
     address: "600 N Ashley Dr, Tampa, FL 33602 (Riverwalk & Water Street District)",
-    heroImage: "/res_luxury_condo_1787632822869.png",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-9.jpg",
     summary: "Experience Downtown Tampa's signature holiday waterfront celebration—featuring outdoor ice skating at Curtis Hixon Park, the Curtis Hixon Choirs, and the annual Tampa Riverwalk Lighted Boat Parade right past Pendry Residences and Water Street.",
     description: "Every winter, the Tampa Downtown Partnership transforms Curtis Hixon Waterfront Park into the Winter Village along the Hillsborough River, culminating in the iconic Tampa Riverwalk Lighted Boat Parade. For relocating families and luxury condominium buyers exploring Pendry Residences Tampa, Water Street Tampa, and Hotel ORA, Davis & Garnett offers private daytime and twilight property tours along the Riverwalk corridor before the festivities.",
     agenda: [
@@ -840,6 +847,13 @@ export const EVENTS: EventItem[] = [
       "Evening — Dining Recommendations Across Water Street Tampa & Sparkman Wharf",
     ],
     host: "Tampa Downtown Partnership & Friends of the Riverwalk • Local Corridor Tours by Davis & Garnett",
+    externalAction: {
+      url: "https://wintervillagetampa.com/",
+      label: "Support Friends of the Riverwalk & Winter Village",
+      subtext: "Official Tampa Downtown Partnership & 501(c)(3) Riverwalk Non-Profit Portal",
+      type: "donate",
+      organization: "Tampa Downtown Partnership & Friends of the Riverwalk (501c3)",
+    },
   },
   {
     slug: "wesley-chapel-new-home-builder-showcase",
@@ -849,9 +863,9 @@ export const EVENTS: EventItem[] = [
     time: "10:00 AM – 5:00 PM EST",
     location: "Two Rivers, Angeline, Epperson & Mirada Master-Planned Communities",
     address: "SR-56 & Suncoast Parkway Growth Corridor, Pasco & Hillsborough Counties, FL",
-    heroImage: "/res_golf_course_home_1787632854609.png",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-4.jpg",
     summary: "Hosted annually by the Tampa Bay Builders Association (TBBA), the Parade of Homes showcases 65+ newly constructed model residences across Wesley Chapel, Land O' Lakes, and Greater Tampa Bay.",
-    description: "The Tampa Bay Parade of Homes—organized by the Tampa Bay Builders Association (TBBA.net)—is the region's premier multi-weekend showcase of new construction architecture across Pasco, Hillsborough, and Pinellas counties. Whether touring during the official Parade of Homes or scheduling a private year-round model tour with Davis & Garnett,Mark Davis and Rachael Garnett accompany buyers across Two Rivers, Angeline, Epperson, Mirada, and Connerton with side-by-side CDD/HOA breakdowns and builder rate-buydown comparisons.",
+    description: "The Tampa Bay Parade of Homes—organized by the Tampa Bay Builders Association (TBBA.net)—is the region's premier multi-weekend showcase of new construction architecture across Pasco, Hillsborough, and Pinellas counties. Whether touring during the official Parade of Homes or scheduling a private year-round model tour with Davis & Garnett, Mark Davis and Rachael Garnett accompany buyers across Two Rivers, Angeline, Epperson, Mirada, and Connerton with side-by-side CDD/HOA breakdowns and builder rate-buydown comparisons.",
     agenda: [
       "10:00 AM — Morning Coffee & Master-Planned CDD vs. HOA Comparison Briefing",
       "11:00 AM — Two Rivers (SR-56) & Epperson / Mirada Crystal Lagoon Model Showcase",
@@ -859,6 +873,13 @@ export const EVENTS: EventItem[] = [
       "3:30 PM — Builder Incentive, Lot Premium & Third-Party Inspection Review",
     ],
     host: "Tampa Bay Builders Association (TBBA) • Private Buyer Representation by Davis & Garnett",
+    externalAction: {
+      url: "https://tbba.net/parade-of-homes/",
+      label: "Register at TBBA Parade of Homes",
+      subtext: "Official Tampa Bay Builders Association Builder Guide & Registration",
+      type: "register",
+      organization: "Tampa Bay Builders Association (TBBA)",
+    },
   },
   {
     slug: "central-florida-land-investor-roundtable",
@@ -868,7 +889,7 @@ export const EVENTS: EventItem[] = [
     time: "9:00 AM – 5:00 PM EST",
     location: "Florida State Fairgrounds (Tampa) & Polk / Marion Acreage Corridors",
     address: "4800 US-301 N, Tampa, FL 33610 & US-27 / US-98 Central FL Ridge",
-    heroImage: "/land_commercial_development_1787632926636.png",
+    heroImage: "/city-photos/central-fl-acreage.jpg",
     summary: "Celebrating Florida's #1 agricultural and ranching heritage at the Florida State Fairgrounds in East Hillsborough, paired with private investor tours of Central Florida timberland and development acreage.",
     description: "Held each year at the Florida State Fairgrounds at I-4 and US-301 in Tampa, the Florida State Fair is the premier gathering for Florida cattlemen, citrus growers, timber operators, and agribusiness leaders. Throughout the season, Commercial & Residential Advisors Mark Davis and Rachael Garnett host private site tours of our active Central Florida land inventory—including 770 Old Stokes Rd (79.54 Acres on US-98 near US-27 in Frostproof) and NE 90th Street Rd (19.72 Acres A-1 Agricultural timberland near Ocala National Forest in Fort McCoy).",
     agenda: [
@@ -877,6 +898,13 @@ export const EVENTS: EventItem[] = [
       "Afternoon — Private Site Visits to Polk County (79.54 Acres) & Marion County (19.72 Acres) Tracts",
     ],
     host: "Florida State Fair Authority • Acreage & Commercial Advisory by Davis & Garnett",
+    externalAction: {
+      url: "https://floridastatefair.com/",
+      label: "Florida State Fair & Agribusiness Portal",
+      subtext: "Official Florida State Fairgrounds & Agricultural Hall of Fame Admissions",
+      type: "tickets",
+      organization: "Florida State Fair Authority",
+    },
   },
   {
     slug: "community-giving-partnership-day",
@@ -886,7 +914,7 @@ export const EVENTS: EventItem[] = [
     time: "10:00 AM – 6:00 PM EST",
     location: "Bayshore Boulevard (Tampa) & Vinoy Park Waterfront (St. Petersburg)",
     address: "Bayshore Blvd, Tampa, FL 33606 & 701 Bayshore Dr NE, St. Petersburg, FL 33701",
-    heroImage: "/listings/bahama-shores-1.webp",
+    heroImage: "/city-photos/st-petersburg-waterfront.jpg",
     summary: "Celebrating Tampa Bay's two most iconic waterfront traditions: the Gasparilla Children's & Pirate Parades along historic Bayshore Boulevard and Keep Saint Petersburg Local's Shopapalooza Festival at Vinoy Park.",
     description: "Nothing captures the vibrant waterfront lifestyle of Tampa Bay quite like Gasparilla season along Bayshore Boulevard in South Tampa and Shopapalooza Festival (featuring 350+ local makers and small businesses) at Vinoy Park on the St. Petersburg waterfront. Visiting Tampa or St. Pete for these signature weekends? Schedule a private waterfront tour with Mark Davis and Rachael Garnett—including our flagship $4,553,900 custom estate at 6100 Bahama Shores Dr S in St. Petersburg and The Ritz-Carlton Residences on Bayshore Boulevard.",
     agenda: [
@@ -895,6 +923,13 @@ export const EVENTS: EventItem[] = [
       "Afternoon — Private Boating, Seawall & Neighborhood Lifestyle Consultation with Davis & Garnett",
     ],
     host: "Ye Mystic Krewe of Gasparilla & Keep Saint Petersburg Local • Waterfront Tours by Davis & Garnett",
+    externalAction: {
+      url: "https://shopapaloozafestival.com/",
+      label: "Support Local Makers & Donate to Keep St. Pete Local",
+      subtext: "Official 501(c)(3) Non-Profit Community Festival & Charity Fundraiser",
+      type: "donate",
+      organization: "Keep Saint Petersburg Local (501(c)(3) Non-Profit)",
+    },
   },
 ];
 
@@ -905,7 +940,7 @@ export const ARTICLES: ArticleItem[] = [
     category: "Market Forecast",
     publishDate: "November 2026",
     readTime: "6 Min Read",
-    heroImage: "/com_office_tower_1787632874122.png",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-7.jpg",
     summary: "Why waterfront estates, suburban master-planned communities, and mixed-use commercial assets in Tampa Bay continue to outperform national averages.",
     author: MARK_AUTHOR,
     keyTakeaways: [
@@ -930,7 +965,7 @@ export const ARTICLES: ArticleItem[] = [
     category: "Luxury Residential",
     publishDate: "November 2026",
     readTime: "5 Min Read",
-    heroImage: "/res_luxury_condo_1787632822869.png",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-19.jpg",
     summary: "Inside the rise of five-star branded residences along the Tampa Riverwalk, Water Street, and historic Bayshore Boulevard.",
     author: RACHAEL_AUTHOR,
     keyTakeaways: [
@@ -950,7 +985,7 @@ export const ARTICLES: ArticleItem[] = [
     category: "Master-Planned Spotlight",
     publishDate: "November 2026",
     readTime: "6 Min Read",
-    heroImage: "/res_golf_course_home_1787632854609.png",
+    heroImage: "/new-images/new-2/davis-garnett-tampa-residential-real-estate-land-o-lakes-florida.jpg",
     summary: "How 9,600+ combined acres of master-planned innovation, Moffitt's Speros FL campus, and resort amenities are transforming SR-56 and the Suncoast Parkway.",
     author: RACHAEL_AUTHOR,
     keyTakeaways: [
@@ -970,7 +1005,7 @@ export const ARTICLES: ArticleItem[] = [
     category: "Commercial Strategy",
     publishDate: "November 2026",
     readTime: "5 Min Read",
-    heroImage: "/com_luxury_retail_1787632885082.png",
+    heroImage: "/new-images/new-2/dg-brandon-hwy60.jpg",
     summary: "Why owner-users and private investors are targeting dual-purpose commercial/residential properties in Brandon, Seffner, and Riverview.",
     author: MARK_AUTHOR,
     keyTakeaways: [
@@ -981,6 +1016,206 @@ export const ARTICLES: ArticleItem[] = [
       {
         heading: "Building Equity Instead of Paying Triple-Net Rent",
         body: "By acquiring a mixed-use property like 126 Ridgewood Ave & 613 E Morgan St in Brandon ($845,000), a business owner locks in fixed occupancy costs, captures depreciation tax benefits, and leases out the secondary structure to offset mortgage debt service.",
+      },
+    ],
+  },
+  {
+    slug: "keystone-rural-acreage-asc1-zoning-freedom",
+    title: "Keystone Acreage & Rural Freedom: ASC-1 Zoning, Outbuildings & Private Compounds",
+    category: "Acreage & Equestrian",
+    publishDate: "November 2026",
+    readTime: "7 Min Read",
+    heroImage: "/new-images/new-2/davis-garnett-tampa-residential-real-estate-keystone-florida.jpg",
+    summary: "Navigating Hillsborough County's premier non-HOA equestrian haven: agricultural zoning exemptions, equestrian barn builds, workshop permits, and private lakefront tracts.",
+    author: MARK_AUTHOR,
+    keyTakeaways: [
+      "ASC-1 (Agricultural Single Family - 1 unit per acre) zoning permits custom workshops, secondary barns, and equine facilities without restrictive HOA architectural review.",
+      "Keystone's strict rural land development code caps municipal utility extensions, effectively preserving high-acreage parcel values against high-density tract encroachment.",
+      "Private ski lakes like Lake Keystone and Lake Crescent feature riparian dock rights that command distinct 20-35% price premiums over dry acreage.",
+    ],
+    sections: [
+      {
+        heading: "1. The Freedom of ASC-1 Zoning in Northwest Hillsborough",
+        body: "For buyers seeking autonomy, Keystone stands apart from the master-planned communities of Citrus Park and Westchase. Under ASC-1 zoning, property owners enjoy broad discretion for commercial-grade storage, RV/boat outbuildings, and equestrian amenities. However, due diligence must verify wetland setbacks (EPC rules) and high-water table requirements before engineering pad foundations.",
+      },
+      {
+        heading: "2. Well & Septic Due Diligence: Flow Rates and Drain Fields",
+        body: "Because Keystone relies on private well and septic systems rather than Tampa municipal utilities, testing aquifer water flow (GPM) and verifying modern drain-field soil percolation are vital closing conditions. Our team coordinates independent environmental engineers to evaluate agricultural runoff and perimeter tree canopy health prior to contract execution.",
+      },
+    ],
+  },
+  {
+    slug: "clearwater-beach-sand-key-condo-regulations",
+    title: "Clearwater Beach vs. Sand Key: Short-Term Rental Ordinances & Condo Milestone SB 4-D",
+    category: "Coastal Condominiums",
+    publishDate: "November 2026",
+    readTime: "8 Min Read",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-16.jpg",
+    summary: "A comparative buyer's guide to Pinellas coastal towers: nightly rental yields on Clearwater Beach vs. quiet residential luxury and reserve funding on Sand Key.",
+    author: RACHAEL_AUTHOR,
+    keyTakeaways: [
+      "Clearwater Beach permits lucrative 1-day to 7-day transient rental licenses in designated tourist districts, while Sand Key strictly enforces 30- to 90-day minimum lease periods.",
+      "Senate Bill 4-D Milestone Structural Inspections and mandatory Structural Integrity Reserve Studies (SIRS) require immediate audit of building reserve funds before submitting an offer.",
+      "Sand Key towers offer expansive square footage and private beach cabanas at lower price-per-square-foot ratios compared to Clearwater's hotel-condo hybrid assets.",
+    ],
+    sections: [
+      {
+        heading: "1. Income Optimization vs. Residential Tranquility",
+        body: "Buyers looking for active cash flow gravitate toward North Beach Clearwater condominiums where management programs achieve high occupancy through spring training and summer holidays. Conversely, Sand Key appeals to full-time residents and snowbirds who value private gated beach access, garage parking, and tennis courts over transient vacation foot traffic.",
+      },
+      {
+        heading: "2. Post-Surfside Milestone Inspection Compliance (SB 4-D / SB 154)",
+        body: "Any coastal condominium three stories or taller within 3 miles of the coastline that has reached 25 to 30 years of age must undergo mandatory Phase 1 structural engineering inspections. Rachael Garnett inspects board minutes, special assessment budgets, and reserve funding adequacy to shield buyers from surprise capital calls.",
+      },
+    ],
+  },
+  {
+    slug: "cheval-lutz-gated-golf-country-club-guide",
+    title: "Cheval & Lutz Luxury Country Club Living: Navigating Gated Villages, Golf Access & CDD Reserves",
+    category: "Executive Gated",
+    publishDate: "November 2026",
+    readTime: "6 Min Read",
+    heroImage: "/new-images/new-2/davis-garnett-tampa-residential-real-estate-cheval.jpg",
+    summary: "Inside the Lutz-Lake Fern luxury corridor: analyzing 24/7 guard-gated security, Steve Smyers championship golf frontage, and community CDD infrastructure.",
+    author: RACHAEL_AUTHOR,
+    keyTakeaways: [
+      "Cheval is divided into distinct villages—such as The Highlands, Biarritz, and Cheval West—each with unique architectural guidelines, gate access protocols, and sub-association dues.",
+      "The community's private athletic club, tennis complex, and Steve Smyers championship golf course offer tiered membership packages for resident families.",
+      "Understanding the distinction between Cheval East (Hillsborough tax base) and Cheval West (CDD debt bond structures) ensures accurate annual escrow budgeting.",
+    ],
+    sections: [
+      {
+        heading: "1. The Prestige of the Lutz-Lake Fern Corridor",
+        body: "Positioned directly between the Suncoast Parkway and Dale Mabry Highway, Cheval combines immediate 25-minute transit to Tampa International Airport with secluded enclave living. Custom estates built by premier Florida architects feature sprawling outdoor lanais, negative-edge pools, and mature cypress preserves.",
+      },
+      {
+        heading: "2. HOA Covenants and Equestrian Access",
+        body: "Beyond golf, Cheval West incorporates equestrian boarding amenities and miles of bridle trails. Buyers must carefully review individual village covenants regarding roof tile specifications, exterior paint palettes, and commercial vehicle parking regulations before waiving inspection contingencies.",
+      },
+    ],
+  },
+  {
+    slug: "florida-greenbelt-statute-agricultural-tax-exemption",
+    title: "Florida Greenbelt Law (F.S. 193.461): Strategic Agricultural Tax Relief for Landowners",
+    category: "Land Banking & Tax",
+    publishDate: "November 2026",
+    readTime: "7 Min Read",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-5.jpg",
+    summary: "How Central Florida multi-acre land investors and estate owners leverage agricultural classifications (timber, cattle, apiaries) to reduce property tax liabilities by up to 80%.",
+    author: MARK_AUTHOR,
+    keyTakeaways: [
+      "Florida Statute § 193.461 allows agricultural classification based on 'bona fide commercial agricultural use', assessing land on current production value rather than highest and best use.",
+      "Qualifying acreage can reduce annual ad valorem real estate taxes from tens of thousands of dollars to modest hundreds during long-term holding periods.",
+      "Applications must be formally filed with the county property appraiser by March 1st with documented commercial operations and commercial lease agreements.",
+    ],
+    sections: [
+      {
+        heading: "1. Agricultural Classification as a Wealth Shield",
+        body: "For investors acquiring 5 to 100+ acre parcels across Hillsborough, Pasco, and Hernando counties, carrying costs can be prohibitive if taxed at market speculation rates. By establishing active timber management, hay harvesting, or leased grazing programs, owners transform their tax assessment basis while land values appreciate along suburban growth vectors.",
+      },
+      {
+        heading: "2. Avoiding Disqualification & Recapture Traps",
+        body: "County appraisers perform annual on-site audits to verify active agricultural commerce. Mark Davis guides buyers through leasing structures with licensed agricultural operators, ensuring compliance with herd density, rotational grazing, and commercial sales records required to maintain bona fide status.",
+      },
+    ],
+  },
+  {
+    slug: "st-petersburg-waterfront-seawall-dock-engineering",
+    title: "St. Petersburg Waterfront Real Estate: Seawall Lifespans, Riparian Rights & Coastal Permitting",
+    category: "Waterfront Advisory",
+    publishDate: "November 2026",
+    readTime: "8 Min Read",
+    heroImage: "/new-images/new-2/davis-garnett-tampa-residential-real-estate-saint-petersburg-downtown-and-beaches-florida.jpg",
+    summary: "Critical engineering insights for waterfront buyers in Snell Isle, Bahama Shores, and Venetian Isles: concrete cap integrity, tieback rods, and boat-lift permitting.",
+    author: MARK_AUTHOR,
+    keyTakeaways: [
+      "Seawall replacement costs in Pinellas County now average $650 to $1,100 per linear foot; pre-closing marine engineering inspections are non-negotiable.",
+      "Riparian rights determine whether a parcel possesses legal water frontage to construct deep-water docks or boat lifts into Tampa Bay and the Intracoastal Waterway.",
+      "Pinellas County Water and Navigation and the Army Corps of Engineers enforce strict submerged aquatic vegetation (seagrass) setbacks that govern dock extension lengths.",
+    ],
+    sections: [
+      {
+        heading: "1. Inspecting Beyond the Surface: Seawalls & Tiebacks",
+        body: "Many prospective buyers evaluate a home's interior finishes while ignoring the $80,000 to $150,000 marine infrastructure holding back Tampa Bay. We inspect for vertical panel cracks, rust stains indicating corroding rebar, sunken yard soil indicating failing filter fabric, and displaced deadman tieback anchors before negotiating buyer credits.",
+      },
+      {
+        heading: "2. Navigating Mean Low Water (MLW) & Boat Draft Requirements",
+        body: "A yacht with a 4-foot draft requires deep canal or bay frontage. Canal depth surveys at astronomical mean low tide prevent new owners from being grounded in their slips during winter north winds. Our advisory team verifies navigability channels before our clients write contracts.",
+      },
+    ],
+  },
+  {
+    slug: "tampa-bay-1031-exchange-commercial-reinvestment",
+    title: "1031 Exchange Reinvestment in Tampa Bay: Deploying Capital into NNN Retail & Industrial Flex",
+    category: "Commercial 1031 Exchange",
+    publishDate: "November 2026",
+    readTime: "6 Min Read",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-20.jpg",
+    summary: "Executing tax-deferred like-kind exchanges under Section 1031: meeting the 45-day identification and 180-day closing deadlines in Florida's tightest commercial submarkets.",
+    author: MARK_AUTHOR,
+    keyTakeaways: [
+      "Under IRC § 1031, investors can defer 100% of federal capital gains, net investment income tax (NIIT), and depreciation recapture by reinvesting into like-kind commercial real estate.",
+      "Single-tenant triple-net (NNN) leases with national credit tenants provide passive cash flow with zero landlord maintenance obligations.",
+      "Small-bay industrial flex units in Tampa and Brandon continue to post sub-3.5% vacancy rates and resilient annual rental escalators.",
+    ],
+    sections: [
+      {
+        heading: "1. The Critical 45-Day Identification Window",
+        body: "The greatest risk in a 1031 exchange is missing the strict 45-calendar-day identification deadline. We pre-screen off-market and on-market commercial inventory across Hillsborough and Pinellas counties weeks before our client's relinquished property closes, ensuring 3 fully vetted target properties are identified with certified intermediaries.",
+      },
+      {
+        heading: "2. Evaluating Triple Net (NNN) vs. Value-Add Industrial",
+        body: "While passive investors often prioritize 15-year corporate leases with corporate guarantors, experienced investors can unlock substantial equity upside by acquiring multi-tenant commercial flex buildings with below-market in-place rents along primary corridors like Hwy 60 in Brandon.",
+      },
+    ],
+  },
+  {
+    slug: "historic-carrollwood-modern-renovations-lake-access",
+    title: "Historic Carrollwood & Lake Ellen Estates: Mid-Century Architectural Restorations & Ski Lake Access",
+    category: "Lakefront & Architecture",
+    publishDate: "November 2026",
+    readTime: "5 Min Read",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-15.jpg",
+    summary: "Why design-focused buyers are modernizing classic 1960s ranches and acquiring private acreage on Carrollwood's premier freshwater ski lakes.",
+    author: RACHAEL_AUTHOR,
+    keyTakeaways: [
+      "Historic Carrollwood (Florida's first master-planned community of the 1960s) features deeded lake privileges on private Lake Carroll, White Trout Lake, and Lake Ellen.",
+      "Preserved architectural elements—including terrazzo flooring, brick fireplaces, and courtyard pools—command strong premiums among contemporary designers.",
+      "Proximity to top-rated schools (Corbett Prep, Carrollwood Day School) and central Dale Mabry shopping makes this corridor an enduring luxury haven.",
+    ],
+    sections: [
+      {
+        heading: "1. The Enduring Appeal of Mid-Century Florida Design",
+        body: "Unlike repetitive contemporary tract developments, Original Carrollwood and surrounding lakefront enclaves offer sprawling half-acre parcels shaded by centuries-old live oaks. Renovation specialists are knocking down compartmentalized walls, installing floor-to-ceiling glass sliders, and exposing original poured terrazzo.",
+      },
+      {
+        heading: "2. Private Ski Lake Dynamics",
+        body: "Ski lakes like Lake Carroll and Lake Ellen are non-public, meaning only deeded shorefront owners or association keyholders have boat ramp access. This exclusivity creates a private water sports sanctuary with low boat traffic, pristine water clarity, and reliable long-term asset value.",
+      },
+    ],
+  },
+  {
+    slug: "flood-insurance-risk-rating-2-coastal-florida",
+    title: "FEMA Risk Rating 2.0 & Florida Coastal Property: What Elevated Premiums Mean for Buyers",
+    category: "Risk & Insurance",
+    publishDate: "November 2026",
+    readTime: "6 Min Read",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-14.jpg",
+    summary: "Demystifying flood insurance under FEMA's actuarily-driven Risk Rating 2.0: Elevation Certificates, private market surplus lines, and structural mitigation discounts.",
+    author: MARK_AUTHOR,
+    keyTakeaways: [
+      "FEMA Risk Rating 2.0 calculates flood insurance premiums on structural replacement cost, distance to water, and foundation type rather than flood zone letters alone.",
+      "Homes built to modern base flood elevation (BFE) standards on pilings or stem walls save up to 75% on annual NFIP and private market flood policies.",
+      "Assuming existing flood policies (policy transfer) can preserve grandfathered glide-path rate increases capped at 18% per year for primary residences.",
+    ],
+    sections: [
+      {
+        heading: "1. Understanding Risk Rating 2.0 Metrics",
+        body: "Under the legacy flood system, two homes in Flood Zone AE paid nearly identical rates regardless of home value. Today, Risk Rating 2.0 evaluates individualized property characteristics, including foundation type, machinery elevation (HVAC/electrical), and first-floor elevation relative to the 100-year base flood elevation.",
+      },
+      {
+        heading: "2. Buyer Due Diligence & Insurance Assumption",
+        body: "Before removing financing contingencies, our team requires sellers to provide current policy declarations and elevation certificates. In many coastal transactions, transferring an active National Flood Insurance Program (NFIP) policy saves buyers thousands of dollars compared to binding a new policy at uncapped market rates.",
       },
     ],
   },

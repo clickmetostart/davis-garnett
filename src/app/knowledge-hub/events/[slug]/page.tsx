@@ -5,11 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowLeft,
+  ArrowRight,
   Calendar,
   Clock,
   MapPin,
   CheckCircle2,
   Users,
+  ExternalLink,
 } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
@@ -108,6 +110,38 @@ export default function EventSpokePage({
             <p className="text-[#111]/75 text-base md:text-lg font-light leading-relaxed mb-10">
               {event.description}
             </p>
+
+            {event.externalAction && (
+              <div className="mb-10 p-6 md:p-8 bg-[#111111] rounded-2xl border border-[#D4AF37]/40 text-white shadow-xl relative overflow-hidden">
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#ef5728] via-[#D4AF37] to-[#ef5728]" />
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+                  <div>
+                    <span className="text-[10px] uppercase tracking-[0.25em] text-[#ef5728] font-bold block mb-1.5">
+                      {event.externalAction.type === "donate"
+                        ? "501(c)(3) Community Cause & Official Fundraiser"
+                        : event.externalAction.type === "register"
+                        ? "Official Association Showcase Registration"
+                        : "Official Event Tickets & Admissions"}
+                    </span>
+                    <h3 className="font-aiveritas text-xl sm:text-2xl text-white mb-1.5">
+                      {event.externalAction.organization}
+                    </h3>
+                    <p className="text-xs text-white/70 font-light max-w-xl">
+                      {event.externalAction.subtext}
+                    </p>
+                  </div>
+                  <a
+                    href={event.externalAction.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-[#ef5728] hover:bg-[#d0461b] text-white text-xs font-bold uppercase tracking-widest rounded-xl transition-all shadow-lg hover:shadow-xl shrink-0 group cursor-pointer"
+                  >
+                    <span>{event.externalAction.label}</span>
+                    <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </a>
+                </div>
+              </div>
+            )}
 
             <div className="bg-[#f5f3ef] p-8 rounded-2xl border border-[#111]/10">
               <h3 className="font-aiveritas text-2xl text-[#111] mb-6">Schedule &amp; Agenda</h3>

@@ -168,7 +168,7 @@ export default function HomePageV1Light() {
             </div>
             <div className="w-full">
               <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden mb-6">
-                <Image src="/new-images/davis-garnett-new-team-rachael.jpg" alt="Rachael Garnett" fill className="object-cover object-top" />
+                <Image src="/new-images/new-2/rachael-garnett-residential-commerical-advisor-tampa-real-estate-homepage-1.jpg" alt="Rachael Garnett" fill className="object-cover object-top" />
               </div>
               <h3 className="font-aiveritas text-2xl text-[#111] mb-1">Rachael Garnett</h3>
               <p className="text-[#D4AF37] text-xs uppercase tracking-widest mb-3">Commercial &amp; Residential Advisor • FL Lic #3378601</p>
@@ -251,7 +251,7 @@ export default function HomePageV1Light() {
               className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden group cursor-pointer shadow-2xl"
               style={{ left: rightLeft, width: rightWidth, height: rightHeight, zIndex: rightZIndex, borderRadius }}
             >
-              <Image src="/new-images/davis-garnett-new-team-rachael.jpg" alt="Rachael Garnett" fill className="object-cover object-top" />
+              <Image src="/new-images/new-2/rachael-garnett-residential-commerical-advisor-tampa-real-estate-homepage-1.jpg" alt="Rachael Garnett" fill className="object-cover object-top" />
               <motion.div
                 className="absolute inset-0 flex flex-col items-center justify-end pb-24 px-12 bg-gradient-to-t from-[#050505] via-[#050505]/55 to-transparent"
                 style={{ opacity: textOpacity, y: textY }}
