@@ -816,17 +816,13 @@ export default function SearchMlsDiscoveryPortal() {
                   <Home className="w-8 h-8" />
                 </div>
                 <span className="text-[11px] uppercase tracking-[0.24em] text-[#9A7D3A] font-bold block mb-2">
-                  Lofty IDX Embed Container (#lofty-idx-embed-root)
+                  Lofty IDX Interactive Map Search
                 </span>
                 <h3 className="font-aiveritas text-2xl md:text-4xl text-[#111111] mb-4">
                   Full-Screen Map Search &amp; Instant MLS Alerts
                 </h3>
-                <p className="text-sm md:text-base text-[#111111]/70 font-light leading-relaxed max-w-2xl mx-auto mb-10">
-                  This container is pre-wired for your Lofty IDX Subdomain / JavaScript Widget or
-                  Direct Iframe embed. Once your Lofty IDX URL is dropped in (or OAuth token is
-                  connected in <code className="px-2 py-0.5 bg-white rounded border text-xs">/clickme/settings</code>),
-                  interactive polygon map search and automated saved-search drips render seamlessly
-                  inside this frame.
+                <p className="text-sm md:text-base text-[#111111]/75 font-light leading-relaxed max-w-2xl mx-auto mb-10">
+                  This is the home of our upcoming Lofty IDX Interactive Map Search. In the meantime, use our quick neighborhood links below or reach out to set up a custom MLS property search.
                 </p>
 
                 {/* Pre-Built Quick-Launch Corridor Portals */}
@@ -843,7 +839,7 @@ export default function SearchMlsDiscoveryPortal() {
                       filter: "Water Street",
                     },
                     {
-                      title: "Wesley Chapel & Land O' Lakes",
+                      title: "Wesley Chapel & Lutz",
                       sub: "Two Rivers, Connerton, Angeline, Mirada",
                       filter: "Wesley Chapel",
                     },
