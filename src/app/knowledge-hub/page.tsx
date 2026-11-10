@@ -674,7 +674,7 @@ export default function KnowledgeHubPage() {
                   Have a Specific Real Estate Question?
                 </h2>
                 <p className="text-white/70 font-light max-w-2xl mx-auto text-sm md:text-base">
-                  Ask Mark Davis (Commercial &amp; Land) or Rachael Garnett (Luxury Residential &amp; Relocation) directly. We will send you a customized breakdown.
+                  Ask Mark Davis, REALTOR® or Rachael Garnett, REALTOR® — Certified Commercial &amp; Residential Agents — directly. We will send you a customized breakdown.
                 </p>
               </div>
 

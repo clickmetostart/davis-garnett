@@ -24,9 +24,9 @@ const NAV_GROUPS: NavGroup[] = [
     href: "/about/our-every-listing-approach",
     dropdown: [
       { label: "Our Every Listing Approach", desc: "Our why, full checklist & how we take care of every property we list", href: "/about/our-every-listing-approach" },
-      { label: "About The Davis & Garnett Team", desc: "Real estate powerhouses of local knowledge, grateful for the opportunity to serve", href: "/about" },
-      { label: "Meet Mark Davis", desc: "Commercial & Residential Advisor • FL Lic #3209459", href: "/about/mark-davis" },
-      { label: "Meet Rachael Garnett", desc: "Commercial & Residential Advisor • FL Lic #3378601", href: "/about/rachael-garnett" },
+      { label: "About The Davis & Garnett Team", desc: "Local knowledge, honest advice & a team working together for you", href: "/about" },
+      { label: "Meet Mark Davis, REALTOR®", desc: "Certified Commercial & Residential Agent • FL Lic #3209459", href: "/about/mark-davis" },
+      { label: "Meet Rachael Garnett, REALTOR®", desc: "Certified Commercial & Residential Agent • FL Lic #3378601", href: "/about/rachael-garnett" },
       { label: "Align Right Realty Carrollwood", desc: "Our brokerage heritage, compliance & statewide reach (#BK3401606)", href: "/about/align-right-realty-carrollwood" },
       { label: "Meet Our Strategic Partners", desc: "Preferred lenders, title counsel, inspectors & luxury stagers", href: "/about/strategic-partners" },
       { label: "Community Outreach & Causes", desc: "Our commitment to Tampa Bay church & youth initiatives", href: "/about/community-outreach-giving" },

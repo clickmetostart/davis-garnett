@@ -582,7 +582,7 @@ export default function PropertiesPage() {
                 icon: <Award className="w-7 h-7 text-[#C8A951]" />,
                 tag: "01 · Luxury Residential Estates",
                 title: "Architectural Positioning & Editorial Marketing",
-                lead: "Led by Rachael Garnett (FL Lic. #3378601)",
+                lead: "Mark Davis, REALTOR® & Rachael Garnett, REALTOR®",
                 description:
                   "Every residential listing — from custom Tampa Bay waterfront estates like 'The Vistara' in Bahama Shores to golf course homes in Bradenton and Land O' Lakes — receives bespoke digital dossiers, architectural photography, 3D Matterport walkthroughs, and targeted syndication to qualified Gulf Coast and out-of-state cash buyers.",
                 bullets: [
@@ -595,7 +595,7 @@ export default function PropertiesPage() {
                 icon: <TrendingUp className="w-7 h-7 text-[#C8A951]" />,
                 tag: "02 · Commercial & Mixed-Use Assets",
                 title: "Institutional Underwriting & Deal Structuring",
-                lead: "Led by Mark Davis (FL Lic. #3209459)",
+                lead: "Mark Davis, REALTOR® & Rachael Garnett, REALTOR®",
                 description:
                   "Commercial and mixed-use dispositions such as our dual-building Brandon corridor offering require rigorous financial packaging. We prepare comprehensive Offering Memorandums detailing utility separation, zoning flexibility, traffic counts, ADA compliance, and owner-user vs. multi-tenant yield scenarios.",
                 bullets: [
@@ -608,7 +608,7 @@ export default function PropertiesPage() {
                 icon: <Compass className="w-7 h-7 text-[#C8A951]" />,
                 tag: "03 · Land, Acreage & Off-Market Sourcing",
                 title: "Corridor Entitlement & Strategic Land Banking",
-                lead: "Joint Commercial & Residential Land Advisory",
+                lead: "Mark Davis, REALTOR® & Rachael Garnett, REALTOR®",
                 description:
                   "From 79.54-acre Central Florida highway development tracts in Polk County to gated 19.72-acre timberland sanctuaries in Marion County, we advise land owners and developers on highest-and-best-use analysis, agricultural tax exemptions, and off-market parcel assemblages.",
                 bullets: [

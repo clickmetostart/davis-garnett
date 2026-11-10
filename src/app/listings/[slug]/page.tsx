@@ -43,8 +43,8 @@ import { Listing } from "@/types/listings";
 const ADVISOR_TEAM = [
   {
     key: "Mark",
-    name: "Mark Davis",
-    role: "Commercial & Residential Advisor",
+    name: "Mark Davis, REALTOR®",
+    role: "Certified Commercial & Residential Agent",
     email: "mark@davisgarnettsells.com",
     phone: "941-737-4127",
     image: "/davis-garnett-headshots/mark-davis-avatar-footer.JPG",
@@ -55,8 +55,8 @@ const ADVISOR_TEAM = [
   },
   {
     key: "Rachael",
-    name: "Rachael Garnett",
-    role: "Commercial & Residential Advisor",
+    name: "Rachael Garnett, REALTOR®",
+    role: "Certified Commercial & Residential Agent",
     email: "rachael@davisgarnettsells.com",
     phone: "727-808-3344",
     image: "/davis-garnett-headshots/rachael-garnett-avatar-footer.webp",

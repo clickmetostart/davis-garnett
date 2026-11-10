@@ -4,16 +4,16 @@ import { ArrowLeft, ArrowRight, Phone, Mail, Home, MapPin, Users, Star } from "l
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Rachael Garnett | Residential Real Estate | Tampa Bay",
-  description: "Connect with Rachael Garnett, Residential Real Estate Advisor at Align Right Realty Carrollwood. Specializing in home buying, selling, and relocation across Tampa Bay.",
+  title: "Rachael Garnett, REALTOR® | Commercial & Residential Real Estate | Tampa Bay",
+  description: "Connect with Rachael Garnett, REALTOR® — Certified Commercial & Residential Real Estate Agent at Align Right Realty Carrollwood. Helping buyers, sellers, and investors across Tampa Bay.",
 };
 
 const LINKS = [
-  { label: "View Residential Listings", href: "/garnett#listings", icon: Home },
-  { label: "Neighborhood Guides", href: "/garnett#neighborhoods", icon: MapPin },
-  { label: "First-Time Buyer Guide", href: "/garnett#buyers", icon: Users },
-  { label: "Schedule a Showing", href: "mailto:rachael@davisgarnettsells.com", icon: Star },
-  { label: "Meet Mark Davis", href: "/mark", icon: ArrowRight },
+  { label: "View Active & Sold Properties", href: "/properties", icon: Home },
+  { label: "New Construction & Developments", href: "/developments", icon: MapPin },
+  { label: "Neighborhood & Market Guides", href: "/knowledge-hub", icon: Users },
+  { label: "Schedule a Consultation", href: "/contact", icon: Star },
+  { label: "Meet Mark Davis, REALTOR®", href: "/mark", icon: ArrowRight },
   { label: "Davis & Garnett Main Page", href: "/", icon: ArrowRight },
 ];
 
@@ -38,8 +38,8 @@ export default function RachaelLinktree() {
           <Image src="/davis-garnett-headshots/rachael-garnett-avatar-footer.webp" alt="Rachael Garnett" fill className="object-cover object-[center_30%]" priority />
         </div>
 
-        <h1 className="font-serif text-3xl text-white mb-1">Rachael Garnett</h1>
-        <p className="text-[#D4AF37] text-sm mb-1 font-medium">Commercial &amp; Residential Advisor</p>
+        <h1 className="font-serif text-3xl text-white mb-1">Rachael Garnett, REALTOR®</h1>
+        <p className="text-[#D4AF37] text-sm mb-1 font-medium">Certified Commercial &amp; Residential Agent</p>
         <p className="text-white/40 text-xs uppercase tracking-widest mb-2">FL Lic. #3378601 · <span className="text-[#ef5728]">Align Right Realty Carrollwood</span></p>
 
         {/* Tampa Bay tag */}
@@ -79,7 +79,7 @@ export default function RachaelLinktree() {
         <div className="w-full max-w-md mb-12">
           <p className="text-xs uppercase tracking-widest text-white/30 text-center mb-4">Specialties</p>
           <div className="flex flex-wrap justify-center gap-2">
-            {["Buyer Representation", "Seller Strategy", "Relocation", "Investment Properties", "Luxury Homes", "First-Time Buyers", "Tampa Bay"].map(tag => (
+            {["Residential Homes", "Commercial Real Estate", "Waterfront & Condos", "Land & Acreage", "New Construction", "Relocation", "Tampa Bay"].map(tag => (
               <span key={tag} className="px-3 py-1 rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/5 text-[#D4AF37]/70 text-xs">{tag}</span>
             ))}
           </div>

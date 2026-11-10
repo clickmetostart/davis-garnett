@@ -4,15 +4,15 @@ import { ArrowLeft, ArrowRight, Phone, Mail, Building2, MapPin, TrendingUp, Star
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Mark Davis | Commercial Real Estate | Tampa Bay",
-  description: "Connect with Mark Davis, Broker Associate at Align Right Realty Carrollwood. Specializing in commercial real estate, investment properties, and business relocations across Tampa Bay.",
+  title: "Mark Davis, REALTOR® | Commercial & Residential Real Estate | Tampa Bay",
+  description: "Connect with Mark Davis, REALTOR® — Certified Commercial & Residential Real Estate Agent at Align Right Realty Carrollwood. Helping buyers, sellers, and investors across Tampa Bay.",
 };
 
 const LINKS = [
-  { label: "View Commercial Listings", href: "/davis#listings", icon: Building2 },
-  { label: "Investment Properties", href: "/davis#investment", icon: TrendingUp },
-  { label: "Schedule a Consultation", href: "mailto:mark@davisgarnettsells.com", icon: Star },
-  { label: "Meet Rachael Garnett", href: "/rachael", icon: ArrowRight },
+  { label: "View Active & Sold Properties", href: "/properties", icon: Building2 },
+  { label: "New Construction & Developments", href: "/developments", icon: TrendingUp },
+  { label: "Schedule a Consultation", href: "/contact", icon: Star },
+  { label: "Meet Rachael Garnett, REALTOR®", href: "/rachael", icon: ArrowRight },
   { label: "Davis & Garnett Main Page", href: "/", icon: ArrowRight },
 ];
 
@@ -37,8 +37,8 @@ export default function MarkLinktree() {
           <Image src="/davis-garnett-headshots/mark-davis-avatar-footer.JPG" alt="Mark Davis" fill className="object-cover object-top" priority />
         </div>
 
-        <h1 className="font-serif text-3xl text-white mb-1">Mark Davis</h1>
-        <p className="text-[#D4AF37] text-sm mb-1 font-medium">Commercial &amp; Residential Advisor</p>
+        <h1 className="font-serif text-3xl text-white mb-1">Mark Davis, REALTOR®</h1>
+        <p className="text-[#D4AF37] text-sm mb-1 font-medium">Certified Commercial &amp; Residential Agent</p>
         <p className="text-white/40 text-xs uppercase tracking-widest mb-2">FL Lic. #3209459 · <span className="text-[#ef5728]">Align Right Realty Carrollwood</span></p>
 
         {/* Tampa Bay tag */}
@@ -78,7 +78,7 @@ export default function MarkLinktree() {
         <div className="w-full max-w-md mb-12">
           <p className="text-xs uppercase tracking-widest text-white/30 text-center mb-4">Specialties</p>
           <div className="flex flex-wrap justify-center gap-2">
-            {["Commercial Leasing", "Residential Sales", "Investment Properties", "Business Relocations", "Industrial", "Multi-Family", "Tampa Bay"].map(tag => (
+            {["Residential Homes", "Commercial Real Estate", "Waterfront & Condos", "Land & Acreage", "New Construction", "Relocation", "Tampa Bay"].map(tag => (
               <span key={tag} className="px-3 py-1 rounded-full border border-white/10 text-white/50 text-xs">{tag}</span>
             ))}
           </div>

@@ -168,7 +168,7 @@ export default function RachaelGarnettAdvisorPage() {
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-[#111111]/10 bg-[#111111]">
               <Image
                 src="/new-images/new-2/rachael-garnett-residential-commerical-advisor-tampa-real-estate-6.jpg"
-                alt="Rachael Garnett — Luxury Residential & Relocation Specialist (#3378601)"
+                alt="Rachael Garnett, REALTOR® — Certified Commercial & Residential Agent (#3378601)"
                 fill
                 priority
                 unoptimized
@@ -177,9 +177,9 @@ export default function RachaelGarnettAdvisorPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/80 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 text-white">
                 <span className="inline-block px-3 py-1 rounded bg-[#C8A951] text-[#111111] text-[10px] font-bold uppercase tracking-[0.2em] mb-2">
-                  FL License #3378601
+                  REALTOR® • FL License #3378601
                 </span>
-                <p className="font-aiveritas text-2xl">Rachael Garnett</p>
+                <p className="font-aiveritas text-2xl">Rachael Garnett, REALTOR®</p>
                 <p className="text-xs text-white/75">
                   Align Right Realty Carrollwood • License #BK3401606
                 </p>
@@ -189,13 +189,13 @@ export default function RachaelGarnettAdvisorPage() {
 
           <div>
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-              Co-Founder &amp; Principal · Commercial &amp; Residential Advisor
+              Co-Founder &amp; REALTOR® · Certified Commercial &amp; Residential Agent
             </span>
             <h1 className="font-aiveritas text-5xl md:text-6xl text-[#111111] leading-[1.08] mb-6">
               Rachael Garnett
             </h1>
             <p className="text-xl text-[#9A7D3A] font-light mb-6">
-              Commercial &amp; Residential Advisor • Deep Local Knowledge &amp; Dedicated Care Across Waterfront Estates, Condos, Residential &amp; Commercial
+              REALTOR® · Certified Commercial &amp; Residential Agent • Helping Buyers, Sellers &amp; Investors Across Homes, Commercial Properties, Land &amp; Condos
             </p>
             <p className="text-base text-[#111111]/75 font-light leading-relaxed mb-6">
               Rachael Garnett is a full-spectrum <strong className="font-semibold text-[#111111]">Commercial &amp; Residential Advisor</strong> representing buyers, sellers, and investors across commercial, residential, land, downtown condominiums, and luxury waterfront estates across St. Petersburg, Tampa, Carrollwood, Lutz, Land O&apos; Lakes, Bradenton, and Wesley Chapel. Known for her thoughtful property positioning, local market expertise, and genuine care for her clients, Rachael delivers attentive guidance at every price point.

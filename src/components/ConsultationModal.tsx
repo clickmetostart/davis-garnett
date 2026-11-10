@@ -214,9 +214,9 @@ export default function ConsultationModal({
                       onChange={(e) => setAdvisor(e.target.value)}
                       className="w-full px-4 py-3 bg-[#f5f3ef] border border-[#111]/10 rounded-lg text-sm text-[#111] focus:outline-none focus:border-[#D4AF37]"
                     >
-                      <option value="Mark Davis & Rachael Garnett">Both Advisors (Mark Davis &amp; Rachael Garnett)</option>
-                      <option value="Mark Davis (Commercial & Residential Advisor)">Mark Davis — Commercial &amp; Residential Advisor (#3209459)</option>
-                      <option value="Rachael Garnett (Commercial & Residential Advisor)">Rachael Garnett — Commercial &amp; Residential Advisor (#3378601)</option>
+                      <option value="Mark Davis & Rachael Garnett">Both Agents (Mark Davis &amp; Rachael Garnett)</option>
+                      <option value="Mark Davis (Commercial & Residential Agent)">Mark Davis, REALTOR® — Certified Commercial &amp; Residential Agent (#3209459)</option>
+                      <option value="Rachael Garnett (Commercial & Residential Agent)">Rachael Garnett, REALTOR® — Certified Commercial &amp; Residential Agent (#3378601)</option>
                     </select>
                   </div>
                 </div>

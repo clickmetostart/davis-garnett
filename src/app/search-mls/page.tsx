@@ -950,8 +950,7 @@ export default function SearchMlsDiscoveryPortal() {
                     Direct Advisory Matching
                   </div>
                   <p className="text-xs text-[#111111]/65 leading-relaxed">
-                    Mark Davis (Commercial) &amp; Rachael Garnett (Residential) personally curate
-                    your private property feed.
+                    Mark Davis, REALTOR® &amp; Rachael Garnett, REALTOR® — Certified Commercial &amp; Residential Agents — personally curate your private property feed.
                   </p>
                 </div>
               </div>

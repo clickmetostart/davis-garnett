@@ -115,13 +115,13 @@ export default function ContactPage() {
 
                     <div className="text-center sm:text-left flex-1">
                       <span className="inline-block px-3 py-1 bg-[#f5f3ef] border border-[#D4AF37]/40 text-[#9A7D3A] text-[10px] font-bold uppercase tracking-widest rounded-sm mb-2">
-                        Commercial &amp; Residential Advisor
+                        REALTOR® · Certified Commercial &amp; Residential Agent
                       </span>
                       <h3 className="font-aiveritas text-3xl md:text-4xl text-[#111] mb-1">
                         Mark Davis
                       </h3>
                       <p className="text-xs uppercase tracking-widest text-[#111]/55 font-bold mb-3">
-                        Co-Founder &amp; Principal Advisor • FL Lic #3209459
+                        Co-Founder &amp; REALTOR® • FL Lic #3209459
                       </p>
                       <p className="text-sm text-[#111]/70 font-light leading-relaxed">
                         Advising across commercial, residential, land, condos, and luxury estates—bringing his personal flair for deal structuring, commercial mixed-use underwriting, 1031 exchanges, and Central Florida acreage.
@@ -169,10 +169,10 @@ export default function ContactPage() {
                   {/* Focus Tags */}
                   <div className="flex flex-wrap gap-2">
                     {[
-                      "Commercial Mixed-Use",
-                      "Central FL Land & Timber",
-                      "1031 Exchanges",
-                      "Development Entitlements",
+                      "Residential & Luxury Homes",
+                      "Commercial & Mixed-Use",
+                      "Land & Acreage",
+                      "Condos & New Construction",
                     ].map((tag) => (
                       <span
                         key={tag}
@@ -223,13 +223,13 @@ export default function ContactPage() {
 
                     <div className="text-center sm:text-left flex-1">
                       <span className="inline-block px-3 py-1 bg-[#f5f3ef] border border-[#D4AF37]/40 text-[#9A7D3A] text-[10px] font-bold uppercase tracking-widest rounded-sm mb-2">
-                        Commercial &amp; Residential Advisor
+                        REALTOR® · Certified Commercial &amp; Residential Agent
                       </span>
                       <h3 className="font-aiveritas text-3xl md:text-4xl text-[#111] mb-1">
                         Rachael Garnett
                       </h3>
                       <p className="text-xs uppercase tracking-widest text-[#111]/55 font-bold mb-3">
-                        Co-Founder &amp; Principal Advisor • FL Lic #3378601
+                        Co-Founder &amp; REALTOR® • FL Lic #3378601
                       </p>
                       <p className="text-sm text-[#111]/70 font-light leading-relaxed">
                         Advising across commercial, residential, land, condos, and luxury waterfront—bringing her personal flair for bespoke property marketing, master-planned communities, and fierce contract execution.
@@ -277,10 +277,10 @@ export default function ContactPage() {
                   {/* Focus Tags */}
                   <div className="flex flex-wrap gap-2">
                     {[
-                      "Waterfront Estates",
-                      "Master-Planned New Homes",
-                      "Executive Relocation",
-                      "Seller Valuation Strategy",
+                      "Residential & Luxury Homes",
+                      "Commercial & Mixed-Use",
+                      "Land & Acreage",
+                      "Condos & New Construction",
                     ].map((tag) => (
                       <span
                         key={tag}
@@ -529,13 +529,13 @@ export default function ContactPage() {
                         className="w-full px-4 py-3.5 bg-white border border-[#111]/15 rounded-lg text-sm text-[#111] focus:outline-none focus:border-[#D4AF37]"
                       >
                         <option value="Both Principals (Mark Davis & Rachael Garnett)">
-                          Both Principals (Unified Team)
+                          Both Agents (Mark Davis &amp; Rachael Garnett)
                         </option>
-                        <option value="Mark Davis (Commercial & Land)">
-                          Mark Davis — Commercial &amp; Land (#3209459)
+                        <option value="Mark Davis (Commercial & Residential Agent)">
+                          Mark Davis, REALTOR® — Commercial &amp; Residential Agent (#3209459)
                         </option>
-                        <option value="Rachael Garnett (Luxury Residential)">
-                          Rachael Garnett — Luxury Residential (#3378601)
+                        <option value="Rachael Garnett (Commercial & Residential Agent)">
+                          Rachael Garnett, REALTOR® — Commercial &amp; Residential Agent (#3378601)
                         </option>
                       </select>
                     </div>

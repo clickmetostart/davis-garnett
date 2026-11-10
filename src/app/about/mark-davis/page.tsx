@@ -182,7 +182,7 @@ export default function MarkDavisAdvisorPage() {
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-[#111111]/10 bg-[#111111]">
               <Image
                 src="/new-images/new-2/mark-davis-residential-commerical-advisor-tampa-real-estate-3.jpg"
-                alt="Mark Davis — Commercial, Mixed-Use & Land Advisor (#3209459)"
+                alt="Mark Davis, REALTOR® — Certified Commercial & Residential Agent (#3209459)"
                 fill
                 priority
                 unoptimized
@@ -191,9 +191,9 @@ export default function MarkDavisAdvisorPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/80 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 text-white">
                 <span className="inline-block px-3 py-1 rounded bg-[#C8A951] text-[#111111] text-[10px] font-bold uppercase tracking-[0.2em] mb-2">
-                  FL License #3209459
+                  REALTOR® • FL License #3209459
                 </span>
-                <p className="font-aiveritas text-2xl">Mark Davis</p>
+                <p className="font-aiveritas text-2xl">Mark Davis, REALTOR®</p>
                 <p className="text-xs text-white/75">
                   Align Right Realty Carrollwood • License #BK3401606
                 </p>
@@ -203,13 +203,13 @@ export default function MarkDavisAdvisorPage() {
 
           <div>
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-              Co-Founder &amp; Principal · Commercial &amp; Residential Advisor
+              Co-Founder &amp; REALTOR® · Certified Commercial &amp; Residential Agent
             </span>
             <h1 className="font-aiveritas text-5xl md:text-6xl text-[#111111] leading-[1.08] mb-6">
               Mark Davis
             </h1>
             <p className="text-xl text-[#9A7D3A] font-light mb-6">
-              Commercial &amp; Residential Advisor • Deep Local Knowledge &amp; Dedicated Stewardship Across Commercial, Residential, Land, Condos &amp; Luxury Estates
+              REALTOR® · Certified Commercial &amp; Residential Agent • Helping Buyers, Sellers &amp; Investors Across Homes, Commercial Properties, Land &amp; Condos
             </p>
             <p className="text-base text-[#111111]/75 font-light leading-relaxed mb-6">
               Mark Davis is a full-spectrum <strong className="font-semibold text-[#111111]">Commercial &amp; Residential Advisor</strong> who represents buyers, sellers, and investors across commercial mixed-use, single-family residential, agricultural/development land, condos, and luxury estates. Grounded in deep market knowledge and thoughtful guidance, Mark brings disciplined underwriting, clear communication, and personal care to every client—whether structuring a dual-building mixed-use asset in Brandon, evaluating 80 acres in Polk County, or helping a family buy or sell a home across Hillsborough and Pasco counties.

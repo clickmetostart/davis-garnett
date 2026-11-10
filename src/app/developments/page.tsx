@@ -297,8 +297,8 @@ export default function DevelopmentsHubPage() {
                 We Know What Is Being Built Next Door Before You Buy.
               </h3>
               <p className="text-white/75 text-sm md:text-base font-light leading-relaxed">
-                Because Mark Davis leads Commercial Acquisitions and Rachael Garnett leads Luxury
-                Residential Advisory, we evaluate every development through both lenses: zoning filings,
+                Because both Mark Davis and Rachael Garnett are Certified Commercial &amp; Residential
+                REALTORS®, we evaluate every development through both lenses: zoning filings,
                 DOT highway interchanges, CDD bond debt, commercial retail anchors, and future view-corridor
                 protections.
               </p>

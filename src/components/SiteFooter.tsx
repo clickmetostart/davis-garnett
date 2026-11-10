@@ -48,13 +48,13 @@ export default function SiteFooter() {
               <div className="flex items-start justify-between gap-2 mb-1">
                 <div>
                   <Link href="/about/mark-davis" className="font-aiveritas text-xl text-[#D4AF37] hover:text-white transition-colors block">
-                    Mark Davis
+                    Mark Davis, REALTOR®
                   </Link>
                   <span className="text-xs text-white/75 block">
-                    Commercial &amp; Residential Advisor
+                    Certified Commercial &amp; Residential Agent
                   </span>
                   <span className="text-[10px] uppercase tracking-widest text-white/40 font-bold block mt-0.5">
-                    Agent License #3209459
+                    FL License #3209459
                   </span>
                 </div>
                 <Link
@@ -90,13 +90,13 @@ export default function SiteFooter() {
               <div className="flex items-start justify-between gap-2 mb-1">
                 <div>
                   <Link href="/about/rachael-garnett" className="font-aiveritas text-xl text-[#D4AF37] hover:text-white transition-colors block">
-                    Rachael Garnett
+                    Rachael Garnett, REALTOR®
                   </Link>
                   <span className="text-xs text-white/75 block">
-                    Commercial &amp; Residential Advisor
+                    Certified Commercial &amp; Residential Agent
                   </span>
                   <span className="text-[10px] uppercase tracking-widest text-white/40 font-bold block mt-0.5">
-                    Agent License #3378601
+                    FL License #3378601
                   </span>
                 </div>
                 <Link

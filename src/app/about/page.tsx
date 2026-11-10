@@ -291,7 +291,7 @@ export default function AboutHubPage() {
                   <div className="relative aspect-[4/5] sm:aspect-auto sm:min-h-[340px] bg-[#111111]">
                     <Image
                       src="/new-images/new-2/mark-davis-residential-commerical-advisor-tampa-real-estate-3.jpg"
-                      alt="Mark Davis — Commercial, Land & Investment Specialist"
+                      alt="Mark Davis, REALTOR® — Certified Commercial & Residential Agent"
                       fill
                       unoptimized
                       className="object-cover object-top"
@@ -299,13 +299,13 @@ export default function AboutHubPage() {
                   </div>
                   <div className="p-8 flex flex-col justify-center">
                     <span className="inline-block text-[10px] uppercase tracking-[0.22em] font-bold text-[#9A7D3A] mb-2">
-                      Commercial &amp; Residential Advisor
+                      REALTOR® · Certified Commercial &amp; Residential Agent
                     </span>
                     <h3 className="font-aiveritas text-3xl text-[#111111] mb-1">
                       Mark Davis
                     </h3>
                     <p className="text-xs uppercase tracking-widest text-[#111111]/50 font-semibold mb-4">
-                      FL Real Estate License #3209459
+                      REALTOR® • FL Real Estate License #3209459
                     </p>
                     <p className="text-sm text-[#111111]/70 font-light leading-relaxed mb-6">
                       Advising across commercial, residential, land, condos, and luxury estates—bringing his personal flair for deal structuring, mixed-use commercial assets, and strategic Florida land assemblage from Hillsborough to Polk and Marion counties.
@@ -357,10 +357,10 @@ export default function AboutHubPage() {
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
-                  href="/properties?category=Commercial"
+                  href="/properties"
                   className="inline-flex items-center justify-center py-4 px-5 border border-[#111111]/20 text-[#111111] text-xs font-bold uppercase tracking-[0.18em] hover:border-[#C8A951] transition-colors rounded-lg"
                 >
-                  Commercial &amp; Land Listings
+                  Residential &amp; Commercial Listings
                 </Link>
               </div>
             </div>
@@ -372,7 +372,7 @@ export default function AboutHubPage() {
                   <div className="relative aspect-[4/5] sm:aspect-auto sm:min-h-[340px] bg-[#111111]">
                     <Image
                       src="/new-images/new-2/rachael-garnett-residential-commerical-advisor-tampa-real-estate-6.jpg"
-                      alt="Rachael Garnett — Luxury Residential & Relocation Specialist"
+                      alt="Rachael Garnett, REALTOR® — Certified Commercial & Residential Agent"
                       fill
                       unoptimized
                       className="object-cover object-top"
@@ -380,13 +380,13 @@ export default function AboutHubPage() {
                   </div>
                   <div className="p-8 flex flex-col justify-center">
                     <span className="inline-block text-[10px] uppercase tracking-[0.22em] font-bold text-[#9A7D3A] mb-2">
-                      Commercial &amp; Residential Advisor
+                      REALTOR® · Certified Commercial &amp; Residential Agent
                     </span>
                     <h3 className="font-aiveritas text-3xl text-[#111111] mb-1">
                       Rachael Garnett
                     </h3>
                     <p className="text-xs uppercase tracking-widest text-[#111111]/50 font-semibold mb-4">
-                      FL Real Estate License #3378601
+                      REALTOR® • FL Real Estate License #3378601
                     </p>
                     <p className="text-sm text-[#111111]/70 font-light leading-relaxed mb-6">
                       Advising across commercial, residential, land, condos, and luxury waterfront—bringing her personal flair for bespoke property positioning, gated country club and master-planned communities, and executive relocations across Tampa Bay.
@@ -438,10 +438,10 @@ export default function AboutHubPage() {
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
-                  href="/properties?category=Residential"
+                  href="/properties"
                   className="inline-flex items-center justify-center py-4 px-5 border border-[#111111]/20 text-[#111111] text-xs font-bold uppercase tracking-[0.18em] hover:border-[#C8A951] transition-colors rounded-lg"
                 >
-                  Residential &amp; Waterfront Listings
+                  Residential &amp; Commercial Listings
                 </Link>
               </div>
             </div>
@@ -847,9 +847,9 @@ export default function AboutHubPage() {
                     onChange={(e) => setFormData({ ...formData, advisorPreference: e.target.value })}
                     className="w-full px-4 py-3.5 rounded-lg bg-[#fbfbf9] border border-[#111111]/15 text-sm text-[#111111] focus:outline-none focus:border-[#C8A951]"
                   >
-                    <option>Both Principal Advisors (Mark & Rachael)</option>
-                    <option>Mark Davis — Commercial, Land & Investment (#3209459)</option>
-                    <option>Rachael Garnett — Luxury Residential & Relocation (#3378601)</option>
+                    <option>Both Agents (Mark Davis &amp; Rachael Garnett)</option>
+                    <option>Mark Davis, REALTOR® — Commercial &amp; Residential Agent (#3209459)</option>
+                    <option>Rachael Garnett, REALTOR® — Commercial &amp; Residential Agent (#3378601)</option>
                   </select>
                 </div>
                 <div>
