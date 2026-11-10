@@ -769,19 +769,48 @@ export default function HomePageV1Light() {
       {/* ── AREAS WE WORK IN — LOCAL PRESENCE ── */}
       <section className="py-24 px-8 bg-white border-t border-[#111]/5">
         <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-          <div className="w-full lg:w-1/3 aspect-square max-w-[380px] relative rounded-full overflow-hidden border-4 border-[#D4AF37]/30 shadow-[0_0_40px_rgba(212,175,55,0.15)] shrink-0">
-            <video
-              src="/new-images/davis-garnett-team-video-1.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover scale-105"
-            />
+          <div className="w-full lg:w-1/3 max-w-[380px] flex flex-col items-center gap-5 shrink-0">
+            <div className="w-full aspect-square relative rounded-full overflow-hidden border-4 border-[#D4AF37]/30 shadow-[0_0_40px_rgba(212,175,55,0.15)]">
+              <video
+                src="/new-images/davis-garnett-team-video-1.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover scale-105"
+              />
+            </div>
+
+            {/* Align Right Carrollwood Image Card */}
+            <Link
+              href="/align-right-carrollwood-coverage"
+              className="group relative w-full aspect-[16/9] rounded-2xl overflow-hidden border border-[#ef5728]/40 hover:border-[#D4AF37] shadow-lg transition-all duration-300 block"
+            >
+              <Image
+                src="/new-images/new-2/davis-garnett-align-right-realty.jpg"
+                alt="Align Right Realty Carrollwood"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
+              <div className="absolute top-3 left-3.5 right-3.5 flex items-center justify-between">
+                <span className="px-2.5 py-0.5 rounded bg-black/75 backdrop-blur-md text-[9px] font-bold uppercase tracking-widest text-[#ef5728] border border-[#ef5728]/30">
+                  Carrollwood HQ • FL Lic #BK3401606
+                </span>
+              </div>
+              <div className="absolute bottom-3 left-3.5 right-3.5 text-left">
+                <span className="text-white font-bold text-xs tracking-wider uppercase flex items-center justify-between group-hover:text-[#D4AF37] transition-colors">
+                  Align Right Carrollwood <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
+                </span>
+                <span className="text-[10px] text-white/80 font-light block truncate">
+                  Areas We Work In &amp; Coverage Map
+                </span>
+              </div>
+            </Link>
           </div>
           <div className="flex-1 text-center lg:text-left">
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
-              Geolocated Market Intelligence
+              ALIGNED CORRECTLY REAL ESTATE
             </span>
             <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111] mb-6">
               Areas We Work In.
@@ -791,10 +820,13 @@ export default function HomePageV1Light() {
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 border-t border-[#111]/10">
               {[
-                { img: "/city-photos/st-petersburg-waterfront.jpg", label: "St. Petersburg", sub: "Bahama Shores & Snell Isle", href: "/knowledge-hub/areas/st-petersburg" },
                 { img: "/city-photos/downtown-tampa-skyline.jpg", label: "Downtown Tampa", sub: "Water Street & Bayshore", href: "/knowledge-hub/areas/tampa-downtown-water-street" },
-                { img: "/city-photos/wesley-chapel-suburban.jpg", label: "Wesley Chapel", sub: "Two Rivers & Lagoons", href: "/knowledge-hub/areas/wesley-chapel" },
-                { img: "/city-photos/land-o-lakes-luxury.jpg", label: "Land O' Lakes", sub: "Angeline & Connerton", href: "/knowledge-hub/areas/land-o-lakes" },
+                { img: "/new-images/new-2/davis-garnett-tampa-residential-real-estate-westley-chapel-florida.jpg", label: "Wesley Chapel", sub: "Two Rivers & Lagoons", href: "/knowledge-hub/areas/wesley-chapel" },
+                { img: "/new-images/new-2/davis-garnett-tampa-residential-real-estate-land-o-lakes-florida.jpg", label: "Land O' Lakes", sub: "Angeline & Connerton", href: "/knowledge-hub/areas/land-o-lakes" },
+                { img: "/new-images/new-2/davis-garnett-tampa-residential-real-estate-saint-petersburg-downtown-and-beaches-florida.jpg", label: "St. Pete & Beaches", sub: "Downtown, Bahama Shores & Snell Isle", href: "/knowledge-hub/areas/st-petersburg" },
+                { img: "/new-images/new-2/davis-garnett-tampa-residential-real-estate-clearwater-beach-pinellas-county-florida.jpg", label: "Clearwater & Pinellas", sub: "Clearwater Beach & Sand Key", href: "/knowledge-hub/areas/clearwater-pinellas-county" },
+                { img: "/new-images/new-2/davis-garnett-tampa-residential-real-estate-keystone-florida.jpg", label: "Keystone", sub: "Rural Acreage & Equestrian", href: "/knowledge-hub/areas/keystone" },
+                { img: "/new-images/new-2/davis-garnett-tampa-residential-real-estate-cheval.jpg", label: "Cheval & Lutz", sub: "Gated Golf & Country Club", href: "/knowledge-hub/areas/cheval" },
                 { img: "/new-images/new-2/dg-brandon-hwy60.jpg", label: "Brandon & Riverview", sub: "Hwy 60 Commercial & Mixed-Use", href: "/knowledge-hub/areas/brandon-riverview" },
                 { img: "/city-photos/central-fl-acreage.jpg", label: "Central FL Acreage", sub: "Ocala, Fort McCoy & Frostproof", href: "/knowledge-hub/areas/central-florida-acreage" },
               ].map(({ img, label, sub, href }) => (

@@ -568,10 +568,10 @@ export const QUESTIONS: KnowledgeItem[] = [
 export const AREAS: AreaItem[] = [
   {
     slug: "st-petersburg",
-    name: "St. Petersburg & The Pinellas Beaches",
+    name: "St. Pete Downtown & Beaches",
     tagline: "Deep-Water Estates, Cultural Vibrancy & Gulf Coast Elegance",
     county: "Pinellas County, FL",
-    heroImage: "/city_st_pete_1787662322779.png",
+    heroImage: "/new-images/new-2/davis-garnett-tampa-residential-real-estate-saint-petersburg-downtown-and-beaches-florida.jpg",
     medianPrice: "$875,000 (Waterfront $2.2M–$6M+)",
     yoyGrowth: "+7.8% YoY",
     vibe: "Yachting, Walkable Arts District, Historic Waterfront Enclaves",
@@ -600,7 +600,7 @@ export const AREAS: AreaItem[] = [
     name: "Downtown Tampa, Water Street & Bayshore",
     tagline: "Five-Star Branded Condominium Towers & Historic Bayfront Grandeur",
     county: "Hillsborough County, FL",
-    heroImage: "/city_tampa_1787662311501.png",
+    heroImage: "/city-photos/downtown-tampa-skyline.jpg",
     medianPrice: "$1.15M (Luxury Towers $1.5M–$7.8M+)",
     yoyGrowth: "+9.2% YoY",
     vibe: "Five-Star Hospitality, Riverwalk Dining, Historic Bayshore Boulevard",
@@ -625,7 +625,7 @@ export const AREAS: AreaItem[] = [
     name: "Wesley Chapel & SR-56 Growth Corridor",
     tagline: "Nationally Ranked Master-Planned Communities, Crystal Lagoons & Premier Schools",
     county: "Pasco County, FL",
-    heroImage: "/res_golf_course_home_1787632854609.png",
+    heroImage: "/new-images/new-2/davis-garnett-tampa-residential-real-estate-westley-chapel-florida.jpg",
     medianPrice: "$485,000 ($375K–$1.6M+)",
     yoyGrowth: "+8.4% YoY",
     vibe: "Resort Lagoons, Top-Ranked Schools, New Construction & Medical Hubs",
@@ -650,7 +650,7 @@ export const AREAS: AreaItem[] = [
     name: "Land O' Lakes & Suncoast Corridor",
     tagline: "Wellness Innovation, Conservation Estates & Golf Course Living",
     county: "Pasco County, FL",
-    heroImage: "/listings/d-g-residential-1.webp",
+    heroImage: "/new-images/new-2/davis-garnett-tampa-residential-real-estate-land-o-lakes-florida.jpg",
     medianPrice: "$465,000 ($360K–$1.35M+)",
     yoyGrowth: "+7.5% YoY",
     vibe: "Conservation Preserves, Golf Communities, 25-Min Suncoast Commute to TPA",
@@ -675,7 +675,7 @@ export const AREAS: AreaItem[] = [
     name: "Brandon, Seffner & East Hillsborough",
     tagline: "High-Yield Commercial Corridors, Mixed-Use Assets & Established Residential",
     county: "Hillsborough County, FL",
-    heroImage: "/listings/ridgewood-brandon-2.jpg",
+    heroImage: "/new-images/new-2/dg-brandon-hwy60.jpg",
     medianPrice: "$420,000 (Commercial $650K–$3M+)",
     yoyGrowth: "+6.9% YoY",
     vibe: "High-Traffic Commercial Spine, I-75/I-4 Access, No-HOA Residential Lots",
@@ -700,7 +700,7 @@ export const AREAS: AreaItem[] = [
     name: "Central Florida Acreage, Timberland & Development Tracts",
     tagline: "Agricultural Tax Exemptions, Equestrian Timberland & Strategic Highway Corridors",
     county: "Polk, Marion & Citrus Counties, FL",
-    heroImage: "/listings/d-g-land-listing-cover.webp",
+    heroImage: "/city-photos/central-fl-acreage.jpg",
     medianPrice: "$17,750 – $45,000+ / Acre",
     yoyGrowth: "+11.4% YoY",
     vibe: "Old Florida Timberland, US-27/US-98 Development Tracts, Equestrian & Recreational Estates",
@@ -719,6 +719,105 @@ export const AREAS: AreaItem[] = [
       },
     ],
     featuredListingSlugs: ["770-old-stokes-rd-frostproof", "ne-90th-street-rd-fort-mccoy", "133rd-ave-se-dunnellon", "1106-s-otto-pt-inverness"],
+  },
+  {
+    slug: "clearwater-pinellas-county",
+    name: "Clearwater & Pinellas County",
+    tagline: "World-Class Gulf Coast Beaches, Waterfront Condominiums & Coastal Estates",
+    county: "Pinellas County, FL",
+    heroImage: "/new-images/new-2/davis-garnett-tampa-residential-real-estate-clearwater-beach-pinellas-county-florida.jpg",
+    medianPrice: "$510,000 (Beachfront $1.2M–$4.5M+)",
+    yoyGrowth: "+7.2% YoY",
+    vibe: "Sugar-Sand Beaches, Coastal Boating, Sunset Dining & Island Living",
+    topNeighborhoods: ["Clearwater Beach", "Sand Key", "Belleair Shore", "Dunedin", "Island Way", "Safety Harbor"],
+    overview: "Renowned worldwide for its powdery white sugar-sand shoreline and tranquil Gulf waters, Clearwater and North Pinellas County represent the gold standard of Florida coastal living. From high-rise beachfront condominiums on Sand Key to historic blufftop estates in Belleair and the arts-driven coastal charm of Dunedin, Rachael Garnett and Mark Davis provide private advisory for primary homeowners and vacation portfolio investors.",
+    sections: [
+      {
+        heading: "Beachfront Condominiums, Sand Key & Gulf-Front Penthouses",
+        body: "Clearwater Beach pairs world-class resort infrastructure with exceptional waterfront real estate. Along the Sand Key barrier island, luxury residential high-rises provide panoramic views spanning both the open Gulf of Mexico and the protected Intracoastal Waterway, alongside dedicated private marinas and resort-caliber amenities.",
+      },
+      {
+        heading: "Belleair & Historic Coastal Enclaves",
+        body: "Just south of downtown Clearwater, the prestigious Town of Belleair and Belleair Shore offer some of the highest coastal elevations in Florida. Anchored by the historic Belleview Inn, premier private golf clubs, and gated waterfront compounds, Belleair commands high-net-worth demand for legacy estate acquisitions.",
+      },
+    ],
+    faqs: [
+      {
+        question: "What are the rules regarding short-term vacation rentals in Clearwater Beach vs Sand Key?",
+        answer: "Clearwater Beach has designated resort tourist zoning districts that permit weekly and daily vacation rentals in select condo towers, whereas Sand Key is primarily residential with stricter minimum lease terms (often 30 to 90 days) preserving owner tranquility.",
+      },
+      {
+        question: "How accessible is Clearwater to Tampa International Airport and Downtown Tampa?",
+        answer: "Via the Courtney Campbell Causeway (SR-60), residents reach Tampa International Airport in approximately 25 to 30 minutes, providing seamless travel connectivity for out-of-state and international homeowners.",
+      },
+    ],
+    featuredListingSlugs: ["6100-bahama-shores-dr-s-st-petersburg"],
+  },
+  {
+    slug: "keystone",
+    name: "Keystone (The Rural & Equestrian Escape)",
+    tagline: "Acreage Estates, Private Lakefronts & Freedom from HOA Restrictions",
+    county: "Hillsborough County, FL",
+    heroImage: "/new-images/new-2/davis-garnett-tampa-residential-real-estate-keystone-florida.jpg",
+    medianPrice: "$985,000 (Acreage Estates $1.2M–$4.5M+)",
+    yoyGrowth: "+8.1% YoY",
+    vibe: "Rural, quiet, and heavily wooded. You will see horse pastures, unpaved residential roads, and long driveways.",
+    topNeighborhoods: ["Keystone Lake Corridor", "Tarpon Springs Rd", "Gunn Hwy Ranchettes", "Lake Keystone", "Lake Pretty", "Crescent Lake"],
+    overview: "If you want space, privacy, and true freedom from HOA restrictions within 25 minutes of Tampa International Airport, Keystone is Greater Tampa Bay's crown jewel. Spanning the rural northwest corner of Hillsborough County bordered by Tarpon Springs and Odessa, Keystone is characterized by sweeping horse pastures, dense cypress and oak hammocks, unpaved residential lanes, and custom private compounds situated on 1 to 5+ acres of land.",
+    sections: [
+      {
+        heading: "Agricultural Zoning (ASC-1) & Equestrian Freedom",
+        body: "Unlike master-planned developments with rigid architectural restrictions and CDD fees, Keystone properties frequently carry Agricultural Single-Family Conventional (ASC-1) or rural residential zoning. This affords owners the autonomy to build secondary workshops, multi-stall equestrian barns, private detached garages, and guest houses. What to tell your Realtor: 'Look for properties zoned for agricultural use (ASC-1) or rural residential in Keystone, specifically avoiding master-planned developments.'",
+      },
+      {
+        heading: "Private Ski Lakes & Custom Estate Architecture",
+        body: "Anchored around pristine ski lakes including Lake Keystone, Lake Pretty, and Crescent Lake, luxury buyers discover custom-built executive estates, modern farmhouses, and gated compounds with private docks and expansive wetland buffers offering complete natural seclusion.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Can I keep horses and livestock on residential properties in Keystone, FL?",
+        answer: "Yes, properties zoned ASC-1 (Agricultural Single-Family Conventional) generally permit grazing animals and horses, making Keystone Hillsborough County's premier equestrian lifestyle destination.",
+      },
+      {
+        question: "Are there mandatory HOA or CDD fees in Keystone?",
+        answer: "The vast majority of Keystone acreage properties have zero CDD fees and zero mandatory HOA dues, providing complete freedom over outbuildings, vehicle parking, and estate customization.",
+      },
+    ],
+    featuredListingSlugs: ["3537-valencia-cove-ct-land-o-lakes", "3037-downan-point-dr-land-o-lakes"],
+  },
+  {
+    slug: "cheval",
+    name: "Cheval & Upscale Lutz",
+    tagline: "Gated Country-Club Splendor, Championship Golf & Prestigious Estate Living",
+    county: "Hillsborough County, FL",
+    heroImage: "/new-images/new-2/davis-garnett-tampa-residential-real-estate-cheval.jpg",
+    medianPrice: "$840,000 (Golf & Gated Enclaves $1.1M–$3.2M+)",
+    yoyGrowth: "+7.6% YoY",
+    vibe: "Manicured, prestigious, and country-club-centric. It offers a secure, family-friendly environment with structured community rules.",
+    topNeighborhoods: ["Cheval Golf & Athletic Club", "Cheval West Gated", "Lutz-Lake Fern Corridor", "Villarosa", "Heritage Harbor", "Lake Fern Estates"],
+    overview: "If you want a large, upscale home with community amenities and top-tier security, focus on Cheval and the surrounding prestigious pockets of Lutz. Positioned along the Lutz-Lake Fern and Dale Mabry corridors just north of Carrollwood, Cheval offers an elevated country-club lifestyle protected by 24-hour manned guard gates, mature tree canopies, and premier championship golf.",
+    sections: [
+      {
+        heading: "Championship Golf, Tennis & 24-Hour Guard-Gated Security",
+        body: "Cheval is renowned for its 18-hole championship golf course, French-inspired village architecture, premier athletic club, and scenic conservation vistas. Divided into distinct gated villages, properties range from executive-style estates and Mediterranean-inspired homes to sweeping golf-course frontage properties. What to tell your Realtor: 'Focus on gated, deed-restricted communities off the Lutz-Lake Fern corridor—specifically Cheval or similar golf-and-country-club neighborhoods.'",
+      },
+      {
+        heading: "Top-Tier Hillsborough Schools & Commuter Connectivity",
+        body: "Families gravitate to Cheval and upscale Lutz for access to top-ranked public schools (including Steinbrenner High School and Martinez Middle School), paired with instant access to the Veterans Expressway for a frictionless 20-minute commute to Downtown Tampa and Westshore.",
+      },
+    ],
+    faqs: [
+      {
+        question: "What distinguishes Cheval East from Cheval West?",
+        answer: "Cheval East is centered around the golf clubhouse, tennis courts, and athletic facilities, while Cheval West offers an independent 24-hour manned gate, estate-sized homesites, and tranquil conservation views.",
+      },
+      {
+        question: "What public schools serve the Cheval Lutz community?",
+        answer: "Students residing in Cheval are typically zoned for top-rated public schools including McKitrick Elementary, Martinez Middle School, and Steinbrenner High School.",
+      },
+    ],
+    featuredListingSlugs: ["3537-valencia-cove-ct-land-o-lakes"],
   },
 ];
 

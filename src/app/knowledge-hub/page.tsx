@@ -343,6 +343,55 @@ export default function KnowledgeHubPage() {
             className="flex gap-7 overflow-x-auto pb-6 snap-x snap-mandatory"
             style={{ scrollbarWidth: "none" }}
           >
+            {/* Align Right Carrollwood Featured Spoke Card */}
+            <Link
+              href="/align-right-carrollwood-coverage"
+              className="group min-w-[320px] md:min-w-[390px] max-w-[390px] snap-start bg-[#111111] text-white border border-[#ef5728]/40 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-2xl shrink-0"
+            >
+              <div>
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-black">
+                  <Image
+                    src="/new-images/new-2/davis-garnett-align-right-realty.jpg"
+                    alt="Align Right Realty Carrollwood"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+                  <span className="absolute top-4 right-4 px-3 py-1 bg-[#ef5728] text-white text-[10px] font-bold uppercase tracking-widest rounded-sm z-10">
+                    Brokerage HQ
+                  </span>
+                  <div className="absolute bottom-4 left-4 right-4 text-white z-10">
+                    <div className="text-xs uppercase tracking-widest text-[#ef5728] font-bold">
+                      FL Lic #BK3401606
+                    </div>
+                  </div>
+                </div>
+                <div className="p-7">
+                  <h3 className="font-aiveritas text-2xl text-white group-hover:text-[#D4AF37] transition-colors mb-2">
+                    Carrollwood &amp; Regional Coverage
+                  </h3>
+                  <p className="text-white/70 text-sm font-light leading-relaxed line-clamp-3 mb-4">
+                    The principal brokerage headquarters orchestrating transaction compliance, Stellar MLS syndication, and dual-asset advisory across Greater Tampa Bay.
+                  </p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {["3903 Northdale Blvd", "Hillsborough", "Pinellas", "Pasco", "Polk", "Marion"].map((n) => (
+                      <span
+                        key={n}
+                        className="text-[10px] px-2.5 py-1 bg-white/10 rounded-md border border-white/15 text-white/80 font-medium"
+                      >
+                        {n}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="px-7 pb-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                <span className="text-[11px] text-[#ef5728] font-bold">5 Counties Served</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-white group-hover:text-[#D4AF37] flex items-center gap-1.5">
+                  View Coverage <ArrowRight className="w-3.5 h-3.5" />
+                </span>
+              </div>
+            </Link>
             {filteredAreas.map((area) => (
               <Link
                 key={area.slug}
@@ -394,6 +443,52 @@ export default function KnowledgeHubPage() {
                 </div>
               </Link>
             ))}
+          </div>
+
+          {/* Align Right Carrollwood Regional Coverage Callout (Positioned Below Slider) */}
+          <div className="mt-12 bg-[#111111] rounded-2xl p-6 sm:p-8 text-white border border-[#ef5728]/40 shadow-xl flex flex-col xl:flex-row items-center justify-between gap-6 relative overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#ef5728] via-[#D4AF37] to-[#ef5728]" />
+            
+            {/* Left: Thumbnail + Content */}
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 text-center sm:text-left flex-1">
+              <div className="relative w-32 h-20 rounded-lg overflow-hidden border border-white/15 shrink-0 shadow-md">
+                <Image
+                  src="/new-images/new-2/davis-garnett-align-right-realty.jpg"
+                  alt="Align Right Realty Carrollwood"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="flex-1">
+                <span className="text-[10px] uppercase tracking-[0.25em] text-[#ef5728] font-bold block mb-1">
+                  ALIGNED CORRECTLY REAL ESTATE • FL Lic #BK3401606
+                </span>
+                <h3 className="font-aiveritas text-xl sm:text-2xl text-white mb-1">
+                  Align Right Carrollwood: Regional Coverage &amp; Areas We Work In
+                </h3>
+                <p className="text-xs text-white/70 font-light max-w-xl">
+                  Mark Davis &amp; Rachael Garnett orchestrate commercial, residential, and acreage transactions across 5 Central Florida counties.
+                </p>
+              </div>
+            </div>
+
+            {/* Right: Align Right Logo + CTA Button */}
+            <div className="flex flex-col sm:flex-row items-center gap-5 shrink-0">
+              <div className="relative w-36 h-11 shrink-0 opacity-90 hover:opacity-100 transition-opacity">
+                <Image
+                  src="/align-right-email-logo.png"
+                  alt="Align Right Realty Carrollwood"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <Link
+                href="/align-right-carrollwood-coverage"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#ef5728] hover:bg-[#D4AF37] text-white hover:text-[#111] text-xs font-bold uppercase tracking-widest rounded-lg transition-colors shrink-0 shadow-md"
+              >
+                Explore Full Coverage <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>

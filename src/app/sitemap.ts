@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about/mark-davis",
     "/about/rachael-garnett",
     "/about/align-right-realty-carrollwood",
+    "/align-right-carrollwood-coverage",
     "/about/strategic-partners",
     "/about/community-outreach-giving",
     "/about/contact",

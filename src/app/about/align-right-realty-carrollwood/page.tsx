@@ -116,6 +116,12 @@ export default function AlignRightRealtyCarrollwoodPage() {
                 <ArrowRight className="w-4 h-4" />
               </a>
               <Link
+                href="/align-right-carrollwood-coverage"
+                className="inline-flex items-center gap-2 px-6 py-4 bg-[#ef5728] text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#D4AF37] hover:text-[#111111] transition-colors rounded-lg shadow-md"
+              >
+                Areas We Work In &amp; Coverage <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
                 href="/about"
                 className="inline-flex items-center gap-2 px-6 py-4 border border-[#111111]/20 text-[#111111] text-xs font-bold uppercase tracking-[0.2em] hover:border-[#C8A951] transition-colors rounded-lg"
               >
@@ -247,8 +253,91 @@ export default function AlignRightRealtyCarrollwoodPage() {
         </div>
       </section>
 
+      {/* ── ALIGN RIGHT CARROLLWOOD: AREAS SERVED & REGIONAL COVERAGE ─────── */}
+      <section className="py-24 px-6 md:px-12 bg-white border-b border-[#111111]/10">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="bg-[#111111] text-white rounded-3xl p-8 md:p-14 border border-[#ef5728]/40 shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#ef5728] via-[#D4AF37] to-[#ef5728]" />
+            <div className="grid lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-8">
+                <div className="flex flex-wrap items-center gap-3 mb-4">
+                  <span className="px-3 py-1 rounded bg-[#ef5728]/20 border border-[#ef5728]/50 text-[10px] uppercase tracking-[0.22em] text-[#ef5728] font-bold">
+                    ALIGNED CORRECTLY REAL ESTATE • FL License #BK3401606
+                  </span>
+                </div>
+                <h2 className="font-aiveritas text-3xl md:text-5xl text-white mb-4 leading-tight">
+                  Align Right Carrollwood: Areas We Work In
+                </h2>
+                <p className="text-white/80 text-base font-light max-w-2xl leading-relaxed mb-6">
+                  Our footprint spans the most lucrative residential waterfronts, suburban growth corridors, and commercial investment zones across Greater Tampa Bay and Central Florida.
+                </p>
+                <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs text-white/70 mb-8">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#ef5728]" />
+                    <span>Carrollwood (Brokerage HQ)</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" />
+                    <span>Downtown Tampa &amp; Bayshore</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" />
+                    <span>St. Pete Downtown &amp; Beaches</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" />
+                    <span>Clearwater &amp; Pinellas Coast</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" />
+                    <span>Wesley Chapel (Two Rivers)</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" />
+                    <span>Land O&apos; Lakes (Angeline)</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" />
+                    <span>Brandon &amp; Central FL Land</span>
+                  </div>
+                </div>
+                <Link
+                  href="/align-right-carrollwood-coverage"
+                  className="inline-flex items-center gap-2.5 px-8 py-4 bg-[#ef5728] hover:bg-[#D4AF37] text-white hover:text-[#111111] text-xs font-bold uppercase tracking-[0.2em] rounded-lg transition-colors shadow-lg"
+                >
+                  Explore Complete Carrollwood Coverage Area <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+
+              <div className="lg:col-span-4 relative flex flex-col items-center justify-center p-6 bg-white/5 rounded-2xl border border-white/10 text-center">
+                <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden mb-4 border border-white/15">
+                  <Image
+                    src="/new-images/new-2/davis-garnett-align-right-realty.jpg"
+                    alt="Align Right Realty Carrollwood"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <span className="font-aiveritas text-2xl text-white block mb-1">
+                  5 Key Counties
+                </span>
+                <p className="text-xs text-white/60 mb-4">
+                  Governed under Align Right Realty Carrollwood&apos;s broker-level infrastructure and regulatory oversight.
+                </p>
+                <Link
+                  href="/align-right-carrollwood-coverage"
+                  className="text-xs font-bold uppercase tracking-widest text-[#D4AF37] hover:text-white flex items-center gap-1.5 transition-colors"
+                >
+                  View Interactive Maps &amp; Corridors →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── OFFICE LOCATION & COVERAGE DETAILS ───────────────────────────── */}
-      <section className="py-28 px-6 md:px-12 bg-white border-b border-[#111111]/10">
+      <section className="py-28 px-6 md:px-12 bg-[#f5f3ef] border-b border-[#111111]/10">
         <div className="max-w-screen-xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
@@ -257,9 +346,17 @@ export default function AlignRightRealtyCarrollwoodPage() {
             <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111111] mb-6">
               Strategically Positioned in Carrollwood & Greater Tampa
             </h2>
-            <p className="text-base text-[#111111]/70 font-light leading-relaxed mb-8">
+            <p className="text-base text-[#111111]/70 font-light leading-relaxed mb-6">
               Located in the heart of Carrollwood with immediate access to Dale Mabry Highway, I-275, the Veterans Expressway, and Tampa International Airport, our brokerage headquarters serves as a central war room for clients across Hillsborough, Pinellas, Pasco, Polk, and Marion counties.
             </p>
+            <div className="mb-8">
+              <Link
+                href="/align-right-carrollwood-coverage"
+                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#ef5728] hover:text-[#9A7D3A] transition-colors"
+              >
+                View full regional coverage directory &amp; focus corridors →
+              </Link>
+            </div>
 
             <div className="space-y-4">
               <div className="p-5 rounded-xl bg-[#f5f3ef] border border-[#111111]/8 flex items-start gap-4">
