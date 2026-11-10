@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: 'AIVeritas';
-  src: url('/AIVeritas Roman.ttf') format('truetype');
+  src: url('/AIVeritas-Smooth.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -107,10 +107,27 @@ body {
 
 .font-aiveritas {
   font-family: 'AIVeritas', serif;
+  font-weight: 400 !important;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 .font-sans {
   font-family: var(--font-sans), 'DM Sans', system-ui, sans-serif;
+}
+
+.font-playfair {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+.font-cormorant {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.font-montserrat {
+  font-family: 'Montserrat', var(--font-sans), sans-serif;
 }
 
 /* Editorial display headings with Gradient Masking */

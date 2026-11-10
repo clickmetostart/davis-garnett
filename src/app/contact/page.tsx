@@ -68,27 +68,55 @@ export default function ContactPage() {
         <FaviconHeroBackground variant="dark" />
 
         <div className="relative z-10 w-full max-w-screen-xl mx-auto text-center">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/40 text-[#D4AF37] text-[10px] uppercase tracking-[0.3em] font-bold mb-6">
-            Reach Out Anytime • Tampa Bay, Florida
+          <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
+            Davis &amp; Garnett · Tampa Bay, Florida
           </span>
-          <h1 className="font-aiveritas text-4xl md:text-6xl lg:text-7xl text-white mb-6 tracking-tight leading-tight">
-            Connect With<br className="sm:hidden" /> <span className="text-[#D4AF37]">Mark &amp; Rachael.</span>
+          <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-white mb-6 leading-none">
+            Contact <span className="text-[#D4AF37]">Us</span>
           </h1>
-          <p className="text-white/85 text-base md:text-[17px] lg:text-[18px] font-light max-w-3xl mx-auto leading-relaxed">
-            Whether you are buying or selling a home, a commercial building, or Florida land, you work directly with Mark Davis and Rachael Garnett from day one.
+          <p className="text-white/85 text-base md:text-[17px] lg:text-[18px] font-light max-w-3xl mx-auto leading-relaxed mb-8">
+            Reach out directly to Mark Davis and Rachael Garnett. Whether you are buying or selling a home, a commercial building, or Florida land, you work with both of us from day one.
           </p>
+
+          {/* Quick Jump Section Buttons (Knowledge Hub Style + Smooth Scroll) */}
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            {[
+              { label: "Contact Mark & Rachael", href: "#advisor-cards", icon: Phone },
+              { label: "Carrollwood Office", href: "#brokerage-office", icon: Building2 },
+              { label: "Send a Direct Message", href: "#message-form", icon: Send },
+              { label: "Office Map & Directions", href: "#office-map", icon: MapPin },
+            ].map((pill) => {
+              const Icon = pill.icon;
+              return (
+                <a
+                  key={pill.label}
+                  href={pill.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document
+                      .getElementById(pill.href.replace("#", ""))
+                      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }}
+                  className="group inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white/10 hover:bg-[#D4AF37] text-white hover:text-[#111] border border-white/15 text-xs font-bold uppercase tracking-widest transition-colors"
+                >
+                  <Icon className="w-3.5 h-3.5 text-[#D4AF37] group-hover:text-[#111]" />
+                  {pill.label}
+                </a>
+              );
+            })}
+          </div>
         </div>
       </section>
 
       {/* ── SPLIT-SCREEN ADVISOR CONTACT CARDS + FULL-WIDTH BROKERAGE CARD BELOW ── */}
-      <section className="py-20 px-6 md:px-8 bg-[#f5f3ef] border-b border-[#111]/10">
+      <section id="advisor-cards" className="py-20 px-6 md:px-8 bg-[#f5f3ef] border-b border-[#111]/10">
         <div className="max-w-screen-xl mx-auto">
           <div className="text-center mb-14">
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
               Always Easy to Reach
             </span>
             <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111]">
-              Call, Text, or Email Us Directly
+              Connect Directly With Mark Davis &amp; Rachael Garnett
             </h2>
           </div>
 
@@ -312,7 +340,7 @@ export default function ContactPage() {
           </div>
 
           {/* Bottom Row: Full-Width Horizontal Brokerage Card Stretching Across Both Columns */}
-          <div className="w-full bg-[#111] text-white rounded-2xl border border-[#ef5728]/50 shadow-2xl overflow-hidden">
+          <div id="brokerage-office" className="w-full bg-[#111] text-white rounded-2xl border border-[#ef5728]/50 shadow-2xl overflow-hidden scroll-mt-28">
             <div className="h-1.5 w-full bg-gradient-to-r from-[#ef5728] via-[#D4AF37] to-[#ef5728]" />
             <div className="p-8 md:p-12">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -414,7 +442,7 @@ export default function ContactPage() {
       </section>
 
       {/* ── DIRECT MESSAGE & CONSULTATION FORM + MAP ── */}
-      <section className="py-24 px-6 md:px-8 bg-white">
+      <section id="message-form" className="py-24 px-6 md:px-8 bg-white scroll-mt-20">
         <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Form Column (7 cols) */}
           <div className="lg:col-span-7 bg-[#f5f3ef] border border-[#111]/10 rounded-2xl p-8 md:p-12 shadow-sm">
@@ -450,13 +478,13 @@ export default function ContactPage() {
             ) : (
               <>
                 <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-2">
-                  Private Inquiry Form
+                  Send Us a Note
                 </span>
                 <h2 className="font-aiveritas text-3xl md:text-4xl text-[#111] mb-3">
                   Send a Direct Message
                 </h2>
-                <p className="text-sm text-[#111]/65 font-light mb-8 leading-relaxed">
-                  Select which Principal Advisor you would like to direct your message to, or send to both Mark and Rachael for unified commercial &amp; residential advisory.
+                <p className="text-base text-[#111]/75 font-light mb-8 leading-relaxed">
+                  Choose whether you would like to reach Mark, Rachael, or both of us together—we respond personally to every message.
                 </p>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -575,7 +603,7 @@ export default function ContactPage() {
 
                   <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
                     <span className="text-xs text-[#111]/55 flex items-center gap-2">
-                      <ShieldCheck className="w-4 h-4 text-[#9A7D3A]" /> 100% Confidential • Direct to Principals
+                      <ShieldCheck className="w-4 h-4 text-[#9A7D3A]" /> 100% Confidential • Direct to Mark &amp; Rachael
                     </span>
                     <button
                       type="submit"
@@ -592,7 +620,7 @@ export default function ContactPage() {
           </div>
 
           {/* Right Info & Map Column (5 cols) */}
-          <div className="lg:col-span-5 space-y-6">
+          <div id="office-map" className="lg:col-span-5 space-y-6 scroll-mt-28">
             <div className="rounded-2xl overflow-hidden border border-[#111]/10 shadow-sm h-[320px] bg-[#f5f3ef]">
               <iframe
                 title="Align Right Realty Carrollwood Map"
@@ -607,10 +635,10 @@ export default function ContactPage() {
                 <Award className="w-5 h-5 text-[#9A7D3A] shrink-0 mt-1" />
                 <div>
                   <h4 className="font-bold text-sm text-[#111] uppercase tracking-wider mb-1">
-                    Private Showing &amp; Offering Memorandums
+                    Private Showings &amp; Property Info
                   </h4>
-                  <p className="text-xs text-[#111]/65 font-light leading-relaxed">
-                    For qualified buyers and commercial investors, we arrange private property tours, financial pro-formas, and pre-construction developer presentations 7 days a week.
+                  <p className="text-base text-[#111]/75 font-light leading-relaxed">
+                    Whether you want to tour a home, walk a commercial building or land parcel, or visit a new construction community, we are available 7 days a week.
                   </p>
                 </div>
               </div>
@@ -619,10 +647,10 @@ export default function ContactPage() {
                 <Sparkles className="w-5 h-5 text-[#9A7D3A] shrink-0 mt-1" />
                 <div>
                   <h4 className="font-bold text-sm text-[#111] uppercase tracking-wider mb-1">
-                    Out-of-State &amp; Executive Relocations
+                    Moving to Tampa Bay?
                   </h4>
-                  <p className="text-xs text-[#111]/65 font-light leading-relaxed">
-                    Relocating to Tampa Bay? Request a private video consultation and custom corridor tour covering St. Petersburg, South Tampa, Wesley Chapel, and Land O&apos; Lakes.
+                  <p className="text-base text-[#111]/75 font-light leading-relaxed">
+                    Relocating from out of town? We are happy to set up a video call and show you around St. Petersburg, Tampa, Carrollwood, Wesley Chapel, and Land O&apos; Lakes.
                   </p>
                 </div>
               </div>

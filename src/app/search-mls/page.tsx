@@ -450,14 +450,11 @@ export default function SearchMlsDiscoveryPortal() {
 
         <div className="relative z-10 w-full max-w-screen-xl mx-auto">
           <div className="max-w-4xl mx-auto text-center mb-8">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#C8A951]/15 border border-[#C8A951]/40 mb-6">
-              <Database className="w-3.5 h-3.5 text-[#C8A951]" />
-              <span className="text-[11px] uppercase tracking-[0.3em] text-[#C8A951] font-bold">
-                Stellar MLS &amp; Lofty IDX Live Discovery Portal
-              </span>
-            </div>
-            <h1 className="font-aiveritas text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.08] tracking-tight mb-4">
-              Search the Full <span className="text-[#C8A951]">Tampa Bay MLS.</span>
+            <span className="text-[#C8A951] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
+              Davis &amp; Garnett · Stellar MLS &amp; Lofty IDX Portal
+            </span>
+            <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-white leading-none mb-6">
+              Search <span className="text-[#C8A951]">MLS</span>
             </h1>
             <p className="text-base md:text-[17px] lg:text-[18px] text-white/85 font-light leading-relaxed max-w-3xl mx-auto mb-6">
               Browse single-family homes, condos, commercial properties, land, and waterfront and unique properties across Hillsborough, Pinellas, and Pasco counties.
@@ -714,7 +711,7 @@ export default function SearchMlsDiscoveryPortal() {
                       <div className="text-[10px] uppercase tracking-[0.2em] text-[#9A7D3A] font-bold mb-1">
                         {item.neighborhood}
                       </div>
-                      <h3 className="font-aiveritas text-xl text-[#111111] group-hover:text-[#9A7D3A] transition-colors mb-2 line-clamp-1">
+                      <h3 className="font-aiveritas text-2xl text-[#111111] group-hover:text-[#9A7D3A] transition-colors mb-2 line-clamp-1">
                         {item.title}
                       </h3>
                       <p className="text-xs text-[#111111]/60 flex items-center gap-1.5 mb-5">
@@ -753,8 +750,8 @@ export default function SearchMlsDiscoveryPortal() {
                   <div className="px-6 pb-6 pt-3 border-t border-[#111111]/8 flex items-center justify-between text-xs uppercase tracking-[0.18em] font-bold text-[#9A7D3A] group-hover:text-[#111111] transition-colors">
                     <span>
                       {item.source === "Davis & Garnett Exclusive"
-                        ? "View Exclusive Listing"
-                        : "Request Property Dossier / Tour"}
+                        ? "View Featured Listing"
+                        : "Request Property Info / Tour"}
                     </span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -778,13 +775,11 @@ export default function SearchMlsDiscoveryPortal() {
                 <span>Direct Stellar MLS + Lofty IDX Integration</span>
               </div>
               <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111111]">
-                Interactive Map &amp; Full Stellar MLS IDX Portal
+                Interactive Map &amp; Full Stellar MLS Search
               </h2>
             </div>
-            <p className="text-sm text-[#111111]/65 font-light max-w-md leading-relaxed">
-              Powered by Lofty IDX &amp; Align Right Realty. Draw custom polygon map boundaries,
-              set instant price-drop alerts, and search every active residential and commercial
-              listing across Greater Tampa Bay.
+            <p className="text-base md:text-[17px] text-[#111111]/75 font-light max-w-md leading-relaxed">
+              Draw custom map boundaries, set up price-drop alerts, and search active residential and commercial listings across Greater Tampa Bay.
             </p>
           </div>
 
@@ -907,30 +902,26 @@ export default function SearchMlsDiscoveryPortal() {
           <div className="grid lg:grid-cols-12 gap-12 items-start">
             {/* Left Column: Why Off-Market Matters */}
             <div className="lg:col-span-5">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#111111] text-[#C8A951] text-[10px] uppercase tracking-[0.2em] font-bold mb-5">
-                <Lock className="w-3.5 h-3.5" />
-                <span>Private Inventory Network</span>
-              </div>
+              <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
+                Custom Property Search
+              </span>
               <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111111] leading-tight mb-6">
-                Off-Market &amp; Pocket Listing Access.
+                Looking for Something Specific or Off-Market?
               </h2>
-              <p className="text-[#111111]/70 font-light leading-relaxed mb-8">
-                In Tampa Bay&apos;s most coveted neighborhoods—including Davis Islands, Beach Park,
-                Hyde Park, Snell Isle, and high-yield commercial corridors—up to 25% of premier
-                transactions occur quietly as private pocket listings, pre-MLS coming-soons, or
-                unlisted developer lot releases.
+              <p className="text-[#111111]/75 text-base md:text-[17px] font-light leading-relaxed mb-8">
+                In many popular Tampa Bay neighborhoods—and across commercial corridors and Florida land—great properties often sell quietly as coming-soon listings, builder quick-move-ins, or off-market deals before they ever appear on public websites.
               </p>
 
               <div className="space-y-4 mb-10">
                 {[
-                  "Private Waterfront & South Tampa Estates Never Listed on Zillow",
-                  "Pre-Construction Condo Contract Assignments & Developer Holds",
-                  "Standing Builder Spec Homes Eligible for Deep Quarter-End Discounts",
-                  "Off-Market Commercial Retail, Multi-Family, and Land Parcels",
+                  "Coming-Soon Waterfront & Neighborhood Homes",
+                  "Pre-Construction Condo Floor Plans & Unit Releases",
+                  "Quick-Move-In Builder Homes With Current Discounts",
+                  "Off-Market Commercial Buildings, Mixed-Use & Land",
                 ].map((point) => (
                   <div key={point} className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-[#9A7D3A] shrink-0 mt-0.5" />
-                    <span className="text-sm font-medium text-[#111111]/85">{point}</span>
+                    <span className="text-base font-medium text-[#111111]/85">{point}</span>
                   </div>
                 ))}
               </div>
@@ -939,17 +930,17 @@ export default function SearchMlsDiscoveryPortal() {
                 <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-[#C8A951] shrink-0">
                   <Image
                     src="/davis-garnett-real-combo.png"
-                    alt="Davis & Garnett"
+                    alt="Mark Davis & Rachael Garnett"
                     fill
                     className="object-cover object-top"
                   />
                 </div>
                 <div>
                   <div className="font-aiveritas text-lg text-[#111111]">
-                    Direct Advisory Matching
+                    Mark Davis &amp; Rachael Garnett
                   </div>
-                  <p className="text-xs text-[#111111]/65 leading-relaxed">
-                    Mark Davis, REALTOR® &amp; Rachael Garnett, REALTOR® — Certified Commercial &amp; Residential Agents — personally curate your private property feed.
+                  <p className="text-sm text-[#111111]/75 leading-relaxed">
+                    Tell us what you are looking for and we will personally keep an eye out for matching properties for you.
                   </p>
                 </div>
               </div>

@@ -98,14 +98,14 @@ export default function KnowledgeHubPage() {
         <FaviconHeroBackground variant="dark" />
 
         <div className="relative z-10 w-full max-w-screen-xl mx-auto text-center">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/40 text-[#D4AF37] text-[10px] uppercase tracking-[0.3em] font-bold mb-6">
-            <BookOpen className="w-3.5 h-3.5" /> Davis &amp; Garnett Resource Center
+          <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
+            Davis &amp; Garnett · Guides, Q&amp;A &amp; Market Updates
           </span>
-          <h1 className="font-aiveritas text-4xl sm:text-5xl lg:text-6xl text-white mb-6 tracking-tight leading-[1.08]">
-            Real Estate Knowledge,<br className="sm:hidden" /> <span className="text-[#D4AF37]">Simplified.</span>
+          <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-white mb-6 leading-none">
+            Knowledge <span className="text-[#D4AF37]">Hub</span>
           </h1>
           <p className="text-white/85 text-base md:text-[17px] lg:text-[18px] font-light max-w-3xl mx-auto leading-relaxed mb-8">
-            Practical guides, local neighborhood spotlights, plain-English Q&amp;As, community events, and market updates from Mark Davis and Rachael Garnett.
+            Real estate knowledge, simplified. Practical buyer and seller guides, local neighborhood spotlights, plain-English Q&amp;As, community events, and market updates from Mark Davis and Rachael Garnett.
           </p>
 
           {/* Live Search Input */}
@@ -206,10 +206,10 @@ export default function KnowledgeHubPage() {
                     </span>
                   </div>
                   <div className="p-7">
-                    <h3 className="font-aiveritas text-2xl text-[#111] group-hover:text-[#9A7D3A] transition-colors mb-3 leading-snug">
+                    <h3 className="font-aiveritas text-xl xl:text-2xl text-[#111] group-hover:text-[#9A7D3A] transition-colors mb-3 leading-snug line-clamp-2 min-h-[3.25rem]">
                       {guide.title}
                     </h3>
-                    <p className="text-[#111]/65 text-sm font-light leading-relaxed line-clamp-3">
+                    <p className="text-[#111]/75 text-base font-light leading-relaxed line-clamp-3">
                       {guide.subtitle}
                     </p>
                   </div>
@@ -284,10 +284,10 @@ export default function KnowledgeHubPage() {
                     </span>
                   </div>
                   <div className="p-7">
-                    <h3 className="font-aiveritas text-xl md:text-2xl text-[#111] group-hover:text-[#9A7D3A] transition-colors mb-3 leading-snug">
+                    <h3 className="font-aiveritas text-xl xl:text-2xl text-[#111] group-hover:text-[#9A7D3A] transition-colors mb-3 leading-snug line-clamp-2 min-h-[3.25rem]">
                       {qa.title}
                     </h3>
-                    <p className="text-[#111]/65 text-sm font-light leading-relaxed line-clamp-3">
+                    <p className="text-[#111]/75 text-base font-light leading-relaxed line-clamp-3">
                       {qa.subtitle}
                     </p>
                   </div>
@@ -369,8 +369,8 @@ export default function KnowledgeHubPage() {
                   <h3 className="font-aiveritas text-2xl text-white group-hover:text-[#D4AF37] transition-colors mb-2">
                     Carrollwood &amp; Regional Coverage
                   </h3>
-                  <p className="text-white/70 text-sm font-light leading-relaxed line-clamp-3 mb-4">
-                    The principal brokerage headquarters orchestrating transaction compliance, Stellar MLS syndication, and dual-asset advisory across Greater Tampa Bay.
+                  <p className="text-white/80 text-base font-light leading-relaxed line-clamp-3 mb-4">
+                    Our Carrollwood office at Align Right Realty Carrollwood (#BK3401606)—supporting buyers and sellers across Hillsborough, Pinellas, Pasco, Polk, and Marion counties.
                   </p>
                   <div className="flex flex-wrap gap-1.5">
                     {["3903 Northdale Blvd", "Hillsborough", "Pinellas", "Pasco", "Polk", "Marion"].map((n) => (
@@ -419,7 +419,7 @@ export default function KnowledgeHubPage() {
                     <h3 className="font-aiveritas text-2xl text-[#111] group-hover:text-[#9A7D3A] transition-colors mb-2">
                       {area.name}
                     </h3>
-                    <p className="text-[#111]/65 text-sm font-light leading-relaxed line-clamp-3 mb-4">
+                    <p className="text-[#111]/75 text-base font-light leading-relaxed line-clamp-3 mb-4">
                       {area.overview}
                     </p>
                     <div className="flex flex-wrap gap-1.5">
@@ -465,8 +465,8 @@ export default function KnowledgeHubPage() {
                 <h3 className="font-aiveritas text-xl sm:text-2xl text-white mb-1">
                   Align Right Carrollwood: Regional Coverage &amp; Areas We Work In
                 </h3>
-                <p className="text-xs text-white/70 font-light max-w-xl">
-                  Mark Davis &amp; Rachael Garnett orchestrate commercial, residential, and acreage transactions across 5 Central Florida counties.
+                <p className="text-sm md:text-base text-white/80 font-light max-w-xl">
+                  Mark Davis &amp; Rachael Garnett help buyers and sellers across 5 Central Florida counties from our Carrollwood office.
                 </p>
               </div>
             </div>
@@ -553,10 +553,10 @@ export default function KnowledgeHubPage() {
                     <div className="text-xs font-bold uppercase tracking-wider text-[#9A7D3A] mb-2 flex items-center gap-1.5">
                       <Calendar className="w-3.5 h-3.5" /> {ev.date}
                     </div>
-                    <h3 className="font-aiveritas text-2xl text-[#111] group-hover:text-[#9A7D3A] transition-colors mb-3 leading-snug">
+                    <h3 className="font-aiveritas text-xl xl:text-2xl text-[#111] group-hover:text-[#9A7D3A] transition-colors mb-3 leading-snug line-clamp-2 min-h-[3.25rem]">
                       {ev.title}
                     </h3>
-                    <p className="text-[#111]/65 text-sm font-light leading-relaxed line-clamp-3">
+                    <p className="text-[#111]/75 text-base font-light leading-relaxed line-clamp-3">
                       {ev.summary}
                     </p>
                     {ev.externalAction && (
@@ -617,10 +617,10 @@ export default function KnowledgeHubPage() {
                     </span>
                   </div>
                   <div className="p-7">
-                    <h3 className="font-aiveritas text-2xl text-[#111] group-hover:text-[#9A7D3A] transition-colors mb-3 leading-snug">
+                    <h3 className="font-aiveritas text-xl xl:text-2xl text-[#111] group-hover:text-[#9A7D3A] transition-colors mb-3 leading-snug line-clamp-2 min-h-[3.25rem]">
                       {art.title}
                     </h3>
-                    <p className="text-[#111]/65 text-sm font-light leading-relaxed line-clamp-3">
+                    <p className="text-[#111]/75 text-base font-light leading-relaxed line-clamp-3">
                       {art.summary}
                     </p>
                   </div>
@@ -668,13 +668,13 @@ export default function KnowledgeHubPage() {
             <>
               <div className="text-center mb-10">
                 <span className="text-[#D4AF37] text-[10px] uppercase tracking-[0.3em] font-bold block mb-3">
-                  Direct Advisory Access
+                  Ask Mark &amp; Rachael
                 </span>
                 <h2 className="font-aiveritas text-3xl md:text-5xl text-white mb-4">
                   Have a Specific Real Estate Question?
                 </h2>
-                <p className="text-white/70 font-light max-w-2xl mx-auto text-sm md:text-base">
-                  Ask Mark Davis, REALTOR® or Rachael Garnett, REALTOR® — Certified Commercial &amp; Residential Agents — directly. We will send you a customized breakdown.
+                <p className="text-white/80 font-light max-w-2xl mx-auto text-base md:text-[17px] lg:text-[18px] leading-relaxed">
+                  Ask Mark Davis and Rachael Garnett directly—we will send you a clear, helpful answer with local Tampa Bay market info.
                 </p>
               </div>
 

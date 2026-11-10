@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit, DM_Sans } from "next/font/google";
+import { Outfit, DM_Sans, Playfair_Display, Cormorant_Garamond } from "next/font/google";
 import AmbientBackground from "@/components/AmbientBackground";
 import DragScrollProvider from "@/components/DragScrollProvider";
 import "./globals.css";
@@ -15,7 +15,21 @@ const outfit = Outfit({
 const dmSans = DM_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+// Editorial luxury serif option for card/box titles
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+});
+
+// High-contrast classical serif option for card/box titles
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  subsets: ["latin"],
+  weight: ["600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -33,7 +47,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <body className={`${outfit.variable} ${dmSans.variable} antialiased bg-black text-white`} suppressHydrationWarning>
+      <body className={`${outfit.variable} ${dmSans.variable} ${playfair.variable} ${cormorant.variable} antialiased bg-black text-white`} suppressHydrationWarning>
         <AmbientBackground />
         <DragScrollProvider />
         <main className="w-full relative flex flex-col min-h-screen">

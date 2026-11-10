@@ -176,16 +176,12 @@ export default function AboutHubPage() {
 
           <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-16 items-center">
             <div>
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#f5f3ef] border border-[#C8A951]/40 mb-6">
-                <Sparkles className="w-3.5 h-3.5 text-[#9A7D3A]" />
-                <span className="text-[11px] uppercase tracking-[0.25em] font-bold text-[#9A7D3A]">
-                  About The Davis &amp; Garnett Team
-                </span>
-              </div>
+              <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
+                Why Us? · Meet Mark Davis &amp; Rachael Garnett
+              </span>
 
-              <h1 className="font-aiveritas text-4xl sm:text-5xl lg:text-6xl text-[#111111] leading-[1.08] tracking-tight mb-8">
-                Two Agents Working Together for You in{" "}
-                <span className="text-[#9A7D3A]">Tampa Bay.</span>
+              <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-[#111111] leading-none mb-8">
+                About <span className="text-[#9A7D3A]">Our Team</span>
               </h1>
 
               <p className="text-base md:text-[17px] lg:text-[18px] text-[#111111]/80 font-light leading-relaxed mb-6">
@@ -960,11 +956,11 @@ export default function AboutHubPage() {
                 className="p-6 md:p-8 rounded-2xl bg-[#fbfbf9] border border-[#111111]/8 hover:border-[#C8A951] transition-colors"
               >
                 <div className="flex items-start gap-4">
-                  <span className="font-aiveritas text-xl md:text-2xl text-[#9A7D3A] shrink-0 font-bold">
+                  <span className="font-aiveritas text-2xl text-[#9A7D3A] shrink-0">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div>
-                    <h3 className="font-aiveritas text-lg md:text-xl text-[#111111] mb-2 font-bold">
+                    <h3 className="font-aiveritas text-2xl text-[#111111] mb-2 leading-snug">
                       {faq.q}
                     </h3>
                     <p className="text-base text-[#111111]/75 font-light leading-relaxed">

@@ -14,8 +14,21 @@ export default function SiteFooter() {
         {/* Top Brand & Principal Advisor Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr_1fr] gap-10 pb-16 mb-16 border-b border-[#D4AF37]/25 items-center">
           <div>
-            <div className="w-56 h-16 relative mb-5">
-              <DavisGarnettLogo variant="dark" className="w-full h-full object-contain" />
+            <div className="flex items-center justify-between gap-4 mb-5 max-w-md">
+              <div className="w-52 h-16 relative flex items-center">
+                <DavisGarnettLogo variant="dark" className="w-full h-full object-contain object-left" />
+              </div>
+              <Link
+                href="/about/align-right-realty-carrollwood"
+                className="h-16 relative flex items-center justify-end hover:opacity-85 transition-opacity shrink-0"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/align-right-email-logo.png"
+                  alt="Align Right Realty Carrollwood"
+                  className="h-[52px] w-auto object-contain object-right"
+                />
+              </Link>
             </div>
             <p className="text-white/65 font-light text-xs leading-relaxed max-w-md mb-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -24,7 +37,7 @@ export default function SiteFooter() {
                 alt="Davis & Garnett"
                 className="float-left w-14 h-14 mr-4 mb-1 rounded-sm object-cover border border-[#D4AF37]/20 shadow-md"
               />
-              Operating as elite Commercial &amp; Residential Advisors at Align Right Realty Carrollwood, Mark Davis and Rachael Garnett specialize in luxury residential acquisitions, commercial mixed-use investments, and strategic Florida land.
+              Working together as Commercial &amp; Residential Agents at Align Right Realty Carrollwood, Mark Davis and Rachael Garnett help clients buy and sell homes, commercial buildings, and Florida land across Tampa Bay.
             </p>
             <a
               href="mailto:list@davisgarnettsells.com"
@@ -161,9 +174,9 @@ export default function SiteFooter() {
             </Link>
             <ul className="space-y-2.5 text-xs text-white/60">
               <li><Link href="/knowledge-hub" className="hover:text-white transition-colors">Real Estate Knowledge Simplified</Link></li>
-              <li><Link href="/knowledge-hub/tampa-bay-luxury-home-buying-guide" className="hover:text-white transition-colors">Luxury Home Buyer&apos;s Playbook</Link></li>
-              <li><Link href="/knowledge-hub/selling-your-home-in-tampa-bay" className="hover:text-white transition-colors">Seller Valuation Strategy</Link></li>
-              <li><Link href="/knowledge-hub/commercial-real-estate-investing-florida" className="hover:text-white transition-colors">Commercial Investing Guide</Link></li>
+              <li><Link href="/knowledge-hub/tampa-bay-luxury-home-buying-guide" className="hover:text-white transition-colors">Buying a Home in Tampa Bay</Link></li>
+              <li><Link href="/knowledge-hub/selling-your-home-in-tampa-bay" className="hover:text-white transition-colors">Selling Your Home for Top Dollar</Link></li>
+              <li><Link href="/knowledge-hub/commercial-real-estate-investing-florida" className="hover:text-white transition-colors">Buying Commercial Real Estate</Link></li>
               <li><Link href="/knowledge-hub/what-is-the-difference-between-hoa-and-cdd-in-tampa-bay" className="hover:text-white transition-colors">HOA vs. CDD Fees in Tampa</Link></li>
               <li><Link href="/knowledge-hub/can-i-buy-a-house-in-florida-while-selling-my-current-one" className="hover:text-white transition-colors">Buying While Selling in FL</Link></li>
             </ul>

@@ -202,11 +202,11 @@ export default function MarkDavisAdvisorPage() {
           </div>
 
           <div>
-            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-              Co-Founder &amp; REALTOR® · Certified Commercial &amp; Residential Agent
+            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
+              REALTOR® · Certified Commercial &amp; Residential Agent
             </span>
-            <h1 className="font-aiveritas text-5xl md:text-6xl text-[#111111] leading-[1.08] mb-6">
-              Mark Davis
+            <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-[#111111] leading-none mb-6">
+              Mark <span className="text-[#9A7D3A]">Davis</span>
             </h1>
             <p className="text-lg md:text-xl text-[#9A7D3A] font-light mb-6">
               REALTOR® · Certified Commercial &amp; Residential Agent • Tampa Bay &amp; Central Florida
@@ -395,12 +395,12 @@ export default function MarkDavisAdvisorPage() {
             {[
               {
                 icon: Building2,
-                title: "Residential Homes, Waterfront & Unique Properties",
+                title: "Homes, Waterfront & Estates",
                 desc: "Helping families and buyers find or sell single-family homes, custom estates, waterfront homes, and unique properties across Tampa, Carrollwood, St. Petersburg, Lutz, and Wesley Chapel.",
               },
               {
                 icon: Briefcase,
-                title: "Commercial & Mixed-Use Properties",
+                title: "Commercial & Mixed-Use",
                 desc: "Helping business owners and investors buy, sell, or lease retail storefronts, medical/professional offices, and mixed-use buildings across Brandon, Tampa, and Hillsborough County.",
               },
               {
@@ -415,7 +415,7 @@ export default function MarkDavisAdvisorPage() {
               },
               {
                 icon: BarChart3,
-                title: "Clear Pricing & Property Numbers",
+                title: "Clear Pricing & Market Data",
                 desc: "Breaking down comparable home sales, rental income, expenses, and local market trends in plain English so you can make confident decisions.",
               },
               {
@@ -431,7 +431,7 @@ export default function MarkDavisAdvisorPage() {
                 <div className="w-12 h-12 rounded-xl bg-[#f5f3ef] flex items-center justify-center mb-6">
                   <pillar.icon className="w-5 h-5 text-[#9A7D3A]" />
                 </div>
-                <h3 className="font-aiveritas text-2xl text-[#111111] mb-3">
+                <h3 className="font-aiveritas text-xl xl:text-2xl text-[#111111] mb-3 leading-snug whitespace-nowrap">
                   {pillar.title}
                 </h3>
                 <p className="text-base text-[#111111]/75 font-light leading-relaxed">
@@ -760,11 +760,11 @@ export default function MarkDavisAdvisorPage() {
                 className="p-6 md:p-8 rounded-2xl bg-[#fbfbf9] border border-[#111111]/8 hover:border-[#C8A951] transition-colors"
               >
                 <div className="flex items-start gap-4">
-                  <span className="font-aiveritas text-xl md:text-2xl text-[#9A7D3A] shrink-0 font-bold">
+                  <span className="font-aiveritas text-2xl text-[#9A7D3A] shrink-0">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div>
-                    <h3 className="font-aiveritas text-lg md:text-xl text-[#111111] mb-2 font-bold">
+                    <h3 className="font-aiveritas text-2xl text-[#111111] mb-2 leading-snug">
                       {faq.q}
                     </h3>
                     <p className="text-base text-[#111111]/75 font-light leading-relaxed">

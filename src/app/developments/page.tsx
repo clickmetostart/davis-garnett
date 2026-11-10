@@ -88,50 +88,61 @@ export default function DevelopmentsHubPage() {
 
         <div className="relative z-10 w-full max-w-screen-xl mx-auto">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#C8A951]/15 border border-[#C8A951]/40 mb-6">
-              <Sparkles className="w-3.5 h-3.5 text-[#C8A951]" />
-              <span className="text-[11px] uppercase tracking-[0.3em] text-[#C8A951] font-bold">
-                Davis &amp; Garnett · New Construction Guide
-              </span>
-            </div>
+            <span className="text-[#C8A951] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
+              Davis &amp; Garnett · New Construction &amp; Pre-Construction
+            </span>
 
-            <h1 className="font-aiveritas text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.08] tracking-tight mb-6">
-              Tampa Bay&apos;s Top{" "}
-              <span className="text-[#C8A951]">New Construction</span><br className="hidden sm:inline" /> &amp; Master-Planned Communities.
+            <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-white leading-none mb-6">
+              New <span className="text-[#C8A951]">Developments</span>
             </h1>
 
-            <p className="text-base md:text-lg text-white/80 font-light leading-relaxed max-w-3xl mx-auto mb-8">
-              From Downtown Riverwalk and Bayshore condo towers to Wesley Chapel and Land O&apos; Lakes lagoon communities—get current builder price sheets, floor plans, and two experienced agents on your side at zero cost to you.
+            <p className="text-base md:text-[17px] lg:text-[18px] text-white/85 font-light leading-relaxed max-w-3xl mx-auto mb-8">
+              Explore Tampa Bay&apos;s top new construction condo towers and master-planned communities—with current builder price sheets, floor plans, and two experienced agents on your side at zero cost to you.
             </p>
 
-            {/* Corridor Filter Buttons */}
+            {/* Quick Jump Section Buttons (Knowledge Hub Style + Smooth Scroll) */}
             <div className="flex flex-wrap items-center justify-center gap-3">
               {[
                 {
-                  id: "all" as FilterOption,
-                  label: "All (11)",
-                },
-                {
-                  id: "downtown-bayshore" as FilterOption,
                   label: "Downtown & Bayshore Towers (6)",
+                  href: "#downtown-towers",
+                  icon: Building2,
                 },
                 {
-                  id: "north-tampa" as FilterOption,
                   label: "North Tampa Communities (5)",
+                  href: "#north-tampa-communities",
+                  icon: Trees,
                 },
-              ].map((btn) => {
-                const isActive = activeFilter === btn.id;
+                {
+                  label: "How We Help You Buy",
+                  href: "#new-construction-guide",
+                  icon: ShieldCheck,
+                },
+                {
+                  label: "Price Sheets & Floor Plans",
+                  href: "#vip-pricing-form",
+                  icon: FileSearch,
+                },
+              ].map((pill) => {
+                const Icon = pill.icon;
                 return (
-                  <button
-                    key={btn.id}
-                    onClick={() => setActiveFilter(btn.id)}
-                    className={`px-6 py-3.5 rounded-xl text-xs uppercase tracking-[0.18em] font-bold transition-all duration-300 border ${isActive
-                        ? "bg-[#C8A951] text-[#111111] border-[#C8A951] shadow-lg shadow-[#C8A951]/25"
-                        : "bg-white/5 text-white/80 border-white/15 hover:border-[#C8A951]/60 hover:text-white"
-                      }`}
+                  <a
+                    key={pill.label}
+                    href={pill.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setActiveFilter("all");
+                      setTimeout(() => {
+                        document
+                          .getElementById(pill.href.replace("#", ""))
+                          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                      }, 10);
+                    }}
+                    className="group inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white/10 hover:bg-[#C8A951] text-white hover:text-[#111111] border border-white/15 text-xs font-bold uppercase tracking-widest transition-colors"
                   >
-                    {btn.label}
-                  </button>
+                    <Icon className="w-3.5 h-3.5 text-[#C8A951] group-hover:text-[#111111]" />
+                    {pill.label}
+                  </a>
                 );
               })}
             </div>
@@ -141,21 +152,20 @@ export default function DevelopmentsHubPage() {
 
       {/* ── COLLECTIVE SECTION 1: DOWNTOWN TAMPA, RIVERWALK, WATER STREET & BAYSHORE TOWERS ── */}
       {showDowntown && (
-        <section className="py-24 px-6 md:px-12 bg-white border-b border-[#111111]/10">
+        <section id="downtown-towers" className="py-24 px-6 md:px-12 bg-white border-b border-[#111111]/10 scroll-mt-20">
           <div className="max-w-screen-xl mx-auto">
             <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-6 pb-8 border-b border-[#111111]/10">
               <div>
                 <div className="flex items-center gap-2 text-[#9A7D3A] text-xs uppercase tracking-[0.25em] font-bold mb-3">
                   <Building2 className="w-4 h-4 text-[#C8A951]" />
-                  <span>Corridor A — Vertical Luxury &amp; Urban Districts</span>
+                  <span>Downtown Tampa, Riverwalk, Water St. &amp; Bayshore</span>
                 </div>
                 <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111111] leading-tight">
-                  Downtown Tampa, Riverwalk, Water Street &amp; Bayshore Luxury Towers
+                  Downtown Tampa &amp; Bayshore Luxury Condo Towers
                 </h2>
               </div>
-              <p className="text-[#111111]/65 font-light max-w-md text-sm md:text-base leading-relaxed">
-                Five-star hospitality residences, private elevator sky estates, and walkable urban
-                master plans transforming Tampa&apos;s waterfront skyline.
+              <p className="text-[#111111]/75 font-light max-w-md text-base md:text-[17px] leading-relaxed">
+                Waterfront residences, hotel-serviced condos, and walkable urban towers along the Downtown Tampa Riverwalk, Water Street, and Bayshore Boulevard.
               </p>
             </div>
 
@@ -170,21 +180,20 @@ export default function DevelopmentsHubPage() {
 
       {/* ── COLLECTIVE SECTION 2: NORTH TAMPA (WESLEY CHAPEL & LAND O' LAKES) MASTER-PLANNED COMMUNITIES ── */}
       {showNorthTampa && (
-        <section className="py-24 px-6 md:px-12 bg-[#f5f3ef] border-b border-[#111111]/10">
+        <section id="north-tampa-communities" className="py-24 px-6 md:px-12 bg-[#f5f3ef] border-b border-[#111111]/10 scroll-mt-20">
           <div className="max-w-screen-xl mx-auto">
             <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-6 pb-8 border-b border-[#111111]/10">
               <div>
                 <div className="flex items-center gap-2 text-[#9A7D3A] text-xs uppercase tracking-[0.25em] font-bold mb-3">
                   <Trees className="w-4 h-4 text-[#C8A951]" />
-                  <span>Corridor B — Resort Lagoons, Nature Preserves &amp; Biotech Cities</span>
+                  <span>Wesley Chapel, Land O&apos; Lakes &amp; Brooksville</span>
                 </div>
                 <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111111] leading-tight">
-                  North Tampa: Wesley Chapel &amp; Land O&apos; Lakes Master-Planned Communities
+                  North Tampa Master-Planned Communities
                 </h2>
               </div>
-              <p className="text-[#111111]/65 font-light max-w-md text-sm md:text-base leading-relaxed">
-                Multi-thousand-acre master plans anchored by 15-acre Crystal Lagoons, Moffitt&apos;s
-                775-acre Speros FL campus, Peak Surf Park, and conservation estates.
+              <p className="text-[#111111]/75 font-light max-w-md text-base md:text-[17px] leading-relaxed">
+                Resort-style master-planned neighborhoods featuring Crystal Lagoons, Moffitt&apos;s Speros FL campus, Peak Surf Park, and conservation home sites.
               </p>
             </div>
 
@@ -198,7 +207,7 @@ export default function DevelopmentsHubPage() {
       )}
 
       {/* ── COLLECTIVE SECTION 3: THE DAVIS & GARNETT VIP NEW CONSTRUCTION ADVANTAGE ── */}
-      <section className="py-28 px-6 md:px-12 bg-white border-b border-[#111111]/10">
+      <section id="new-construction-guide" className="py-28 px-6 md:px-12 bg-white border-b border-[#111111]/10 scroll-mt-20">
         <div className="max-w-screen-xl mx-auto">
           <div className="grid lg:grid-cols-12 gap-12 items-start mb-16">
             <div className="lg:col-span-5">
@@ -229,21 +238,21 @@ export default function DevelopmentsHubPage() {
                 {
                   icon: DollarSign,
                   badge: "$0 Buyer Cost",
-                  title: "Representation at Zero Cost to You",
+                  title: "Buyer Representation at Zero Cost",
                   description:
                     "Builders do not lower the home price if you walk in without an agent—doing so would hurt their comparable sales for the rest of the neighborhood. With Mark and Rachael, the builder covers our fee and you get two experienced agents in your corner.",
                 },
                 {
                   icon: TrendingUp,
                   badge: "Rate Buydowns & Credits",
-                  title: "Negotiating Builder Credits & Rate Buydowns",
+                  title: "Builder Credits & Rate Buydowns",
                   description:
                     "We track quick move-in homes and builder incentives across WestBay, Lennar, Pulte, Related, and Two Roads—helping our buyers negotiate mortgage rate buydowns, closing cost help, and design studio credits.",
                 },
                 {
                   icon: HardHat,
                   badge: "Quality Checks",
-                  title: "Independent 3-Phase Home Inspections",
+                  title: "Independent 3-Phase Inspections",
                   description:
                     "Even brand-new homes need a second set of eyes. We coordinate independent licensed inspectors before drywall goes up, before your final walkthrough, and at month 11 before your 1-year builder warranty expires.",
                 },
@@ -266,11 +275,11 @@ export default function DevelopmentsHubPage() {
                         <div className="w-12 h-12 rounded-xl bg-[#111111] text-[#C8A951] flex items-center justify-center">
                           <IconComponent className="w-6 h-6" />
                         </div>
-                        <span className="text-[10px] uppercase tracking-[0.2em] font-bold px-3 py-1 rounded-full bg-[#C8A951]/15 text-[#9A7D3A]">
+                        <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#9A7D3A]">
                           {pillar.badge}
                         </span>
                       </div>
-                      <h3 className="font-aiveritas text-xl text-[#111111] mb-3 leading-snug">
+                      <h3 className="font-aiveritas text-xl xl:text-2xl text-[#111111] mb-3 leading-snug whitespace-nowrap">
                         {pillar.title}
                       </h3>
                       <p className="text-base text-[#111111]/75 font-light leading-relaxed">
@@ -287,16 +296,13 @@ export default function DevelopmentsHubPage() {
           <div className="bg-[#111111] text-white rounded-3xl p-8 md:p-12 border border-[#C8A951]/30 grid md:grid-cols-3 gap-8 items-center">
             <div className="md:col-span-2">
               <span className="text-[#C8A951] text-xs uppercase tracking-[0.25em] font-bold block mb-2">
-                Commercial + Residential Synergy
+                Commercial + Residential Know-How
               </span>
               <h3 className="font-aiveritas text-2xl md:text-3xl text-white mb-3">
-                We Know What Is Being Built Next Door Before You Buy.
+                We Know What Is Being Built Around Your Neighborhood.
               </h3>
-              <p className="text-white/75 text-sm md:text-base font-light leading-relaxed">
-                Because both Mark Davis and Rachael Garnett are Certified Commercial &amp; Residential
-                REALTORS®, we evaluate every development through both lenses: zoning filings,
-                DOT highway interchanges, CDD bond debt, commercial retail anchors, and future view-corridor
-                protections.
+              <p className="text-white/80 text-base md:text-[17px] font-light leading-relaxed">
+                Because both Mark Davis and Rachael Garnett are Certified Commercial &amp; Residential Agents, we look at the whole picture—including nearby roads, future shopping centers, CDD fees, and neighborhood growth plans.
               </p>
             </div>
             <div className="flex md:justify-end">
@@ -304,7 +310,7 @@ export default function DevelopmentsHubPage() {
                 href="#vip-pricing-form"
                 className="w-full md:w-auto text-center px-8 py-4 bg-[#C8A951] hover:bg-white text-[#111111] font-bold text-xs uppercase tracking-[0.2em] rounded-xl transition-colors"
               >
-                Register For VIP Access
+                Request Price Sheets
               </a>
             </div>
           </div>
@@ -318,27 +324,25 @@ export default function DevelopmentsHubPage() {
             {/* Left Column: Value Proposition & What You Receive */}
             <div className="lg:col-span-5">
               <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.28em] font-bold block mb-4">
-                Direct Developer &amp; Builder Desk
+                Floor Plans, Lot Maps &amp; Builder Incentives
               </span>
               <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111111] leading-tight mb-6">
-                Request VIP Developer Pricing, Floor Plans &amp; Incentives.
+                Request Current Price Sheets &amp; Floor Plans.
               </h2>
-              <p className="text-[#111111]/70 font-light leading-relaxed mb-8">
-                Receive a custom-curated dossier within 24 hours containing current developer price
-                sheets, architectural floor plans, HOA &amp; CDD calculators, and this month&apos;s
-                unadvertised builder rate-buydown &amp; closing-cost incentives.
+              <p className="text-[#111111]/75 text-base md:text-[17px] font-light leading-relaxed mb-8">
+                Tell us which condo towers or communities you are interested in, and we will send you current price sheets, floor plans, HOA &amp; CDD breakdowns, and this month&apos;s builder rate-buydown and closing-cost incentives.
               </p>
 
               <div className="space-y-4 mb-10">
                 {[
-                  "Complete Floor Plan PDFs & Stack/Lot Availability Maps",
-                  "Side-by-Side HOA, CDD Bond & Property Tax Breakdown",
-                  "Current Standing Quick-Move-In (QMI) Discounted List",
-                  "VIP Private Tour Registration (Protects Your Buyer Incentives)",
+                  "Complete Floor Plan PDFs & Lot Availability Maps",
+                  "Clear HOA, CDD Fee & Property Tax Breakdown",
+                  "Current Quick-Move-In Homes & Builder Discounts",
+                  "Private Model Home & Sales Center Tour Registration",
                 ].map((benefit) => (
                   <div key={benefit} className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-[#9A7D3A] shrink-0 mt-0.5" />
-                    <span className="text-sm text-[#111111]/85 font-medium">{benefit}</span>
+                    <span className="text-base text-[#111111]/85 font-medium">{benefit}</span>
                   </div>
                 ))}
               </div>
@@ -753,7 +757,7 @@ function DevelopmentTowerShowcaseCard({ dev, index }: { dev: Development; index:
               <span>{dev.location}</span>
             </p>
 
-            <p className="text-[#111111]/75 font-light text-sm md:text-base leading-relaxed mb-6">
+            <p className="text-[#111111]/75 font-light text-base leading-relaxed mb-6">
               {dev.summary}
             </p>
 
@@ -872,7 +876,7 @@ function MasterPlannedCommunityCard({ dev }: { dev: Development }) {
             <span>{dev.location}</span>
           </p>
 
-          <p className="text-sm text-[#111111]/75 font-light leading-relaxed mb-6">{dev.summary}</p>
+          <p className="text-base text-[#111111]/75 font-light leading-relaxed mb-6">{dev.summary}</p>
 
           {/* Builder Roster Pills */}
           <div className="mb-6">

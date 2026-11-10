@@ -44,62 +44,74 @@ export default function EveryListingApproachPage() {
 
   const checklistItems = [
     {
-      title: "Honest Pricing & Local Market Study",
+      line1: "Honest Pricing &",
+      line2: "Local Market Study",
       desc: "We compare recent neighborhood sales, current buyer demand, and commercial income numbers so you can price your property with confidence.",
       category: "Pricing & Research",
     },
     {
-      title: "Upfront Title, Survey, HOA & Zoning Checks",
+      line1: "Upfront Title, Survey,",
+      line2: "HOA & Zoning Checks",
       desc: "We check public records, deed rules, easements, zoning (A-1, commercial, residential), flood zones, and CDD fees early so nothing surprises you in escrow.",
       category: "Early Prep",
     },
     {
-      title: "Professional Photos, Drone Aerials & Video Tours",
+      line1: "Professional Photos,",
+      line2: "Drone & Video Tours",
       desc: "Every listing gets bright professional photography, licensed 4K drone photos and video, twilight shots, and a guided video walkthrough.",
       category: "Photos & Video",
     },
     {
-      title: "Measured Floor Plans & 3D Virtual Walkthroughs",
+      line1: "Measured Floor Plans &",
+      line2: "3D Virtual Walkthroughs",
       desc: "We create clear floor plans, 3D Matterport/Zillow walkthroughs for homes and offices, and boundary overlays for land and acreage.",
       category: "Floor Plans & 3D",
     },
     {
-      title: "Custom Print Brochures & Property Guides",
+      line1: "Custom Print Brochures",
+      line2: "& Property Guides",
       desc: "We design clean, easy-to-read print flyers, commercial property summaries, and digital brochures buyers can review at home.",
       category: "Print & Digital Materials",
     },
     {
-      title: "Full MLS & Commercial Portal Reach",
+      line1: "Full Stellar MLS &",
+      line2: "Commercial Portal Reach",
       desc: "Your listing goes live on Stellar MLS and syndicates to Zillow, Realtor.com, Redfin, Homes.com, CoStar, LoopNet, and Crexi.",
       category: "Online Reach",
     },
     {
-      title: "Targeted Local & Out-of-State Ad Campaigns",
+      line1: "Targeted Local &",
+      line2: "Relocation Ad Campaigns",
       desc: "We run focused social media and search ads to reach local buyers, business owners, and families relocating to Tampa Bay.",
       category: "Digital Marketing",
     },
     {
-      title: "Direct Outreach to Local Agents & Investors",
+      line1: "Direct Outreach to",
+      line2: "Local Agents & Investors",
       desc: "We share your property directly with fellow agents across Align Right Realty Carrollwood and active buyer networks across Central Florida.",
       category: "Agent Network",
     },
     {
-      title: "Mark & Rachael Handle Your Showings & Calls",
+      line1: "Mark & Rachael Handle",
+      line2: "Your Showings & Calls",
       desc: "You won't be passed off to a junior assistant. Mark and Rachael personally answer buyer questions, check pre-approvals, and follow up on every showing.",
       category: "Personal Service",
     },
     {
-      title: "Clear Contract Review & Strong Negotiation",
+      line1: "Clear Contract Review",
+      line2: "& Strong Negotiation",
       desc: "We walk you through every offer in plain English, compare net sheets, and negotiate price, inspection repairs, and timelines to protect your bottom line.",
       category: "Offers & Negotiation",
     },
     {
-      title: "Hands-On Title, Inspection & Closing Coordination",
+      line1: "Hands-On Title, Inspection",
+      line2: "& Closing Coordination",
       desc: "We work closely with title companies, surveyors, inspectors, and lenders to keep your closing on track from contract to keys.",
       category: "Closing Support",
     },
     {
-      title: "Here for You After Closing",
+      line1: "Trusted Local Help",
+      line2: "Long After Closing",
       desc: "Whether you need a trusted local contractor, help filing homestead exemptions, or advice on a 1031 exchange, we stay a phone call away.",
       category: "Ongoing Help",
     },
@@ -113,17 +125,17 @@ export default function EveryListingApproachPage() {
     },
     {
       icon: <Home className="w-6 h-6 text-[#9A7D3A]" />,
-      title: "Residential & Luxury Estates",
+      title: "Homes & Luxury Estates",
       desc: "Waterfront estates, custom single-family residences, golf course communities, and master-planned neighborhoods.",
     },
     {
       icon: <Layers className="w-6 h-6 text-[#9A7D3A]" />,
-      title: "Land, Acreage & Development Tracts",
+      title: "Land & Acreage Parcels",
       desc: "Agricultural timberland, future residential subdivisions, commercial parcels, and Central Florida acreage.",
     },
     {
       icon: <Sparkles className="w-6 h-6 text-[#9A7D3A]" />,
-      title: "Condominiums & Towers",
+      title: "Condos & Luxury Towers",
       desc: "Downtown skyline condominiums, high-rise luxury towers, short-term rental approved units, and VIP pre-construction.",
     },
   ];
@@ -137,51 +149,46 @@ export default function EveryListingApproachPage() {
         <FaviconHeroBackground variant="light" />
         <div className="relative z-10 w-full max-w-screen-xl mx-auto">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/70 border border-[#C8A951]/40 mb-6">
-              <Sparkles className="w-3.5 h-3.5 text-[#9A7D3A]" />
-              <span className="text-[11px] uppercase tracking-[0.3em] font-bold text-[#9A7D3A]">
-                Why Us? · Our Every Listing Approach
-              </span>
-            </div>
+            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
+              Why Us? · Davis &amp; Garnett
+            </span>
 
-            <h1 className="font-aiveritas text-4xl sm:text-5xl lg:text-6xl text-[#111111] leading-[1.08] tracking-tight mb-6">
-              Every Listing Gets<br />
-              <span className="text-[#9A7D3A]">Our Full Attention.</span>
+            <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-[#111111] leading-none mb-6">
+              Our Listing <span className="text-[#9A7D3A]">Approach</span>
             </h1>
 
             <p className="text-base md:text-[17px] lg:text-[18px] text-[#111111]/80 font-light leading-relaxed max-w-3xl mx-auto mb-8">
-              Whether we are selling a residential home, a commercial building, or land, our promise is the same:{" "}
+              Every listing gets our full attention. Whether we are selling a residential home, a commercial building, or land, our promise is the same:{" "}
               <strong className="text-[#111111] font-semibold">thorough research, great photography, and both Mark and Rachael working hands-on from our first meeting to the closing table.</strong>
             </p>
 
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <button
-                onClick={() =>
-                  openConsultation(
-                    "List Property with Davis & Garnett",
-                    "Mark Davis & Rachael Garnett",
-                    "Schedule Your Listing Consultation"
-                  )
-                }
-                className="inline-flex items-center gap-3 px-8 py-4 bg-[#111111] text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C8A951] hover:text-[#111111] transition-colors rounded-lg shadow-lg"
-              >
-                Request Listing Consultation
-                <ArrowRight className="w-4 h-4" />
-              </button>
-
-              <Link
-                href="/properties"
-                className="inline-flex items-center gap-2 px-6 py-4 border border-[#111111]/20 text-[#111111] text-xs font-bold uppercase tracking-[0.2em] hover:border-[#C8A951] hover:text-[#9A7D3A] transition-colors rounded-lg"
-              >
-                View Our Track Record
-              </Link>
+            {/* Quick Jump Section Buttons (Knowledge Hub Style + Smooth Scroll) */}
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              {[
+                { label: "Our Why", href: "#our-why", icon: Sparkles },
+                { label: "Every Property Type", href: "#property-types", icon: Building2 },
+                { label: "12-Point Checklist", href: "#full-checklist", icon: CheckCircle2 },
+                { label: "4-Step Process", href: "#our-process", icon: Layers },
+              ].map((pill) => {
+                const Icon = pill.icon;
+                return (
+                  <a
+                    key={pill.label}
+                    href={pill.href}
+                    className="group inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white hover:bg-[#111111] text-[#111111] hover:text-[#C8A951] border border-[#111111]/15 hover:border-[#111111] text-xs font-bold uppercase tracking-widest transition-colors shadow-xs"
+                  >
+                    <Icon className="w-3.5 h-3.5 text-[#9A7D3A] group-hover:text-[#C8A951]" />
+                    {pill.label}
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>
       </section>
 
       {/* ── OUR "WHY" PHILOSOPHY ── */}
-      <section className="py-24 px-6 md:px-12 bg-[#f5f3ef] border-b border-[#111111]/8">
+      <section id="our-why" className="py-24 px-6 md:px-12 bg-[#f5f3ef] border-b border-[#111111]/8">
         <div className="max-w-screen-xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-[#111111]/10 bg-[#111111]">
@@ -198,7 +205,7 @@ export default function EveryListingApproachPage() {
                   Our Unwavering Commitment
                 </span>
                 <p className="font-aiveritas text-2xl md:text-3xl mb-1">
-                  Mark Davis &amp; Rachael Garnett
+                  Rachael Garnett &amp; Mark Davis
                 </p>
                 <p className="text-xs text-white/75 font-light">
                   Commercial &amp; Residential Advisors · Align Right Realty Carrollwood
@@ -239,7 +246,7 @@ export default function EveryListingApproachPage() {
       </section>
 
       {/* ── APPLIED ACROSS EVERY CATEGORY ── */}
-      <section className="py-24 px-6 md:px-12 bg-white border-b border-[#111111]/8">
+      <section id="property-types" className="py-24 px-6 md:px-12 bg-white border-b border-[#111111]/8">
         <div className="max-w-screen-xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
@@ -258,13 +265,15 @@ export default function EveryListingApproachPage() {
             {propertyTypes.map((item, i) => (
               <div
                 key={i}
-                className="p-8 rounded-2xl bg-[#fbfbf9] border border-[#111111]/10 hover:border-[#C8A951] transition-all flex flex-col justify-between shadow-sm hover:shadow-md"
+                className="p-7 rounded-2xl bg-[#fbfbf9] border border-[#111111]/10 hover:border-[#C8A951] transition-all flex flex-col justify-between shadow-sm hover:shadow-md"
               >
                 <div>
                   <div className="w-12 h-12 rounded-xl bg-white border border-[#111111]/10 flex items-center justify-center mb-6 shadow-xs">
                     {item.icon}
                   </div>
-                  <h3 className="font-aiveritas text-xl text-[#111111] mb-3">{item.title}</h3>
+                  <h3 className="font-aiveritas text-xl xl:text-[22px] text-[#111111] mb-3 leading-snug whitespace-nowrap">
+                    {item.title}
+                  </h3>
                   <p className="text-[#111111]/75 text-base font-light leading-relaxed">
                     {item.desc}
                   </p>
@@ -279,7 +288,7 @@ export default function EveryListingApproachPage() {
       </section>
 
       {/* ── OUR 12-POINT LISTING CHECKLIST ── */}
-      <section className="py-24 px-6 md:px-12 bg-[#f5f3ef] border-b border-[#111111]/8">
+      <section id="full-checklist" className="py-24 px-6 md:px-12 bg-[#f5f3ef] border-b border-[#111111]/8">
         <div className="max-w-screen-xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
@@ -303,13 +312,14 @@ export default function EveryListingApproachPage() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#9A7D3A] bg-[#f5f3ef] px-3 py-1 rounded-full">
+                    <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#9A7D3A]">
                       Step {String(idx + 1).padStart(2, "0")} · {item.category}
                     </span>
                     <CheckCircle2 className="w-4 h-4 text-[#C8A951]" />
                   </div>
-                  <h3 className="font-aiveritas text-xl text-[#111111] mb-3 leading-snug">
-                    {item.title}
+                  <h3 className="font-aiveritas text-2xl text-[#111111] mb-3 leading-snug">
+                    <span className="block">{item.line1}</span>
+                    <span className="block">{item.line2}</span>
                   </h3>
                   <p className="text-[#111111]/75 text-base font-light leading-relaxed">
                     {item.desc}
@@ -322,7 +332,7 @@ export default function EveryListingApproachPage() {
       </section>
 
       {/* ── THE STEP-BY-STEP PROCESS ── */}
-      <section className="py-24 px-6 md:px-12 bg-white border-b border-[#111111]/8">
+      <section id="our-process" className="py-24 px-6 md:px-12 bg-white border-b border-[#111111]/8">
         <div className="max-w-screen-xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
@@ -336,7 +346,7 @@ export default function EveryListingApproachPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-8 relative">
+          <div className="grid md:grid-cols-4 gap-6 relative">
             {[
               {
                 phase: "01",
@@ -350,20 +360,22 @@ export default function EveryListingApproachPage() {
               },
               {
                 phase: "03",
-                name: "Launch & Buyer Outreach",
+                name: "Launch & Buyer Reach",
                 desc: "Full MLS launch, social media and online marketing, agent outreach, and personal follow-up on every inquiry.",
               },
               {
                 phase: "04",
-                name: "Offers & Smooth Closing",
+                name: "Offers & Smooth Close",
                 desc: "Plain-English offer comparisons, strong negotiation, inspection coordination, and hands-on support through closing.",
               },
             ].map((st, i) => (
-              <div key={i} className="relative bg-[#fbfbf9] p-8 rounded-2xl border border-[#111111]/10">
+              <div key={i} className="relative bg-[#fbfbf9] p-7 rounded-2xl border border-[#111111]/10">
                 <span className="font-aiveritas text-5xl text-[#C8A951]/40 block mb-4">
                   {st.phase}
                 </span>
-                <h3 className="font-aiveritas text-2xl text-[#111111] mb-2">{st.name}</h3>
+                <h3 className="font-aiveritas text-xl xl:text-[22px] text-[#111111] mb-3 leading-snug whitespace-nowrap">
+                  {st.name}
+                </h3>
                 <p className="text-base text-[#111111]/75 font-light leading-relaxed">
                   {st.desc}
                 </p>

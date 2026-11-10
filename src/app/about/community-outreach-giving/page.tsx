@@ -138,16 +138,12 @@ export default function CommunityOutreachGivingPage() {
       <header className="py-20 px-6 md:px-12 bg-white border-b border-[#111111]/10">
         <div className="max-w-screen-xl mx-auto grid lg:grid-cols-[1.15fr_0.85fr] gap-16 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f5f3ef] border border-[#C8A951]/40 mb-6">
-              <Sparkles className="w-3.5 h-3.5 text-[#9A7D3A]" />
-              <span className="text-[10px] uppercase tracking-[0.25em] font-bold text-[#9A7D3A]">
-                Stewardship • Faith • Community Impact
-              </span>
-            </div>
+            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
+              Davis &amp; Garnett · Faith, Church &amp; Community
+            </span>
 
-            <h1 className="font-aiveritas text-4xl sm:text-5xl lg:text-6xl text-[#111111] leading-[1.08] mb-6">
-              Our Causes: Faith, Church &amp;<br />
-              <span className="text-[#9A7D3A]">Tampa Bay Community Impact.</span>
+            <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-[#111111] leading-none mb-6">
+              Community <span className="text-[#9A7D3A]">Outreach</span>
             </h1>
 
             <p className="text-base md:text-[17px] lg:text-[18px] text-[#111111]/80 font-light leading-relaxed mb-6">

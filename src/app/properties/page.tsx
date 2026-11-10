@@ -131,27 +131,27 @@ export default function PropertiesPage() {
         <div className="relative z-10 w-full max-w-screen-xl mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-10">
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
-              Davis &amp; Garnett · Tampa Bay Real Estate Listings
+              Davis &amp; Garnett · Tampa Bay &amp; Central Florida
             </span>
             <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-[#111111] leading-none mb-6">
-              Our Listings
+              Florida <span className="text-[#9A7D3A]">Portfolio</span>
             </h1>
             <p className="text-[#111111]/75 font-light text-base md:text-[17px] lg:text-[18px] leading-relaxed">
-              Explore our active residential homes, commercial properties, Central Florida land, waterfront and unique properties, and recent sales across Tampa Bay.
+              Explore featured residential homes, commercial properties, Central Florida land, waterfront and unique properties, and recent sales across Tampa Bay and Florida.
             </p>
           </div>
 
           {/* Executive Stats Ribbon */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto mb-10">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto mb-8">
             {[
               {
                 value: "$9.29M+",
-                label: "Active Listings",
-                sub: "Featured Homes, Land & Commercial"
+                label: "Featured Listings",
+                sub: "Homes, Land & Commercial"
               },
               {
                 value: "99.65+ Ac",
-                label: "Active Land & Waterfront",
+                label: "Featured Land & Waterfront",
                 sub: "Polk, Marion & Pinellas"
               },
               {
@@ -180,22 +180,49 @@ export default function PropertiesPage() {
             ))}
           </div>
 
-          {/* Category Filter Tabs */}
-          <div className="flex flex-wrap items-center justify-center gap-2.5">
-            {FILTER_TABS.map((tab) => {
-              const isActive = selectedTab === tab;
+          {/* Quick Jump Section Buttons (Smooth Scroll to Page Sections) */}
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            {[
+              {
+                label: "Featured Florida Listings",
+                href: "#featured-listings",
+                icon: Award,
+              },
+              {
+                label: "Recent Sold Properties",
+                href: "#sold-properties",
+                icon: CheckCircle,
+              },
+              {
+                label: "How We Represent You",
+                href: "#how-we-work",
+                icon: Compass,
+              },
+              {
+                label: "Free Value Estimate",
+                href: "#valuation-request",
+                icon: TrendingUp,
+              },
+            ].map((pill) => {
+              const Icon = pill.icon;
               return (
-                <button
-                  key={tab}
-                  onClick={() => setSelectedTab(tab)}
-                  className={`px-5 py-3 rounded-full text-xs font-bold uppercase tracking-[0.15em] border transition-all ${
-                    isActive
-                      ? "bg-[#111111] text-[#C8A951] border-[#111111] shadow-md"
-                      : "bg-white text-[#111111]/70 border-[#111111]/15 hover:border-[#C8A951] hover:text-[#111111]"
-                  }`}
+                <a
+                  key={pill.label}
+                  href={pill.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setSelectedTab("All");
+                    setTimeout(() => {
+                      document
+                        .getElementById(pill.href.replace("#", ""))
+                        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }, 10);
+                  }}
+                  className="group inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white hover:bg-[#111111] text-[#111111] hover:text-[#C8A951] border border-[#111111]/15 hover:border-[#111111] text-xs font-bold uppercase tracking-widest transition-colors shadow-xs"
                 >
-                  {tab}
-                </button>
+                  <Icon className="w-3.5 h-3.5 text-[#9A7D3A] group-hover:text-[#C8A951]" />
+                  {pill.label}
+                </a>
               );
             })}
           </div>
@@ -206,20 +233,35 @@ export default function PropertiesPage() {
           COLLECTIVE SECTION 1: ACTIVE SIGNATURE LISTINGS
          ══════════════════════════════════════════════════════════════════ */}
       {activeListings.length > 0 && (
-        <section className="py-20 px-6 lg:px-10 bg-white border-b border-[#111111]/8">
+        <section id="featured-listings" className="py-20 px-6 lg:px-10 bg-white border-b border-[#111111]/8">
           <div className="max-w-screen-xl mx-auto">
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 gap-6">
               <div>
                 <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
                   Featured Offerings · Active Inventory
                 </span>
                 <h2 className="font-aiveritas text-4xl sm:text-5xl text-[#111111]">
-                  Active Listings
+                  Featured Florida Listings
                 </h2>
               </div>
-              <p className="text-[#111111]/70 text-base md:text-[17px] max-w-md font-light leading-relaxed">
-                Click any property below to view full photos, property details, and tour information.
-              </p>
+              <div className="flex flex-wrap items-center gap-2">
+                {(["All", "Residential", "Commercial & Mixed-Use", "Land & Acreage"] as FilterTab[]).map((tab) => {
+                  const isActive = selectedTab === tab;
+                  return (
+                    <button
+                      key={tab}
+                      onClick={() => setSelectedTab(tab)}
+                      className={`px-4 py-2.5 rounded-lg text-xs font-bold uppercase tracking-widest border transition-colors ${
+                        isActive
+                          ? "bg-[#111111] text-[#C8A951] border-[#111111]"
+                          : "bg-[#f5f3ef] text-[#111111]/75 border-[#111111]/10 hover:border-[#C8A951] hover:text-[#111111]"
+                      }`}
+                    >
+                      {tab}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
 
             <div className="space-y-12">
@@ -250,7 +292,7 @@ export default function PropertiesPage() {
 
                         <div className="absolute top-5 left-5 flex flex-wrap gap-2">
                           <span className="bg-[#22c55e] text-white text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-sm">
-                            ● Active Exclusive
+                            ● Featured Active
                           </span>
                           <span
                             className={`text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-sm ${
@@ -441,7 +483,7 @@ export default function PropertiesPage() {
           COLLECTIVE SECTION 2: 2026 PROVEN TRACK RECORD — RECENT TRANSACTIONS
          ══════════════════════════════════════════════════════════════════ */}
       {soldListings.length > 0 && (
-        <section className="py-24 px-6 lg:px-10 bg-[#f5f3ef] border-b border-[#111111]/10">
+        <section id="sold-properties" className="py-24 px-6 lg:px-10 bg-[#f5f3ef] border-b border-[#111111]/10">
           <div className="max-w-screen-xl mx-auto">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
               <div>
@@ -562,7 +604,7 @@ export default function PropertiesPage() {
       {/* ══════════════════════════════════════════════════════════════════
           COLLECTIVE SECTION 3: HOW WE WORK TOGETHER FOR OUR SELLERS & BUYERS
          ══════════════════════════════════════════════════════════════════ */}
-      <section className="py-24 px-6 lg:px-10 bg-white border-b border-[#111111]/10">
+      <section id="how-we-work" className="py-24 px-6 lg:px-10 bg-white border-b border-[#111111]/10">
         <div className="max-w-screen-xl mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
@@ -581,7 +623,8 @@ export default function PropertiesPage() {
               {
                 icon: <Award className="w-7 h-7 text-[#C8A951]" />,
                 tag: "01 · Homes, Condos & Waterfront",
-                title: "Standout Photos, 3D Tours & Smart Pricing",
+                line1: "Standout Photos, 3D Tours",
+                line2: "& Smart Local Pricing",
                 lead: "Mark Davis, REALTOR® & Rachael Garnett, REALTOR®",
                 description:
                   "Every residential listing—from waterfront homes like 'The Vistara' in Bahama Shores to golf course homes in Bradenton and Land O' Lakes—gets professional photography, 3D virtual tours, dedicated property pages, and targeted marketing to local and out-of-state buyers.",
@@ -594,7 +637,8 @@ export default function PropertiesPage() {
               {
                 icon: <TrendingUp className="w-7 h-7 text-[#C8A951]" />,
                 tag: "02 · Commercial & Mixed-Use Properties",
-                title: "Clear Financial Packages & Buyer Outreach",
+                line1: "Clear Financial Packages",
+                line2: "& Direct Buyer Outreach",
                 lead: "Mark Davis, REALTOR® & Rachael Garnett, REALTOR®",
                 description:
                   "Selling a commercial or mixed-use property—like our two-building listing in Brandon—takes clear numbers. We put together straightforward property packages showing utility setups, zoning uses, traffic counts, and income potential for business owners and investors.",
@@ -607,7 +651,8 @@ export default function PropertiesPage() {
               {
                 icon: <Compass className="w-7 h-7 text-[#C8A951]" />,
                 tag: "03 · Land, Acreage & Off-Market Searches",
-                title: "Zoning Research & Florida Land Guidance",
+                line1: "Zoning Research &",
+                line2: "Florida Land Guidance",
                 lead: "Mark Davis, REALTOR® & Rachael Garnett, REALTOR®",
                 description:
                   "From 79.54-acre highway tracts in Polk County to gated 19.72-acre timberland parcels in Marion County, we help landowners and buyers understand road access, future land use, agricultural tax exemptions, and off-market opportunities.",
@@ -619,7 +664,7 @@ export default function PropertiesPage() {
               }
             ].map((pillar) => (
               <div
-                key={pillar.title}
+                key={pillar.line1}
                 className="bg-[#fbfbf9] rounded-2xl p-8 border border-[#111111]/8 flex flex-col justify-between hover:border-[#C8A951]/50 transition-colors"
               >
                 <div>
@@ -629,8 +674,9 @@ export default function PropertiesPage() {
                   <span className="text-[#9A7D3A] text-[10px] font-bold uppercase tracking-[0.25em] block mb-2">
                     {pillar.tag}
                   </span>
-                  <h3 className="font-aiveritas text-2xl sm:text-3xl text-[#111111] mb-2">
-                    {pillar.title}
+                  <h3 className="font-aiveritas text-2xl text-[#111111] mb-2 leading-snug">
+                    <span className="block">{pillar.line1}</span>
+                    <span className="block">{pillar.line2}</span>
                   </h3>
                   <p className="text-xs font-bold text-[#111111]/55 mb-4">{pillar.lead}</p>
                   <p className="text-[#111111]/75 font-light text-base leading-relaxed mb-6">

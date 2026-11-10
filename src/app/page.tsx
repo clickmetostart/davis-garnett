@@ -65,23 +65,23 @@ export default function HomePageV1Light() {
     router.push(`/search-mls${params.toString() ? `?${params.toString()}` : ""}`);
   };
 
-  // Left Image (Mark)
-  const leftLeft = useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.4, 1], ["50%", "50%", "17%", "17%", "25%", "25%"]);
-  const leftWidth = useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.4, 1], ["30vw", "30vw", "30vw", "30vw", "50vw", "50vw"]);
-  const leftHeight = useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.4, 1], ["75vh", "75vh", "75vh", "75vh", "100vh", "100vh"]);
-  const leftZIndex = useTransform(scrollYProgress, [0, 0.29, 0.3, 1], [0, 0, 20, 20]);
-  const borderRadius = useTransform(scrollYProgress, [0.3, 0.4], ["1rem", "0rem"]);
+  // Left Image (Mark) — holds steady from 0 to 0.38 so the opening state (center card + left/right text) pauses generously both scrolling down and scrolling back up
+  const leftLeft = useTransform(scrollYProgress, [0, 0.38, 0.50, 0.62, 0.74, 1], ["50%", "50%", "17%", "17%", "25%", "25%"]);
+  const leftWidth = useTransform(scrollYProgress, [0, 0.38, 0.50, 0.62, 0.74, 1], ["30vw", "30vw", "30vw", "30vw", "50vw", "50vw"]);
+  const leftHeight = useTransform(scrollYProgress, [0, 0.38, 0.50, 0.62, 0.74, 1], ["75vh", "75vh", "75vh", "75vh", "100vh", "100vh"]);
+  const leftZIndex = useTransform(scrollYProgress, [0, 0.61, 0.62, 1], [0, 0, 20, 20]);
+  const borderRadius = useTransform(scrollYProgress, [0.62, 0.74], ["1rem", "0rem"]);
 
   // Right Image (Rachael)
-  const rightLeft = useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.4, 1], ["50%", "50%", "83%", "83%", "75%", "75%"]);
-  const rightWidth = useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.4, 1], ["30vw", "30vw", "30vw", "30vw", "50vw", "50vw"]);
-  const rightHeight = useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.4, 1], ["75vh", "75vh", "75vh", "75vh", "100vh", "100vh"]);
-  const rightZIndex = useTransform(scrollYProgress, [0, 0.29, 0.3, 1], [0, 0, 20, 20]);
+  const rightLeft = useTransform(scrollYProgress, [0, 0.38, 0.50, 0.62, 0.74, 1], ["50%", "50%", "83%", "83%", "75%", "75%"]);
+  const rightWidth = useTransform(scrollYProgress, [0, 0.38, 0.50, 0.62, 0.74, 1], ["30vw", "30vw", "30vw", "30vw", "50vw", "50vw"]);
+  const rightHeight = useTransform(scrollYProgress, [0, 0.38, 0.50, 0.62, 0.74, 1], ["75vh", "75vh", "75vh", "75vh", "100vh", "100vh"]);
+  const rightZIndex = useTransform(scrollYProgress, [0, 0.61, 0.62, 1], [0, 0, 20, 20]);
 
-  const centerScale = useTransform(scrollYProgress, [0, 0.3, 0.4], [1, 1, 0.8]);
-  const textOpacity = useTransform(scrollYProgress, [0.5, 0.6, 1], [0, 1, 1]);
-  const textY = useTransform(scrollYProgress, [0.5, 0.6, 1], [40, 0, 0]);
-  const initialTextOpacity = useTransform(scrollYProgress, [0.1, 0.15], [1, 0]);
+  const centerScale = useTransform(scrollYProgress, [0, 0.62, 0.74], [1, 1, 0.8]);
+  const textOpacity = useTransform(scrollYProgress, [0.74, 0.82, 1], [0, 1, 1]);
+  const textY = useTransform(scrollYProgress, [0.74, 0.82, 1], [40, 0, 0]);
+  const initialTextOpacity = useTransform(scrollYProgress, [0, 0.36, 0.43], [1, 1, 0]);
 
   return (
     <div className="min-h-screen text-[#111] bg-white selection:bg-[#D4AF37] selection:text-white font-sans">
@@ -133,10 +133,14 @@ export default function HomePageV1Light() {
           </div>
         </div>
 
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-80 z-20 pointer-events-none">
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-85 z-20 pointer-events-none"
+        >
           <span className="text-[10px] tracking-[0.3em] uppercase font-bold text-[#D4AF37]">Scroll to Discover</span>
           <div className="w-[2px] h-10 bg-gradient-to-b from-[#D4AF37] to-transparent animate-pulse" />
-        </div>
+        </motion.div>
       </section>
 
       {/* ── TAMPA TEAM REVEAL ── */}
@@ -145,9 +149,15 @@ export default function HomePageV1Light() {
           <div className="text-center mb-16">
             <span className="text-[#9A7D3A] text-xs tracking-[0.2em] uppercase font-bold block mb-4">Working Together for You</span>
             <h2 className="font-aiveritas text-4xl text-[#111] mb-4">Meet Mark &amp; Rachael.</h2>
-            <p className="text-[#111]/75 text-base font-light max-w-md mx-auto leading-relaxed">
+            <p className="text-[#111]/75 text-base font-light max-w-md mx-auto leading-relaxed mb-6">
               Mark Davis and Rachael Garnett are both REALTORS® and Certified Commercial &amp; Residential Agents. Whether you are buying or selling a home, a commercial building, or land, we work together so you always have two experienced agents on your side.
             </p>
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-3 px-7 py-3.5 bg-[#111] text-white text-xs font-bold uppercase tracking-widest hover:bg-[#D4AF37] hover:text-[#111] transition-colors"
+            >
+              Meet Our Team <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
           <div className="flex flex-col gap-12">
             <div className="w-full">
@@ -185,18 +195,24 @@ export default function HomePageV1Light() {
           </div>
         </section>
       ) : (
-        <section ref={containerRef} className="relative w-full h-[800vh] bg-[#f5f3ef]">
+        <section ref={containerRef} className="relative w-full h-[1150vh] bg-[#f5f3ef]">
           <div className="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center z-0">
             {/* Center Image */}
             <motion.div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 rounded-2xl overflow-hidden shadow-2xl"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 rounded-2xl overflow-hidden shadow-2xl group"
               style={{ width: "30vw", height: "75vh", scale: centerScale }}
             >
-              <Image src="/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-8.jpg" alt="Davis & Garnett Team" fill unoptimized className="object-cover object-top" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
-              <div className="absolute bottom-10 left-0 right-0 text-center px-4">
-                <h3 className="font-aiveritas text-3xl lg:text-4xl text-white drop-shadow-md mb-2">Mark &amp; Rachael</h3>
-                <p className="text-[#D4AF37] text-xs uppercase tracking-widest">REALTORS® · Certified Commercial &amp; Residential Agents</p>
+              <Image src="/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-8.jpg" alt="Davis & Garnett Team" fill unoptimized className="object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
+              <div className="absolute bottom-8 left-0 right-0 text-center px-6 flex flex-col items-center">
+                <h3 className="font-aiveritas text-3xl lg:text-4xl text-white drop-shadow-md mb-1.5">Mark &amp; Rachael</h3>
+                <p className="text-[#D4AF37] text-[11px] uppercase tracking-widest mb-5">REALTORS® · Certified Commercial &amp; Residential Agents</p>
+                <Link
+                  href="/about"
+                  className="flex items-center gap-3 px-7 py-3.5 bg-white text-[#111] text-xs font-bold uppercase tracking-widest hover:bg-[#D4AF37] hover:text-white transition-colors shadow-lg"
+                >
+                  Meet Our Team <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
             </motion.div>
 
@@ -228,10 +244,10 @@ export default function HomePageV1Light() {
 
             {/* Left Image (Mark) */}
             <motion.div
-              className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden group cursor-pointer shadow-2xl"
+              className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden group shadow-2xl"
               style={{ left: leftLeft, width: leftWidth, height: leftHeight, zIndex: leftZIndex, borderRadius }}
             >
-              <Image src="/new-images/new-2/mark-davis-residential-commerical-advisor-tampa-real-estate-3.jpg" alt="Mark Davis" fill className="object-cover object-top" />
+              <Image src="/new-images/new-2/mark-davis-residential-commerical-advisor-tampa-real-estate-3.jpg" alt="Mark Davis" fill className="object-cover object-top transition-transform duration-700 group-hover:scale-105" />
               <motion.div
                 className="absolute inset-0 flex flex-col items-center justify-end pb-24 px-10 lg:px-14 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-transparent"
                 style={{ opacity: textOpacity, y: textY }}
@@ -252,10 +268,10 @@ export default function HomePageV1Light() {
 
             {/* Right Image (Rachael) */}
             <motion.div
-              className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden group cursor-pointer shadow-2xl"
+              className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden group shadow-2xl"
               style={{ left: rightLeft, width: rightWidth, height: rightHeight, zIndex: rightZIndex, borderRadius }}
             >
-              <Image src="/new-images/new-2/rachael-garnett-residential-commerical-advisor-tampa-real-estate-homepage-1.jpg" alt="Rachael Garnett" fill className="object-cover object-top" />
+              <Image src="/new-images/new-2/rachael-garnett-residential-commerical-advisor-tampa-real-estate-homepage-1.jpg" alt="Rachael Garnett" fill className="object-cover object-top transition-transform duration-700 group-hover:scale-105" />
               <motion.div
                 className="absolute inset-0 flex flex-col items-center justify-end pb-24 px-10 lg:px-14 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-transparent"
                 style={{ opacity: textOpacity, y: textY }}
@@ -392,8 +408,8 @@ export default function HomePageV1Light() {
                   <Building2 className="w-3.5 h-3.5" /> Urban Waterfront Skyscrapers
                 </div>
                 <div className="absolute bottom-6 left-6 right-6">
-                  <h3 className="font-aiveritas text-3xl text-white mb-1">
-                    Downtown Tampa, Water Street &amp; Bayshore Towers
+                  <h3 className="font-aiveritas text-2xl xl:text-[26px] text-white mb-1">
+                    Downtown Tampa, Water St. &amp; Bayshore Towers
                   </h3>
                   <p className="text-white/80 text-xs uppercase tracking-widest">
                     Five-Star Branded Residences • $850K – $7.8M+
@@ -444,7 +460,7 @@ export default function HomePageV1Light() {
                   <Compass className="w-3.5 h-3.5" /> North Tampa Growth Corridor
                 </div>
                 <div className="absolute bottom-6 left-6 right-6">
-                  <h3 className="font-aiveritas text-3xl text-white mb-1">
+                  <h3 className="font-aiveritas text-2xl xl:text-[26px] text-white mb-1">
                     Wesley Chapel &amp; Land O&apos; Lakes Communities
                   </h3>
                   <p className="text-white/80 text-xs uppercase tracking-widest">
@@ -611,24 +627,24 @@ export default function HomePageV1Light() {
             <div className="flex flex-col gap-4">
               {[
                 {
-                  q: "What is the current state of the Tampa Bay real estate market in 2026?",
-                  a: "The Tampa Bay real estate market in 2026 continues to show strong resilience across both luxury residential and commercial sectors. Waterfront properties in St. Petersburg and South Tampa remain supply-constrained, master-planned communities in Wesley Chapel and Land O' Lakes are leading new home absorption, and commercial mixed-use and central Florida acreage tracts command strong investor interest.",
+                  q: "How is the Tampa Bay real estate market doing in 2026?",
+                  a: "Tampa Bay continues to see steady demand for both homes and commercial properties. Waterfront homes in St. Petersburg and South Tampa have limited supply, new neighborhoods in Wesley Chapel and Land O' Lakes are offering strong builder incentives, and local business owners are actively looking for commercial buildings and land.",
                 },
                 {
-                  q: "What is the difference between HOA and CDD fees in Wesley Chapel and Land O' Lakes?",
-                  a: "An HOA (Homeowners Association) fee pays for community governance, private rules enforcement, and common-area maintenance, billed monthly or quarterly. A CDD (Community Development District) fee repays the municipal infrastructure bonds used to build roads, utilities, Crystal Lagoons, and resort clubhouses in communities like Two Rivers, Angeline, and Epperson, and is collected directly on your annual county property tax bill.",
+                  q: "What is the difference between HOA and CDD fees?",
+                  a: "An HOA fee pays for neighborhood upkeep, gates, and community rules, and is usually billed monthly or quarterly. A CDD fee helps pay for the roads, parks, pools, and lagoons built in newer communities like Two Rivers, Angeline, and Epperson. Your CDD fee is included right inside your annual county property tax bill.",
                 },
                 {
-                  q: "Can I buy a house in Florida while selling my current home?",
-                  a: "Yes. Homeowners frequently transition smoothly using home equity bridge loans, HELOCs, sale-leaseback post-occupancy agreements, or contingent purchase contracts. Davis & Garnett coordinates timing with strategic lending partners so you do not get stuck with double housing payments or temporary moves.",
+                  q: "Can I buy a new home in Florida while selling my current house?",
+                  a: "Yes. Many homeowners use bridge loans, home equity lines, short rent-back agreements after closing, or sale contingencies so they do not have to move twice. Mark and Rachael help you line up both closings smoothly.",
                 },
                 {
-                  q: "How does commercial mixed-use zoning work in Brandon and Hillsborough County?",
-                  a: "Mixed-use properties—such as our active dual-building listing at 126 Ridgewood Ave in Brandon—allow owners to operate a professional commercial office in one structure while leasing or occupying a residential home on the same parcel, providing dual income streams, separate utility metering, and SBA 504 owner-user financing advantages.",
+                  q: "How does commercial mixed-use zoning work in Brandon and Tampa?",
+                  a: "Mixed-use properties—like our two-building listing at 126 Ridgewood Ave in Brandon—let you run a business office in one building while renting out or living in the second building on the same lot. Because each building has its own electric and water meters, it is easy to manage.",
                 },
                 {
-                  q: "How do Davis & Garnett represent buyers on new construction condos and master-planned homes?",
-                  a: "Builders and condo developers have sales reps who represent the seller's best interest. When Mark Davis and Rachael Garnett represent you, our advisory service is paid by the builder at zero cost to you—while we negotiate lot premiums, interest rate buydowns, closing cost credits, and independent phase inspections.",
+                  q: "Does it cost extra to have Mark and Rachael represent me on a new construction home?",
+                  a: "No. The homebuilder or condo developer pays our fee, and the builder does not lower the price if you walk in alone. Having Mark and Rachael on your side costs you $0 and gives you two experienced agents to help negotiate lot choices, rate buydowns, closing credits, and independent inspections.",
                 },
               ].map((item, i) => (
                 <details key={i} className="group bg-[#f5f3ef] border border-[#111]/8 rounded-xl overflow-hidden transition-colors hover:border-[#D4AF37]/50">
@@ -707,44 +723,50 @@ export default function HomePageV1Light() {
             {[
               {
                 img: "/developments/ritz-carlton/downtown-tampa-luxury-living-ritz-carlton-residences-davis-garnett-residential-commercial-advisors-2.jpg",
-                tag: "Buyer Playbook",
-                title: "The Tampa Bay Luxury Home Buyer's Playbook",
-                desc: "Essential strategies for seawall inspections, dock permits, flood insurance, and securing waterfront estates.",
+                tag: "Buyer Guide",
+                line1: "Buying Waterfront &",
+                line2: "Unique Homes in Tampa Bay",
+                desc: "What to check on seawalls, dock permits, flood insurance, and boating water before you buy.",
                 href: "/knowledge-hub/tampa-bay-luxury-home-buying-guide",
               },
               {
                 img: "/developments/water-st-phase-2/downtown-tampa-luxury-living-water-street-phase-two-residences-davis-garnett-residential-commercial-advisors-1.jpg",
                 tag: "Commercial Guide",
-                title: "Commercial & Mixed-Use Investing in Central Florida",
-                desc: "An executive guide to cap rates, 1031 exchanges, mixed-use zoning, and agricultural land banking.",
+                line1: "Commercial & Mixed-Use",
+                line2: "Property Guide in Florida",
+                desc: "A simple guide to buying office buildings, mixed-use properties, 1031 exchanges, and land.",
                 href: "/knowledge-hub/commercial-real-estate-investing-florida",
               },
               {
                 img: "/developments/epperson-mirada/tampa-bay-new-development-epperson-mirada-davis-garnett-residential-commercial-advisors-1.jpg",
                 tag: "Q&A Classroom",
-                title: "Understanding CDD Fees vs. HOA in Pasco & Hillsborough",
-                desc: "How Community Development District bonds work in Wesley Chapel and Land O' Lakes master-planned communities.",
+                line1: "CDD Fees vs. HOA Fees",
+                line2: "in Pasco & Hillsborough",
+                desc: "How CDD and HOA fees work in Wesley Chapel and Land O' Lakes neighborhoods.",
                 href: "/knowledge-hub/understanding-cdd-fees-in-pasco-and-hillsborough",
               },
               {
                 img: "/developments/one-tampa/tampa-bay-new-development-one-tampa-davis-garnett-residential-commercial-advisors-1.png",
                 tag: "Market Report",
-                title: "2026 Tampa Bay Real Estate Market Outlook",
-                desc: "In-depth analysis of inventory, interest rates, and executive migration into Downtown Tampa and St. Pete.",
+                line1: "2026 Tampa Bay",
+                line2: "Real Estate Market Update",
+                desc: "A clear look at home prices, mortgage rates, and local buyer demand across Tampa and St. Pete.",
                 href: "/knowledge-hub/articles/tampa-bay-real-estate-market-outlook-2026",
               },
               {
                 img: "/developments/two-rivers/tampa-bay-new-development-two-rivers-davis-garnett-residential-commercial-advisors-1.jpg",
                 tag: "Relocation Guide",
-                title: "The Executive Relocation Guide to Tampa Bay",
-                desc: "Moving from New York, California, or the Midwest: Homestead tax exemptions, school districts, and neighborhoods.",
+                line1: "Moving Your Family or",
+                line2: "Business to Tampa Bay",
+                desc: "Helpful tips on Florida homestead tax savings, school zones, commute times, and neighborhoods.",
                 href: "/knowledge-hub/relocating-to-tampa-bay-handbook",
               },
               {
                 img: "/developments/sunrise-hills/tampa-bay-new-development-sunrise-hills-davis-garnett-residential-commercial-advisors-2.png",
                 tag: "Land & Acreage",
-                title: "Due Diligence When Buying Rural Acreage in Florida",
-                desc: "What every investor must verify regarding A-1 zoning, wetlands, timber exemptions, and access easements.",
+                line1: "What to Check Before",
+                line2: "Buying Florida Acreage",
+                desc: "Five simple things to verify on zoning, road access, high-and-dry land, and agricultural tax rules.",
                 href: "/knowledge-hub/what-due-diligence-is-needed-when-buying-acreage-in-central-florida",
               },
             ].map((article, i) => (
@@ -752,7 +774,7 @@ export default function HomePageV1Light() {
                 <div className="relative aspect-video overflow-hidden bg-[#ddd]">
                   <Image
                     src={article.img}
-                    alt={article.title}
+                    alt={`${article.line1} ${article.line2}`}
                     fill
                     className="object-cover opacity-95 group-hover:scale-105 transition-transform duration-700"
                   />
@@ -760,12 +782,13 @@ export default function HomePageV1Light() {
                     {article.tag}
                   </div>
                 </div>
-                <div className="p-6 lg:p-8 flex-1 flex flex-col justify-between">
+                <div className="p-6 lg:p-7 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="font-aiveritas text-2xl lg:text-3xl text-[#111] mb-3 group-hover:text-[#9A7D3A] transition-colors leading-snug">
-                      {article.title}
+                    <h3 className="font-aiveritas text-xl xl:text-2xl text-[#111] mb-3 group-hover:text-[#9A7D3A] transition-colors leading-snug">
+                      <span className="block">{article.line1}</span>
+                      <span className="block">{article.line2}</span>
                     </h3>
-                    <p className="text-[#111]/70 font-light text-base line-clamp-2 mb-5 leading-relaxed">{article.desc}</p>
+                    <p className="text-[#111]/75 font-light text-base line-clamp-2 mb-5 leading-relaxed">{article.desc}</p>
                   </div>
                   <div className="text-xs font-bold uppercase tracking-widest text-[#9A7D3A] flex items-center gap-1.5">
                     Read Guide <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
@@ -780,7 +803,7 @@ export default function HomePageV1Light() {
       {/* ── AREAS WE WORK IN — LOCAL PRESENCE ── */}
       <section className="py-24 px-8 bg-white border-t border-[#111]/5">
         <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-          <div className="w-full lg:w-1/3 max-w-[380px] flex flex-col items-center gap-5 shrink-0">
+          <div className="w-full lg:w-1/3 max-w-[380px] flex flex-col items-center gap-10 lg:gap-12 shrink-0">
             <div className="w-full aspect-square relative rounded-full overflow-hidden border-4 border-[#D4AF37]/30 shadow-[0_0_40px_rgba(212,175,55,0.15)]">
               <video
                 src="/new-images/davis-garnett-team-video-1.mp4"
@@ -803,19 +826,32 @@ export default function HomePageV1Light() {
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent" />
               <div className="absolute top-3 left-3.5 right-3.5 flex items-center justify-between">
                 <span className="px-2.5 py-0.5 rounded bg-black/75 backdrop-blur-md text-[9px] font-bold uppercase tracking-widest text-[#ef5728] border border-[#ef5728]/30">
                   Carrollwood HQ • FL Lic #BK3401606
                 </span>
               </div>
-              <div className="absolute bottom-3 left-3.5 right-3.5 text-left">
-                <span className="text-white font-bold text-xs tracking-wider uppercase flex items-center justify-between group-hover:text-[#D4AF37] transition-colors">
-                  Align Right Carrollwood <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
-                </span>
-                <span className="text-[11px] text-white/85 font-light block truncate">
-                  Areas We Work In &amp; Coverage Map
-                </span>
+              <div className="absolute bottom-3 left-3.5 right-3.5 flex items-end justify-between gap-2 text-left">
+                <div className="min-w-0">
+                  <span className="text-white font-bold text-xs tracking-wider uppercase block group-hover:text-[#D4AF37] transition-colors truncate">
+                    Align Right Carrollwood
+                  </span>
+                  <span className="text-[11px] text-white/85 font-light block truncate">
+                    Areas We Work In &amp; Coverage Map
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 shrink-0">
+                  <div className="relative w-24 h-8 shrink-0 drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
+                    <Image
+                      src="/align-right-email-logo.png"
+                      alt="Align Right Realty Carrollwood Logo"
+                      fill
+                      className="object-contain object-right"
+                    />
+                  </div>
+                  <ArrowRight className="w-3.5 h-3.5 text-white group-hover:text-[#D4AF37] transition-transform group-hover:translate-x-1 shrink-0" />
+                </div>
               </div>
             </Link>
           </div>

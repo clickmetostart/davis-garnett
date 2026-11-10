@@ -217,11 +217,11 @@ export default function StrategicPartnersPage() {
       <header className="py-20 px-6 md:px-12 bg-white border-b border-[#111111]/10">
         <div className="max-w-screen-xl mx-auto grid lg:grid-cols-[1.15fr_0.85fr] gap-14 items-center">
           <div>
-            <span className="inline-block px-3.5 py-1.5 rounded-full bg-[#f5f3ef] border border-[#C8A951]/40 text-[10px] uppercase tracking-[0.25em] font-bold text-[#9A7D3A] mb-6">
-              Trusted Local Professionals
+            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
+              Davis &amp; Garnett · Trusted Local Professionals
             </span>
-            <h1 className="font-aiveritas text-4xl sm:text-5xl lg:text-6xl text-[#111111] leading-[1.08] mb-6">
-              Meet Our <span className="text-[#9A7D3A]">Strategic Partners.</span>
+            <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-[#111111] leading-none mb-6">
+              Strategic <span className="text-[#9A7D3A]">Partners</span>
             </h1>
             <p className="text-base md:text-[17px] lg:text-[18px] text-[#111111]/80 font-light leading-relaxed mb-6">
               A smooth real estate closing takes more than great agents—it takes reliable lenders, title companies, surveyors, inspectors, and stagers working together.

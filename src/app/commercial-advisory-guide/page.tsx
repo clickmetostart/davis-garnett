@@ -83,16 +83,12 @@ export default function CommercialAdvisoryGuidePage() {
 
         <div className="relative z-10 max-w-screen-xl mx-auto">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 border border-[#D4AF37]/40 mb-6">
-              <Building2 className="w-3.5 h-3.5 text-[#D4AF37]" />
-              <span className="text-[11px] uppercase tracking-[0.25em] font-bold text-[#D4AF37]">
-                Commercial &amp; Land Real Estate Guide
-              </span>
-            </div>
+            <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
+              Davis &amp; Garnett · Commercial &amp; Land Real Estate
+            </span>
 
-            <h1 className="font-aiveritas text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.08] tracking-tight mb-8">
-              Commercial &amp; Land Real Estate,<br />
-              <span className="text-[#D4AF37]">Made Clear &amp; Simple.</span>
+            <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-white leading-none mb-8">
+              Commercial <span className="text-[#D4AF37]">Guide</span>
             </h1>
 
             <p className="text-base md:text-[17px] lg:text-[18px] text-white/85 font-light leading-relaxed mb-6">

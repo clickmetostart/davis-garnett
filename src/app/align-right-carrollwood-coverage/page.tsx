@@ -269,20 +269,11 @@ export default function AlignRightCarrollwoodCoveragePage() {
 
         <div className="max-w-screen-xl mx-auto relative z-10 grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
           <div>
-            <div className="flex flex-wrap items-center gap-3 mb-6">
-              <span className="inline-block px-3.5 py-1.5 rounded-full bg-white/10 border border-[#ef5728]/50 text-[10px] uppercase tracking-[0.25em] font-bold text-[#ef5728]">
-                Align Right Realty Carrollwood • FL Lic #BK3401606
-              </span>
-              <span className="inline-block px-3 py-1.5 rounded-full bg-white/5 border border-white/15 text-[10px] uppercase tracking-widest text-white/70 font-semibold">
-                Davis &amp; Garnett Advisory Territory
-              </span>
-            </div>
-
-            <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-              ALIGNED CORRECTLY REAL ESTATE
+            <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
+              Align Right Realty Carrollwood · FL Lic #BK3401606
             </span>
-            <h1 className="font-aiveritas text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.08] mb-6">
-              Areas We <span className="text-[#D4AF37]">Work In.</span>
+            <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-white leading-none mb-6">
+              Areas We <span className="text-[#D4AF37]">Work In</span>
             </h1>
 
             <p className="text-base md:text-[17px] lg:text-[18px] text-white/85 font-light leading-relaxed mb-6">
