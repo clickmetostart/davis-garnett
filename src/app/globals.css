@@ -69,6 +69,35 @@ body {
 }
 
 /* ============================================
+   HORIZONTAL SLIDERS — swipe / drag behaviour
+   - overscroll-behavior-x: contain stops a swipe at the end of a slider from
+     chaining into the page (no sideways page jiggle, no browser back-swipe).
+   - Desktop shows a grab cursor; <DragScrollProvider /> handles mouse dragging.
+   ============================================ */
+.overflow-x-auto,
+.overflow-x-scroll,
+.snap-x {
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .snap-x {
+    cursor: grab;
+  }
+}
+
+[data-dragging="true"],
+[data-dragging="true"] * {
+  cursor: grabbing !important;
+}
+
+[data-dragging="true"] a,
+[data-dragging="true"] button {
+  pointer-events: none;
+}
+
+/* ============================================
    TYPOGRAPHY UTILITIES
    ============================================ */
 

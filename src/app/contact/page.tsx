@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
+import FaviconHeroBackground from "@/components/FaviconHeroBackground";
 
 export default function ContactPage() {
   const [firstName, setFirstName] = useState("");
@@ -63,18 +64,10 @@ export default function ContactPage() {
       <ProposalNav />
 
       {/* ── HERO HEADER ── */}
-      <section className="relative pt-36 pb-20 px-8 bg-[#111] text-white border-b border-[#D4AF37]/30 overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-25">
-          <Image
-            src="/davis-garnett-real-estate-advisors-cover-image-2.jpg"
-            alt="Contact Davis & Garnett"
-            fill
-            className="object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-[#111]/75 to-[#111]/90" />
-        </div>
+      <section className="relative pt-32 pb-16 px-8 bg-[#111] text-white border-b border-[#D4AF37]/30 overflow-hidden min-h-[680px] flex flex-col justify-center">
+        <FaviconHeroBackground variant="dark" />
 
-        <div className="relative z-10 max-w-screen-xl mx-auto text-center">
+        <div className="relative z-10 w-full max-w-screen-xl mx-auto text-center">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/40 text-[#D4AF37] text-[10px] uppercase tracking-[0.3em] font-bold mb-6">
             Direct Principal Access • Tampa Bay, Florida
           </span>

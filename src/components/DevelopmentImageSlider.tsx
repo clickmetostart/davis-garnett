@@ -2,6 +2,7 @@
 
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface DevelopmentImageSliderProps {
   images: string[];
@@ -58,7 +59,7 @@ export default function DevelopmentImageSlider({
       <div
         ref={trackRef}
         onScroll={handleScroll}
-        className="flex h-full w-full overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="flex h-full w-full cursor-grab overflow-x-auto overscroll-x-contain snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {images.map((src, i) => (
           <div key={src} className="relative h-full min-w-full snap-center">
@@ -74,6 +75,27 @@ export default function DevelopmentImageSlider({
           </div>
         ))}
       </div>
+
+      {images.length > 1 && (
+        <>
+          <button
+            type="button"
+            aria-label="Previous image"
+            onClick={() => goTo((active - 1 + images.length) % images.length)}
+            className="absolute left-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[#9A7D3A]/50 bg-[#D4AF37] text-[#111] shadow-lg shadow-black/30 transition-all hover:scale-105 hover:bg-white active:scale-95"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+          <button
+            type="button"
+            aria-label="Next image"
+            onClick={() => goTo((active + 1) % images.length)}
+            className="absolute right-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[#9A7D3A]/50 bg-[#D4AF37] text-[#111] shadow-lg shadow-black/30 transition-all hover:scale-105 hover:bg-white active:scale-95"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
+        </>
+      )}
 
       {images.length > 1 && (
         <div className="absolute bottom-2 left-1/2 z-10 flex -translate-x-1/2 gap-1.5">

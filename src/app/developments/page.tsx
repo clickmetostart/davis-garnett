@@ -24,6 +24,7 @@ import ProposalNav from "@/components/ProposalNav";
 import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 import DevelopmentImageSlider from "@/components/DevelopmentImageSlider";
 import SiteFooter from "@/components/SiteFooter";
+import FaviconHeroBackground from "@/components/FaviconHeroBackground";
 import { DEVELOPMENTS, Development } from "@/data/developments";
 
 type FilterOption = "all" | "downtown-bayshore" | "north-tampa";
@@ -82,53 +83,42 @@ export default function DevelopmentsHubPage() {
       <ProposalNav />
 
       {/* ── HERO SECTION ── */}
-      <section className="relative pt-36 pb-24 px-6 md:px-12 bg-[#111111] text-white overflow-hidden border-b border-[#C8A951]/30">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/developments/pendry/downtown-tampa-luxury-living-pendry-residences-davis-garnett-residential-commercial-advisors-1.jpg"
-            alt="Tampa Bay Luxury Developments"
-            fill
-            priority
-            className="object-cover opacity-30 scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#111111]/90 via-[#111111]/75 to-[#111111]" />
-        </div>
+      <section className="relative pt-32 pb-16 px-6 md:px-12 bg-[#111111] text-white overflow-hidden border-b border-[#C8A951]/30 min-h-[680px] flex flex-col justify-center">
+        <FaviconHeroBackground variant="dark" />
 
-        <div className="relative z-10 max-w-screen-xl mx-auto">
-          <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 border border-[#C8A951]/40 mb-6 backdrop-blur-md">
+        <div className="relative z-10 w-full max-w-screen-xl mx-auto">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#C8A951]/15 border border-[#C8A951]/40 mb-6">
               <Sparkles className="w-3.5 h-3.5 text-[#C8A951]" />
-              <span className="text-[11px] uppercase tracking-[0.25em] text-[#C8A951] font-bold">
+              <span className="text-[11px] uppercase tracking-[0.3em] text-[#C8A951] font-bold">
                 Davis & Garnett New Development Advisory
               </span>
             </div>
 
-            <h1 className="font-aiveritas text-4xl sm:text-6xl lg:text-7xl text-white leading-[1.08] tracking-tight mb-6">
+            <h1 className="font-aiveritas text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.08] tracking-tight mb-6">
               Tampa Bay&apos;s Premier{" "}
               <span className="text-[#C8A951]">New Construction</span> &amp; Luxury Developments.
             </h1>
 
-            <p className="text-lg md:text-xl text-white/80 font-light leading-relaxed max-w-3xl mb-10">
-              From five-star branded sky residences along the Tampa Riverwalk, Water Street, and historic
-              Bayshore Boulevard to nationally ranked master-planned lagoon and conservation communities in
-              Wesley Chapel and Land O&apos; Lakes—gain priority VIP access, pre-public price sheets, and
-              uncompromising buyer representation at zero commission cost to you.
+            <p className="text-base md:text-lg text-white/80 font-light leading-relaxed max-w-3xl mx-auto mb-8">
+              From Riverwalk and Bayshore sky residences to Wesley Chapel and Land O&apos; Lakes master-planned
+              communities—priority VIP access, pre-public price sheets, and buyer representation at zero cost to you.
             </p>
 
             {/* Corridor Filter Buttons */}
-            <div className="flex flex-wrap items-center gap-3 pt-2">
+            <div className="flex flex-wrap items-center justify-center gap-3">
               {[
                 {
                   id: "all" as FilterOption,
-                  label: "All Developments (11)",
+                  label: "All (11)",
                 },
                 {
                   id: "downtown-bayshore" as FilterOption,
-                  label: "Downtown & Bayshore Luxury Towers (6)",
+                  label: "Downtown & Bayshore Towers (6)",
                 },
                 {
                   id: "north-tampa" as FilterOption,
-                  label: "North Tampa Master-Planned Communities (5)",
+                  label: "North Tampa Communities (5)",
                 },
               ].map((btn) => {
                 const isActive = activeFilter === btn.id;
@@ -136,36 +126,16 @@ export default function DevelopmentsHubPage() {
                   <button
                     key={btn.id}
                     onClick={() => setActiveFilter(btn.id)}
-                    className={`px-6 py-3.5 rounded-xl text-xs uppercase tracking-[0.18em] font-bold transition-all duration-300 border ${
-                      isActive
+                    className={`px-6 py-3.5 rounded-xl text-xs uppercase tracking-[0.18em] font-bold transition-all duration-300 border ${isActive
                         ? "bg-[#C8A951] text-[#111111] border-[#C8A951] shadow-lg shadow-[#C8A951]/25"
                         : "bg-white/5 text-white/80 border-white/15 hover:border-[#C8A951]/60 hover:text-white"
-                    }`}
+                      }`}
                   >
                     {btn.label}
                   </button>
                 );
               })}
             </div>
-          </div>
-
-          {/* Executive Key Metrics Strip */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-16 pt-12 border-t border-white/10">
-            {[
-              { stat: "9", label: "Curated Flagship Developments" },
-              { stat: "$360K – $7.8M+", label: "Pre-Construction & Spec Range" },
-              { stat: "$0", label: "Buyer Representation Fee" },
-              { stat: "100%", label: "Pre-Market Price Sheet & Lot Access" },
-            ].map((item) => (
-              <div key={item.label} className="flex flex-col">
-                <span className="font-aiveritas text-3xl md:text-4xl text-[#C8A951] mb-1">
-                  {item.stat}
-                </span>
-                <span className="text-[11px] uppercase tracking-[0.2em] text-white/60 font-semibold">
-                  {item.label}
-                </span>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -739,9 +709,8 @@ function DevelopmentTowerShowcaseCard({ dev, index }: { dev: Development; index:
       <div className="grid lg:grid-cols-12">
         {/* Image Column */}
         <div
-          className={`lg:col-span-5 relative min-h-[340px] lg:min-h-[460px] overflow-hidden ${
-            isReversed ? "lg:order-2" : ""
-          }`}
+          className={`lg:col-span-5 relative min-h-[340px] lg:min-h-[460px] overflow-hidden ${isReversed ? "lg:order-2" : ""
+            }`}
         >
           <DevelopmentImageSlider images={dev.gallery} alt={dev.name} />
           <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
@@ -765,9 +734,8 @@ function DevelopmentTowerShowcaseCard({ dev, index }: { dev: Development; index:
 
         {/* Content Column */}
         <div
-          className={`lg:col-span-7 p-8 md:p-12 flex flex-col justify-between ${
-            isReversed ? "lg:order-1" : ""
-          }`}
+          className={`lg:col-span-7 p-8 md:p-12 flex flex-col justify-between ${isReversed ? "lg:order-1" : ""
+            }`}
         >
           <div>
             <div className="flex flex-wrap items-center justify-between gap-2 mb-3">

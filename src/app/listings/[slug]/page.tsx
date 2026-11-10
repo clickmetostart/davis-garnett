@@ -36,6 +36,7 @@ import {
 } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
+import { swipeHandlers, SWIPE_STYLE } from "@/lib/swipe";
 import listingsData from "@/data/listings.json";
 import { Listing } from "@/types/listings";
 
@@ -396,7 +397,11 @@ export default function ListingDetailPage() {
           INTERACTIVE HERO PHOTO GALLERY + THUMBNAILS
          ══════════════════════════════════════════════ */}
       <div className="w-full bg-[#111111] relative">
-        <div className="relative w-full h-[56vh] lg:h-[68vh] overflow-hidden group">
+        <div
+          className="relative w-full h-[56vh] lg:h-[68vh] overflow-hidden group cursor-grab active:cursor-grabbing"
+          style={SWIPE_STYLE}
+          {...swipeHandlers(prevPhoto, nextPhoto)}
+        >
           <Image
             src={currentPhoto}
             alt={`${listing.title} — Photo ${activePhoto + 1}`}
@@ -433,14 +438,14 @@ export default function ListingDetailPage() {
               <button
                 onClick={prevPhoto}
                 aria-label="Previous photo"
-                className="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/55 hover:bg-black/85 backdrop-blur rounded-full flex items-center justify-center text-white transition-colors z-10"
+                className="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#D4AF37] hover:bg-white text-[#111] border border-[#9A7D3A]/50 shadow-lg shadow-black/30 rounded-full flex items-center justify-center transition-all hover:scale-105 active:scale-95 z-10"
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
               <button
                 onClick={nextPhoto}
                 aria-label="Next photo"
-                className="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/55 hover:bg-black/85 backdrop-blur rounded-full flex items-center justify-center text-white transition-colors z-10"
+                className="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#D4AF37] hover:bg-white text-[#111] border border-[#9A7D3A]/50 shadow-lg shadow-black/30 rounded-full flex items-center justify-center transition-all hover:scale-105 active:scale-95 z-10"
               >
                 <ChevronRight className="w-6 h-6" />
               </button>
@@ -1165,7 +1170,11 @@ export default function ListingDetailPage() {
             </button>
           </div>
 
-          <div className="relative w-full max-w-6xl h-[65vh] md:h-[74vh] rounded-xl overflow-hidden bg-black">
+          <div
+            className="relative w-full max-w-6xl h-[65vh] md:h-[74vh] rounded-xl overflow-hidden bg-black cursor-grab active:cursor-grabbing"
+            style={SWIPE_STYLE}
+            {...swipeHandlers(prevPhoto, nextPhoto)}
+          >
             <Image
               src={currentPhoto}
               alt={`${listing.title} Fullscreen ${activePhoto + 1}`}
@@ -1178,13 +1187,13 @@ export default function ListingDetailPage() {
               <>
                 <button
                   onClick={prevPhoto}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/15 hover:bg-white/30 flex items-center justify-center text-white"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#D4AF37] hover:bg-white text-[#111] border border-[#9A7D3A]/50 shadow-lg flex items-center justify-center transition-all hover:scale-105 active:scale-95"
                 >
                   <ChevronLeft className="w-6 h-6" />
                 </button>
                 <button
                   onClick={nextPhoto}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/15 hover:bg-white/30 flex items-center justify-center text-white"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#D4AF37] hover:bg-white text-[#111] border border-[#9A7D3A]/50 shadow-lg flex items-center justify-center transition-all hover:scale-105 active:scale-95"
                 >
                   <ChevronRight className="w-6 h-6" />
                 </button>

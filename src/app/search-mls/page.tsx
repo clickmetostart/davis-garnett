@@ -21,6 +21,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
+import FaviconHeroBackground from "@/components/FaviconHeroBackground";
 import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 import SiteFooter from "@/components/SiteFooter";
 
@@ -444,38 +445,26 @@ export default function SearchMlsDiscoveryPortal() {
       <ProposalNav />
 
       {/* ── HERO & SEARCH BAR HEADER ── */}
-      <section className="relative pt-36 pb-16 px-6 md:px-12 bg-[#111111] text-white border-b border-[#C8A951]/30 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/res_waterfront_estate_1787632802890.png"
-            alt="Search the Full Tampa Bay MLS"
-            fill
-            priority
-            className="object-cover opacity-25"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#111111]/90 via-[#111111]/80 to-[#111111]" />
-        </div>
+      <section className="relative pt-32 pb-12 px-6 md:px-12 bg-[#111111] text-white border-b border-[#C8A951]/30 overflow-hidden min-h-[680px] flex flex-col justify-center">
+        <FaviconHeroBackground variant="dark" />
 
-        <div className="relative z-10 max-w-screen-xl mx-auto">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-[#C8A951]/40 mb-5">
-                <Database className="w-3.5 h-3.5 text-[#C8A951]" />
-                <span className="text-[11px] uppercase tracking-[0.24em] text-[#C8A951] font-bold">
-                  Stellar MLS &amp; Lofty IDX Live Discovery Portal
-                </span>
-              </div>
-              <h1 className="font-aiveritas text-4xl sm:text-6xl text-white leading-[1.08] mb-4">
-                Search the Full <span className="text-[#C8A951]">Tampa Bay MLS.</span>
-              </h1>
-              <p className="text-base md:text-lg text-white/75 font-light leading-relaxed">
-                Explore active luxury residential estates, downtown sky condominiums, master-planned
-                new construction, and commercial investment opportunities across Hillsborough,
-                Pinellas, and Pasco counties.
-              </p>
+        <div className="relative z-10 w-full max-w-screen-xl mx-auto">
+          <div className="max-w-4xl mx-auto text-center mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#C8A951]/15 border border-[#C8A951]/40 mb-6">
+              <Database className="w-3.5 h-3.5 text-[#C8A951]" />
+              <span className="text-[11px] uppercase tracking-[0.3em] text-[#C8A951] font-bold">
+                Stellar MLS &amp; Lofty IDX Live Discovery Portal
+              </span>
             </div>
+            <h1 className="font-aiveritas text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.08] tracking-tight mb-4">
+              Search the Full <span className="text-[#C8A951]">Tampa Bay MLS.</span>
+            </h1>
+            <p className="text-base md:text-lg text-white/80 font-light leading-relaxed max-w-3xl mx-auto mb-6">
+              Luxury estates, sky condominiums, new construction, and commercial opportunities across
+              Hillsborough, Pinellas, and Pasco counties.
+            </p>
 
-            <div className="flex flex-wrap gap-3 shrink-0">
+            <div className="flex flex-wrap items-center justify-center gap-3">
               <a
                 href="#lofty-idx-container"
                 className="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-xs uppercase tracking-[0.18em] font-bold text-white transition-colors"

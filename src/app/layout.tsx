@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit, DM_Sans } from "next/font/google";
 import AmbientBackground from "@/components/AmbientBackground";
+import DragScrollProvider from "@/components/DragScrollProvider";
 import "./globals.css";
 
 // Modern, sleek geometric sans-serif for the proposal display/heading text
@@ -34,6 +35,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className={`${outfit.variable} ${dmSans.variable} antialiased bg-black text-white`} suppressHydrationWarning>
         <AmbientBackground />
+        <DragScrollProvider />
         <main className="w-full relative flex flex-col min-h-screen">
           {children}
         </main>

@@ -8,6 +8,7 @@ import {
   ChevronLeft,
   ChevronRight,
   ArrowRight,
+  ChevronDown,
   BookOpen,
   MessageCircleQuestion,
   MapPin,
@@ -19,6 +20,7 @@ import {
 } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
+import FaviconHeroBackground from "@/components/FaviconHeroBackground";
 import { GUIDES, QUESTIONS, AREAS, EVENTS, ARTICLES } from "@/data/knowledgeHub";
 
 export default function KnowledgeHubPage() {
@@ -92,25 +94,22 @@ export default function KnowledgeHubPage() {
       <ProposalNav />
 
       {/* ── HERO SECTION ── */}
-      <section className="relative pt-36 pb-24 px-8 bg-[#111] text-white border-b border-[#D4AF37]/30 overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-25">
-          <Image src="/city_tampa_1787662311501.png" alt="Tampa Bay Knowledge Hub" fill className="object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-[#111]/70 to-[#111]/90" />
-        </div>
+      <section className="relative pt-32 pb-16 px-8 bg-[#111] text-white border-b border-[#D4AF37]/30 overflow-hidden min-h-[680px] flex flex-col justify-center">
+        <FaviconHeroBackground variant="dark" />
 
-        <div className="relative z-10 max-w-screen-xl mx-auto text-center">
+        <div className="relative z-10 w-full max-w-screen-xl mx-auto text-center">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/40 text-[#D4AF37] text-[10px] uppercase tracking-[0.3em] font-bold mb-6">
             <BookOpen className="w-3.5 h-3.5" /> Davis &amp; Garnett Advisory Resource Center
           </span>
-          <h1 className="font-aiveritas text-4xl md:text-6xl lg:text-7xl text-white mb-6 tracking-tight">
+          <h1 className="font-aiveritas text-4xl sm:text-5xl lg:text-6xl text-white mb-6 tracking-tight leading-[1.08]">
             Real Estate Knowledge Simplified
           </h1>
-          <p className="text-white/80 text-base md:text-xl font-light max-w-3xl mx-auto leading-relaxed mb-10">
+          <p className="text-white/80 text-base md:text-xl font-light max-w-3xl mx-auto leading-relaxed mb-8">
             Expert playbooks, local neighborhood guides, AI search Q&amp;As, community events, and market updates from Tampa Bay&apos;s premier commercial &amp; residential advisors.
           </p>
 
           {/* Live Search Input */}
-          <div className="max-w-2xl mx-auto relative mb-10">
+          <div className="max-w-2xl mx-auto relative mb-6">
             <Search className="w-5 h-5 text-[#9A7D3A] absolute left-5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
@@ -164,14 +163,14 @@ export default function KnowledgeHubPage() {
             <div className="flex items-center gap-3 shrink-0">
               <button
                 onClick={() => scrollSlider(guidesRef, "left")}
-                className="p-3 rounded-full border border-[#111]/15 hover:bg-[#111] hover:text-white transition-colors"
+                className="p-3 rounded-full bg-[#D4AF37] text-[#111] border border-[#9A7D3A]/50 shadow-md shadow-[#D4AF37]/30 hover:bg-[#111] hover:text-[#D4AF37] hover:scale-105 active:scale-95 transition-all"
                 aria-label="Scroll Guides Left"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
               <button
                 onClick={() => scrollSlider(guidesRef, "right")}
-                className="p-3 rounded-full border border-[#111]/15 hover:bg-[#111] hover:text-white transition-colors"
+                className="p-3 rounded-full bg-[#D4AF37] text-[#111] border border-[#9A7D3A]/50 shadow-md shadow-[#D4AF37]/30 hover:bg-[#111] hover:text-[#D4AF37] hover:scale-105 active:scale-95 transition-all"
                 aria-label="Scroll Guides Right"
               >
                 <ChevronRight className="w-5 h-5" />
@@ -245,14 +244,14 @@ export default function KnowledgeHubPage() {
             <div className="flex items-center gap-3 shrink-0">
               <button
                 onClick={() => scrollSlider(qaRef, "left")}
-                className="p-3 rounded-full bg-white border border-[#111]/15 hover:bg-[#111] hover:text-white transition-colors"
+                className="p-3 rounded-full bg-[#D4AF37] text-[#111] border border-[#9A7D3A]/50 shadow-md shadow-[#D4AF37]/30 hover:bg-[#111] hover:text-[#D4AF37] hover:scale-105 active:scale-95 transition-all"
                 aria-label="Scroll Questions Left"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
               <button
                 onClick={() => scrollSlider(qaRef, "right")}
-                className="p-3 rounded-full bg-white border border-[#111]/15 hover:bg-[#111] hover:text-white transition-colors"
+                className="p-3 rounded-full bg-[#D4AF37] text-[#111] border border-[#9A7D3A]/50 shadow-md shadow-[#D4AF37]/30 hover:bg-[#111] hover:text-[#D4AF37] hover:scale-105 active:scale-95 transition-all"
                 aria-label="Scroll Questions Right"
               >
                 <ChevronRight className="w-5 h-5" />
@@ -323,14 +322,14 @@ export default function KnowledgeHubPage() {
             <div className="flex items-center gap-3 shrink-0">
               <button
                 onClick={() => scrollSlider(areasRef, "left")}
-                className="p-3 rounded-full border border-[#111]/15 hover:bg-[#111] hover:text-white transition-colors"
+                className="p-3 rounded-full bg-[#D4AF37] text-[#111] border border-[#9A7D3A]/50 shadow-md shadow-[#D4AF37]/30 hover:bg-[#111] hover:text-[#D4AF37] hover:scale-105 active:scale-95 transition-all"
                 aria-label="Scroll Areas Left"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
               <button
                 onClick={() => scrollSlider(areasRef, "right")}
-                className="p-3 rounded-full border border-[#111]/15 hover:bg-[#111] hover:text-white transition-colors"
+                className="p-3 rounded-full bg-[#D4AF37] text-[#111] border border-[#9A7D3A]/50 shadow-md shadow-[#D4AF37]/30 hover:bg-[#111] hover:text-[#D4AF37] hover:scale-105 active:scale-95 transition-all"
                 aria-label="Scroll Areas Right"
               >
                 <ChevronRight className="w-5 h-5" />
@@ -511,14 +510,14 @@ export default function KnowledgeHubPage() {
             <div className="flex items-center gap-3 shrink-0">
               <button
                 onClick={() => scrollSlider(eventsRef, "left")}
-                className="p-3 rounded-full bg-white border border-[#111]/15 hover:bg-[#111] hover:text-white transition-colors"
+                className="p-3 rounded-full bg-[#D4AF37] text-[#111] border border-[#9A7D3A]/50 shadow-md shadow-[#D4AF37]/30 hover:bg-[#111] hover:text-[#D4AF37] hover:scale-105 active:scale-95 transition-all"
                 aria-label="Scroll Events Left"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
               <button
                 onClick={() => scrollSlider(eventsRef, "right")}
-                className="p-3 rounded-full bg-white border border-[#111]/15 hover:bg-[#111] hover:text-white transition-colors"
+                className="p-3 rounded-full bg-[#D4AF37] text-[#111] border border-[#9A7D3A]/50 shadow-md shadow-[#D4AF37]/30 hover:bg-[#111] hover:text-[#D4AF37] hover:scale-105 active:scale-95 transition-all"
                 aria-label="Scroll Events Right"
               >
                 <ChevronRight className="w-5 h-5" />
@@ -645,7 +644,7 @@ export default function KnowledgeHubPage() {
                 className="inline-flex items-center gap-3 px-8 py-4 bg-[#111] hover:bg-[#ef5728] text-white text-xs font-bold uppercase tracking-widest rounded-xl transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 cursor-pointer border border-[#ef5728]/30 group"
               >
                 <span>Load More</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
               </button>
             </div>
           )}

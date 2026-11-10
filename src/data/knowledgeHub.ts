@@ -118,7 +118,7 @@ export const GUIDES: KnowledgeItem[] = [
     subtitle: "Waterfront due diligence, seawall engineering, flood elevation certificates, and off-market acquisition strategies in St. Petersburg and Tampa.",
     readTime: "8 Min Read",
     publishDate: "November 2026",
-    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-6.jpg",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-22.jpg",
     author: RACHAEL_AUTHOR,
     keyTakeaways: [
       "Always conduct an independent marine & seawall structural inspection alongside your residential home inspection on Tampa Bay waterfront estates.",
@@ -164,7 +164,7 @@ export const GUIDES: KnowledgeItem[] = [
     subtitle: "Why custom editorial marketing outperforms generic MLS templates and commands top-of-market offers across Tampa Bay.",
     readTime: "7 Min Read",
     publishDate: "November 2026",
-    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-12.jpg",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-23.jpg",
     author: RACHAEL_AUTHOR,
     keyTakeaways: [
       "Custom editorial property showcases hold buyer attention 4x longer than generic IDX templates.",
@@ -200,7 +200,7 @@ export const GUIDES: KnowledgeItem[] = [
     subtitle: "Underwriting cap rates, mixed-use live/work parcels, 1031 tax-deferred exchanges, and strategic land banking along the I-4, US-60, and US-27 corridors.",
     readTime: "9 Min Read",
     publishDate: "November 2026",
-    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-8.jpg",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-31.jpg",
     author: MARK_AUTHOR,
     keyTakeaways: [
       "Dual-building mixed-use parcels (such as 126 Ridgewood Ave in Brandon) offer diversified cash flow and SBA 504 owner-user financing.",
@@ -434,7 +434,7 @@ export const QUESTIONS: KnowledgeItem[] = [
     subtitle: "Comparing lifestyle, waterfront boating access, urban condo living, school corridors, and appreciation trends across both sides of the Bay.",
     readTime: "6 Min Read",
     publishDate: "November 2026",
-    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-15.jpg",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-8.jpg",
     author: RACHAEL_AUTHOR,
     keyTakeaways: [
       "St. Petersburg offers a walkable waterfront downtown, world-class arts (Dalí Museum, Beach Drive), Gulf beach proximity, and premier boating neighborhoods like Bahama Shores and Snell Isle.",
@@ -524,7 +524,7 @@ export const QUESTIONS: KnowledgeItem[] = [
     subtitle: "How to unlock 4.99%–5.50% fixed promotional interest rates and up to $25,000 in flex closing cash in Two Rivers, Angeline, and Epperson.",
     readTime: "5 Min Read",
     publishDate: "November 2026",
-    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-2.jpg",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-18.jpg",
     author: RACHAEL_AUTHOR,
     keyTakeaways: [
       "National builders purchase forward mortgage rate commitments in bulk, offering below-market fixed rates on quick-move-in inventory homes.",
@@ -551,7 +551,7 @@ export const QUESTIONS: KnowledgeItem[] = [
     subtitle: "Navigating Pinellas County Water and Navigation regulations, boat lift setbacks, and seawall reconstruction standards.",
     readTime: "5 Min Read",
     publishDate: "November 2026",
-    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-18.jpg",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-6.jpg",
     author: RACHAEL_AUTHOR,
     keyTakeaways: [
       "Pinellas County Water and Navigation Control Authority regulates dock length, width, and side-property riparian setbacks.",
@@ -837,7 +837,7 @@ export const EVENTS: EventItem[] = [
     time: "Evening Riverwalk Festivities & Private Corridor Tours",
     location: "Curtis Hixon Waterfront Park & The Tampa Riverwalk",
     address: "600 N Ashley Dr, Tampa, FL 33602 (Riverwalk & Water Street District)",
-    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-9.jpg",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-17.jpg",
     summary: "Experience Downtown Tampa's signature holiday waterfront celebration—featuring outdoor ice skating at Curtis Hixon Park, the Curtis Hixon Choirs, and the annual Tampa Riverwalk Lighted Boat Parade right past Pendry Residences and Water Street.",
     description: "Every winter, the Tampa Downtown Partnership transforms Curtis Hixon Waterfront Park into the Winter Village along the Hillsborough River, culminating in the iconic Tampa Riverwalk Lighted Boat Parade. For relocating families and luxury condominium buyers exploring Pendry Residences Tampa, Water Street Tampa, and Hotel ORA, Davis & Garnett offers private daytime and twilight property tours along the Riverwalk corridor before the festivities.",
     agenda: [
@@ -863,7 +863,7 @@ export const EVENTS: EventItem[] = [
     time: "10:00 AM – 5:00 PM EST",
     location: "Two Rivers, Angeline, Epperson & Mirada Master-Planned Communities",
     address: "SR-56 & Suncoast Parkway Growth Corridor, Pasco & Hillsborough Counties, FL",
-    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-4.jpg",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-28.jpg",
     summary: "Hosted annually by the Tampa Bay Builders Association (TBBA), the Parade of Homes showcases 65+ newly constructed model residences across Wesley Chapel, Land O' Lakes, and Greater Tampa Bay.",
     description: "The Tampa Bay Parade of Homes—organized by the Tampa Bay Builders Association (TBBA.net)—is the region's premier multi-weekend showcase of new construction architecture across Pasco, Hillsborough, and Pinellas counties. Whether touring during the official Parade of Homes or scheduling a private year-round model tour with Davis & Garnett, Mark Davis and Rachael Garnett accompany buyers across Two Rivers, Angeline, Epperson, Mirada, and Connerton with side-by-side CDD/HOA breakdowns and builder rate-buydown comparisons.",
     agenda: [
@@ -889,7 +889,7 @@ export const EVENTS: EventItem[] = [
     time: "9:00 AM – 5:00 PM EST",
     location: "Florida State Fairgrounds (Tampa) & Polk / Marion Acreage Corridors",
     address: "4800 US-301 N, Tampa, FL 33610 & US-27 / US-98 Central FL Ridge",
-    heroImage: "/city-photos/central-fl-acreage.jpg",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-21.jpg",
     summary: "Celebrating Florida's #1 agricultural and ranching heritage at the Florida State Fairgrounds in East Hillsborough, paired with private investor tours of Central Florida timberland and development acreage.",
     description: "Held each year at the Florida State Fairgrounds at I-4 and US-301 in Tampa, the Florida State Fair is the premier gathering for Florida cattlemen, citrus growers, timber operators, and agribusiness leaders. Throughout the season, Commercial & Residential Advisors Mark Davis and Rachael Garnett host private site tours of our active Central Florida land inventory—including 770 Old Stokes Rd (79.54 Acres on US-98 near US-27 in Frostproof) and NE 90th Street Rd (19.72 Acres A-1 Agricultural timberland near Ocala National Forest in Fort McCoy).",
     agenda: [
@@ -914,7 +914,7 @@ export const EVENTS: EventItem[] = [
     time: "10:00 AM – 6:00 PM EST",
     location: "Bayshore Boulevard (Tampa) & Vinoy Park Waterfront (St. Petersburg)",
     address: "Bayshore Blvd, Tampa, FL 33606 & 701 Bayshore Dr NE, St. Petersburg, FL 33701",
-    heroImage: "/city-photos/st-petersburg-waterfront.jpg",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-30.jpg",
     summary: "Celebrating Tampa Bay's two most iconic waterfront traditions: the Gasparilla Children's & Pirate Parades along historic Bayshore Boulevard and Keep Saint Petersburg Local's Shopapalooza Festival at Vinoy Park.",
     description: "Nothing captures the vibrant waterfront lifestyle of Tampa Bay quite like Gasparilla season along Bayshore Boulevard in South Tampa and Shopapalooza Festival (featuring 350+ local makers and small businesses) at Vinoy Park on the St. Petersburg waterfront. Visiting Tampa or St. Pete for these signature weekends? Schedule a private waterfront tour with Mark Davis and Rachael Garnett—including our flagship $4,553,900 custom estate at 6100 Bahama Shores Dr S in St. Petersburg and The Ritz-Carlton Residences on Bayshore Boulevard.",
     agenda: [
@@ -985,7 +985,7 @@ export const ARTICLES: ArticleItem[] = [
     category: "Master-Planned Spotlight",
     publishDate: "November 2026",
     readTime: "6 Min Read",
-    heroImage: "/new-images/new-2/davis-garnett-tampa-residential-real-estate-land-o-lakes-florida.jpg",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-29.jpg",
     summary: "How 9,600+ combined acres of master-planned innovation, Moffitt's Speros FL campus, and resort amenities are transforming SR-56 and the Suncoast Parkway.",
     author: RACHAEL_AUTHOR,
     keyTakeaways: [
@@ -1005,7 +1005,7 @@ export const ARTICLES: ArticleItem[] = [
     category: "Commercial Strategy",
     publishDate: "November 2026",
     readTime: "5 Min Read",
-    heroImage: "/new-images/new-2/dg-brandon-hwy60.jpg",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-9.jpg",
     summary: "Why owner-users and private investors are targeting dual-purpose commercial/residential properties in Brandon, Seffner, and Riverview.",
     author: MARK_AUTHOR,
     keyTakeaways: [
@@ -1025,7 +1025,7 @@ export const ARTICLES: ArticleItem[] = [
     category: "Acreage & Equestrian",
     publishDate: "November 2026",
     readTime: "7 Min Read",
-    heroImage: "/new-images/new-2/davis-garnett-tampa-residential-real-estate-keystone-florida.jpg",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-12.jpg",
     summary: "Navigating Hillsborough County's premier non-HOA equestrian haven: agricultural zoning exemptions, equestrian barn builds, workshop permits, and private lakefront tracts.",
     author: MARK_AUTHOR,
     keyTakeaways: [
@@ -1050,7 +1050,7 @@ export const ARTICLES: ArticleItem[] = [
     category: "Coastal Condominiums",
     publishDate: "November 2026",
     readTime: "8 Min Read",
-    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-16.jpg",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-26.jpg",
     summary: "A comparative buyer's guide to Pinellas coastal towers: nightly rental yields on Clearwater Beach vs. quiet residential luxury and reserve funding on Sand Key.",
     author: RACHAEL_AUTHOR,
     keyTakeaways: [
@@ -1075,7 +1075,7 @@ export const ARTICLES: ArticleItem[] = [
     category: "Executive Gated",
     publishDate: "November 2026",
     readTime: "6 Min Read",
-    heroImage: "/new-images/new-2/davis-garnett-tampa-residential-real-estate-cheval.jpg",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-25.jpg",
     summary: "Inside the Lutz-Lake Fern luxury corridor: analyzing 24/7 guard-gated security, Steve Smyers championship golf frontage, and community CDD infrastructure.",
     author: RACHAEL_AUTHOR,
     keyTakeaways: [
@@ -1100,7 +1100,7 @@ export const ARTICLES: ArticleItem[] = [
     category: "Land Banking & Tax",
     publishDate: "November 2026",
     readTime: "7 Min Read",
-    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-5.jpg",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-14.jpg",
     summary: "How Central Florida multi-acre land investors and estate owners leverage agricultural classifications (timber, cattle, apiaries) to reduce property tax liabilities by up to 80%.",
     author: MARK_AUTHOR,
     keyTakeaways: [
@@ -1125,7 +1125,7 @@ export const ARTICLES: ArticleItem[] = [
     category: "Waterfront Advisory",
     publishDate: "November 2026",
     readTime: "8 Min Read",
-    heroImage: "/new-images/new-2/davis-garnett-tampa-residential-real-estate-saint-petersburg-downtown-and-beaches-florida.jpg",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-15.jpg",
     summary: "Critical engineering insights for waterfront buyers in Snell Isle, Bahama Shores, and Venetian Isles: concrete cap integrity, tieback rods, and boat-lift permitting.",
     author: MARK_AUTHOR,
     keyTakeaways: [
@@ -1175,7 +1175,7 @@ export const ARTICLES: ArticleItem[] = [
     category: "Lakefront & Architecture",
     publishDate: "November 2026",
     readTime: "5 Min Read",
-    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-15.jpg",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-16.jpg",
     summary: "Why design-focused buyers are modernizing classic 1960s ranches and acquiring private acreage on Carrollwood's premier freshwater ski lakes.",
     author: RACHAEL_AUTHOR,
     keyTakeaways: [
@@ -1200,7 +1200,7 @@ export const ARTICLES: ArticleItem[] = [
     category: "Risk & Insurance",
     publishDate: "November 2026",
     readTime: "6 Min Read",
-    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-14.jpg",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-24.jpg",
     summary: "Demystifying flood insurance under FEMA's actuarily-driven Risk Rating 2.0: Elevation Certificates, private market surplus lines, and structural mitigation discounts.",
     author: MARK_AUTHOR,
     keyTakeaways: [

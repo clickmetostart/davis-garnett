@@ -26,6 +26,7 @@ import {
 } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
+import FaviconHeroBackground from "@/components/FaviconHeroBackground";
 import ConsultationModal from "@/components/ConsultationModal";
 
 export default function EveryListingApproachPage() {
@@ -132,29 +133,27 @@ export default function EveryListingApproachPage() {
       <ProposalNav />
 
       {/* ── HERO SECTION ── */}
-      <section className="pt-36 pb-20 px-6 md:px-12 bg-white border-b border-[#111111]/10">
-        <div className="max-w-screen-xl mx-auto">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#f5f3ef] border border-[#C8A951]/40 mb-6">
+      <section className="relative w-full pt-32 pb-16 px-6 md:px-12 bg-[#f5f3ef] border-b border-[#111111]/10 overflow-hidden min-h-[680px] flex flex-col justify-center">
+        <FaviconHeroBackground variant="light" />
+        <div className="relative z-10 w-full max-w-screen-xl mx-auto">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/70 border border-[#C8A951]/40 mb-6">
               <Sparkles className="w-3.5 h-3.5 text-[#9A7D3A]" />
-              <span className="text-[11px] uppercase tracking-[0.25em] font-bold text-[#9A7D3A]">
+              <span className="text-[11px] uppercase tracking-[0.3em] font-bold text-[#9A7D3A]">
                 Why Us? · Our Every Listing Approach
               </span>
             </div>
 
-            <h1 className="font-aiveritas text-4xl sm:text-5xl lg:text-6xl text-[#111111] leading-[1.08] tracking-tight mb-8">
+            <h1 className="font-aiveritas text-4xl sm:text-5xl lg:text-6xl text-[#111111] leading-[1.08] tracking-tight mb-6">
               Every Property Deserves <span className="text-[#9A7D3A]">Uncompromising Standard.</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-[#111111]/75 font-light leading-relaxed mb-6">
-              At Davis &amp; Garnett, we reject the notion that premium marketing and rigorous advisory are reserved only for multi-million-dollar estates. 
+            <p className="text-base md:text-lg text-[#111111]/70 font-light leading-relaxed max-w-3xl mx-auto mb-8">
+              From a downtown penthouse to an 80-acre Polk County tract, our standard is identical:{" "}
+              <strong className="text-[#111111] font-semibold">institutional-grade diligence, white-glove presentation, and personal advisor oversight from consultation to closing.</strong>
             </p>
 
-            <p className="text-base text-[#111111]/65 font-light leading-relaxed mb-10">
-              Whether you are listing a downtown luxury penthouse, a family home in Pasco County, an 80-acre agricultural tract in Polk County, or a dual-building commercial asset on Hwy 60—our standard remains identical: <strong className="text-[#111111] font-semibold">institutional-grade diligence, white-glove presentation, and personal advisor oversight from consultation to closing table.</strong>
-            </p>
-
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-4">
               <button
                 onClick={() =>
                   openConsultation(
