@@ -877,13 +877,13 @@ export default function SearchMlsDiscoveryPortal() {
                     href="#pocket-listing-form"
                     className="px-8 py-4 bg-[#111111] hover:bg-[#C8A951] text-white hover:text-[#111111] text-xs uppercase tracking-[0.2em] font-bold rounded-xl transition-colors"
                   >
-                    Set Up Custom Automated MLS Drip Search
+                    Contact Us
                   </a>
                   <Link
                     href="/developments"
                     className="px-8 py-4 bg-white border border-[#111111]/20 hover:border-[#C8A951] text-[#111111] text-xs uppercase tracking-[0.2em] font-bold rounded-xl transition-colors"
                   >
-                    Browse New Construction Hub
+                    Browse Trending Developments
                   </Link>
                 </div>
               </div>
