@@ -69,13 +69,13 @@ export default function ContactPage() {
 
         <div className="relative z-10 w-full max-w-screen-xl mx-auto text-center">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/40 text-[#D4AF37] text-[10px] uppercase tracking-[0.3em] font-bold mb-6">
-            Direct Principal Access • Tampa Bay, Florida
+            Reach Out Anytime • Tampa Bay, Florida
           </span>
-          <h1 className="font-aiveritas text-4xl md:text-6xl lg:text-7xl text-white mb-6 tracking-tight">
-            Connect With <span className="text-[#D4AF37]">Davis &amp; Garnett.</span>
+          <h1 className="font-aiveritas text-4xl md:text-6xl lg:text-7xl text-white mb-6 tracking-tight leading-tight">
+            Connect With<br className="sm:hidden" /> <span className="text-[#D4AF37]">Mark &amp; Rachael.</span>
           </h1>
-          <p className="text-white/80 text-base md:text-xl font-light max-w-3xl mx-auto leading-relaxed">
-            Whether you are acquiring commercial mixed-use assets, evaluating Central Florida land tracts, or purchasing a luxury waterfront residence, you work directly with our Principals.
+          <p className="text-white/85 text-base md:text-[17px] lg:text-[18px] font-light max-w-3xl mx-auto leading-relaxed">
+            Whether you are buying or selling a home, a commercial building, or Florida land, you work directly with Mark Davis and Rachael Garnett from day one.
           </p>
         </div>
       </section>
@@ -85,10 +85,10 @@ export default function ContactPage() {
         <div className="max-w-screen-xl mx-auto">
           <div className="text-center mb-14">
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-              Your Advisory Leadership
+              Always Easy to Reach
             </span>
             <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111]">
-              Direct Principal Contact Directory
+              Call, Text, or Email Us Directly
             </h2>
           </div>
 
@@ -123,8 +123,8 @@ export default function ContactPage() {
                       <p className="text-xs uppercase tracking-widest text-[#111]/55 font-bold mb-3">
                         Co-Founder &amp; REALTOR® • FL Lic #3209459
                       </p>
-                      <p className="text-sm text-[#111]/70 font-light leading-relaxed">
-                        Advising across commercial, residential, land, condos, and luxury estates—bringing his personal flair for deal structuring, commercial mixed-use underwriting, 1031 exchanges, and Central Florida acreage.
+                      <p className="text-base text-[#111]/75 font-light leading-relaxed">
+                        Helping clients buy and sell residential homes, commercial properties, and Florida land—with a steady, numbers-first approach to pricing, zoning, and 1031 exchanges.
                       </p>
                     </div>
                   </div>
@@ -231,8 +231,8 @@ export default function ContactPage() {
                       <p className="text-xs uppercase tracking-widest text-[#111]/55 font-bold mb-3">
                         Co-Founder &amp; REALTOR® • FL Lic #3378601
                       </p>
-                      <p className="text-sm text-[#111]/70 font-light leading-relaxed">
-                        Advising across commercial, residential, land, condos, and luxury waterfront—bringing her personal flair for bespoke property marketing, master-planned communities, and fierce contract execution.
+                      <p className="text-base text-[#111]/75 font-light leading-relaxed">
+                        Helping clients buy and sell residential homes, commercial properties, and waterfront and unique properties—bringing warm communication, standout property marketing, and strong negotiation.
                       </p>
                     </div>
                   </div>

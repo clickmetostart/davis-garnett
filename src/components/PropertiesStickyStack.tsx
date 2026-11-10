@@ -76,13 +76,14 @@ export default function PropertiesStickyStack() {
       {/* ── Mobile header (hidden on desktop) ── */}
       <div className="block md:hidden px-6 pt-16 pb-8 text-center">
         <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-          Active Signature Inventory · 2026
+          Featured Listings · 2026
         </span>
-        <h2 className="font-aiveritas text-4xl text-[#111111] mb-4">
-          Current Exclusive Offerings
+        <h2 className="font-aiveritas text-4xl text-[#111111] mb-4 leading-tight">
+          Featured<br />
+          <span className="text-[#9A7D3A]">Listings</span>
         </h2>
-        <p className="text-[#111111]/60 font-light text-sm leading-relaxed">
-          Explore Davis &amp; Garnett&apos;s signature commercial, residential, luxury waterfront, and land offerings across Tampa Bay and Central Florida.
+        <p className="text-[#111111]/70 font-light text-base leading-relaxed max-w-md mx-auto">
+          Explore our featured residential, commercial, and land listings across Tampa Bay and Central Florida.
         </p>
       </div>
 
@@ -91,17 +92,17 @@ export default function PropertiesStickyStack() {
         <div className="hidden md:block md:w-[38%] shrink-0 relative">
           <div className="sticky top-0 h-screen flex flex-col justify-center pl-12 pr-8 xl:pl-20 xl:pr-12">
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-5">
-              Signature Assets · Active Portfolio
+              Mark &amp; Rachael · Active Listings
             </span>
 
             <h2 className="font-aiveritas text-5xl xl:text-6xl text-[#111111] leading-tight mb-6">
-              Exclusive<br />Offerings
+              Featured<br />Listings
             </h2>
 
             <div className="w-10 h-[2px] bg-[#C8A951] mb-6" />
 
-            <p className="text-[#111111]/65 font-light leading-relaxed max-w-xs mb-8 text-sm">
-              Providing comprehensive advisory across commercial, residential, waterfront developments, and raw acreage throughout Greater Tampa Bay and Central Florida.
+            <p className="text-[#111111]/75 font-light leading-relaxed max-w-md mb-8 text-base md:text-[17px] lg:text-[18px]">
+              Helping buyers, sellers, and business owners across residential homes, commercial properties, land, and waterfront and unique properties in Tampa Bay and Central Florida.
             </p>
 
             <div className="flex flex-col gap-2.5 mb-10">
@@ -179,16 +180,16 @@ export default function PropertiesStickyStack() {
                     <h3 className="font-aiveritas text-3xl md:text-5xl text-white mb-2">
                       {prop.title}
                     </h3>
-                    <p className="text-white/80 font-light text-sm md:text-base mb-3 max-w-xl">
+                    <p className="text-white/85 font-light text-base md:text-[17px] lg:text-[18px] mb-3 max-w-xl leading-relaxed">
                       {prop.subtitle}
                     </p>
-                    <p className="text-white/60 text-xs flex items-center gap-1.5 mb-4">
+                    <p className="text-white/70 text-xs md:text-sm flex items-center gap-1.5 mb-4">
                       <MapPin className="w-3.5 h-3.5 text-[#C8A951]" /> {prop.location}
                     </p>
 
                     <div className="flex flex-wrap items-center justify-between gap-4 border-t border-white/20 pt-5">
                       <div>
-                        <p className="text-white/70 font-medium text-xs md:text-sm tracking-wide mb-1">
+                        <p className="text-white/75 font-medium text-xs md:text-sm tracking-wide mb-1">
                           {prop.specs}
                         </p>
                         <strong className="font-aiveritas text-[#C8A951] text-2xl md:text-3xl font-normal">
@@ -200,7 +201,7 @@ export default function PropertiesStickyStack() {
                         href={`/listings/${prop.slug}`}
                         className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#C8A951] text-[#111111] text-xs font-bold uppercase tracking-[0.2em] rounded-lg hover:bg-white transition-colors group"
                       >
-                        View Property Dossier
+                        View Property Details
                         <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                       </Link>
                     </div>
@@ -217,14 +218,15 @@ export default function PropertiesStickyStack() {
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,#1a1810_0%,#0c0b09_70%)]" />
               <div className="relative z-10 flex flex-col items-center w-full max-w-lg gap-4 text-center">
                 <span className="text-[#C8A951] text-xs uppercase tracking-[0.3em] font-bold">
-                  Regional Advisory &amp; Local Market Authority
+                  Local Knowledge &amp; Personal Service
                 </span>
-                <h3 className="font-aiveritas text-3xl md:text-5xl text-white">
-                  Serving Greater Tampa Bay &amp; Central Florida
+                <h3 className="font-aiveritas text-3xl md:text-5xl text-white leading-tight">
+                  Serving Greater Tampa Bay<br />
+                  <span className="text-[#C8A951]">&amp; Central Florida</span>
                 </h3>
                 <div className="w-12 h-[1px] bg-[#C8A951] my-2" />
-                <p className="text-white/70 font-light text-sm md:text-base leading-relaxed max-w-md mb-2">
-                  Delivering hyper-local commercial, residential, waterfront, and land advisory across Pinellas, Hillsborough, Pasco, Polk, and Marion Counties.
+                <p className="text-white/80 font-light text-base md:text-[17px] lg:text-[18px] leading-relaxed max-w-md mb-2">
+                  Representing residential and commercial clients across Pinellas, Hillsborough, Pasco, Polk, and Marion Counties.
                 </p>
 
                 <div className="flex flex-col w-full gap-3 mt-4">
@@ -232,7 +234,7 @@ export default function PropertiesStickyStack() {
                     href="/properties"
                     className="w-full text-center py-4 rounded-xl font-bold tracking-[0.2em] uppercase text-xs bg-[#C8A951] text-[#111111] hover:bg-white transition-colors shadow-lg"
                   >
-                    Explore Full Portfolio &amp; Track Record
+                    View All Active &amp; Sold Listings
                   </Link>
                   <Link
                     href="/knowledge-hub"

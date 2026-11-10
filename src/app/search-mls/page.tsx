@@ -459,9 +459,8 @@ export default function SearchMlsDiscoveryPortal() {
             <h1 className="font-aiveritas text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.08] tracking-tight mb-4">
               Search the Full <span className="text-[#C8A951]">Tampa Bay MLS.</span>
             </h1>
-            <p className="text-base md:text-lg text-white/80 font-light leading-relaxed max-w-3xl mx-auto mb-6">
-              Luxury estates, sky condominiums, new construction, and commercial opportunities across
-              Hillsborough, Pinellas, and Pasco counties.
+            <p className="text-base md:text-[17px] lg:text-[18px] text-white/85 font-light leading-relaxed max-w-3xl mx-auto mb-6">
+              Browse single-family homes, condos, commercial properties, land, and waterfront and unique properties across Hillsborough, Pinellas, and Pasco counties.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-3">

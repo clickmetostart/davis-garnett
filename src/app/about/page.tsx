@@ -184,16 +184,16 @@ export default function AboutHubPage() {
               </div>
 
               <h1 className="font-aiveritas text-4xl sm:text-5xl lg:text-6xl text-[#111111] leading-[1.08] tracking-tight mb-8">
-                A Higher Standard of Real Estate Advisory in{" "}
+                Two Agents Working Together for You in{" "}
                 <span className="text-[#9A7D3A]">Tampa Bay.</span>
               </h1>
 
-              <p className="text-lg md:text-xl text-[#111111]/75 font-light leading-relaxed mb-6">
-                Both Mark Davis and Rachael Garnett are full-spectrum <strong className="font-semibold text-[#111111]">Commercial &amp; Residential Advisors</strong>—equally fluent in commercial mixed-use, single-family residential, raw land, downtown condominiums, and luxury waterfront estates.
+              <p className="text-base md:text-[17px] lg:text-[18px] text-[#111111]/80 font-light leading-relaxed mb-6">
+                Mark Davis and Rachael Garnett are both <strong className="font-semibold text-[#111111]">REALTORS® and Certified Commercial &amp; Residential Agents</strong>. We work side by side to help clients buy and sell residential homes, commercial properties, land, and waterfront and unique properties across Tampa Bay.
               </p>
 
-              <p className="text-base text-[#111111]/65 font-light leading-relaxed mb-10">
-                Together, they are <strong className="font-semibold text-[#111111]">wholesome real estate powerhouses of local knowledge and expertise</strong>, modestly waiting for the opportunity to serve. Whether you work with Mark or Rachael individually or as a team, we treat every client with the same genuine respect for the value their property brings to the Tampa Bay community—and we are always happy to help navigate those waters across commercial, residential, land, condos, and waterfront homes.
+              <p className="text-base md:text-[17px] lg:text-[18px] text-[#111111]/70 font-light leading-relaxed mb-10">
+                You never get stiff corporate runaround with us. Whether you are buying a home, relocating your family, or purchasing a commercial building for your business, you get two approachable, hardworking local agents who know the Tampa Bay market inside and out.
               </p>
 
               <div className="flex flex-wrap items-center gap-4">
@@ -248,10 +248,10 @@ export default function AboutHubPage() {
           {/* Key Metric Strip */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-12 border-t border-[#111111]/10">
             {[
-              { value: "$250M+", label: "Combined Career Advisory Volume" },
-              { value: "20+ Yrs", label: "Tampa Bay & Central FL Market Depth" },
-              { value: "Dual-Lane", label: "Commercial, Land & Luxury Residential" },
-              { value: "5.0 ★", label: "Verified Client Fiduciary Satisfaction" },
+              { value: "$250M+", label: "Combined Career Sales & Advisory" },
+              { value: "20+ Yrs", label: "Tampa Bay & Central FL Experience" },
+              { value: "Resi + CRE", label: "Both Certified in Homes & Commercial" },
+              { value: "5.0 ★", label: "Client Rating Across Tampa Bay" },
             ].map((item) => (
               <div key={item.label} className="bg-[#f5f3ef] p-6 rounded-xl border border-[#111111]/8">
                 <div className="font-aiveritas text-3xl md:text-4xl text-[#9A7D3A] mb-1">
@@ -266,20 +266,20 @@ export default function AboutHubPage() {
         </div>
       </section>
 
-      {/* ── COLLECTIVE SECTION 1: MEET THE PRINCIPAL ADVISORS ────────────── */}
+      {/* ── COLLECTIVE SECTION 1: MEET MARK & RACHAEL ────────────── */}
       <section className="py-28 px-6 md:px-12 bg-[#f5f3ef] border-b border-[#111111]/10">
         <div className="max-w-screen-xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
               <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-                01 · Leadership & Principal Advisors
+                01 · Your Real Estate Partners
               </span>
               <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111111]">
-                Meet the Principal Advisors
+                Meet Mark &amp; Rachael
               </h2>
             </div>
-            <p className="text-sm md:text-base text-[#111111]/65 max-w-md font-light leading-relaxed">
-              Dedicated domain authority across both sides of the ledger—giving our clients institutional commercial rigor and bespoke residential curation.
+            <p className="text-base md:text-[17px] lg:text-[18px] text-[#111111]/70 max-w-md font-light leading-relaxed">
+              Both certified in residential and commercial real estate—working together so you always have two experienced agents in your corner.
             </p>
           </div>
 
@@ -307,8 +307,8 @@ export default function AboutHubPage() {
                     <p className="text-xs uppercase tracking-widest text-[#111111]/50 font-semibold mb-4">
                       REALTOR® • FL Real Estate License #3209459
                     </p>
-                    <p className="text-sm text-[#111111]/70 font-light leading-relaxed mb-6">
-                      Advising across commercial, residential, land, condos, and luxury estates—bringing his personal flair for deal structuring, mixed-use commercial assets, and strategic Florida land assemblage from Hillsborough to Polk and Marion counties.
+                    <p className="text-base text-[#111111]/75 font-light leading-relaxed mb-6">
+                      Mark helps families, business owners, and investors buy and sell homes, commercial buildings, and land across Tampa Bay and Central Florida. He is known for his steady, numbers-first approach and practical guidance on zoning, pricing, and negotiations.
                     </p>
                     <div className="space-y-2 text-xs text-[#111111]/75 border-t border-[#111111]/10 pt-4">
                       <div className="flex items-center gap-2">
@@ -329,9 +329,13 @@ export default function AboutHubPage() {
 
                 <div className="p-8">
                   <div className="text-[11px] uppercase tracking-[0.2em] text-[#9A7D3A] font-bold mb-4">
-                    Active Commercial & Land Mandate Highlights
+                    Featured Residential, Commercial &amp; Land Listings
                   </div>
                   <div className="space-y-3 mb-6">
+                    <div className="flex items-center justify-between text-xs py-2 border-b border-[#111111]/8">
+                      <span className="font-semibold text-[#111111]">6100 Bahama Shores Dr S, St. Pete</span>
+                      <span className="text-[#9A7D3A] font-bold">$4,553,900 · Waterfront Home</span>
+                    </div>
                     <div className="flex items-center justify-between text-xs py-2 border-b border-[#111111]/8">
                       <span className="font-semibold text-[#111111]">126 Ridgewood Ave, Brandon, FL</span>
                       <span className="text-[#9A7D3A] font-bold">$845,000 · Mixed-Use</span>
@@ -339,10 +343,6 @@ export default function AboutHubPage() {
                     <div className="flex items-center justify-between text-xs py-2 border-b border-[#111111]/8">
                       <span className="font-semibold text-[#111111]">770 Old Stokes Rd, Frostproof, FL</span>
                       <span className="text-[#9A7D3A] font-bold">$3,550,000 · 79.54 Acres</span>
-                    </div>
-                    <div className="flex items-center justify-between text-xs py-2 border-b border-[#111111]/8">
-                      <span className="font-semibold text-[#111111]">NE 90th Street Rd, Fort McCoy, FL</span>
-                      <span className="text-[#9A7D3A] font-bold">$350,000 · 19.72 Acres</span>
                     </div>
                   </div>
                 </div>
@@ -388,8 +388,8 @@ export default function AboutHubPage() {
                     <p className="text-xs uppercase tracking-widest text-[#111111]/50 font-semibold mb-4">
                       REALTOR® • FL Real Estate License #3378601
                     </p>
-                    <p className="text-sm text-[#111111]/70 font-light leading-relaxed mb-6">
-                      Advising across commercial, residential, land, condos, and luxury waterfront—bringing her personal flair for bespoke property positioning, gated country club and master-planned communities, and executive relocations across Tampa Bay.
+                    <p className="text-base text-[#111111]/75 font-light leading-relaxed mb-6">
+                      Rachael works with buyers, sellers, and business owners across residential homes, commercial properties, and waterfront and unique properties. She brings warm, responsive communication, creative marketing, and strong negotiation to every client.
                     </p>
                     <div className="space-y-2 text-xs text-[#111111]/75 border-t border-[#111111]/10 pt-4">
                       <div className="flex items-center gap-2">
@@ -410,20 +410,20 @@ export default function AboutHubPage() {
 
                 <div className="p-8">
                   <div className="text-[11px] uppercase tracking-[0.2em] text-[#9A7D3A] font-bold mb-4">
-                    Flagship Luxury Listing & 2026 Sold Track Record
+                    Featured Residential, Commercial &amp; Land Listings
                   </div>
                   <div className="space-y-3 mb-6">
                     <div className="flex items-center justify-between text-xs py-2 border-b border-[#111111]/8">
                       <span className="font-semibold text-[#111111]">6100 Bahama Shores Dr S, St. Pete</span>
-                      <span className="text-[#9A7D3A] font-bold">$4,553,900 · Waterfront Estate</span>
+                      <span className="text-[#9A7D3A] font-bold">$4,553,900 · Waterfront Home</span>
                     </div>
                     <div className="flex items-center justify-between text-xs py-2 border-b border-[#111111]/8">
-                      <span className="font-semibold text-[#111111]">3537 Valencia Cove Ct & 3037 Downan Point Dr</span>
-                      <span className="text-[#111111]/60 font-bold">2026 Closed Representation</span>
+                      <span className="font-semibold text-[#111111]">126 Ridgewood Ave, Brandon, FL</span>
+                      <span className="text-[#9A7D3A] font-bold">$845,000 · Mixed-Use</span>
                     </div>
                     <div className="flex items-center justify-between text-xs py-2 border-b border-[#111111]/8">
-                      <span className="font-semibold text-[#111111]">7608 Teal Trce, 1106 S Otto Pt & 8136 Wheat Stone</span>
-                      <span className="text-[#111111]/60 font-bold">2026 Sold Portfolio</span>
+                      <span className="font-semibold text-[#111111]">NE 90th Street Rd, Fort McCoy, FL</span>
+                      <span className="text-[#9A7D3A] font-bold">$350,000 · 19.72 Acres</span>
                     </div>
                   </div>
                 </div>
@@ -474,8 +474,8 @@ export default function AboutHubPage() {
               <h3 className="font-aiveritas text-3xl md:text-4xl text-[#ef5728] mb-6 leading-snug">
                 Align Right Realty Carrollwood
               </h3>
-              <p className="text-white/75 text-sm md:text-base font-light leading-relaxed mb-8">
-                Boutique advisory agility requires institutional compliance, statewide MLS syndication, and modern transaction infrastructure. Our partnership with Align Right Realty Carrollwood gives every Davis &amp; Garnett client full regulatory protection and global listing exposure.
+              <p className="text-white/80 text-base md:text-[17px] font-light leading-relaxed mb-8">
+                Working with an approachable team also means having a strong brokerage behind you. Our home office at Align Right Realty Carrollwood gives every client full MLS reach, smooth contract tools, and reliable support from contract to closing.
               </p>
               <div className="grid grid-cols-2 gap-4 pt-6 border-t border-white/15 text-xs">
                 <div>
@@ -495,36 +495,36 @@ export default function AboutHubPage() {
 
             <div>
               <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-                02 · Brokerage Partnership & Compliance
+                02 · Our Brokerage Office
               </span>
               <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111111] mb-6">
-                Why Our Brokerage Partnership Matters to Your Bottom Line
+                Backed by Align Right Realty Carrollwood
               </h2>
-              <p className="text-[#111111]/70 font-light leading-relaxed mb-8">
-                Whether structuring a multi-parcel agricultural land assemblage in Polk County, a mixed-use retail acquisition in Brandon, or a $4.5M waterfront estate in St. Petersburg, the brokerage standing behind your transaction matters.
+              <p className="text-[#111111]/75 text-base md:text-[17px] lg:text-[18px] font-light leading-relaxed mb-8">
+                Whether you are buying or selling a family home, a commercial building, or Florida acreage, having an established local brokerage behind your agents makes the entire process smoother and safer.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-6 mb-10">
                 {[
                   {
                     icon: ShieldCheck,
-                    title: "Fiduciary & Escrow Compliance",
-                    desc: "Strict Florida Real Estate Commission (FREC) oversight, contract auditing, and multi-tiered risk management on every contract.",
+                    title: "Careful Contract & Escrow Protection",
+                    desc: "Full Florida Real Estate Commission (FREC) compliance, careful contract review, and secure escrow handling on every transaction.",
                   },
                   {
                     icon: Compass,
-                    title: "Statewide Florida Reach",
-                    desc: "Seamless syndication across Stellar MLS, commercial CoStar/LoopNet feeds, and international luxury relocation networks.",
+                    title: "Wide Florida Marketing Reach",
+                    desc: "Broad listing exposure across Stellar MLS, commercial listing platforms, and national relocation networks.",
                   },
                   {
                     icon: Building2,
-                    title: "Modern Transaction Tech",
-                    desc: "Digital earnest money routing, AI-enhanced market intelligence, and encrypted document rooms for private investors.",
+                    title: "Easy Digital Closing Tools",
+                    desc: "Convenient e-signatures, digital deposit routing, and organized transaction updates from offer to closing.",
                   },
                   {
                     icon: Award,
-                    title: "Collaborative Culture",
-                    desc: "Access to an internal network of top-producing Tampa Bay agents for early pre-market intelligence and buyer matching.",
+                    title: "Connected Local Office",
+                    desc: "Direct connection with fellow Tampa Bay agents for early word on upcoming listings and active buyers.",
                   },
                 ].map((feature) => (
                   <div
@@ -535,7 +535,7 @@ export default function AboutHubPage() {
                     <h4 className="font-bold text-base text-[#111111] mb-2">
                       {feature.title}
                     </h4>
-                    <p className="text-xs text-[#111111]/65 leading-relaxed font-light">
+                    <p className="text-sm md:text-[15px] text-[#111111]/70 leading-relaxed font-light">
                       {feature.desc}
                     </p>
                   </div>
@@ -560,7 +560,7 @@ export default function AboutHubPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
               <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-                03 · Vetted Deal Execution Ecosystem
+                03 · Trusted Local Professionals
               </span>
               <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111111]">
                 Meet Our Strategic Partners
@@ -574,41 +574,41 @@ export default function AboutHubPage() {
             </Link>
           </div>
 
-          <p className="text-base md:text-lg text-[#111111]/70 font-light max-w-3xl leading-relaxed mb-12">
-            High-stakes transactions succeed or fail in due diligence. Over two decades, Mark Davis and Rachael Garnett have curated a bench of Tampa Bay&apos;s most responsive, battle-tested transaction specialists—ready to deploy the moment your contract is executed.
+          <p className="text-base md:text-[17px] lg:text-[18px] text-[#111111]/75 font-light max-w-3xl leading-relaxed mb-12">
+            A smooth closing takes a great team. Over the years, Mark and Rachael have built relationships with reliable local lenders, title attorneys, inspectors, and surveyors who help keep your purchase or sale on track.
           </p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {[
               {
                 icon: Landmark,
-                category: "Preferred Residential & Jumbo Lending",
-                desc: "Private wealth mortgage bankers and portfolio lenders offering rapid underwriting for waterfront estates, physician & executive relocations, and jumbo bridge structures.",
+                category: "Residential & Jumbo Home Lenders",
+                desc: "Responsive local mortgage lenders offering competitive financing for primary homes, vacation properties, relocations, and bridge loans.",
               },
               {
                 icon: Building2,
-                category: "Commercial, SBA & Development Debt",
-                desc: "Regional bank VPs and debt funds specializing in SBA 504/7(a) owner-user loans, DSCR multi-family debt, and horizontal land acquisition financing.",
+                category: "Commercial, SBA & Land Lenders",
+                desc: "Local bank and lending specialists who understand SBA 504/7(a) business loans, investment properties, and land financing.",
               },
               {
                 icon: Scale,
-                category: "Commercial & Residential Title Counsel",
-                desc: "Board-certified Florida real estate attorneys and 1031 Qualified Intermediaries managing complex title commitments, easements, and tax-deferred exchanges.",
+                category: "Real Estate Attorneys & Title Teams",
+                desc: "Experienced Florida real estate attorneys and title companies handling title searches, easements, closings, and 1031 exchanges.",
               },
               {
                 icon: ShieldCheck,
-                category: "Certified Home, Marine & Seawall Inspectors",
-                desc: "Licensed structural engineers, marine seawall/dock specialists, and four-point insurance inspectors protecting coastal and inland acquisitions.",
+                category: "Home, Roof & Seawall Inspectors",
+                desc: "Licensed home inspectors, roofers, and marine seawall specialists who help you check a property thoroughly before you buy.",
               },
               {
                 icon: Compass,
-                category: "Civil Engineering, Environmental & Surveying",
-                desc: "Phase I/II environmental assessors, ALTA land surveyors, wetland delineation biologists, and municipal zoning consultants.",
+                category: "Surveyors, Engineers & Land Specialists",
+                desc: "Land surveyors, environmental specialists, and local zoning pros who help verify boundaries, wetlands, and property uses.",
               },
               {
                 icon: Sparkles,
-                category: "Architectural Staging & Bespoke Interiors",
-                desc: "Luxury home stagers, architectural photographers, and pre-market renovation concierges who maximize residential and commercial exit valuations.",
+                category: "Staging, Prep & Photography Pros",
+                desc: "Home stagers, photographers, and trusted local contractors who help get your home or commercial property ready to shine.",
               },
             ].map((item) => (
               <div
@@ -622,7 +622,7 @@ export default function AboutHubPage() {
                   <h3 className="font-aiveritas text-2xl text-[#111111] mb-3">
                     {item.category}
                   </h3>
-                  <p className="text-sm text-[#111111]/65 font-light leading-relaxed">
+                  <p className="text-sm md:text-[15px] lg:text-base text-[#111111]/70 font-light leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -739,13 +739,13 @@ export default function AboutHubPage() {
         <div className="max-w-4xl mx-auto bg-white rounded-2xl p-8 md:p-14 border border-[#111111]/10 shadow-lg">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-              Direct Principal Access
+              Work With Mark &amp; Rachael
             </span>
             <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111111] mb-4">
-              Request a Private Advisory Consultation
+              Start a Conversation With Us
             </h2>
-            <p className="text-sm md:text-base text-[#111111]/65 font-light leading-relaxed">
-              Connect directly with Mark Davis (#3209459) and Rachael Garnett (#3378601) regarding commercial acquisitions, land disposition, or luxury residential representation.
+            <p className="text-base md:text-[17px] lg:text-[18px] text-[#111111]/70 font-light leading-relaxed">
+              Reach out directly to Mark Davis (#3209459) and Rachael Garnett (#3378601) about buying or selling a home, a commercial property, or land in Tampa Bay.
             </p>
           </div>
 
@@ -967,7 +967,7 @@ export default function AboutHubPage() {
                     <h3 className="font-aiveritas text-lg md:text-xl text-[#111111] mb-2 font-bold">
                       {faq.q}
                     </h3>
-                    <p className="text-xs md:text-sm text-[#111111]/75 font-light leading-relaxed">
+                    <p className="text-base text-[#111111]/75 font-light leading-relaxed">
                       {faq.a}
                     </p>
                   </div>

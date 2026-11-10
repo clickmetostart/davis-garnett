@@ -282,15 +282,15 @@ export default function AlignRightCarrollwoodCoveragePage() {
               ALIGNED CORRECTLY REAL ESTATE
             </span>
             <h1 className="font-aiveritas text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.08] mb-6">
-              Areas We Work In.
+              Areas We <span className="text-[#D4AF37]">Work In.</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-white/85 font-light leading-relaxed mb-6">
-              Our footprint spans the most lucrative residential waterfronts, suburban growth corridors, and commercial investment zones across Greater Tampa Bay and Central Florida.
+            <p className="text-base md:text-[17px] lg:text-[18px] text-white/85 font-light leading-relaxed mb-6">
+              We help clients buy and sell residential homes, commercial properties, Florida land, and waterfront and unique properties across Greater Tampa Bay and Central Florida.
             </p>
 
-            <p className="text-sm md:text-base text-white/65 font-light leading-relaxed mb-8">
-              Operating out of our principal brokerage headquarters in Carrollwood, Mark Davis and Rachael Garnett combine boutique partner-level advocacy with Align Right Realty Carrollwood&apos;s institutional compliance, Stellar MLS syndication, and statewide commercial infrastructure.
+            <p className="text-base md:text-[17px] lg:text-[18px] text-white/75 font-light leading-relaxed mb-8">
+              Based out of our Carrollwood office at Align Right Realty Carrollwood (#BK3401606), Mark Davis and Rachael Garnett give you two approachable, hands-on local agents backed by statewide MLS and commercial marketing reach.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -394,10 +394,10 @@ export default function AlignRightCarrollwoodCoveragePage() {
               Regional Geographic Scope
             </span>
             <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111111] mb-6">
-              Our Strategic Focus Markets &amp; Regional Corridors
+              Our Focus Markets &amp; Local Corridors
             </h2>
-            <p className="text-base text-[#111111]/70 font-light leading-relaxed">
-              Every market we cover is backed by hyper-local transactional data, active client representation, and on-the-ground field inspections. Below are the key corridors served directly out of Align Right Realty Carrollwood.
+            <p className="text-base md:text-[17px] lg:text-[18px] text-[#111111]/75 font-light leading-relaxed">
+              Every neighborhood we serve is backed by local market knowledge, hands-on client representation, and personal property walkthroughs. Here are the key areas we cover out of Align Right Realty Carrollwood.
             </p>
           </div>
 
@@ -438,7 +438,7 @@ export default function AlignRightCarrollwoodCoveragePage() {
                     <h3 className="font-aiveritas text-2xl md:text-3xl text-[#111111] mb-3">
                       {region.title}
                     </h3>
-                    <p className="text-sm text-[#111111]/70 font-light leading-relaxed mb-6">
+                    <p className="text-base text-[#111111]/75 font-light leading-relaxed mb-6">
                       {region.desc}
                     </p>
 

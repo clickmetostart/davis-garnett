@@ -91,18 +91,17 @@ export default function DevelopmentsHubPage() {
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#C8A951]/15 border border-[#C8A951]/40 mb-6">
               <Sparkles className="w-3.5 h-3.5 text-[#C8A951]" />
               <span className="text-[11px] uppercase tracking-[0.3em] text-[#C8A951] font-bold">
-                Davis & Garnett New Development Advisory
+                Davis &amp; Garnett · New Construction Guide
               </span>
             </div>
 
             <h1 className="font-aiveritas text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.08] tracking-tight mb-6">
-              Tampa Bay&apos;s Premier{" "}
-              <span className="text-[#C8A951]">New Construction</span> &amp; Luxury Developments.
+              Tampa Bay&apos;s Top{" "}
+              <span className="text-[#C8A951]">New Construction</span><br className="hidden sm:inline" /> &amp; Master-Planned Communities.
             </h1>
 
             <p className="text-base md:text-lg text-white/80 font-light leading-relaxed max-w-3xl mx-auto mb-8">
-              From Riverwalk and Bayshore sky residences to Wesley Chapel and Land O&apos; Lakes master-planned
-              communities—priority VIP access, pre-public price sheets, and buyer representation at zero cost to you.
+              From Downtown Riverwalk and Bayshore condo towers to Wesley Chapel and Land O&apos; Lakes lagoon communities—get current builder price sheets, floor plans, and two experienced agents on your side at zero cost to you.
             </p>
 
             {/* Corridor Filter Buttons */}
@@ -204,26 +203,23 @@ export default function DevelopmentsHubPage() {
           <div className="grid lg:grid-cols-12 gap-12 items-start mb-16">
             <div className="lg:col-span-5">
               <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.28em] font-bold block mb-4">
-                Uncompromising Advocacy
+                Why Bring Your Own Agent?
               </span>
               <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111111] leading-tight mb-6">
-                The Davis &amp; Garnett VIP New Construction Advantage.
+                How We Help You Buy<br />
+                <span className="text-[#9A7D3A]">New Construction.</span>
               </h2>
-              <p className="text-[#111111]/70 font-light leading-relaxed mb-6">
-                The #1 mistake luxury condo and master-planned homebuyers make in Tampa Bay is walking
-                into a developer sales gallery or model home center unrepresented. The friendly on-site
-                sales associate works 100% for the builder or developer—fiduciarily bound to maximize the
-                developer&apos;s net price and protect the builder&apos;s contract terms.
+              <p className="text-[#111111]/75 text-base md:text-[17px] lg:text-[18px] font-light leading-relaxed mb-6">
+                The biggest mistake buyers make with new construction in Tampa Bay is walking into a model home or condo sales center alone. The friendly sales rep on site works 100% for the builder—their job is to protect the builder&apos;s price and contract terms.
               </p>
               <div className="p-6 rounded-2xl bg-[#f5f3ef] border border-[#C8A951]/40">
                 <div className="text-xs uppercase tracking-[0.2em] text-[#9A7D3A] font-bold mb-2">
                   Golden Rule of Florida New Construction
                 </div>
-                <p className="text-sm text-[#111111]/80 leading-relaxed">
-                  Developers and homebuilders require your advisor to accompany or register you{" "}
+                <p className="text-base text-[#111111]/80 leading-relaxed">
+                  Builders require your agent to register or join you{" "}
                   <strong className="font-semibold text-[#111111]">on or before your very first visit</strong>.
-                  The builder pays our advisory fee out of their fixed marketing budget—meaning you never
-                  pay a penny more for the property, while gaining powerhouse negotiation leverage.
+                  The builder pays our fee out of their standard marketing budget—so having Mark and Rachael represent you costs you $0 and gives you two experienced negotiators on your side.
                 </p>
               </div>
             </div>
@@ -232,31 +228,31 @@ export default function DevelopmentsHubPage() {
               {[
                 {
                   icon: DollarSign,
-                  badge: "0% Buyer Cost",
-                  title: "Zero Buyer Commission + Full Price Parity",
+                  badge: "$0 Buyer Cost",
+                  title: "Representation at Zero Cost to You",
                   description:
-                    "Builders do not discount base home prices if you walk in without an agent—doing so would destroy their appraised comparable sales for the rest of the neighborhood. Instead, they simply pocket the unallocated marketing fee. With Davis & Garnett, you get elite representation for $0.",
+                    "Builders do not lower the home price if you walk in without an agent—doing so would hurt their comparable sales for the rest of the neighborhood. With Mark and Rachael, the builder covers our fee and you get two experienced agents in your corner.",
                 },
                 {
                   icon: TrendingUp,
                   badge: "Rate Buydowns & Credits",
-                  title: "Aggressive Builder Rate Buydowns & Flex Cash",
+                  title: "Negotiating Builder Credits & Rate Buydowns",
                   description:
-                    "We track standing Quick Move-In (QMI) inventory and builder fiscal quarter-ends across WestBay, Lennar, Pulte, Related, and Two Roads—routinely negotiating 4.99%–5.50% forward-commitment mortgage buydowns and $25,000–$75,000+ in closing or design studio credits.",
+                    "We track quick move-in homes and builder incentives across WestBay, Lennar, Pulte, Related, and Two Roads—helping our buyers negotiate mortgage rate buydowns, closing cost help, and design studio credits.",
                 },
                 {
                   icon: HardHat,
-                  badge: "Quality Control",
-                  title: "Independent 3-Phase Structural Inspections",
+                  badge: "Quality Checks",
+                  title: "Independent 3-Phase Home Inspections",
                   description:
-                    "Even multi-million-dollar towers and semi-custom estates suffer from subcontractor rushes. We coordinate licensed third-party inspectors at pre-pour/pre-drywall, pre-closing blue-tape walkthrough, and month-11 prior to your 1-year builder warranty expiration.",
+                    "Even brand-new homes need a second set of eyes. We coordinate independent licensed inspectors before drywall goes up, before your final walkthrough, and at month 11 before your 1-year builder warranty expires.",
                 },
                 {
                   icon: FileSearch,
-                  badge: "Off-Market Releases",
-                  title: "Priority Lot Holds & Pre-Public Price Sheets",
+                  badge: "Early Access",
+                  title: "Early Lot Releases & Floor Plans",
                   description:
-                    "The best 80-foot conservation lots in Two Rivers and Connerton—and the highest-ROI corner stacks in Pendry and Water Street Phase 2—are reserved via VIP broker allocation before they ever appear on Zillow or public websites.",
+                    "The best conservation and water-view lots in Two Rivers and Connerton—and prime corner units in Downtown Tampa towers—often get reserved early. We help you review floor plans and lot releases as soon as they open.",
                 },
               ].map((pillar) => {
                 const IconComponent = pillar.icon;
@@ -277,7 +273,7 @@ export default function DevelopmentsHubPage() {
                       <h3 className="font-aiveritas text-xl text-[#111111] mb-3 leading-snug">
                         {pillar.title}
                       </h3>
-                      <p className="text-sm text-[#111111]/70 font-light leading-relaxed">
+                      <p className="text-base text-[#111111]/75 font-light leading-relaxed">
                         {pillar.description}
                       </p>
                     </div>

@@ -208,14 +208,14 @@ export default function MarkDavisAdvisorPage() {
             <h1 className="font-aiveritas text-5xl md:text-6xl text-[#111111] leading-[1.08] mb-6">
               Mark Davis
             </h1>
-            <p className="text-xl text-[#9A7D3A] font-light mb-6">
-              REALTOR® · Certified Commercial &amp; Residential Agent • Helping Buyers, Sellers &amp; Investors Across Homes, Commercial Properties, Land &amp; Condos
+            <p className="text-lg md:text-xl text-[#9A7D3A] font-light mb-6">
+              REALTOR® · Certified Commercial &amp; Residential Agent • Tampa Bay &amp; Central Florida
             </p>
-            <p className="text-base text-[#111111]/75 font-light leading-relaxed mb-6">
-              Mark Davis is a full-spectrum <strong className="font-semibold text-[#111111]">Commercial &amp; Residential Advisor</strong> who represents buyers, sellers, and investors across commercial mixed-use, single-family residential, agricultural/development land, condos, and luxury estates. Grounded in deep market knowledge and thoughtful guidance, Mark brings disciplined underwriting, clear communication, and personal care to every client—whether structuring a dual-building mixed-use asset in Brandon, evaluating 80 acres in Polk County, or helping a family buy or sell a home across Hillsborough and Pasco counties.
+            <p className="text-base md:text-[17px] lg:text-[18px] text-[#111111]/80 font-light leading-relaxed mb-6">
+              Mark Davis is a <strong className="font-semibold text-[#111111]">REALTOR® and Certified Commercial &amp; Residential Agent</strong> who helps buyers, sellers, and investors across residential homes, commercial properties, and Florida land. Known for his calm, practical approach, Mark loves digging into the numbers, checking zoning and property details early, and making sure every deal makes sense—whether he is helping a family move in Hillsborough or Pasco County, selling a mixed-use property in Brandon, or walking 80 acres of land in Polk County.
             </p>
-            <p className="text-base text-[#111111]/70 font-light leading-relaxed mb-8">
-              As co-founder of <strong className="font-semibold text-[#111111]">Davis &amp; Garnett</strong> alongside fellow Commercial &amp; Residential Advisor Rachael Garnett, Mark and Rachael serve as <strong className="font-semibold text-[#111111]">real estate powerhouses of knowledge and expertise</strong>—modestly grateful for every opportunity to serve, treating every client with genuine respect for the value their property brings to the community, and happy to help navigate those waters.
+            <p className="text-base md:text-[17px] lg:text-[18px] text-[#111111]/75 font-light leading-relaxed mb-8">
+              Mark co-founded <strong className="font-semibold text-[#111111]">Davis &amp; Garnett</strong> with his business partner <strong className="font-semibold text-[#111111]">Rachael Garnett</strong> so clients would never have to choose between a residential agent and a commercial agent. Together, Mark and Rachael work side by side as an approachable, down-to-earth team—giving every client two experienced agents, honest advice, and steady support from start to finish.
             </p>
 
             {/* Direct Contact Bar */}
@@ -260,14 +260,14 @@ export default function MarkDavisAdvisorPage() {
                 href="#mark-consultation"
                 className="inline-flex items-center gap-3 px-8 py-4 bg-[#111111] text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C8A951] hover:text-[#111111] transition-colors rounded-lg"
               >
-                Request Commercial / Land Underwriting
+                Talk With Mark Davis
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
                 href="#active-listings"
                 className="inline-flex items-center gap-2 px-6 py-4 border border-[#111111]/20 text-[#111111] text-xs font-bold uppercase tracking-[0.2em] hover:border-[#C8A951] transition-colors rounded-lg"
               >
-                View Active Commercial & Land Listings
+                View Featured Listings
               </a>
             </div>
           </div>
@@ -277,9 +277,9 @@ export default function MarkDavisAdvisorPage() {
         <div className="max-w-screen-xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-12 border-t border-[#111111]/10">
           {[
             { metric: "#3209459", label: "Florida Real Estate License" },
-            { metric: "99.26+ Ac", label: "Active Florida Land Inventory" },
-            { metric: "$4.745M", label: "Current Exclusive Commercial & Land Mandates" },
-            { metric: "15+ Counties", label: "Tampa Bay & Central FL Advisory Footprint" },
+            { metric: "Resi + CRE", label: "Certified in Homes & Commercial" },
+            { metric: "99.26+ Ac", label: "Active Florida Land & Acreage" },
+            { metric: "15+ Counties", label: "Tampa Bay & Central FL Coverage" },
           ].map((item) => (
             <div key={item.label} className="bg-[#f5f3ef] p-6 rounded-xl border border-[#111111]/8">
               <div className="font-aiveritas text-3xl md:text-4xl text-[#9A7D3A] mb-1">
@@ -299,14 +299,14 @@ export default function MarkDavisAdvisorPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
               <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-                Exclusive Representation · Active Offerings
+                Featured Listings · Active On Market
               </span>
               <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111111]">
-                Mark&apos;s Active Commercial & Land Portfolio
+                Featured Commercial &amp; Land Listings
               </h2>
             </div>
-            <p className="text-sm text-[#111111]/65 max-w-md font-light">
-              Direct offering memorandums, boundary surveys, zoning verification packets, and private site tours available upon request.
+            <p className="text-base md:text-[17px] text-[#111111]/70 max-w-md font-light leading-relaxed">
+              Property info packets, surveys, zoning details, and private showings are available whenever you are ready.
             </p>
           </div>
 
@@ -326,7 +326,7 @@ export default function MarkDavisAdvisorPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/80 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4 bg-white/95 px-3 py-1 rounded text-[10px] uppercase tracking-widest font-bold text-[#9A7D3A]">
-                      Active Exclusive Mandate
+                      Active Listing
                     </div>
                     <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between text-white">
                       <span className="font-aiveritas text-3xl text-[#C8A951]">
@@ -381,13 +381,13 @@ export default function MarkDavisAdvisorPage() {
         <div className="max-w-screen-xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-              Institutional Advisory Capabilities
+              How Mark Helps Clients
             </span>
             <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111111] mb-4">
-              Commercial, Mixed-Use & Land Specialization
+              Residential, Commercial &amp; Land Expertise
             </h2>
-            <p className="text-base text-[#111111]/65 font-light">
-              Comprehensive deal execution engineered for commercial owner-occupants, land developers, and private capital investors.
+            <p className="text-base md:text-[17px] lg:text-[18px] text-[#111111]/75 font-light leading-relaxed">
+              Straightforward, practical help for homebuyers, homeowners, business owners, and land investors across Tampa Bay.
             </p>
           </div>
 
@@ -395,33 +395,33 @@ export default function MarkDavisAdvisorPage() {
             {[
               {
                 icon: Building2,
-                title: "Mixed-Use & Owner-User Commercial",
-                desc: "Acquisition and disposition of street-front retail, professional medical/office buildings, and mixed-use commercial corridors across Brandon, Tampa, and Wesley Chapel.",
-              },
-              {
-                icon: LandPlot,
-                title: "Acreage, Groves & Transitional Land",
-                desc: "Strategic marketing and sourcing of 10 to 500+ acre parcels across Polk, Marion, Pasco, and eastern Hillsborough counties—Evaluating FLU (Future Land Use), wetlands, and access.",
+                title: "Residential Homes, Waterfront & Unique Properties",
+                desc: "Helping families and buyers find or sell single-family homes, custom estates, waterfront homes, and unique properties across Tampa, Carrollwood, St. Petersburg, Lutz, and Wesley Chapel.",
               },
               {
                 icon: Briefcase,
-                title: "Industrial, Warehouse & Flex Assets",
-                desc: "Site selection and lease/purchase negotiation along the I-4, I-75, and Port Tampa Bay logistics corridors for distribution, light manufacturing, and contractor yards.",
+                title: "Commercial & Mixed-Use Properties",
+                desc: "Helping business owners and investors buy, sell, or lease retail storefronts, medical/professional offices, and mixed-use buildings across Brandon, Tampa, and Hillsborough County.",
+              },
+              {
+                icon: LandPlot,
+                title: "Florida Land, Acreage & Groves",
+                desc: "Marketing and finding 5 to 500+ acre parcels across Polk, Marion, Pasco, and eastern Hillsborough counties—checking future land use, road access, wetlands, and agricultural exemptions.",
               },
               {
                 icon: FileSpreadsheet,
-                title: "1031 Tax-Deferred Exchange Advisory",
-                desc: "Coordinating strict 45-day identification and 180-day closing windows alongside qualified intermediaries to transition equity from appreciated land or residential rentals into triple-net (NNN) assets.",
+                title: "1031 Tax-Deferred Exchanges",
+                desc: "Helping property owners sell appreciated land or rental property and roll their equity into income-producing properties within the 45-day and 180-day 1031 exchange windows.",
               },
               {
                 icon: BarChart3,
-                title: "Cap Rate, NOI & Pro-Forma Underwriting",
-                desc: "Delivering realistic rent-roll audits, T-12 expense verification, debt-coverage modeling, and highest-and-best-use valuation opinions.",
+                title: "Clear Pricing & Property Numbers",
+                desc: "Breaking down comparable home sales, rental income, expenses, and local market trends in plain English so you can make confident decisions.",
               },
               {
                 icon: Compass,
-                title: "Corporate & Business Relocations",
-                desc: "Helping out-of-state companies establish their Florida headquarters while seamlessly partnering with Rachael Garnett to relocate key executives and their families.",
+                title: "Business & Family Relocations",
+                desc: "Working side by side with Rachael Garnett to help relocating families and business owners find both the right neighborhood and the right commercial space in Tampa Bay.",
               },
             ].map((pillar) => (
               <div
@@ -434,7 +434,7 @@ export default function MarkDavisAdvisorPage() {
                 <h3 className="font-aiveritas text-2xl text-[#111111] mb-3">
                   {pillar.title}
                 </h3>
-                <p className="text-sm text-[#111111]/65 font-light leading-relaxed">
+                <p className="text-base text-[#111111]/75 font-light leading-relaxed">
                   {pillar.desc}
                 </p>
               </div>
@@ -449,14 +449,14 @@ export default function MarkDavisAdvisorPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
               <span className="text-[#C8A951] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-                Proven Execution
+                Recent Activity
               </span>
               <h2 className="font-aiveritas text-4xl md:text-5xl text-white">
-                2026 Commercial & Land Transaction Highlights
+                2026 Commercial &amp; Land Highlights
               </h2>
             </div>
-            <p className="text-sm text-white/65 max-w-md font-light">
-              Representative commercial, industrial, and land advisory engagements executed across the Greater Tampa Bay & Central Florida region.
+            <p className="text-base text-white/75 max-w-md font-light leading-relaxed">
+              Recent commercial, mixed-use, and land representation across the Greater Tampa Bay &amp; Central Florida region.
             </p>
           </div>
 
@@ -496,10 +496,10 @@ export default function MarkDavisAdvisorPage() {
         <div className="max-w-screen-xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-              Investor & Principal Endorsements
+              Client Reviews
             </span>
             <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111111]">
-              What Commercial & Land Clients Say
+              What Clients Say About Working With Mark
             </h2>
           </div>
 
@@ -507,21 +507,21 @@ export default function MarkDavisAdvisorPage() {
             {[
               {
                 quote:
-                  "Mark evaluated our mixed-use acquisition in Brandon like a true institutional underwriter. He spotted zoning upside and lease-escalation leverage that immediately improved our Day-1 cash flow.",
+                  "Mark helped us evaluate our mixed-use property in Brandon and walked us through every zoning and lease detail in plain English. His local knowledge made a huge difference from day one.",
                 author: "David R.",
-                role: "Managing Partner, Gulf Coast Commercial Holdings",
+                role: "Commercial & Mixed-Use Buyer",
               },
               {
                 quote:
-                  "Selling nearly 80 acres of rural and agricultural land requires an advisor who understands soil, access easements, and qualified land buyers. Mark's marketing reach across Florida is unmatched.",
+                  "Selling nearly 80 acres of rural land takes an agent who understands soil, road access, and serious land buyers. Mark and Rachael kept us updated every week and brought qualified buyers.",
                 author: "Thomas & Evelyn M.",
                 role: "Polk & Marion County Landowners",
               },
               {
                 quote:
-                  "When we relocated our distribution operation to Tampa Bay, Mark handled our warehouse facility while Rachael found our family's home. Having both specialists on one team saved us months.",
+                  "When we moved our business and our family to Tampa Bay, Mark and Rachael handled both our commercial building and our family home seamlessly. Having them work together saved us months.",
                 author: "Marcus V.",
-                role: "CEO, Southeast Logistics Group",
+                role: "Home & Commercial Client",
               },
             ].map((item) => (
               <div
@@ -534,7 +534,7 @@ export default function MarkDavisAdvisorPage() {
                       <Star key={idx} className="w-4 h-4 fill-current" />
                     ))}
                   </div>
-                  <p className="text-sm text-[#111111]/80 italic leading-relaxed mb-6">
+                  <p className="text-base text-[#111111]/80 italic leading-relaxed mb-6">
                     &ldquo;{item.quote}&rdquo;
                   </p>
                 </div>
@@ -555,12 +555,12 @@ export default function MarkDavisAdvisorPage() {
         <div className="max-w-4xl mx-auto bg-white rounded-2xl p-8 md:p-14 border border-[#111111]/10 shadow-lg">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-              Direct Commercial & Land Desk
+              Work With Mark Davis
             </span>
             <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111111] mb-4">
-              Consult Directly With Mark Davis
+              Send Mark a Message
             </h2>
-            <p className="text-sm text-[#111111]/65 font-light">
+            <p className="text-base text-[#111111]/70 font-light">
               FL Real Estate License #3209459 • Direct: 941-737-4127 • mark@davisgarnettsells.com
             </p>
           </div>
@@ -767,7 +767,7 @@ export default function MarkDavisAdvisorPage() {
                     <h3 className="font-aiveritas text-lg md:text-xl text-[#111111] mb-2 font-bold">
                       {faq.q}
                     </h3>
-                    <p className="text-xs md:text-sm text-[#111111]/75 font-light leading-relaxed">
+                    <p className="text-base text-[#111111]/75 font-light leading-relaxed">
                       {faq.a}
                     </p>
                   </div>

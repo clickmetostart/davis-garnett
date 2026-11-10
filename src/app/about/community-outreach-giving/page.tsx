@@ -146,16 +146,16 @@ export default function CommunityOutreachGivingPage() {
             </div>
 
             <h1 className="font-aiveritas text-4xl sm:text-5xl lg:text-6xl text-[#111111] leading-[1.08] mb-6">
-              Our Causes: Faith, Church &{" "}
+              Our Causes: Faith, Church &amp;<br />
               <span className="text-[#9A7D3A]">Tampa Bay Community Impact.</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-[#111111]/75 font-light leading-relaxed mb-6">
-              At Davis & Garnett, we believe that business excellence and faithful stewardship go hand in hand. Every home we sell and every commercial parcel we close is an opportunity to pour back into the churches, families, and youth of Tampa Bay.
+            <p className="text-base md:text-[17px] lg:text-[18px] text-[#111111]/80 font-light leading-relaxed mb-6">
+              For Mark Davis and Rachael Garnett, real estate is about taking care of people and giving back to the community we call home. Every home, commercial building, and land parcel we close helps support local churches, families, and youth across Tampa Bay.
             </p>
 
-            <p className="text-base text-[#111111]/65 font-light leading-relaxed mb-8">
-              Whether sponsoring a local church food outreach, helping a family in transition furnish their first apartment, or backing youth character athletics across Hillsborough, Pinellas, and Pasco counties, Mark Davis and Rachael Garnett are committed to leaving a lasting legacy of generosity.
+            <p className="text-base md:text-[17px] lg:text-[18px] text-[#111111]/70 font-light leading-relaxed mb-8">
+              Whether sponsoring a local church food pantry, helping a family in transition furnish their apartment, or supporting youth sports across Hillsborough, Pinellas, and Pasco counties, we are grateful for every chance to serve our neighbors.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -214,7 +214,7 @@ export default function CommunityOutreachGivingPage() {
             <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111111] mb-4">
               Four Pillars of Our Community Commitment
             </h2>
-            <p className="text-base text-[#111111]/65 font-light">
+            <p className="text-base md:text-[17px] lg:text-[18px] text-[#111111]/70 font-light leading-relaxed">
               Grounded in faith and gratitude, our outreach focuses on initiatives that build resilient families and compassionate neighborhoods.
             </p>
           </div>
@@ -235,7 +235,7 @@ export default function CommunityOutreachGivingPage() {
                   <h3 className="font-aiveritas text-3xl text-[#111111] mb-4">
                     {pillar.title}
                   </h3>
-                  <p className="text-sm text-[#111111]/70 font-light leading-relaxed mb-6">
+                  <p className="text-base text-[#111111]/75 font-light leading-relaxed mb-6">
                     {pillar.description}
                   </p>
                 </div>

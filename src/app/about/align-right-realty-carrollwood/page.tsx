@@ -97,14 +97,14 @@ export default function AlignRightRealtyCarrollwoodPage() {
               Align Right Realty <span className="text-[#9A7D3A]">Carrollwood.</span>
             </h1>
             <p className="text-lg md:text-xl text-[#111111]/75 font-light leading-relaxed mb-6">
-              Behind every Davis & Garnett commercial acquisition, multi-acre land disposition, and luxury waterfront closing stands the regulatory rigor, technology stack, and statewide reach of{" "}
+              Behind every home, commercial building, land parcel, and waterfront or unique property we buy or sell stands the full support and statewide reach of{" "}
               <strong className="font-semibold text-[#111111]">
                 Align Right Realty Carrollwood (License #BK3401606)
               </strong>
               .
             </p>
             <p className="text-base text-[#111111]/65 font-light leading-relaxed mb-8">
-              Mark Davis (#3209459) and Rachael Garnett (#3378601) intentionally partner with Align Right Realty Carrollwood because modern real estate requires both boutique principal attention and institutional brokerage infrastructure.
+              Mark Davis (#3209459) and Rachael Garnett (#3378601) partner with Align Right Realty Carrollwood so you get the best of both worlds: personal, approachable service from two hands-on agents backed by a trusted Tampa Bay brokerage.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -174,11 +174,11 @@ export default function AlignRightRealtyCarrollwoodPage() {
               <div className="pt-4 border-t border-white/10 text-xs text-white/70 space-y-2">
                 <p className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#C8A951]" />
-                  Mark Davis — Commercial &amp; Residential Advisor (#3209459)
+                  Mark Davis, REALTOR® — Certified Commercial &amp; Residential Agent (#3209459)
                 </p>
                 <p className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#C8A951]" />
-                  Rachael Garnett — Commercial &amp; Residential Advisor (#3378601)
+                  Rachael Garnett, REALTOR® — Certified Commercial &amp; Residential Agent (#3378601)
                 </p>
               </div>
             </div>
@@ -191,13 +191,14 @@ export default function AlignRightRealtyCarrollwoodPage() {
         <div className="max-w-screen-xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-              The Institutional Advantage
+              Strong Brokerage Support
             </span>
-            <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111111] mb-4">
-              Why Davis & Garnett Partners With Align Right Realty Carrollwood
+            <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111111] mb-4 leading-tight">
+              Why We Partner With<br />
+              <span className="text-[#9A7D3A]">Align Right Realty Carrollwood</span>
             </h2>
-            <p className="text-base text-[#111111]/65 font-light">
-              Six core operational pillars that elevate every client transaction from initial underwriting to final settlement.
+            <p className="text-base md:text-[17px] lg:text-[18px] text-[#111111]/75 font-light leading-relaxed">
+              Six practical ways our brokerage helps protect your transaction and get your property in front of more buyers.
             </p>
           </div>
 
@@ -205,33 +206,33 @@ export default function AlignRightRealtyCarrollwoodPage() {
             {[
               {
                 icon: ShieldCheck,
-                title: "FREC & Fiduciary Compliance Excellence",
-                desc: "Every commercial LOI, FAR/BAR contract, addendum, and escrow deposit is backed by rigorous broker-level compliance review under Florida License #BK3401606.",
+                title: "Careful Contract & Escrow Protection",
+                desc: "Every commercial and residential contract, addendum, and escrow deposit is backed by full broker compliance review under Florida License #BK3401606.",
               },
               {
                 icon: Globe,
-                title: "Statewide MLS & Commercial Syndication",
-                desc: "Immediate syndication across Stellar MLS, national commercial portals, international luxury buyer feeds, and Align Right Realty's statewide Florida referral network.",
+                title: "Statewide MLS & Commercial Reach",
+                desc: "Your listing syndicates across Stellar MLS, Zillow, Realtor.com, CoStar, LoopNet, and Align Right Realty's network of agents across Florida.",
               },
               {
                 icon: Scale,
-                title: "Dual-Asset Transaction Support",
-                desc: "Unlike residential-only boutique firms or rigid commercial-only houses, Align Right Carrollwood supports both complex commercial/land deals and luxury residential estates.",
+                title: "Support for Both Homes & Commercial",
+                desc: "Unlike brokerages that only handle houses or only handle commercial properties, Align Right Carrollwood supports residential homes, commercial buildings, and land under one roof.",
               },
               {
                 icon: FileCheck2,
-                title: "Encrypted Digital Closing Rooms",
-                desc: "End-to-end digital transaction management, wire-fraud prevention protocols, and verified title/escrow coordination for domestic and international principals.",
+                title: "Safe, Simple Digital Paperwork",
+                desc: "Secure e-signing, wire-fraud protection, and smooth coordination with local title companies and lenders from contract to closing.",
               },
               {
                 icon: Compass,
-                title: "Pre-Market Collaborative Intelligence",
-                desc: "Direct collaboration across hundreds of Tampa Bay agents gives Davis & Garnett buyers early visibility into coming-soon listings and off-market opportunities.",
+                title: "Connected Network of Local Agents",
+                desc: "Working alongside hundreds of fellow Tampa Bay agents gives our buyers and sellers early word on upcoming listings and active buyers.",
               },
               {
                 icon: Award,
-                title: "Client-First Advisory Freedom",
-                desc: "Align Right's entrepreneurial structure empowers Mark and Rachael to invest heavily in custom architectural photography, drone mapping, and AI-driven AEO/GEO marketing.",
+                title: "Freedom to Put Clients First",
+                desc: "Our brokerage gives Mark and Rachael the flexibility to invest in pro photography, 4K drone video, 3D tours, and custom marketing on every single listing.",
               },
             ].map((item) => (
               <div
@@ -244,7 +245,7 @@ export default function AlignRightRealtyCarrollwoodPage() {
                 <h3 className="font-aiveritas text-2xl text-[#111111] mb-3">
                   {item.title}
                 </h3>
-                <p className="text-sm text-[#111111]/65 font-light leading-relaxed">
+                <p className="text-base text-[#111111]/75 font-light leading-relaxed">
                   {item.desc}
                 </p>
               </div>

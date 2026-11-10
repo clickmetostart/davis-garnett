@@ -44,64 +44,64 @@ export default function EveryListingApproachPage() {
 
   const checklistItems = [
     {
-      title: "Comprehensive Fiduciary Valuation & Pricing Blueprint",
-      desc: "Granular comparative market analysis (CMA), commercial income/cap rate modeling, absorption rate analytics, and local micro-trend positioning.",
-      category: "Analysis & Valuation",
+      title: "Honest Pricing & Local Market Study",
+      desc: "We compare recent neighborhood sales, current buyer demand, and commercial income numbers so you can price your property with confidence.",
+      category: "Pricing & Research",
     },
     {
-      title: "Full Title, Survey, CDD, HOA & Environmental Due Diligence",
-      desc: "Proactive review of preliminary title, deed restrictions, easement rights, zoning classifications (A-1, commercial, PUD), flood zones, and bond balances.",
-      category: "Legal & Entitlements",
+      title: "Upfront Title, Survey, HOA & Zoning Checks",
+      desc: "We check public records, deed rules, easements, zoning (A-1, commercial, residential), flood zones, and CDD fees early so nothing surprises you in escrow.",
+      category: "Early Prep",
     },
     {
-      title: "Architectural HDR Photography, Drone Aerials & Video Walkthroughs",
-      desc: "Magazine-grade photography, FAA-licensed 4K aerial footage, twilight exterior renderings, and cinematic property tours.",
-      category: "Media & Visuals",
+      title: "Professional Photos, Drone Aerials & Video Tours",
+      desc: "Every listing gets bright professional photography, licensed 4K drone photos and video, twilight shots, and a guided video walkthrough.",
+      category: "Photos & Video",
     },
     {
-      title: "Floor Plans, 3D Interactive Virtual Tours & Dimensioned Layouts",
-      desc: "Laser-measured schematic floor plans, Matterport/Zillow 3D virtual walkthroughs, and site plan overlays for land & acreage.",
-      category: "Media & Visuals",
+      title: "Measured Floor Plans & 3D Virtual Walkthroughs",
+      desc: "We create clear floor plans, 3D Matterport/Zillow walkthroughs for homes and offices, and boundary overlays for land and acreage.",
+      category: "Floor Plans & 3D",
     },
     {
-      title: "Curated Print Dossiers & Digital Property Presentation Books",
-      desc: "Heavyweight glossy feature brochures, executive offering memorandums, and shareable high-res digital pitch decks.",
-      category: "Marketing Collateral",
+      title: "Custom Print Brochures & Property Guides",
+      desc: "We design clean, easy-to-read print flyers, commercial property summaries, and digital brochures buyers can review at home.",
+      category: "Print & Digital Materials",
     },
     {
-      title: "Dual MLS Syndication & Global Portal Distribution",
-      desc: "Full Stellar MLS broadcast syndicating instantly to Zillow, Realtor.com, Redfin, Homes.com, CoStar, LoopNet, and Crexi.",
-      category: "Distribution & Reach",
+      title: "Full MLS & Commercial Portal Reach",
+      desc: "Your listing goes live on Stellar MLS and syndicates to Zillow, Realtor.com, Redfin, Homes.com, CoStar, LoopNet, and Crexi.",
+      category: "Online Reach",
     },
     {
-      title: "Targeted Digital Campaigns & Social Media Amplification",
-      desc: "Hyper-targeted geo-fenced social advertising reaching qualified high-net-worth buyers, local investors, and executive relocation channels.",
+      title: "Targeted Local & Out-of-State Ad Campaigns",
+      desc: "We run focused social media and search ads to reach local buyers, business owners, and families relocating to Tampa Bay.",
       category: "Digital Marketing",
     },
     {
-      title: "Brokerage Network Exposure Across Align Right Realty",
-      desc: "Direct outreach to top regional brokerages, commercial master networks, and Align Right Realty's statewide network.",
-      category: "Industry Outreach",
+      title: "Direct Outreach to Local Agents & Investors",
+      desc: "We share your property directly with fellow agents across Align Right Realty Carrollwood and active buyer networks across Central Florida.",
+      category: "Agent Network",
     },
     {
-      title: "Dedicated Advisor Representation at Showings & Inquiries",
-      desc: "Mark Davis and Rachael Garnett personally field qualified buyer inquiries, vet proof of funds, and host private broker previews.",
-      category: "Personal Advisory",
+      title: "Mark & Rachael Handle Your Showings & Calls",
+      desc: "You won't be passed off to a junior assistant. Mark and Rachael personally answer buyer questions, check pre-approvals, and follow up on every showing.",
+      category: "Personal Service",
     },
     {
-      title: "Rigorous Contract Architecture & Fierce Negotiation",
-      desc: "Institutional-grade contract preparation, inspection contingency navigation, appraisal defense packages, and earnest money escrow protection.",
-      category: "Transaction Management",
+      title: "Clear Contract Review & Strong Negotiation",
+      desc: "We walk you through every offer in plain English, compare net sheets, and negotiate price, inspection repairs, and timelines to protect your bottom line.",
+      category: "Offers & Negotiation",
     },
     {
-      title: "End-to-End Escrow, Title & Closing Coordination",
-      desc: "Direct coordination with trusted title attorneys, survey crews, municipal permitting desks, and closing teams through final wire clearance.",
-      category: "Transaction Management",
+      title: "Hands-On Title, Inspection & Closing Coordination",
+      desc: "We work closely with title companies, surveyors, inspectors, and lenders to keep your closing on track from contract to keys.",
+      category: "Closing Support",
     },
     {
-      title: "Post-Sale Stewardship & Client Advisory",
-      desc: "Ongoing 1031 exchange guidance, investment redeployment analysis, homestead exemption filings, and neighborhood concierge services.",
-      category: "Ongoing Care",
+      title: "Here for You After Closing",
+      desc: "Whether you need a trusted local contractor, help filing homestead exemptions, or advice on a 1031 exchange, we stay a phone call away.",
+      category: "Ongoing Help",
     },
   ];
 
@@ -145,12 +145,13 @@ export default function EveryListingApproachPage() {
             </div>
 
             <h1 className="font-aiveritas text-4xl sm:text-5xl lg:text-6xl text-[#111111] leading-[1.08] tracking-tight mb-6">
-              Every Property Deserves <span className="text-[#9A7D3A]">Uncompromising Standard.</span>
+              Every Listing Gets<br />
+              <span className="text-[#9A7D3A]">Our Full Attention.</span>
             </h1>
 
-            <p className="text-base md:text-lg text-[#111111]/70 font-light leading-relaxed max-w-3xl mx-auto mb-8">
-              From a downtown penthouse to an 80-acre Polk County tract, our standard is identical:{" "}
-              <strong className="text-[#111111] font-semibold">institutional-grade diligence, white-glove presentation, and personal advisor oversight from consultation to closing.</strong>
+            <p className="text-base md:text-[17px] lg:text-[18px] text-[#111111]/80 font-light leading-relaxed max-w-3xl mx-auto mb-8">
+              Whether we are selling a residential home, a commercial building, or land, our promise is the same:{" "}
+              <strong className="text-[#111111] font-semibold">thorough research, great photography, and both Mark and Rachael working hands-on from our first meeting to the closing table.</strong>
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">
@@ -207,29 +208,29 @@ export default function EveryListingApproachPage() {
 
             <div>
               <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
-                Our "Why"
+                Our &ldquo;Why&rdquo;
               </span>
               <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111111] mb-6 leading-tight">
-                Respecting the Value Every Property Brings to the Community.
+                Treating Every Property Like It Is Our Own.
               </h2>
-              <p className="text-[#111111]/75 font-light text-base leading-relaxed mb-6">
-                Real estate is rarely just an address or a transaction. For families, it is generational wealth, security, and the backdrop of their lives. For business owners and investors, it is capital allocation, cash flow, and community expansion.
+              <p className="text-[#111111]/75 font-light text-base md:text-[17px] lg:text-[18px] leading-relaxed mb-6">
+                Selling a property is a big moment. For families, a home holds years of memories and hard-earned savings. For business owners and land owners, a property represents years of work and future plans.
               </p>
-              <p className="text-[#111111]/75 font-light text-base leading-relaxed mb-6">
-                When an agent treats a listing as just a sign in the yard, critical details get missed: zoning nuances are overlooked, photos fall short of capturing value, buyer inquiries go unanswered, and equity is left on the table.
+              <p className="text-[#111111]/75 font-light text-base md:text-[17px] lg:text-[18px] leading-relaxed mb-6">
+                Too often, agents just put a sign in the yard, snap a few quick photos, and wait. When that happens, important details get missed, buyer questions go unanswered, and sellers leave money on the table.
               </p>
-              <p className="text-[#111111]/75 font-light text-base leading-relaxed mb-8">
-                We founded <strong className="text-[#111111] font-semibold">Davis &amp; Garnett</strong> to raise that bar. We believe every seller deserves advisors who know the numbers, respect their property’s true worth, and execute an exhaustive, multi-point marketing plan to achieve the maximum price and smoothest closing possible.
+              <p className="text-[#111111]/75 font-light text-base md:text-[17px] lg:text-[18px] leading-relaxed mb-8">
+                We teamed up as <strong className="text-[#111111] font-semibold">Davis &amp; Garnett</strong> to do things differently. As both residential and commercial REALTORS®, we do the homework upfront, showcase your property at its best, and stay personally involved in every showing, call, and negotiation.
               </p>
 
               <div className="grid grid-cols-2 gap-6 pt-6 border-t border-[#111111]/10">
                 <div>
                   <span className="font-aiveritas text-3xl text-[#9A7D3A] block">100%</span>
-                  <span className="text-xs uppercase tracking-wider text-[#111111]/60 font-bold">Standard Services Included</span>
+                  <span className="text-xs uppercase tracking-wider text-[#111111]/60 font-bold">Full Checklist on Every Listing</span>
                 </div>
                 <div>
-                  <span className="font-aiveritas text-3xl text-[#9A7D3A] block">Dual-Advisor</span>
-                  <span className="text-xs uppercase tracking-wider text-[#111111]/60 font-bold">Commercial &amp; Residential Expertise</span>
+                  <span className="font-aiveritas text-3xl text-[#9A7D3A] block">Two Agents</span>
+                  <span className="text-xs uppercase tracking-wider text-[#111111]/60 font-bold">Commercial &amp; Residential Certified</span>
                 </div>
               </div>
             </div>
@@ -242,13 +243,14 @@ export default function EveryListingApproachPage() {
         <div className="max-w-screen-xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-              Versatility &amp; Precision
+              Homes, Commercial &amp; Land
             </span>
-            <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111111] mb-4">
-              Every Category. Same Unwavering Standard.
+            <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111111] mb-4 leading-tight">
+              Every Property Type.<br />
+              <span className="text-[#9A7D3A]">Same Care &amp; Effort.</span>
             </h2>
-            <p className="text-[#111111]/60 font-light text-sm md:text-base leading-relaxed">
-              We apply our full playbook across commercial assets, residential neighborhoods, raw land, and luxury towers without compromise.
+            <p className="text-[#111111]/70 font-light text-base md:text-[17px] lg:text-[18px] leading-relaxed">
+              We bring the exact same level of preparation and marketing to residential homes, commercial buildings, land, and waterfront and unique properties.
             </p>
           </div>
 
@@ -263,7 +265,7 @@ export default function EveryListingApproachPage() {
                     {item.icon}
                   </div>
                   <h3 className="font-aiveritas text-xl text-[#111111] mb-3">{item.title}</h3>
-                  <p className="text-[#111111]/65 text-xs md:text-sm font-light leading-relaxed">
+                  <p className="text-[#111111]/75 text-base font-light leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -282,13 +284,13 @@ export default function EveryListingApproachPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
               <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-                Transparent Execution
+                What We Do For You
               </span>
               <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111111]">
                 The Every Listing Checklist
               </h2>
             </div>
-            <p className="text-[#111111]/60 font-light text-sm max-w-md">
+            <p className="text-[#111111]/70 font-light text-base md:text-[17px] max-w-md leading-relaxed">
               Here is what is standard on every single listing we bring to market—no surprise fees, no downgraded tiers.
             </p>
           </div>
@@ -309,7 +311,7 @@ export default function EveryListingApproachPage() {
                   <h3 className="font-aiveritas text-xl text-[#111111] mb-3 leading-snug">
                     {item.title}
                   </h3>
-                  <p className="text-[#111111]/65 text-xs md:text-sm font-light leading-relaxed">
+                  <p className="text-[#111111]/75 text-base font-light leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -324,13 +326,13 @@ export default function EveryListingApproachPage() {
         <div className="max-w-screen-xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-              Clear &amp; Predictable
+              Clear &amp; Simple
             </span>
             <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111111] mb-4">
               How We Guide You From Day One
             </h2>
-            <p className="text-[#111111]/60 font-light text-sm md:text-base leading-relaxed">
-              Our 4-stage advisory workflow guarantees complete clarity, zero ambiguity, and continuous communication.
+            <p className="text-[#111111]/70 font-light text-base md:text-[17px] lg:text-[18px] leading-relaxed">
+              Our 4-step process keeps everything clear, organized, and stress-free from our first meeting to closing day.
             </p>
           </div>
 
@@ -338,23 +340,23 @@ export default function EveryListingApproachPage() {
             {[
               {
                 phase: "01",
-                name: "Discovery & Valuation",
-                desc: "We tour the property, audit public records, review title & survey, and compile a rigorous market analysis to establish target pricing.",
+                name: "Walkthrough & Pricing",
+                desc: "We tour your property together, check local records and recent sales, and build a clear pricing strategy.",
               },
               {
                 phase: "02",
-                name: "Asset Preparation & Media",
-                desc: "Staging recommendations, full architectural & drone media production, dimensioned floor plans, and custom marketing copywriting.",
+                name: "Prep, Photos & Video",
+                desc: "Helpful staging tips, professional photography, drone video, 3D tours, and custom marketing materials.",
               },
               {
                 phase: "03",
-                name: "Global Launch & Vetting",
-                desc: "Dual MLS syndication, broker preview outreach, digital ad rollout, and direct vetting of all buyer inquiries & proof of funds.",
+                name: "Launch & Buyer Outreach",
+                desc: "Full MLS launch, social media and online marketing, agent outreach, and personal follow-up on every inquiry.",
               },
               {
                 phase: "04",
-                name: "Negotiation & Escrow",
-                desc: "Offer presentation, strategic counter-offers, inspection negotiation, appraisal defense, and hands-on closing coordination.",
+                name: "Offers & Smooth Closing",
+                desc: "Plain-English offer comparisons, strong negotiation, inspection coordination, and hands-on support through closing.",
               },
             ].map((st, i) => (
               <div key={i} className="relative bg-[#fbfbf9] p-8 rounded-2xl border border-[#111111]/10">
@@ -362,7 +364,7 @@ export default function EveryListingApproachPage() {
                   {st.phase}
                 </span>
                 <h3 className="font-aiveritas text-2xl text-[#111111] mb-2">{st.name}</h3>
-                <p className="text-xs md:text-sm text-[#111111]/65 font-light leading-relaxed">
+                <p className="text-base text-[#111111]/75 font-light leading-relaxed">
                   {st.desc}
                 </p>
               </div>
@@ -376,13 +378,14 @@ export default function EveryListingApproachPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,#1a1810_0%,#0c0b09_80%)]" />
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <span className="text-[#C8A951] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
-            Experience The Difference
+            Talk With Mark &amp; Rachael
           </span>
           <h2 className="font-aiveritas text-3xl md:text-5xl text-white mb-6 leading-tight">
-            Ready to Discover What Your Property is Truly Worth?
+            Curious What Your Property<br />
+            <span className="text-[#C8A951]">Could Sell For Today?</span>
           </h2>
-          <p className="text-white/75 font-light text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-            Schedule a confidential, zero-obligation advisory consultation with Mark Davis and Rachael Garnett. We will review your property, explain our custom marketing strategy, and answer all your questions.
+          <p className="text-white/80 font-light text-base md:text-[17px] lg:text-[18px] max-w-2xl mx-auto mb-10 leading-relaxed">
+            Schedule a friendly, no-pressure conversation with Mark Davis and Rachael Garnett. We will walk through your property, share local sales numbers, and answer all your questions.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

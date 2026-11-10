@@ -218,16 +218,16 @@ export default function StrategicPartnersPage() {
         <div className="max-w-screen-xl mx-auto grid lg:grid-cols-[1.15fr_0.85fr] gap-14 items-center">
           <div>
             <span className="inline-block px-3.5 py-1.5 rounded-full bg-[#f5f3ef] border border-[#C8A951]/40 text-[10px] uppercase tracking-[0.25em] font-bold text-[#9A7D3A] mb-6">
-              The Davis & Garnett Deal Execution Network
+              Trusted Local Professionals
             </span>
             <h1 className="font-aiveritas text-4xl sm:text-5xl lg:text-6xl text-[#111111] leading-[1.08] mb-6">
               Meet Our <span className="text-[#9A7D3A]">Strategic Partners.</span>
             </h1>
-            <p className="text-lg md:text-xl text-[#111111]/75 font-light leading-relaxed mb-6">
-              An elite real estate advisor is only as strong as the lenders, title attorneys, engineers, inspectors, and stagers standing behind the contract.
+            <p className="text-base md:text-[17px] lg:text-[18px] text-[#111111]/80 font-light leading-relaxed mb-6">
+              A smooth real estate closing takes more than great agents—it takes reliable lenders, title companies, surveyors, inspectors, and stagers working together.
             </p>
-            <p className="text-base text-[#111111]/65 font-light leading-relaxed mb-8">
-              Mark Davis and Rachael Garnett maintain a strictly vetted bench of Tampa Bay&apos;s premier transaction specialists across 6 mission-critical categories. Every partner listed below has been battle-tested for responsiveness, fiduciary integrity, and execution speed.
+            <p className="text-base md:text-[17px] lg:text-[18px] text-[#111111]/70 font-light leading-relaxed mb-8">
+              Over the years, Mark Davis and Rachael Garnett have built a trusted circle of Tampa Bay specialists across 6 key areas. Whenever you need a recommendation, we are happy to connect you with pros who do great work and treat people right.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -259,10 +259,10 @@ export default function StrategicPartnersPage() {
               Our Vetting Standard
             </span>
             <h3 className="font-aiveritas text-3xl text-white mb-4">
-              Zero Kickbacks. 100% Merit-Based Introductions.
+              Zero Kickbacks. 100% Honest Recommendations.
             </h3>
-            <p className="text-sm text-white/70 font-light leading-relaxed mb-6">
-              Davis & Garnett never accepts referral fees from lenders, inspectors, engineers, or contractors. A partner stays on our roster for one reason only: they protect our clients&apos; timelines and deliver institutional-grade work.
+            <p className="text-base text-white/75 font-light leading-relaxed mb-6">
+              Davis &amp; Garnett never accepts referral fees from lenders, inspectors, surveyors, or contractors. We recommend local professionals for one reason only: they do great work and take great care of our clients.
             </p>
             <div className="grid grid-cols-2 gap-4 pt-6 border-t border-white/15 text-xs">
               <div>
@@ -299,7 +299,7 @@ export default function StrategicPartnersPage() {
                     <h2 className="font-aiveritas text-2xl md:text-3xl text-[#111111] mb-2">
                       {group.category}
                     </h2>
-                    <p className="text-sm text-[#111111]/65 font-light max-w-2xl">
+                    <p className="text-base text-[#111111]/70 font-light max-w-2xl leading-relaxed">
                       {group.summary}
                     </p>
                   </div>

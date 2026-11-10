@@ -99,13 +99,13 @@ export default function KnowledgeHubPage() {
 
         <div className="relative z-10 w-full max-w-screen-xl mx-auto text-center">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/40 text-[#D4AF37] text-[10px] uppercase tracking-[0.3em] font-bold mb-6">
-            <BookOpen className="w-3.5 h-3.5" /> Davis &amp; Garnett Advisory Resource Center
+            <BookOpen className="w-3.5 h-3.5" /> Davis &amp; Garnett Resource Center
           </span>
           <h1 className="font-aiveritas text-4xl sm:text-5xl lg:text-6xl text-white mb-6 tracking-tight leading-[1.08]">
-            Real Estate Knowledge Simplified
+            Real Estate Knowledge,<br className="sm:hidden" /> <span className="text-[#D4AF37]">Simplified.</span>
           </h1>
-          <p className="text-white/80 text-base md:text-xl font-light max-w-3xl mx-auto leading-relaxed mb-8">
-            Expert playbooks, local neighborhood guides, AI search Q&amp;As, community events, and market updates from Tampa Bay&apos;s premier commercial &amp; residential advisors.
+          <p className="text-white/85 text-base md:text-[17px] lg:text-[18px] font-light max-w-3xl mx-auto leading-relaxed mb-8">
+            Practical guides, local neighborhood spotlights, plain-English Q&amp;As, community events, and market updates from Mark Davis and Rachael Garnett.
           </p>
 
           {/* Live Search Input */}
@@ -154,10 +154,10 @@ export default function KnowledgeHubPage() {
                 01 • Step-by-Step Handbooks
               </span>
               <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111] mb-3">
-                Advisory Playbooks &amp; Guides
+                Buyer, Seller &amp; Investor Guides
               </h2>
-              <p className="text-[#111]/60 font-light max-w-2xl text-sm md:text-base">
-                Comprehensive playbooks covering luxury waterfront due diligence, home selling valuation, commercial mixed-use investing, Florida Homestead portability, and CDD fees.
+              <p className="text-[#111]/70 font-light max-w-2xl text-base md:text-[17px] lg:text-[18px] leading-relaxed">
+                Step-by-step guides covering waterfront home buying, home selling, commercial real estate, Florida Homestead tax rules, and CDD fees.
               </p>
             </div>
             <div className="flex items-center gap-3 shrink-0">
@@ -235,10 +235,10 @@ export default function KnowledgeHubPage() {
                 02 • Davis &amp; Garnett Classroom
               </span>
               <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111] mb-3">
-                Top Purchase, Sale &amp; Investment Questions
+                Top Buying, Selling &amp; Investing Questions
               </h2>
-              <p className="text-[#111]/60 font-light max-w-2xl text-sm md:text-base">
-                Direct, plain-English answers to the most important questions buyers, sellers, and commercial investors ask about Florida real estate.
+              <p className="text-[#111]/70 font-light max-w-2xl text-base md:text-[17px] lg:text-[18px] leading-relaxed">
+                Direct, plain-English answers to the most common questions buyers, sellers, and commercial investors ask about Florida real estate.
               </p>
             </div>
             <div className="flex items-center gap-3 shrink-0">
@@ -315,8 +315,8 @@ export default function KnowledgeHubPage() {
               <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111] mb-3">
                 Areas We Work In
               </h2>
-              <p className="text-[#111]/60 font-light max-w-2xl text-sm md:text-base">
-                Hyper-local neighborhood guides across St. Petersburg, Downtown Tampa &amp; Bayshore, Wesley Chapel, Land O&apos; Lakes, Brandon, and Central Florida Acreage.
+              <p className="text-[#111]/70 font-light max-w-2xl text-base md:text-[17px] lg:text-[18px] leading-relaxed">
+                Local neighborhood guides across St. Petersburg, Downtown Tampa &amp; Bayshore, Wesley Chapel, Land O&apos; Lakes, Brandon, and Central Florida Acreage.
               </p>
             </div>
             <div className="flex items-center gap-3 shrink-0">
@@ -498,13 +498,13 @@ export default function KnowledgeHubPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
               <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-                04 • Briefings, Tours &amp; Causes
+                04 • Local Gatherings &amp; Causes
               </span>
               <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111] mb-3">
-                Community Events &amp; VIP Previews
+                Community Events &amp; Property Tours
               </h2>
-              <p className="text-[#111]/60 font-light max-w-2xl text-sm md:text-base">
-                Join Mark Davis and Rachael Garnett for private luxury condo previews, master-planned builder tours, commercial investor roundtables, and community outreach days.
+              <p className="text-[#111]/70 font-light max-w-2xl text-base md:text-[17px] lg:text-[18px] leading-relaxed">
+                Join Mark Davis and Rachael Garnett for new construction tours, local real estate workshops, and Tampa Bay community outreach days.
               </p>
             </div>
             <div className="flex items-center gap-3 shrink-0">
@@ -584,13 +584,13 @@ export default function KnowledgeHubPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
               <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-                05 • Research &amp; Commentary
+                05 • Market Updates &amp; Articles
               </span>
               <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111] mb-3">
-                Market Intelligence &amp; Editorial Reports
+                Tampa Bay Market Updates &amp; Articles
               </h2>
-              <p className="text-[#111]/60 font-light max-w-2xl text-sm md:text-base">
-                In-depth market analyses, demographic migration reports, and commercial investment commentary across the Florida Gulf Coast.
+              <p className="text-[#111]/70 font-light max-w-2xl text-base md:text-[17px] lg:text-[18px] leading-relaxed">
+                Local market updates, relocation insights, and residential and commercial real estate articles across the Tampa Bay region.
               </p>
             </div>
           </div>

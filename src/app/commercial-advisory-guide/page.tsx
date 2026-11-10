@@ -39,28 +39,28 @@ export default function CommercialAdvisoryGuidePage() {
   const steps = [
     {
       step: "01",
-      title: "Initial Asset & Objective Discovery",
-      desc: "We begin with a confidential discovery consultation to analyze your primary objective: acquisition, disposition, 1031 exchange timeline, owner-occupant relocation, or land development horizon.",
+      title: "Talking Through Your Goals",
+      desc: "We start with a friendly conversation to understand what you want to accomplish—whether you are buying a building for your business, selling a property, planning a 1031 exchange, or looking at land.",
     },
     {
       step: "02",
-      title: "Underwriting, Pro-Forma & Zoning Feasibility",
-      desc: "Our team models NOI, cap rates, rent rolls, lease structures (NNN vs. Gross), and audits municipal zoning (commercial, industrial, A-1 agriculture), future land use (FLU), and traffic counts.",
+      title: "Reviewing the Numbers & Zoning",
+      desc: "We look closely at rental income, expenses, cap rates, lease terms (NNN vs. Gross), local zoning rules (commercial, industrial, A-1 agriculture), future land use, and road traffic.",
     },
     {
       step: "03",
-      title: "Targeted Sourcing or Confidential Launch",
-      desc: "For buyers, we tap off-market owner records and institutional networks. For sellers, we prepare comprehensive offering memorandums and distribute across CoStar, LoopNet, Crexi, and private investor networks.",
+      title: "Finding Properties or Launching Your Listing",
+      desc: "For buyers, we search both on-market and off-market properties. For sellers, we create clear property info packages and market your listing across Stellar MLS, CoStar, LoopNet, Crexi, and local investor networks.",
     },
     {
       step: "04",
-      title: "Letter of Intent (LOI) & Contract Architecture",
-      desc: "We construct and negotiate protective LOIs and commercial purchase contracts with meticulous inspection, study period, environmental Phase I/II, and financing contingencies.",
+      title: "Clear Offers & Smart Contract Terms",
+      desc: "We write and negotiate Letters of Intent (LOIs) and purchase contracts with clear inspection, zoning study, environmental, and financing protections.",
     },
     {
       step: "05",
-      title: "Due Diligence & Title Closing Oversight",
-      desc: "Hands-on coordination through municipal planning departments, survey reviews, environmental engineers, and commercial title counsel through escrow disbursement.",
+      title: "Hands-On Support Through Closing",
+      desc: "Mark and Rachael stay involved through county permitting checks, surveys, inspections, and title work all the way to the closing table.",
     },
   ];
 
@@ -86,20 +86,21 @@ export default function CommercialAdvisoryGuidePage() {
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 border border-[#D4AF37]/40 mb-6">
               <Building2 className="w-3.5 h-3.5 text-[#D4AF37]" />
               <span className="text-[11px] uppercase tracking-[0.25em] font-bold text-[#D4AF37]">
-                Commercial, Mixed-Use &amp; Land Advisory Guide
+                Commercial &amp; Land Real Estate Guide
               </span>
             </div>
 
             <h1 className="font-aiveritas text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.08] tracking-tight mb-8">
-              Navigating Commercial Real Estate with <span className="text-[#D4AF37]">Precision.</span>
+              Commercial &amp; Land Real Estate,<br />
+              <span className="text-[#D4AF37]">Made Clear &amp; Simple.</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-white/80 font-light leading-relaxed mb-6">
-              Commercial real estate, mixed-use assets, and development land require an entirely different caliber of underwriting, zoning analysis, and contract structuring.
+            <p className="text-base md:text-[17px] lg:text-[18px] text-white/85 font-light leading-relaxed mb-6">
+              Buying or selling a commercial building, mixed-use property, or tract of Florida land takes careful homework on zoning, utilities, and income numbers.
             </p>
 
-            <p className="text-base text-white/65 font-light leading-relaxed mb-10">
-              Whether you are acquiring an income-producing retail asset, executing a tax-deferred 1031 exchange, or assembling acreage in Central Florida—here is exactly how our advisory team guides you from your first strategy session to final closing.
+            <p className="text-base md:text-[17px] lg:text-[18px] text-white/75 font-light leading-relaxed mb-10">
+              Whether you are looking for a building for your business, completing a 1031 exchange, or buying or selling acreage in Central Florida, Mark Davis and Rachael Garnett work together to guide you from our first conversation to closing day.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
@@ -133,13 +134,13 @@ export default function CommercialAdvisoryGuidePage() {
         <div className="max-w-screen-xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-              Institutional Discipline
+              Commercial &amp; Land Expertise
             </span>
             <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111111] mb-4">
-              What We Advise Across
+              How We Help Commercial &amp; Land Clients
             </h2>
-            <p className="text-[#111111]/60 font-light text-sm md:text-base leading-relaxed">
-              From high-density urban corridors to large-scale rural development tracts across Greater Tampa Bay and Central Florida.
+            <p className="text-[#111111]/70 font-light text-base md:text-[17px] lg:text-[18px] leading-relaxed">
+              From business corridors in Tampa and Brandon to acreage across Central Florida.
             </p>
           </div>
 
@@ -147,21 +148,21 @@ export default function CommercialAdvisoryGuidePage() {
             {[
               {
                 icon: <Building2 className="w-6 h-6 text-[#9A7D3A]" />,
-                title: "Mixed-Use & Retail Corridors",
-                desc: "Dual-building assets, street-front commercial spaces, professional office suites, and multi-tenant assets with separate utilities and value-add re-tenanting potential.",
+                title: "Commercial & Mixed-Use",
+                desc: "Office buildings, street-front retail spaces, and mixed-use properties where you can run your business and earn rental income.",
                 examples: "126 Ridgewood Ave (Brandon Hwy 60 corridor)",
               },
               {
                 icon: <Layers className="w-6 h-6 text-[#9A7D3A]" />,
-                title: "Acreage & Development Tracts",
-                desc: "High-and-dry parcels, residential subdivision land, highway commercial frontage (US-98 / US-27), and agricultural timberland with tax exemptions.",
+                title: "Florida Land & Acreage",
+                desc: "High-and-dry acreage, commercial highway frontage, and agricultural or timberland parcels with tax exemptions.",
                 examples: "770 Old Stokes Rd (79.5 Acres) & NE 90th St (20 Acres)",
               },
               {
                 icon: <PieChart className="w-6 h-6 text-[#9A7D3A]" />,
-                title: "1031 Exchange & Capital Allocation",
-                desc: "Strict adherence to 45-day identification and 180-day closing deadlines. Sourcing replacement properties that preserve equity, defer capital gains, and maximize cash-flow.",
-                examples: "Central Florida Logistics & Industrial Corridors",
+                title: "1031 Exchanges & Investments",
+                desc: "Helping property owners meet 45-day identification and 180-day closing timelines to defer capital gains taxes and reinvest wisely.",
+                examples: "Tampa Bay & Central Florida Commercial Corridors",
               },
             ].map((card, i) => (
               <div key={i} className="p-8 rounded-2xl bg-[#fbfbf9] border border-[#111111]/10 flex flex-col justify-between">
@@ -170,12 +171,12 @@ export default function CommercialAdvisoryGuidePage() {
                     {card.icon}
                   </div>
                   <h3 className="font-aiveritas text-2xl text-[#111111] mb-3">{card.title}</h3>
-                  <p className="text-xs md:text-sm text-[#111111]/70 font-light leading-relaxed mb-6">
+                  <p className="text-base text-[#111111]/75 font-light leading-relaxed mb-6">
                     {card.desc}
                   </p>
                 </div>
                 <div className="pt-4 border-t border-[#111111]/10 text-[11px] text-[#9A7D3A] font-semibold">
-                  Featured Track Record: {card.examples}
+                  Featured Listing: {card.examples}
                 </div>
               </div>
             ))}
@@ -193,8 +194,8 @@ export default function CommercialAdvisoryGuidePage() {
             <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111111] mb-4">
               How Clients Get Started With Us
             </h2>
-            <p className="text-[#111111]/60 font-light text-sm md:text-base leading-relaxed">
-              We eliminate guesswork with a proven 5-step transaction lifecycle built specifically for commercial investors, owner-users, and landholders.
+            <p className="text-[#111111]/70 font-light text-base md:text-[17px] lg:text-[18px] leading-relaxed">
+              A simple, 5-step process built for business owners, commercial buyers, and landowners.
             </p>
           </div>
 
@@ -209,7 +210,7 @@ export default function CommercialAdvisoryGuidePage() {
                 </span>
                 <div className="flex-1">
                   <h3 className="font-aiveritas text-2xl text-[#111111] mb-2">{s.title}</h3>
-                  <p className="text-xs md:text-sm text-[#111111]/70 font-light leading-relaxed">
+                  <p className="text-base text-[#111111]/75 font-light leading-relaxed">
                     {s.desc}
                   </p>
                 </div>
@@ -223,13 +224,14 @@ export default function CommercialAdvisoryGuidePage() {
       <section className="py-24 px-6 md:px-12 bg-[#111111] text-white text-center">
         <div className="max-w-3xl mx-auto">
           <span className="text-[#C8A951] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
-            Direct Principal Contact
+            Talk With Mark &amp; Rachael
           </span>
-          <h2 className="font-aiveritas text-3xl md:text-5xl text-white mb-6">
-            Discuss Your Commercial or Land Mandate.
+          <h2 className="font-aiveritas text-3xl md:text-5xl text-white mb-6 leading-tight">
+            Have Questions About a<br />
+            <span className="text-[#C8A951]">Commercial Property or Land?</span>
           </h2>
-          <p className="text-white/70 font-light text-sm md:text-base mb-10 leading-relaxed">
-            Connect directly with Commercial &amp; Residential Advisor Mark Davis (#3209459) and Rachael Garnett (#3378601) to evaluate pricing, off-market opportunities, or portfolio disposition.
+          <p className="text-white/80 font-light text-base md:text-[17px] lg:text-[18px] mb-10 leading-relaxed">
+            Reach out directly to Mark Davis (#3209459) and Rachael Garnett (#3378601) to talk through property values, zoning questions, or off-market opportunities.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

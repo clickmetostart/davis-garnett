@@ -38,28 +38,28 @@ export default function ResidentialAdvisoryGuidePage() {
   const steps = [
     {
       step: "01",
-      title: "Lifestyle, Enclave & Financial Alignment",
-      desc: "We begin by crystallizing your lifestyle priorities: waterfront boating clearance, gated golf country clubs, school districts, commute corridors, or downtown walkability.",
+      title: "Listening to What Matters Most to You",
+      desc: "We start by talking through your goals: neighborhood feel, school zones, commute times, boating water access, or finding a unique home with character.",
     },
     {
       step: "02",
-      title: "Neighborhood Tour & Off-Market Curation",
-      desc: "Beyond public MLS listings, we tap private developer allocations, pre-construction builder releases, and quiet seller networks across St. Petersburg, Tampa, and North Tampa.",
+      title: "Touring Neighborhoods & Finding the Right Fit",
+      desc: "Alongside active MLS listings, we help you explore new-construction communities, builder incentives, and upcoming homes across St. Petersburg, Tampa, and North Tampa.",
     },
     {
       step: "03",
-      title: "Contract Protection & Strategic Negotiation",
-      desc: "We draft purchase agreements with rigorous contingencies protecting your earnest money deposit, loan qualification terms, and appraisal conditions.",
+      title: "Smart Offers & Protecting Your Deposit",
+      desc: "We write clear purchase offers with strong inspection, financing, and appraisal protections so your deposit and budget stay protected.",
     },
     {
       step: "04",
-      title: "Specialized Inspections & Due Diligence",
-      desc: "For waterfront homes: seawalls, docks, and coastal elevation certificates. For master-planned communities: CDD bond debt schedules, HOA reserve funds, and builder warranty walkthroughs.",
+      title: "Thorough Home, Seawall & HOA Checks",
+      desc: "For waterfront and unique properties: we check seawalls, docks, and flood zones. For master-planned neighborhoods: we review CDD fees, HOA rules, and builder warranties.",
     },
     {
       step: "05",
-      title: "Smooth Closing, Homestead & Concierge Hand-Off",
-      desc: "We coordinate with trusted title attorneys and lenders through closing, followed by personalized assistance with Florida homestead tax exemptions and utility setup.",
+      title: "Smooth Closing & Homestead Help",
+      desc: "We work closely with your lender and title company all the way to closing, and help you file your Florida homestead tax exemption once you move in.",
     },
   ];
 
@@ -85,20 +85,21 @@ export default function ResidentialAdvisoryGuidePage() {
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 border border-[#D4AF37]/40 mb-6">
               <Home className="w-3.5 h-3.5 text-[#D4AF37]" />
               <span className="text-[11px] uppercase tracking-[0.25em] font-bold text-[#D4AF37]">
-                Residential, Condos &amp; Luxury Estates Guide
+                Residential Real Estate Guide
               </span>
             </div>
 
             <h1 className="font-aiveritas text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.08] tracking-tight mb-8">
-              A Thoughtful Approach to <span className="text-[#D4AF37]">Home Buying &amp; Selling.</span>
+              A Personal, Stress-Free Way to<br />
+              <span className="text-[#D4AF37]">Buy or Sell Your Home.</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-white/80 font-light leading-relaxed mb-6">
-              Purchasing or selling a home in Tampa Bay is more than a financial transaction—it defines your family’s daily rhythm, security, and long-term peace of mind.
+            <p className="text-base md:text-[17px] lg:text-[18px] text-white/85 font-light leading-relaxed mb-6">
+              Buying or selling a home in Tampa Bay is a big life milestone—and having two approachable, full-time agents in your corner makes all the difference.
             </p>
 
-            <p className="text-base text-white/65 font-light leading-relaxed mb-10">
-              Whether you are moving into custom waterfront living in St. Pete, selecting a penthouse tower in Water Street, or settling into a master-planned golf community in Pasco County—here is how our advisory team partners with you from day one.
+            <p className="text-base md:text-[17px] lg:text-[18px] text-white/75 font-light leading-relaxed mb-10">
+              Whether you are looking at waterfront and unique properties in St. Petersburg, a downtown condo on Water Street, or a family home in Carrollwood, Wesley Chapel, or Land O&apos; Lakes—here is how Rachael Garnett and Mark Davis work together for you.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
@@ -132,13 +133,13 @@ export default function ResidentialAdvisoryGuidePage() {
         <div className="max-w-screen-xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-              White-Glove Guidance
+              Personal Guidance
             </span>
             <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111111] mb-4">
               Our Residential Specialties
             </h2>
-            <p className="text-[#111111]/60 font-light text-sm md:text-base leading-relaxed">
-              Every micro-market in Tampa Bay has unique nuances. We bring dedicated mastery to each.
+            <p className="text-[#111111]/70 font-light text-base md:text-[17px] lg:text-[18px] leading-relaxed">
+              Every neighborhood in Tampa Bay is different. Here is how we help buyers and sellers across the area.
             </p>
           </div>
 
@@ -146,20 +147,20 @@ export default function ResidentialAdvisoryGuidePage() {
             {[
               {
                 icon: <Sparkles className="w-6 h-6 text-[#9A7D3A]" />,
-                title: "Waterfront & Coastal Estates",
-                desc: "Deepwater canals, open Tampa Bay vistas, and Gulf access. We navigate seawall engineering inspections, dock permitting limits, bridge clearance heights, and flood insurance requirements.",
+                title: "Waterfront & Unique Properties",
+                desc: "Deepwater canals, open Tampa Bay views, historic homes, and one-of-a-kind estates. We help you check seawalls, dock permits, bridge heights, and flood insurance upfront.",
                 examples: "6100 Bahama Shores Dr S ($4.55M custom waterfront)",
               },
               {
                 icon: <Compass className="w-6 h-6 text-[#9A7D3A]" />,
-                title: "Master-Planned & Golf Communities",
-                desc: "Crystal lagoons, championship golf courses, and lifestyle clubhouses across Wesley Chapel, Land O' Lakes, and Carrollwood. We demystify CDD bond taxes vs. HOA fees.",
+                title: "Neighborhoods & Golf Communities",
+                desc: "Single-family homes, Crystal Lagoon communities, and golf course neighborhoods across Wesley Chapel, Land O' Lakes, Lutz, and Carrollwood.",
                 examples: "Two Rivers, Angeline, Mirada & Plantation Palms",
               },
               {
                 icon: <KeyRound className="w-6 h-6 text-[#9A7D3A]" />,
-                title: "Downtown Skyscrapers & Condos",
-                desc: "Five-star branded residences and pre-construction towers. We evaluate HOA bylaws, rental restrictions, reserve studies, and VIP builder allocations before public launch.",
+                title: "Downtown Condos & Towers",
+                desc: "Waterfront high-rises and new condo towers. We help you review condo fees, rental rules, building reserves, and floor plans before you buy.",
                 examples: "Pendry Residences & The Ritz-Carlton Towers",
               },
             ].map((card, i) => (
@@ -169,12 +170,12 @@ export default function ResidentialAdvisoryGuidePage() {
                     {card.icon}
                   </div>
                   <h3 className="font-aiveritas text-2xl text-[#111111] mb-3">{card.title}</h3>
-                  <p className="text-xs md:text-sm text-[#111111]/70 font-light leading-relaxed mb-6">
+                  <p className="text-base text-[#111111]/75 font-light leading-relaxed mb-6">
                     {card.desc}
                   </p>
                 </div>
                 <div className="pt-4 border-t border-[#111111]/10 text-[11px] text-[#9A7D3A] font-semibold">
-                  Featured Track Record: {card.examples}
+                  Featured Listing: {card.examples}
                 </div>
               </div>
             ))}
@@ -187,13 +188,13 @@ export default function ResidentialAdvisoryGuidePage() {
         <div className="max-w-screen-xl mx-auto">
           <div className="max-w-2xl mb-16">
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-              Clear &amp; Attentive
+              Clear &amp; Easy
             </span>
             <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111111] mb-4">
               How Clients Get Started With Us
             </h2>
-            <p className="text-[#111111]/60 font-light text-sm md:text-base leading-relaxed">
-              We replace stress and uncertainty with a step-by-step roadmap tailored specifically to your family’s timeline and goals.
+            <p className="text-[#111111]/70 font-light text-base md:text-[17px] lg:text-[18px] leading-relaxed">
+              We replace stress and guesswork with a simple step-by-step plan built around your timeline.
             </p>
           </div>
 
@@ -208,7 +209,7 @@ export default function ResidentialAdvisoryGuidePage() {
                 </span>
                 <div className="flex-1">
                   <h3 className="font-aiveritas text-2xl text-[#111111] mb-2">{s.title}</h3>
-                  <p className="text-xs md:text-sm text-[#111111]/70 font-light leading-relaxed">
+                  <p className="text-base text-[#111111]/75 font-light leading-relaxed">
                     {s.desc}
                   </p>
                 </div>
@@ -222,13 +223,14 @@ export default function ResidentialAdvisoryGuidePage() {
       <section className="py-24 px-6 md:px-12 bg-[#111111] text-white text-center">
         <div className="max-w-3xl mx-auto">
           <span className="text-[#C8A951] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
-            Direct Principal Contact
+            Talk With Rachael &amp; Mark
           </span>
-          <h2 className="font-aiveritas text-3xl md:text-5xl text-white mb-6">
-            Ready to Begin Your Home Search or Sale?
+          <h2 className="font-aiveritas text-3xl md:text-5xl text-white mb-6 leading-tight">
+            Ready to Start Your<br />
+            <span className="text-[#C8A951]">Home Search or Sale?</span>
           </h2>
-          <p className="text-white/70 font-light text-sm md:text-base mb-10 leading-relaxed">
-            Connect directly with Commercial &amp; Residential Advisor Rachael Garnett (#3378601) and Mark Davis (#3209459) for trusted counsel across Tampa Bay.
+          <p className="text-white/80 font-light text-base md:text-[17px] lg:text-[18px] mb-10 leading-relaxed">
+            Reach out directly to Rachael Garnett (#3378601) and Mark Davis (#3209459) for friendly, local help across Tampa Bay.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

@@ -134,10 +134,10 @@ export default function PropertiesPage() {
               Davis &amp; Garnett · Tampa Bay Real Estate Listings
             </span>
             <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-[#111111] leading-none mb-6">
-              The Portfolio
+              Our Listings
             </h1>
-            <p className="text-[#111111]/65 font-light text-base sm:text-lg leading-relaxed">
-              Bespoke waterfront estates, dual-building commercial mixed-use assets, institutional Central Florida acreage, and our verified 2026 transaction track record across Tampa Bay.
+            <p className="text-[#111111]/75 font-light text-base md:text-[17px] lg:text-[18px] leading-relaxed">
+              Explore our active residential homes, commercial properties, Central Florida land, waterfront and unique properties, and recent sales across Tampa Bay.
             </p>
           </div>
 
@@ -146,8 +146,8 @@ export default function PropertiesPage() {
             {[
               {
                 value: "$9.29M+",
-                label: "Active Exclusive Volume",
-                sub: "Signature Exclusive Mandates"
+                label: "Active Listings",
+                sub: "Featured Homes, Land & Commercial"
               },
               {
                 value: "99.65+ Ac",
@@ -156,12 +156,12 @@ export default function PropertiesPage() {
               },
               {
                 value: "Proven",
-                label: "2026 Closed Track Record",
+                label: "2026 Closed Sales",
                 sub: "Verified Gulf Coast Closings"
               },
               {
-                value: "Dual-Practice",
-                label: "Advisory Representation",
+                value: "Full-Service",
+                label: "Two-Agent Team",
                 sub: "Residential · Commercial · Land"
               }
             ].map((stat) => (
@@ -211,14 +211,14 @@ export default function PropertiesPage() {
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
               <div>
                 <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-                  Current Exclusive Offerings · As of 11/01/2026
+                  Featured Offerings · Active Inventory
                 </span>
                 <h2 className="font-aiveritas text-4xl sm:text-5xl text-[#111111]">
-                  Active Signature Listings
+                  Active Listings
                 </h2>
               </div>
-              <p className="text-[#111111]/55 text-sm max-w-md">
-                Click any offering below to inspect its full bespoke property dossier, interactive photo gallery, underwriting metrics, and due diligence documents.
+              <p className="text-[#111111]/70 text-base md:text-[17px] max-w-md font-light leading-relaxed">
+                Click any property below to view full photos, property details, and tour information.
               </p>
             </div>
 
@@ -327,7 +327,7 @@ export default function PropertiesPage() {
                           {listing.address}, {listing.city}, {listing.state} {listing.zip} ({listing.county})
                         </p>
 
-                        <p className="text-[#111111]/70 font-light text-sm leading-relaxed mb-6 line-clamp-3">
+                        <p className="text-[#111111]/75 font-light text-base leading-relaxed mb-6 line-clamp-3">
                           {listing.description}
                         </p>
 
@@ -336,7 +336,7 @@ export default function PropertiesPage() {
                           {listing.highlights.slice(0, 4).map((h) => (
                             <div
                               key={h}
-                              className="flex items-start gap-2 text-xs text-[#111111]/75"
+                              className="flex items-start gap-2 text-xs md:text-sm text-[#111111]/80"
                             >
                               <CheckCircle className="w-3.5 h-3.5 text-[#C8A951] shrink-0 mt-0.5" />
                               <span className="line-clamp-2">{h}</span>
@@ -446,14 +446,14 @@ export default function PropertiesPage() {
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
               <div>
                 <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-                  Verified Closed Closings · 2026 Portfolio Activity
+                  Proven Results · 2026 Closed Sales
                 </span>
                 <h2 className="font-aiveritas text-4xl sm:text-5xl text-[#111111]">
-                  2026 Proven Track Record — Recent Transactions
+                  Recent Sold Properties
                 </h2>
               </div>
-              <p className="text-[#111111]/60 text-sm max-w-md">
-                From golf course estates in Bradenton and Land O&apos; Lakes to waterfront retreats in Inverness and strategic residential homesites, explore our recent closed transactions represented by Davis &amp; Garnett across Greater Tampa Bay and Central Florida.
+              <p className="text-[#111111]/70 text-base md:text-[17px] max-w-md font-light leading-relaxed">
+                From golf course homes in Bradenton and Land O&apos; Lakes to waterfront properties in Inverness, explore recent sales represented by Mark and Rachael across Tampa Bay and Central Florida.
               </p>
             </div>
 
@@ -560,19 +560,19 @@ export default function PropertiesPage() {
       )}
 
       {/* ══════════════════════════════════════════════════════════════════
-          COLLECTIVE SECTION 3: THE DAVIS & GARNETT REPRESENTATION STANDARD
+          COLLECTIVE SECTION 3: HOW WE WORK TOGETHER FOR OUR SELLERS & BUYERS
          ══════════════════════════════════════════════════════════════════ */}
       <section className="py-24 px-6 lg:px-10 bg-white border-b border-[#111111]/10">
         <div className="max-w-screen-xl mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-              Bespoke Advisory Methodology
+              Two Certified Agents on Every Listing
             </span>
             <h2 className="font-aiveritas text-4xl sm:text-5xl text-[#111111] mb-4">
-              The Davis & Garnett Representation Standard
+              How Mark &amp; Rachael Represent Your Property
             </h2>
-            <p className="text-[#111111]/65 font-light text-base leading-relaxed">
-              Unlike single-track residential agents or volume commercial brokerages, Mark Davis and Rachael Garnett unite institutional commercial underwriting with luxury residential storytelling under one coordinated practice.
+            <p className="text-[#111111]/75 font-light text-base md:text-[17px] lg:text-[18px] leading-relaxed">
+              Most agents only handle houses or only handle commercial properties. Because Mark Davis and Rachael Garnett are both certified in residential and commercial real estate, you get two hands-on partners who know how to market your home, building, or land.
             </p>
           </div>
 
@@ -580,41 +580,41 @@ export default function PropertiesPage() {
             {[
               {
                 icon: <Award className="w-7 h-7 text-[#C8A951]" />,
-                tag: "01 · Luxury Residential Estates",
-                title: "Architectural Positioning & Editorial Marketing",
+                tag: "01 · Homes, Condos & Waterfront",
+                title: "Standout Photos, 3D Tours & Smart Pricing",
                 lead: "Mark Davis, REALTOR® & Rachael Garnett, REALTOR®",
                 description:
-                  "Every residential listing — from custom Tampa Bay waterfront estates like 'The Vistara' in Bahama Shores to golf course homes in Bradenton and Land O' Lakes — receives bespoke digital dossiers, architectural photography, 3D Matterport walkthroughs, and targeted syndication to qualified Gulf Coast and out-of-state cash buyers.",
+                  "Every residential listing—from waterfront homes like 'The Vistara' in Bahama Shores to golf course homes in Bradenton and Land O' Lakes—gets professional photography, 3D virtual tours, dedicated property pages, and targeted marketing to local and out-of-state buyers.",
                 bullets: [
-                  "Pre-listing structural, seawall & inspection readiness",
-                  "Dedicated custom property showcase pages & private tour curation",
-                  "Data-backed comparative pricing to maximize net seller proceeds"
+                  "Upfront home, roof & seawall prep guidance",
+                  "Custom property showcase pages & private showings",
+                  "Clear neighborhood pricing data to help you net more"
                 ]
               },
               {
                 icon: <TrendingUp className="w-7 h-7 text-[#C8A951]" />,
-                tag: "02 · Commercial & Mixed-Use Assets",
-                title: "Institutional Underwriting & Deal Structuring",
+                tag: "02 · Commercial & Mixed-Use Properties",
+                title: "Clear Financial Packages & Buyer Outreach",
                 lead: "Mark Davis, REALTOR® & Rachael Garnett, REALTOR®",
                 description:
-                  "Commercial and mixed-use dispositions such as our dual-building Brandon corridor offering require rigorous financial packaging. We prepare comprehensive Offering Memorandums detailing utility separation, zoning flexibility, traffic counts, ADA compliance, and owner-user vs. multi-tenant yield scenarios.",
+                  "Selling a commercial or mixed-use property—like our two-building listing in Brandon—takes clear numbers. We put together straightforward property packages showing utility setups, zoning uses, traffic counts, and income potential for business owners and investors.",
                 bullets: [
-                  "Full Offering Memorandum (OM) & pro-forma underwriting",
-                  "Direct outreach to 1031 exchange buyers, medical/legal practices & family offices",
-                  "Lease structuring, zoning verification & environmental coordination"
+                  "Complete property info packets & income breakdowns",
+                  "Direct outreach to 1031 exchange buyers & local business owners",
+                  "Help with lease terms, zoning checks & inspections"
                 ]
               },
               {
                 icon: <Compass className="w-7 h-7 text-[#C8A951]" />,
-                tag: "03 · Land, Acreage & Off-Market Sourcing",
-                title: "Corridor Entitlement & Strategic Land Banking",
+                tag: "03 · Land, Acreage & Off-Market Searches",
+                title: "Zoning Research & Florida Land Guidance",
                 lead: "Mark Davis, REALTOR® & Rachael Garnett, REALTOR®",
                 description:
-                  "From 79.54-acre Central Florida highway development tracts in Polk County to gated 19.72-acre timberland sanctuaries in Marion County, we advise land owners and developers on highest-and-best-use analysis, agricultural tax exemptions, and off-market parcel assemblages.",
+                  "From 79.54-acre highway tracts in Polk County to gated 19.72-acre timberland parcels in Marion County, we help landowners and buyers understand road access, future land use, agricultural tax exemptions, and off-market opportunities.",
                 bullets: [
-                  "FDOT corridor analysis, FLU/zoning entitlement & density mapping",
-                  "Agricultural (Greenbelt) tax preservation & timber valuation",
-                  "Confidential off-market acquisition sourcing across Central & West Florida"
+                  "Road frontage, zoning & future land-use checks",
+                  "Agricultural (Greenbelt) & timber tax exemption guidance",
+                  "Private off-market land searches across Central & West Florida"
                 ]
               }
             ].map((pillar) => (
@@ -633,7 +633,7 @@ export default function PropertiesPage() {
                     {pillar.title}
                   </h3>
                   <p className="text-xs font-bold text-[#111111]/55 mb-4">{pillar.lead}</p>
-                  <p className="text-[#111111]/70 font-light text-sm leading-relaxed mb-6">
+                  <p className="text-[#111111]/75 font-light text-base leading-relaxed mb-6">
                     {pillar.description}
                   </p>
                 </div>
@@ -642,7 +642,7 @@ export default function PropertiesPage() {
                   {pillar.bullets.map((b) => (
                     <li
                       key={b}
-                      className="flex items-start gap-2.5 text-xs text-[#111111]/75 font-medium"
+                      className="flex items-start gap-2.5 text-xs md:text-sm text-[#111111]/80 font-medium"
                     >
                       <CheckCircle className="w-4 h-4 text-[#C8A951] shrink-0 mt-0.5" />
                       <span>{b}</span>
@@ -666,13 +666,13 @@ export default function PropertiesPage() {
           {/* Left Column: Advisory Pitch & Direct Contacts */}
           <div className="lg:col-span-5 space-y-6">
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block">
-              Confidential Advisory Consultation
+              Free Property Value Estimate
             </span>
             <h2 className="font-aiveritas text-4xl sm:text-5xl text-[#111111] leading-tight">
-              Request a Confidential Property Valuation or Portfolio Review
+              Thinking About Selling Your Home, Building, or Land?
             </h2>
             <p className="text-[#111111]/70 font-light text-base leading-relaxed">
-              Considering the disposition of a waterfront residence, commercial office/retail asset, or Central Florida land parcel? Mark Davis and Rachael Garnett provide complimentary, institutionally researched broker opinion of value (BOV) and comparative market analyses (CMA).
+              Curious what your home, commercial property, or Florida acreage could sell for today? Mark Davis and Rachael Garnett put together free, no-pressure market value reports (CMA / BOV) with real local sales numbers.
             </p>
 
             <div className="space-y-4 pt-2">
@@ -752,10 +752,10 @@ export default function PropertiesPage() {
                   <div className="flex items-center justify-between border-b border-[#111111]/8 pb-4 mb-2">
                     <div>
                       <span className="text-[#9A7D3A] text-[10px] font-bold uppercase tracking-[0.25em] block">
-                        Direct Principal Intake
+                        Free Value Estimate
                       </span>
                       <h3 className="font-aiveritas text-2xl text-[#111111]">
-                        Property & Portfolio Valuation Dossier
+                        Request a Property Value Estimate
                       </h3>
                     </div>
                     <ShieldCheck className="w-6 h-6 text-[#C8A951]" />

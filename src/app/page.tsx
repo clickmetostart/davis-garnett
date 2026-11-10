@@ -111,18 +111,18 @@ export default function HomePageV1Light() {
         <div className="relative z-20 text-center px-8 flex flex-col items-center w-full max-w-4xl mx-auto pt-12">
           <DavisGarnettLogo variant="dark" className="w-[90%] md:w-[70%] max-w-[680px] mx-auto mb-4 drop-shadow-2xl" />
           <h1 className="font-aiveritas text-5xl md:text-7xl lg:text-8xl mb-6 font-bold tracking-tight text-white drop-shadow-2xl">
-            The Tampa <br />
-            <span className="text-[#D4AF37]">Standard.</span>
+            Your Tampa Bay <br />
+            <span className="text-[#D4AF37]">Real Estate Team.</span>
           </h1>
-          <p className="text-lg md:text-xl text-white/90 font-light max-w-2xl leading-relaxed mb-10 drop-shadow-lg">
-            A unified force in Tampa Bay real estate. Combining commercial and residential power to deliver an elevated advisory experience.
+          <p className="text-base md:text-[17px] lg:text-[18px] text-white/90 font-light max-w-2xl leading-relaxed mb-10 drop-shadow-lg">
+            Mark Davis and Rachael Garnett work together across residential and commercial real estate—giving you two experienced local agents in your corner from day one.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
             <Link
               href="/properties"
               className="px-8 py-4 bg-[#D4AF37] hover:bg-white text-[#111] text-xs font-bold uppercase tracking-[0.2em] rounded-lg transition-colors flex items-center justify-center gap-2 w-full sm:w-auto"
             >
-              Explore Exclusive Portfolio <ArrowRight className="w-4 h-4" />
+              View Our Listings <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               href="/developments"
@@ -143,10 +143,10 @@ export default function HomePageV1Light() {
       {isMobile ? (
         <section className="py-24 px-6 bg-white">
           <div className="text-center mb-16">
-            <span className="text-[#9A7D3A] text-[0.65rem] tracking-[0.2em] uppercase font-bold block mb-4">Knowledge, Expertise &amp; Heart to Serve</span>
-            <h2 className="font-aiveritas text-4xl text-[#111] mb-4">Your Trusted Advisors.</h2>
-            <p className="text-[#111]/65 text-sm font-light max-w-md mx-auto leading-relaxed">
-              Two real estate powerhouses of local knowledge and expertise, grateful for the opportunity to serve and committed to respecting the lasting value every property brings to our community.
+            <span className="text-[#9A7D3A] text-xs tracking-[0.2em] uppercase font-bold block mb-4">Working Together for You</span>
+            <h2 className="font-aiveritas text-4xl text-[#111] mb-4">Meet Mark &amp; Rachael.</h2>
+            <p className="text-[#111]/75 text-base font-light max-w-md mx-auto leading-relaxed">
+              Mark Davis and Rachael Garnett are both REALTORS® and Certified Commercial &amp; Residential Agents. Whether you are buying or selling a home, a commercial building, or land, we work together so you always have two experienced agents on your side.
             </p>
           </div>
           <div className="flex flex-col gap-12">
@@ -154,32 +154,32 @@ export default function HomePageV1Light() {
               <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden mb-6">
                 <Image src="/new-images/new-2/mark-davis-residential-commerical-advisor-tampa-real-estate-3.jpg" alt="Mark Davis" fill className="object-cover object-top" />
               </div>
-              <h3 className="font-aiveritas text-2xl text-[#111] mb-1">Mark Davis</h3>
-              <p className="text-[#D4AF37] text-xs uppercase tracking-widest mb-3">Commercial &amp; Residential Advisor • FL Lic #3209459</p>
-              <p className="text-[#111]/65 text-sm font-light mb-4 leading-relaxed">
-                Advising across commercial, residential, land, condos, and luxury properties—with signature flair in deal structuring, mixed-use assets, and strategic land acquisitions.
+              <h3 className="font-aiveritas text-3xl text-[#111] mb-1">Mark Davis</h3>
+              <p className="text-[#D4AF37] text-xs uppercase tracking-widest mb-3">REALTOR® · Certified Commercial &amp; Residential Agent • FL Lic #3209459</p>
+              <p className="text-[#111]/75 text-base font-light mb-5 leading-relaxed">
+                Mark helps clients buy and sell residential homes, commercial properties, and Florida land. He loves digging into the numbers, checking zoning details, and making sure every step of your deal makes sense.
               </p>
               <Link
                 href="/about/mark-davis"
                 className="block text-center w-full py-4 border border-[#111]/20 text-[#111] text-xs uppercase tracking-widest hover:bg-[#111] hover:text-white transition-colors"
               >
-                View Mark&apos;s Profile &amp; Portfolio
+                Meet Mark &amp; View Listings
               </Link>
             </div>
             <div className="w-full">
               <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden mb-6">
                 <Image src="/new-images/new-2/rachael-garnett-residential-commerical-advisor-tampa-real-estate-homepage-1.jpg" alt="Rachael Garnett" fill className="object-cover object-top" />
               </div>
-              <h3 className="font-aiveritas text-2xl text-[#111] mb-1">Rachael Garnett</h3>
-              <p className="text-[#D4AF37] text-xs uppercase tracking-widest mb-3">Commercial &amp; Residential Advisor • FL Lic #3378601</p>
-              <p className="text-[#111]/65 text-sm font-light mb-4 leading-relaxed">
-                Advising across commercial, residential, land, condos, and luxury estates—with signature flair in high-impact positioning, waterfront properties, and master-planned communities.
+              <h3 className="font-aiveritas text-3xl text-[#111] mb-1">Rachael Garnett</h3>
+              <p className="text-[#D4AF37] text-xs uppercase tracking-widest mb-3">REALTOR® · Certified Commercial &amp; Residential Agent • FL Lic #3378601</p>
+              <p className="text-[#111]/75 text-base font-light mb-5 leading-relaxed">
+                Rachael works with buyers, sellers, and investors across residential homes, commercial spaces, and waterfront and unique properties. She brings thoughtful marketing, clear communication, and strong negotiation to every table.
               </p>
               <Link
                 href="/about/rachael-garnett"
                 className="block text-center w-full py-4 border border-[#111]/20 text-[#111] text-xs uppercase tracking-widest hover:bg-[#111] hover:text-white transition-colors"
               >
-                View Rachael&apos;s Profile &amp; Portfolio
+                Meet Rachael &amp; View Listings
               </Link>
             </div>
           </div>
@@ -195,8 +195,8 @@ export default function HomePageV1Light() {
               <Image src="/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-8.jpg" alt="Davis & Garnett Team" fill unoptimized className="object-cover object-top" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
               <div className="absolute bottom-10 left-0 right-0 text-center px-4">
-                <h3 className="font-aiveritas text-3xl text-white drop-shadow-md mb-2">The Power Combo</h3>
-                <p className="text-[#D4AF37] text-xs uppercase tracking-widest">Commercial &amp; Residential Advisors</p>
+                <h3 className="font-aiveritas text-3xl lg:text-4xl text-white drop-shadow-md mb-2">Mark &amp; Rachael</h3>
+                <p className="text-[#D4AF37] text-xs uppercase tracking-widest">REALTORS® · Certified Commercial &amp; Residential Agents</p>
               </div>
             </motion.div>
 
@@ -205,9 +205,11 @@ export default function HomePageV1Light() {
               className="absolute top-1/2 -translate-y-1/2 z-0 text-center w-[30vw]"
               style={{ left: "17%", x: "-50%", opacity: initialTextOpacity }}
             >
-              <h3 className="font-aiveritas text-5xl font-bold text-[#D4AF37] mb-4">Deep Local Knowledge</h3>
-              <p className="text-[#111]/65 text-sm font-light leading-relaxed max-w-xs mx-auto">
-                Real estate powerhouses of local knowledge and expertise, modestly waiting for the opportunity to serve you across Tampa Bay.
+              <h3 className="font-aiveritas text-4xl lg:text-5xl xl:text-6xl font-bold text-[#D4AF37] mb-5 leading-tight">
+                One Team<br />on Your Side
+              </h3>
+              <p className="text-[#111]/80 text-base md:text-[17px] lg:text-[18px] font-light leading-relaxed max-w-sm mx-auto">
+                Two full-time agents working together across residential and commercial real estate in Tampa Bay.
               </p>
             </motion.div>
 
@@ -216,9 +218,11 @@ export default function HomePageV1Light() {
               className="absolute top-1/2 -translate-y-1/2 z-0 text-center w-[30vw]"
               style={{ left: "83%", x: "-50%", opacity: initialTextOpacity }}
             >
-              <h3 className="font-aiveritas text-5xl font-bold text-[#D4AF37] mb-4">Here to Serve</h3>
-              <p className="text-[#111]/65 text-sm font-light leading-relaxed max-w-xs mx-auto">
-                Treating every client with genuine respect for the value their property brings to our community—and happy to help navigate those waters.
+              <h3 className="font-aiveritas text-4xl lg:text-5xl xl:text-6xl font-bold text-[#D4AF37] mb-5 leading-tight">
+                Easy to<br />Talk To
+              </h3>
+              <p className="text-[#111]/80 text-base md:text-[17px] lg:text-[18px] font-light leading-relaxed max-w-sm mx-auto">
+                No pushy sales talk or confusing jargon. Just honest local advice, clear answers, and hard work from start to finish.
               </p>
             </motion.div>
 
@@ -229,19 +233,19 @@ export default function HomePageV1Light() {
             >
               <Image src="/new-images/new-2/mark-davis-residential-commerical-advisor-tampa-real-estate-3.jpg" alt="Mark Davis" fill className="object-cover object-top" />
               <motion.div
-                className="absolute inset-0 flex flex-col items-center justify-end pb-24 px-12 bg-gradient-to-t from-[#050505] via-[#050505]/55 to-transparent"
+                className="absolute inset-0 flex flex-col items-center justify-end pb-24 px-10 lg:px-14 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-transparent"
                 style={{ opacity: textOpacity, y: textY }}
               >
-                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold mb-4">Commercial &amp; Residential Advisor • #3209459</span>
-                <h2 className="font-aiveritas text-5xl text-white mb-6">Mark Davis</h2>
-                <p className="text-white/80 text-center max-w-md font-light mb-10 leading-relaxed">
-                  Selling across commercial, residential, land, condos, and luxury estates—bringing his personal flair for deal architecture, commercial mixed-use underwriting, and high-growth acreage across Tampa Bay.
+                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.28em] font-bold mb-4 text-center">REALTOR® · Commercial &amp; Residential Agent • #3209459</span>
+                <h2 className="font-aiveritas text-5xl lg:text-6xl text-white mb-5">Mark Davis</h2>
+                <p className="text-white/90 text-center max-w-lg text-base md:text-[17px] lg:text-[18px] font-light mb-10 leading-relaxed">
+                  Mark works across residential homes, commercial properties, and Florida land. Clients count on his calm, practical approach to pricing, zoning, and getting deals across the finish line.
                 </p>
                 <Link
                   href="/about/mark-davis"
                   className="flex items-center gap-3 px-8 py-4 bg-white text-[#111] text-xs font-bold uppercase tracking-widest hover:bg-[#D4AF37] hover:text-white transition-colors"
                 >
-                  View Mark&apos;s Portfolio <ArrowRight className="w-4 h-4" />
+                  Meet Mark Davis <ArrowRight className="w-4 h-4" />
                 </Link>
               </motion.div>
             </motion.div>
@@ -253,19 +257,19 @@ export default function HomePageV1Light() {
             >
               <Image src="/new-images/new-2/rachael-garnett-residential-commerical-advisor-tampa-real-estate-homepage-1.jpg" alt="Rachael Garnett" fill className="object-cover object-top" />
               <motion.div
-                className="absolute inset-0 flex flex-col items-center justify-end pb-24 px-12 bg-gradient-to-t from-[#050505] via-[#050505]/55 to-transparent"
+                className="absolute inset-0 flex flex-col items-center justify-end pb-24 px-10 lg:px-14 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-transparent"
                 style={{ opacity: textOpacity, y: textY }}
               >
-                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold mb-4">Commercial &amp; Residential Advisor • #3378601</span>
-                <h2 className="font-aiveritas text-5xl text-white mb-6">Rachael Garnett</h2>
-                <p className="text-white/80 text-center max-w-md font-light mb-10 leading-relaxed">
-                  Selling across commercial, residential, land, condos, and luxury waterfront—bringing her signature flair for bespoke property positioning, fierce contract negotiation, and white-glove client service.
+                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.28em] font-bold mb-4 text-center">REALTOR® · Commercial &amp; Residential Agent • #3378601</span>
+                <h2 className="font-aiveritas text-5xl lg:text-6xl text-white mb-5">Rachael Garnett</h2>
+                <p className="text-white/90 text-center max-w-lg text-base md:text-[17px] lg:text-[18px] font-light mb-10 leading-relaxed">
+                  Rachael works across residential homes, commercial properties, and waterfront and unique properties. She brings energy, thoughtful marketing, and clear day-to-day communication to every client she serves.
                 </p>
                 <Link
                   href="/about/rachael-garnett"
                   className="flex items-center gap-3 px-8 py-4 bg-white text-[#111] text-xs font-bold uppercase tracking-widest hover:bg-[#D4AF37] hover:text-white transition-colors"
                 >
-                  View Rachael&apos;s Portfolio <ArrowRight className="w-4 h-4" />
+                  Meet Rachael Garnett <ArrowRight className="w-4 h-4" />
                 </Link>
               </motion.div>
             </motion.div>
@@ -277,45 +281,47 @@ export default function HomePageV1Light() {
       <section className="relative z-10 py-32 px-8 bg-white border-t border-[#111]/10">
         <div className="max-w-screen-xl mx-auto">
           <div className="text-center mb-20">
-            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Deep Local Knowledge &amp; Proven Expertise</span>
-            <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111] mb-5">Dedicated to Serving Tampa Bay</h2>
-            <p className="text-[#111]/65 font-light max-w-3xl mx-auto leading-relaxed">
-              Mark Davis and Rachael Garnett provide comprehensive advisory across commercial, residential, land, new developments, and luxury waterfront estates. Combining decades of local market intelligence with a client-first approach, we are committed to delivering exceptional guidance and genuine value across every community we serve.
+            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Commercial &amp; Residential Real Estate</span>
+            <h2 className="font-aiveritas text-4xl md:text-5xl lg:text-6xl text-[#111] mb-6 leading-tight">
+              How We Help You<br className="sm:hidden" /> in Tampa Bay
+            </h2>
+            <p className="text-[#111]/75 text-base md:text-[17px] lg:text-[18px] font-light max-w-3xl mx-auto leading-relaxed">
+              Because both Mark and Rachael are certified in commercial and residential real estate, you get one approachable team whether you are buying or selling a home, a business property, or land.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             <Link
               href="/commercial-advisory-guide"
-              className="group relative min-h-[400px] md:min-h-0 md:aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer block shadow-lg hover:shadow-2xl transition-shadow"
+              className="group relative min-h-[420px] md:min-h-0 md:aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer block shadow-lg hover:shadow-2xl transition-shadow"
             >
-              <Image src="/new-images/new-2/davis-garnett-tampa-commercial-real-estate-1.jpg" alt="Commercial Real Estate Advisory" fill unoptimized className="object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
+              <Image src="/new-images/new-2/davis-garnett-tampa-commercial-real-estate-1.jpg" alt="Commercial Real Estate" fill unoptimized className="object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
               <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
-                <span className="text-[#D4AF37] text-[10px] uppercase tracking-[0.25em] font-bold mb-2">Advisory Roadmap &amp; Sourcing</span>
-                <h3 className="font-aiveritas text-3xl text-white mb-3 drop-shadow-lg">Commercial, Mixed-Use &amp; Land</h3>
-                <p className="text-white/80 font-light max-w-sm mb-6 opacity-100 md:opacity-0 md:translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 text-sm">
-                  Mixed-use assets, commercial corridors, 1031 exchanges, and acreage tracts. See how clients start their commercial journey with us.
+                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.25em] font-bold mb-2">Commercial &amp; Land</span>
+                <h3 className="font-aiveritas text-3xl lg:text-4xl text-white mb-3 drop-shadow-lg">Commercial Real Estate</h3>
+                <p className="text-white/90 font-light max-w-md mb-6 text-base md:text-[17px] lg:text-[18px] leading-relaxed">
+                  Helping business owners and investors buy, sell, and lease office buildings, mixed-use properties, retail spaces, and Florida land.
                 </p>
                 <div className="flex items-center gap-2 text-[#D4AF37] text-xs uppercase tracking-widest font-bold">
-                  View Commercial Guide &amp; How to Start <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
+                  View Commercial Guide <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
                 </div>
               </div>
             </Link>
 
             <Link
               href="/residential-advisory-guide"
-              className="group relative min-h-[400px] md:min-h-0 md:aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer block shadow-lg hover:shadow-2xl transition-shadow"
+              className="group relative min-h-[420px] md:min-h-0 md:aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer block shadow-lg hover:shadow-2xl transition-shadow"
             >
-              <Image src="/new-images/new-2/davis-garnett-tampa-residential-real-estate-1.jpg" alt="Residential Real Estate Advisory" fill unoptimized className="object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
+              <Image src="/new-images/new-2/davis-garnett-tampa-residential-real-estate-1.jpg" alt="Residential Real Estate" fill unoptimized className="object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
               <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
-                <span className="text-[#D4AF37] text-[10px] uppercase tracking-[0.25em] font-bold mb-2">Client Journey &amp; Protection</span>
-                <h3 className="font-aiveritas text-3xl text-white mb-3 drop-shadow-lg">Residential, Condos &amp; Luxury Estates</h3>
-                <p className="text-white/80 font-light max-w-sm mb-6 opacity-100 md:opacity-0 md:translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 text-sm">
-                  Waterfront estates, master-planned communities, and downtown skyline condos. See our step-by-step home buyer and seller roadmap.
+                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.25em] font-bold mb-2">Homes &amp; Condos</span>
+                <h3 className="font-aiveritas text-3xl lg:text-4xl text-white mb-3 drop-shadow-lg">Residential Real Estate</h3>
+                <p className="text-white/90 font-light max-w-md mb-6 text-base md:text-[17px] lg:text-[18px] leading-relaxed">
+                  Helping buyers and sellers with single-family homes, downtown condos, new construction, and waterfront and unique properties.
                 </p>
                 <div className="flex items-center gap-2 text-[#D4AF37] text-xs uppercase tracking-widest font-bold">
-                  View Residential Guide &amp; How to Start <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
+                  View Residential Guide <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
                 </div>
               </div>
             </Link>
@@ -356,11 +362,11 @@ export default function HomePageV1Light() {
               <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
                 New Construction &amp; Pre-Construction
               </span>
-              <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111] mb-4">
-                Featured Tampa Bay Developments
+              <h2 className="font-aiveritas text-4xl md:text-5xl lg:text-6xl text-[#111] mb-4 leading-tight">
+                Featured Tampa Bay<br className="sm:hidden" /> Developments
               </h2>
-              <p className="text-[#111]/65 font-light max-w-2xl leading-relaxed">
-                From sky-high waterfront condominiums on the Downtown Tampa Riverwalk and Bayshore Boulevard to resort-style master-planned communities in Wesley Chapel and Land O&apos; Lakes.
+              <p className="text-[#111]/75 text-base md:text-[17px] lg:text-[18px] font-light max-w-2xl leading-relaxed">
+                From waterfront condominiums on the Downtown Tampa Riverwalk and Bayshore Boulevard to resort-style master-planned communities in Wesley Chapel and Land O&apos; Lakes.
               </p>
             </div>
             <Link
@@ -407,11 +413,11 @@ export default function HomePageV1Light() {
                       href={`/developments/${d.slug}`}
                       className="p-4 bg-white rounded-xl border border-[#111]/8 hover:border-[#D4AF37] transition-colors group"
                     >
-                      <div className="font-bold text-sm text-[#111] group-hover:text-[#9A7D3A] transition-colors flex items-center justify-between">
+                      <div className="font-bold text-sm md:text-base text-[#111] group-hover:text-[#9A7D3A] transition-colors flex items-center justify-between">
                         {d.name}
                         <ArrowRight className="w-3.5 h-3.5 text-[#D4AF37]" />
                       </div>
-                      <div className="text-xs text-[#111]/55 font-light mt-1">{d.sub}</div>
+                      <div className="text-xs md:text-sm text-[#111]/65 font-light mt-1">{d.sub}</div>
                     </Link>
                   ))}
                 </div>
@@ -459,11 +465,11 @@ export default function HomePageV1Light() {
                       href={`/developments/${d.slug}`}
                       className="p-4 bg-white rounded-xl border border-[#111]/8 hover:border-[#D4AF37] transition-colors group"
                     >
-                      <div className="font-bold text-sm text-[#111] group-hover:text-[#9A7D3A] transition-colors flex items-center justify-between">
+                      <div className="font-bold text-sm md:text-base text-[#111] group-hover:text-[#9A7D3A] transition-colors flex items-center justify-between">
                         {d.name}
                         <ArrowRight className="w-3.5 h-3.5 text-[#D4AF37]" />
                       </div>
-                      <div className="text-xs text-[#111]/55 font-light mt-1">{d.sub}</div>
+                      <div className="text-xs md:text-sm text-[#111]/65 font-light mt-1">{d.sub}</div>
                     </Link>
                   ))}
                 </div>
@@ -483,14 +489,14 @@ export default function HomePageV1Light() {
       <section className="py-20 px-8 bg-[#111] text-white border-y border-[#D4AF37]/30 relative overflow-hidden">
         <div className="max-w-screen-xl mx-auto relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
           <div className="max-w-xl">
-            <span className="text-[#D4AF37] text-[10px] uppercase tracking-[0.3em] font-bold block mb-3">
-              Full Regional MLS Discovery + Off-Market Access
+            <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
+              Full Regional MLS Search + Off-Market Access
             </span>
-            <h2 className="font-aiveritas text-3xl md:text-4xl text-white mb-3">
-              Looking Beyond Our Exclusive Portfolio?
+            <h2 className="font-aiveritas text-3xl md:text-4xl lg:text-5xl text-white mb-3 leading-tight">
+              Looking Beyond Our Featured Listings?
             </h2>
-            <p className="text-white/70 text-sm font-light leading-relaxed">
-              Search active listings across Hillsborough, Pinellas, Pasco, Polk, and Manatee counties—or request private access to off-market commercial and residential inventory.
+            <p className="text-white/85 text-base md:text-[17px] lg:text-[18px] font-light leading-relaxed">
+              Search active homes, commercial listings, and land across Hillsborough, Pinellas, Pasco, Polk, and Manatee counties.
             </p>
           </div>
 
@@ -528,45 +534,48 @@ export default function HomePageV1Light() {
         <div className="max-w-screen-xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-[1fr_2fr] gap-16 items-center">
             <div>
-              <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Trusted Excellence</span>
-              <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111] mb-6">Uncompromising Results.</h2>
-              <p className="text-[#111]/60 font-light leading-relaxed mb-8">
-                Our commitment to our clients goes beyond the transaction. We build lasting partnerships through transparency, market intelligence, and relentless execution across Tampa Bay.
+              <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">What Clients Say</span>
+              <h2 className="font-aiveritas text-4xl md:text-5xl lg:text-6xl text-[#111] mb-6 leading-tight">
+                Real People.<br />
+                <span className="text-[#9A7D3A]">Real Results.</span>
+              </h2>
+              <p className="text-[#111]/75 text-base md:text-[17px] lg:text-[18px] font-light leading-relaxed mb-8">
+                Our goal is simple: treat every client like family, communicate clearly, and do the homework so your purchase or sale goes smoothly.
               </p>
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-[#111]/30 text-[#111] text-xs font-bold uppercase tracking-widest hover:bg-[#111] hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3.5 border border-[#111]/30 text-[#111] text-xs font-bold uppercase tracking-widest hover:bg-[#111] hover:text-white transition-colors"
               >
-                About Our Advisory Team <ArrowRight className="w-4 h-4" />
+                Meet Our Team <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
             <div className="grid sm:grid-cols-2 gap-6">
               {[
                 {
-                  quote: "\"Mark navigated our commercial mixed-use and land acquisition with absolute precision. His insight into zoning and cash-flow fundamentals in Hillsborough County is unmatched.\"",
+                  quote: "\"Mark and Rachael guided our commercial mixed-use and land purchase from start to finish. Their knowledge of Hillsborough County zoning and local numbers saved us time and money.\"",
                   name: "James T.",
-                  role: "Commercial & Land Investor",
+                  role: "Commercial & Land Client",
                   offset: "",
                 },
                 {
-                  quote: "\"Rachael made finding our waterfront dream home in St. Petersburg effortless. Her curation of properties and negotiation skill secured our ideal estate.\"",
+                  quote: "\"Working with Rachael and Mark made finding our St. Petersburg waterfront home so much easier. They listened to what we wanted, answered every question, and negotiated a great deal.\"",
                   name: "Sarah & Michael L.",
-                  role: "Luxury Waterfront Homebuyers",
+                  role: "Tampa Bay Homebuyers",
                   offset: "sm:translate-y-8",
                 },
               ].map(({ quote, name, role, offset }) => (
-                <div key={name} className={`bg-[#f5f3ef] border border-[#111]/8 p-8 flex flex-col justify-between rounded-xl ${offset}`}>
+                <div key={name} className={`bg-[#f5f3ef] border border-[#111]/8 p-8 lg:p-10 flex flex-col justify-between rounded-xl ${offset}`}>
                   <div>
                     <div className="flex gap-1 text-[#D4AF37] mb-6">
                       {[...Array(5)].map((_, i) => (
                         <Star key={i} className="w-4 h-4 fill-current" />
                       ))}
                     </div>
-                    <p className="text-[#111]/80 font-light italic mb-8 leading-relaxed">{quote}</p>
+                    <p className="text-[#111]/85 text-base md:text-[17px] lg:text-[18px] font-light italic mb-8 leading-relaxed">{quote}</p>
                   </div>
                   <div>
-                    <strong className="text-[#111] block font-serif text-lg">{name}</strong>
-                    <span className="text-[#111]/40 text-xs uppercase tracking-wider">{role}</span>
+                    <strong className="text-[#111] block font-serif text-xl">{name}</strong>
+                    <span className="text-[#111]/55 text-xs uppercase tracking-wider font-semibold">{role}</span>
                   </div>
                 </div>
               ))}
@@ -581,10 +590,12 @@ export default function HomePageV1Light() {
         <div className="max-w-screen-xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-[1fr_2fr] gap-16">
             <div className="lg:sticky lg:top-32 lg:self-start">
-              <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Expert Answers</span>
-              <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111] mb-6">Tampa Bay Real Estate Q&amp;A</h2>
-              <p className="text-[#111]/60 font-light leading-relaxed mb-8">
-                Get direct answers from our team on the most commonly asked questions about buying, selling, and investing in Tampa Bay real estate.
+              <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Common Questions</span>
+              <h2 className="font-aiveritas text-4xl md:text-5xl lg:text-6xl text-[#111] mb-6 leading-tight">
+                Tampa Bay Real Estate <span className="text-[#9A7D3A]">Q&amp;A</span>
+              </h2>
+              <p className="text-[#111]/75 text-base md:text-[17px] lg:text-[18px] font-light leading-relaxed mb-8">
+                Get clear, plain-English answers from Mark and Rachael on the questions buyers, sellers, and investors ask most about Tampa Bay real estate.
               </p>
               <Link
                 href="/knowledge-hub#questions"
@@ -626,7 +637,7 @@ export default function HomePageV1Light() {
                     <ChevronDown className="w-5 h-5 text-[#D4AF37] shrink-0 transition-transform duration-300 group-open:rotate-180" />
                   </summary>
                   <div className="px-6 md:px-8 pb-6 md:pb-8 -mt-2">
-                    <p className="text-[#111]/70 font-light leading-relaxed text-sm md:text-base">{item.a}</p>
+                    <p className="text-[#111]/75 font-light leading-relaxed text-base md:text-lg">{item.a}</p>
                   </div>
                 </details>
               ))}
@@ -749,14 +760,14 @@ export default function HomePageV1Light() {
                     {article.tag}
                   </div>
                 </div>
-                <div className="p-6 flex-1 flex flex-col justify-between">
+                <div className="p-6 lg:p-8 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="font-aiveritas text-2xl text-[#111] mb-3 group-hover:text-[#9A7D3A] transition-colors leading-snug">
+                    <h3 className="font-aiveritas text-2xl lg:text-3xl text-[#111] mb-3 group-hover:text-[#9A7D3A] transition-colors leading-snug">
                       {article.title}
                     </h3>
-                    <p className="text-[#111]/60 font-light text-sm line-clamp-2 mb-4">{article.desc}</p>
+                    <p className="text-[#111]/70 font-light text-base line-clamp-2 mb-5 leading-relaxed">{article.desc}</p>
                   </div>
-                  <div className="text-[11px] font-bold uppercase tracking-widest text-[#9A7D3A] flex items-center gap-1.5">
+                  <div className="text-xs font-bold uppercase tracking-widest text-[#9A7D3A] flex items-center gap-1.5">
                     Read Guide <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                   </div>
                 </div>
@@ -802,7 +813,7 @@ export default function HomePageV1Light() {
                 <span className="text-white font-bold text-xs tracking-wider uppercase flex items-center justify-between group-hover:text-[#D4AF37] transition-colors">
                   Align Right Carrollwood <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
                 </span>
-                <span className="text-[10px] text-white/80 font-light block truncate">
+                <span className="text-[11px] text-white/85 font-light block truncate">
                   Areas We Work In &amp; Coverage Map
                 </span>
               </div>
@@ -812,11 +823,11 @@ export default function HomePageV1Light() {
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
               ALIGNED CORRECTLY REAL ESTATE
             </span>
-            <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111] mb-6">
-              Areas We Work In.
+            <h2 className="font-aiveritas text-4xl md:text-5xl lg:text-6xl text-[#111] mb-6 leading-tight">
+              Areas We <span className="text-[#9A7D3A]">Work In.</span>
             </h2>
-            <p className="text-[#111]/60 font-light max-w-2xl leading-relaxed mb-8 mx-auto lg:mx-0">
-              Our footprint spans the most lucrative residential waterfronts, suburban growth corridors, and commercial investment zones across Greater Tampa Bay and Central Florida.
+            <p className="text-[#111]/75 text-base md:text-[17px] lg:text-[18px] font-light max-w-2xl leading-relaxed mb-8 mx-auto lg:mx-0">
+              Explore the neighborhoods, coastal communities, and growth corridors we serve across Greater Tampa Bay and Central Florida.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 border-t border-[#111]/10">
               {[
@@ -841,7 +852,7 @@ export default function HomePageV1Light() {
                     <span className="text-white font-bold text-xs tracking-wider uppercase flex items-center justify-between group-hover:text-[#D4AF37] transition-colors">
                       {label} <ArrowRight className="w-3 h-3" />
                     </span>
-                    <span className="text-[10px] text-white/70 font-light block truncate">{sub}</span>
+                    <span className="text-[11px] md:text-xs text-white/80 font-light block truncate">{sub}</span>
                   </div>
                 </Link>
               ))}
@@ -857,12 +868,13 @@ export default function HomePageV1Light() {
           <div className="absolute inset-0 bg-black/65" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-6">Commercial &amp; Residential Real Estate Advisory</span>
-          <h2 className="font-aiveritas text-4xl md:text-5xl text-white mb-8 leading-tight">
-            Built on Proven Experience. Driven by Real Results.
+          <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-6">Commercial &amp; Residential Real Estate Team</span>
+          <h2 className="font-aiveritas text-4xl md:text-5xl lg:text-6xl text-white mb-8 leading-tight">
+            Built on Proven Experience.<br />
+            <span className="text-[#D4AF37]">Driven by Real Results.</span>
           </h2>
-          <p className="text-white/85 text-lg font-light mb-12 max-w-2xl mx-auto leading-relaxed">
-            Whether you are acquiring commercial land, navigating complex zoning, or buying or selling a signature residence in Tampa Bay, Mark Davis and Rachael Garnett deliver direct partner access, clear market strategy, and focused advocacy at every step.
+          <p className="text-white/90 text-base md:text-[17px] lg:text-[18px] font-light mb-12 max-w-2xl mx-auto leading-relaxed">
+            Whether you are buying or selling a home, a commercial property, or land in Tampa Bay, Mark Davis and Rachael Garnett work together to guide you every step of the way.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <button
@@ -875,7 +887,7 @@ export default function HomePageV1Light() {
               }
               className="px-8 py-4 bg-[#D4AF37] hover:bg-white text-black font-bold uppercase tracking-widest text-xs transition-colors rounded-lg w-full sm:w-auto min-w-[250px]"
             >
-              Commercial &amp; Land Advisory
+              Commercial Real Estate
             </button>
             <button
               onClick={() =>
@@ -887,7 +899,7 @@ export default function HomePageV1Light() {
               }
               className="px-8 py-4 bg-transparent border border-white/40 hover:border-[#D4AF37] hover:bg-[#D4AF37] text-white hover:text-black font-bold uppercase tracking-widest text-xs transition-colors rounded-lg w-full sm:w-auto min-w-[250px]"
             >
-              Residential &amp; Condo Advisory
+              Residential Real Estate
             </button>
           </div>
         </div>
@@ -900,8 +912,8 @@ export default function HomePageV1Light() {
             <Camera className="w-4 h-4 text-[#D4AF37]" /> Connect With Us
           </span>
           <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111] mb-4">@DavisGarnett</h2>
-          <p className="text-[#111]/60 text-base font-light max-w-xl mx-auto">
-            Follow our latest luxury listings, commercial acquisitions, and market insights across the Tampa Bay area.
+          <p className="text-[#111]/70 text-base md:text-[17px] lg:text-[18px] font-light max-w-xl mx-auto leading-relaxed">
+            Follow our latest listings, community updates, and market insights across the Tampa Bay area.
           </p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-0">

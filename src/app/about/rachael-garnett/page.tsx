@@ -194,14 +194,14 @@ export default function RachaelGarnettAdvisorPage() {
             <h1 className="font-aiveritas text-5xl md:text-6xl text-[#111111] leading-[1.08] mb-6">
               Rachael Garnett
             </h1>
-            <p className="text-xl text-[#9A7D3A] font-light mb-6">
-              REALTOR® · Certified Commercial &amp; Residential Agent • Helping Buyers, Sellers &amp; Investors Across Homes, Commercial Properties, Land &amp; Condos
+            <p className="text-lg md:text-xl text-[#9A7D3A] font-light mb-6">
+              REALTOR® · Certified Commercial &amp; Residential Agent • Tampa Bay &amp; Central Florida
             </p>
-            <p className="text-base text-[#111111]/75 font-light leading-relaxed mb-6">
-              Rachael Garnett is a full-spectrum <strong className="font-semibold text-[#111111]">Commercial &amp; Residential Advisor</strong> representing buyers, sellers, and investors across commercial, residential, land, downtown condominiums, and luxury waterfront estates across St. Petersburg, Tampa, Carrollwood, Lutz, Land O&apos; Lakes, Bradenton, and Wesley Chapel. Known for her thoughtful property positioning, local market expertise, and genuine care for her clients, Rachael delivers attentive guidance at every price point.
+            <p className="text-base md:text-[17px] lg:text-[18px] text-[#111111]/80 font-light leading-relaxed mb-6">
+              Rachael Garnett is a <strong className="font-semibold text-[#111111]">REALTOR® and Certified Commercial &amp; Residential Agent</strong> who helps buyers, sellers, and business owners across residential homes, commercial properties, and waterfront and unique properties in St. Petersburg, Tampa, Carrollwood, Lutz, Land O&apos; Lakes, Bradenton, and Wesley Chapel. Clients love Rachael for her warm, honest communication, eye for property presentation, and strong negotiation at the contract table.
             </p>
-            <p className="text-base text-[#111111]/70 font-light leading-relaxed mb-8">
-              Co-founding <strong className="font-semibold text-[#111111]">Davis &amp; Garnett</strong> alongside fellow Commercial &amp; Residential Advisor Mark Davis (#3209459), Rachael and Mark serve as <strong className="font-semibold text-[#111111]">wholesome real estate powerhouses of knowledge and expertise</strong>—modestly waiting for the opportunity to serve, treating every client with the same respect for the value their property brings to our community, and happy to help navigate those waters.
+            <p className="text-base md:text-[17px] lg:text-[18px] text-[#111111]/75 font-light leading-relaxed mb-8">
+              Rachael co-founded <strong className="font-semibold text-[#111111]">Davis &amp; Garnett</strong> alongside her partner <strong className="font-semibold text-[#111111]">Mark Davis (#3209459)</strong> so clients get two hands-on agents working together on every move. Whether you are buying a home, selling a commercial building, or investing in land, Rachael and Mark make the entire process clear, personal, and stress-free.
             </p>
 
             {/* Direct Contact Bar */}
@@ -302,13 +302,13 @@ export default function RachaelGarnettAdvisorPage() {
             <div className="p-8 md:p-12 flex flex-col justify-between">
               <div>
                 <span className="text-[11px] uppercase tracking-[0.22em] text-[#9A7D3A] font-bold block mb-3">
-                  Exclusive Luxury Mandate
+                  Featured Waterfront Listing
                 </span>
                 <h3 className="font-aiveritas text-3xl text-[#111111] mb-4">
-                  Unrivaled Coastal Architecture & Open-Bay Lifestyle
+                  Coastal Architecture &amp; Open-Bay Living
                 </h3>
-                <p className="text-sm text-[#111111]/70 font-light leading-relaxed mb-6">
-                  Positioned in St. Petersburg&apos;s coveted Bahama Shores enclave, 6100 Bahama Shores Dr S offers commanding water vistas, private boating access to Tampa Bay and the Gulf of Mexico, and resort-caliber indoor-outdoor living minutes from vibrant downtown St. Pete.
+                <p className="text-base text-[#111111]/75 font-light leading-relaxed mb-6">
+                  Located in St. Petersburg&apos;s Bahama Shores neighborhood, 6100 Bahama Shores Dr S offers open water views, private boating access to Tampa Bay and the Gulf of Mexico, and indoor-outdoor coastal living just minutes from downtown St. Pete.
                 </p>
 
                 <div className="grid grid-cols-2 gap-4 p-5 rounded-xl bg-[#fbfbf9] border border-[#111111]/8 mb-6">
@@ -378,14 +378,14 @@ export default function RachaelGarnettAdvisorPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
               <span className="text-[#C8A951] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-                Verified Closing Velocity
+                Recent Sales
               </span>
               <h2 className="font-aiveritas text-4xl md:text-5xl text-white">
-                2026 Sold Residential Track Record
+                2026 Sold Residential Highlights
               </h2>
             </div>
-            <p className="text-sm text-white/65 max-w-md font-light">
-              Selected 2026 residential closings demonstrating Rachael&apos;s hyper-local pricing precision and buyer matching across Tampa Bay.
+            <p className="text-base text-white/75 max-w-md font-light leading-relaxed">
+              Recent residential closings across Tampa Bay and Central Florida.
             </p>
           </div>
 
@@ -408,7 +408,7 @@ export default function RachaelGarnettAdvisorPage() {
                   <p className="text-xs uppercase tracking-widest text-[#C8A951] font-semibold mb-3">
                     {sold.category}
                   </p>
-                  <p className="text-xs text-white/70 font-light leading-relaxed">
+                  <p className="text-sm text-white/75 font-light leading-relaxed">
                     {sold.notes}
                   </p>
                 </div>
@@ -422,13 +422,13 @@ export default function RachaelGarnettAdvisorPage() {
             <div className="p-7 rounded-2xl bg-[#C8A951] text-[#111111] flex flex-col justify-between">
               <div>
                 <span className="text-[10px] uppercase tracking-[0.22em] font-bold block mb-2">
-                  Curious What Your Home Is Worth in 2026?
+                  Curious What Your Home Is Worth?
                 </span>
                 <h3 className="font-aiveritas text-2xl mb-3">
-                  Request a Bespoke Equity & Pricing Valuation
+                  Request a Free Home Value Estimate
                 </h3>
-                <p className="text-xs text-[#111111]/80 leading-relaxed mb-6">
-                  Automated algorithms miss waterfront seawall upgrades, school boundary premiums, and custom architectural finishes. Receive a true advisor-built valuation.
+                <p className="text-sm text-[#111111]/85 leading-relaxed mb-6">
+                  Online estimates often miss waterfront upgrades, neighborhood demand, and custom finishes. Get a personal market value report from Rachael and Mark.
                 </p>
               </div>
               <a
@@ -447,13 +447,13 @@ export default function RachaelGarnettAdvisorPage() {
         <div className="max-w-screen-xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-              White-Glove Residential Advisory
+              How Rachael Helps Clients
             </span>
             <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111111] mb-4">
-              Rachael&apos;s Core Specializations
+              Residential, Commercial &amp; Waterfront Expertise
             </h2>
-            <p className="text-base text-[#111111]/65 font-light">
-              Every residential move is a major life transition. Rachael pairs warmth and family-first care with data-backed negotiation.
+            <p className="text-base md:text-[17px] lg:text-[18px] text-[#111111]/75 font-light leading-relaxed">
+              Buying or selling a home or commercial property is a big step. Rachael brings personal care, smart marketing, and clear guidance to every transaction.
             </p>
           </div>
 
@@ -461,33 +461,33 @@ export default function RachaelGarnettAdvisorPage() {
             {[
               {
                 icon: Anchor,
-                title: "Waterfront & Coastal Estates",
-                desc: "Navigating bridge clearances, deep-water dockage, seawall integrity, flood elevation certificates, and riparian rights across St. Petersburg, Pinellas, and South Tampa.",
-              },
-              {
-                icon: Compass,
-                title: "Master-Planned & Executive Relocation",
-                desc: "Concierge relocation tours matching out-of-state families with top-tier school districts, country clubs, and gated enclaves in Lutz, Land O' Lakes, Wesley Chapel, and Carrollwood.",
-              },
-              {
-                icon: Sparkles,
-                title: "Architectural Staging & Seller Positioning",
-                desc: "Coordinating pre-list cosmetic enhancements, editorial photography, cinematic drone video, and private broker previews to command record price-per-square-foot exits.",
+                title: "Waterfront & Unique Properties",
+                desc: "Helping buyers and sellers navigate bridge clearances, docks, seawalls, flood zones, and one-of-a-kind homes across St. Petersburg, Pinellas County, and South Tampa.",
               },
               {
                 icon: Home,
-                title: "New Construction & Custom Builder Advocacy",
-                desc: "Representing buyers at the builder table—negotiating lot premiums, structural design upgrades, and third-party phase inspections before drywall and closing.",
+                title: "Commercial & Mixed-Use Real Estate",
+                desc: "Representing business owners and investors buying or selling offices, retail storefronts, mixed-use buildings, and commercial land across Tampa Bay.",
+              },
+              {
+                icon: Compass,
+                title: "Neighborhoods & Family Relocations",
+                desc: "Helping local and out-of-state families find the right community, school zone, or golf neighborhood in Lutz, Land O' Lakes, Wesley Chapel, and Carrollwood.",
+              },
+              {
+                icon: Sparkles,
+                title: "Staging, Photos & Listing Marketing",
+                desc: "Helping sellers prep their property with practical staging tips, bright photography, drone video, and targeted online marketing to attract strong offers.",
               },
               {
                 icon: MapPin,
-                title: "Hyper-Local Micro-Neighborhood Intelligence",
-                desc: "Block-by-block knowledge of CDD fees, HOA reserves, commute corridors, and off-market pocket inventory across Hillsborough, Pinellas, and Pasco counties.",
+                title: "New Construction & Builder Representation",
+                desc: "Sitting on your side of the table with homebuilders and condo developers to negotiate lot premiums, closing cost credits, upgrades, and independent inspections.",
               },
               {
                 icon: HeartHandshake,
-                title: "Multi-Generational & Family Transitions",
-                desc: "Patient, compassionate guidance for upsizing families, empty-nest downsizers, and estate transitions requiring trusted vendor coordination.",
+                title: "Teamwork From Start to Finish",
+                desc: "Working closely with co-founder Mark Davis so you always have two responsive agents ready to show properties, answer questions, and keep your closing on schedule.",
               },
             ].map((pillar) => (
               <div
@@ -500,7 +500,7 @@ export default function RachaelGarnettAdvisorPage() {
                 <h3 className="font-aiveritas text-2xl text-[#111111] mb-3">
                   {pillar.title}
                 </h3>
-                <p className="text-sm text-[#111111]/65 font-light leading-relaxed">
+                <p className="text-base text-[#111111]/75 font-light leading-relaxed">
                   {pillar.desc}
                 </p>
               </div>
@@ -514,10 +514,10 @@ export default function RachaelGarnettAdvisorPage() {
         <div className="max-w-screen-xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-              5.0-Star Client Advocacy
+              Client Reviews
             </span>
             <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111111]">
-              Client Stories & Reviews
+              What Clients Say About Working With Rachael
             </h2>
           </div>
 
@@ -527,17 +527,17 @@ export default function RachaelGarnettAdvisorPage() {
                 quote:
                   "Rachael treated our family's relocation to Tampa Bay as if we were her own family. She knew every gated neighborhood in Lutz and Land O' Lakes inside and out, and negotiated repairs we wouldn't have known to ask for.",
                 author: "Brandon & Victoria H.",
-                role: "Executive Relocation Clients",
+                role: "Tampa Bay Relocation Clients",
               },
               {
                 quote:
-                  "When selling our residence on Valencia Cove Ct, Rachael's staging consultation and marketing launch brought qualified buyers immediately. She communicated every single day from listing to closing.",
+                  "When selling our home on Valencia Cove Ct, Rachael's staging tips and marketing brought qualified buyers right away. She kept us updated every single day from listing to closing.",
                 author: "Lauren S.",
-                role: "2026 Residential Seller",
+                role: "2026 Home Seller",
               },
               {
                 quote:
-                  "Exploring waterfront homes in St. Petersburg requires an advisor who truly understands seawalls, flood insurance, and boating water depth. Rachael's expertise and patience are second to none.",
+                  "Looking at waterfront homes in St. Petersburg takes an agent who truly understands seawalls, flood insurance, and boating water depth. Rachael's local knowledge and patience are second to none.",
                 author: "Dr. Gregory & Claire K.",
                 role: "Pinellas Waterfront Buyers",
               },
@@ -552,7 +552,7 @@ export default function RachaelGarnettAdvisorPage() {
                       <Star key={idx} className="w-4 h-4 fill-current" />
                     ))}
                   </div>
-                  <p className="text-sm text-[#111111]/80 italic leading-relaxed mb-6">
+                  <p className="text-base text-[#111111]/80 italic leading-relaxed mb-6">
                     &ldquo;{item.quote}&rdquo;
                   </p>
                 </div>
@@ -573,12 +573,12 @@ export default function RachaelGarnettAdvisorPage() {
         <div className="max-w-4xl mx-auto bg-[#fbfbf9] rounded-2xl p-8 md:p-14 border border-[#111111]/10 shadow-lg">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-              Direct Luxury Residential & Relocation Desk
+              Work With Rachael Garnett
             </span>
             <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111111] mb-4">
-              Connect With Rachael Garnett
+              Send Rachael a Message
             </h2>
-            <p className="text-sm text-[#111111]/65 font-light">
+            <p className="text-base text-[#111111]/70 font-light">
               FL Real Estate License #3378601 • Direct: 727-808-3344 • rachael@davisgarnettsells.com
             </p>
           </div>
@@ -783,7 +783,7 @@ export default function RachaelGarnettAdvisorPage() {
                     <h3 className="font-aiveritas text-lg md:text-xl text-[#111111] mb-2 font-bold">
                       {faq.q}
                     </h3>
-                    <p className="text-xs md:text-sm text-[#111111]/75 font-light leading-relaxed">
+                    <p className="text-base text-[#111111]/75 font-light leading-relaxed">
                       {faq.a}
                     </p>
                   </div>
