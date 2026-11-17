@@ -21,6 +21,7 @@ import {
 import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
 import FaviconHeroBackground from "@/components/FaviconHeroBackground";
+import TourSliderSection from "@/components/TourSliderSection";
 import { GUIDES, QUESTIONS, AREAS, EVENTS, ARTICLES } from "@/data/knowledgeHub";
 
 export default function KnowledgeHubPage() {
@@ -767,6 +768,14 @@ export default function KnowledgeHubPage() {
           </div>
         </div>
       </section>
+
+      {/* ── SECTION 07: GUIDED AREA & COMMERCIAL TOURS (DRIVE WITH D&G) ── */}
+      <TourSliderSection
+        id="tours"
+        sectionEyebrow="07 • Drive Tampa Bay With Davis & Garnett"
+        sectionTitle="Guided Area &amp; Shopping Zone Tours"
+        bgClass="bg-white"
+      />
 
       {/* ── ASK AN ADVISOR / EMPOWER YOUR REAL ESTATE JOURNEY CTA ── */}
       <section className="py-24 px-8 bg-[#111] text-white">

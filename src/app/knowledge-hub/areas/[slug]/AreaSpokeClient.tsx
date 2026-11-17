@@ -14,11 +14,15 @@ import {
   BookOpen,
   Search,
   Sparkles,
+  Compass,
+  Download,
 } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
+import GuideDownloadModal from "@/components/GuideDownloadModal";
 import { GlossaryAutoText } from "@/components/GlossaryAutoText";
 import { getRelatedGlossaryTermsForTaxonomy } from "@/data/glossary";
+import { LIVE_GUIDED_TOURS } from "@/data/tours";
 import type { AreaItem, KnowledgeItem } from "@/data/knowledgeHub";
 import type { Development } from "@/data/developments";
 
@@ -42,6 +46,12 @@ export default function AreaSpokeClient({
   const [notes, setNotes] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [downloadModalOpen, setDownloadModalOpen] = useState(false);
+
+  const matchingTours = LIVE_GUIDED_TOURS.filter((t) =>
+    t.relatedAreaSlugs.includes(area.slug)
+  );
+  const primaryTour = matchingTours[0];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -128,9 +138,25 @@ export default function AreaSpokeClient({
           <h1 className="font-aiveritas text-4xl md:text-6xl text-white max-w-4xl mb-4 leading-tight">
             {area.name}
           </h1>
-          <p className="text-white/80 text-lg md:text-xl font-light max-w-3xl mb-10">
+          <p className="text-white/80 text-lg md:text-xl font-light max-w-3xl mb-7">
             {area.tagline}
           </p>
+
+          <div className="flex flex-wrap items-center gap-3 mb-10">
+            <Link
+              href={primaryTour ? `/tours/${primaryTour.slug}` : "/tours"}
+              className="inline-flex items-center gap-2 px-5 py-3 bg-[#D4AF37] hover:bg-white text-[#111] text-xs font-bold uppercase tracking-[0.16em] rounded-lg transition-colors shadow-lg"
+            >
+              <Compass className="w-4 h-4" />
+              {primaryTour ? `Take ${area.name} Tour` : "View Guided Area Tours"}
+            </Link>
+            <button
+              onClick={() => setDownloadModalOpen(true)}
+              className="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-[#D4AF37] text-white hover:text-[#111] border border-white/25 text-xs font-bold uppercase tracking-[0.16em] rounded-lg transition-colors"
+            >
+              <Download className="w-4 h-4" /> Download Pocket Area Guide (PDF)
+            </button>
+          </div>
 
           {/* Metrics Ribbon */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-6">
@@ -434,6 +460,17 @@ export default function AreaSpokeClient({
           </div>
         </div>
       </section>
+
+      <GuideDownloadModal
+        isOpen={downloadModalOpen}
+        onClose={() => setDownloadModalOpen(false)}
+        title={`${area.name} — Neighborhood Pocket Guide`}
+        category={area.county}
+        slug={area.slug}
+        contentType="area"
+        quickAnswer={quickAnswerText}
+        authorName="Mark Davis & Rachael Garnett"
+      />
 
       <SiteFooter />
     </div>

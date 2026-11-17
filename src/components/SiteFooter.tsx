@@ -144,6 +144,7 @@ export default function SiteFooter() {
               <li><Link href="/properties#new-listings" className="hover:text-white transition-colors">New &amp; Upcoming Listings</Link></li>
               <li><Link href="/properties#carrollwood-office" className="hover:text-white transition-colors">Align Right Carrollwood Office</Link></li>
               <li><Link href="/properties#commercial-land" className="hover:text-white transition-colors">Commercial &amp; Land Offerings</Link></li>
+              <li><Link href="/tours" className="text-[#D4AF37] hover:text-white transition-colors font-medium">Guided Area &amp; Retail Tours</Link></li>
               <li><Link href="/properties#sold-track-record" className="hover:text-white transition-colors">2026–2027 Sold Track Record</Link></li>
             </ul>
           </div>
@@ -199,6 +200,7 @@ export default function SiteFooter() {
               <li><Link href="/knowledge-hub/areas/land-o-lakes" className="hover:text-white transition-colors">Land O&apos; Lakes Corridor</Link></li>
               <li><Link href="/knowledge-hub/areas/brandon-riverview" className="hover:text-white transition-colors">Brandon &amp; East Hillsborough</Link></li>
               <li><Link href="/knowledge-hub/areas/central-florida-acreage" className="hover:text-white transition-colors">Central FL Acreage &amp; Land</Link></li>
+              <li><Link href="/tours" className="text-[#D4AF37] hover:text-white transition-colors font-medium">Guided Area Tours (#TourWithDG)</Link></li>
             </ul>
           </div>
 

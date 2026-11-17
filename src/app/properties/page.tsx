@@ -32,6 +32,7 @@ import {
 } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
+import TourSliderSection from "@/components/TourSliderSection";
 import { swipeHandlers, SWIPE_STYLE } from "@/lib/swipe";
 import listingsData from "@/data/listings.json";
 import { Listing } from "@/types/listings";
@@ -1303,6 +1304,11 @@ export default function PropertiesPage() {
           </div>
         </div>
       </section>
+
+      {/* ══════════════════════════════════════════════════════════════════
+          SELF-GUIDED & ESCORTED RESIDENTIAL + COMMERCIAL TOURS SLIDER
+         ══════════════════════════════════════════════════════════════════ */}
+      <TourSliderSection id="tours" bgClass="bg-white" />
 
       {/* ══════════════════════════════════════════════════════════════════
           COLLECTIVE SECTION 4: REQUEST A CONFIDENTIAL PROPERTY VALUATION OR PORTFOLIO REVIEW

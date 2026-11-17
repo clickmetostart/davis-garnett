@@ -18,13 +18,19 @@ import {
   Scale,
   DollarSign,
   PieChart,
+  Download,
 } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
 import ConsultationModal from "@/components/ConsultationModal";
+import GuideDownloadModal from "@/components/GuideDownloadModal";
+import InteractiveWorkbook from "@/components/InteractiveWorkbook";
+import type { PdfWorkbookState } from "@/lib/pdfBuilder";
 
 export default function CommercialAdvisoryGuidePage() {
   const [modalOpen, setModalOpen] = useState(false);
+  const [downloadModalOpen, setDownloadModalOpen] = useState(false);
+  const [workbookState, setWorkbookState] = useState<PdfWorkbookState>({});
   const [modalConfig, setModalConfig] = useState({
     interest: "Commercial & Land Advisory",
     advisor: "Mark Davis & Rachael Garnett",
@@ -120,6 +126,13 @@ export default function CommercialAdvisoryGuidePage() {
               >
                 View Commercial Portfolio
               </Link>
+
+              <button
+                onClick={() => setDownloadModalOpen(true)}
+                className="inline-flex items-center gap-2 px-6 py-4 bg-white/10 border border-[#D4AF37]/50 text-[#D4AF37] text-xs font-bold uppercase tracking-[0.18em] hover:bg-[#D4AF37] hover:text-[#111] transition-colors rounded-lg"
+              >
+                <Download className="w-4 h-4" /> Download Workbook (PDF)
+              </button>
             </div>
           </div>
         </div>
@@ -216,6 +229,27 @@ export default function CommercialAdvisoryGuidePage() {
         </div>
       </section>
 
+      {/* ── INTERACTIVE COMMERCIAL WORKBOOK ── */}
+      <section className="py-12 px-6 md:px-12 bg-white border-b border-[#111111]/8">
+        <div className="max-w-4xl mx-auto">
+          <InteractiveWorkbook
+            slug="commercial-advisory-guide"
+            title="Commercial & Land Advisory Workbook"
+            subtitle="Check off each commercial or 1031 step and type your property notes, rent quotes, or zoning questions. Your answers save locally and print into your branded PDF download."
+            items={steps.map((s) => ({
+              key: `step-${s.step}`,
+              label: `${s.step}. ${s.title}`,
+              placeholder: `Your notes on ${s.title.toLowerCase()} (zoning, NOI, tenant mix, target cap rate)...`,
+            }))}
+            onStateChange={setWorkbookState}
+            onDownloadClick={(latestState) => {
+              setWorkbookState(latestState);
+              setDownloadModalOpen(true);
+            }}
+          />
+        </div>
+      </section>
+
       {/* ── ADVISORY CONSULTATION CTA ── */}
       <section className="py-24 px-6 md:px-12 bg-[#111111] text-white text-center">
         <div className="max-w-3xl mx-auto">
@@ -258,6 +292,9 @@ export default function CommercialAdvisoryGuidePage() {
             <Link href="/hub/land-acreage-central-florida" className="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-[#C8A951] hover:text-[#111] font-bold transition-colors">
               Land &amp; Acreage Hub
             </Link>
+            <Link href="/tours" className="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-[#C8A951] hover:text-[#111] font-bold transition-colors">
+              Guided Shopping Zone Tours
+            </Link>
             <Link href="/tools/commercial-rent-calculator" className="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-[#C8A951] hover:text-[#111] font-bold transition-colors">
               Commercial Rent &amp; NNN Tool
             </Link>
@@ -275,6 +312,17 @@ export default function CommercialAdvisoryGuidePage() {
       </section>
 
       <SiteFooter />
+
+      <GuideDownloadModal
+        isOpen={downloadModalOpen}
+        onClose={() => setDownloadModalOpen(false)}
+        title="Tampa Bay Commercial & Land Advisory Guide"
+        category="Commercial & Land Guide"
+        slug="commercial-advisory-guide"
+        contentType="standalone"
+        authorName="Mark Davis & Rachael Garnett"
+        workbookState={workbookState}
+      />
 
       <ConsultationModal
         isOpen={modalOpen}

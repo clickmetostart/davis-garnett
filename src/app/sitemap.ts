@@ -4,6 +4,7 @@ import { DEVELOPMENTS } from "@/data/developments";
 import { ALL_GUIDES_AND_QUESTIONS, AREAS, EVENTS, ARTICLES } from "@/data/knowledgeHub";
 import { LIVE_GLOSSARY_TERMS } from "@/data/glossary";
 import { LIVE_TOPIC_HUBS } from "@/data/topicHubs";
+import { LIVE_GUIDED_TOURS } from "@/data/tours";
 import { getLiveMarketReports } from "@/data/marketReports";
 
 const BASE_URL = "https://www.davisgarnettsells.com";
@@ -26,6 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/properties",
     "/developments",
     "/knowledge-hub",
+    "/tours",
     "/glossary",
     "/tools/mortgage-calculator",
     "/tools/commercial-rent-calculator",
@@ -96,6 +98,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(hub.updatedAt),
   }));
 
+  const tourUrls = LIVE_GUIDED_TOURS.map((tour) => ({
+    url: `${BASE_URL}/tours/${tour.slug}`,
+    lastModified: new Date(tour.updatedAt),
+  }));
+
   return [
     ...staticRoutes.map((route) => ({
       url: `${BASE_URL}${route}`,
@@ -109,6 +116,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...articleUrls,
     ...glossaryUrls,
     ...hubUrls,
+    ...tourUrls,
     ...marketReportUrls,
   ];
 }

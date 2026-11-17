@@ -17,13 +17,19 @@ import {
   Award,
   KeyRound,
   FileCheck,
+  Download,
 } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
 import ConsultationModal from "@/components/ConsultationModal";
+import GuideDownloadModal from "@/components/GuideDownloadModal";
+import InteractiveWorkbook from "@/components/InteractiveWorkbook";
+import type { PdfWorkbookState } from "@/lib/pdfBuilder";
 
 export default function ResidentialAdvisoryGuidePage() {
   const [modalOpen, setModalOpen] = useState(false);
+  const [downloadModalOpen, setDownloadModalOpen] = useState(false);
+  const [workbookState, setWorkbookState] = useState<PdfWorkbookState>({});
   const [modalConfig, setModalConfig] = useState({
     interest: "Residential & Luxury Estate Advisory",
     advisor: "Rachael Garnett & Mark Davis",
@@ -119,6 +125,13 @@ export default function ResidentialAdvisoryGuidePage() {
               >
                 View Residential Portfolio
               </Link>
+
+              <button
+                onClick={() => setDownloadModalOpen(true)}
+                className="inline-flex items-center gap-2 px-6 py-4 bg-white/10 border border-[#D4AF37]/50 text-[#D4AF37] text-xs font-bold uppercase tracking-[0.18em] hover:bg-[#D4AF37] hover:text-[#111] transition-colors rounded-lg"
+              >
+                <Download className="w-4 h-4" /> Download Workbook (PDF)
+              </button>
             </div>
           </div>
         </div>
@@ -215,6 +228,27 @@ export default function ResidentialAdvisoryGuidePage() {
         </div>
       </section>
 
+      {/* ── INTERACTIVE RESIDENTIAL WORKBOOK ── */}
+      <section className="py-12 px-6 md:px-12 bg-white border-b border-[#111111]/8">
+        <div className="max-w-4xl mx-auto">
+          <InteractiveWorkbook
+            slug="residential-advisory-guide"
+            title="Residential Buyer & Seller Workbook"
+            subtitle="Check off each step and save your must-haves, preferred school zones, HOA/CDD notes, or questions. Everything saves in your browser and prints into your PDF copy."
+            items={steps.map((s) => ({
+              key: `step-${s.step}`,
+              label: `${s.step}. ${s.title}`,
+              placeholder: `Your notes on ${s.title.toLowerCase()} (must-haves, commute target, flood zone, HOA/CDD)...`,
+            }))}
+            onStateChange={setWorkbookState}
+            onDownloadClick={(latestState) => {
+              setWorkbookState(latestState);
+              setDownloadModalOpen(true);
+            }}
+          />
+        </div>
+      </section>
+
       {/* ── ADVISORY CONSULTATION CTA ── */}
       <section className="py-24 px-6 md:px-12 bg-[#111111] text-white text-center">
         <div className="max-w-3xl mx-auto">
@@ -249,10 +283,36 @@ export default function ResidentialAdvisoryGuidePage() {
               <Phone className="w-3.5 h-3.5 text-[#C8A951]" /> Rachael Garnett: 727-808-3344
             </a>
           </div>
+
+          <div className="mt-10 pt-8 border-t border-white/10 flex flex-wrap items-center justify-center gap-3 text-xs">
+            <Link href="/tours" className="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-[#C8A951] hover:text-[#111] font-bold transition-colors">
+              Guided Area Tours (#TourWithDG)
+            </Link>
+            <Link href="/tools/mortgage-calculator" className="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-[#C8A951] hover:text-[#111] font-bold transition-colors">
+              Florida Mortgage &amp; CDD Tool
+            </Link>
+            <Link href="/tools/seller-net-proceeds" className="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-[#C8A951] hover:text-[#111] font-bold transition-colors">
+              Seller Net Proceeds Tool
+            </Link>
+            <Link href="/knowledge-hub" className="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-[#C8A951] hover:text-[#111] font-bold transition-colors">
+              Knowledge Hub
+            </Link>
+          </div>
         </div>
       </section>
 
       <SiteFooter />
+
+      <GuideDownloadModal
+        isOpen={downloadModalOpen}
+        onClose={() => setDownloadModalOpen(false)}
+        title="Tampa Bay Residential & Luxury Home Advisory Guide"
+        category="Residential Advisory Guide"
+        slug="residential-advisory-guide"
+        contentType="standalone"
+        authorName="Rachael Garnett & Mark Davis"
+        workbookState={workbookState}
+      />
 
       <ConsultationModal
         isOpen={modalOpen}

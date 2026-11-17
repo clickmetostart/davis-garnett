@@ -22,7 +22,9 @@ import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
 import EmailActionBox from "@/components/EmailActionBox";
 import GuideDownloadModal from "@/components/GuideDownloadModal";
+import InteractiveWorkbook from "@/components/InteractiveWorkbook";
 import { GlossaryAutoText } from "@/components/GlossaryAutoText";
+import type { PdfWorkbookState } from "@/lib/pdfBuilder";
 import { getRelatedGlossaryTermsForTaxonomy } from "@/data/glossary";
 import type { KnowledgeItem, AreaItem } from "@/data/knowledgeHub";
 import type { Development } from "@/data/developments";
@@ -48,6 +50,8 @@ export default function KnowledgeItemClient({
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [downloadModalOpen, setDownloadModalOpen] = useState(false);
+  const [workbookState, setWorkbookState] = useState<PdfWorkbookState>({});
+  const isGuide = item.type === "guide";
 
   const handleLeadSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -142,13 +146,15 @@ export default function KnowledgeItemClient({
           </p>
 
           <div className="flex flex-wrap items-center gap-3">
-            <button
-              type="button"
-              onClick={() => setDownloadModalOpen(true)}
-              className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#D4AF37] hover:bg-white text-[#111] text-xs font-bold uppercase tracking-widest rounded-lg transition-colors"
-            >
-              <Download className="w-4 h-4" /> Download Formatted PDF Guide
-            </button>
+            {isGuide && (
+              <button
+                type="button"
+                onClick={() => setDownloadModalOpen(true)}
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#D4AF37] hover:bg-white text-[#111] text-xs font-bold uppercase tracking-widest rounded-lg transition-colors"
+              >
+                <Download className="w-4 h-4" /> Download Guide Workbook (PDF)
+              </button>
+            )}
             <Link
               href={item.ctaHref || "/search-mls"}
               className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 text-xs font-bold uppercase tracking-widest rounded-lg transition-colors"
@@ -219,6 +225,32 @@ export default function KnowledgeItemClient({
                 </div>
               ))}
             </div>
+
+            {/* Interactive Workbook for Guides */}
+            {isGuide && (
+              <InteractiveWorkbook
+                slug={item.slug}
+                title={item.title}
+                subtitle="Check off steps as you review this guide and jot down your own questions or numbers. Everything saves here and prints cleanly in your PDF download."
+                items={[
+                  ...item.keyTakeaways.slice(0, 4).map((tk, i) => ({
+                    key: `takeaway-${i + 1}`,
+                    label: tk.length > 75 ? `${tk.slice(0, 72)}...` : tk,
+                    placeholder: "Notes, lender quotes, or follow-up questions...",
+                  })),
+                  ...item.sections.slice(0, 4).map((sec, i) => ({
+                    key: `section-${i + 1}`,
+                    label: sec.heading,
+                    placeholder: `Your notes on ${sec.heading}...`,
+                  })),
+                ]}
+                onStateChange={setWorkbookState}
+                onDownloadClick={(latestState) => {
+                  setWorkbookState(latestState);
+                  setDownloadModalOpen(true);
+                }}
+              />
+            )}
 
             {/* How Mark & Rachael Handle It */}
             <div className="mt-12 p-6 md:p-8 rounded-2xl bg-[#f5f3ef] border border-[#D4AF37]/40">
@@ -543,10 +575,12 @@ export default function KnowledgeItemClient({
         title={item.title}
         category={item.category}
         slug={item.slug}
+        contentType={item.type}
         quickAnswer={quickAnswerText}
         keyTakeaways={item.keyTakeaways}
         sections={item.sections}
         authorName={item.author.name}
+        workbookState={workbookState}
       />
 
       <SiteFooter />
