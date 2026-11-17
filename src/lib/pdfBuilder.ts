@@ -1,10 +1,13 @@
-import { PDFDocument, PDFFont, PDFPage, StandardFonts, rgb } from "pdf-lib";
+import fs from "fs/promises";
+import path from "path";
+import { PDFDocument, PDFFont, PDFImage, PDFPage, PDFString, StandardFonts, rgb } from "pdf-lib";
 
 export interface PdfSectionInput {
   heading: string;
   body: string;
   bullets?: string[];
   metaLine?: string;
+  mapUrl?: string;
   userNote?: string;
   checked?: boolean;
   isFavorite?: boolean;
@@ -18,6 +21,11 @@ export interface PdfWorkbookState {
   generalNotes?: string;
 }
 
+export interface PdfRelatedLink {
+  label: string;
+  url: string;
+}
+
 export interface BrandedPdfInput {
   slug: string;
   title: string;
@@ -25,6 +33,8 @@ export interface BrandedPdfInput {
   category: string;
   authorLine: string;
   createdDateLabel: string;
+  pageUrl?: string;
+  relatedLinks?: PdfRelatedLink[];
   quickAnswer?: string;
   keyTakeaways?: string[];
   sections: PdfSectionInput[];
@@ -56,8 +66,76 @@ const PAGE_W = 612; // US Letter width (pt)
 const PAGE_H = 792; // US Letter height (pt)
 const MARGIN_X = 52;
 const CONTENT_W = PAGE_W - MARGIN_X * 2;
-const FOOTER_Y = 30;
-const MIN_CONTENT_Y = 64;
+const FOOTER_Y = 26;
+const MIN_CONTENT_Y = 74;
+
+const SITE_ORIGIN = "https://www.davisgarnettsells.com";
+
+function toAbsoluteWebsiteUrl(rawUrl?: string): string {
+  if (!rawUrl) return SITE_ORIGIN;
+  if (/^https?:\/\//i.test(rawUrl)) return rawUrl;
+  return `${SITE_ORIGIN}${rawUrl.startsWith("/") ? rawUrl : `/${rawUrl}`}`;
+}
+
+function addUriLink(
+  pdfDoc: PDFDocument,
+  page: PDFPage,
+  url: string,
+  x: number,
+  y: number,
+  width: number,
+  height: number
+) {
+  if (!url || !/^https?:\/\//i.test(url) || width <= 0 || height <= 0) return;
+  const linkAnnot = pdfDoc.context.register(
+    pdfDoc.context.obj({
+      Type: "Annot",
+      Subtype: "Link",
+      Rect: [x, y, x + width, y + height],
+      Border: [0, 0, 0],
+      A: {
+        Type: "Action",
+        S: "URI",
+        URI: PDFString.of(url),
+      },
+    })
+  );
+  page.node.addAnnot(linkAnnot);
+}
+
+function drawClickableLinkText(
+  pdfDoc: PDFDocument,
+  page: PDFPage,
+  text: string,
+  url: string,
+  x: number,
+  y: number,
+  size: number,
+  font: PDFFont,
+  color = rgb(0.118, 0.227, 0.373)
+): number {
+  const safe = sanitizeWinAnsi(text);
+  const w = font.widthOfTextAtSize(safe, size);
+  page.drawText(safe, { x, y, size, font, color });
+  page.drawLine({
+    start: { x, y: y - 1.5 },
+    end: { x: x + w, y: y - 1.5 },
+    thickness: 0.6,
+    color,
+  });
+  addUriLink(pdfDoc, page, url, x - 2, y - 3, w + 4, size + 5);
+  return w;
+}
+
+async function embedPublicPng(pdfDoc: PDFDocument, relPath: string): Promise<PDFImage | null> {
+  try {
+    const absPath = path.join(process.cwd(), "public", relPath);
+    const bytes = await fs.readFile(absPath);
+    return await pdfDoc.embedPng(bytes);
+  } catch {
+    return null;
+  }
+}
 
 /**
  * Normalizes Unicode punctuation to safe WinAnsi characters for pdf-lib StandardFonts.
@@ -140,96 +218,154 @@ export async function generateBrandedGuidePdf(input: BrandedPdfInput): Promise<U
   const sansRegular = await pdfDoc.embedFont(StandardFonts.Helvetica);
   const sansBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
 
-  // ── PAGE 1: BRANDED COVER PAGE ──
+  const dgHeaderLogo = await embedPublicPng(
+    pdfDoc,
+    "davis-garnett-logo-png-mobile-for-light-backgrounds.png"
+  );
+  const dgFavicon = await embedPublicPng(pdfDoc, "dg-favicon-fat.png");
+  const alignRightLogo = await embedPublicPng(pdfDoc, "align-right-email-logo.png");
+
+  // ── PAGE 1: PRINTER-FRIENDLY BRANDED COVER PAGE ──
   const cover = pdfDoc.addPage([PAGE_W, PAGE_H]);
 
-  // Top obsidian banner
+  // Top gold accent rule + white paper hero (zero heavy ink fill)
   cover.drawRectangle({
     x: 0,
-    y: PAGE_H - 275,
+    y: PAGE_H - 6,
     width: PAGE_W,
-    height: 275,
-    color: COLORS.obsidian,
-  });
-  cover.drawRectangle({
-    x: 0,
-    y: PAGE_H - 279,
-    width: PAGE_W,
-    height: 4,
+    height: 6,
     color: COLORS.gold,
   });
 
-  // Brand header line
-  cover.drawText(sanitizeWinAnsi("DAVIS & GARNETT  |  COMMERCIAL & RESIDENTIAL ADVISORS"), {
-    x: MARGIN_X,
-    y: PAGE_H - 54,
-    size: 9.5,
+  const livePageUrl = toAbsoluteWebsiteUrl(input.pageUrl);
+
+  if (dgHeaderLogo) {
+    const dims = dgHeaderLogo.scaleToFit(245, 58);
+    const imgY = PAGE_H - 28 - dims.height;
+    cover.drawImage(dgHeaderLogo, {
+      x: MARGIN_X,
+      y: imgY,
+      width: dims.width,
+      height: dims.height,
+    });
+    addUriLink(pdfDoc, cover, SITE_ORIGIN, MARGIN_X, imgY, dims.width, dims.height);
+  } else {
+    cover.drawText(sanitizeWinAnsi("DAVIS & GARNETT  |  COMMERCIAL & RESIDENTIAL ADVISORS"), {
+      x: MARGIN_X,
+      y: PAGE_H - 54,
+      size: 10,
+      font: sansBold,
+      color: COLORS.obsidian,
+    });
+  }
+
+  const brokerHeaderRight = sanitizeWinAnsi("Align Right Realty Carrollwood  *  FL Lic #BK3401606");
+  const bhW = sansBold.widthOfTextAtSize(brokerHeaderRight, 8.2);
+  cover.drawText(brokerHeaderRight, {
+    x: PAGE_W - MARGIN_X - bhW,
+    y: PAGE_H - 46,
+    size: 8.2,
     font: sansBold,
+    color: COLORS.darkGold,
+  });
+  const addrRight = sanitizeWinAnsi("3903 Northdale Blvd Suite 115W, Tampa FL 33624");
+  const arW = sansRegular.widthOfTextAtSize(addrRight, 7.8);
+  cover.drawText(addrRight, {
+    x: PAGE_W - MARGIN_X - arW,
+    y: PAGE_H - 59,
+    size: 7.8,
+    font: sansRegular,
+    color: COLORS.textMuted,
+  });
+  const onlineLinkLabel = "Open Interactive Guide at davisgarnettsells.com ->";
+  const olW = sansBold.widthOfTextAtSize(onlineLinkLabel, 7.8);
+  drawClickableLinkText(
+    pdfDoc,
+    cover,
+    onlineLinkLabel,
+    livePageUrl,
+    PAGE_W - MARGIN_X - olW,
+    PAGE_H - 74,
+    7.8,
+    sansBold,
+    COLORS.darkGold
+  );
+
+  // Clean gold divider under logo hero
+  cover.drawLine({
+    start: { x: MARGIN_X, y: PAGE_H - 96 },
+    end: { x: PAGE_W - MARGIN_X, y: PAGE_H - 96 },
+    thickness: 1.5,
     color: COLORS.gold,
   });
-  cover.drawText(sanitizeWinAnsi("Align Right Realty Carrollwood  *  FL Lic #BK3401606"), {
-    x: MARGIN_X,
-    y: PAGE_H - 70,
-    size: 8.5,
-    font: sansRegular,
-    color: rgb(0.75, 0.75, 0.75),
-  });
 
-  // Category pill
+  // Category pill (light fill + gold border for clean printing)
   const catText = sanitizeWinAnsi(input.category.toUpperCase());
   const catW = Math.min(CONTENT_W, sansBold.widthOfTextAtSize(catText, 8.5) + 20);
   cover.drawRectangle({
     x: MARGIN_X,
-    y: PAGE_H - 110,
+    y: PAGE_H - 130,
     width: catW,
-    height: 18,
-    color: COLORS.gold,
+    height: 19,
+    color: COLORS.cream,
+    borderColor: COLORS.gold,
+    borderWidth: 1,
   });
   cover.drawText(catText, {
     x: MARGIN_X + 10,
-    y: PAGE_H - 104,
+    y: PAGE_H - 123,
     size: 8.5,
     font: sansBold,
     color: COLORS.obsidian,
   });
 
-  // Cover Title + Subtitle
-  const titleLines = wrapText(input.title, serifBold, 26, CONTENT_W).slice(0, 3);
-  let titleY = PAGE_H - 144;
+  // Cover Title + Subtitle on clean white page
+  const titleLines = wrapText(input.title, serifBold, 25, CONTENT_W).slice(0, 3);
+  let titleY = PAGE_H - 166;
   for (const line of titleLines) {
     cover.drawText(line, {
       x: MARGIN_X,
       y: titleY,
-      size: 26,
+      size: 25,
       font: serifBold,
-      color: COLORS.white,
+      color: COLORS.obsidian,
     });
-    titleY -= 31;
+    titleY -= 30;
   }
 
-  const subLines = wrapText(input.subtitle, sansRegular, 11.5, CONTENT_W).slice(0, 3);
+  const subLines = wrapText(input.subtitle, sansRegular, 11.2, CONTENT_W).slice(0, 3);
   let subY = titleY - 6;
   for (const line of subLines) {
     cover.drawText(line, {
       x: MARGIN_X,
       y: subY,
-      size: 11.5,
+      size: 11.2,
       font: sansRegular,
-      color: rgb(0.84, 0.84, 0.84),
+      color: COLORS.textMuted,
     });
     subY -= 16;
   }
 
+  // Hero divider before personalized box
+  const heroDividerY = Math.min(subY - 12, PAGE_H - 275);
+  cover.drawRectangle({
+    x: MARGIN_X,
+    y: heroDividerY,
+    width: CONTENT_W,
+    height: 3,
+    color: COLORS.gold,
+  });
+
   // Host & Personalized Recipient Box
-  let coverY = PAGE_H - 315;
+  let coverY = heroDividerY - 26;
   cover.drawRectangle({
     x: MARGIN_X,
     y: coverY - 58,
     width: CONTENT_W,
     height: 68,
-    color: COLORS.cream,
+    color: COLORS.white,
     borderColor: COLORS.gold,
-    borderWidth: 1,
+    borderWidth: 1.2,
   });
   cover.drawText(
     sanitizeWinAnsi(`PREPARED BY: ${input.authorLine}`),
@@ -287,36 +423,57 @@ export async function generateBrandedGuidePdf(input: BrandedPdfInput): Promise<U
     coverY -= boxH + 18;
   }
 
-  // Route Summary on Cover if Tour
+  // Route Summary on Cover if Tour (printer-friendly light outline box with gold divider bar)
   if (input.routeMeta) {
-    const routeBoxH = 88;
+    const routeBoxH = input.routeMeta.googleMapsUrl ? 104 : 88;
     cover.drawRectangle({
       x: MARGIN_X,
       y: coverY - routeBoxH,
       width: CONTENT_W,
       height: routeBoxH,
-      color: COLORS.obsidian,
+      color: COLORS.white,
+      borderColor: COLORS.gold,
+      borderWidth: 1.2,
+    });
+    cover.drawRectangle({
+      x: MARGIN_X,
+      y: coverY - routeBoxH,
+      width: 4,
+      height: routeBoxH,
+      color: COLORS.gold,
     });
     cover.drawText("SEQUENTIAL DRIVING TOUR SUMMARY", {
       x: MARGIN_X + 14,
       y: coverY - 18,
       size: 8.5,
       font: sansBold,
-      color: COLORS.gold,
+      color: COLORS.darkGold,
     });
     cover.drawText(
       sanitizeWinAnsi(`${input.routeMeta.duration}  *  ${input.routeMeta.distanceSummary}`),
-      { x: MARGIN_X + 14, y: coverY - 34, size: 10.5, font: sansBold, color: COLORS.white }
+      { x: MARGIN_X + 14, y: coverY - 34, size: 10.5, font: sansBold, color: COLORS.obsidian }
     );
     const startLines = wrapText(`Start Point: ${input.routeMeta.startAddress}`, sansRegular, 9, CONTENT_W - 28).slice(0, 2);
     let sy = coverY - 50;
     for (const sl of startLines) {
-      cover.drawText(sl, { x: MARGIN_X + 14, y: sy, size: 9, font: sansRegular, color: rgb(0.85, 0.85, 0.85) });
+      cover.drawText(sl, { x: MARGIN_X + 14, y: sy, size: 9, font: sansRegular, color: COLORS.textDark });
       sy -= 13;
     }
     const dirLines = wrapText(input.routeMeta.routeDirectionNote, sansRegular, 8.5, CONTENT_W - 28).slice(0, 1);
     if (dirLines[0]) {
-      cover.drawText(dirLines[0], { x: MARGIN_X + 14, y: coverY - 76, size: 8.5, font: sansRegular, color: COLORS.gold });
+      cover.drawText(dirLines[0], { x: MARGIN_X + 14, y: coverY - 76, size: 8.5, font: sansRegular, color: COLORS.darkGold });
+    }
+    if (input.routeMeta.googleMapsUrl) {
+      drawClickableLinkText(
+        pdfDoc,
+        cover,
+        "Click to Open Full Driving Route in Google Maps ->",
+        input.routeMeta.googleMapsUrl,
+        MARGIN_X + 14,
+        coverY - 94,
+        9,
+        sansBold
+      );
     }
     coverY -= routeBoxH + 18;
   }
@@ -448,6 +605,21 @@ export async function generateBrandedGuidePdf(input: BrandedPdfInput): Promise<U
         cursorY -= 13;
       }
       cursorY -= 2;
+    }
+
+    if (sec.mapUrl) {
+      guaranteeSpace(15);
+      drawClickableLinkText(
+        pdfDoc,
+        page,
+        "Open This Stop in Google Maps ->",
+        sec.mapUrl,
+        MARGIN_X,
+        cursorY,
+        8.6,
+        sansBold
+      );
+      cursorY -= 14;
     }
 
     page.drawLine({
@@ -615,74 +787,193 @@ export async function generateBrandedGuidePdf(input: BrandedPdfInput): Promise<U
     cursorY -= 10;
   }
 
-  // Final Advisor Callout Card
-  guaranteeSpace(76);
+  // Active Hyperlinks Back to Davis & Garnett Website
+  const websiteLinks: PdfRelatedLink[] = [
+    {
+      label: isTour ? "Open Interactive Tour & Map Online" : "Open Live Online Edition",
+      url: livePageUrl,
+    },
+    ...(input.relatedLinks || []).map((rl) => ({
+      label: rl.label,
+      url: toAbsoluteWebsiteUrl(rl.url),
+    })),
+    { label: "Search Live Tampa Bay MLS", url: `${SITE_ORIGIN}/search-mls` },
+    { label: "Contact Mark Davis & Rachael Garnett", url: `${SITE_ORIGIN}/contact` },
+  ];
+  const dedupedLinks: PdfRelatedLink[] = [];
+  const seenUrls = new Set<string>();
+  for (const l of websiteLinks) {
+    if (!seenUrls.has(l.url)) {
+      seenUrls.add(l.url);
+      dedupedLinks.push(l);
+    }
+  }
+  const topLinks = dedupedLinks.slice(0, 6);
+  const linksBoxH = topLinks.length * 15 + 32;
+  guaranteeSpace(linksBoxH + 14);
+  page.drawRectangle({
+    x: MARGIN_X,
+    y: cursorY - linksBoxH,
+    width: CONTENT_W,
+    height: linksBoxH,
+    color: COLORS.noteBg,
+    borderColor: COLORS.borderLight,
+    borderWidth: 0.9,
+  });
+  page.drawText("ACTIVE LINKS BACK TO DAVISGARNETTSELLS.COM (CLICK IN PDF READER):", {
+    x: MARGIN_X + 12,
+    y: cursorY - 16,
+    size: 8.2,
+    font: sansBold,
+    color: COLORS.darkGold,
+  });
+  let linkY = cursorY - 32;
+  for (const itemLink of topLinks) {
+    drawClickableLinkText(
+      pdfDoc,
+      page,
+      `*  ${itemLink.label} ->`,
+      itemLink.url,
+      MARGIN_X + 12,
+      linkY,
+      8.8,
+      sansBold
+    );
+    linkY -= 15;
+  }
+  cursorY -= linksBoxH + 14;
+
+  // Final Advisor Callout Card (printer-friendly white card with gold border & accent bar)
+  guaranteeSpace(78);
   page.drawRectangle({
     x: MARGIN_X,
     y: cursorY - 70,
     width: CONTENT_W,
     height: 70,
-    color: COLORS.obsidian,
+    color: COLORS.white,
+    borderColor: COLORS.gold,
+    borderWidth: 1.5,
+  });
+  page.drawRectangle({
+    x: MARGIN_X,
+    y: cursorY - 70,
+    width: 4,
+    height: 70,
+    color: COLORS.gold,
   });
   page.drawText("READY FOR A LIVE SHOWING OR PRIVATE GUIDED TOUR?", {
     x: MARGIN_X + 14,
     y: cursorY - 19,
     size: 9,
     font: sansBold,
-    color: COLORS.gold,
+    color: COLORS.darkGold,
   });
   page.drawText("Mark Davis (FL Lic #3209459): 941-737-4127   |   Rachael Garnett (FL Lic #3378601): 727-808-3344", {
     x: MARGIN_X + 14,
     y: cursorY - 36,
     size: 9,
     font: sansBold,
-    color: COLORS.white,
+    color: COLORS.obsidian,
   });
-  page.drawText("Align Right Realty Carrollwood  *  3903 Northdale Blvd Suite 115W, Tampa FL 33624  *  davisgarnettsells.com", {
+  const cardAddr = "Align Right Realty Carrollwood  *  3903 Northdale Blvd Suite 115W, Tampa FL 33624  *  ";
+  page.drawText(cardAddr, {
     x: MARGIN_X + 14,
     y: cursorY - 52,
     size: 8.2,
     font: sansRegular,
-    color: rgb(0.8, 0.8, 0.8),
+    color: COLORS.textMuted,
   });
+  const cardAddrW = sansRegular.widthOfTextAtSize(cardAddr, 8.2);
+  drawClickableLinkText(
+    pdfDoc,
+    page,
+    "davisgarnettsells.com",
+    SITE_ORIGIN,
+    MARGIN_X + 14 + cardAddrW,
+    cursorY - 52,
+    8.2,
+    sansBold,
+    COLORS.darkGold
+  );
 
-  // ── STAMP CONSISTENT SMALL FOOTER ON EVERY PAGE ──
+  // ── STAMP BRANDED PRINTER-FRIENDLY FOOTER ON EVERY PAGE (DG Favicon Bottom-Left + Orange Align Right Bottom-Right) ──
   const pages = pdfDoc.getPages();
   const totalPages = pages.length;
   const shortFooterTitle = sanitizeWinAnsi(
-    input.title.length > 48 ? `${input.title.slice(0, 45)}...` : input.title
+    input.title.length > 42 ? `${input.title.slice(0, 39)}...` : input.title
   );
   const copyrightLeft = sanitizeWinAnsi(
-    `${shortFooterTitle}  *  Created: ${input.createdDateLabel}`
+    `${shortFooterTitle}  *  ${input.createdDateLabel}`
   );
-  const copyrightRightPrefix = sanitizeWinAnsi(
+  const copyrightSub = sanitizeWinAnsi(
     "(c) 2026 Davis & Garnett - Align Right Realty Carrollwood"
   );
 
   for (let pIdx = 0; pIdx < totalPages; pIdx++) {
     const p = pages[pIdx];
     p.drawLine({
-      start: { x: MARGIN_X, y: FOOTER_Y + 14 },
-      end: { x: PAGE_W - MARGIN_X, y: FOOTER_Y + 14 },
-      thickness: 0.5,
-      color: COLORS.borderLight,
+      start: { x: MARGIN_X, y: 52 },
+      end: { x: PAGE_W - MARGIN_X, y: 52 },
+      thickness: 0.75,
+      color: COLORS.gold,
     });
+
+    // Bottom-left DG Favicon + compact copyright text
+    let leftTextX = MARGIN_X;
+    if (dgFavicon) {
+      const favDims = dgFavicon.scaleToFit(24, 24);
+      p.drawImage(dgFavicon, {
+        x: MARGIN_X,
+        y: 18,
+        width: favDims.width,
+        height: favDims.height,
+      });
+      leftTextX = MARGIN_X + favDims.width + 8;
+    }
+
     p.drawText(copyrightLeft, {
-      x: MARGIN_X,
-      y: FOOTER_Y,
-      size: 7.5,
+      x: leftTextX,
+      y: FOOTER_Y + 6,
+      size: 7.4,
+      font: sansBold,
+      color: COLORS.textDark,
+    });
+    p.drawText(copyrightSub, {
+      x: leftTextX,
+      y: FOOTER_Y - 5,
+      size: 7.2,
       font: sansRegular,
       color: COLORS.textMuted,
     });
-    const pageNumStr = `${copyrightRightPrefix}  |  Page ${pIdx + 1} of ${totalPages}`;
-    const rightW = sansRegular.widthOfTextAtSize(pageNumStr, 7.5);
-    p.drawText(pageNumStr, {
-      x: Math.max(MARGIN_X + 210, PAGE_W - MARGIN_X - rightW),
-      y: FOOTER_Y,
-      size: 7.5,
-      font: sansRegular,
-      color: COLORS.textMuted,
-    });
+
+    // Bottom-right Orange Align Right Realty logo + Page X of Y
+    const pageStr = `Page ${pIdx + 1} of ${totalPages}`;
+    const pageStrW = sansBold.widthOfTextAtSize(pageStr, 7.6);
+    if (alignRightLogo) {
+      const arDims = alignRightLogo.scaleToFit(90, 26);
+      const arX = PAGE_W - MARGIN_X - arDims.width;
+      p.drawImage(alignRightLogo, {
+        x: arX,
+        y: 17,
+        width: arDims.width,
+        height: arDims.height,
+      });
+      p.drawText(pageStr, {
+        x: arX - pageStrW - 10,
+        y: FOOTER_Y,
+        size: 7.6,
+        font: sansBold,
+        color: COLORS.textMuted,
+      });
+    } else {
+      p.drawText(pageStr, {
+        x: PAGE_W - MARGIN_X - pageStrW,
+        y: FOOTER_Y,
+        size: 7.6,
+        font: sansBold,
+        color: COLORS.textMuted,
+      });
+    }
   }
 
   return pdfDoc.save();

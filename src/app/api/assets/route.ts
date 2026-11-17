@@ -69,6 +69,7 @@ export async function POST(req: Request) {
     const action = formData.get('action');
     const subPath = (formData.get('path') as string) || '';
     const targetDir = getSafePath(subPath);
+    await fs.mkdir(/*turbopackIgnore: true*/ targetDir, { recursive: true });
 
     if (action === 'createFolder') {
       const folderName = formData.get('folderName') as string;
@@ -79,6 +80,15 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: true });
     }
 
+    if (action === 'addPlaceholder') {
+      const srcPlaceholder = path.join(process.cwd(), 'public', 'placeholders', 'dg-brand-placeholder.webp');
+      const customName = ((formData.get('filename') as string) || 'dg-brand-placeholder.webp').replace(/[^a-zA-Z0-9.\-_]/g, '_');
+      const destPath = path.join(/*turbopackIgnore: true*/ targetDir, customName);
+      await fs.copyFile(srcPlaceholder, destPath);
+      const url = `/dashboard-assets/${subPath ? subPath + '/' : ''}${customName}`;
+      return NextResponse.json({ success: true, url, filename: customName });
+    }
+
     // Standard file upload
     const file = formData.get('file') as File;
     if (!file) {
@@ -86,12 +96,14 @@ export async function POST(req: Request) {
     }
 
     const buffer = Buffer.from(await file.arrayBuffer());
-    const filename = file.name.replace(/[^a-zA-Z0-9.\-_ ]/g, '_');
+    const customFilename = (formData.get('customFilename') as string) || file.name;
+    const filename = customFilename.replace(/[^a-zA-Z0-9.\-_ ]/g, '_');
     const filePath = path.join(/*turbopackIgnore: true*/ targetDir, filename);
 
     await fs.writeFile(/*turbopackIgnore: true*/ filePath, buffer);
+    const url = `/dashboard-assets/${subPath ? subPath + '/' : ''}${filename}`;
 
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ success: true, url, filename });
   } catch (error) {
     console.error('Error in assets POST', error);
     return NextResponse.json({ error: 'Failed to process request' }, { status: 500 });

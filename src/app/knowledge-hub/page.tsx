@@ -25,6 +25,7 @@ import SiteFooter from "@/components/SiteFooter";
 import FaviconHeroBackground from "@/components/FaviconHeroBackground";
 import TourSliderSection from "@/components/TourSliderSection";
 import ConsultationModal from "@/components/ConsultationModal";
+import PdfAvailableBadge from "@/components/PdfAvailableBadge";
 import { GUIDES, QUESTIONS, AREAS, EVENTS, ARTICLES } from "@/data/knowledgeHub";
 
 export default function KnowledgeHubPage() {
@@ -63,7 +64,7 @@ export default function KnowledgeHubPage() {
   );
   const filteredEvents = EVENTS.filter(
     (item) => !q || item.title.toLowerCase().includes(q) || item.summary.toLowerCase().includes(q)
-  );
+  ).sort((a, b) => (a.sortDate || "9999-12-31").localeCompare(b.sortDate || "9999-12-31"));
   const filteredArticles = ARTICLES.filter(
     (item) => !q || item.title.toLowerCase().includes(q) || item.summary.toLowerCase().includes(q)
   );
@@ -205,9 +206,12 @@ export default function KnowledgeHubPage() {
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                    <span className="absolute top-4 left-4 px-3 py-1 bg-[#D4AF37] text-[#111] text-[10px] font-bold uppercase tracking-widest rounded-sm">
-                      {guide.category}
-                    </span>
+                    <div className="absolute top-3.5 left-4 right-4 flex flex-col items-start gap-2 pointer-events-none">
+                      <span className="px-3 py-1 bg-[#D4AF37] text-[#111] text-[10px] font-bold uppercase tracking-widest rounded-sm whitespace-nowrap">
+                        {guide.category}
+                      </span>
+                      <PdfAvailableBadge />
+                    </div>
                     <span className="absolute bottom-3 right-4 text-[11px] text-white/90 flex items-center gap-1 font-medium">
                       <Clock className="w-3.5 h-3.5 text-[#D4AF37]" /> {guide.readTime}
                     </span>

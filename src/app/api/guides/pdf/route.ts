@@ -157,6 +157,7 @@ export async function POST(req: Request) {
           title: tour.title,
           subtitle: tour.tagline,
           category: tour.badge,
+          pageUrl: `/tours/${tour.slug}`,
           authorLine: `${tour.host.name} (${tour.host.license}) & ${tour.host.coHostName} (${tour.host.coHostLicense})`,
           createdDateLabel: formatShortDate(tour.updatedAt || tour.publishedAt),
           quickAnswer: tour.quickAnswer,
@@ -164,6 +165,7 @@ export async function POST(req: Request) {
           sections: tour.stops.map((s) => ({
             heading: s.name,
             metaLine: `${s.stopVibe ? `${s.stopVibe}  |  ` : ""}${s.driveFromPrev}  |  Explore: ${s.stopDuration}  |  ${s.address}`,
+            mapUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(s.address)}`,
             body: `${s.hostNote} ${s.snippet}`,
             bullets: [
               ...(s.eatOrSipSpot ? [`Coffee, Lunch & Pitstop: ${s.eatOrSipSpot}`] : []),
@@ -172,15 +174,17 @@ export async function POST(req: Request) {
             ],
           })),
           howWeHandleIt: `${tour.howWeHandleIt} ${tour.host.inviteNote}`,
-          sources: [
-            "Davis & Garnett Local Route Curation",
-            `Google Maps Route: ${buildGoogleMapsRouteUrl(tour.stops)}`,
+          sources: ["Davis & Garnett Local Route Curation"],
+          relatedLinks: [
+            { label: "Browse All Tampa Bay Guided Tours", url: "/tours" },
+            { label: "Explore Davis & Garnett Knowledge Hub", url: "/knowledge-hub" },
           ],
           routeMeta: {
             duration: tour.duration,
             distanceSummary: tour.distanceSummary,
             startAddress: tour.startAddress,
             routeDirectionNote: tour.routeDirectionNote,
+            googleMapsUrl: buildGoogleMapsRouteUrl(tour.stops),
           },
           workbook,
         };
@@ -195,6 +199,7 @@ export async function POST(req: Request) {
           title: `${area.name} — Neighborhood Guide`,
           subtitle: area.tagline,
           category: `Area Guide • ${area.county}`,
+          pageUrl: `/knowledge-hub/areas/${area.slug}`,
           authorLine: "Mark Davis (FL Lic #3209459) & Rachael Garnett (FL Lic #3378601)",
           createdDateLabel: formatShortDate(area.updatedAt || area.publishedAt),
           quickAnswer: area.quickAnswer || area.overview,
@@ -206,6 +211,7 @@ export async function POST(req: Request) {
           })),
           howWeHandleIt: area.howWeHandleIt,
           sources: area.sources?.map((s) => s.label),
+          relatedLinks: area.relatedServiceRoutes?.map((r) => ({ label: r.label, url: r.href })),
           workbook,
         };
       }
@@ -219,6 +225,7 @@ export async function POST(req: Request) {
           title: item.title,
           subtitle: item.subtitle,
           category: item.category,
+          pageUrl: `/knowledge-hub/${item.slug}`,
           authorLine: `${item.author.name} (${item.author.license}) — Davis & Garnett`,
           createdDateLabel: formatShortDate(item.updatedAt || item.publishedAt),
           quickAnswer: item.quickAnswer,
@@ -230,6 +237,7 @@ export async function POST(req: Request) {
           })),
           howWeHandleIt: item.howWeHandleIt,
           sources: item.sources?.map((s) => s.label),
+          relatedLinks: item.relatedServiceRoutes?.map((r) => ({ label: r.label, url: r.href })),
           workbook,
         };
       }
@@ -243,6 +251,7 @@ export async function POST(req: Request) {
           title: art.title,
           subtitle: art.summary,
           category: art.category,
+          pageUrl: `/knowledge-hub/articles/${art.slug}`,
           authorLine: `${art.author.name} (${art.author.license}) — Davis & Garnett`,
           createdDateLabel: formatShortDate(art.updatedAt || art.publishedAt),
           quickAnswer: art.quickAnswer,
@@ -254,6 +263,7 @@ export async function POST(req: Request) {
           })),
           howWeHandleIt: art.howWeHandleIt,
           sources: art.sources?.map((s) => s.label),
+          relatedLinks: art.relatedServiceRoutes?.map((r) => ({ label: r.label, url: r.href })),
           workbook,
         };
       }

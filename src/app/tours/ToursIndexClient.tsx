@@ -17,6 +17,7 @@ import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
 import FaviconHeroBackground from "@/components/FaviconHeroBackground";
 import ConsultationModal from "@/components/ConsultationModal";
+import PdfAvailableBadge from "@/components/PdfAvailableBadge";
 import { LIVE_GUIDED_TOURS, buildGoogleMapsRouteUrl } from "@/data/tours";
 
 export default function ToursIndexClient() {
@@ -216,15 +217,18 @@ export default function ToursIndexClient() {
                           className="object-cover group-hover:scale-105 transition-transform duration-700"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                        <span
-                          className={`absolute top-4 left-4 px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-sm ${
-                            tour.track === "commercial"
-                              ? "bg-[#1E3A5F] text-white"
-                              : "bg-[#D4AF37] text-[#111]"
-                          }`}
-                        >
-                          {tour.badge}
-                        </span>
+                        <div className="absolute top-3.5 left-4 right-4 flex flex-col items-start gap-2 pointer-events-none">
+                          <span
+                            className={`px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-sm leading-snug ${
+                              tour.track === "commercial"
+                                ? "bg-[#1E3A5F] text-white"
+                                : "bg-[#D4AF37] text-[#111]"
+                            }`}
+                          >
+                            {tour.badge}
+                          </span>
+                          <PdfAvailableBadge />
+                        </div>
                         <span className="absolute bottom-3 left-4 text-[11px] font-bold text-white flex items-center gap-1.5">
                           <Clock className="w-3.5 h-3.5 text-[#D4AF37]" /> {tour.duration}
                         </span>

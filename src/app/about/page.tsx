@@ -86,6 +86,13 @@ export default function AboutHubPage() {
     email: "list@davisgarnettsells.com",
     image: "https://davisgarnettsells.com/davis-garnett-real-combo.png",
     priceRange: "$$$-$$$$",
+    hasMap: "https://share.google/XMpv7TSdYT1Z2ZzyY",
+    sameAs: [
+      "https://share.google/XMpv7TSdYT1Z2ZzyY",
+      "https://www.davisgarnettsells.com/about/align-right-realty-carrollwood",
+      "https://www.davisgarnettsells.com/mark-davis-links",
+      "https://www.davisgarnettsells.com/rachael-garnett-links",
+    ],
     address: {
       "@type": "PostalAddress",
       streetAddress: "3903 Northdale Blvd Suite 115W",

@@ -3,6 +3,13 @@ import type { Metadata } from "next";
 export const SITE_URL = "https://www.davisgarnettsells.com";
 export const SITE_NAME = "Davis & Garnett Real Estate Advisors";
 export const DEFAULT_OG_IMAGE = "/davis-garnett-real-estate-advisors-cover-image-2.jpg";
+export const OFFICE_GBP_URL = "https://share.google/XMpv7TSdYT1Z2ZzyY";
+export const TEAM_SAME_AS: string[] = [
+  OFFICE_GBP_URL,
+  `${SITE_URL}/about/align-right-realty-carrollwood`,
+  `${SITE_URL}/mark-davis-links`,
+  `${SITE_URL}/rachael-garnett-links`,
+];
 
 export interface BuildMetadataInput {
   title: string;

@@ -14,6 +14,7 @@ import {
 import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
 import TopicHubLeadForm from "@/components/TopicHubLeadForm";
+import PdfAvailableBadge from "@/components/PdfAvailableBadge";
 import type { TopicHubConfig } from "@/data/topicHubs";
 import {
   getRelatedAreasForTags,
@@ -213,9 +214,14 @@ export default function TopicHubTemplate({ hub }: { hub: TopicHubConfig }) {
                     className="p-5 rounded-xl bg-[#f5f3ef] hover:bg-[#D4AF37]/15 border border-[#111]/10 transition-colors flex flex-col justify-between"
                   >
                     <div>
-                      <span className="text-[10px] uppercase tracking-widest font-bold text-[#9A7D3A] block mb-1.5">
-                        {item.type === "guide" ? "Advisory Guide" : "Q&A"} • {item.category}
-                      </span>
+                      <div className="flex items-center justify-between gap-2 mb-1.5">
+                        <span className="text-[10px] uppercase tracking-widest font-bold text-[#9A7D3A]">
+                          {item.type === "guide" ? "Advisory Guide" : "Q&A"} • {item.category}
+                        </span>
+                        {item.type === "guide" && (
+                          <PdfAvailableBadge variant="inline" label="PDF Available" />
+                        )}
+                      </div>
                       <h3 className="font-aiveritas text-lg text-[#111] mb-2">{item.title}</h3>
                     </div>
                     <span className="text-xs font-bold text-[#111] flex items-center gap-1 mt-2">

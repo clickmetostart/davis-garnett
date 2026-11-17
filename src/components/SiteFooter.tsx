@@ -144,6 +144,8 @@ export default function SiteFooter() {
               <li><Link href="/properties#new-listings" className="hover:text-white transition-colors">New &amp; Upcoming Listings</Link></li>
               <li><Link href="/properties#carrollwood-office" className="hover:text-white transition-colors">Align Right Carrollwood Office</Link></li>
               <li><Link href="/properties#commercial-land" className="hover:text-white transition-colors">Commercial &amp; Land Offerings</Link></li>
+              <li><Link href="/services/commercial-bpo" className="hover:text-white transition-colors">Commercial BPO Valuations</Link></li>
+              <li><Link href="/services/commercial-mentoring" className="hover:text-white transition-colors">Commercial Mentoring</Link></li>
               <li><Link href="/tours" className="text-[#D4AF37] hover:text-white transition-colors font-medium">Guided Area &amp; Retail Tours</Link></li>
               <li><Link href="/properties#sold-track-record" className="hover:text-white transition-colors">2026–2027 Sold Track Record</Link></li>
             </ul>

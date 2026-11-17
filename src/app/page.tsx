@@ -1,5 +1,5 @@
 import HomePageClient from "@/components/HomePageClient";
-import { buildPageMetadata, SITE_URL } from "@/lib/seo";
+import { buildPageMetadata, OFFICE_GBP_URL, SITE_URL, TEAM_SAME_AS } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
   title: "Davis & Garnett | Tampa Bay Residential & Commercial Real Estate Advisors",
@@ -18,6 +18,8 @@ export default function HomePage() {
     image: `${SITE_URL}/davis-garnett-real-estate-advisors-cover-image-2.jpg`,
     telephone: "+1-727-808-3344",
     email: "list@davisgarnettsells.com",
+    hasMap: OFFICE_GBP_URL,
+    sameAs: TEAM_SAME_AS,
     address: {
       "@type": "PostalAddress",
       streetAddress: "3903 Northdale Blvd Suite 115W",

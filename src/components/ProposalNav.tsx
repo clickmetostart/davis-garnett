@@ -42,6 +42,8 @@ const NAV_GROUPS: NavGroup[] = [
       { label: "New & Upcoming Listings", desc: "Newest team releases plus upcoming live IDX & Lofty feed areas", href: "/properties#new-listings" },
       { label: "Align Right Carrollwood Office", desc: "Active listings from our Align Right Realty Carrollwood brokerage", href: "/properties#carrollwood-office" },
       { label: "Commercial, Mixed-Use & Land", desc: "Custom commercial buildings, NNN assets & Central Florida acreage", href: "/properties#commercial-land" },
+      { label: "Commercial Broker Price Opinions (BPO)", desc: "Fast market value reports for owners, attorneys, lenders & 1031 trades", href: "/services/commercial-bpo" },
+      { label: "Commercial Real Estate Mentoring", desc: "Deal-by-deal NNN, SBA 504, zoning & underwriting coaching with Mark & Rachael", href: "/services/commercial-mentoring" },
       { label: "2026–2027 Sold Track Record", desc: "Recent residential, waterfront, commercial & land closings", href: "/properties#sold-track-record" },
     ],
   },
@@ -66,6 +68,7 @@ const NAV_GROUPS: NavGroup[] = [
     dropdown: [
       { label: "Real Estate Knowledge Simplified", desc: "Buyer & seller guides, common questions, neighborhoods & market updates", href: "/knowledge-hub" },
       { label: "Buyer & Seller Step-by-Step Guides", desc: "Simple guides for buying, selling, commercial property & HOA/CDD fees", href: "/knowledge-hub#guides" },
+      { label: "Guided Area & Shopping Tours", desc: "Full-day neighborhood, coffee, development & landmark routes (#GuidedByDG)", href: "/tours" },
       { label: "Common Real Estate Questions", desc: "Plain-English answers to top Florida buying, selling & tax questions", href: "/knowledge-hub#questions" },
       { label: "Areas We Work In", desc: "St. Pete, Downtown Tampa, Wesley Chapel, Land O' Lakes & Brandon", href: "/knowledge-hub#areas" },
       { label: "Local Events & Open Houses", desc: "Upcoming community tours, buyer workshops & charity events", href: "/knowledge-hub#events" },

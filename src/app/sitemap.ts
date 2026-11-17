@@ -23,6 +23,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about/community-outreach-giving",
     "/commercial-advisory-guide",
     "/residential-advisory-guide",
+    "/services/commercial-bpo",
+    "/services/commercial-mentoring",
     "/contact",
     "/properties",
     "/developments",

@@ -45,8 +45,20 @@ export default function EmailPreviewsPage() {
   });
   const [loading, setLoading] = useState(true);
   const [sending, setSending] = useState(false);
+  const [sendingTeam, setSendingTeam] = useState(false);
   const [testTo, setTestTo] = useState("clickme.tostart@gmail.com");
   const [sendStatus, setSendStatus] = useState<string | null>(null);
+
+  const TEAM_PREVIEW_TO = [
+    "mark@davisgarnettsells.com",
+    "msdavis118@gmail.com",
+    "rachael@davisgarnettsells.com",
+    "rachaellgarnett@gmail.com",
+  ];
+  const TEAM_PREVIEW_CC = [
+    "clickme.tostart@gmail.com",
+    "nick@clickme.life",
+  ];
 
   useEffect(() => {
     setLoading(true);
@@ -65,16 +77,23 @@ export default function EmailPreviewsPage() {
 
   const current = previews.find((p) => p.key === selectedKey) || previews[0];
 
-  const handleSendTestPair = async () => {
-    if (!current || !testTo) return;
-    setSending(true);
+  const sendPreviewPairTo = async (
+    recipients: string | string[],
+    summaryTargetLabel: string,
+    isTeamBlast: boolean,
+    ccRecipients?: string | string[]
+  ) => {
+    if (!current || !recipients || (Array.isArray(recipients) && recipients.length === 0)) return;
+    if (isTeamBlast) setSendingTeam(true);
+    else setSending(true);
     setSendStatus(null);
     try {
       const r1 = await fetch("/api/email/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          to: testTo,
+          to: recipients,
+          ...(ccRecipients ? { cc: ccRecipients } : {}),
           subject: `[PREVIEW ADMIN · ${advisorTier.toUpperCase()}] ${current.adminSubject}`,
           html: current.adminHtml,
           rawHtml: true,
@@ -85,7 +104,8 @@ export default function EmailPreviewsPage() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          to: testTo,
+          to: recipients,
+          ...(ccRecipients ? { cc: ccRecipients } : {}),
           subject: `[PREVIEW CLIENT · ${advisorTier.toUpperCase()}] ${current.clientSubject}`,
           html: current.clientHtml,
           rawHtml: true,
@@ -94,7 +114,7 @@ export default function EmailPreviewsPage() {
       });
       if (r1.ok && r2.ok) {
         setSendStatus(
-          `Sent "${current.crmLabel}" (${advisorTier}) Admin + Client preview emails to ${testTo}.`
+          `Sent "${current.crmLabel}" (${advisorTier}) Admin + Client preview emails to ${summaryTargetLabel}.`
         );
       } else {
         setSendStatus("Failed to send one or both test previews.");
@@ -103,8 +123,19 @@ export default function EmailPreviewsPage() {
       setSendStatus("Error sending preview emails.");
     } finally {
       setSending(false);
+      setSendingTeam(false);
     }
   };
+
+  const handleSendTestPair = () => sendPreviewPairTo(testTo, testTo, false);
+
+  const handleSendToFullTeam = () =>
+    sendPreviewPairTo(
+      TEAM_PREVIEW_TO,
+      `Mark & Rachael (${TEAM_PREVIEW_TO.join(", ")}) with CC to ClickMe (${TEAM_PREVIEW_CC.join(", ")})`,
+      true,
+      TEAM_PREVIEW_CC
+    );
 
   return (
     <div className="p-4 sm:p-6 lg:p-10 max-w-[1440px] mx-auto text-[#111]">
@@ -132,10 +163,19 @@ export default function EmailPreviewsPage() {
           <button
             type="button"
             onClick={handleSendTestPair}
-            disabled={sending || !current}
+            disabled={sending || sendingTeam || !current}
             className="px-4 py-2 bg-[#0A1628] hover:bg-[#D4AF37] text-white hover:text-[#111] text-xs font-bold uppercase tracking-wider rounded-lg transition-colors cursor-pointer disabled:opacity-50 whitespace-nowrap"
           >
             {sending ? "Sending..." : "Send Test Pair"}
+          </button>
+          <button
+            type="button"
+            onClick={handleSendToFullTeam}
+            disabled={sending || sendingTeam || !current}
+            title={`Send both previews to Mark & Rachael (CC: ${TEAM_PREVIEW_CC.join(", ")})`}
+            className="px-4 py-2 bg-[#D4AF37] hover:bg-[#0A1628] text-[#111] hover:text-white text-xs font-bold uppercase tracking-wider rounded-lg transition-colors cursor-pointer disabled:opacity-50 whitespace-nowrap"
+          >
+            {sendingTeam ? "Sending Previews..." : "Send Previews to Team"}
           </button>
         </div>
       </div>

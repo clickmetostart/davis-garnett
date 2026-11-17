@@ -38,6 +38,7 @@ export const KEYS = {
   settings: 'dg:settings',
   listings: 'dg:listings',
   threads: 'dg:threads',
+  imageReviews: 'dg:image_reviews',
 } as const;
 
 async function readSeedJson<T>(filename: string, fallback: T): Promise<T> {
@@ -140,5 +141,21 @@ export async function kv_getThreads(): Promise<any[]> {
 
 export async function kv_setThreads(threads: any[]): Promise<void> {
   return kvSet(KEYS.threads, 'web_inbox.json', threads);
+}
+
+export interface ImageReviewRecord {
+  status: 'approved' | 'flagged' | 'placeholder_queued' | 'replaced' | 'unreviewed';
+  note?: string;
+  replacementUrl?: string;
+  usePlaceholder?: boolean;
+  updatedAt: string;
+}
+
+export async function kv_getImageReviews(): Promise<Record<string, ImageReviewRecord>> {
+  return kvGet<Record<string, ImageReviewRecord>>(KEYS.imageReviews, 'image_reviews.json', {});
+}
+
+export async function kv_setImageReviews(reviews: Record<string, ImageReviewRecord>): Promise<void> {
+  return kvSet(KEYS.imageReviews, 'image_reviews.json', reviews);
 }
 

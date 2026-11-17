@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
-import { UploadCloud, Copy, Trash2, Image as ImageIcon, FileText, Check, Folder, FolderPlus, ChevronRight, ArrowLeft, Download, FolderInput, X } from 'lucide-react';
+import Link from 'next/link';
+import { UploadCloud, Copy, Trash2, Image as ImageIcon, FileText, Check, Folder, FolderPlus, ChevronRight, ArrowLeft, Download, FolderInput, X, Sparkles } from 'lucide-react';
 
 interface Asset {
   id: string;
@@ -90,6 +91,28 @@ export default function AssetsLibrary() {
       }
     } catch (e) {
       console.error(e);
+    }
+  };
+
+  const handleAddPlaceholder = async () => {
+    try {
+      const formData = new FormData();
+      formData.append('action', 'addPlaceholder');
+      formData.append('filename', 'dg-brand-placeholder.webp');
+      formData.append('path', currentPath.join('/'));
+
+      const res = await fetch('/api/assets', {
+        method: 'POST',
+        body: formData
+      });
+      if (res.ok) {
+        await fetchAssets();
+      } else {
+        alert("Failed to add D&G image holder to Brand Assets.");
+      }
+    } catch (e) {
+      console.error(e);
+      alert("Error adding D&G image holder.");
     }
   };
 
@@ -207,18 +230,33 @@ export default function AssetsLibrary() {
         </div>
       )}
 
-      <div className="flex justify-between items-end mb-8">
+      <div className="flex flex-wrap justify-between items-end gap-4 mb-8">
         <div>
           <h1 className="text-3xl font-bold mb-2">Brand Assets</h1>
-          <p className="text-gray-500">Manage your synced public assets for the dashboard.</p>
+          <p className="text-gray-500">Manage your synced public assets, uploaded image replacements, and brand holders.</p>
         </div>
         
-        <div className="flex items-center gap-4">
+        <div className="flex flex-wrap items-center gap-3">
+          <Link
+            href="/clickme/image-review"
+            className="px-4 py-3 rounded-lg font-bold flex items-center gap-2 border border-amber-300 bg-amber-50 hover:bg-amber-100 text-amber-950 transition-all text-sm"
+          >
+            <ImageIcon className="w-4 h-4" /> Image Review Queue
+          </Link>
+
+          <button
+            onClick={handleAddPlaceholder}
+            className="px-4 py-3 rounded-lg font-bold flex items-center gap-2 border border-[#D4AF37] bg-[#fdfaf0] hover:bg-[#D4AF37]/20 text-[#111] transition-all text-sm cursor-pointer"
+            title="Copy the Davis & Garnett brand placeholder image into this folder"
+          >
+            <Sparkles className="w-4 h-4 text-[#9A7D3A]" /> Add D&amp;G Image Holder
+          </button>
+
           <button 
             onClick={handleCreateFolder}
-            className="px-6 py-3 rounded-lg font-bold flex items-center gap-2 border border-gray-300 hover:bg-gray-50 transition-all text-gray-700"
+            className="px-5 py-3 rounded-lg font-bold flex items-center gap-2 border border-gray-300 hover:bg-gray-50 transition-all text-gray-700 text-sm cursor-pointer"
           >
-            <FolderPlus className="w-5 h-5" /> New Folder
+            <FolderPlus className="w-4 h-4" /> New Folder
           </button>
           
           <div className="relative">
@@ -232,7 +270,7 @@ export default function AssetsLibrary() {
             <button 
               onClick={() => fileInputRef.current?.click()}
               disabled={isUploading}
-              className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-bold flex items-center gap-2 shadow-lg shadow-black/20 transition-all disabled:opacity-50"
+              className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-bold flex items-center gap-2 shadow-lg shadow-black/20 transition-all disabled:opacity-50 text-sm cursor-pointer"
             >
               <UploadCloud className="w-5 h-5" />
               {isUploading ? 'Uploading...' : 'Upload File'}
