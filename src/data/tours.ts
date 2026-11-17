@@ -413,7 +413,7 @@ export const GUIDED_TOURS: GuidedTour[] = [
     distanceSummary: "24 Miles South-to-North Corridor",
     routeDirectionNote: "SR-56 West -> East to Two Rivers -> North up Morris Bridge/Curley Rd to Epperson -> East on SR-52 to Mirada.",
     startAddress: "28211 Paseo Dr, Wesley Chapel, FL 33543",
-    heroImage: "/city-photos/wesley-chapel-suburban.jpg",
+    heroImage: "/placeholders/dg-brand-placeholder.webp",
     host: {
       name: "Rachael Garnett",
       role: "Your New-Construction Tour Host",
