@@ -114,12 +114,17 @@ export default function DevelopmentsHubPage() {
                   icon: Trees,
                 },
                 {
+                  label: "55+ Active Adult (9)",
+                  href: "#55-plus",
+                  icon: Sparkles,
+                },
+                {
                   label: "How We Help You Buy",
                   href: "#new-construction-guide",
                   icon: ShieldCheck,
                 },
                 {
-                  label: "Price Sheets & Floor Plans",
+                  label: "Development Interest List",
                   href: "#vip-pricing-form",
                   icon: FileSearch,
                 },
@@ -398,10 +403,10 @@ export default function DevelopmentsHubPage() {
                 <form onSubmit={handleLeadSubmit} className="space-y-6">
                   <div className="border-b border-[#111111]/10 pb-4 mb-2">
                     <h3 className="font-aiveritas text-2xl text-[#111111]">
-                      VIP Pricing &amp; Floor Plan Registration
+                      Tampa Bay Development Interest List
                     </h3>
                     <p className="text-xs text-[#111111]/60 mt-1">
-                      Direct delivery to your inbox. Zero obligation. Full buyer agency protection.
+                      Stay informed about emerging developments, available opportunities, and market updates throughout Tampa Bay.
                     </p>
                   </div>
 
@@ -534,11 +539,168 @@ export default function DevelopmentsHubPage() {
                     className="w-full py-4 px-8 bg-[#111111] hover:bg-[#C8A951] text-white hover:text-[#111111] font-bold text-xs uppercase tracking-[0.22em] rounded-xl transition-all duration-300 shadow-lg disabled:opacity-50"
                   >
                     {formStatus === "submitting"
-                      ? "Preparing VIP Request..."
-                      : "Send Me VIP Floor Plans, Price Sheets & Builder Incentives"}
+                      ? "Sending Request..."
+                      : "Join Development Interest List & Get Floor Plans"}
                   </button>
                 </form>
               )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── COLLECTIVE SECTION 4B: 55+ & ACTIVE-ADULT COMMUNITIES IN TAMPA BAY (#55-plus) ── */}
+      <section id="55-plus" className="py-24 px-6 md:px-12 bg-white border-t border-b border-[#111111]/10 scroll-mt-20">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14">
+            <div className="max-w-3xl">
+              <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.28em] font-bold block mb-3">
+                55+ &amp; Active-Adult Living · New Build &amp; Established
+              </span>
+              <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111111] leading-tight mb-4">
+                Tampa Bay 55+ &amp; Active-Adult Communities
+              </h2>
+              <p className="text-[#111111]/75 text-base md:text-[17px] font-light leading-relaxed">
+                Whether you want brand-new resort clubhouses in Wesley Chapel and Pasco or established low-fee golf and condo neighborhoods in South Shore and Clearwater, compare all nine top Tampa Bay 55+ options side by side.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3 shrink-0">
+              <Link
+                href="/knowledge-hub/best-55-plus-active-adult-communities-tampa-bay"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#111111] hover:bg-[#C8A951] text-white hover:text-[#111111] text-xs uppercase tracking-[0.18em] font-bold rounded-xl transition-colors"
+              >
+                Read Full 55+ Buyer Guide <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/knowledge-hub/55-plus-hoa-cdd-fees-tampa-bay"
+                className="inline-flex items-center gap-2 px-5 py-3.5 bg-[#f5f3ef] hover:bg-[#111111] text-[#111111] hover:text-white border border-[#111111]/15 text-xs uppercase tracking-[0.16em] font-bold rounded-xl transition-colors"
+              >
+                55+ HOA &amp; CDD Fees Q&amp;A
+              </Link>
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                name: "Valencia Ridge",
+                type: "New Construction",
+                area: "Wesley Chapel, FL",
+                price: "Mid $400Ks – $900Ks+",
+                highlights: "Gated GL Homes 55+ community with grand clubhouse, dining, pickleball, and resort pools.",
+              },
+              {
+                name: "Esplanade at Wiregrass Ranch",
+                type: "New Construction",
+                area: "Wesley Chapel, FL",
+                price: "From Mid $400Ks",
+                highlights: "Taylor Morrison resort-style villas and single-family homes near Wiregrass shops and hospitals.",
+              },
+              {
+                name: "Medley at Mirada",
+                type: "New Construction",
+                area: "San Antonio / Wesley Chapel",
+                price: "High $300Ks – $600Ks+",
+                highlights: "Dedicated 55+ neighborhood inside Mirada featuring a private clubhouse plus 15-acre Metro Lagoon access.",
+              },
+              {
+                name: "Del Webb River Reserve",
+                type: "New Construction",
+                area: "Pasco / North Tampa Corridor",
+                price: "Mid $400Ks – $700Ks+",
+                highlights: "Low-maintenance single-story floor plans, lifestyle director, trails, and heated social clubhouse.",
+              },
+              {
+                name: "Sun City Center & Kings Point",
+                type: "Established Value",
+                area: "South Shore (Hillsborough)",
+                price: "$220Ks – $550Ks",
+                highlights: "Over 200 resident clubs, indoor and outdoor pools, medical plaza access, and golf-cart friendly roads.",
+              },
+              {
+                name: "Valencia Lakes",
+                type: "Established Gated",
+                area: "Wimauma / South Shore",
+                price: "$360Ks – $625Ks",
+                highlights: "Mature trees, guarded gatehouse, tennis, softball, fitness center, and social cafe without waitlists.",
+              },
+              {
+                name: "Timber Greens",
+                type: "Established Golf",
+                area: "New Port Richey (West Pasco)",
+                price: "$260Ks – $450Ks",
+                highlights: "18-hole par-71 golf course, guard-gated streets, villas with low monthly dues, and no CDD fee.",
+              },
+              {
+                name: "Tampa Bay Golf & Country Club",
+                type: "Established Golf",
+                area: "San Antonio, FL",
+                price: "$275Ks – $485Ks",
+                highlights: "Championship and executive golf courses, clubhouse dining, dog parks, and quick I-75 access.",
+              },
+              {
+                name: "On Top of the World",
+                type: "Established Pinellas",
+                area: "Clearwater, FL",
+                price: "$180Ks – $380Ks",
+                highlights: "Central Clearwater 55+ condos and villas minutes from Gulf beaches with golf, pools, and fitness halls.",
+              },
+            ].map((comm) => (
+              <div
+                key={comm.name}
+                className="p-6 rounded-2xl bg-[#fbfbf9] border border-[#111111]/10 hover:border-[#C8A951] transition-all flex flex-col justify-between shadow-sm"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <span className="px-2.5 py-1 rounded-full bg-[#111111] text-[#C8A951] text-[10px] font-bold uppercase tracking-wider">
+                      {comm.type}
+                    </span>
+                    <span className="text-[11px] font-bold text-[#9A7D3A]">{comm.price}</span>
+                  </div>
+                  <h3 className="font-aiveritas text-2xl text-[#111111] mb-1">{comm.name}</h3>
+                  <div className="text-xs text-[#111111]/60 flex items-center gap-1.5 mb-3">
+                    <MapPin className="w-3.5 h-3.5 text-[#C8A951]" />
+                    <span>{comm.area}</span>
+                  </div>
+                  <p className="text-sm text-[#111111]/75 font-light leading-relaxed mb-5">
+                    {comm.highlights}
+                  </p>
+                </div>
+                <a
+                  href="#vip-pricing-form"
+                  onClick={() =>
+                    setLeadForm((prev) => ({
+                      ...prev,
+                      developmentOfInterest: `55+ Interest: ${comm.name}`,
+                      message: `Please send availability, HOA/CDD costs, and floor plans for ${comm.name}.`,
+                    }))
+                  }
+                  className="text-xs font-bold uppercase tracking-wider text-[#9A7D3A] hover:text-[#111111] inline-flex items-center gap-1.5 pt-3 border-t border-[#111111]/10"
+                >
+                  Request {comm.name} Info <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 p-6 rounded-2xl bg-[#f5f3ef] border border-[#C8A951]/35 flex flex-wrap items-center justify-between gap-4">
+            <div className="text-sm text-[#111111]/80">
+              <strong className="text-[#111111]">Comparing 55+ Condos vs. Single-Story Villas?</strong>{" "}
+              Read our plain-English breakdown of Florida reserve laws and lifestyle trade-offs.
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/knowledge-hub/florida-55-plus-condo-milestone-reserves-vs-villa"
+                className="text-xs font-bold uppercase tracking-wider text-[#111111] hover:text-[#9A7D3A] underline"
+              >
+                55+ Condo Reserves vs. Villa →
+              </Link>
+              <Link
+                href="/knowledge-hub/articles/tampa-bay-55-plus-relocation-corridor-comparison"
+                className="text-xs font-bold uppercase tracking-wider text-[#111111] hover:text-[#9A7D3A] underline"
+              >
+                Wesley Chapel vs. South Shore vs. Clearwater →
+              </Link>
             </div>
           </div>
         </div>

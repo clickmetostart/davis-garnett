@@ -2,17 +2,19 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowLeft,
   ArrowRight,
   HeartHandshake,
   Heart,
-  Users,
   Home,
   Award,
   CheckCircle2,
-  Sparkles,
   CalendarHeart,
+  GraduationCap,
+  ExternalLink,
+  HandHeart,
 } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
 import DavisGarnettLogo from "@/components/DavisGarnettLogo";
@@ -44,28 +46,88 @@ const IMPACT_PILLARS = [
     ],
   },
   {
+    icon: GraduationCap,
+    title: "Local Elementary, Middle & High Schools",
+    subtitle: "Teachers, Classrooms, PTA/PTSA & Youth Athletics",
+    description:
+      "Public, private, and charter schools anchor every neighborhood Mark and Rachael serve across Carrollwood, Northdale, Lutz, Brandon, Wesley Chapel, and St. Petersburg. We back teachers and student programs with supplies, booster sponsorships, and classroom support.",
+    initiatives: [
+      "Back-to-school supply drives and teacher appreciation breakfasts for local K–12 campuses",
+      "Athletic booster sponsorships, band fundraisers, and graduation awards for neighborhood high schools",
+      "Equipment and registration scholarships so students can join teams and clubs regardless of cost",
+    ],
+  },
+  {
     icon: Award,
-    title: "Youth Character, Mentorship & Athletic Sponsorships",
+    title: "Youth Character & Community Mentorship",
     subtitle: "Investing in the Next Generation of Tampa Bay Leaders",
     description:
-      "Strong neighborhoods are built on strong young people. Davis & Garnett proudly sponsors local youth athletics, Fellowship of Christian Athletes (FCA) huddles, high school leadership programs, and scholarship funds that teach discipline, teamwork, and servant leadership.",
+      "Strong neighborhoods start with supported kids and teens. Davis & Garnett proudly supports youth mentorship programs, Big Brothers Big Sisters of Tampa Bay, FCA huddles, and local sports leagues that build confidence and teamwork.",
     initiatives: [
-      "Youth baseball, soccer, and Friday-night high school athletic program sponsorships in Carrollwood, Lutz, and Brandon",
-      "Equipment and registration scholarships so every child can play regardless of family income",
-      "Mentorship and career-shadowing days introducing high school students to commercial and residential real estate",
+      "Youth baseball, soccer, and community league sponsorships across Hillsborough, Pinellas, and Pasco",
+      "Mentorship matching and youth leadership support through trusted Tampa Bay nonprofits",
+      "Career-shadowing days introducing local high school students to real estate and business ownership",
     ],
   },
   {
     icon: CalendarHeart,
-    title: "Annual Community Service & Neighborhood Days",
-    subtitle: "Hands-On Service Alongside Our Clients & Strategic Partners",
+    title: "Annual Community Service & Care Drives",
+    subtitle: "Metropolitan Ministries, Cancer Care & Neighborhood Days",
     description:
-      "Stewardship is more than writing a check—it is showing up with work gloves. Throughout the year, we mobilize our clients, preferred lenders, title attorneys, and inspectors for hands-on community service days across Greater Tampa Bay.",
+      "Giving back means showing up with work gloves and consistent financial support. Throughout the year, our team, clients, and business partners rally behind coastal cleanups, food boxes, cancer fundraising, and senior homeowner care days.",
     initiatives: [
-      "Spring coastal & park cleanup mornings in St. Petersburg and Tampa",
-      "Back-to-School backpack and classroom supply drives for local public and parochial teachers",
-      "Senior homeowner yard revitalization and minor exterior maintenance days",
+      "Seasonal food and toy drives supporting Metropolitan Ministries across Tampa Bay",
+      "Relay and fundraising support for American Cancer Society research and patient care",
+      "Senior homeowner yard cleanups and coastal park volunteer mornings in Tampa and St. Petersburg",
     ],
+  },
+];
+
+const NONPROFIT_PARTNERS = [
+  {
+    name: "Metropolitan Ministries",
+    focus: "Family Shelter, Food & Hope in Tampa Bay",
+    description:
+      "Caring for homeless and at-risk families across Hillsborough, Pinellas, Pasco, and Polk counties with meals, safe housing, and job training.",
+    donateUrl: "https://www.metromin.org/",
+    donateLabel: "Visit Metropolitan Ministries & Donate",
+  },
+  {
+    name: "American Cancer Society",
+    focus: "Cancer Research, Patient Rides & Care Support",
+    description:
+      "Funding lifesaving cancer research while giving Tampa Bay patients free lodging, rides to treatment, and 24/7 caregiver guidance.",
+    donateUrl: "https://www.cancer.org/donate.html",
+    donateLabel: "Donate to American Cancer Society",
+  },
+  {
+    name: "Big Brothers Big Sisters of Tampa Bay",
+    focus: "One-to-One Youth Mentorship",
+    description:
+      "Pairing local children with caring adult mentors to boost school attendance, graduation rates, and lifelong confidence across Tampa Bay.",
+    donateUrl: "https://bbbstampabay.org/",
+    donateLabel: "Support Big Brothers Big Sisters",
+  },
+];
+
+const OUTREACH_SHOWCASE = [
+  {
+    tag: "K–12 Schools",
+    title: "Local Elementary, Middle & High School Drives",
+    caption: "Stocking teacher supply closets, funding booster clubs, and backing Friday-night youth athletics.",
+    image: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-16.jpg",
+  },
+  {
+    tag: "Tampa Bay Nonprofits",
+    title: "Metropolitan Ministries & Family Care Partnerships",
+    caption: "Direct holiday meal boxes, furniture drives, and shelter transitions for neighbors getting back on their feet.",
+    image: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-17.jpg",
+  },
+  {
+    tag: "Volunteer Days",
+    title: "Hands-On Neighborhood & Faith Service",
+    caption: "Bringing clients, inspectors, and lenders together for park cleanups and local family outreach events.",
+    image: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-10.jpg",
   },
 ];
 
@@ -203,18 +265,18 @@ export default function CommunityOutreachGivingPage() {
         </div>
       </header>
 
-      {/* ── 4 CORE COMMUNITY & FAITH IMPACT PILLARS ──────────────────────── */}
-      <section className="py-28 px-6 md:px-12 bg-[#f5f3ef] border-b border-[#111111]/10">
+      {/* ── CORE COMMUNITY, SCHOOLS & FAITH IMPACT PILLARS ────────────────── */}
+      <section className="py-24 px-6 md:px-12 bg-[#f5f3ef] border-b border-[#111111]/10">
         <div className="max-w-screen-xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-              Where We Serve & Give
+              Where We Serve &amp; Give
             </span>
             <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111111] mb-4">
-              Four Pillars of Our Community Commitment
+              How We Support Families, Schools &amp; Churches
             </h2>
             <p className="text-base md:text-[17px] lg:text-[18px] text-[#111111]/70 font-light leading-relaxed">
-              Grounded in faith and gratitude, our outreach focuses on initiatives that build resilient families and compassionate neighborhoods.
+              Grounded in faith and gratitude, our outreach supports Tampa Bay families, local K–12 schools, youth programs, and trusted charities across Hillsborough, Pinellas, and Pasco counties.
             </p>
           </div>
 
@@ -255,6 +317,110 @@ export default function CommunityOutreachGivingPage() {
               </div>
             ))}
           </div>
+
+          <div className="mt-10 p-6 md:p-8 rounded-2xl bg-[#111111] text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <span className="text-[10px] uppercase tracking-[0.22em] font-bold text-[#C8A951] block mb-1">
+                Tampa Bay School Corridors
+              </span>
+              <p className="text-sm text-white/80 font-light">
+                Relocating with school-age kids? Explore our plain-English guide to searching homes by school zone in Carrollwood, Lutz, and Wesley Chapel.
+              </p>
+            </div>
+            <Link
+              href="/knowledge-hub/north-tampa-wesley-chapel-top-school-corridors"
+              className="inline-flex items-center gap-2 px-5 py-3 bg-[#C8A951] hover:bg-white text-[#111111] text-xs font-bold uppercase tracking-widest rounded-lg transition-colors shrink-0"
+            >
+              Read School Zone Guide <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── OFFICIAL CHARITY PARTNERS & DIRECT DONATION LINKS ───────────────── */}
+      <section className="py-24 px-6 md:px-12 bg-white border-b border-[#111111]/10">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
+              Support Our Mission Directly
+            </span>
+            <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111111] mb-4">
+              Trusted Nonprofits We Encourage You to Support
+            </h2>
+            <p className="text-base text-[#111111]/70 font-light leading-relaxed">
+              Click below to learn more or make a direct tax-deductible gift to these organizations making a measurable impact across Tampa Bay and nationwide.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {NONPROFIT_PARTNERS.map((partner) => (
+              <div
+                key={partner.name}
+                className="p-8 rounded-2xl bg-[#fbfbf9] border border-[#111111]/10 hover:border-[#C8A951] transition-all flex flex-col justify-between shadow-sm"
+              >
+                <div>
+                  <div className="w-11 h-11 rounded-xl bg-[#111111] text-[#C8A951] flex items-center justify-center mb-5">
+                    <HandHeart className="w-5 h-5" />
+                  </div>
+                  <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#9A7D3A] block mb-1.5">
+                    {partner.focus}
+                  </span>
+                  <h3 className="font-aiveritas text-2xl text-[#111111] mb-3">{partner.name}</h3>
+                  <p className="text-sm text-[#111111]/75 font-light leading-relaxed mb-6">
+                    {partner.description}
+                  </p>
+                </div>
+                <a
+                  href={partner.donateUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 w-full py-3.5 px-5 bg-[#111111] hover:bg-[#C8A951] text-white hover:text-[#111111] text-xs font-bold uppercase tracking-wider rounded-xl transition-colors"
+                >
+                  <span>{partner.donateLabel}</span>
+                  <ExternalLink className="w-3.5 h-3.5 shrink-0" />
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── OUTREACH IN ACTION SHOWCASE ────────────────────────────────────── */}
+      <section className="py-24 px-6 md:px-12 bg-[#f5f3ef] border-b border-[#111111]/10">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
+              Outreach in Action
+            </span>
+            <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111111] mb-4">
+              Serving Tampa Bay Side by Side
+            </h2>
+            <p className="text-base text-[#111111]/70 font-light leading-relaxed">
+              From local classrooms and youth sports fields to shelter family rooms, every transaction fuels practical kindness in our hometown.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {OUTREACH_SHOWCASE.map((item) => (
+              <div
+                key={item.title}
+                className="bg-white rounded-2xl overflow-hidden border border-[#111111]/10 shadow-sm flex flex-col"
+              >
+                <div className="relative h-56 w-full overflow-hidden">
+                  <Image src={item.image} alt={item.title} fill className="object-cover" />
+                  <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#111111]/90 text-[#C8A951] text-[10px] font-bold uppercase tracking-wider">
+                    {item.tag}
+                  </span>
+                </div>
+                <div className="p-6 flex-1">
+                  <h3 className="font-aiveritas text-xl text-[#111111] mb-2">{item.title}</h3>
+                  <p className="text-sm text-[#111111]/70 font-light leading-relaxed">
+                    {item.caption}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -280,7 +446,7 @@ export default function CommunityOutreachGivingPage() {
                 Thank You for Sharing Your Mission
               </h3>
               <p className="text-sm text-[#111111]/70 max-w-md mx-auto mb-6">
-                We have received your outreach inquiry for {formData.organizationName || "your organization"}. Mark and Rachael review every community request personally.
+                We have received your outreach inquiry for {formData.organizationName || "your organization"}. We value your inquiry and strive to respond within six hours — almost always the same day and always ASAP.
               </p>
               <button
                 type="button"
@@ -370,8 +536,9 @@ export default function CommunityOutreachGivingPage() {
                     className="w-full px-4 py-3.5 rounded-lg bg-white border border-[#111111]/15 text-sm"
                   >
                     <option>Local Church Ministry / Outreach Initiative</option>
+                    <option>Local Elementary, Middle &amp; High School Partnership</option>
                     <option>Family Housing Transition / Shelter Support</option>
-                    <option>Youth Character & Athletic Sponsorship</option>
+                    <option>Youth Character &amp; Athletic Sponsorship</option>
                     <option>Volunteer Community Service Day Partnership</option>
                   </select>
                 </div>

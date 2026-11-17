@@ -391,7 +391,7 @@ export const DEVELOPMENTS: Development[] = [
       { label: "Architect", value: "Nichols Architects & MAWD" },
       { label: "Certification", value: "WELL Community Gold + LEED" },
       { label: "Price Range", value: "$1.2M – $5.0M+" },
-      { label: "Phase Status", value: "Early VIP Reservations" },
+      { label: "Phase Status", value: "Upcoming Phase Releases" },
     ],
     floorPlanTiers: [
       {
@@ -430,13 +430,13 @@ export const DEVELOPMENTS: Development[] = [
         "Full Access to Sky-Park Pool, Wellness Spa & Co-Working Club",
       ],
       financialNote:
-        "Phase 2 VIP reservations allow buyers to lock in Friends & Family Tier-1 pricing before public sales gallery launch. Contact Davis & Garnett to register on the priority allocation roster.",
+        "Phase 2 updates keep buyers informed on floor plans, developer releases, and carrying costs ahead of public sales openings. Join the Tampa Bay Development Interest List with Davis & Garnett.",
     },
     whyBuyWithDG: [
       {
-        title: "Tier-1 Priority Reservation Registration",
+        title: "Timely Release & Floor Plan Updates",
         detail:
-          "In Water Street Phase 1, earliest reservation holders captured 30%+ equity appreciation before certificate of occupancy. We position our clients at the front of the Phase 2 allocation queue.",
+          "Following Water Street Phase 1 demand, staying registered on the Development Interest List ensures you receive official Phase 2 floor plans, price sheets, and timelines promptly.",
       },
       {
         title: "Commercial & Retail Surrounding Parcel Intelligence",
@@ -705,7 +705,7 @@ export const DEVELOPMENTS: Development[] = [
       {
         title: "First-Alert Release Notifications",
         detail:
-          "As for-sale residential and live-work phases release across the multi-year master plan, our registered VIP clients receive immediate floor plans and pricing.",
+          "As for-sale residential and live-work phases release across the multi-year master plan, subscribers to our Tampa Bay Development Interest List receive floor plans and pricing updates.",
       },
       {
         title: "Retail Lease & Mixed-Use Advisory",
@@ -1235,9 +1235,9 @@ export const DEVELOPMENTS: Development[] = [
     },
     whyBuyWithDG: [
       {
-        title: "VIP Access to Private 'Estates II' Conservation Lot Releases",
+        title: "Updates on Private 'Estates II' Conservation Lot Releases",
         detail:
-          "80-foot cul-de-sac lots backing to the 3,000-acre Conner Preserve sell out immediately upon release. We register our clients directly with WestBay and Taylor Morrison land managers.",
+          "80-foot cul-de-sac lots backing to the 3,000-acre Conner Preserve sell quickly upon release. Joining our Development Interest List ensures you hear about WestBay and Taylor Morrison releases promptly.",
       },
       {
         title: "Structural Design Studio ROI Guidance",

@@ -9,12 +9,18 @@ export interface KnowledgeFAQ {
   answer: string;
 }
 
+export interface RelatedServiceLink {
+  label: string;
+  href: string;
+}
+
 export interface KnowledgeItem {
   slug: string;
   type: "guide" | "question";
   category: string;
   title: string;
   subtitle: string;
+  quickAnswer?: string;
   readTime: string;
   publishDate: string;
   heroImage: string;
@@ -30,12 +36,19 @@ export interface KnowledgeItem {
   keyTakeaways: string[];
   sections: KnowledgeSection[];
   faqs: KnowledgeFAQ[];
+  relatedGuideSlugs?: string[];
+  relatedAreaSlugs?: string[];
+  relatedDevelopmentSlugs?: string[];
+  relatedServiceRoutes?: RelatedServiceLink[];
+  ctaLabel?: string;
+  ctaHref?: string;
 }
 
 export interface AreaItem {
   slug: string;
   name: string;
   tagline: string;
+  quickAnswer?: string;
   county: string;
   heroImage: string;
   medianPrice: string;
@@ -46,6 +59,8 @@ export interface AreaItem {
   sections: KnowledgeSection[];
   faqs: KnowledgeFAQ[];
   featuredListingSlugs: string[];
+  relatedGuideSlugs?: string[];
+  relatedDevelopmentSlugs?: string[];
 }
 
 export interface EventItem {
@@ -78,6 +93,7 @@ export interface ArticleItem {
   readTime: string;
   heroImage: string;
   summary: string;
+  quickAnswer?: string;
   author: {
     name: string;
     role: string;
@@ -87,6 +103,9 @@ export interface ArticleItem {
   };
   keyTakeaways: string[];
   sections: KnowledgeSection[];
+  relatedGuideSlugs?: string[];
+  relatedAreaSlugs?: string[];
+  relatedDevelopmentSlugs?: string[];
 }
 
 const MARK_AUTHOR = {
@@ -322,6 +341,182 @@ export const GUIDES: KnowledgeItem[] = [
         answer: "Yes, if your lender escrows your property taxes, your CDD fee is automatically included in your monthly tax escrow payment.",
       },
     ],
+    relatedGuideSlugs: [
+      "what-is-the-difference-between-hoa-and-cdd-in-tampa-bay",
+      "55-plus-hoa-cdd-fees-tampa-bay",
+      "best-tampa-neighborhoods-no-hoa-no-cdd",
+    ],
+    relatedAreaSlugs: ["wesley-chapel", "land-o-lakes", "carrollwood-northdale"],
+    relatedDevelopmentSlugs: ["two-rivers-wesley-chapel", "angeline-land-o-lakes", "epperson-mirada-lagoon-wesley-chapel"],
+  },
+  {
+    slug: "best-55-plus-active-adult-communities-tampa-bay",
+    type: "guide",
+    category: "55+ Active Adult",
+    title: "Best 55+ & Active-Adult Communities in Tampa Bay (New vs. Established)",
+    subtitle: "Compare new-construction clubhouses in Wesley Chapel and Pasco with established golf and condo neighborhoods across Tampa Bay.",
+    quickAnswer: "Tampa Bay gives 55+ buyers two main paths. Newer Pasco clubs like Valencia Ridge, Esplanade, and Medley at Mirada offer new homes and pools. Established places like Sun City Center, Valencia Lakes, Timber Greens, and On Top of the World cost less each month.",
+    readTime: "7 Min Read",
+    publishDate: "November 2026",
+    heroImage: "/city-photos/florida-resort-community-real.jpg",
+    author: RACHAEL_AUTHOR,
+    keyTakeaways: [
+      "Newer 55+ communities in Pasco County offer brand-new clubhouses, pickleball courts, and modern single-story villas.",
+      "Established 55+ communities in South Shore, New Port Richey, and Clearwater often have no CDD fees and mature trees.",
+      "Under federal 55+ HOPA rules, at least 80% of occupied homes must have one resident age 55 or older.",
+      "Always check both the monthly HOA fee and any yearly CDD assessment before comparing community prices.",
+    ],
+    sections: [
+      {
+        heading: "1. New-Construction 55+ Communities in Pasco & North Tampa",
+        body: "Many downsizers want brand-new roofs, impact windows, and modern social clubs. Top new 55+ neighborhoods include Valencia Ridge and Esplanade at Wiregrass Ranch in Wesley Chapel. Buyers also love Medley at Mirada with Metro Lagoon access and Del Webb River Reserve. Builders here offer low-maintenance single-story homes with lawn care built into the HOA.",
+        bullets: [
+          "Valencia Ridge (Wesley Chapel): Gated new 55+ living with resort pool, cafe, tennis, and pickleball.",
+          "Esplanade at Wiregrass Ranch: Resort clubhouse, wellness spa, and dining right near shopping and medical care.",
+          "Medley at Mirada (San Antonio): Dedicated 55+ enclave inside Mirada with private clubhouse plus lagoon access.",
+          "Del Webb River Reserve & Tampa Bay Golf & Country Club: Golf, trails, and single-story villas north of Tampa.",
+        ],
+      },
+      {
+        heading: "2. Established Value 55+ Communities Across Tampa Bay",
+        body: "Established neighborhoods give buyers lower buy-in prices and zero surprises. In Hillsborough's South Shore, Sun City Center, Kings Point, and Valencia Lakes feature huge social clubs and golf-cart paths to stores. In Pinellas and West Pasco, On Top of the World in Clearwater and Timber Greens in New Port Richey offer easy gulf access and steady resale demand.",
+        bullets: [
+          "Sun City Center & Kings Point: Over 200 resident clubs, indoor pools, and medical offices nearby.",
+          "Valencia Lakes (Wimauma): Gated GL Homes resale community with mature landscaping and lively clubhouse.",
+          "On Top of the World (Clearwater): Central Pinellas condo and villa living minutes from beaches.",
+          "Timber Greens (New Port Richey): Guard-gated golf course villas with lower taxes than metro Tampa.",
+        ],
+      },
+      {
+        heading: "3. New Build vs. Resale: Comparing True Monthly Costs",
+        body: "Brand-new builders often offer closing credits and lower interest rate buydowns. Yet many new Pasco neighborhoods carry a yearly CDD fee on the tax bill. Older 55+ neighborhoods may have zero CDD fee, though you should check roof age and condo reserve rules before closing.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do both spouses have to be 55 or older to buy in a 55+ community?",
+        answer: "In most Tampa Bay 55+ communities, at least one buyer must be 55 or older. A younger spouse can usually live there too, though HOA rules vary on minimum guest ages.",
+      },
+      {
+        question: "Are yard work and exterior paint covered in 55+ HOA fees?",
+        answer: "In most single-story villas and townhomes, yes. Single-family 55+ homes usually cover lawn care and clubhouse access, while owners cover their own roof and exterior paint.",
+      },
+    ],
+    relatedGuideSlugs: [
+      "55-plus-hoa-cdd-fees-tampa-bay",
+      "florida-55-plus-condo-milestone-reserves-vs-villa",
+      "relocating-to-tampa-bay-handbook",
+      "florida-homestead-exemption-and-property-taxes",
+    ],
+    relatedAreaSlugs: ["wesley-chapel", "clearwater-pinellas-county", "carrollwood-northdale"],
+    relatedDevelopmentSlugs: ["epperson-mirada-lagoon-wesley-chapel", "two-rivers-wesley-chapel", "angeline-land-o-lakes"],
+    relatedServiceRoutes: [
+      { label: "Explore 55+ Communities on Developments Hub", href: "/developments#55-plus" },
+      { label: "Search All Tampa Bay Homes", href: "/search-mls" },
+    ],
+    ctaLabel: "See 55+ Communities & Updates",
+    ctaHref: "/developments#55-plus",
+  },
+  {
+    slug: "first-time-and-relocation-buyer-costs-tampa-bay",
+    type: "guide",
+    category: "Buyer Guide",
+    title: "True Cost of Buying a Home in Tampa Bay (Down Payment, Closing & Insurance)",
+    subtitle: "A clear breakdown of every upfront and monthly cost Florida buyers should plan for before making an offer.",
+    quickAnswer: "Apart from your down payment, Tampa Bay buyers often pay 2.5% to 4% in closing costs. That covers loan fees, title work, tax escrow, and year-one home insurance. Checking HOA dues, flood zones, and roof age early helps you avoid cost surprises.",
+    readTime: "6 Min Read",
+    publishDate: "November 2026",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-12.jpg",
+    author: RACHAEL_AUTHOR,
+    keyTakeaways: [
+      "Set aside roughly 2.5% to 4% of your purchase price for closing costs, inspections, and tax/insurance escrows.",
+      "Florida closing costs are higher when buying new construction because builders often pass transfer taxes to buyers.",
+      "A clean 4-Point Inspection and Wind Mitigation report can cut yearly home insurance costs by hundreds of dollars.",
+      "Homestead Exemption saves primary residents money every year starting their first full calendar year in Florida.",
+    ],
+    sections: [
+      {
+        heading: "1. Closing Costs, Inspections & Lender Escrows",
+        body: "When budgeting for a Tampa Bay home, look beyond your loan payment. Buyers normally pay $500 to $900 for a general home inspection plus $150 to $250 for 4-Point and Wind Mitigation reports. Your lender also collects several months of property taxes and home insurance upfront at closing.",
+      },
+      {
+        heading: "2. Why Home Insurance & Property Taxes Differ Here",
+        body: "Home insurance in Florida depends heavily on roof age, storm straps, and flood zone. Also remember that a seller's lower tax bill reflects their old Homestead cap. Your county tax bill resets to market value the year after closing before your new Homestead Exemption applies.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Can builders or sellers pay part of my Tampa Bay closing costs?",
+        answer: "Yes. Many builders offer $10,000 to $25,000 in closing or rate-buydown credits, and resale sellers can contribute toward closing costs as part of your offer.",
+      },
+    ],
+    relatedGuideSlugs: [
+      "florida-home-insurance-roof-age-wind-mitigation",
+      "flood-zones-x-ae-ve-tampa-bay-homebuyers",
+      "florida-homestead-exemption-and-property-taxes",
+      "understanding-cdd-fees-in-pasco-and-hillsborough",
+    ],
+    relatedAreaSlugs: ["carrollwood-northdale", "wesley-chapel", "st-petersburg"],
+    relatedDevelopmentSlugs: ["two-rivers-wesley-chapel", "connerton-land-o-lakes"],
+    relatedServiceRoutes: [
+      { label: "Search Live MLS Homes", href: "/search-mls" },
+      { label: "Schedule a Buyer Strategy Call", href: "/contact" },
+    ],
+    ctaLabel: "Ask for a Custom Cost Sheet",
+    ctaHref: "/contact",
+  },
+  {
+    slug: "how-to-choose-a-commercial-or-residential-realtor-tampa-bay",
+    type: "guide",
+    category: "Advisory Guide",
+    title: "Questions to Ask Before Hiring a Realtor in Tampa Bay (Homes, Land & Commercial)",
+    subtitle: "How to pick an experienced local agent who understands construction, flood zones, zoning, and pricing—not just opening doors.",
+    quickAnswer: "Before hiring a Tampa Realtor, ask who manages your closing day to day. Check how they review roofs, flood zones, and local zoning rules. With Davis & Garnett, you work directly with Mark Davis and Rachael Garnett from start to finish.",
+    readTime: "5 Min Read",
+    publishDate: "November 2026",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-1.jpg",
+    author: MARK_AUTHOR,
+    keyTakeaways: [
+      "Make sure the agent you meet is the one negotiating your contract and attending your inspections.",
+      "In Florida, your agent should check flood zones, roof age, insurance quotes, HOA/CDD rules, and zoning before your inspection ends.",
+      "If you own both a home and a business or investment parcel, one two-person team saves time and keeps deals connected.",
+    ],
+    sections: [
+      {
+        heading: "1. Five Questions Every Buyer or Seller Should Ask",
+        body: "A great agent brings calm data and protects your money before deadlines expire. Ask how many recent closings they personally managed, how they price homes or retail buildings, and who answers your texts on nights and weekends. With Mark Davis and Rachael Garnett, both partners stay hands-on throughout every step.",
+        bullets: [
+          "Will both of you personally attend my walkthroughs and handle my negotiations?",
+          "How do you check Tampa Bay insurance, flood elevation, and HOA reserves before closing?",
+          "Do you handle commercial buildings, land, 1031 exchanges, and residential homes together?",
+          "How fast will I hear back when a new listing or offer comes in?",
+        ],
+      },
+      {
+        heading: "2. Why Dual Residential & Commercial Experience Matters",
+        body: "Many families relocate to Tampa Bay while also buying an office, warehouse, or investment property. Because we close both residential homes and commercial properties every week, we guide clients through Homestead exemptions and 1031 exchanges under one roof.",
+      },
+    ],
+    faqs: [
+      {
+        question: "How fast do Mark Davis and Rachael Garnett respond to clients?",
+        answer: "We aim to reply within six hours—almost always the same day—and give every client direct cell numbers for both Mark and Rachael.",
+      },
+    ],
+    relatedGuideSlugs: [
+      "selling-your-home-in-tampa-bay",
+      "commercial-real-estate-investing-florida",
+      "commercial-bpo-vs-appraisal-florida",
+    ],
+    relatedAreaSlugs: ["carrollwood-northdale", "brandon-riverview", "tampa-downtown-water-street"],
+    relatedDevelopmentSlugs: ["pendry-residences-tampa", "gasworx-ybor-channel-district"],
+    relatedServiceRoutes: [
+      { label: "Meet Mark Davis", href: "/about/mark-davis" },
+      { label: "Meet Rachael Garnett", href: "/about/rachael-garnett" },
+      { label: "Our Every-Listing Approach", href: "/about/our-every-listing-approach" },
+    ],
+    ctaLabel: "Meet Mark & Rachael",
+    ctaHref: "/contact",
   },
 ];
 
@@ -569,6 +764,302 @@ export const QUESTIONS: KnowledgeItem[] = [
         answer: "Standard residential dock repairs or boat lift permits usually take 45 to 90 days through Pinellas County, while larger new docks can take 4 to 6 months.",
       },
     ],
+    relatedGuideSlugs: [
+      "tampa-bay-luxury-home-buying-guide",
+      "flood-zones-x-ae-ve-tampa-bay-homebuyers",
+    ],
+    relatedAreaSlugs: ["st-petersburg", "clearwater-pinellas-county"],
+  },
+  {
+    slug: "55-plus-hoa-cdd-fees-tampa-bay",
+    type: "question",
+    category: "55+ Active Adult Q&A",
+    title: "How Much Are HOA and CDD Fees in Tampa Bay 55+ Communities?",
+    subtitle: "Plain-English cost breakdown for gated clubhouses, yard care, pickleball courts, and Pasco/Hillsborough CDD bonds.",
+    quickAnswer: "Most Tampa Bay 55+ HOA fees cost $180 to $475 per month. That covers lawn care, gates, and clubhouses, plus exterior roofs in some villas. Newer Pasco neighborhoods also add $1,500 to $3,400 each year in CDD fees on your tax bill.",
+    readTime: "5 Min Read",
+    publishDate: "November 2026",
+    heroImage: "/city-photos/wesley-chapel-master-planned-real.jpg",
+    author: RACHAEL_AUTHOR,
+    keyTakeaways: [
+      "Newer Wesley Chapel 55+ communities pair monthly HOA lawn and clubhouse dues with a yearly CDD tax assessment.",
+      "Single-story villas typically have higher HOA dues than single-family homes because roof or paint reserves may be included.",
+      "Under federal HOPA 80/20 rules, at least 80% of occupied units must include a resident age 55 or older.",
+    ],
+    sections: [
+      {
+        heading: "What Monthly 55+ HOA Dues Typically Cover",
+        body: "Most Tampa Bay active-adult communities cover common gates, clubhouses, heated pools, pickleball courts, and front and back lawn mowing. Villa and townhome associations often include internet, exterior painting every few years, and sometimes roof replacement funds.",
+      },
+      {
+        heading: "Why Some 55+ Communities Add a CDD Fee",
+        body: "Newer communities—like Medley at Mirada, Valencia Ridge, and Del Webb developments—use a Community Development District (CDD) bond to fund lakes, roads, and amenities. You pay that CDD fee once a year on your county property tax bill, and the construction bond portion can even be paid off.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do established 55+ neighborhoods like Sun City Center charge CDD fees?",
+        answer: "Most established 55+ communities like Sun City Center, Kings Point, Timber Greens, and On Top of the World do not have CDD fees, leaving you with only a monthly or quarterly HOA or civic fee.",
+      },
+    ],
+    relatedGuideSlugs: [
+      "best-55-plus-active-adult-communities-tampa-bay",
+      "florida-55-plus-condo-milestone-reserves-vs-villa",
+      "what-is-the-difference-between-hoa-and-cdd-in-tampa-bay",
+      "understanding-cdd-fees-in-pasco-and-hillsborough",
+    ],
+    relatedAreaSlugs: ["wesley-chapel", "clearwater-pinellas-county"],
+    relatedDevelopmentSlugs: ["epperson-mirada-lagoon-wesley-chapel", "two-rivers-wesley-chapel"],
+    relatedServiceRoutes: [
+      { label: "See 55+ Communities List", href: "/developments#55-plus" },
+    ],
+  },
+  {
+    slug: "florida-55-plus-condo-milestone-reserves-vs-villa",
+    type: "question",
+    category: "55+ Active Adult Q&A",
+    title: "55+ Condo vs. Single-Story Villa in Tampa Bay: Reserves & HOA Rules Explained",
+    subtitle: "How Florida condo milestone inspection and reserve rules affect older condo buildings compared with ground-floor villas.",
+    quickAnswer: "Florida requires condo buildings three stories or taller to fund repairs and pass safety checks. Older high-rise dues can jump fast when reserve funds fall short. That is why many 55+ buyers also look at two-story condos and single-story villas.",
+    readTime: "5 Min Read",
+    publishDate: "November 2026",
+    heroImage: "/city-photos/luxury-highrise-condos-real.jpg",
+    author: MARK_AUTHOR,
+    keyTakeaways: [
+      "Always review a condo HOA's latest budget, reserve balance, and SIRS structural study before making a firm commitment.",
+      "Single-story villas and one- or two-story condos are exempt from the 3-story state structural reserve rules.",
+      "In Pinellas County, Clearview and Clearwater condos give walkability, while villas offer garages and zero upstairs neighbors.",
+    ],
+    sections: [
+      {
+        heading: "How Florida's Condo Reserve Rules Work",
+        body: "Florida updated its condo safety laws after 2022 to protect building residents. Associations with residential buildings three stories or taller must inspect roofs, concrete, and framing and set aside cash reserves for big repairs. That protects your building long term, yet can raise monthly condo fees on older buildings.",
+      },
+      {
+        heading: "Why Many Downsizers Compare Ground-Floor Villas",
+        body: "Single-story attached villas and single-family 55+ homes give you an attached garage, private lanai, and no elevator waits. We pull both the condo's financial packet and nearby villa sales so you can compare true monthly costs with clear numbers.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do one-story villas have mandatory SIRS condo milestone inspections?",
+        answer: "No. Florida's milestone inspection and structural reserve rules apply specifically to condo buildings that are three habitable stories or higher.",
+      },
+    ],
+    relatedGuideSlugs: [
+      "best-55-plus-active-adult-communities-tampa-bay",
+      "55-plus-hoa-cdd-fees-tampa-bay",
+      "first-time-and-relocation-buyer-costs-tampa-bay",
+    ],
+    relatedAreaSlugs: ["clearwater-pinellas-county", "st-petersburg", "wesley-chapel"],
+    relatedServiceRoutes: [
+      { label: "View 55+ Communities Hub", href: "/developments#55-plus" },
+    ],
+  },
+  {
+    slug: "flood-zones-x-ae-ve-tampa-bay-homebuyers",
+    type: "question",
+    category: "Insurance & Risk Q&A",
+    title: "Flood Zone X vs. AE in Tampa Bay: Where You Need Flood Insurance (and Where You Don't)",
+    subtitle: "What FEMA flood letters mean for your mortgage, monthly payment, and coastal vs. inland Tampa home search.",
+    quickAnswer: "Flood Zone X sits outside the high-risk 100-year floodplain, so lenders do not require flood insurance there. Flood Zones AE and VE are higher-risk zones near the bay, rivers, or coast where lenders require flood coverage. Always check the property's Elevation Certificate before ruling a home in or out.",
+    readTime: "4 Min Read",
+    publishDate: "November 2026",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-24.jpg",
+    author: MARK_AUTHOR,
+    keyTakeaways: [
+      "Inland areas like Carrollwood, Northdale, Lutz, and Wesley Chapel are mostly Flood Zone X, though pockets near lakes sit in Zone AE.",
+      "Lenders require flood insurance in Zone AE and coastal Zone VE whenever a home has a federally backed mortgage.",
+      "Under FEMA Risk Rating 2.0, elevated modern homes with vents and raised AC units often get much lower rates.",
+    ],
+    sections: [
+      {
+        heading: "Understanding Zone X, Zone AE & Zone VE",
+        body: "Flood Zone X means the land sits higher with lower flood risk, keeping flood insurance optional. Zone AE means there is a 1% annual chance of flooding, usually along canals, rivers, or Tampa Bay. Coastal Zone VE sits right on open Gulf or bay waves and requires elevated pilings.",
+      },
+      {
+        heading: "Checking Flood Elevation Before Inspection Ends",
+        body: "Two houses on the same waterfront street can have wildly different flood insurance bills. We ask for the seller's Elevation Certificate and current flood policy early so local insurance brokers can price both FEMA and private flood policies before your contingency expires.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Should I carry flood insurance even in Flood Zone X?",
+        answer: "Many Florida homeowners buy a low-cost preferred Flood Zone X policy anyway because heavy summer storms can cause street drainage backups outside coastal areas.",
+      },
+    ],
+    relatedGuideSlugs: [
+      "florida-home-insurance-roof-age-wind-mitigation",
+      "tampa-bay-luxury-home-buying-guide",
+      "first-time-and-relocation-buyer-costs-tampa-bay",
+    ],
+    relatedAreaSlugs: ["st-petersburg", "carrollwood-northdale", "clearwater-pinellas-county"],
+  },
+  {
+    slug: "florida-home-insurance-roof-age-wind-mitigation",
+    type: "question",
+    category: "Insurance & Risk Q&A",
+    title: "How Roof Age, 4-Point Inspections & Wind Mitigation Affect Florida Insurance Costs",
+    subtitle: "What out-of-state and local Tampa buyers must know before falling in love with a home with an older roof.",
+    quickAnswer: "Florida home insurers check roof age once shingles turn 12 to 15 years old. Order a 4-Point Inspection and a Wind Mitigation report during your inspection window. Those checks often unlock big discounts and prevent loan delays.",
+    readTime: "5 Min Read",
+    publishDate: "November 2026",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-14.jpg",
+    author: RACHAEL_AUTHOR,
+    keyTakeaways: [
+      "A 4-Point Inspection checks four things: roof condition, electrical panel, plumbing pipes, and HVAC age.",
+      "Wind Mitigation credits—like hurricane straps and hip roofs—stay valid for five years and sharply reduce windstorm rates.",
+      "Replacing an older shingle roof or negotiating a roof credit at closing keeps more insurance carriers open to you.",
+    ],
+    sections: [
+      {
+        heading: "Why the 4-Point Inspection Matters in Tampa Bay",
+        body: "Even a spotless home may need insurance underwriting approval before your lender clears you to close. Most Florida insurance companies want updated photos and remaining-life ratings on the roof, water heater, electrical box, and supply lines before binding your policy.",
+      },
+      {
+        heading: "How Wind Mitigation Cuts Your Annual Bill",
+        body: "Features built into Florida homes—such as hurricane roof-to-wall clips, impact glass, or concrete block walls—earn big credits on your policy. Spending $100 on a Wind Mitigation form during inspections often saves $800 to $2,000+ every year on homeowners insurance.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Can I insure a Florida home with a 15-year-old roof?",
+        answer: "Yes, though fewer carriers write new policies on shingle roofs over 15 years old. Tile and metal roofs often stay insurable for 25 to 35+ years with clean 4-Point inspections.",
+      },
+    ],
+    relatedGuideSlugs: [
+      "flood-zones-x-ae-ve-tampa-bay-homebuyers",
+      "first-time-and-relocation-buyer-costs-tampa-bay",
+      "best-tampa-neighborhoods-no-hoa-no-cdd",
+    ],
+    relatedAreaSlugs: ["carrollwood-northdale", "keystone", "brandon-riverview"],
+  },
+  {
+    slug: "best-tampa-neighborhoods-no-hoa-no-cdd",
+    type: "question",
+    category: "Neighborhood Guide",
+    title: "Best Areas Around Tampa Without HOA or CDD Fees (Carrollwood, Keystone, Odessa & Lutz)",
+    subtitle: "Where to find large oak-shaded lots, room for your boat or RV, and freedom from monthly association rules.",
+    quickAnswer: "For zero HOA or CDD fees near Tampa, look in Original Carrollwood, parts of Northdale, Lutz, Odessa, and Keystone. These neighborhoods give you bigger yards and shade trees. You can also park your boat or camper without strict HOA rules.",
+    readTime: "4 Min Read",
+    publishDate: "November 2026",
+    heroImage: "/city-photos/central-fl-acreage.jpg",
+    author: RACHAEL_AUTHOR,
+    keyTakeaways: [
+      "Original Carrollwood features wide lots and private Lake Carroll park access with an optional neighborhood civic association.",
+      "Keystone and Odessa offer rural agricultural zoning (ASC-1), quiet lakes, and zero HOA rules on trailers or work trucks.",
+      "Buying outside CDD boundaries lowers monthly fixed carrying costs by hundreds of dollars compared with new subdivisions.",
+    ],
+    sections: [
+      {
+        heading: "No-HOA Suburbs Near North Tampa",
+        body: "Homeowners who want to park a boat, build a workshop, or avoid strict exterior paint rules love Established Tampa neighborhoods. Original Carrollwood, sections of Lutz, and Lake Magdalene sit right in the middle of dining and highways without heavy monthly HOA dues.",
+      },
+      {
+        heading: "Rural Acreage Freedom in Keystone & Odessa",
+        body: "For buyers wanting one to five acres, horses, or large metal barns, Keystone and northern Odessa offer peaceful county zoning instead of private HOA boards. We verify wetlands, survey lines, well/septic records, and county easements before you close.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do homes without an HOA still have property maintenance rules?",
+        answer: "Yes. Hillsborough and Pasco County code enforcement sets basic rules on grass height, lot setbacks, and commercial parking, though they are much lighter than private HOA bylaws.",
+      },
+    ],
+    relatedGuideSlugs: [
+      "what-is-the-difference-between-hoa-and-cdd-in-tampa-bay",
+      "what-due-diligence-is-needed-when-buying-acreage-in-central-florida",
+      "north-tampa-wesley-chapel-top-school-corridors",
+    ],
+    relatedAreaSlugs: ["carrollwood-northdale", "keystone", "central-florida-acreage"],
+    relatedServiceRoutes: [
+      { label: "Search Homes & Acreage on MLS", href: "/search-mls" },
+    ],
+  },
+  {
+    slug: "north-tampa-wesley-chapel-top-school-corridors",
+    type: "question",
+    category: "Neighborhood Guide",
+    title: "How to Search Homes by School Zone in Carrollwood, Lutz & Wesley Chapel",
+    subtitle: "Understanding Hillsborough vs. Pasco school boundary maps, magnet programs, and charter schools before picking a street.",
+    quickAnswer: "School lines in Tampa Bay can change from street to street. Search homes in Carrollwood, Cheval, Lutz, Odessa, and Wesley Chapel early. Always check official county boundary maps, charter picks, and nearby schools before you make an offer.",
+    readTime: "4 Min Read",
+    publishDate: "November 2026",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-16.jpg",
+    author: RACHAEL_AUTHOR,
+    keyTakeaways: [
+      "Always verify the exact parcel address on the county school district boundary lookup, not just third-party home websites.",
+      "Carrollwood Day School, Steinbrenner High zone in Lutz/Cheval, and Wiregrass Ranch in Wesley Chapel draw steady family demand.",
+      "Homes zoned for sought-after corridors tend to sell faster and hold stronger resale values across market cycles.",
+    ],
+    sections: [
+      {
+        heading: "Checking Exact Boundary Maps & Charter Options",
+        body: "Public real estate sites sometimes show outdated school tags when a new school opens. Before your inspection period ends, Davis & Garnett helps you check official Hillsborough County and Pasco County address lookup maps alongside local magnet and private school commutes.",
+      },
+      {
+        heading: "Family-Friendly Corridors Close to Shopping & Commutes",
+        body: "Neighborhoods around Carrollwood, Cheval, Keystone, Land O' Lakes, and Wesley Chapel give families short drives to youth sports, Suncoast Parkway exits, and neighborhood parks.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do new communities in Wesley Chapel and Land O' Lakes build new schools?",
+        answer: "Yes. Rapid growth in Two Rivers, Angeline, and Wiregrass Ranch has led Pasco County to open new K-8, STEM magnet, and high school campuses directly near those neighborhoods.",
+      },
+    ],
+    relatedGuideSlugs: [
+      "best-tampa-neighborhoods-no-hoa-no-cdd",
+      "relocating-to-tampa-bay-handbook",
+      "first-time-and-relocation-buyer-costs-tampa-bay",
+    ],
+    relatedAreaSlugs: ["carrollwood-northdale", "cheval", "wesley-chapel", "land-o-lakes"],
+    relatedDevelopmentSlugs: ["two-rivers-wesley-chapel", "angeline-land-o-lakes", "connerton-land-o-lakes"],
+  },
+  {
+    slug: "commercial-bpo-vs-appraisal-florida",
+    type: "question",
+    category: "Commercial Strategy Q&A",
+    title: "Commercial Broker Price Opinion (BPO) vs. Commercial Appraisal in Florida",
+    subtitle: "Compare turnaround speed, cost, legal compliance, and when property owners need a BPO instead of a bank appraisal.",
+    quickAnswer: "A Commercial BPO gives owners a fast price estimate using local rents and real buyer demand. It helps when setting a sale price or planning a trade. Banks still require a formal appraisal for most new loans, which costs more and takes weeks.",
+    readTime: "4 Min Read",
+    publishDate: "November 2026",
+    heroImage: "/city-photos/brandon-riverview-commercial.jpg",
+    author: MARK_AUTHOR,
+    keyTakeaways: [
+      "A Commercial BPO is built for pricing a sale, lease positioning, portfolio review, or 1031 exchange planning.",
+      "Under Florida Statute Ch. 475, a BPO must clearly state it is a broker price opinion, not a state-certified appraisal.",
+      "Davis & Garnett delivers data-backed commercial valuations quickly across Hillsborough, Pinellas, and Pasco counties.",
+    ],
+    sections: [
+      {
+        heading: "When a Commercial BPO Makes More Sense",
+        body: "If you are thinking about selling a retail strip, warehouse, office building, or commercial lot, paying $4,000 for a slow bank appraisal rarely helps you test the market. A Commercial BPO analyzes active competition, net operating income (NOI), local lease rates, and current cap rates in just days.",
+      },
+      {
+        heading: "Florida Chapter 475 Transparency Standards",
+        body: "Under Florida brokerage law, licensed real estate brokers can prepare price opinions for sellers, buyers, landlords, and portfolio owners—provided the report is not presented as a certified appraisal for federally regulated loans. We give you clear comps and realistic exit numbers you can act on right away.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Can a lender use a Commercial BPO to underwrite a new bank mortgage?",
+        answer: "For most SBA or commercial bank loans above federal thresholds, the lender must order an independent state-certified appraisal. A BPO helps you plan your loan request, equity, or sale strategy before you apply.",
+      },
+    ],
+    relatedGuideSlugs: [
+      "commercial-real-estate-investing-florida",
+      "how-does-commercial-mixed-use-zoning-work-in-brandon-fl",
+      "how-to-choose-a-commercial-or-residential-realtor-tampa-bay",
+    ],
+    relatedAreaSlugs: ["brandon-riverview", "tampa-downtown-water-street", "carrollwood-northdale"],
+    relatedServiceRoutes: [
+      { label: "Commercial Advisory Guide", href: "/commercial-advisory-guide" },
+      { label: "Request a Commercial Valuation", href: "/contact" },
+    ],
+    ctaLabel: "Request Commercial Pricing Review",
+    ctaHref: "/contact",
   },
 ];
 
@@ -825,6 +1316,58 @@ export const AREAS: AreaItem[] = [
       },
     ],
     featuredListingSlugs: ["3537-valencia-cove-ct-land-o-lakes"],
+    relatedGuideSlugs: [
+      "north-tampa-wesley-chapel-top-school-corridors",
+      "best-tampa-neighborhoods-no-hoa-no-cdd",
+    ],
+  },
+  {
+    slug: "carrollwood-northdale",
+    name: "Carrollwood, Northdale & Lake Magdalene",
+    tagline: "Established Tree-Lined Streets, Ski Lakes, Golf & Everyday North Tampa Convenience",
+    quickAnswer: "Carrollwood, Northdale, and Lake Magdalene sit right around our Align Right Realty office on Northdale Blvd. Buyers pick this area for big shaded yards, private ski lakes, and zero CDD fees. Tampa Airport and Downtown Tampa are roughly 15 to 20 minutes away.",
+    county: "Hillsborough County, FL",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-16.jpg",
+    medianPrice: "$475,000 – $1.6M+",
+    yoyGrowth: "+6.2% YoY",
+    vibe: "Classic Tampa Oak Canopies, Private Ski Lakes, Golf & Close-In Shopping",
+    topNeighborhoods: [
+      "Original Carrollwood",
+      "Carrollwood Village",
+      "Northdale Golf & Country Club",
+      "Lake Magdalene",
+      "Avila (Nearby North Tampa)",
+      "Lake Ellen",
+    ],
+    overview: "Located just minutes from Dale Mabry Highway and Veterans Expressway, Carrollwood and Northdale combine classic Florida ranch homes, country club estates, and convenient commercial corridors right in Mark Davis and Rachael Garnett's Align Right Realty Carrollwood backyard.",
+    sections: [
+      {
+        heading: "1. Private Ski Lakes, Golf & Established No-CDD Neighborhoods",
+        body: "Unlike brand-new master-planned suburbs 45 minutes north of downtown, Original Carrollwood and Lake Magdalene offer established lots with zero CDD fees. Neighborhood homeowners in Original Carrollwood enjoy private beach and boat-ramp access on Lake Carroll without heavy monthly dues.",
+      },
+      {
+        heading: "2. Align Right Realty Carrollwood Backyard Advantage",
+        body: "Because our office sits right at 3903 Northdale Blvd Suite 115W, Mark and Rachael track off-market ranch renovations, golf-course villas in Carrollwood Village, and medical-office commercial parcels along Dale Mabry before wider websites spot them.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do homes in Original Carrollwood or Northdale have CDD fees?",
+        answer: "Most established homes in Original Carrollwood, Lake Magdalene, and Northdale have zero CDD fees and either low annual civic dues or modest neighborhood HOAs.",
+      },
+      {
+        question: "How far is Carrollwood from Downtown Tampa and TPA Airport?",
+        answer: "Most Carrollwood and Northdale streets are 15 to 20 minutes from Tampa International Airport and Westshore via the Veterans Expressway or I-275.",
+      },
+    ],
+    featuredListingSlugs: ["6100-bahama-shores-dr-s-st-petersburg"],
+    relatedGuideSlugs: [
+      "best-tampa-neighborhoods-no-hoa-no-cdd",
+      "north-tampa-wesley-chapel-top-school-corridors",
+      "florida-home-insurance-roof-age-wind-mitigation",
+      "how-to-choose-a-commercial-or-residential-realtor-tampa-bay",
+    ],
+    relatedDevelopmentSlugs: ["connerton-land-o-lakes", "two-rivers-wesley-chapel"],
   },
 ];
 
@@ -1218,8 +1761,186 @@ export const ARTICLES: ArticleItem[] = [
         body: "Before you even finish your inspection period, Mark and Rachael request the seller's current flood insurance declaration page and Elevation Certificate so our local insurance partners can check if taking over the seller's policy will save you money.",
       },
     ],
+    relatedGuideSlugs: [
+      "flood-zones-x-ae-ve-tampa-bay-homebuyers",
+      "tampa-bay-luxury-home-buying-guide",
+      "what-are-the-rules-for-private-docks-and-seawalls-in-st-petersburg",
+    ],
+    relatedAreaSlugs: ["st-petersburg", "clearwater-pinellas-county"],
+  },
+  {
+    slug: "tampa-bay-55-plus-relocation-corridor-comparison",
+    title: "Wesley Chapel vs. South Shore vs. Clearwater: Picking the Right Tampa Bay 55+ Lifestyle",
+    category: "55+ Lifestyle Guide",
+    publishDate: "November 2026",
+    readTime: "6 Min Read",
+    heroImage: "/city-photos/florida-resort-community-real.jpg",
+    summary: "Compare brand-new active-adult clubhouses in Pasco County with established value neighborhoods in South Shore and beach-close condos in Clearwater.",
+    quickAnswer: "Pick Wesley Chapel and Pasco for brand-new 55+ villas, clubhouses, and warranties at Valencia Ridge, Esplanade, or Medley at Mirada. Pick Sun City Center and Valencia Lakes for active clubs and lower monthly dues. Pick Clearwater or Timber Greens for fast access to Gulf beaches.",
+    author: RACHAEL_AUTHOR,
+    keyTakeaways: [
+      "Wesley Chapel & San Antonio lead Tampa Bay in brand-new 55+ construction with pickleball, resort dining, and lagoon access.",
+      "South Shore's Sun City Center, Kings Point, and Valencia Lakes offer huge resident social clubs with golf-cart roads.",
+      "Clearwater and New Port Richey put established 55+ condos and villas within easy reach of Gulf beaches and hospitals.",
+    ],
+    sections: [
+      {
+        heading: "1. Wesley Chapel & Pasco: Brand-New Resort Clubhouses",
+        body: "If you prefer new-build roofs, smart home wiring, and fresh amenity campuses, North Tampa and Pasco County lead the region. Valencia Ridge, Esplanade at Wiregrass Ranch, Medley at Mirada, and Del Webb River Reserve deliver zero-entry pools, full social directors, and low-maintenance single-story floor plans.",
+      },
+      {
+        heading: "2. South Shore & Pinellas: Lower Carrying Costs & Established Vibe",
+        body: "Buyers focused on lower monthly expenses or beach proximity often tour Sun City Center, Kings Point, Valencia Lakes, Timber Greens, and On Top of the World in Clearwater. Many established sections carry no CDD fees and sit minutes from shopping and healthcare.",
+      },
+    ],
+    relatedGuideSlugs: [
+      "best-55-plus-active-adult-communities-tampa-bay",
+      "55-plus-hoa-cdd-fees-tampa-bay",
+      "florida-55-plus-condo-milestone-reserves-vs-villa",
+      "relocating-to-tampa-bay-handbook",
+    ],
+    relatedAreaSlugs: ["wesley-chapel", "clearwater-pinellas-county", "carrollwood-northdale"],
+    relatedDevelopmentSlugs: ["epperson-mirada-lagoon-wesley-chapel", "two-rivers-wesley-chapel"],
   },
 ];
 
 export const ALL_GUIDES_AND_QUESTIONS: KnowledgeItem[] = [...GUIDES, ...QUESTIONS];
+
+const TOPIC_FALLBACK_MAP: Record<string, string[]> = {
+  "55+": ["best-55-plus-active-adult-communities-tampa-bay", "55-plus-hoa-cdd-fees-tampa-bay", "florida-55-plus-condo-milestone-reserves-vs-villa"],
+  "Commercial": ["commercial-real-estate-investing-florida", "commercial-bpo-vs-appraisal-florida", "how-does-commercial-mixed-use-zoning-work-in-brandon-fl"],
+  "Insurance": ["flood-zones-x-ae-ve-tampa-bay-homebuyers", "florida-home-insurance-roof-age-wind-mitigation", "first-time-and-relocation-buyer-costs-tampa-bay"],
+  "Neighborhood": ["best-tampa-neighborhoods-no-hoa-no-cdd", "understanding-cdd-fees-in-pasco-and-hillsborough", "north-tampa-wesley-chapel-top-school-corridors"],
+  "Seller": ["selling-your-home-in-tampa-bay", "how-much-are-closing-costs-for-sellers-in-hillsborough-county", "can-i-buy-a-house-in-florida-while-selling-my-current-one"],
+  "Waterfront": ["tampa-bay-luxury-home-buying-guide", "what-are-the-rules-for-private-docks-and-seawalls-in-st-petersburg", "flood-zones-x-ae-ve-tampa-bay-homebuyers"],
+  "Land": ["what-due-diligence-is-needed-when-buying-acreage-in-central-florida", "best-tampa-neighborhoods-no-hoa-no-cdd", "what-is-the-difference-between-hoa-and-cdd-in-tampa-bay"],
+  "Tax": ["florida-homestead-exemption-and-property-taxes", "first-time-and-relocation-buyer-costs-tampa-bay", "understanding-cdd-fees-in-pasco-and-hillsborough"],
+};
+
+export function getRelatedKnowledgeForItem(item: KnowledgeItem, limit = 3): KnowledgeItem[] {
+  const result: KnowledgeItem[] = [];
+  const seen = new Set<string>([item.slug]);
+
+  const addBySlug = (slug: string) => {
+    if (seen.has(slug) || result.length >= limit) return;
+    const found = ALL_GUIDES_AND_QUESTIONS.find((k) => k.slug === slug);
+    if (found) {
+      seen.add(slug);
+      result.push(found);
+    }
+  };
+
+  for (const s of item.relatedGuideSlugs || []) addBySlug(s);
+
+  // Bidirectional match: items that link back to this item
+  for (const candidate of ALL_GUIDES_AND_QUESTIONS) {
+    if (result.length >= limit) break;
+    if (!seen.has(candidate.slug) && candidate.relatedGuideSlugs?.includes(item.slug)) {
+      addBySlug(candidate.slug);
+    }
+  }
+
+  // Topic/category keyword match fallback (never blind .slice(0, 3))
+  const haystack = `${item.category} ${item.title} ${item.slug}`.toLowerCase();
+  for (const [key, slugs] of Object.entries(TOPIC_FALLBACK_MAP)) {
+    if (haystack.includes(key.toLowerCase())) {
+      for (const s of slugs) addBySlug(s);
+    }
+  }
+
+  for (const candidate of ALL_GUIDES_AND_QUESTIONS) {
+    if (result.length >= limit) break;
+    if (!seen.has(candidate.slug) && candidate.category === item.category) {
+      addBySlug(candidate.slug);
+    }
+  }
+
+  for (const candidate of ALL_GUIDES_AND_QUESTIONS) {
+    if (result.length >= limit) break;
+    addBySlug(candidate.slug);
+  }
+
+  return result;
+}
+
+export function getRelatedAreasForItem(item: { relatedAreaSlugs?: string[]; category?: string; slug?: string; title?: string }, limit = 3): AreaItem[] {
+  const result: AreaItem[] = [];
+  const seen = new Set<string>();
+  for (const slug of item.relatedAreaSlugs || []) {
+    if (result.length >= limit) break;
+    const area = AREAS.find((a) => a.slug === slug);
+    if (area && !seen.has(area.slug)) {
+      seen.add(area.slug);
+      result.push(area);
+    }
+  }
+  const text = `${item.category || ""} ${item.title || ""} ${item.slug || ""}`.toLowerCase();
+  const inferred = text.includes("55") || text.includes("wesley") || text.includes("cdd")
+    ? ["wesley-chapel", "clearwater-pinellas-county", "carrollwood-northdale"]
+    : text.includes("commercial") || text.includes("bpo") || text.includes("brandon")
+    ? ["brandon-riverview", "tampa-downtown-water-street", "carrollwood-northdale"]
+    : text.includes("waterfront") || text.includes("flood") || text.includes("st.")
+    ? ["st-petersburg", "clearwater-pinellas-county", "tampa-downtown-water-street"]
+    : text.includes("acreage") || text.includes("land") || text.includes("hoa")
+    ? ["keystone", "carrollwood-northdale", "central-florida-acreage"]
+    : ["carrollwood-northdale", "st-petersburg", "wesley-chapel"];
+  for (const s of inferred) {
+    if (result.length >= limit) break;
+    const area = AREAS.find((a) => a.slug === s);
+    if (area && !seen.has(area.slug)) {
+      seen.add(area.slug);
+      result.push(area);
+    }
+  }
+  return result;
+}
+
+export function getRelatedGuidesForArea(area: AreaItem, limit = 3): KnowledgeItem[] {
+  const result: KnowledgeItem[] = [];
+  const seen = new Set<string>();
+  for (const s of area.relatedGuideSlugs || []) {
+    if (result.length >= limit) break;
+    const found = ALL_GUIDES_AND_QUESTIONS.find((k) => k.slug === s);
+    if (found) {
+      seen.add(found.slug);
+      result.push(found);
+    }
+  }
+  for (const candidate of ALL_GUIDES_AND_QUESTIONS) {
+    if (result.length >= limit) break;
+    if (!seen.has(candidate.slug) && candidate.relatedAreaSlugs?.includes(area.slug)) {
+      seen.add(candidate.slug);
+      result.push(candidate);
+    }
+  }
+  for (const fallback of ["how-to-choose-a-commercial-or-residential-realtor-tampa-bay", "first-time-and-relocation-buyer-costs-tampa-bay", "florida-homestead-exemption-and-property-taxes"]) {
+    if (result.length >= limit) break;
+    const found = ALL_GUIDES_AND_QUESTIONS.find((k) => k.slug === fallback);
+    if (found && !seen.has(found.slug)) {
+      seen.add(found.slug);
+      result.push(found);
+    }
+  }
+  return result;
+}
+
+export function getRelatedArticlesForArticle(article: ArticleItem, limit = 3): ArticleItem[] {
+  const result: ArticleItem[] = [];
+  const seen = new Set<string>([article.slug]);
+  for (const candidate of ARTICLES) {
+    if (result.length >= limit) break;
+    if (!seen.has(candidate.slug) && candidate.category === article.category) {
+      seen.add(candidate.slug);
+      result.push(candidate);
+    }
+  }
+  for (const candidate of ARTICLES) {
+    if (result.length >= limit) break;
+    if (!seen.has(candidate.slug)) {
+      seen.add(candidate.slug);
+      result.push(candidate);
+    }
+  }
+  return result;
+}
 
