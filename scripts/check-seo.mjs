@@ -60,7 +60,7 @@ console.log(`AI cliché check (knowledgeHub.ts): ${foundCliches.length === 0 ? '
 const blocks = khRaw
   .split(/\n  \{\s*\n\s*slug:/g)
   .slice(1)
-  .filter((b) => !/^\s*"(?:downtown-tampa-luxury-condo-preview-night|wesley-chapel-new-home-builder-showcase|central-florida-land-investor-roundtable|community-giving-partnership-day)"/.test(b));
+  .filter((b) => !/^\s*"(?:downtown-tampa-luxury-condo-preview-night|wesley-chapel-new-home-builder-showcase|central-florida-land-investor-roundtable|community-giving-partnership-day|largo-central-park-holiday-lights-christmas-train|dunedin-holiday-boat-parade-tree-lighting|busch-gardens-christmas-town-tampa|zootampa-christmas-in-the-wild|holiday-harbour-armature-works-tree-lightings|hyde-park-ybor-holiday-celebrations|tampa-bay-condo-hoa-expo-2027)"/.test(b));
 let thinCount = 0;
 const thinSlugs = [];
 for (const block of blocks) {
