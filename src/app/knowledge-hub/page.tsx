@@ -521,11 +521,11 @@ export default function KnowledgeHubPage() {
                 cta: "Calculate 1031 Dates",
               },
               {
-                tag: "Plain-English Field Manual • 18 Terms",
+                tag: "Plain-English Field Manual",
                 title: "Tampa Bay & Commercial Real Estate Glossary",
                 desc: "Clear definitions covering Cap Rate, NOI, CAM, NNN, TI Allowance, Estoppels, Phase I ESA, CDDs, Homestead Portability, and 4-Points.",
                 href: "/glossary",
-                cta: "Explore All 18 Terms",
+                cta: "Browse Full Glossary",
               },
             ].map((tool) => (
               <Link

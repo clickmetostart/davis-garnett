@@ -57,7 +57,7 @@ export default function TourSliderSection({
               href="/tours"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#111] hover:bg-[#D4AF37] text-white hover:text-[#111] text-xs font-bold uppercase tracking-widest transition-colors"
             >
-              View All 10 Tours <ArrowRight className="w-4 h-4" />
+              View All Guided Tours <ArrowRight className="w-4 h-4" />
             </Link>
             <div className="flex items-center gap-2.5">
               <button

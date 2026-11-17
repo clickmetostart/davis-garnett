@@ -142,9 +142,9 @@ export default function ToursIndexClient() {
           <div className="flex flex-wrap items-center gap-2">
             {(
               [
-                { key: "all", label: "All Tracks (10)" },
-                { key: "residential", label: "Residential Tours (5)" },
-                { key: "commercial", label: "Commercial & Shopping (5)" },
+                { key: "all", label: "All Tours" },
+                { key: "residential", label: "Residential Neighborhoods" },
+                { key: "commercial", label: "Commercial & Shopping Zones" },
               ] as const
             ).map((btn) => (
               <button
