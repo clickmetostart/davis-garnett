@@ -670,7 +670,7 @@ function NetworkCRMContent() {
       {/* Form Routing Modal */}
       {isRoutingMenuOpen && (
         <div style={{ position: 'fixed', inset: 0, zIndex: 999999, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(0,0,0,0.4)' }}>
-          <div style={{ background: '#fff', borderRadius: '12px', padding: '2rem', width: '500px', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.25)' }}>
+          <div style={{ background: '#fff', borderRadius: '12px', padding: '1.5rem', width: '100%', maxWidth: '500px', margin: '1rem', maxHeight: '90vh', overflowY: 'auto', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.25)' }}>
             <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.25rem', fontWeight: 800 }}>Form Routing Engine</h3>
             <p style={{ fontSize: '0.85rem', color: '#6b7280', marginBottom: '1.5rem', lineHeight: 1.5 }}>
               Map the different website forms (by Subject/Interest) to the CRM labels you want them automatically added to when submitted.
@@ -1646,7 +1646,7 @@ function NetworkCRMContent() {
       {/* Attach Listing Modal */}
       {isAttachListingModalOpen && (
         <div style={{ position: 'fixed', inset: 0, zIndex: 999999, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(0,0,0,0.4)' }}>
-          <div style={{ background: '#fff', borderRadius: '12px', padding: '2rem', width: '600px', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.25)', maxHeight: '80vh', display: 'flex', flexDirection: 'column' }}>
+          <div style={{ background: '#fff', borderRadius: '12px', padding: '1.5rem', width: '100%', maxWidth: '600px', margin: '1rem', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.25)', maxHeight: '88vh', display: 'flex', flexDirection: 'column', overflowY: 'auto' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
               <h3 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 800 }}>Attach Listing to Lead</h3>
               <button onClick={() => setIsAttachListingModalOpen(false)} style={{ background: 'transparent', border: 'none', color: '#6b7280', cursor: 'pointer' }}>

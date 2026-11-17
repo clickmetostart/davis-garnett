@@ -300,3 +300,40 @@ video::-webkit-media-controls {
   display: none !important;
   -webkit-appearance: none;
 }
+
+/* ============================================
+   CLICKME PORTAL RESPONSIVE RULES (Mobile + Portrait Tablet < 1024px)
+   ============================================ */
+@media (max-width: 1023px) {
+  .clickme-dashboard-container [style*="padding: 3rem 4rem"],
+  .clickme-dashboard-container [style*="padding: 2.5rem"],
+  .clickme-dashboard-container [style*="padding: 3rem"] {
+    padding: 1.15rem !important;
+  }
+
+  .clickme-dashboard-container [style*="grid-template-columns: 1fr 1fr"],
+  .clickme-dashboard-container [style*="grid-template-columns: 1fr 400px"],
+  .clickme-dashboard-container [style*="grid-template-columns: 1fr 2fr"],
+  .clickme-dashboard-container [style*="grid-template-columns: 2fr 1fr 1fr"],
+  .clickme-dashboard-container [style*="grid-template-columns: 1fr 2fr auto"],
+  .clickme-dashboard-container [style*="grid-template-columns: auto 1fr 2fr auto"] {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .clickme-dashboard-container [style*="position: fixed"] > div {
+    max-width: 95vw !important;
+    max-height: 92dvh !important;
+    overflow-y: auto !important;
+  }
+
+  .clickme-dashboard-container table {
+    min-width: 640px;
+  }
+
+  .clickme-dashboard-container input,
+  .clickme-dashboard-container select,
+  .clickme-dashboard-container textarea {
+    font-size: max(16px, 0.9rem);
+  }
+}

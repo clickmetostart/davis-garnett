@@ -1,24 +1,30 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export default function DashboardSidebar() {
   const [isExpanded, setIsExpanded] = useState(true);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState<any>(null);
   const [isMounted, setIsMounted] = useState(false);
   const pathname = usePathname();
 
-  React.useEffect(() => {
+  useEffect(() => {
     setIsMounted(true);
     fetch('/api/auth/me')
-      .then(res => res.json())
-      .then(data => {
-        if(data.user) setCurrentUser(data.user);
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.user) setCurrentUser(data.user);
       })
       .catch(console.error);
   }, []);
+
+  // Auto-close mobile drawer on route change
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
 
   const navGroups = [
     {
@@ -36,7 +42,7 @@ export default function DashboardSidebar() {
         { name: 'Social Planner', href: '/clickme/scheduler', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> },
         { name: 'Reputation Engine', href: '/clickme/reputation', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> },
         { name: 'BI Analytics', href: '/clickme/analytics', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 3v18h18"></path><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"></path></svg> },
-      ]
+      ],
     },
     {
       groupName: 'System Setup',
@@ -48,76 +54,146 @@ export default function DashboardSidebar() {
         { name: 'Business Locations', href: '/clickme/locations', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> },
         { name: 'Social Integrations', href: '/clickme/social', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg> },
         { name: 'Team Access', href: '/clickme/team', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> },
-      ]
-    }
+      ],
+    },
   ];
 
-  return (
-    <div 
-      style={{ 
-        width: isExpanded ? '280px' : '80px', 
-        backgroundColor: '#ffffff', 
-        borderRight: '1px solid #e5e7eb', 
-        display: 'flex', 
-        flexDirection: 'column', 
-        boxShadow: '4px 0 15px rgba(0,0,0,0.02)', 
-        zIndex: 10,
-        transition: 'width 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-        height: '100vh',
-        position: 'sticky',
-        top: 0
-      }}
-    >
-      <div style={{ padding: isExpanded ? '2rem 1.5rem' : '2rem 0', borderBottom: '1px solid #e5e7eb', display: 'flex', flexDirection: 'column', alignItems: isExpanded ? 'flex-start' : 'center', transition: 'all 0.3s', flexShrink: 0 }}>
-        <Link href="/clickme" style={{
-            display: 'inline-block',
-            marginBottom: '0.25rem',
-            transition: 'all 0.3s'
-        }}>
-          {isExpanded ? (
-            <img src="/clickme-life-logo-medium.png" alt="ClickMe.life" style={{ height: '32px', width: 'auto', display: 'block' }} />
-          ) : (
-            <img src="/clickme-life-logo-small.png" alt="C" style={{ height: '32px', width: 'auto', display: 'block', margin: '0 auto' }} />
+  const handleLogout = async () => {
+    await fetch('/api/auth/logout', { method: 'POST' });
+    window.location.href = '/clickme';
+  };
+
+  const renderSidebarBody = (expandedView: boolean, isMobileDrawer: boolean) => (
+    <>
+      <div
+        style={{
+          padding: expandedView ? '1.5rem' : '2rem 0',
+          borderBottom: '1px solid #e5e7eb',
+          display: 'flex',
+          alignItems: expandedView ? 'center' : 'center',
+          justifyContent: expandedView ? 'space-between' : 'center',
+          flexShrink: 0,
+        }}
+      >
+        <div>
+          <Link
+            href="/clickme"
+            onClick={() => isMobileDrawer && setMobileOpen(false)}
+            style={{ display: 'inline-block', marginBottom: '0.2rem' }}
+          >
+            {expandedView ? (
+              <img
+                src="/clickme-life-logo-medium.png"
+                alt="ClickMe.life"
+                style={{ height: '30px', width: 'auto', display: 'block' }}
+              />
+            ) : (
+              <img
+                src="/clickme-life-logo-small.png"
+                alt="C"
+                style={{ height: '30px', width: 'auto', display: 'block', margin: '0 auto' }}
+              />
+            )}
+          </Link>
+          {expandedView && (
+            <p
+              style={{
+                color: '#6b7280',
+                fontSize: '0.75rem',
+                marginTop: '0.25rem',
+                fontWeight: 600,
+                textTransform: 'uppercase',
+                letterSpacing: '1px',
+              }}
+            >
+              ClickMe Admin
+            </p>
           )}
-        </Link>
-        {isExpanded && <p style={{ color: '#6b7280', fontSize: '0.8rem', marginTop: '0.25rem', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '1px' }}>ClickMe Admin</p>}
+        </div>
+        {isMobileDrawer && (
+          <button
+            type="button"
+            onClick={() => setMobileOpen(false)}
+            aria-label="Close portal menu"
+            className="p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+        )}
       </div>
-      
-      <nav style={{ padding: isExpanded ? '1rem 0' : '1rem 0.5rem', flex: 1, display: 'flex', flexDirection: 'column', overflowY: 'auto', overflowX: 'hidden' }}>
+
+      <nav
+        style={{
+          padding: expandedView ? '1rem 0' : '1rem 0.5rem',
+          flex: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          overflowY: 'auto',
+          overflowX: 'hidden',
+        }}
+      >
         {navGroups.map((group, idx) => (
-          <div key={idx} style={{ marginBottom: '1.5rem' }}>
-            {isExpanded && (
-              <div style={{ padding: '0 1.5rem', fontSize: '0.7rem', fontWeight: 700, color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '0.5rem' }}>
+          <div key={idx} style={{ marginBottom: '1.25rem' }}>
+            {expandedView && (
+              <div
+                style={{
+                  padding: '0 1.5rem',
+                  fontSize: '0.7rem',
+                  fontWeight: 700,
+                  color: '#9ca3af',
+                  textTransform: 'uppercase',
+                  letterSpacing: '1px',
+                  marginBottom: '0.5rem',
+                }}
+              >
                 {group.groupName}
               </div>
             )}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', padding: isExpanded ? '0 1rem' : '0' }}>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.2rem',
+                padding: expandedView ? '0 0.85rem' : '0',
+              }}
+            >
               {group.items.map((item) => {
-                const isActive = pathname === item.href.split('?')[0] && (item.href.includes('?') ? isMounted && window.location.search.includes(item.href.split('?')[1]) : true);
+                const isActive =
+                  pathname === item.href.split('?')[0] &&
+                  (item.href.includes('?')
+                    ? isMounted && window.location.search.includes(item.href.split('?')[1])
+                    : true);
                 return (
-                  <Link key={item.name} href={item.href} style={{ textDecoration: 'none' }}>
-                    <div 
-                      style={{ 
-                        padding: isExpanded ? '0.75rem 1rem' : '0.75rem', 
-                        background: isActive ? '#e6fffa' : 'transparent', 
-                        color: isActive ? '#319795' : '#6b7280', 
-                        borderRadius: '8px', 
-                        fontWeight: isActive ? 700 : 500, 
-                        borderLeft: `3px solid ${isActive ? '#4fd1c5' : 'transparent'}`, 
-                        cursor: 'pointer', 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        justifyContent: isExpanded ? 'flex-start' : 'center',
-                        gap: isExpanded ? '0.75rem' : '0', 
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    onClick={() => isMobileDrawer && setMobileOpen(false)}
+                    style={{ textDecoration: 'none' }}
+                  >
+                    <div
+                      style={{
+                        padding: expandedView ? '0.7rem 0.9rem' : '0.75rem',
+                        background: isActive ? '#e6fffa' : 'transparent',
+                        color: isActive ? '#319795' : '#6b7280',
+                        borderRadius: '8px',
+                        fontWeight: isActive ? 700 : 500,
+                        borderLeft: `3px solid ${isActive ? '#4fd1c5' : 'transparent'}`,
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: expandedView ? 'flex-start' : 'center',
+                        gap: expandedView ? '0.75rem' : '0',
                         transition: 'all 0.2s',
-                        whiteSpace: 'nowrap'
-                      }} 
-                      onMouseEnter={(e) => { if(!isActive) { e.currentTarget.style.color = '#111827'; e.currentTarget.style.background = '#f3f4f6'; } }} 
-                      onMouseLeave={(e) => { if(!isActive) { e.currentTarget.style.color = '#6b7280'; e.currentTarget.style.background = 'transparent'; } }}
-                      title={!isExpanded ? item.name : undefined}
+                        whiteSpace: 'nowrap',
+                        fontSize: '0.92rem',
+                      }}
+                      title={!expandedView ? item.name : undefined}
                     >
                       {item.icon}
-                      {isExpanded && item.name}
+                      {expandedView && item.name}
                     </div>
                   </Link>
                 );
@@ -127,97 +203,88 @@ export default function DashboardSidebar() {
         ))}
       </nav>
 
-      {/* Floating Action Button area */}
-      <div style={{ padding: isExpanded ? '1.5rem' : '1.5rem 0.5rem', display: 'flex', justifyContent: 'center', flexShrink: 0 }}>
-        <button 
-          style={{ 
-            width: isExpanded ? '100%' : '40px', 
-            height: isExpanded ? 'auto' : '40px',
-            background: '#4fd1c5', 
-            color: '#fff', 
-            border: 'none', 
-            padding: isExpanded ? '0.8rem 1.5rem' : '0', 
-            borderRadius: isExpanded ? '8px' : '50%', 
-            fontWeight: 700, 
-            cursor: 'pointer', 
-            display: 'flex', 
-            alignItems: 'center', 
-            justifyContent: 'center',
-            gap: '0.5rem', 
-            boxShadow: '0 4px 10px rgba(79, 209, 197, 0.4)', 
-            transition: 'all 0.2s',
-            whiteSpace: 'nowrap'
-          }}
-          onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 6px 15px rgba(79, 209, 197, 0.5)'; }}
-          onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 10px rgba(79, 209, 197, 0.4)'; }}
-          title={!isExpanded ? "Add Lead" : undefined}
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-          {isExpanded && "Add Lead"}
-        </button>
-      </div>
-
-    <div style={{ padding: isExpanded ? '1.5rem' : '1.5rem 0', borderTop: '1px solid #e5e7eb', background: '#f9fafb', display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0 }}>
-        {isExpanded && (
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', width: '100%', marginBottom: '1rem' }}>
-            <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: '#e6fffa', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, color: '#319795', border: '2px solid #4fd1c5', flexShrink: 0, overflow: 'hidden' }}>
-              {currentUser?.avatarUrl ? (
-                <img src={currentUser.avatarUrl} alt="Avatar" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              ) : (
-                `${currentUser?.firstName?.[0] || 'C'}${currentUser?.lastName?.[0] || 'M'}`
-              )}
-            </div>
-            <div style={{ overflow: 'hidden' }}>
-              <div style={{ fontSize: '0.9rem', fontWeight: 700, color: '#111827', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>
-                {currentUser ? `${currentUser.firstName} ${currentUser.lastName}` : 'Loading...'}
-              </div>
-              <div style={{ fontSize: '0.75rem', color: '#6b7280', fontWeight: 600 }}>{currentUser?.role || '...'}</div>
-            </div>
-          </div>
-        )}
-        {!isExpanded && (
-           <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: '#e6fffa', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, color: '#319795', border: '2px solid #4fd1c5', marginBottom: '1rem', overflow: 'hidden' }} title={currentUser ? `${currentUser.firstName} ${currentUser.lastName}` : 'User'}>
-             {currentUser?.avatarUrl ? (
-                <img src={currentUser.avatarUrl} alt="Avatar" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              ) : (
-                `${currentUser?.firstName?.[0] || 'C'}${currentUser?.lastName?.[0] || 'M'}`
-              )}
-           </div>
-        )}
-        
-        <div style={{ display: 'flex', width: '100%', gap: '0.5rem' }}>
-          <button 
-            onClick={() => setIsExpanded(!isExpanded)}
+      {/* Quick Action + User Footer */}
+      <div
+        style={{
+          padding: expandedView ? '1rem 1.25rem' : '1rem 0.5rem',
+          borderTop: '1px solid #e5e7eb',
+          background: '#f9fafb',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          flexShrink: 0,
+        }}
+      >
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', width: '100%', justifyContent: expandedView ? 'flex-start' : 'center', marginBottom: '0.85rem' }}>
+          <div
             style={{
-              background: 'transparent',
-              border: '1px solid #d1d5db',
-              color: '#6b7280',
-              flex: 1,
-              height: '36px',
-              borderRadius: '6px',
+              width: '38px',
+              height: '38px',
+              borderRadius: '50%',
+              backgroundColor: '#e6fffa',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              cursor: 'pointer',
-              transition: 'all 0.2s',
+              fontWeight: 800,
+              color: '#319795',
+              border: '2px solid #4fd1c5',
+              flexShrink: 0,
+              overflow: 'hidden',
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.background = '#f3f4f6'; e.currentTarget.style.color = '#111827'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#6b7280'; }}
-            title={isExpanded ? "Collapse Sidebar" : "Expand Sidebar"}
           >
-            {isExpanded ? (
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            {currentUser?.avatarUrl ? (
+              <img src={currentUser.avatarUrl} alt="Avatar" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             ) : (
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              `${currentUser?.firstName?.[0] || 'C'}${currentUser?.lastName?.[0] || 'M'}`
             )}
-          </button>
-          
-          {isExpanded && (
-            <button 
-              onClick={async () => {
-                await fetch('/api/auth/logout', { method: 'POST' });
-                window.location.href = '/clickme';
+          </div>
+          {expandedView && (
+            <div style={{ overflow: 'hidden' }}>
+              <div style={{ fontSize: '0.88rem', fontWeight: 700, color: '#111827', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>
+                {currentUser ? `${currentUser.firstName} ${currentUser.lastName}` : 'Loading...'}
+              </div>
+              <div style={{ fontSize: '0.72rem', color: '#6b7280', fontWeight: 600 }}>
+                {currentUser?.role || '...'}
+              </div>
+            </div>
+          )}
+        </div>
+
+        <div style={{ display: 'flex', width: '100%', gap: '0.5rem' }}>
+          {!isMobileDrawer && (
+            <button
+              type="button"
+              onClick={() => setIsExpanded(!isExpanded)}
+              style={{
+                background: 'transparent',
+                border: '1px solid #d1d5db',
+                color: '#6b7280',
+                flex: 1,
+                height: '36px',
+                borderRadius: '6px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
               }}
+              title={isExpanded ? 'Collapse Sidebar' : 'Expand Sidebar'}
+            >
+              {isExpanded ? (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              ) : (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              )}
+            </button>
+          )}
+
+          {expandedView && (
+            <button
+              type="button"
+              onClick={handleLogout}
               style={{
                 background: '#fef2f2',
                 border: '1px solid #fca5a5',
@@ -229,18 +296,82 @@ export default function DashboardSidebar() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 cursor: 'pointer',
-                transition: 'all 0.2s',
                 fontWeight: 700,
-                fontSize: '0.8rem'
+                fontSize: '0.8rem',
               }}
-              onMouseEnter={(e) => { e.currentTarget.style.background = '#fee2e2'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.background = '#fef2f2'; }}
             >
               Sign Out
             </button>
           )}
         </div>
       </div>
-    </div>
+    </>
+  );
+
+  return (
+    <>
+      {/* Mobile / Portrait-Tablet Top Header (< 1024px) */}
+      <header className="lg:hidden fixed top-0 left-0 right-0 z-40 h-14 bg-white border-b border-gray-200 px-4 flex items-center justify-between shadow-xs">
+        <Link href="/clickme" className="flex items-center gap-2.5 min-w-0">
+          <img
+            src="/clickme-life-logo-medium.png"
+            alt="ClickMe"
+            className="h-7 w-auto object-contain"
+          />
+          <span className="text-[11px] font-bold uppercase tracking-wider text-gray-500 truncate">
+            Portal
+          </span>
+        </Link>
+        <div className="flex items-center gap-2">
+          <Link
+            href="/clickme/crm"
+            className="px-2.5 py-1.5 rounded-lg bg-[#e6fffa] text-[#319795] text-xs font-bold"
+          >
+            CRM
+          </Link>
+          <button
+            type="button"
+            onClick={() => setMobileOpen(true)}
+            aria-label="Open portal navigation"
+            className="w-10 h-10 rounded-lg border border-gray-200 bg-gray-50 text-gray-800 flex items-center justify-center active:bg-gray-100"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      {/* Mobile / Portrait-Tablet Slide-Over Drawer */}
+      {mobileOpen && (
+        <div className="lg:hidden fixed inset-0 z-50 flex">
+          <div
+            className="fixed inset-0 bg-black/50 backdrop-blur-[1px]"
+            onClick={() => setMobileOpen(false)}
+          />
+          <aside className="relative w-[285px] max-w-[85vw] h-full bg-white shadow-2xl flex flex-col z-10 overflow-hidden">
+            {renderSidebarBody(true, true)}
+          </aside>
+        </div>
+      )}
+
+      {/* Desktop Sticky Sidebar (>= 1024px) */}
+      <aside
+        className="hidden lg:flex flex-col shrink-0 bg-white border-r border-gray-200"
+        style={{
+          width: isExpanded ? '275px' : '78px',
+          boxShadow: '4px 0 15px rgba(0,0,0,0.02)',
+          zIndex: 10,
+          transition: 'width 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          height: '100vh',
+          position: 'sticky',
+          top: 0,
+        }}
+      >
+        {renderSidebarBody(isExpanded, false)}
+      </aside>
+    </>
   );
 }
