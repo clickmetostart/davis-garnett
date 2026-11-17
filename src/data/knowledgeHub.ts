@@ -2961,7 +2961,7 @@ export const EVENTS: EventItem[] = [
     time: "10:00 AM – 6:00 PM EST",
     location: "Bayshore Boulevard (Tampa) & Vinoy Park Waterfront (St. Petersburg)",
     address: "Bayshore Blvd, Tampa, FL 33606 & 701 Bayshore Dr NE, St. Petersburg, FL 33701",
-    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-30.jpg",
+    heroImage: "/placeholders/dg-brand-placeholder.webp",
     summary: "Celebrating two of Tampa Bay's favorite waterfront traditions: the Gasparilla parades along historic Bayshore Boulevard and Shopapalooza Local Market at Vinoy Park.",
     description: "Few events capture the fun of living on the water in Tampa Bay like Gasparilla along Bayshore Boulevard in South Tampa and the Shopapalooza Festival (featuring 350+ local small businesses) at Vinoy Park in St. Petersburg. Visiting town for the weekend? Schedule a private waterfront property tour with Mark and Rachael—including our $4,553,900 custom estate at 6100 Bahama Shores Dr S in St. Petersburg and The Ritz-Carlton Residences on Bayshore.",
     agenda: [
