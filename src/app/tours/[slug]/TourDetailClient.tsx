@@ -174,7 +174,7 @@ export default function TourDetailClient({
               onClick={() => setDownloadOpen(true)}
               className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/25 text-xs font-bold uppercase tracking-widest rounded-xl transition-colors"
             >
-              <Download className="w-4 h-4 text-[#D4AF37]" /> Download Workbook (PDF)
+              <Download className="w-4 h-4 text-[#D4AF37]" /> Download Tour Guide (PDF)
             </button>
 
             <button
@@ -297,6 +297,11 @@ export default function TourDetailClient({
                       <span className="px-3 py-1 rounded-md bg-[#111] text-[#D4AF37] uppercase tracking-widest text-[10px]">
                         Stop {stop.order} of {tour.stops.length}
                       </span>
+                      {stop.stopVibe && (
+                        <span className="px-3 py-1 rounded-md bg-[#D4AF37]/20 text-[#8B6D29] text-[10px] uppercase tracking-wider">
+                          {stop.stopVibe}
+                        </span>
+                      )}
                       <span className="px-3 py-1 rounded-md bg-[#f5f3ef] text-[#9A7D3A] text-[11px]">
                         {stop.driveFromPrev}
                       </span>
@@ -366,16 +371,25 @@ export default function TourDetailClient({
                       {stop.snippet}
                     </p>
 
+                    {stop.eatOrSipSpot && (
+                      <div className="p-3.5 rounded-xl bg-[#fffbf0] border border-[#D4AF37]/40 text-xs">
+                        <span className="font-bold uppercase tracking-wider text-[#9A7D3A] block mb-0.5 text-[10px]">
+                          ☕ Coffee, Lunch &amp; Energy Pitstop
+                        </span>
+                        <p className="text-[#111]/85 font-medium leading-relaxed">{stop.eatOrSipSpot}</p>
+                      </div>
+                    )}
+
                     <div className="grid sm:grid-cols-2 gap-3 text-xs pt-1">
                       <div className="p-3.5 rounded-xl bg-[#fbfbf9] border border-[#111]/10">
                         <span className="font-bold uppercase tracking-wider text-[#9A7D3A] block mb-1 text-[10px]">
-                          Cost / Zoning Note
+                          Developments &amp; Housing Watch
                         </span>
                         <p className="text-[#111]/80 leading-relaxed">{stop.zoningOrCostNote}</p>
                       </div>
                       <div className="p-3.5 rounded-xl bg-[#fbfbf9] border border-[#111]/10">
                         <span className="font-bold uppercase tracking-wider text-[#9A7D3A] block mb-1 text-[10px]">
-                          Schools &amp; Landmarks
+                          Shopping, Parks &amp; Landmarks
                         </span>
                         <p className="text-[#111]/80 leading-relaxed">{stop.landmarksAndSchools}</p>
                       </div>
@@ -456,7 +470,7 @@ export default function TourDetailClient({
                 onClick={() => setDownloadOpen(true)}
                 className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#111] hover:bg-[#D4AF37] text-white hover:text-[#111] text-xs font-bold uppercase tracking-widest rounded-xl transition-colors"
               >
-                <Download className="w-4 h-4" /> Save Notes &amp; Download Tour PDF
+                <Download className="w-4 h-4" /> Save Notes &amp; Download Tour Guide PDF
               </button>
               <button
                 type="button"

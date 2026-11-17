@@ -163,11 +163,12 @@ export async function POST(req: Request) {
           keyTakeaways: tour.checklistPrompts,
           sections: tour.stops.map((s) => ({
             heading: s.name,
-            metaLine: `${s.driveFromPrev}  |  Explore: ${s.stopDuration}  |  ${s.address}`,
+            metaLine: `${s.stopVibe ? `${s.stopVibe}  |  ` : ""}${s.driveFromPrev}  |  Explore: ${s.stopDuration}  |  ${s.address}`,
             body: `${s.hostNote} ${s.snippet}`,
             bullets: [
-              `Zoning, HOA/CDD & Cost Watch: ${s.zoningOrCostNote}`,
-              `Nearby Schools & Landmarks: ${s.landmarksAndSchools}`,
+              ...(s.eatOrSipSpot ? [`Coffee, Lunch & Pitstop: ${s.eatOrSipSpot}`] : []),
+              `Developments & Housing Watch: ${s.zoningOrCostNote}`,
+              `Shopping, Parks & Landmarks: ${s.landmarksAndSchools}`,
             ],
           })),
           howWeHandleIt: `${tour.howWeHandleIt} ${tour.host.inviteNote}`,
@@ -287,12 +288,13 @@ export async function POST(req: Request) {
 
     const pdfBytes = await generateBrandedGuidePdf(pdfInput);
     const safeFileName = (pdfInput.slug || "davis-garnett-guide").replace(/[^a-z0-9-_]/gi, "-");
+    const fileSuffix = pdfInput.routeMeta ? "tour-guide" : "workbook";
 
     return new NextResponse(Buffer.from(pdfBytes), {
       status: 200,
       headers: {
         "Content-Type": "application/pdf",
-        "Content-Disposition": `attachment; filename="${safeFileName}-workbook.pdf"`,
+        "Content-Disposition": `attachment; filename="${safeFileName}-${fileSuffix}.pdf"`,
         "Cache-Control": "no-store",
       },
     });

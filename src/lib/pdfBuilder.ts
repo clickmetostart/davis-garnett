@@ -126,8 +126,11 @@ function wrapText(
 }
 
 export async function generateBrandedGuidePdf(input: BrandedPdfInput): Promise<Uint8Array> {
+  const isTour = Boolean(input.routeMeta);
   const pdfDoc = await PDFDocument.create();
-  pdfDoc.setTitle(sanitizeWinAnsi(`${input.title} — Davis & Garnett Advisory Workbook`));
+  pdfDoc.setTitle(
+    sanitizeWinAnsi(`${input.title} — Davis & Garnett ${isTour ? "Self-Guided Tour Guide" : "Advisory Workbook"}`)
+  );
   pdfDoc.setAuthor(sanitizeWinAnsi(input.authorLine));
   pdfDoc.setSubject(sanitizeWinAnsi(input.category));
   pdfDoc.setCreator("Davis & Garnett — Align Right Realty Carrollwood");
@@ -234,7 +237,7 @@ export async function generateBrandedGuidePdf(input: BrandedPdfInput): Promise<U
   );
   const recipientLine = input.workbook?.preparedForName
     ? `PREPARED FOR: ${input.workbook.preparedForName}  *  CREATED: ${input.createdDateLabel}`
-    : `ORIGINAL INTERACTIVE WORKBOOK EDITION  *  CREATED: ${input.createdDateLabel}`;
+    : `${isTour ? "ORIGINAL SELF-GUIDED TOUR EDITION" : "ORIGINAL INTERACTIVE WORKBOOK EDITION"}  *  CREATED: ${input.createdDateLabel}`;
   cover.drawText(sanitizeWinAnsi(recipientLine), {
     x: MARGIN_X + 14,
     y: coverY - 28,
@@ -320,7 +323,7 @@ export async function generateBrandedGuidePdf(input: BrandedPdfInput): Promise<U
 
   // What's Inside / Contents Summary on Cover
   if (coverY > 140) {
-    cover.drawText("INCLUDED INSIDE THIS WORKBOOK", {
+    cover.drawText(isTour ? "INCLUDED ON THIS TOUR" : "INCLUDED INSIDE THIS WORKBOOK", {
       x: MARGIN_X,
       y: coverY,
       size: 8.5,
@@ -351,7 +354,13 @@ export async function generateBrandedGuidePdf(input: BrandedPdfInput): Promise<U
   };
 
   const drawTopRunningHeader = (p: PDFPage) => {
-    p.drawText(sanitizeWinAnsi("DAVIS & GARNETT  *  INTERACTIVE FIELD WORKBOOK"), {
+    p.drawText(
+      sanitizeWinAnsi(
+        isTour
+          ? "DAVIS & GARNETT  *  SELF-GUIDED TOUR GUIDE & DAY ITINERARY"
+          : "DAVIS & GARNETT  *  INTERACTIVE FIELD WORKBOOK"
+      ),
+      {
       x: MARGIN_X,
       y: PAGE_H - 32,
       size: 8,
@@ -484,7 +493,7 @@ export async function generateBrandedGuidePdf(input: BrandedPdfInput): Promise<U
         borderColor: COLORS.gold,
         borderWidth: 0.8,
       });
-      page.drawText("YOUR SAVED WORKBOOK NOTES:", {
+      page.drawText(isTour ? "YOUR SAVED TOUR NOTES:" : "YOUR SAVED WORKBOOK NOTES:", {
         x: MARGIN_X + 10,
         y: cursorY - 14,
         size: 8,
@@ -510,7 +519,11 @@ export async function generateBrandedGuidePdf(input: BrandedPdfInput): Promise<U
         borderColor: COLORS.borderLight,
         borderWidth: 0.75,
       });
-      page.drawText("[  ] Checked / Visited    WORKBOOK & TOUR NOTES (JOT HIGHLIGHTS BELOW):", {
+      page.drawText(
+        isTour
+          ? "[  ] Checked / Visited    STOP NOTES (JOT HIGHLIGHTS BELOW):"
+          : "[  ] Checked / Reviewed    WORKBOOK NOTES (JOT HIGHLIGHTS BELOW):",
+        {
         x: MARGIN_X + 10,
         y: cursorY - 14,
         size: 7.8,

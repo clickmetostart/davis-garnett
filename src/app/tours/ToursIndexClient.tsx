@@ -65,10 +65,10 @@ export default function ToursIndexClient() {
                 <Compass className="w-4 h-4" /> #GuidedByDG • Tour Tampa Bay With Davis &amp; Garnett
               </span>
               <h1 className="font-aiveritas text-4xl sm:text-6xl text-white mb-5 leading-tight">
-                Best of Tampa Bay: Neighborhoods, Malls, Zoos &amp; Parks
+                Best of Tampa Bay: Neighborhoods, Developments, Eats &amp; Parks
               </h1>
               <p className="text-white/80 text-base md:text-xl font-light max-w-2xl leading-relaxed mb-8">
-                Explore Tampa Bay&apos;s favorite neighborhoods, trending developments, waterfront boardwalks, malls, zoos, aquariums, and state parks in real road order—or invite Mark Davis &amp; Rachael Garnett along for a private tour.
+                Plan your morning, afternoon, or full-day drive in true street order—morning coffee spots, hidden Intracoastal and golf pockets, big new developments and condos, zoos, shopping, lunch breaks, smoothies, and iconic sunset spots.
               </p>
 
               <div className="flex flex-wrap items-center gap-3">
@@ -118,7 +118,7 @@ export default function ToursIndexClient() {
                 </div>
               </div>
               <p className="text-sm text-white/80 font-light leading-relaxed">
-                Every tour runs strictly point-to-point with zero zig-zagging. Pick your track below, check stops off on your phone, and save your branded PDF workbook.
+                Every tour runs strictly point-to-point with zero zig-zagging. Pick your track below, check stops off on your phone, and save your printable PDF Tour Guide.
               </p>
             </div>
           </div>
@@ -262,7 +262,7 @@ export default function ToursIndexClient() {
                       href={`/tours/${tour.slug}`}
                       className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-[#111] group-hover:text-[#9A7D3A]"
                     >
-                      Open Tour Workbook <ArrowRight className="w-3.5 h-3.5" />
+                      Open Tour Guide <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                     <a
                       href={mapsUrl}

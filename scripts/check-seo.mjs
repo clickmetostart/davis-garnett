@@ -42,9 +42,14 @@ for (const [name, src] of [
   }
 }
 
-// 2. Date coverage check
-const khSlugs = Array.from(khRaw.matchAll(/slug:\s*"([^"]+)"/g)).map((m) => m[1]);
-const devSlugs = Array.from(devRaw.matchAll(/slug:\s*"([^"]+)"/g)).map((m) => m[1]);
+// 2. Date coverage & duplicate slug check
+const khSlugs = Array.from(khRaw.matchAll(/^\s*slug:\s*"([^"]+)"/gm)).map((m) => m[1]);
+const devSlugs = Array.from(devRaw.matchAll(/^\s*slug:\s*"([^"]+)"/gm)).map((m) => m[1]);
+const dupeKh = khSlugs.filter((s, idx) => khSlugs.indexOf(s) !== idx);
+if (dupeKh.length > 0) {
+  console.warn(`[WARN] Duplicate slug(s) in knowledgeHub.ts: ${Array.from(new Set(dupeKh)).join(', ')}`);
+  issues += dupeKh.length;
+}
 const missingDates = [...khSlugs, ...devSlugs].filter((s) => !pubDatesRaw.includes(`"${s}"`));
 if (missingDates.length > 0) {
   console.warn(`[WARN] Missing git publicationDates entries for: ${missingDates.join(', ')}`);

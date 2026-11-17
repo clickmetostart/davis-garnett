@@ -24,9 +24,9 @@ interface TourSliderSectionProps {
 
 export default function TourSliderSection({
   id = "tours",
-  sectionEyebrow = "#GuidedByDG • Self-Guided Tour Kits Made by D&G",
-  sectionTitle = "Tampa Bay Destinations, Neighborhoods & Parks Tours",
-  sectionSubtitle = "Explore Tampa Bay's top neighborhoods, trending developments, zoos, aquariums, outdoor malls, parks, and beaches in street order with Mark Davis & Rachael Garnett—or book a private VIP tour.",
+  sectionEyebrow = "#GuidedByDG • Curated Day & Neighborhood Itineraries by D&G",
+  sectionTitle = "Tampa Bay Destinations, Developments & Neighborhood Tours",
+  sectionSubtitle = "Plan your morning or afternoon with Mark Davis & Rachael Garnett: grab morning coffee, drive hidden Intracoastal pockets, tour flagship developments and condos, stop for lunch, browse shops and parks, and catch sunset.",
   bgClass = "bg-white",
 }: TourSliderSectionProps) {
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -148,7 +148,7 @@ export default function TourSliderSection({
                     href={`/tours/${tour.slug}`}
                     className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-[#111] group-hover:text-[#9A7D3A]"
                   >
-                    Open Tour Workbook <ArrowRight className="w-3.5 h-3.5" />
+                    Open Tour Guide <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                   <a
                     href={routeUrl}

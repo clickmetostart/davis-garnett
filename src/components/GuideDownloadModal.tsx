@@ -56,6 +56,10 @@ export default function GuideDownloadModal({
 
   if (!isOpen) return null;
 
+  const isTour = contentType === "tour";
+  const docLabelLower = isTour ? "tour guide" : "workbook";
+  const docLabelTitle = isTour ? "Tour Guide" : "Workbook";
+
   const triggerPdfDownload = async () => {
     setPdfDownloading(true);
     try {
@@ -87,7 +91,7 @@ export default function GuideDownloadModal({
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = `${slug}-workbook.pdf`;
+      a.download = `${slug}-${isTour ? "tour-guide" : "workbook"}.pdf`;
       document.body.appendChild(a);
       a.click();
       a.remove();
@@ -121,8 +125,8 @@ export default function GuideDownloadModal({
       const notesCount = Object.values(workbookState?.notesByKey || {}).filter((v) => v.trim()).length;
       const summaryNote =
         notesCount > 0
-          ? `Downloaded branded PDF workbook for "${title}" with ${notesCount} custom note section(s).`
-          : `Downloaded branded PDF workbook for "${title}".`;
+          ? `Downloaded branded PDF ${docLabelLower} for "${title}" with ${notesCount} custom note section(s).`
+          : `Downloaded branded PDF ${docLabelLower} for "${title}".`;
 
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -133,9 +137,9 @@ export default function GuideDownloadModal({
           email,
           phone: phone.trim() || "Not provided",
           category: cat,
-          subject: `Workbook PDF: ${title}`,
+          subject: `${docLabelTitle} PDF: ${title}`,
           interest: `${interest} — ${title}`,
-          labels: ["Workbook PDF", interest],
+          labels: [`${docLabelTitle} PDF`, interest],
           message: summaryNote,
           source: `Branded PDF Gate (${slug})`,
         }),
@@ -165,7 +169,7 @@ export default function GuideDownloadModal({
 
         <div className="bg-[#111] text-white px-7 py-6 border-b border-[#D4AF37]/30">
           <div className="flex items-center gap-2 text-[#D4AF37] text-[10px] font-bold uppercase tracking-[0.22em] mb-2">
-            <BookOpen className="w-3.5 h-3.5" /> Free Branded PDF Workbook
+            <BookOpen className="w-3.5 h-3.5" /> Free Branded PDF {docLabelTitle}
           </div>
           <h3 className="font-aiveritas text-2xl sm:text-3xl leading-snug pr-8">{title}</h3>
         </div>
@@ -179,7 +183,7 @@ export default function GuideDownloadModal({
               <div>
                 <h4 className="font-aiveritas text-2xl text-[#111] mb-2">Your Branded PDF Is Ready</h4>
                 <p className="text-sm text-[#111]/75 font-light max-w-md mx-auto leading-relaxed">
-                  We saved your request for <strong>{fullName}</strong> and started downloading your personalized Davis &amp; Garnett workbook.
+                  We saved your request for <strong>{fullName}</strong> and started downloading your personalized Davis &amp; Garnett {docLabelLower}.
                 </p>
               </div>
 
@@ -207,7 +211,7 @@ export default function GuideDownloadModal({
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               <p className="text-sm text-[#111]/75 font-light leading-relaxed">
-                Enter your name, email, and goal below to download your clean Davis &amp; Garnett PDF workbook—with your saved online notes included.
+                Enter your name, email, and goal below to download your clean Davis &amp; Garnett PDF {docLabelLower}—with your saved online notes included.
               </p>
 
               <div>
@@ -279,7 +283,7 @@ export default function GuideDownloadModal({
                 <Download className="w-4 h-4" />
                 {submitting || pdfDownloading
                   ? "Building Your Branded PDF..."
-                  : "Download Branded Workbook (PDF)"}
+                  : `Download Branded ${docLabelTitle} (PDF)`}
               </button>
 
               <p className="text-[11px] text-center text-[#111]/60 leading-relaxed">
@@ -292,7 +296,7 @@ export default function GuideDownloadModal({
 
               <div className="flex items-center justify-center gap-1.5 text-[11px] text-[#111]/55">
                 <ShieldCheck className="w-3.5 h-3.5 text-[#9A7D3A]" />
-                <span>Original Davis &amp; Garnett Advisory Workbook • Created Nov 2026</span>
+                <span>Original Davis &amp; Garnett {isTour ? "Guided Tour Kit" : "Advisory Workbook"} • Created Nov 2026</span>
               </div>
             </form>
           )}

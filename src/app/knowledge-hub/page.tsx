@@ -413,7 +413,7 @@ export default function KnowledgeHubPage() {
                   Take a Tour Built by Mark &amp; Rachael
                 </h3>
                 <p className="text-sm md:text-base text-white/80 font-light max-w-2xl">
-                  Drive our self-guided Google Maps routes with Mark &amp; Rachael&apos;s notes and printable workbooks—or book a private VIP tour with us.
+                  Drive our self-guided Google Maps routes with Mark &amp; Rachael&apos;s local picks and printable tour guides—or book a private VIP tour with us.
                 </p>
               </div>
             </div>

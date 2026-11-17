@@ -6,7 +6,7 @@ import { buildPageMetadata, SITE_URL } from "@/lib/seo";
 export const metadata: Metadata = buildPageMetadata({
   title: "Tampa Bay Self-Guided Area & Commercial Shopping Tours | Davis & Garnett",
   description:
-    "Explore Tampa Bay neighborhoods and commercial shopping zones step by step with Mark Davis & Rachael Garnett. Google Maps routes, interactive workbooks, and printable PDFs.",
+    "Explore Tampa Bay's best neighborhoods, developments, malls, zoos, parks, and dining with Mark Davis & Rachael Garnett. Google Maps routes, interactive trip notes, and printable PDF tour guides.",
   path: "/tours",
 });
 
