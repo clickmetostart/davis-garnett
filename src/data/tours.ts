@@ -91,7 +91,7 @@ export const GUIDED_TOURS: GuidedTour[] = [
     distanceSummary: "14 Miles Total Loop",
     routeDirectionNote: "Ordered West-to-South-to-North along Northdale Blvd -> Hudson Ln -> Lake Ellen Dr -> South Village Dr (zero backtracking).",
     startAddress: "3903 Northdale Blvd Suite 115W, Tampa, FL 33624",
-    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-16.jpg",
+    heroImage: "/placeholders/dg-brand-placeholder.webp",
     host: {
       name: "Rachael Garnett",
       role: "Your North Tampa Tour Host",
@@ -198,7 +198,7 @@ export const GUIDED_TOURS: GuidedTour[] = [
     distanceSummary: "12 Miles South-to-North",
     routeDirectionNote: "Strictly South-to-North along Bahama Shores -> I-275 / 4th St S -> Beach Dr -> Coffee Pot Bayou -> Snell Isle Blvd.",
     startAddress: "6100 Bahama Shores Dr S, St. Petersburg, FL 33705",
-    heroImage: "/new-images/new-2/davis-garnett-tampa-residential-real-estate-saint-petersburg-downtown-and-beaches-florida.jpg",
+    heroImage: "/city-photos/st-petersburg-waterfront.jpg",
     host: {
       name: "Rachael Garnett",
       role: "Your Pinellas Waterfront Host",
@@ -306,7 +306,7 @@ export const GUIDED_TOURS: GuidedTour[] = [
     distanceSummary: "10 Miles Northeast-to-South",
     routeDirectionNote: "Continuous East-to-West-to-South route: Davis Islands -> Bayshore Blvd -> Hyde Park Village -> Ballast Point Pier.",
     startAddress: "240 E Davis Blvd, Tampa, FL 33606",
-    heroImage: "/city-photos/downtown-tampa-skyline.jpg",
+    heroImage: "/placeholders/dg-brand-placeholder.webp",
     host: {
       name: "Mark Davis",
       role: "Your South Tampa Tour Host",
@@ -413,7 +413,7 @@ export const GUIDED_TOURS: GuidedTour[] = [
     distanceSummary: "24 Miles South-to-North Corridor",
     routeDirectionNote: "SR-56 West -> East to Two Rivers -> North up Morris Bridge/Curley Rd to Epperson -> East on SR-52 to Mirada.",
     startAddress: "28211 Paseo Dr, Wesley Chapel, FL 33543",
-    heroImage: "/new-images/new-2/davis-garnett-tampa-residential-real-estate-westley-chapel-florida.jpg",
+    heroImage: "/city-photos/wesley-chapel-suburban.jpg",
     host: {
       name: "Rachael Garnett",
       role: "Your New-Construction Tour Host",
@@ -520,7 +520,7 @@ export const GUIDED_TOURS: GuidedTour[] = [
     distanceSummary: "22 Miles Straight South-to-North",
     routeDirectionNote: "Strictly South-to-North along Gunn Hwy -> Lutz-Lake Fern Rd -> US-41 / Collier Pkwy -> SR-589 / SR-52.",
     startAddress: "Lake Keystone / Tarpon Springs Rd & Gunn Hwy, Odessa, FL 33556",
-    heroImage: "/new-images/new-2/davis-garnett-tampa-residential-real-estate-cheval.jpg",
+    heroImage: "/city-photos/land-o-lakes-luxury.jpg",
     host: {
       name: "Mark Davis",
       role: "Your Suncoast Corridor Host",
@@ -627,7 +627,7 @@ export const GUIDED_TOURS: GuidedTour[] = [
     distanceSummary: "6.5 Miles Straight West-to-East",
     routeDirectionNote: "Strictly West-to-East down Brandon Blvd (SR-60): I-75 Interchange -> Ridgewood/Morgan -> Parsons Ave -> Valrico Rd.",
     startAddress: "459 Brandon Town Center Dr, Brandon, FL 33511",
-    heroImage: "/new-images/new-2/dg-brandon-hwy60.jpg",
+    heroImage: "/placeholders/dg-brand-placeholder.webp",
     host: {
       name: "Mark Davis",
       role: "Your Commercial Corridor Host",
@@ -735,7 +735,7 @@ export const GUIDED_TOURS: GuidedTour[] = [
     distanceSummary: "9 Miles Westshore-to-South-Tampa",
     routeDirectionNote: "Logical Airport-to-South loop: Boy Scout Blvd -> Cypress St -> S Dale Mabry Hwy -> Henderson Blvd.",
     startAddress: "2223 N Westshore Blvd, Tampa, FL 33607",
-    heroImage: "/city-photos/brandon-riverview-commercial.jpg",
+    heroImage: "/placeholders/dg-brand-placeholder.webp",
     host: {
       name: "Mark Davis",
       role: "Your Tampa Commercial Host",
@@ -949,7 +949,7 @@ export const GUIDED_TOURS: GuidedTour[] = [
     distanceSummary: "2.8 Miles Straight West-to-East",
     routeDirectionNote: "Straight West-to-East down Central Ave: 16th St S -> Edge District (11th-9th St) -> 4th St -> Beach Dr NE.",
     startAddress: "1600 Central Ave, St. Petersburg, FL 33712",
-    heroImage: "/city-photos/st-petersburg-waterfront.jpg",
+    heroImage: "/placeholders/dg-brand-placeholder.webp",
     host: {
       name: "Rachael Garnett",
       role: "Your St. Pete Commercial Host",
@@ -1056,7 +1056,7 @@ export const GUIDED_TOURS: GuidedTour[] = [
     distanceSummary: "36 Miles Continuous Loop",
     routeDirectionNote: "Clean clock-loop: Bartow US-98 -> South down US-17/98 to Fort Meade -> Southeast to 770 Old Stokes Rd Frostproof -> North on US-27 to Lake Wales.",
     startAddress: "555 E Broadway Ave, Bartow, FL 33830",
-    heroImage: "/city-photos/central-fl-acreage.jpg",
+    heroImage: "/placeholders/dg-brand-placeholder.webp",
     host: {
       name: "Mark Davis",
       role: "Your Central Florida Land Host",
