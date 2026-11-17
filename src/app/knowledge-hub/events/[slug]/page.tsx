@@ -16,6 +16,7 @@ import {
 import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
 import { EVENTS } from "@/data/knowledgeHub";
+import { SITE_URL, TEAM_SAME_AS } from "@/lib/seo";
 
 export default function EventSpokePage({
   params,
@@ -62,8 +63,51 @@ export default function EventSpokePage({
     }
   };
 
+  const eventUrl = `${SITE_URL}/knowledge-hub/events/${event.slug}`;
+  const eventImageUrl = event.heroImage.startsWith("http")
+    ? event.heroImage
+    : `${SITE_URL}${event.heroImage}`;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Event",
+        name: event.title,
+        description: event.summary,
+        url: eventUrl,
+        image: eventImageUrl,
+        ...(event.sortDate ? { startDate: event.sortDate } : {}),
+        eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+        eventStatus: "https://schema.org/EventScheduled",
+        location: {
+          "@type": "Place",
+          name: event.location,
+          address: event.location,
+        },
+        organizer: {
+          "@type": "RealEstateAgent",
+          name: "Davis & Garnett — Align Right Realty Carrollwood",
+          url: SITE_URL,
+          sameAs: TEAM_SAME_AS,
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          { "@type": "ListItem", position: 2, name: "Knowledge Hub", item: `${SITE_URL}/knowledge-hub` },
+          { "@type": "ListItem", position: 3, name: event.title, item: eventUrl },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-white text-[#111] font-sans selection:bg-[#D4AF37] selection:text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <ProposalNav />
 
       <section className="relative pt-36 pb-24 px-8 bg-[#111] text-white border-b border-[#D4AF37]/30 overflow-hidden">

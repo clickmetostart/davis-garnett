@@ -4,7 +4,7 @@ import DevelopmentDetailClient from "./DevelopmentDetailClient";
 import { DEVELOPMENTS, getDevelopmentBySlug } from "@/data/developments";
 import { ALL_GUIDES_AND_QUESTIONS } from "@/data/knowledgeHub";
 
-import { buildPageMetadata } from "@/lib/seo";
+import { buildPageMetadata, TEAM_SAME_AS } from "@/lib/seo";
 
 const BASE_URL = "https://www.davisgarnettsells.com";
 
@@ -22,7 +22,7 @@ export async function generateMetadata({
   if (!dev) return { title: "Tampa Bay New Developments | Davis & Garnett" };
 
   return buildPageMetadata({
-    title: `${dev.name} — Floor Plans, Pricing & Reviews | Davis & Garnett`,
+    title: `${dev.name} — Floor Plans & Pricing | Davis & Garnett`,
     description: dev.summary,
     path: `/developments/${dev.slug}`,
     image: dev.heroImage,
@@ -43,7 +43,7 @@ export default async function DevelopmentDetailSpokePage({
   ).slice(0, 3);
 
   const guideSlugs =
-    dev.corridor === "downtown-bayshore"
+    dev.corridor === "downtown-bayshore" || dev.slug === "the-quay-sarasota-waterfront"
       ? [
           "tampa-bay-luxury-home-buying-guide",
           "flood-zones-x-ae-ve-tampa-bay-homebuyers",
@@ -62,14 +62,17 @@ export default async function DevelopmentDetailSpokePage({
   );
 
   const pageUrl = `${BASE_URL}/developments/${dev.slug}`;
+  const isUrbanTower =
+    dev.corridor === "downtown-bayshore" || dev.slug === "the-quay-sarasota-waterfront";
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": dev.corridor === "downtown-bayshore" ? "ApartmentComplex" : "GatedResidenceCommunity",
+        "@type": isUrbanTower ? "ApartmentComplex" : "GatedResidenceCommunity",
         name: dev.name,
         description: dev.summary,
         url: pageUrl,
+        image: dev.heroImage.startsWith("http") ? dev.heroImage : `${BASE_URL}${dev.heroImage}`,
         address: {
           "@type": "PostalAddress",
           streetAddress: dev.location,
@@ -94,6 +97,7 @@ export default async function DevelopmentDetailSpokePage({
             "@type": "RealEstateAgent",
             name: "Davis & Garnett — Align Right Realty Carrollwood",
             url: BASE_URL,
+            sameAs: TEAM_SAME_AS,
           },
         },
       },

@@ -4,7 +4,7 @@ import SiteFooter from "@/components/SiteFooter";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Privacy Policy | Davis & Garnett Commercial / Residential Advisors",
+  title: "Privacy Policy | Davis & Garnett Real Estate Advisors",
   description:
     "How Davis & Garnett and ClickMe collect, use, and protect your contact details, email requests, and SMS consent preferences.",
   path: "/privacy-policy",

@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { smoothScrollToId } from "@/lib/smoothScroll";
 import {
   ArrowRight,
   MapPin,
@@ -189,7 +190,7 @@ export default function PropertiesPage() {
     if (typeof item.images?.main === "string" && item.images.main) return item.images.main;
     if (Array.isArray(item.images) && item.images[0]?.url) return item.images[0].url;
     if (Array.isArray(item.images?.gallery) && item.images.gallery[0]) return item.images.gallery[0];
-    return "/davis-garnett-listings-1.jpg";
+    return "/placeholders/dg-brand-placeholder.webp";
   };
 
   const resolveListingPrice = (item: Listing): string =>
@@ -257,13 +258,33 @@ export default function PropertiesPage() {
             <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-[#111111] leading-none mb-6">
               Florida <span className="text-[#9A7D3A]">Portfolio</span>
             </h1>
-            <p className="text-[#111111]/75 font-light text-base md:text-[17px] lg:text-[18px] leading-relaxed">
+            <p className="text-[#111111]/75 font-light text-base md:text-[17px] lg:text-[18px] leading-relaxed mb-8">
               Explore featured residential homes, commercial properties, Central Florida land, waterfront and unique properties, and recent sales across Tampa Bay and Florida.
             </p>
+
+            {/* Restrained Dual Same-Page Hero CTAs */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <button
+                type="button"
+                onClick={() => smoothScrollToId("portfolio-sections")}
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-[#111111] hover:bg-[#C8A951] text-white hover:text-[#111111] text-xs font-bold uppercase tracking-[0.18em] transition-colors w-full sm:w-auto"
+              >
+                <Compass className="w-4 h-4 shrink-0" />
+                Browse Portfolio
+              </button>
+              <button
+                type="button"
+                onClick={() => smoothScrollToId("valuation-request")}
+                className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-white hover:bg-[#111111] text-[#111111] hover:text-[#C8A951] border border-[#111111]/20 text-xs font-bold uppercase tracking-[0.18em] transition-colors w-full sm:w-auto"
+              >
+                <Phone className="w-4 h-4 text-[#9A7D3A] group-hover:text-[#C8A951] transition-colors shrink-0" />
+                Value Review &amp; Contact
+              </button>
+            </div>
           </div>
 
           {/* Advisor Credentials & Accolades Ribbon */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto mb-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
             {[
               {
                 value: "CRE & RES",
@@ -300,60 +321,44 @@ export default function PropertiesPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Quick Jump Section Buttons (Single-Line Desktop Row) */}
-          <div className="flex flex-wrap lg:flex-nowrap items-center justify-center gap-2">
+      {/* Clean Below-Hero Section Jump Grid (Eased Smooth Glide) */}
+      <section id="portfolio-sections" className="py-8 px-6 lg:px-10 bg-white border-b border-[#111111]/10 scroll-mt-24">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
             {[
-              {
-                label: "Featured",
-                href: "#featured",
-                icon: Award,
-              },
-              {
-                label: "New & Upcoming",
-                href: "#new-listings",
-                icon: Sparkles,
-              },
-              {
-                label: "Carrollwood Office",
-                href: "#carrollwood-office",
-                icon: Building2,
-              },
-              {
-                label: "Commercial & Land",
-                href: "#commercial-land",
-                icon: Trees,
-              },
-              {
-                label: "Recently Sold",
-                href: "#sold-track-record",
-                icon: CheckCircle,
-              },
-              {
-                label: "Value Estimate",
-                href: "#valuation-request",
-                icon: TrendingUp,
-              },
+              { label: "Featured", sub: "Flagship Deck", href: "featured", icon: Award },
+              { label: "New & Upcoming", sub: "Active & Soon", href: "new-listings", icon: Sparkles },
+              { label: "Carrollwood Office", sub: "Align Right Hub", href: "carrollwood-office", icon: Building2 },
+              { label: "Commercial & Land", sub: "BPO & Acreage", href: "commercial-land", icon: Trees },
+              { label: "Recently Sold", sub: "Closed Track Record", href: "sold-track-record", icon: CheckCircle },
+              { label: "Value Estimate", sub: "Request BPO / CMA", href: "valuation-request", icon: TrendingUp },
             ].map((pill) => {
               const Icon = pill.icon;
               return (
-                <a
+                <button
                   key={pill.label}
-                  href={pill.href}
-                  onClick={(e) => {
-                    e.preventDefault();
+                  type="button"
+                  onClick={() => {
                     setSelectedTab("All");
-                    setTimeout(() => {
-                      document
-                        .getElementById(pill.href.replace("#", ""))
-                        ?.scrollIntoView({ behavior: "smooth", block: "start" });
-                    }, 10);
+                    setTimeout(() => smoothScrollToId(pill.href), 40);
                   }}
-                  className="group inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-lg bg-white hover:bg-[#111111] text-[#111111] hover:text-[#C8A951] border border-[#111111]/15 hover:border-[#111111] text-[11px] font-bold uppercase tracking-[0.12em] whitespace-nowrap shrink-0 transition-colors shadow-xs"
+                  className="group text-left p-3.5 rounded-xl bg-[#f5f3ef] hover:bg-[#111111] border border-[#111111]/10 hover:border-[#C8A951] transition-all flex items-start gap-2.5 shadow-xs"
                 >
-                  <Icon className="w-3.5 h-3.5 text-[#9A7D3A] group-hover:text-[#C8A951] shrink-0" />
-                  {pill.label}
-                </a>
+                  <div className="w-8 h-8 rounded-lg bg-white group-hover:bg-[#C8A951]/20 text-[#9A7D3A] group-hover:text-[#C8A951] flex items-center justify-center shrink-0 mt-0.5 transition-colors">
+                    <Icon className="w-4 h-4" />
+                  </div>
+                  <div className="min-w-0">
+                    <span className="block text-xs font-bold text-[#111111] group-hover:text-white leading-snug truncate transition-colors">
+                      {pill.label}
+                    </span>
+                    <span className="block text-[10px] text-[#111111]/60 group-hover:text-white/70 truncate transition-colors">
+                      {pill.sub}
+                    </span>
+                  </div>
+                </button>
               );
             })}
           </div>
@@ -462,7 +467,7 @@ export default function PropertiesPage() {
                             draggable={false}
                             unoptimized
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20 pointer-events-none" />
 
                           <div className="absolute top-5 left-5 flex flex-wrap gap-2">
                             <span className="bg-[#22c55e] text-white text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-sm">
@@ -729,6 +734,7 @@ export default function PropertiesPage() {
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     unoptimized
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/15 pointer-events-none" />
                   <span className="absolute top-3 left-3 px-2.5 py-1 bg-[#111111]/85 text-[#C8A951] text-[10px] font-bold uppercase tracking-widest rounded">
                     {item.listingOrigin === "align-right-office" ? "Align Right Office" : item.category}
                   </span>
@@ -850,6 +856,7 @@ export default function PropertiesPage() {
                     className="object-cover"
                     unoptimized
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/15 pointer-events-none" />
                   <span className="absolute top-3 left-3 px-2.5 py-1 bg-[#111111]/90 text-[#C8A951] text-[10px] font-bold uppercase tracking-wider rounded">
                     Align Right Carrollwood Office
                   </span>
@@ -882,12 +889,13 @@ export default function PropertiesPage() {
               >
                 <div className="relative h-48 bg-[#111111]">
                   <Image
-                    src={ol.images?.[0]?.url || "/davis-garnett-listings-1.jpg"}
+                    src={ol.images?.[0]?.url || "/placeholders/dg-brand-placeholder.webp"}
                     alt={ol.title}
                     fill
                     className="object-cover"
                     unoptimized
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/15 pointer-events-none" />
                   <span className="absolute top-3 left-3 px-2.5 py-1 bg-[#111111]/90 text-[#C8A951] text-[10px] font-bold uppercase tracking-wider rounded">
                     Branch Lofty Live Sync
                   </span>
@@ -1010,6 +1018,7 @@ export default function PropertiesPage() {
                     className="object-cover"
                     unoptimized
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/15 pointer-events-none" />
                   <span className="absolute top-3 left-3 px-2.5 py-1 bg-[#C8A951] text-[#111111] text-[10px] font-bold uppercase tracking-wider rounded">
                     {item.notListedByUs ? "Info Available via D&G" : item.category}
                   </span>
@@ -1094,7 +1103,7 @@ export default function PropertiesPage() {
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                       unoptimized
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/15 pointer-events-none" />
 
                     <div className="absolute top-3.5 left-3.5 flex flex-wrap gap-1.5">
                       <span className="bg-[#111111] text-[#C8A951] text-[10px] font-bold uppercase tracking-[0.18em] px-2.5 py-1 rounded-sm border border-[#C8A951]/40">

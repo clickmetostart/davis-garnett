@@ -8,7 +8,7 @@ import {
   getRelatedAreasForItem,
 } from "@/data/knowledgeHub";
 
-import { buildPageMetadata } from "@/lib/seo";
+import { buildPageMetadata, TEAM_SAME_AS } from "@/lib/seo";
 
 const BASE_URL = "https://www.davisgarnettsells.com";
 
@@ -57,6 +57,7 @@ export default async function ArticleSpokePage({
         "@type": "Article",
         headline: article.title,
         description: article.quickAnswer || article.summary,
+        image: article.heroImage.startsWith("http") ? article.heroImage : `${BASE_URL}${article.heroImage}`,
         ...(article.publishedAt ? { datePublished: article.publishedAt } : {}),
         ...(article.updatedAt ? { dateModified: article.updatedAt } : {}),
         mainEntityOfPage: pageUrl,
@@ -69,6 +70,7 @@ export default async function ArticleSpokePage({
           "@type": "RealEstateAgent",
           name: "Davis & Garnett Commercial / Residential Advisors — Align Right Realty Carrollwood",
           url: BASE_URL,
+          sameAs: TEAM_SAME_AS,
         },
       },
       {

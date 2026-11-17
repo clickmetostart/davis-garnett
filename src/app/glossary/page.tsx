@@ -7,10 +7,11 @@ import { LIVE_GLOSSARY_TERMS } from "@/data/glossary";
 import { buildPageMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Florida Real Estate Glossary | CDD, HOA, 1031, BPO & Wind Mitigation",
+  title: "Florida Real Estate Glossary | CDD, HOA & 1031 Terms",
   description:
-    "Plain-English explanations of Florida and Tampa Bay real estate terms including CDD fees, 1031 exchanges, Broker Price Opinions, 4-Point inspections, and Homestead Portability.",
+    "Plain-English explanations of Florida real estate terms including CDD fees, 1031 exchanges, BPOs, 4-Point inspections, and Homestead Portability.",
   path: "/glossary",
+  image: "/placeholders/dg-brand-placeholder.webp",
 });
 
 const CATEGORY_ORDER = [

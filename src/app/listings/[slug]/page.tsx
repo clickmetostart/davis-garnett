@@ -239,7 +239,7 @@ export default function ListingDetailPage() {
     "@type": schemaType,
     name: `${listing.title} — ${listing.subtitle || listing.propertyType}`,
     description: listing.description || listing.propertyDescription,
-    url: `https://davisgarnett.com/listings/${listing.slug}`,
+    url: `https://www.davisgarnettsells.com/listings/${listing.slug}`,
     image: galleryPhotos,
     address: {
       "@type": "PostalAddress",

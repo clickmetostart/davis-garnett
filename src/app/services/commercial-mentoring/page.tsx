@@ -21,9 +21,9 @@ import {
 } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Commercial Real Estate Mentoring & Deal Coaching | Davis & Garnett",
+  title: "Commercial Real Estate Mentoring & Coaching | Davis & Garnett",
   description:
-    "Hands-on commercial real estate mentoring in Tampa Bay with Mark Davis and Rachael Garnett. Learn NNN leases, cap rate math, SBA 504 owner-user buys, zoning checks, and 1031 swaps.",
+    "Hands-on commercial real estate mentoring in Tampa Bay with Mark Davis and Rachael Garnett covering NNN leases, cap rates, SBA 504, and 1031 swaps.",
   path: "/services/commercial-mentoring",
   image: "/city-photos/brandon-riverview-commercial.jpg",
 });

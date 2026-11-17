@@ -68,13 +68,12 @@ const activeSignatureProperties = [
 ];
 
 export default function PropertiesStickyStack() {
-  const CARD_TOP = "12svh";
-  const CARD_H = "76svh";
+  const CARD_H = "66svh";
 
   return (
-    <div className="w-full relative">
+    <div className="w-[92%] md:w-[90%] max-w-[1680px] mx-auto relative">
       {/* ── Mobile header (hidden on desktop) ── */}
-      <div className="block md:hidden px-6 pt-16 pb-8 text-center">
+      <div className="block md:hidden px-2 pt-14 pb-6 text-center">
         <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
           Featured Listings · 2026
         </span>
@@ -87,32 +86,35 @@ export default function PropertiesStickyStack() {
         </p>
       </div>
 
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col md:flex-row gap-6 lg:gap-10">
         {/* ══ COLUMN 1 — Sticky editorial panel (desktop only) ══ */}
-        <div className="hidden md:block md:w-[38%] shrink-0 relative">
-          <div className="sticky top-0 h-screen flex flex-col justify-center pl-12 pr-8 xl:pl-20 xl:pr-12">
-            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-5">
+        <div className="hidden md:block md:w-[36%] shrink-0 relative">
+          <div className="sticky top-0 h-screen flex flex-col justify-center pr-2 lg:pr-6">
+            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
               Mark &amp; Rachael · Active Listings
             </span>
 
-            <h2 className="font-aiveritas text-5xl xl:text-6xl text-[#111111] leading-tight mb-6">
+            <h2 className="font-aiveritas text-4xl lg:text-5xl xl:text-6xl text-[#111111] leading-tight mb-5">
               Featured<br />Listings
             </h2>
 
-            <div className="w-10 h-[2px] bg-[#C8A951] mb-6" />
+            <div className="w-10 h-[2px] bg-[#C8A951] mb-5" />
 
-            <p className="text-[#111111]/75 font-light leading-relaxed max-w-md mb-8 text-base md:text-[17px] lg:text-[18px]">
+            <p className="text-[#111111]/75 font-light leading-relaxed max-w-md mb-7 text-sm lg:text-base xl:text-[17px]">
               Helping buyers, sellers, and business owners across residential homes, commercial properties, land, and waterfront and unique properties in Tampa Bay and Central Florida.
             </p>
 
-            <div className="flex flex-col gap-2.5 mb-10">
-              {activeSignatureProperties.map((prop) => (
+            <div className="flex flex-col gap-2.5 mb-8">
+              {activeSignatureProperties.map((prop, idx) => (
                 <Link
                   key={prop.slug}
                   href={`/listings/${prop.slug}`}
-                  className="flex items-center justify-between text-[#111111] text-xs font-bold uppercase tracking-[0.15em] border-b border-[#111111]/15 pb-2.5 hover:text-[#9A7D3A] hover:border-[#C8A951] transition-colors group"
+                  className="flex items-center justify-between text-[#111111] text-xs font-bold uppercase tracking-[0.14em] border-b border-[#111111]/15 pb-2.5 hover:text-[#9A7D3A] hover:border-[#C8A951] transition-colors group"
                 >
-                  <span className="truncate pr-2">{prop.title}</span>
+                  <span className="truncate pr-2 flex items-center gap-2">
+                    <span className="text-[10px] font-bold text-[#9A7D3A]">0{idx + 1}</span>
+                    <span className="truncate">{prop.title}</span>
+                  </span>
                   <span className="flex items-center gap-1.5 text-[#9A7D3A] shrink-0">
                     {prop.price}
                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
@@ -121,18 +123,30 @@ export default function PropertiesStickyStack() {
               ))}
             </div>
 
-            {/* Portfolio Stats Strip */}
-            <div className="flex gap-8 border-t border-[#111111]/10 pt-6">
+            {/* Portfolio Credentials Strip (Matched to Portfolio Hero) */}
+            <div className="grid grid-cols-2 gap-4 border-t border-[#111111]/10 pt-6">
               <div>
-                <span className="font-aiveritas text-2xl text-[#9A7D3A]">$9.29M+</span>
-                <span className="block text-[10px] uppercase tracking-widest text-[#111111]/45 font-bold mt-1">
-                  Active Inventory
+                <span className="font-aiveritas text-xl text-[#9A7D3A] block">CRE &amp; RES</span>
+                <span className="block text-[10px] uppercase tracking-widest text-[#111111]/60 font-bold mt-0.5">
+                  Dual-Certified Agents
                 </span>
               </div>
               <div>
-                <span className="font-aiveritas text-2xl text-[#9A7D3A]">Dual-Practice</span>
-                <span className="block text-[10px] uppercase tracking-widest text-[#111111]/45 font-bold mt-1">
-                  Commercial &amp; Residential
+                <span className="font-aiveritas text-xl text-[#9A7D3A] block">Tampa Bay</span>
+                <span className="block text-[10px] uppercase tracking-widest text-[#111111]/60 font-bold mt-0.5">
+                  &amp; Central Florida
+                </span>
+              </div>
+              <div>
+                <span className="font-aiveritas text-xl text-[#9A7D3A] block">FL Licensed</span>
+                <span className="block text-[10px] uppercase tracking-widest text-[#111111]/60 font-bold mt-0.5">
+                  #3209459 &amp; #3378601
+                </span>
+              </div>
+              <div>
+                <span className="font-aiveritas text-xl text-[#9A7D3A] block">Align Right</span>
+                <span className="block text-[10px] uppercase tracking-widest text-[#111111]/60 font-bold mt-0.5">
+                  Carrollwood • #BK3401606
                 </span>
               </div>
             </div>
@@ -140,32 +154,36 @@ export default function PropertiesStickyStack() {
         </div>
 
         {/* ══ COLUMN 2 — Scrolling sticky card stack ══ */}
-        <div className="w-full md:w-[62%] px-4 sm:px-6 md:px-8 py-8 md:py-16">
-          <div className="h-4 md:hidden" />
+        <div className="w-full md:w-[64%] py-6 md:py-12">
+          <div className="h-2 md:hidden" />
 
-          <div className="flex flex-col gap-[16svh] pb-[12svh]">
+          <div className="flex flex-col gap-[10svh] pb-[8svh]">
             {activeSignatureProperties.map((prop, i) => {
               const zIndex = 10 + i;
 
               return (
                 <div
                   key={prop.id}
-                  className="sticky rounded-2xl overflow-hidden shadow-xl border border-black/10"
-                  style={{ top: CARD_TOP, height: CARD_H, zIndex }}
+                  className="sticky rounded-2xl overflow-hidden shadow-xl border border-black/15 min-h-[440px] max-h-[640px]"
+                  style={{ top: `calc(13svh + ${i * 10}px)`, height: CARD_H, zIndex }}
                 >
                   <Image
                     src={prop.img}
                     alt={prop.title}
                     fill
-                    sizes="(max-width: 768px) 100vw, 62vw"
+                    sizes="(max-width: 768px) 92vw, 58vw"
                     priority={i === 0}
                     className="object-cover"
                     unoptimized
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/15" />
 
-                  <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12">
-                    <div className="flex flex-wrap items-center gap-2.5 mb-4">
+                  <div className="absolute top-5 right-5 md:top-7 md:right-7 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-[#C8A951]/40 text-[10px] font-bold uppercase tracking-[0.2em] text-[#C8A951] z-10">
+                    0{i + 1} / 0{activeSignatureProperties.length}
+                  </div>
+
+                  <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-9">
+                    <div className="flex flex-wrap items-center gap-2 mb-3">
                       <span className="bg-[#C8A951] text-[#111111] text-[10px] uppercase tracking-[0.2em] font-bold py-1 px-3 rounded-sm">
                         {prop.badge}
                       </span>
@@ -177,17 +195,17 @@ export default function PropertiesStickyStack() {
                       </span>
                     </div>
 
-                    <h3 className="font-aiveritas text-3xl md:text-5xl text-white mb-2">
+                    <h3 className="font-aiveritas text-2xl md:text-4xl text-white mb-1.5 leading-snug">
                       {prop.title}
                     </h3>
-                    <p className="text-white/85 font-light text-base md:text-[17px] lg:text-[18px] mb-3 max-w-xl leading-relaxed">
+                    <p className="text-white/85 font-light text-sm md:text-base mb-2.5 max-w-xl leading-relaxed">
                       {prop.subtitle}
                     </p>
-                    <p className="text-white/70 text-xs md:text-sm flex items-center gap-1.5 mb-4">
+                    <p className="text-white/75 text-xs md:text-sm flex items-center gap-1.5 mb-4">
                       <MapPin className="w-3.5 h-3.5 text-[#C8A951]" /> {prop.location}
                     </p>
 
-                    <div className="flex flex-wrap items-center justify-between gap-4 border-t border-white/20 pt-5">
+                    <div className="flex flex-wrap items-center justify-between gap-4 border-t border-white/20 pt-4">
                       <div>
                         <p className="text-white/75 font-medium text-xs md:text-sm tracking-wide mb-1">
                           {prop.specs}
@@ -199,7 +217,7 @@ export default function PropertiesStickyStack() {
 
                       <Link
                         href={`/listings/${prop.slug}`}
-                        className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#C8A951] text-[#111111] text-xs font-bold uppercase tracking-[0.2em] rounded-lg hover:bg-white transition-colors group"
+                        className="inline-flex items-center gap-2 px-5 py-3 bg-[#C8A951] text-[#111111] text-xs font-bold uppercase tracking-[0.2em] rounded-lg hover:bg-white transition-colors group"
                       >
                         View Property Details
                         <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
@@ -212,8 +230,8 @@ export default function PropertiesStickyStack() {
 
             {/* ── Closing Portfolio Hub Card ── */}
             <div
-              className="sticky rounded-2xl overflow-hidden shadow-xl bg-[#111111] flex flex-col items-center justify-center p-8 md:p-12 border border-[#C8A951]/25"
-              style={{ top: CARD_TOP, height: CARD_H, zIndex: 20 }}
+              className="sticky rounded-2xl overflow-hidden shadow-xl bg-[#111111] flex flex-col items-center justify-center p-7 md:p-10 border border-[#C8A951]/25 min-h-[440px] max-h-[640px]"
+              style={{ top: `calc(13svh + ${activeSignatureProperties.length * 10}px)`, height: CARD_H, zIndex: 20 }}
             >
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,#1a1810_0%,#0c0b09_70%)]" />
               <div className="relative z-10 flex flex-col items-center w-full max-w-lg gap-4 text-center">

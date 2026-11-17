@@ -26,8 +26,8 @@ interface TourSliderSectionProps {
 export default function TourSliderSection({
   id = "tours",
   sectionEyebrow = "#GuidedByDG • Curated Day & Neighborhood Itineraries by D&G",
-  sectionTitle = "Tampa Bay Destinations, Developments & Neighborhood Tours",
-  sectionSubtitle = "Plan your morning or afternoon with Mark Davis & Rachael Garnett: grab morning coffee, drive hidden Intracoastal pockets, tour flagship developments and condos, stop for lunch, browse shops and parks, and catch sunset.",
+  sectionTitle = "Guided Neighborhood & Commercial Tours",
+  sectionSubtitle = "Plan your morning or afternoon with Mark Davis & Rachael Garnett: drive residential neighborhoods and Intracoastal pockets, scout commercial and retail corridors, tour new developments, and map coffee and dining stops.",
   bgClass = "bg-white",
 }: TourSliderSectionProps) {
   const sliderRef = useRef<HTMLDivElement>(null);

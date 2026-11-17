@@ -1,9 +1,9 @@
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Strategic Partners & Vendor Network | Davis & Garnett Tampa Bay",
+  title: "Strategic Partners & Vendor Network | Davis & Garnett",
   description:
-    "Connect with vetted Florida contractors, roofers, marine seawall engineers, environmental inspectors, septic specialists, lenders, and title attorneys through Davis & Garnett.",
+    "Connect with vetted Florida roofers, contractors, seawall pros, environmental inspectors, septic experts, lenders, and title attorneys.",
   path: "/about/strategic-partners",
   image: "/com_office_tower_1787632874122.png",
 });

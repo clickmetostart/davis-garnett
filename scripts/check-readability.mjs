@@ -68,6 +68,7 @@ const files = [
   "src/data/glossary.ts",
   "src/data/topicHubs.ts",
   "src/data/developments.ts",
+  "src/data/tours.ts",
 ];
 
 const aboveNine = [];

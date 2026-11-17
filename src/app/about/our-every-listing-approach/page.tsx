@@ -28,6 +28,7 @@ import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
 import FaviconHeroBackground from "@/components/FaviconHeroBackground";
 import ConsultationModal from "@/components/ConsultationModal";
+import { smoothScrollToId } from "@/lib/smoothScroll";
 
 export default function EveryListingApproachPage() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -162,27 +163,61 @@ export default function EveryListingApproachPage() {
               <strong className="text-[#111111] font-semibold">thorough research, great photography, and both Mark and Rachael working hands-on from our first meeting to the closing table.</strong>
             </p>
 
-            {/* Quick Jump Section Buttons (Knowledge Hub Style + Smooth Scroll) */}
-            <div className="flex flex-wrap items-center justify-center gap-3">
-              {[
-                { label: "Our Why", href: "#our-why", icon: Sparkles },
-                { label: "Every Property Type", href: "#property-types", icon: Building2 },
-                { label: "12-Point Checklist", href: "#full-checklist", icon: CheckCircle2 },
-                { label: "4-Step Process", href: "#our-process", icon: Layers },
-              ].map((pill) => {
-                const Icon = pill.icon;
-                return (
-                  <a
-                    key={pill.label}
-                    href={pill.href}
-                    className="group inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white hover:bg-[#111111] text-[#111111] hover:text-[#C8A951] border border-[#111111]/15 hover:border-[#111111] text-xs font-bold uppercase tracking-widest transition-colors shadow-xs"
-                  >
-                    <Icon className="w-3.5 h-3.5 text-[#9A7D3A] group-hover:text-[#C8A951]" />
-                    {pill.label}
-                  </a>
-                );
-              })}
+            {/* Restrained Dual Same-Page Hero CTAs */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <button
+                type="button"
+                onClick={() => smoothScrollToId("approach-sections")}
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-[#111111] hover:bg-[#C8A951] text-white hover:text-[#111111] text-xs font-bold uppercase tracking-[0.18em] transition-colors w-full sm:w-auto"
+              >
+                <CheckCircle2 className="w-4 h-4 shrink-0" />
+                Explore Our Approach
+              </button>
+              <button
+                type="button"
+                onClick={() => smoothScrollToId("listing-cta")}
+                className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-white hover:bg-[#111111] text-[#111111] hover:text-[#C8A951] border border-[#111111]/20 text-xs font-bold uppercase tracking-[0.18em] transition-colors w-full sm:w-auto"
+              >
+                <Phone className="w-4 h-4 text-[#9A7D3A] group-hover:text-[#C8A951] transition-colors shrink-0" />
+                Contact &amp; Proposal
+              </button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Clean Below-Hero Section Jump Grid (Eased Smooth Glide) */}
+      <section id="approach-sections" className="py-8 px-6 md:px-12 bg-white border-b border-[#111111]/10 scroll-mt-24">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+            {[
+              { label: "Our Why", sub: "Philosophy & Commitment", target: "our-why", icon: Sparkles },
+              { label: "Every Property Type", sub: "Homes, CRE & Land", target: "property-types", icon: Building2 },
+              { label: "12-Point Checklist", sub: "Standard on Every Listing", target: "full-checklist", icon: CheckCircle2 },
+              { label: "4-Step Process", sub: "Day One to Closing", target: "our-process", icon: Layers },
+            ].map((pill) => {
+              const Icon = pill.icon;
+              return (
+                <button
+                  key={pill.label}
+                  type="button"
+                  onClick={() => smoothScrollToId(pill.target)}
+                  className="group text-left p-3.5 rounded-xl bg-[#f5f3ef] hover:bg-[#111111] border border-[#111111]/10 hover:border-[#C8A951] transition-all flex items-start gap-3 shadow-xs"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-white group-hover:bg-[#C8A951]/20 text-[#9A7D3A] group-hover:text-[#C8A951] flex items-center justify-center shrink-0 mt-0.5 transition-colors">
+                    <Icon className="w-4 h-4" />
+                  </div>
+                  <div className="min-w-0">
+                    <span className="block text-xs font-bold text-[#111111] group-hover:text-white leading-snug truncate transition-colors">
+                      {pill.label}
+                    </span>
+                    <span className="block text-[11px] text-[#111111]/60 group-hover:text-white/70 truncate transition-colors">
+                      {pill.sub}
+                    </span>
+                  </div>
+                </button>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -271,7 +306,7 @@ export default function EveryListingApproachPage() {
                   <div className="w-12 h-12 rounded-xl bg-white border border-[#111111]/10 flex items-center justify-center mb-6 shadow-xs">
                     {item.icon}
                   </div>
-                  <h3 className="font-aiveritas text-xl xl:text-[22px] text-[#111111] mb-3 leading-snug whitespace-nowrap">
+                  <h3 className="font-aiveritas text-xl xl:text-[22px] text-[#111111] mb-3 leading-snug">
                     {item.title}
                   </h3>
                   <p className="text-[#111111]/75 text-base font-light leading-relaxed">
@@ -373,7 +408,7 @@ export default function EveryListingApproachPage() {
                 <span className="font-aiveritas text-5xl text-[#C8A951]/40 block mb-4">
                   {st.phase}
                 </span>
-                <h3 className="font-aiveritas text-xl xl:text-[22px] text-[#111111] mb-3 leading-snug whitespace-nowrap">
+                <h3 className="font-aiveritas text-xl xl:text-[22px] text-[#111111] mb-3 leading-snug">
                   {st.name}
                 </h3>
                 <p className="text-base text-[#111111]/75 font-light leading-relaxed">
@@ -386,7 +421,7 @@ export default function EveryListingApproachPage() {
       </section>
 
       {/* ── CONSULTATION CTA ── */}
-      <section className="py-24 px-6 md:px-12 bg-[#111111] text-white relative overflow-hidden">
+      <section id="listing-cta" className="py-24 px-6 md:px-12 bg-[#111111] text-white relative overflow-hidden scroll-mt-24">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,#1a1810_0%,#0c0b09_80%)]" />
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <span className="text-[#C8A951] text-xs uppercase tracking-[0.3em] font-bold block mb-4">

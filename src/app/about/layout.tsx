@@ -1,9 +1,9 @@
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "About Davis & Garnett | Tampa Bay Commercial & Residential Realtors",
+  title: "About Davis & Garnett | Tampa Bay Real Estate Advisors",
   description:
-    "Meet Mark Davis and Rachael Garnett—Certified Commercial and Residential Agents affiliated with Align Right Realty Carrollwood—serving Greater Tampa Bay clients from day one.",
+    "Meet Mark Davis and Rachael Garnett, Commercial and Residential Advisors at Align Right Realty Carrollwood serving buyers and sellers across Tampa Bay.",
   path: "/about",
   image: "/davis-garnett-real-estate-advisors-sitting-down-together.png",
 });

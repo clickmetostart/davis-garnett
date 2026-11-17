@@ -36,9 +36,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!term) return {};
 
   return buildPageMetadata({
-    title: `${term.term} Explained | Florida Real Estate Glossary`,
+    title: `${term.term} Explained | FL Real Estate Glossary`,
     description: term.quickAnswer,
     path: `/glossary/${term.slug}`,
+    image: "/placeholders/dg-brand-placeholder.webp",
     type: "article",
   });
 }
@@ -90,6 +91,8 @@ export default async function GlossaryTermPage({ params }: PageProps) {
         "@type": "Article",
         headline: `${term.term}: What Tampa Bay Buyers, Sellers & Investors Need to Know`,
         description: term.quickAnswer,
+        image: `${SITE_URL}/placeholders/dg-brand-placeholder.webp`,
+        mainEntityOfPage: `${SITE_URL}/glossary/${term.slug}`,
         datePublished: term.publishedAt,
         dateModified: term.updatedAt,
         author: [

@@ -23,7 +23,7 @@ import {
   getRelatedGuidesForTags,
   getRelatedListingsForTags,
 } from "@/lib/spiderweb";
-import { SITE_URL } from "@/lib/seo";
+import { SITE_URL, TEAM_SAME_AS } from "@/lib/seo";
 
 export default function TopicHubTemplate({ hub }: { hub: TopicHubConfig }) {
   const listings = getRelatedListingsForTags(hub.tags, undefined, 4);
@@ -31,6 +31,7 @@ export default function TopicHubTemplate({ hub }: { hub: TopicHubConfig }) {
   const developments = getRelatedDevelopmentsForTags(hub.tags, [], undefined, 3);
   const areas = getRelatedAreasForTags(hub.tags, [], undefined, 3);
   const glossaryTerms = getRelatedGlossaryForTags(hub.tags, [], undefined, 5);
+  const heroImage = areas[0]?.heroImage || guides[0]?.heroImage || "/davis-garnett-real-estate-advisors-cover-image-2.jpg";
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -40,12 +41,14 @@ export default function TopicHubTemplate({ hub }: { hub: TopicHubConfig }) {
         name: hub.title,
         description: hub.quickAnswer,
         url: `${SITE_URL}/hub/${hub.slug}`,
+        image: heroImage.startsWith("http") ? heroImage : `${SITE_URL}${heroImage}`,
         datePublished: hub.publishedAt,
         dateModified: hub.updatedAt,
         publisher: {
           "@type": "RealEstateAgent",
           name: "Davis & Garnett — Align Right Realty Carrollwood",
           url: SITE_URL,
+          sameAs: TEAM_SAME_AS,
         },
       },
       {

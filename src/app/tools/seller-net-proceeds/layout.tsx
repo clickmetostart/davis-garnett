@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { buildPageMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Florida Seller Net Proceeds Calculator | Hillsborough & Pinellas Closing Costs",
+  title: "Florida Seller Net Proceeds Calculator | Davis & Garnett",
   description:
-    "Estimate Florida deed documentary stamp tax ($0.70 per $100), title insurance, mortgage payoff, tax proration, and net cash proceeds for Tampa Bay home sellers.",
+    "Estimate Florida deed documentary stamp tax ($0.70 per $100), title insurance, mortgage payoff, tax proration, and net proceeds for Tampa Bay sellers.",
   path: "/tools/seller-net-proceeds",
 });
 

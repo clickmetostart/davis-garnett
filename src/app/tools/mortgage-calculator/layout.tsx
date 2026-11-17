@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { buildPageMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Florida Mortgage, CDD, Tax & Insurance Calculator | Davis & Garnett",
+  title: "Florida Mortgage, CDD & Tax Calculator | Davis & Garnett",
   description:
-    "Calculate your true Tampa Bay monthly mortgage payment including Principal, Interest, Florida Property Taxes, Homeowners Insurance, Flood, HOA dues, and CDD fees.",
+    "Estimate your monthly Tampa Bay mortgage payment including principal, interest, Florida property taxes, homeowners and flood insurance, HOA, and CDD fees.",
   path: "/tools/mortgage-calculator",
 });
 

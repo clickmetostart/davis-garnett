@@ -2,9 +2,9 @@ import HomePageClient from "@/components/HomePageClient";
 import { buildPageMetadata, OFFICE_GBP_URL, SITE_URL, TEAM_SAME_AS } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Davis & Garnett | Tampa Bay Residential & Commercial Real Estate Advisors",
+  title: "Davis & Garnett | Tampa Bay Real Estate Advisors",
   description:
-    "Work directly with Mark Davis and Rachael Garnett at Align Right Realty Carrollwood for residential homes, waterfront estates, 55+ communities, land, and commercial real estate across Tampa Bay.",
+    "Work directly with Mark Davis and Rachael Garnett for Tampa Bay homes, waterfront estates, 55+ communities, land, and commercial real estate.",
   path: "/",
   image: "/davis-garnett-real-estate-advisors-cover-image-2.jpg",
 });

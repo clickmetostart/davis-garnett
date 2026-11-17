@@ -420,7 +420,7 @@ export default function AddListingWizard() {
           <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
             <label className="block text-sm font-semibold text-gray-700 mb-2">Custom Public URL Slug</label>
             <div className="flex items-center">
-              <span className="bg-gray-200 text-gray-500 px-4 py-3 rounded-l-lg border border-gray-300 border-r-0 font-mono text-sm">davisgarnett.com/listings/</span>
+              <span className="bg-gray-200 text-gray-500 px-4 py-3 rounded-l-lg border border-gray-300 border-r-0 font-mono text-sm">davisgarnettsells.com/listings/</span>
               <input type="text" className="flex-1 p-3 rounded-r-lg border border-gray-300 outline-none font-mono text-sm focus:ring-2 focus:ring-black/5" placeholder="e.g. 123-main-st" value={formData.slug || ''} onChange={e => updateField('slug', e.target.value)} />
             </div>
             <p className="text-xs text-gray-500 mt-2">This dedicated page will be SEO-optimized and feature full property media.</p>
@@ -501,7 +501,7 @@ export default function AddListingWizard() {
               <Globe className="w-5 h-5 text-blue-500" />
               <div>
                 <span className="block text-xs font-bold text-blue-800 uppercase tracking-wider mb-0.5">Public URL Ready</span>
-                <span className="text-sm text-blue-900 font-mono">davisgarnett.com/listings/{formData.slug || 'untitled'}</span>
+                <span className="text-sm text-blue-900 font-mono">davisgarnettsells.com/listings/{formData.slug || 'untitled'}</span>
               </div>
             </div>
             <button className="text-sm font-bold text-blue-700 bg-white px-4 py-2 rounded-lg border border-blue-200 hover:bg-blue-100 transition-colors">

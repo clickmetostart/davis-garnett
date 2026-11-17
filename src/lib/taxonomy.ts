@@ -37,6 +37,7 @@ export type CorridorTag =
   | "brandon-i75"
   | "st-petersburg-waterfront"
   | "clearwater-beaches"
+  | "sarasota-bradenton-lakewood-ranch"
   | "central-florida-corridor";
 
 export interface TaxonomyTags {
@@ -148,27 +149,36 @@ export function inferTaxonomyTags(input: {
   if (/\b(fort mccoy|ocala|marion)\b/.test(hay)) {
     addUnique(county, "marion");
   }
+  if (/\b(bradenton|parrish|lakewood ranch|manatee)\b/.test(hay)) {
+    addUnique(county, "manatee");
+  }
+  if (/\b(sarasota|lakewood ranch|the quay|siesta|venice|wellen park|north port|nokomis)\b/.test(hay)) {
+    addUnique(county, "sarasota");
+  }
 
   // Corridors
-  if (/\b(downtown|channel|bayshore|hyde park|palma ceia|davis islands|harbour island|westshore|soho)\b/.test(hay)) {
+  if (/\b(downtown|channel|bayshore|hyde park|palma ceia|davis islands|harbour island|westshore|rocky point|soho)\b/.test(hay)) {
     addUnique(corridor, "downtown-bayshore");
   }
   if (/\b(carrollwood|northdale|north tampa|lake magdalene|lutz|odessa)\b/.test(hay)) {
     addUnique(corridor, "north-tampa-carrollwood");
   }
-  if (/\b(wesley chapel|new tampa|epperson|mirada|k-bar|land o'?\s*lakes)\b/.test(hay)) {
+  if (/\b(wesley chapel|new tampa|epperson|mirada|k-bar|land o'?\s*lakes|trinity|starkey)\b/.test(hay)) {
     addUnique(corridor, "wesley-chapel-new-tampa");
   }
-  if (/\b(brandon|riverview|valrico|plant city|apollo beach|sun city|wimauma)\b/.test(hay)) {
+  if (/\b(brandon|riverview|valrico|plant city|apollo beach|ruskin|sun city|wimauma)\b/.test(hay)) {
     addUnique(corridor, "brandon-i75");
   }
-  if (/\b(st\.?\s*petersburg|bahama shores|old northeast|snell isle|pinellas point)\b/.test(hay)) {
+  if (/\b(st\.?\s*petersburg|bahama shores|old northeast|snell isle|pinellas point|tierra verde|pass-a-grille)\b/.test(hay)) {
     addUnique(corridor, "st-petersburg-waterfront");
   }
-  if (/\b(clearwater|dunedin|tarpon|safety harbor|beaches)\b/.test(hay)) {
+  if (/\b(clearwater|dunedin|tarpon|palm harbor|safety harbor|belleair|beaches)\b/.test(hay)) {
     addUnique(corridor, "clearwater-beaches");
   }
-  if (/\b(frostproof|fort mccoy|polk|marion|central florida)\b/.test(hay)) {
+  if (/\b(sarasota|bradenton|lakewood ranch|parrish|waterside|azario|quay|venice|wellen park|north port|nokomis)\b/.test(hay)) {
+    addUnique(corridor, "sarasota-bradenton-lakewood-ranch");
+  }
+  if (/\b(frostproof|fort mccoy|polk|marion|lakeland|central florida)\b/.test(hay)) {
     addUnique(corridor, "central-florida-corridor");
   }
 

@@ -34,9 +34,9 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.davisgarnettsells.com"),
-  title: "Davis & Garnett | Tampa Bay Residential & Commercial Real Estate Advisors",
+  title: "Davis & Garnett | Tampa Bay Real Estate Advisors",
   description:
-    "Mark Davis and Rachael Garnett are Commercial and Residential Real Estate Advisors with Align Right Realty Carrollwood, serving Tampa, St. Petersburg, Carrollwood, Wesley Chapel, and Clearwater.",
+    "Mark Davis and Rachael Garnett are Commercial and Residential Advisors at Align Right Realty Carrollwood serving Tampa, St. Pete, and Carrollwood.",
   openGraph: {
     siteName: "Davis & Garnett Real Estate Advisors",
     locale: "en_US",

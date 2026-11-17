@@ -50,7 +50,21 @@ export function getTaxonomyForDevelopment(dev: Development): TagSignals {
       audience: dev.audience as AudienceTag[] | undefined,
       county: dev.county as CountyTag[] | undefined,
       corridor: (dev.corridorTags as CorridorTag[] | undefined) ?? [
-        dev.corridor === "downtown-bayshore" ? "downtown-bayshore" : "wesley-chapel-new-tampa",
+        dev.corridor === "downtown-bayshore" || dev.corridor === "westshore-marina-rocky-point"
+          ? "downtown-bayshore"
+          : dev.corridor === "st-petersburg-pinellas"
+            ? "st-petersburg-waterfront"
+            : dev.corridor === "clearwater-north-pinellas" || dev.corridor === "west-pasco-palm-harbor"
+              ? "clearwater-beaches"
+              : dev.corridor === "north-tampa-carrollwood"
+                ? "north-tampa-carrollwood"
+                : dev.corridor === "east-hillsborough-central-fl" || dev.corridor === "south-shore-hillsborough"
+                  ? "brandon-i75"
+                  : dev.corridor === "lakeland-polk-central-fl"
+                    ? "central-florida-corridor"
+                    : dev.corridor === "sarasota-manatee" || dev.corridor === "venice-wellen-park"
+                      ? "sarasota-bradenton-lakewood-ranch"
+                      : "wesley-chapel-new-tampa",
       ],
     },
   });

@@ -91,7 +91,25 @@ console.log(`Indexed content blocks audited: ${blocks.length} | Missing dates: $
 if (thinSlugs.length > 0) {
   console.log('Short blocks to expand next:', thinSlugs.join(', '));
 }
+
+// 5. Image asset existence audit across data files
+const toursRaw = fs.existsSync('src/data/tours.ts') ? fs.readFileSync('src/data/tours.ts', 'utf8') : '';
+const listingsRaw = fs.existsSync('src/data/listings.json') ? fs.readFileSync('src/data/listings.json', 'utf8') : '';
+const missingImages = new Set();
+for (const src of [khRaw, devRaw, toursRaw, listingsRaw]) {
+  for (const m of src.matchAll(/["'](\/(?:new-images|city-photos|developments|images|placeholders|listings)\/[^"']+\.(?:jpg|jpeg|png|webp|svg))["']/gi)) {
+    const assetPath = `public${m[1]}`;
+    if (!fs.existsSync(assetPath)) missingImages.add(m[1]);
+  }
+}
+if (missingImages.size > 0) {
+  console.warn(`[WARN] Missing public/ image assets (${missingImages.size}): ${Array.from(missingImages).join(', ')}`);
+  issues += missingImages.size;
+}
+
 if (issues === 0) {
-  console.log('SEO metadata & placeholder audit: PASS');
+  console.log('SEO metadata, image asset & placeholder audit: PASS');
+} else {
+  process.exitCode = 1;
 }
 

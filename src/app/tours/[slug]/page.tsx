@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import TourDetailClient from "./TourDetailClient";
 import { getGuidedTourBySlug, LIVE_GUIDED_TOURS, buildGoogleMapsRouteUrl } from "@/data/tours";
 import { AREAS, ALL_GUIDES_AND_QUESTIONS } from "@/data/knowledgeHub";
-import { buildPageMetadata, SITE_URL } from "@/lib/seo";
+import { buildPageMetadata, SITE_URL, TEAM_SAME_AS } from "@/lib/seo";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -50,6 +50,7 @@ export default async function TourDetailPage({ params }: PageProps) {
         "@type": "Article",
         headline: `${tour.title} — Sequential Location & Tour Guide`,
         description: tour.quickAnswer,
+        image: tour.heroImage.startsWith("http") ? tour.heroImage : `${SITE_URL}${tour.heroImage}`,
         datePublished: tour.publishedAt,
         dateModified: tour.updatedAt,
         mainEntityOfPage: pageUrl,
@@ -71,6 +72,7 @@ export default async function TourDetailPage({ params }: PageProps) {
           "@type": "RealEstateAgent",
           name: "Davis & Garnett — Align Right Realty Carrollwood",
           url: SITE_URL,
+          sameAs: TEAM_SAME_AS,
         },
       },
       {

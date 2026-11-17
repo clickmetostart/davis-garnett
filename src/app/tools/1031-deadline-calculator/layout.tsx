@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { buildPageMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "IRS 1031 Exchange 45-Day & 180-Day Deadline Calculator | Davis & Garnett",
+  title: "1031 Exchange 45-Day & 180-Day Calculator | Davis & Garnett",
   description:
-    "Compute exact IRS Section 1031 Day 45 written identification and Day 180 closing deadlines for Tampa Bay investment and commercial real estate exchanges.",
+    "Calculate exact IRS Section 1031 Day 45 written identification and Day 180 closing deadlines for Tampa Bay investment and commercial exchanges.",
   path: "/tools/1031-deadline-calculator",
 });
 

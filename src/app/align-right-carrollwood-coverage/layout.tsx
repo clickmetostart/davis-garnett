@@ -3,7 +3,7 @@ import { buildPageMetadata } from "@/lib/seo";
 export const metadata = buildPageMetadata({
   title: "Tampa Bay & Carrollwood Real Estate Coverage | Davis & Garnett",
   description:
-    "Explore Greater Tampa Bay corridors covered by Mark Davis and Rachael Garnett—from St. Petersburg beaches and Downtown Tampa to Carrollwood, Wesley Chapel, and Central Florida acreage.",
+    "Explore Tampa Bay areas covered by Mark Davis and Rachael Garnett—St. Pete beaches, Downtown Tampa, Carrollwood, Wesley Chapel, and acreage.",
   path: "/align-right-carrollwood-coverage",
   image: "/city-photos/downtown-tampa-skyline.jpg",
 });

@@ -30,7 +30,7 @@ export async function generateMetadata({
     item.images?.main ||
     item.images?.gallery?.[0] ||
     item.images?.[0]?.url ||
-    undefined;
+    "/placeholders/dg-brand-placeholder.webp";
 
   return buildPageMetadata({
     title,

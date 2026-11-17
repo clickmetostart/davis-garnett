@@ -20,6 +20,7 @@ import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
 import FaviconHeroBackground from "@/components/FaviconHeroBackground";
 import EmailActionBox from "@/components/EmailActionBox";
+import { smoothScrollToId } from "@/lib/smoothScroll";
 
 export default function ContactPage() {
   const [firstName, setFirstName] = useState("");
@@ -78,30 +79,58 @@ export default function ContactPage() {
             Reach out directly to Mark Davis and Rachael Garnett. Whether you are buying or selling a home, a commercial building, or Florida land, you work with both of us from day one.
           </p>
 
-          {/* Quick Jump Section Buttons (Knowledge Hub Style + Smooth Scroll) */}
-          <div className="flex flex-wrap items-center justify-center gap-3">
+          {/* Restrained Dual Same-Page Hero CTAs */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button
+              type="button"
+              onClick={() => smoothScrollToId("contact-sections")}
+              className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-[#D4AF37] hover:bg-white text-[#111] text-xs font-bold uppercase tracking-[0.18em] transition-colors w-full sm:w-auto cursor-pointer"
+            >
+              <Phone className="w-4 h-4 text-[#111] transition-colors shrink-0" />
+              Reach Mark &amp; Rachael
+            </button>
+            <button
+              type="button"
+              onClick={() => smoothScrollToId("message-form")}
+              className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-white/10 hover:bg-[#D4AF37] text-white hover:text-[#111] border border-white/25 text-xs font-bold uppercase tracking-[0.18em] transition-colors w-full sm:w-auto cursor-pointer"
+            >
+              <Send className="w-4 h-4 text-[#D4AF37] group-hover:text-[#111] transition-colors shrink-0" />
+              Send a Direct Message
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Clean Below-Hero Section Jump Grid (Eased Smooth Glide) */}
+      <section id="contact-sections" className="py-8 px-6 md:px-8 bg-white border-b border-[#111]/10 scroll-mt-24">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
             {[
-              { label: "Contact Mark & Rachael", href: "#advisor-cards", icon: Phone },
-              { label: "Carrollwood Office", href: "#brokerage-office", icon: Building2 },
-              { label: "Send a Direct Message", href: "#message-form", icon: Send },
-              { label: "Office Map & Directions", href: "#office-map", icon: MapPin },
+              { label: "Contact Mark & Rachael", sub: "Direct Phones & Emails", target: "advisor-cards", icon: Phone },
+              { label: "Carrollwood Office", sub: "3903 Northdale Blvd", target: "brokerage-office", icon: Building2 },
+              { label: "Send a Direct Message", sub: "Quick Online Form", target: "message-form", icon: Send },
+              { label: "Office Map & Directions", sub: "Greater Tampa Bay Hub", target: "office-map", icon: MapPin },
             ].map((pill) => {
               const Icon = pill.icon;
               return (
-                <a
+                <button
                   key={pill.label}
-                  href={pill.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document
-                      .getElementById(pill.href.replace("#", ""))
-                      ?.scrollIntoView({ behavior: "smooth", block: "start" });
-                  }}
-                  className="group inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white/10 hover:bg-[#D4AF37] text-white hover:text-[#111] border border-white/15 text-xs font-bold uppercase tracking-widest transition-colors"
+                  type="button"
+                  onClick={() => smoothScrollToId(pill.target)}
+                  className="group text-left p-3.5 rounded-xl bg-[#f5f3ef] hover:bg-[#111] border border-[#111]/10 hover:border-[#D4AF37] transition-all flex items-start gap-3 shadow-xs cursor-pointer"
                 >
-                  <Icon className="w-3.5 h-3.5 text-[#D4AF37] group-hover:text-[#111]" />
-                  {pill.label}
-                </a>
+                  <div className="w-8 h-8 rounded-lg bg-white group-hover:bg-[#D4AF37]/20 text-[#9A7D3A] group-hover:text-[#D4AF37] flex items-center justify-center shrink-0 mt-0.5 transition-colors">
+                    <Icon className="w-4 h-4" />
+                  </div>
+                  <div className="min-w-0">
+                    <span className="block text-xs font-bold text-[#111] group-hover:text-white leading-snug truncate transition-colors">
+                      {pill.label}
+                    </span>
+                    <span className="block text-[11px] text-[#111]/60 group-hover:text-white/70 truncate transition-colors">
+                      {pill.sub}
+                    </span>
+                  </div>
+                </button>
               );
             })}
           </div>

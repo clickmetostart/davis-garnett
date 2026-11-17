@@ -44,28 +44,28 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     aliases: ["Community Development District", "CDD", "CDD fee", "CDD fees"],
     category: "Communities & Land",
     quickAnswer:
-      "A Community Development District (CDD) is a local taxing district used in Florida master-planned communities to fund roads, water lines, drainage, and clubhouses. Homeowners pay this assessment each year on their county property tax bill rather than in a monthly HOA check.",
+      "A Community Development District (CDD) is a local taxing district in newer Florida neighborhoods. It pays for new roads, water pipes, ponds, and pools. Homeowners pay this fee once a year inside their county property tax bill.",
     definition: [
-      "Under Florida Statutes Chapter 190, developers create a CDD to issue tax-exempt municipal bonds that build roads, stormwater ponds, utilities, and amenity centers before homes are sold.",
-      "The annual CDD bill has two parts: Debt Service (which pays down the construction bond over 20 to 30 years) and Operations & Maintenance, or O&M (which covers daily upkeep of pools, gates, and common landscaping).",
-      "Unlike monthly HOA dues, a CDD appears as a non-ad valorem line item on your November Hillsborough, Pasco, or Polk County tax notice and is automatically escrowed with most mortgages."
+      "Under Florida Statutes Chapter 190, builders use a CDD to sell tax-free bonds. Those bonds pay for roads, lakes, utility lines, and clubhouses before houses are built.",
+      "The yearly CDD fee has two parts. Debt Service pays down the road and pool bond over 20 to 30 years. Operations and Maintenance (O&M) pays for daily gate, grass, and pool upkeep.",
+      "Unlike monthly HOA checks, a CDD appears on your November county tax bill. Your mortgage lender splits it into your monthly escrow payment."
     ],
     tampaBayExample:
-      "In master-planned Wesley Chapel and New Tampa communities such as Epperson, Mirada, or K-Bar Ranch, a typical single-family CDD ranges from $1,600 to $3,400 per year depending on lot width. Some sellers paid off the Debt Service bond early, leaving only the annual O&M share.",
+      "In Wesley Chapel and New Tampa neighborhoods like Epperson, Mirada, or K-Bar Ranch, a typical home CDD runs $1,600 to $3,400 per year. Some sellers pay off the bond early so you only owe the yearly upkeep part.",
     howWeHandleIt:
-      "Before any buyer makes an offer in a newer Tampa Bay community, Mark & Rachael pull the exact county tax collector non-ad valorem roll so you see both the remaining bond payoff balance and the annual O&M amount side by side.",
+      "Before you make an offer, Mark and Rachael pull the exact county tax roll for that lot. You see the yearly CDD bill and any remaining bond payoff side by side.",
     faqs: [
       {
-        q: "Does a CDD ever go away?",
-        a: "The Debt Service bond portion ends once paid off (usually after 20 to 30 years), or when a homeowner pays the remaining principal balance at closing. The smaller Operations & Maintenance portion continues permanently to maintain amenities and stormwater systems."
+        q: "Does a CDD fee ever end?",
+        a: "Yes and no. The bond payment stops once paid off after 20 to 30 years, or at closing. The smaller upkeep fee stays active to run the gates, ponds, and pools."
       },
       {
-        q: "Can CDD fees increase over time?",
-        a: "The Debt Service bond payment is typically fixed, while the Operations & Maintenance budget is set each year by the CDD board and can adjust with insurance, staffing, and repair costs."
+        q: "Can CDD fees go up over time?",
+        a: "The bond payment is usually fixed each year. The upkeep budget can rise slightly as pool care, staff, and insurance costs change."
       },
       {
-        q: "Is a CDD tax-deductible?",
-        a: "Unlike regular ad valorem property taxes, the IRS generally does not treat CDD assessments for local benefits as deductible on personal returns. Always confirm specifics with a Florida CPA."
+        q: "Is a CDD fee tax-deductible?",
+        a: "The IRS does not treat most local CDD charges as deductible property taxes on personal returns. Check your own tax file with a Florida CPA."
       }
     ],
     propertyType: ["residential", "new-construction", "55-plus"],
@@ -90,24 +90,24 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     aliases: ["Homeowners Association", "HOA", "COA", "Condo Association"],
     category: "Communities & Land",
     quickAnswer:
-      "An HOA (Homeowners Association) or COA (Condominium Association) is a private neighborhood organization that manages shared spaces, enforces architectural standards, and collects regular dues. In Florida, HOAs follow Statute Chapter 720 while condos follow Chapter 718.",
+      "An HOA (Homeowners Association) or COA (Condominium Association) is a group that runs shared neighborhood spaces and sets house rules. In Florida, HOAs follow Statute Chapter 720, and condos follow Chapter 718.",
     definition: [
-      "HOAs exist to preserve neighborhood appearance, cover common-area landscaping or gates, and enforce deed restrictions covering paint colors, fencing, parking, and short-term rentals.",
-      "Condominium associations (COAs) carry broader responsibility, usually insuring the building exterior and roof while collecting reserves for major structural work.",
-      "Following Florida's post-Surfside condo safety legislation, buildings three stories and taller must fund structural integrity reserve studies (SIRS), which has reshaped monthly condo assessments across Tampa Bay."
+      "HOAs protect street appeal and pay for front gates, ponds, and parks. They enforce rules on paint colors, fences, parking, and rentals.",
+      "Condo groups (COAs) take on even more duty. They usually insure the outside walls and roof while saving cash for future big repairs.",
+      "Under Florida safety rules passed after Surfside, condos three stories and taller must fund Structural Integrity Reserve Studies (SIRS). That rule raised monthly condo dues across Tampa Bay."
     ],
     tampaBayExample:
-      "In Carrollwood and Northdale, classic single-family subdivisions often have voluntary civic groups or modest $200–$600 annual HOAs, whereas gated townhomes in Brandon or waterfront condos in St. Petersburg and Harbour Island carry higher monthly dues covering roofs, flood master policies, and seawalls.",
+      "In Carrollwood and Northdale, older single-family streets often have $200 to $600 yearly HOAs or none at all. Gated Brandon townhomes or St. Pete waterfront condos charge higher monthly dues to cover roofs, flood policies, and seawalls.",
     howWeHandleIt:
-      "We order the full association budget, reserve study, milestone inspection summary (for condos), and rental rules during your inspection window—and include a clean statutory review period in every contract.",
+      "We pull the full budget, reserve report, inspection summary, and rental rules right away. Every offer keeps a clean legal review window so you can walk away if rules or costs look wrong.",
     faqs: [
       {
-        q: "How many days do Florida buyers get to review condo or HOA documents?",
-        a: "Under Florida law, condo resale buyers receive three business days after receiving the governing documents to cancel for any reason, while most HOA contracts include specific disclosure deadlines."
+        q: "How many days do Florida buyers get to check condo or HOA rules?",
+        a: "Condo resale buyers get three business days after getting full condo rules to cancel for any reason. Most HOA sales use set disclosure timelines in the contract."
       },
       {
-        q: "Can a condo association pass a special assessment right before closing?",
-        a: "Yes. Under standard Florida FAR/BAR riders, sellers generally pay assessments levied before closing unless the contract splits future installment payments—something we negotiate explicitly upfront."
+        q: "Can a condo group add a special assessment right before closing?",
+        a: "Yes. Under standard Florida contracts, sellers usually pay charges passed before closing. We also spell out who pays pending payments up front."
       }
     ],
     propertyType: ["residential", "condo-townhome", "55-plus", "luxury"],
@@ -132,24 +132,24 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     aliases: ["1031 exchange", "1031", "like-kind exchange"],
     category: "Commercial & Investment",
     quickAnswer:
-      "A 1031 exchange lets real estate investors defer federal capital gains taxes by selling an investment or business property and reinvesting all proceeds into another like-kind U.S. investment property within 180 calendar days.",
+      "A 1031 exchange lets investors pause federal capital gains tax when selling a business or rental property. You roll all sale money into another U.S. investment property within 180 days.",
     definition: [
-      "To qualify under IRS Code Section 1031, both the relinquished property and the replacement property must be held for business use or investment—primary residences and fix-and-flip inventory do not qualify.",
-      "A Qualified Intermediary (QI) must hold the sale proceeds from closing so the seller never takes constructive receipt of the cash.",
-      "Two strict federal clocks start on the day the first sale closes: 45 calendar days to identify replacement candidates in writing, and 180 calendar days to close on the new property."
+      "Under IRS Code Section 1031, both properties must be held for business or rental income. Primary homes and quick fix-and-flips do not count.",
+      "A Qualified Intermediary (QI) must hold your cash at closing. The seller can never touch the sale money directly.",
+      "Two strict clocks start on closing day. You get 45 days to name target properties in writing, and 180 days total to close."
     ],
     tampaBayExample:
-      "An investor selling a Brandon medical office building or a St. Petersburg duplex can roll the equity tax-deferred into NNN retail properties along I-75 or into buildable commercial acreage without losing 20% to 25% of their equity to federal tax.",
+      "An owner selling a Brandon medical suite or a St. Pete duplex can roll equity tax-free into NNN retail stores or commercial land. This move keeps 20% to 25% more capital working for you.",
     howWeHandleIt:
-      "Mark & Rachael help you pre-identify replacement commercial or land options before your first listing hits the market and connect you directly with seasoned Florida Qualified Intermediaries so Day 45 never catches you empty-handed.",
+      "Mark and Rachael hunt for target commercial or land deals before your building even lists. We also pair you with trusted Florida Qualified Intermediaries so Day 45 never catches you off guard.",
     faqs: [
       {
-        q: "Can the 45-day or 180-day 1031 deadline be extended for weekends?",
-        a: "No. Both deadlines count calendar days, including weekends and holidays, unless the IRS issues an official federal disaster relief notice for your county."
+        q: "Do the 45-day or 180-day 1031 deadlines skip weekends?",
+        a: "No. Both rules count every calendar day, including weekends and holidays. Only official IRS storm relief orders extend them."
       },
       {
-        q: "Can you exchange land for a commercial building?",
-        a: "Yes. Under IRS rules, almost any U.S. investment real estate—vacant commercial land, warehouses, retail strips, or multi-family—counts as like-kind to any other U.S. investment real estate."
+        q: "Can you swap vacant land for a commercial building?",
+        a: "Yes. Under IRS rules, almost any U.S. rental or business real estate swaps cleanly with raw land, warehouses, shops, or apartments."
       }
     ],
     propertyType: ["commercial", "land-acreage", "retail-office", "industrial-flex"],
@@ -177,24 +177,24 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     aliases: ["Broker Price Opinion", "BPO"],
     category: "Commercial & Investment",
     quickAnswer:
-      "A Broker Price Opinion (BPO) is a detailed property valuation prepared by an active licensed real estate broker using comparable sales, active competition, income potential, and local market demand—faster and more practical than a bank appraisal.",
+      "A Broker Price Opinion (BPO) is a written value check prepared by an active real estate broker. It studies nearby sales, rent income, and current demand faster and cheaper than a bank appraisal.",
     definition: [
-      "While residential sellers rely on a Comparative Market Analysis (CMA), commercial owners, lenders, attorneys, and estate trustees frequently order a BPO to price retail centers, warehouses, churches, or acreage.",
-      "A thorough commercial or land BPO examines recent closed comps, cap rates, lease rollover risk, zoning upside, traffic counts, and site constraints such as wetlands or retention.",
-      "Under Florida real estate licensing rules, brokers clearly label a BPO so clients understand it is an opinion of market value, not a state-certified appraisal for federally regulated loan underwriting."
+      "Home sellers use a Comparative Market Analysis (CMA), while commercial owners, banks, and lawyers often request a BPO. It prices offices, warehouses, churches, and rural land.",
+      "A sharp commercial BPO looks at closed sales, cap rates, lease end dates, zoning rules, and traffic counts. It also checks wet spots and pond needs.",
+      "Under Florida law, brokers clearly label every BPO as an opinion of market value. It is not a certified appraisal for a bank loan."
     ],
     tampaBayExample:
-      "For a family estate holding 15 acres near Frostproof or an owner evaluating a single-tenant retail parcel in Brandon, a BPO helps settle valuation questions for lease renewal, buyouts, or pre-listing pricing within days.",
+      "For an estate selling 15 acres near Frostproof or a store owner in Brandon, a BPO helps set smart rent or sale prices within days.",
     howWeHandleIt:
-      "Mark & Rachael prepare complimentary BPOs for Tampa Bay and Central Florida property owners considering a sale, refinance, or 1031 repositioning—combining CoStar-grade income math with boots-on-the-ground buyer demand.",
+      "Mark and Rachael write clear, data-backed BPO reports for Tampa Bay and Central Florida owners planning a sale, loan change, or 1031 swap. We blend real buyer calls with solid local comps.",
     faqs: [
       {
-        q: "How is a BPO different from an appraisal?",
-        a: "An appraisal is completed by a state-licensed appraiser for mortgage lending, tax court, or litigation, while a BPO is created by active market brokers reflecting real-time buyer appetite and pricing strategy."
+        q: "How is a BPO different from a bank appraisal?",
+        a: "A state-licensed appraiser writes an appraisal for loans, tax court, or legal disputes. Active brokers write a BPO to show real buyer demand and asking-price strategy."
       },
       {
-        q: "What should I have ready for an accurate commercial BPO?",
-        a: "Current rent roll, trailing 12-month operating expenses, recent property tax bill, and any survey or environmental Phase I report."
+        q: "What should I send for an accurate commercial BPO?",
+        a: "Send your current rent roll, last 12 months of bills, latest tax notice, and any site survey or Phase I report."
       }
     ],
     propertyType: ["commercial", "land-acreage", "residential"],
@@ -222,24 +222,24 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     aliases: ["Triple Net Lease", "Triple Net", "NNN", "NNN lease"],
     category: "Commercial & Investment",
     quickAnswer:
-      "In a Triple Net (NNN) lease, the commercial tenant pays base rent plus all three major building expenses: property taxes, building insurance, and common area maintenance (CAM). Landlords receive predictable net cash flow with minimal management.",
+      "In a Triple Net (NNN) lease, the business tenant pays base rent plus property taxes, building insurance, and shared upkeep (CAM). The owner keeps steady net rent with low daily work.",
     definition: [
-      "Commercial leases vary by how expenses are shared. In a Gross Lease, the landlord pays building expenses out of the rent; in a NNN Lease, tenants reimburse taxes, insurance, and CAM directly.",
-      "Pure NNN (absolute net) leases even shift roof and structural repairs onto the tenant, which is common with national pharmacy, quick-service restaurant, or corporate medical tenants.",
-      "Because operating costs pass through to the tenant, NNN Net Operating Income (NOI) translates cleanly into Cap Rate comparisons across markets."
+      "Commercial leases split building bills in clear ways. In a Gross Lease, the owner pays bills out of rent; in a NNN Lease, the tenant pays those three bills directly.",
+      "Pure NNN leases also pass roof and wall repairs onto the tenant. Big national drugstores, food chains, and clinics use this setup most often.",
+      "Because tenants cover operating bills, NNN income compares cleanly across cities using Cap Rate math."
     ],
     tampaBayExample:
-      "Along high-traffic corridors like State Road 60 in Brandon, Dale Mabry Highway in Carrollwood, or US-19 in Pinellas County, single-tenant retail and dental buildings regularly trade on 10-year NNN leases with 2% to 3% annual rent escalations.",
+      "Along busy roads like State Road 60 in Brandon, Dale Mabry in Carrollwood, or US-19 in Pinellas, retail and dental buildings often sign 10-year NNN leases with 2% to 3% yearly rent raises.",
     howWeHandleIt:
-      "Before advising you to buy or sell an investment asset, we audit every line of the lease—especially roof/HVAC carve-outs, Florida windstorm insurance caps, and tenant corporate vs. franchise guarantees.",
+      "Before you buy or sell a leased building, we read every word of the lease. We check roof terms, Florida wind insurance caps, and who backs the tenant promise.",
     faqs: [
       {
         q: "Who pays for a new roof in a Florida NNN lease?",
-        a: "Many 'modified NNN' leases still leave roof structure and parking lot replacement with the landlord while the tenant pays CAM and insurance. Only an 'absolute NNN' shifts roof replacement to the tenant."
+        a: "Many 'modified NNN' leases leave roof and paving work with the owner while tenants pay CAM and insurance. Only an 'absolute NNN' shifts roof costs onto the tenant."
       },
       {
-        q: "How does Florida property insurance affect NNN tenants?",
-        a: "Rising coastal windstorm premiums in Hillsborough and Pinellas counties directly raise tenant occupancy costs, so smart landlords review renewal elasticity before pushing rents."
+        q: "How does Florida building insurance affect NNN tenants?",
+        a: "Higher coastal wind bills in Hillsborough and Pinellas raise a tenant's total rent bill. Smart landlords track total tenant cost before pushing base rent up."
       }
     ],
     propertyType: ["commercial", "retail-office", "industrial-flex"],
@@ -263,24 +263,24 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     aliases: ["4-Point Inspection", "four-point inspection", "4-point", "four point"],
     category: "Insurance & Inspections",
     quickAnswer:
-      "A 4-Point Inspection checks only the four home systems Florida insurance carriers care about most: the roof, electrical panel, plumbing pipes, and HVAC unit. Insurers require it before writing policies on most Florida homes over 20–30 years old.",
+      "A 4-Point Inspection checks four big house parts: the roof, power panel, water pipes, and AC unit. Florida insurers ask for it on most homes over 20 to 30 years old.",
     definition: [
-      "Unlike a full 2-to-3 hour home inspection that looks at cosmetics, appliances, windows, and drainage, a 4-Point takes 30 to 45 minutes and produces a short underwriter checklist with dated photos.",
-      "Underwriters flag specific high-risk items such as polybutylene supply pipes, Federal Pacific or Zinsco electrical panels, cloth wiring, or shingle roofs with fewer than 3 to 5 years of remaining useful life.",
-      "Passing a clean 4-Point unlocks private admitted homeowners insurance options instead of forcing a buyer onto high-cost surplus lines."
+      "A full home check takes two or three hours and tests appliances, sinks, and paint. A 4-Point takes 30 to 45 minutes and uses dated photos for your insurer.",
+      "Insurance teams look closely for old gray pipes, banned breaker boxes, cloth wire, or roofs with under 3 to 5 years of life left.",
+      "Passing a clean 4-Point opens up lower-cost Florida home policies instead of pricey backup plans."
     ],
     tampaBayExample:
-      "In established 1970s–1990s Carrollwood, Brandon, and St. Petersburg neighborhoods, replacing an aging breaker panel or a few brittle supply lines before listing often cuts a buyer's annual homeowners insurance quote by $1,500 to $3,000.",
+      "In 1970s to 1990s Carrollwood, Brandon, and St. Pete homes, swapping an old electric panel or worn pipes before listing can save buyers $1,500 to $3,000 a year on insurance.",
     howWeHandleIt:
-      "We recommend sellers in older Tampa Bay homes run a pre-listing 4-Point inspection so there are zero surprise insurance rejections during the buyer's financing period—and for buyers, we pair the general inspection with a 4-Point and Wind Mitigation on Day 1.",
+      "We help sellers in older Tampa Bay houses run an early 4-Point check so buyer loans stay safe. For buyers, we book the general check, 4-Point, and Wind Mitigation on Day 1.",
     faqs: [
       {
-        q: "At what home age do Florida insurers require a 4-Point Inspection?",
-        a: "Most carriers require a 4-Point once a home reaches 20 to 30 years old, though some tighten the threshold to 15 years for older roofs."
+        q: "At what age do Florida insurers want a 4-Point report?",
+        a: "Most companies ask for a 4-Point once a house turns 20 to 30 years old. Some tighten that rule to 15 years for older shingle roofs."
       },
       {
-        q: "How long is a 4-Point Inspection valid?",
-        a: "Typically 12 months with most Florida carriers, provided the home has not suffered storm damage or major system modifications since the inspection date."
+        q: "How long does a 4-Point report stay valid?",
+        a: "Most Florida insurers accept a 4-Point for 12 months, as long as no storm damage or big repairs happen after the check."
       }
     ],
     propertyType: ["residential", "condo-townhome", "waterfront"],
@@ -305,24 +305,24 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     aliases: ["Wind Mitigation", "wind mitigation inspection", "wind mit"],
     category: "Insurance & Inspections",
     quickAnswer:
-      "A Wind Mitigation Inspection documents storm-resistant features—like roof shape, nail spacing, hurricane clips, secondary water barriers, and impact windows—using Florida state form OIR-B1-1802. Insurers use it to apply steep mandatory discounts to your windstorm premium.",
+      "A Wind Mitigation Inspection checks storm-safe parts of your home—roof shape, nail patterns, roof clips, peel-and-stick barriers, and impact glass—on Florida form OIR-B1-1802. Insurers apply steep required discounts from it.",
     definition: [
-      "Every Florida homeowners policy splits risk into non-hurricane peril and hurricane/wind peril. The wind portion often makes up half or more of a Tampa Bay policy.",
-      "A licensed inspector physically enters the attic to photograph truss-to-wall straps or clips, verifies roof-deck attachment, checks the Florida Building Code permit year of the roof, and inspects window and garage-door protection.",
-      "Even modest upgrades—such as upgrading from toe-nails to third-nail roof clips or installing impact garage doors—can pay for themselves in 1 to 2 years of insurance savings."
+      "Every Florida home policy splits fire risk from wind risk. The wind half often makes up over half of a Tampa Bay bill.",
+      "A licensed inspector steps into your attic to shoot photos of roof straps and clips. They also check roof age, deck nails, and window storm gear.",
+      "Small upgrades—like third-nail clips or storm garage doors—often pay for themselves in just one or two years of insurance savings."
     ],
     tampaBayExample:
-      "A home in Carrollwood or St. Petersburg with a hip roof, post-2002 building code deck nailing, double-wrap straps, and impact windows routinely saves $1,200 to $3,800 per year compared to a neighboring house lacking a current Wind Mitigation form.",
+      "A house in Carrollwood or St. Pete with a hip roof, newer roof nails, double straps, and storm glass often saves $1,200 to $3,800 per year over an older unverified house next door.",
     howWeHandleIt:
-      "We coordinate the Wind Mitigation alongside your home inspection so your insurance agent can run live carrier quotes before your inspection contingency expires.",
+      "We order your Wind Mitigation report alongside the main home check. That lets your insurance agent run real carrier quotes before your inspection period ends.",
     faqs: [
       {
-        q: "How long does a Wind Mitigation report stay valid in Florida?",
-        a: "Generally up to 5 years unless the roof is replaced or exterior openings are altered."
+        q: "How long does a Wind Mitigation report stay good in Florida?",
+        a: "Most insurers honor a Wind Mitigation report for up to 5 years unless you replace the roof or change doors and windows."
       },
       {
-        q: "What is the biggest wind mitigation discount feature?",
-        a: "Having a Hip roof geometry, full hurricane straps/clips verified by attic photos, and verified impact-rated protection on all windows, doors, and skylights (opening protection)."
+        q: "Which roof and window items give the biggest wind discounts?",
+        a: "A full hip roof shape, strong attic clips, peel-and-stick roof underlay, and rated storm glass on all windows and doors save the most money."
       }
     ],
     propertyType: ["residential", "waterfront", "condo-townhome", "luxury"],
@@ -346,24 +346,24 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     aliases: ["Homestead Portability", "Save Our Homes", "Homestead Exemption", "portability"],
     category: "Taxes & Exemptions",
     quickAnswer:
-      "Florida's Homestead Exemption shields up to $50,000 of your primary residence's assessed value from property taxes and caps annual assessed-value increases at 3% or CPI. Save Our Homes Portability lets you transfer up to $500,000 of that accumulated tax discount to your next Florida primary home.",
+      "Florida Homestead lowers your primary home's tax value by up to $50,000 and caps yearly tax value hikes at 3%. Save Our Homes Portability lets you move up to $500,000 of saved tax value to your next Florida home.",
     definition: [
-      "To claim Homestead in the upcoming tax year, you must own and occupy the home as your permanent legal residence on January 1 and file with your county Property Appraiser by March 1.",
-      "Over years of home-price appreciation, your Market Value rises faster than your capped Assessed Value. That dollar gap is your Save Our Homes (SOH) tax savings.",
-      "When you sell your Florida homestead and establish a new one within three tax years, Form DR-501T transfers that tax savings—up to $500,000—onto the new home's assessed value, permanently lowering your new tax bill."
+      "To get Homestead for next year, you must own and live in the home on January 1. Then file with your county Property Appraiser by March 1.",
+      "As Tampa Bay prices rise, market value grows faster than your 3% capped tax value. That gap is your Save Our Homes (SOH) benefit.",
+      "When you sell and move to another Florida home within three tax years, Form DR-501T shifts up to $500,000 of those savings onto your new tax bill."
     ],
     tampaBayExample:
-      "A homeowner who owned in Brandon or St. Petersburg for 10 years and accumulated $220,000 in Save Our Homes benefit can move up into a $750,000 Carrollwood home and immediately shave roughly $3,500–$4,200 off their annual county property taxes.",
+      "A Brandon or St. Pete owner with $220,000 in Save Our Homes benefit can buy a $750,000 Carrollwood house and cut roughly $3,500 to $4,200 a year off their new tax bill.",
     howWeHandleIt:
-      "We help both move-up Florida residents calculate their exact SOH portability before shopping and guide relocating out-of-state buyers so they never mistake a long-time seller's current tax bill for what taxes will reset to after closing.",
+      "We help current Florida owners check their portability math before shopping. For out-of-state buyers, we warn them early so a seller's low old tax bill never misleads their budget.",
     faqs: [
       {
-        q: "How long do I have to transfer Florida Homestead Portability?",
-        a: "You have up to three tax years (specifically, three January 1sts from the year you abandoned your prior homestead) to establish a new Florida homestead and transfer the benefit."
+        q: "How much time do I have to move Florida Homestead savings?",
+        a: "You get up to three January 1st tax dates from leaving your old homestead to claim a new Florida homestead and file portability."
       },
       {
-        q: "Why do my property taxes jump the year after buying an existing home?",
-        a: "When ownership transfers, the seller's Save Our Homes cap disappears and the home resets to full market value in the following January assessment cycle."
+        q: "Why do county taxes jump the year after I buy an older Florida house?",
+        a: "When a home changes hands, the seller's old tax cap clears out. The county resets the tax value closer to your new purchase price the next January."
       }
     ],
     propertyType: ["residential", "luxury", "55-plus", "waterfront"],
@@ -388,24 +388,24 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     aliases: ["Elevation Certificate", "Base Flood Elevation", "BFE", "Flood Zone AE", "Flood Zone VE"],
     category: "Insurance & Inspections",
     quickAnswer:
-      "An Elevation Certificate is an official survey signed by a Florida licensed surveyor showing a home's lowest floor height compared to FEMA's Base Flood Elevation (BFE). It directly determines flood insurance rates and compliance in Tampa Bay coastal and creek zones.",
+      "An Elevation Certificate is an official survey signed by a Florida surveyor. It shows how high your lowest floor sits compared to FEMA's Base Flood Elevation (BFE), which drives Tampa Bay flood rates.",
     definition: [
-      "Properties inside FEMA Special Flood Hazard Areas (such as Zone AE or coastal Zone VE) require federally backed flood coverage whenever a buyer carries a conventional, FHA, or VA mortgage.",
-      "Under FEMA Risk Rating 2.0, flood underwriters look closely at first-floor height above grade, proximity to water, foundation type (slab vs. stilt/pilings), and presence of smart flood vents.",
-      "A house raised just 2 to 4 feet above Base Flood Elevation often pays a fraction of the flood premium charged to a ground-level 1960s ranch home on the very same street."
+      "Homes inside high-risk FEMA flood zones (Zone AE or VE) must carry flood coverage if you take out a standard bank mortgage.",
+      "Under FEMA Risk Rating 2.0, insurers price each policy by lowest floor height, distance to water, slab vs. stilt build, and smart flood vents.",
+      "A house built 2 to 4 feet above flood level often costs a fraction to insure compared to a ground-level 1960s ranch down the block."
     ],
     tampaBayExample:
-      "Across St. Petersburg's Bahama Shores, Snell Isle, Shore Acres, and Tampa's Bayshore corridor, buyers regularly evaluate older ranch homes subject to FEMA's '50% Rule' (Substantial Improvement threshold) alongside newer block homes built above BFE.",
+      "In St. Pete neighborhoods like Bahama Shores, Snell Isle, and Shore Acres, buyers compare low 1960s ranch homes under FEMA's 50% Rule against newer block homes raised above flood code.",
     howWeHandleIt:
-      "Whenever you tour a waterfront or flood-zone home, we verify the latest Elevation Certificate, pull dual NFIP + private flood quotes, and confirm whether previous renovations count against FEMA's 50% remodeling cap.",
+      "Before you bid on a coastal or creek-side home, we check its latest Elevation Certificate and run both NFIP and private flood quotes right away.",
     faqs: [
       {
-        q: "Do all Pinellas or Hillsborough waterfront homes require flood insurance?",
-        a: "If there is a federally backed mortgage and any structure sits inside Zone AE or VE, lenders mandate flood coverage. Even in upland Zone X, many Tampa Bay owners carry low-cost private or preferred flood policies after recent tropical rain events."
+        q: "Do all Pinellas or Hillsborough waterfront homes need flood policies?",
+        a: "If a home has a bank loan and sits in Zone AE or VE, lenders require flood insurance. Many upland Zone X owners carry low-cost private policies too for heavy storms."
       },
       {
         q: "What is FEMA's 50% Rule?",
-        a: "If a non-elevated structure in a flood zone undergoes renovations exceeding 50% of the building's market value (excluding land), local code typically requires elevating the entire structure to current flood code."
+        a: "If repairs on an older ground-level Zone AE house pass 50% of the building's value, local rules force owners to raise the whole house to new flood code."
       }
     ],
     propertyType: ["waterfront", "residential", "luxury"],
@@ -429,24 +429,24 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     aliases: ["Greenbelt Exemption", "Greenbelt", "Agricultural Classification"],
     category: "Taxes & Exemptions",
     quickAnswer:
-      "Florida's Greenbelt law allows bona fide commercial agricultural land—such as cattle grazing, timber, citrus, or hay—to be taxed at its farm productivity value rather than speculative development market value, dramatically reducing annual property taxes.",
+      "Florida's Greenbelt law taxes working farm or ranch land—cattle, timber, citrus, or hay—at farm use value rather than developer market price. That rule cuts annual property taxes sharply.",
     definition: [
-      "Under Florida Statutes Section 193.461, county Property Appraisers grant Agricultural Classification only when land is actively used for a commercial agricultural purpose on January 1 and an application is filed by March 1.",
-      "Hobby farming or simply fencing wooded acreage without bona fide agricultural operations typically does not qualify; owners commonly keep cattle leases, timber management plans, or nursery invoices on file.",
-      "Greenbelt classification does not lock the land permanently—buyers can later rezone or build, though changing use ends the agricultural tax break the following January."
+      "Under Florida Statutes Section 193.461, counties grant farm status only when active farm work runs on January 1. You must also apply by March 1.",
+      "Hobby gardens or just putting up a fence will not pass. Owners normally keep cattle leases, timber plans, or crop receipts on file.",
+      "Greenbelt status does not lock your land forever. Owners can rezone or build later, though taxes reset the next January once farming stops."
     ],
     tampaBayExample:
-      "Owners holding large rural tracts in Polk County near Frostproof or Marion County near Fort McCoy frequently rely on cattle grazing or timber leases to keep annual taxes minimal while holding land long-term for appreciation or estate buildout.",
+      "Landowners in Polk County near Frostproof or Marion County near Fort McCoy use cattle and timber leases to keep yearly taxes tiny while holding open acres long term.",
     howWeHandleIt:
-      "When evaluating rural acreage or commercial transition parcels, Mark & Rachael check current county Greenbelt records, active pasture or timber leases, well/septic capacity, and Future Land Use maps.",
+      "Before you buy rural acreage, Mark and Rachael review county Greenbelt files, current pasture leases, well and septic capacity, and Future Land Use maps.",
     faqs: [
       {
-        q: "Does Greenbelt exemption transfer automatically when I buy agricultural land?",
-        a: "No. Ownership change cancels the prior owner's classification at year-end. The new buyer must maintain bona fide agricultural use on January 1 and file a fresh application by March 1."
+        q: "Does a Greenbelt tax break transfer to the new buyer at closing?",
+        a: "No. Selling the land clears the prior owner's farm tax status at year-end. New owners must keep farm work active on January 1 and file by March 1."
       },
       {
-        q: "How many acres do you need for a Florida Greenbelt exemption?",
-        a: "State law sets no strict minimum acreage, though each county Property Appraiser evaluates whether the parcel size and revenue reflect a legitimate commercial farm operation rather than personal use."
+        q: "How many acres do I need for Florida Greenbelt status?",
+        a: "Florida sets no strict minimum acre rule. Each county Property Appraiser checks whether the parcel size and real farm sales reflect a working ranch or farm."
       }
     ],
     propertyType: ["land-acreage", "commercial"],
@@ -470,24 +470,24 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     aliases: ["Capitalization Rate", "Cap Rate", "Cap Rates"],
     category: "Commercial & Investment",
     quickAnswer:
-      "Capitalization rate (Cap Rate) measures a commercial property's annual unlevered yield. Divide yearly Net Operating Income (NOI) by the purchase price to compare returns across retail, office, medical, and industrial deals.",
+      "Cap Rate measures a commercial building's yearly cash return if bought without a loan. Divide yearly Net Operating Income (NOI) by the asking price to compare retail, medical, office, and warehouse deals.",
     definition: [
-      "Cap Rate shows what a commercial building pays per year if you buy it with all cash. A property earning $80,000 in NOI at a $1,000,000 price trades at an 8.0% Cap Rate.",
-      "Lower Cap Rates (such as 5.0% to 6.25%) usually point to national single-tenant NNN credit tenants or prime Tampa infill locations. Higher Cap Rates (7.5% to 9.0%+) often reflect multi-tenant centers, older roofs, or shorter lease terms.",
-      "Cap Rate ignores your loan payment. Always check both unlevered Cap Rate and actual Debt Service Coverage Ratio (DSCR) with your commercial lender before making an offer."
+      "Cap Rate shows what a commercial asset pays each year on an all-cash buy. A building earning $80,000 NOI at a $1,000,000 price trades at an 8.0% Cap Rate.",
+      "Lower Cap Rates (around 5.0% to 6.25%) usually mark national single-tenant NNN brands in top Tampa spots. Higher Cap Rates (7.5% to 9.0%+) often flag multi-tenant centers, older roofs, or shorter leases.",
+      "Cap Rate leaves out your bank mortgage payment. Always test both Cap Rate and loan Debt Service Coverage Ratio (DSCR) with your lender before bidding."
     ],
     tampaBayExample:
-      "A stabilized Brandon retail strip near SR 60 with staggered 3% annual rent bumps might trade near a 6.75% Cap Rate. A single-tenant neighborhood medical office in Clearwater with only two years left on its lease may command an 8.0% Cap Rate to price renewal risk.",
+      "A full Brandon retail center near SR 60 with 3% yearly rent raises might sell near a 6.75% Cap Rate. A Clearwater clinic with two years left on its lease might command an 8.0% Cap Rate.",
     howWeHandleIt:
-      "Mark & Rachael verify true T-12 income, strip out fake pro-forma assumptions, stress-test rising Florida windstorm insurance, and model Cap Rate sensitivity before you submit an offer.",
+      "Mark and Rachael check real T-12 rent rolls, strip out wishful vacant numbers, test rising Florida wind bills, and run Cap Rate math before you offer.",
     faqs: [
       {
         q: "Is a higher Cap Rate always better for a buyer?",
-        a: "No. Higher Cap Rates often signal higher vacancy risk, near-term lease rollovers, or deferred roof and parking lot capital repairs. Lower Cap Rates usually reflect stronger credit tenants and predictable income."
+        a: "No. High Cap Rates often come with near-term tenant departures, older roofs, or high repair bills. Lower Cap Rates usually reflect steady national tenants and safer cash flow."
       },
       {
-        q: "How do Cap Rate and NOI connect to sale price?",
-        a: "Purchase Price equals NOI divided by Cap Rate. Adding $20,000 of verified annual NOI at a 7.0% market Cap Rate can add roughly $285,700 in building value."
+        q: "How do Cap Rate and NOI change sale price?",
+        a: "Price equals NOI divided by Cap Rate. Adding $20,000 of real annual NOI at a 7.0% market Cap Rate can add about $285,700 in property value."
       }
     ],
     propertyType: ["commercial", "land-acreage"],
@@ -512,24 +512,24 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     aliases: ["Net Operating Income", "NOI"],
     category: "Commercial & Investment",
     quickAnswer:
-      "Net Operating Income (NOI) is a commercial property's annual gross rental and reimbursement income minus its real estate operating expenses. It excludes mortgage payments, income taxes, and major capital replacements.",
+      "Net Operating Income (NOI) is a commercial building's yearly rent and expense payouts minus operating bills. It leaves out bank loans, income tax, and big roof or buildout bills.",
     definition: [
-      "Lenders and buyers calculate NOI by adding base rent plus NNN reimbursements, subtracting real vacancy, and deducting taxes, insurance, management, landscaping, and routine maintenance.",
-      "NOI does not include loan principal, loan interest, IRS depreciation, or tenant build-out capital allowances. Two buyers using different loans still underwrite the same property NOI.",
-      "Underwriting accurate Florida NOI requires adjusting historical property taxes to the buyer's post-sale reassessment level and checking current commercial windstorm insurance quotes."
+      "Buyers and lenders compute NOI by taking rent plus NNN bills, subtracting empty units, and deducting taxes, insurance, yard care, and repairs.",
+      "NOI leaves out loan payments, depreciation, and big tenant buildouts. That way two buyers with different loans still compare the exact same building NOI.",
+      "Checking Florida NOI means adjusting old tax bills to post-sale taxes and pulling fresh commercial wind insurance quotes."
     ],
     tampaBayExample:
-      "If a small office plaza on Fletcher Avenue collects $180,000 in gross rent and CAM recoveries while paying $58,000 in taxes, insurance, lawn care, and repairs, its true NOI is $122,000.",
+      "If a small Fletcher Avenue office plaza collects $180,000 in rent and NNN fees while paying $58,000 in taxes, insurance, and lawn bills, its real NOI is $122,000.",
     howWeHandleIt:
-      "When preparing a commercial BPO or buyer underwriting sheet, we rebuild the seller's profit-and-loss statement line by line so post-sale property taxes and insurance do not erase your expected cash flow.",
+      "When building a commercial BPO or buyer cash sheet, we check every seller line item so higher post-sale taxes and insurance never wipe out your return.",
     faqs: [
       {
-        q: "What is the difference between NOI and cash flow?",
-        a: "NOI measures building income before your loan payment. Cash flow before taxes is what remains after subtracting annual mortgage principal and interest from NOI."
+        q: "How does NOI differ from cash flow?",
+        a: "NOI tracks building profit before your bank loan. Pre-tax cash flow is what stays in your pocket after paying monthly loan principal and interest."
       },
       {
-        q: "Can sellers use pro-forma vacant rent to inflate NOI?",
-        a: "No lender or experienced buyer values a property on empty-suite pro-forma rent alone. Banks lend primarily against actual signed leases and Trailing-12 (T-12) collected income."
+        q: "Can sellers count empty rooms to pump up asking NOI?",
+        a: "No bank or smart buyer pays top dollar for empty rooms. Lenders base loans on real signed leases and Trailing-12 (T-12) rent collected."
       }
     ],
     propertyType: ["commercial"],
@@ -554,24 +554,24 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     aliases: ["Common Area Maintenance", "CAM", "CAM charges", "CAM fees"],
     category: "Commercial & Investment",
     quickAnswer:
-      "Common Area Maintenance (CAM) refers to shared property expenses—like parking lot lighting, landscaping, trash, security, and exterior cleaning—passed through to commercial tenants in addition to base rent.",
+      "Common Area Maintenance (CAM) covers shared center bills—parking lights, lawn care, trash, and outside cleaning. Commercial tenants pay their share on top of base rent.",
     definition: [
-      "In retail plazas, medical suites, and flex industrial parks, each tenant typically pays their pro-rata square-foot share of shared building upkeep.",
-      "Most landlords estimate monthly CAM charges in advance and perform an annual reconciliation each spring to credit overpayments or bill shortfalls.",
-      "Always inspect the CAM exclusions clause in a lease draft. Strong tenant representation negotiates annual caps on controllable CAM increases (often 3% to 5%) and excludes landlord capital roof replacements."
+      "In retail centers, medical parks, and flex warehouses, tenants pay their square-foot share of shared center upkeep.",
+      "Most owners collect a monthly CAM budget up front. Then each spring they match actual bills and refund or bill the gap.",
+      "Always check the CAM exclusions paragraph in any draft lease. Strong tenant terms cap controllable hikes at 3% to 5% and keep new roofs off the CAM bill."
     ],
     tampaBayExample:
-      "A 2,400 sq. ft. medical office tenant in a 24,000 sq. ft. Carrollwood plaza holds a 10% pro-rata share. If plaza CAM, taxes, and insurance total $8.50 per square foot yearly, that adds $1,700 per month on top of base rent.",
+      "A 2,400 sq. ft. Carrollwood clinic inside a 24,000 sq. ft. plaza holds a 10% share. If plaza CAM, tax, and insurance run $8.50/sq. ft. yearly, that adds $1,700 per month to rent.",
     howWeHandleIt:
-      "We run side-by-side NNN and CAM lease occupancy models before letters of intent go out so tenants know their true all-in monthly rent and buyers verify landlord cost recovery.",
+      "We map out NNN and CAM lease costs side by side before offers go out. Tenants see their full monthly check, and buyers check owner cost recovery.",
     faqs: [
       {
-        q: "What is the difference between controllable and non-controllable CAM?",
-        a: "Controllable CAM covers items the landlord bids out, like landscaping, sweeping, and pressure washing. Non-controllable expenses include county property taxes, commercial property insurance, and municipal utilities."
+        q: "What splits controllable CAM from non-controllable CAM?",
+        a: "Controllable CAM covers vendor jobs like lawn care, sweeping, and pressure washing. Non-controllable bills are property taxes, wind insurance, and city water."
       },
       {
-        q: "Can a landlord charge a management admin fee inside CAM?",
-        a: "Yes, many commercial leases include a 10% to 15% administrative fee on CAM expenses or a separate property management fee, unless negotiated out during lease drafting."
+        q: "Can a landlord add a management admin fee inside CAM?",
+        a: "Yes. Many commercial leases allow a 10% to 15% admin fee inside CAM unless your team negotiates a cap or removes it early."
       }
     ],
     propertyType: ["commercial"],
@@ -595,24 +595,24 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     aliases: ["Modified Gross Lease", "Modified Gross", "Full-Service Gross", "FSG Lease"],
     category: "Commercial & Investment",
     quickAnswer:
-      "A Modified Gross lease splits operating costs between landlord and tenant—often bundling property taxes and base building insurance into rent while the tenant pays utilities, janitorial, or increases above a base year.",
+      "A Modified Gross lease splits building bills between owner and tenant. The owner often pays year-one taxes and insurance, while the tenant pays electric, suite cleaning, and bill jumps later on.",
     definition: [
-      "Unlike a pure Triple Net (NNN) lease where tenants pay every property expense directly, a Full-Service Gross (FSG) lease wraps taxes, insurance, CAM, and often electricity into one flat dollar rate per square foot.",
-      "A Modified Gross lease sits in between. Commonly, the landlord pays base-year taxes and insurance while the tenant pays electric, suite janitorial, and its share of future expense increases.",
-      "When comparing two suites across Tampa Bay, converting Modified Gross and NNN quotes into a single monthly total is essential so a lower headline rate does not trick you into higher total rent."
+      "In a pure Triple Net (NNN) lease, tenants pay every building bill directly. In a Full-Service Gross (FSG) lease, one flat rent rate covers taxes, insurance, CAM, and daily utilities.",
+      "A Modified Gross lease lands right in the middle. Owners usually pay year-one taxes and insurance while tenants cover power, inside cleaning, and future bill increases.",
+      "Before picking an office or warehouse, turn NNN, Modified Gross, and Full-Service quotes into one total monthly check so a low headline rent never surprises you."
     ],
     tampaBayExample:
-      "Downtown Tampa Class A office towers frequently quote Full-Service Gross rates including janitorial and daytime HVAC. Meanwhile, small flex warehouses along US 301 often quote Modified Gross rent where tenants pay only suite electric and water.",
+      "Downtown Tampa office towers often quote Full-Service Gross rent covering cleaning and daytime AC. US 301 flex warehouses often use Modified Gross rent where tenants add only electric and water.",
     howWeHandleIt:
-      "Use our Commercial Rent & NNN Calculator or ask our team to normalize NNN, Modified Gross, and Full-Service quotes onto a single all-in monthly occupancy sheet before touring suites.",
+      "Use our Commercial Rent Calculator or ask Mark and Rachael to put every lease quote into one simple monthly sheet before you tour.",
     faqs: [
       {
         q: "What is a Base Year Expense Stop in a Modified Gross lease?",
-        a: "The landlord covers operating expenses up to the total cost paid during year one of the lease. In year two and beyond, the tenant pays its pro-rata share of any increase over that base year."
+        a: "The owner pays building bills up to the year-one dollar amount. From year two on, tenants pay their share of any cost rise above year one."
       },
       {
-        q: "Which lease type do small Florida office tenants prefer?",
-        a: "First-time business tenants often favor Modified Gross or Full-Service leases because monthly bills are easier to budget without surprise windstorm insurance pass-throughs."
+        q: "Which lease style do smaller Florida office tenants pick most?",
+        a: "Small teams often pick Modified Gross or Full-Service leases because flat monthly bills guard them against sudden wind insurance jumps."
       }
     ],
     propertyType: ["commercial"],
@@ -636,24 +636,24 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     aliases: ["Tenant Improvement Allowance", "TI Allowance", "TIA", "Tenant Improvements"],
     category: "Commercial & Investment",
     quickAnswer:
-      "A Tenant Improvement (TI) Allowance is the dollar credit per square foot a commercial landlord gives a tenant to build out, remodel, or customize leased space before opening for business.",
+      "A Tenant Improvement (TI) Allowance is buildout money per square foot that a landlord gives a tenant. It helps pay for walls, floors, plumbing, and rooms before opening day.",
     definition: [
-      "Empty retail or office shells rarely work right out of the box for dental clinics, restaurants, or professional firms. Landlords frequently offer a TI Allowance—such as $20 to $45 per rentable square foot—to fund drywall, flooring, plumbing, and ADA restrooms.",
-      "Alternatively, a landlord may deliver a Turnkey Buildout, where the owner hires contractors and pays to finish the suite to an agreed floorplan.",
-      "Always clarify whether base building HVAC units, fire sprinklers, and electrical panels come in working order before counting your TI dollars."
+      "Raw retail or office shells rarely match a clinic, restaurant, or local office out of the box. Owners often give $20 to $45 per square foot toward walls, paint, flooring, and restrooms.",
+      "Some owners offer a Turnkey Buildout instead. There, the landlord hires the crew and finishes the suite to a signed floorplan.",
+      "Always check if working AC units, sprinklers, and main electric panels are already ready before spending your TI budget."
     ],
     tampaBayExample:
-      "A fast-growing therapy group leasing 3,000 sq. ft. in Wesley Chapel negotiates a $35/sq. ft. TI Allowance ($105,000) toward exam rooms, paired with 90 days of free rent during permitting and construction.",
+      "A growing therapy office leasing 3,000 sq. ft. in Wesley Chapel might get $35/sq. ft. in TI funds ($105,000) for exam rooms plus 90 rent-free buildout days.",
     howWeHandleIt:
-      "During Letter of Intent (LOI) negotiations, Mark & Rachael line up contractor bids early so your TI Allowance, free-rent abatement, and rent commencement date actually match Hillsborough or Pinellas permitting timelines.",
+      "During Letter of Intent talks, Mark and Rachael get contractor pricing early. We make sure your TI cash, free rent, and opening date match real county permit timing.",
     faqs: [
       {
-        q: "Does a higher TI Allowance raise monthly base rent?",
-        a: "Usually yes. Landlords amortize larger buildout allowances across the primary lease term, so balancing cash TI dollars against lower base rent depends on your startup capital."
+        q: "Does a bigger TI Allowance raise monthly base rent?",
+        a: "Usually yes. Landlords spread larger buildout grants across your lease years, so balance startup cash needs against lower monthly rent."
       },
       {
-        q: "When is the TI Allowance paid out?",
-        a: "Most landlords reimburse TI funds once work finishes, lien waivers are signed, and the tenant opens for business with a Certificate of Occupancy."
+        q: "When do landlords pay out TI Allowance money?",
+        a: "Most owners pay once work wraps up, contractors sign lien waivers, and the county grants your Certificate of Occupancy."
       }
     ],
     propertyType: ["commercial"],
@@ -677,24 +677,24 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     aliases: ["Estoppel Certificate", "Tenant Estoppel", "Estoppel Letter"],
     category: "Commercial & Investment",
     quickAnswer:
-      "An Estoppel Certificate is a signed legal statement from an existing commercial tenant confirming the exact lease rent, security deposit, expiration date, and that neither tenant nor landlord is in default before a sale closes.",
+      "An Estoppel Certificate is a signed letter from a current business tenant before a building sells. It confirms exact monthly rent, deposits, lease end dates, and confirms no hidden disputes exist.",
     definition: [
-      "When buying a leased retail strip, office building, or industrial warehouse, the seller's rent roll alone is not proof enough for a buyer or commercial lender.",
-      "Before closing, each tenant signs an Estoppel Certificate verifying their monthly rent, prepaid rent, CAM share, renewal options, and any unwritten side promises made by the seller.",
-      "Once signed, the tenant is legally prevented ('estopped') from later claiming lower rent, hidden TI credits, or unrecorded purchase options against the new owner."
+      "When buying a retail center, office building, or warehouse, a seller's rent sheet is not enough proof for a buyer or bank.",
+      "Before closing, each tenant signs an Estoppel form confirming monthly rent, prepaid cash, CAM share, renewal dates, and any side deals.",
+      "Once signed, the tenant cannot turn around later and claim lower rent or secret credits against the new building owner."
     ],
     tampaBayExample:
-      "During due diligence on a multi-tenant plaza in Pinellas Park, Tenant Estoppels uncover that one tenant holds an unrecorded right-of-first-refusal or claims a landlord roof leak credit—allowing the buyer to resolve the issue prior to closing.",
+      "Before buying a multi-tenant center in Pinellas Park, Tenant Estoppels might show one shop claiming a roof leak credit or buyout right—letting us fix it before closing day.",
     howWeHandleIt:
-      "We structure commercial purchase contracts so receipt of clean, lender-approved Tenant Estoppels (typically covering 80%–100% of leased square footage) is an explicit condition of closing.",
+      "We write commercial contracts so clean, lender-approved Tenant Estoppels covering 80% to 100% of leased space must arrive before you have to close.",
     faqs: [
       {
-        q: "How long do tenants usually have to return an Estoppel Certificate?",
-        a: "Most commercial leases require tenants to return a completed Estoppel within 10 to 15 days of written request, with failure sometimes triggering automatic landlord certification."
+        q: "How fast must business tenants return an Estoppel Certificate?",
+        a: "Most leases give tenants 10 to 15 days after written notice to sign and return the Estoppel letter."
       },
       {
-        q: "What is an SNDA alongside an Estoppel?",
-        a: "A Subordination, Non-Disturbance, and Attornment (SNDA) agreement sets the legal order between the buyer's mortgage lender and the tenant, protecting the tenant's lease if foreclosure ever occurs."
+        q: "What is an SNDA signed alongside an Estoppel?",
+        a: "An SNDA agreement sets the legal priority between the buyer's bank loan and the tenant's lease so good-standing tenants stay protected."
       }
     ],
     propertyType: ["commercial"],
@@ -718,24 +718,24 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     aliases: ["Phase I ESA", "Phase I Environmental Site Assessment", "Phase 1 ESA"],
     category: "Commercial & Investment",
     quickAnswer:
-      "A Phase I Environmental Site Assessment (ASTM E1527-21) reviews historical records, regulatory databases, and site conditions on commercial or industrial land to spot contamination risks before a buyer closes.",
+      "A Phase I Environmental Check (ASTM E1527-21) reviews past records and site history on commercial or empty land. It spots pollution risks before a buyer closes.",
     definition: [
-      "Almost every SBA 504, SBA 7(a), and commercial bank loan requires a fresh Phase I ESA ordered directly by the lender or an approved environmental engineer.",
-      "Investigators review historical aerial photos, city directories, dry-cleaner permits, underground storage tank logs, and neighboring spills without drilling soil samples.",
-      "If the Phase I flags a Recognized Environmental Condition (REC), the buyer typically requests a targeted Phase II ESA—collecting soil and groundwater lab samples—before waiving inspection contingencies."
+      "Almost every SBA 504, SBA 7(a), and bank commercial loan asks for a fresh Phase I report from a vetted engineer.",
+      "Engineers study old aerial photos, city logs, dry-cleaner files, buried tank records, and nearby spills without digging soil yet.",
+      "If the Phase I flags a site worry, buyers request a Phase II lab test of soil and water before waiving their inspection period."
     ],
     tampaBayExample:
-      "Acquiring an older commercial corner along Nebraska Avenue or US Highway 19 near a former auto repair shop or dry cleaner requires a clean Phase I ESA (plus potential soil testing) so buyers preserve federal Innocent Landowner liability protection.",
+      "Buying an older corner on Nebraska Avenue or US 19 near an old repair shop or cleaner takes a clean Phase I check so buyers stay legally protected.",
     howWeHandleIt:
-      "We build 30 to 45 day environmental feasibility periods into commercial and land contracts and keep trusted Florida environmental engineering firms ready to run ASTM-compliant reviews fast.",
+      "We write 30 to 45 day check windows into commercial and land deals. Trusted Florida environmental engineers stay on call to move fast.",
     faqs: [
       {
-        q: "How long does a Phase I ESA take in Florida?",
-        a: "A standard Phase I ESA usually takes 2 to 3 weeks from engagement. If soil boring under a Phase II is needed, budget an additional 3 to 4 weeks for lab results."
+        q: "How long does a Florida Phase I site check take?",
+        a: "A standard Phase I report takes 2 to 3 weeks. If lab soil borings are needed under Phase II, add 3 to 4 weeks."
       },
       {
-        q: "How long is a Phase I ESA valid for commercial lenders?",
-        a: "Under ASTM E1527-21 standards, a Phase I ESA must generally be dated within 180 days prior to the property closing date to preserve All Appropriate Inquiries liability protection."
+        q: "How long does a Phase I report stay fresh for bank loans?",
+        a: "Under ASTM E1527-21 rules, your Phase I report generally must be dated within 180 days before closing day."
       }
     ],
     propertyType: ["commercial", "land-acreage"],
@@ -760,24 +760,24 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     aliases: ["Letter of Intent", "LOI"],
     category: "Commercial & Investment",
     quickAnswer:
-      "A Letter of Intent (LOI) is a short, usually non-binding business summary outlining proposed price, lease rate, TI allowance, inspection period, and closing timeline before attorneys draft a formal commercial contract or lease.",
+      "A Letter of Intent (LOI) is a short, mostly non-binding business summary before attorneys draft a final lease or sale contract. It sketches price, rent, TI cash, inspection days, and closing dates.",
     definition: [
-      "Residential deals jump straight into a standard Florida FAR/BAR contract. Commercial sales and leases almost always start with a 1 to 3 page Letter of Intent first.",
-      "An LOI lets both parties confirm big-ticket economics—purchase price, earnest money, 30-to-45-day due diligence window, rent bumps, NNN structure, and personal guarantees—without racking up thousands in legal drafting fees prematurely.",
-      "Wait for the signed LOI to guide attorney drafting, and confirm any confidentiality or exclusivity paragraphs are clearly labeled if intended to be binding."
+      "Home sales jump right into a standard Florida contract. Commercial buys and leases almost always start with a 1 to 3 page Letter of Intent first.",
+      "An LOI lets both sides agree on price, earnest money, 30-to-45-day check windows, rent bumps, and NNN bills before paying big attorney fees.",
+      "Let the signed LOI guide final attorney edits, and mark exclusivity or privacy rules clearly if you want those lines binding."
     ],
     tampaBayExample:
-      "Before leasing a 4,200 sq. ft. showroom in South Tampa or putting an industrial warehouse under contract near Port Tampa, a clear LOI locks in base rent, 3% annual escalations, TI Allowance, and inspection windows in 48 hours.",
+      "Before leasing a 4,200 sq. ft. showroom in South Tampa or buying a warehouse near Port Tampa, a clear LOI locks rent, 3% raises, and TI dollars in 48 hours.",
     howWeHandleIt:
-      "We draft clean, market-tested commercial LOIs tailored to Tampa Bay sellers and landlords so your attorneys step into clear business terms with zero wasted motion.",
+      "We draft clean commercial LOIs built for Tampa Bay owners and landlords so attorneys step into crystal-clear terms right from day one.",
     faqs: [
       {
-        q: "Is a Commercial Letter of Intent legally binding in Florida?",
-        a: "Usually an LOI explicitly states that business terms are non-binding until a formal Purchase Agreement or Lease is signed, though exclusivity and confidentiality clauses can be drafted as binding."
+        q: "Is a Florida commercial Letter of Intent legally binding?",
+        a: "Most LOIs say business price and rent terms stay non-binding until a formal Lease or Sale Contract is signed, though privacy lines can be binding."
       },
       {
-        q: "Do I pay earnest money when submitting a commercial LOI?",
-        a: "No. Earnest money or initial security deposits are normally wired to the title company or escrow agent only after the formal Purchase Agreement or Lease is signed."
+        q: "Do I wire earnest money with a commercial LOI?",
+        a: "No. Escrow deposits and security checks are wired only after both sides sign the final Sale Contract or Lease."
       }
     ],
     propertyType: ["commercial", "land-acreage"],

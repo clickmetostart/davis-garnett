@@ -24,6 +24,7 @@ import ProposalNav from "@/components/ProposalNav";
 import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 import SiteFooter from "@/components/SiteFooter";
 import EmailActionBox from "@/components/EmailActionBox";
+import { smoothScrollToId } from "@/lib/smoothScroll";
 
 export default function AboutHubPage() {
   const [formData, setFormData] = useState({
@@ -81,10 +82,10 @@ export default function AboutHubPage() {
     name: "Davis & Garnett Real Estate Advisors",
     description:
       "A Higher Standard of Real Estate Advisory in Tampa Bay. Combining institutional-grade commercial & land underwriting with white-glove luxury residential representation at Align Right Realty Carrollwood.",
-    url: "https://davisgarnettsells.com/about",
+    url: "https://www.davisgarnettsells.com/about",
     telephone: "+1-941-737-4127",
     email: "list@davisgarnettsells.com",
-    image: "https://davisgarnettsells.com/davis-garnett-real-combo.png",
+    image: "https://www.davisgarnettsells.com/davis-garnett-real-combo.png",
     priceRange: "$$$-$$$$",
     hasMap: "https://share.google/XMpv7TSdYT1Z2ZzyY",
     sameAs: [
@@ -114,7 +115,7 @@ export default function AboutHubPage() {
         identifier: "FL License #3209459",
         telephone: "+1-941-737-4127",
         email: "mark@davisgarnettsells.com",
-        url: "https://davisgarnettsells.com/about/mark-davis",
+        url: "https://www.davisgarnettsells.com/about/mark-davis",
       },
       {
         "@type": "Person",
@@ -123,7 +124,7 @@ export default function AboutHubPage() {
         identifier: "FL License #3378601",
         telephone: "+1-727-808-3344",
         email: "rachael@davisgarnettsells.com",
-        url: "https://davisgarnettsells.com/about/rachael-garnett",
+        url: "https://www.davisgarnettsells.com/about/rachael-garnett",
       },
     ],
     areaServed: [
@@ -208,13 +209,14 @@ export default function AboutHubPage() {
               </p>
 
               <div className="flex flex-wrap items-center gap-4">
-                <a
-                  href="#consultation"
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-[#111111] text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C8A951] hover:text-[#111111] transition-colors rounded-lg"
+                <button
+                  type="button"
+                  onClick={() => smoothScrollToId("consultation")}
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-[#111111] text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C8A951] hover:text-[#111111] transition-colors rounded-lg cursor-pointer"
                 >
                   Schedule Private Consultation
                   <ArrowRight className="w-4 h-4" />
-                </a>
+                </button>
                 <Link
                   href="/about/mark-davis"
                   className="inline-flex items-center gap-2 px-6 py-4 border border-[#111111]/20 text-[#111111] text-xs font-bold uppercase tracking-[0.2em] hover:border-[#C8A951] hover:text-[#9A7D3A] transition-colors rounded-lg"

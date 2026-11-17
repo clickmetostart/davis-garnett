@@ -1,9 +1,9 @@
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Mark Davis | Commercial & Residential Advisor in Tampa Bay",
+  title: "Mark Davis | Commercial & Residential Advisor Tampa Bay",
   description:
-    "Licensed Florida Realtor #3209459 specializing in commercial acquisitions, NNN leases, 1031 exchanges, land development, and luxury residential sales across Tampa Bay.",
+    "Florida Realtor #3209459 focused on commercial buys, NNN leases, 1031 exchanges, land deals, and luxury homes across Tampa Bay.",
   path: "/about/mark-davis",
   image: "/mark-commerical-banner-1.jpg",
   type: "profile",

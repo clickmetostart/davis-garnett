@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { buildPageMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Commercial Rent, NNN & CAM Lease Calculator | Davis & Garnett Tampa Bay",
+  title: "Commercial Rent, NNN & CAM Calculator | Davis & Garnett",
   description:
-    "Calculate monthly and annual commercial lease occupancy costs comparing Triple Net (NNN), Modified Gross, and Full-Service Gross structures with CAM, taxes, insurance, and escalations.",
+    "Compare monthly and annual commercial lease costs across Triple Net (NNN), Modified Gross, and Full-Service Gross leases with CAM, tax, and insurance.",
   path: "/tools/commercial-rent-calculator",
 });
 

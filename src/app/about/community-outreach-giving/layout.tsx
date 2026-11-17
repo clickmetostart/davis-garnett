@@ -1,9 +1,9 @@
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Community Outreach, Schools & Giving | Davis & Garnett Tampa Bay",
+  title: "Community Outreach, Schools & Giving | Davis & Garnett",
   description:
-    "Discover how Mark Davis and Rachael Garnett support local Tampa Bay schools, churches, youth mentorship, Metropolitan Ministries, American Cancer Society, and Big Brothers Big Sisters.",
+    "See how Mark Davis and Rachael Garnett support Tampa Bay schools, local charities, youth mentorship, Metropolitan Ministries, and community drives.",
   path: "/about/community-outreach-giving",
   image: "/golf_networking.png",
 });

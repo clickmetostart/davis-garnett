@@ -4,7 +4,7 @@ import AreaSpokeClient from "./AreaSpokeClient";
 import { AREAS, getRelatedGuidesForArea } from "@/data/knowledgeHub";
 import { DEVELOPMENTS } from "@/data/developments";
 
-import { buildPageMetadata } from "@/lib/seo";
+import { buildPageMetadata, TEAM_SAME_AS } from "@/lib/seo";
 
 const BASE_URL = "https://www.davisgarnettsells.com";
 
@@ -53,6 +53,7 @@ export default async function AreaSpokePage({
         name: area.name,
         description: area.quickAnswer || area.overview,
         url: pageUrl,
+        image: area.heroImage.startsWith("http") ? area.heroImage : `${BASE_URL}${area.heroImage}`,
         address: {
           "@type": "PostalAddress",
           addressRegion: "FL",
@@ -63,6 +64,7 @@ export default async function AreaSpokePage({
         "@type": "RealEstateAgent",
         name: "Davis & Garnett Commercial / Residential Advisors — Align Right Realty Carrollwood",
         url: BASE_URL,
+        sameAs: TEAM_SAME_AS,
         areaServed: area.name,
       },
       {

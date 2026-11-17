@@ -27,7 +27,7 @@ export async function generateMetadata({
 
   return buildPageMetadata({
     title: `${first} ${last} | Direct Links & Listings — Davis & Garnett`,
-    description: `Connect directly with ${first} ${last} at Davis & Garnett Real Estate Advisors (Align Right Realty Carrollwood), browse featured Tampa Bay properties, and request a call.`,
+    description: `Connect directly with ${first} ${last} at Davis & Garnett Real Estate Advisors, browse featured Tampa Bay properties, or schedule a quick call.`,
     path: `/${slug}`,
     image: coverImage,
     type: 'profile',

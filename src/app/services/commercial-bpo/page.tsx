@@ -21,9 +21,9 @@ import {
 } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Commercial Broker Price Opinions (BPO) in Tampa Bay | Davis & Garnett",
+  title: "Commercial Broker Price Opinions (BPO) | Davis & Garnett",
   description:
-    "Fast, data-backed Commercial Broker Price Opinions (BPOs) across Tampa Bay and Central Florida for owners, lenders, attorneys, estate planners, and 1031 exchange sellers.",
+    "Fast, data-backed Commercial Broker Price Opinions across Tampa Bay and Central Florida for owners, lenders, attorneys, and 1031 exchange sellers.",
   path: "/services/commercial-bpo",
   image: "/city-photos/brandon-riverview-commercial.jpg",
 });

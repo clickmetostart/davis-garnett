@@ -146,26 +146,26 @@ export default function SiteFooter() {
               <li><Link href="/properties#commercial-land" className="hover:text-white transition-colors">Commercial &amp; Land Offerings</Link></li>
               <li><Link href="/services/commercial-bpo" className="hover:text-white transition-colors">Commercial BPO Valuations</Link></li>
               <li><Link href="/services/commercial-mentoring" className="hover:text-white transition-colors">Commercial Mentoring</Link></li>
-              <li><Link href="/tours" className="text-[#D4AF37] hover:text-white transition-colors font-medium">Guided Area &amp; Retail Tours</Link></li>
+              <li><Link href="/tours" className="text-[#D4AF37] hover:text-white transition-colors font-medium">Guided Neighborhood &amp; Commercial Tours</Link></li>
               <li><Link href="/properties#sold-track-record" className="hover:text-white transition-colors">2026–2027 Sold Track Record</Link></li>
             </ul>
           </div>
 
-          {/* Col 2: Developments Hub */}
+          {/* Col 2: Trending Hub */}
           <div>
             <Link href="/developments" className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4AF37] block mb-4 hover:text-white transition-colors">
-              Developments
+              Trending Hub
             </Link>
             <ul className="space-y-2.5 text-xs text-white/60">
-              <li><Link href="/developments" className="hover:text-white transition-colors">All Featured Developments</Link></li>
-              <li><Link href="/developments/pendry-residences-tampa" className="hover:text-white transition-colors">Pendry Residences Tampa</Link></li>
-              <li><Link href="/developments/the-ritz-carlton-residences-bayshore" className="hover:text-white transition-colors">Ritz-Carlton Residences</Link></li>
-              <li><Link href="/developments/water-street-tampa-phase-2" className="hover:text-white transition-colors">Water Street Phase 2</Link></li>
-              <li><Link href="/developments/two-rivers-wesley-chapel" className="hover:text-white transition-colors">Two Rivers (Wesley Chapel)</Link></li>
-              <li><Link href="/developments/angeline-land-o-lakes" className="hover:text-white transition-colors">Angeline (Land O&apos; Lakes)</Link></li>
-              <li><Link href="/developments/epperson-mirada-lagoon-wesley-chapel" className="hover:text-white transition-colors">Epperson &amp; Mirada Lagoons</Link></li>
-              <li><Link href="/developments/one-tampa-riverwalk" className="hover:text-white transition-colors">ONE Tampa</Link></li>
-              <li><Link href="/developments/sunrise-hills-brooksville" className="hover:text-white transition-colors">Sunrise Hills (Brooksville)</Link></li>
+              <li><Link href="/developments" className="hover:text-white transition-colors">All Trending Real Estate</Link></li>
+              <li><Link href="/developments#downtown-towers" className="hover:text-white transition-colors">Tampa Bay &amp; Hillsborough</Link></li>
+              <li><Link href="/developments#st-pete-region" className="hover:text-white transition-colors">Pinellas County &amp; Beaches</Link></li>
+              <li><Link href="/developments#north-tampa-communities" className="hover:text-white transition-colors">North Tampa, Pasco &amp; Hernando</Link></li>
+              <li><Link href="/developments#sarasota-manatee-communities" className="hover:text-white transition-colors">Bradenton, Sarasota &amp; Venice</Link></li>
+              <li><Link href="/developments#lakeland-polk-region" className="hover:text-white transition-colors">Central FL, Plant City &amp; Polk</Link></li>
+              <li><Link href="/developments#carrollwood-region" className="hover:text-white transition-colors">Align Right Carrollwood Corridor</Link></li>
+              <li><Link href="/developments#55-plus" className="hover:text-white transition-colors">55+ Active-Adult Communities</Link></li>
+              <li><Link href="/developments#new-construction-guide" className="hover:text-white transition-colors">Why Bring Your Own Agent?</Link></li>
             </ul>
           </div>
 
@@ -202,7 +202,7 @@ export default function SiteFooter() {
               <li><Link href="/knowledge-hub/areas/land-o-lakes" className="hover:text-white transition-colors">Land O&apos; Lakes Corridor</Link></li>
               <li><Link href="/knowledge-hub/areas/brandon-riverview" className="hover:text-white transition-colors">Brandon &amp; East Hillsborough</Link></li>
               <li><Link href="/knowledge-hub/areas/central-florida-acreage" className="hover:text-white transition-colors">Central FL Acreage &amp; Land</Link></li>
-              <li><Link href="/tours" className="text-[#D4AF37] hover:text-white transition-colors font-medium">Guided Area Tours (#GuidedByDG)</Link></li>
+              <li><Link href="/tours" className="text-[#D4AF37] hover:text-white transition-colors font-medium">Neighborhood &amp; CRE Tours (#GuidedByDG)</Link></li>
             </ul>
           </div>
 

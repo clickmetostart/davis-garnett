@@ -10,6 +10,8 @@ import {
   Star,
   PlayCircle,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   MessageCircleQuestion,
   Camera,
   Heart,
@@ -19,6 +21,11 @@ import {
   Search,
   MapPin,
   ShieldCheck,
+  BookOpen,
+  Calculator,
+  Calendar,
+  FileText,
+  Trees,
 } from "lucide-react";
 import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 import PropertiesStickyStack from "@/components/PropertiesStickyStack";
@@ -26,10 +33,13 @@ import ProposalNav from "@/components/ProposalNav";
 import BackgroundVideo from "@/components/BackgroundVideo";
 import SiteFooter from "@/components/SiteFooter";
 import ConsultationModal from "@/components/ConsultationModal";
+import PdfAvailableBadge from "@/components/PdfAvailableBadge";
+import { smoothScrollToId } from "@/lib/smoothScroll";
 
 export default function HomePageV1Light() {
   const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
+  const developmentsRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
@@ -55,6 +65,16 @@ export default function HomePageV1Light() {
   const openConsultation = (interest: string, advisor: string, title: string) => {
     setModalConfig({ interest, advisor, title });
     setModalOpen(true);
+  };
+
+  const scrollDevelopmentsSlider = (dir: "left" | "right") => {
+    if (!developmentsRef.current) return;
+    const el = developmentsRef.current;
+    const distance = Math.min(el.clientWidth * 0.92, el.clientWidth);
+    el.scrollBy({
+      left: dir === "left" ? -distance : distance,
+      behavior: "smooth",
+    });
   };
 
   const handleMlsSearch = (e: React.FormEvent) => {
@@ -126,36 +146,26 @@ export default function HomePageV1Light() {
             Your Tampa Bay <br />
             <span className="text-[#D4AF37]">Real Estate Team.</span>
           </h1>
-          <p className="text-base md:text-[17px] lg:text-[18px] text-white/90 font-light max-w-2xl leading-relaxed mb-10 drop-shadow-lg">
+          <p className="text-base md:text-[17px] lg:text-[18px] text-white/90 font-light max-w-2xl leading-relaxed drop-shadow-lg">
             Mark Davis and Rachael Garnett work together across residential and commercial real estate—giving you two experienced local agents in your corner from day one.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-            <Link
-              href="/properties"
-              className="px-8 py-4 bg-[#D4AF37] hover:bg-white text-[#111] text-xs font-bold uppercase tracking-[0.2em] rounded-lg transition-colors flex items-center justify-center gap-2 w-full sm:w-auto"
-            >
-              View Our Listings <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link
-              href="/developments"
-              className="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/30 hover:border-[#D4AF37] hover:bg-[#D4AF37] text-white hover:text-[#111] text-xs font-bold uppercase tracking-[0.2em] rounded-lg transition-colors w-full sm:w-auto"
-            >
-              Featured Developments
-            </Link>
-          </div>
         </div>
 
-        <motion.div
+        <motion.button
+          type="button"
+          onClick={() => smoothScrollToId("home-team-reveal", 72)}
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-85 z-20 pointer-events-none"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-90 hover:opacity-100 z-20 cursor-pointer"
+          aria-label="Scroll to Discover"
         >
           <span className="text-[10px] tracking-[0.3em] uppercase font-bold text-[#D4AF37]">Scroll to Discover</span>
           <div className="w-[2px] h-10 bg-gradient-to-b from-[#D4AF37] to-transparent animate-pulse" />
-        </motion.div>
+        </motion.button>
       </section>
 
       {/* ── TAMPA TEAM REVEAL ── */}
+      <div id="home-team-reveal" />
       {isMobile ? (
         <section className="py-24 px-6 bg-white">
           <div className="text-center mb-16">
@@ -175,6 +185,10 @@ export default function HomePageV1Light() {
             <div className="w-full">
               <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden mb-6">
                 <Image src="/new-images/new-2/mark-davis-residential-commerical-advisor-tampa-real-estate-3.jpg" alt="Mark Davis" fill className="object-cover object-top" />
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none" />
+                <div className="absolute bottom-4 right-4 w-12 h-12 opacity-20 mix-blend-screen pointer-events-none select-none">
+                  <Image src="/new-images/new-2/dg-favicon-fat-dark-background.png" alt="" fill className="object-contain" />
+                </div>
               </div>
               <h3 className="font-aiveritas text-3xl text-[#111] mb-1">Mark Davis</h3>
               <p className="text-[#D4AF37] text-xs uppercase tracking-widest mb-3">REALTOR® · Certified Commercial &amp; Residential Agent • FL Lic #3209459</p>
@@ -191,6 +205,10 @@ export default function HomePageV1Light() {
             <div className="w-full">
               <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden mb-6">
                 <Image src="/new-images/new-2/rachael-garnett-residential-commerical-advisor-tampa-real-estate-homepage-1.jpg" alt="Rachael Garnett" fill className="object-cover object-top" />
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none" />
+                <div className="absolute bottom-4 right-4 w-12 h-12 opacity-20 mix-blend-screen pointer-events-none select-none">
+                  <Image src="/new-images/new-2/dg-favicon-fat-dark-background.png" alt="" fill className="object-contain" />
+                </div>
               </div>
               <h3 className="font-aiveritas text-3xl text-[#111] mb-1">Rachael Garnett</h3>
               <p className="text-[#D4AF37] text-xs uppercase tracking-widest mb-3">REALTOR® · Certified Commercial &amp; Residential Agent • FL Lic #3378601</p>
@@ -221,7 +239,7 @@ export default function HomePageV1Light() {
                 <p className="text-[#D4AF37] text-[11px] uppercase tracking-widest mb-5">REALTORS® · Certified Commercial &amp; Residential Agents</p>
                 <Link
                   href="/about"
-                  className="flex items-center gap-3 px-7 py-3.5 bg-white text-[#111] text-xs font-bold uppercase tracking-widest hover:bg-[#D4AF37] hover:text-white transition-colors shadow-lg"
+                  className="flex items-center gap-3 px-7 py-3.5 bg-white text-[#111] text-xs font-bold uppercase tracking-widest hover:bg-[#D4AF37] hover:text-[#111] transition-colors shadow-lg"
                 >
                   Meet Our Team <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -271,10 +289,16 @@ export default function HomePageV1Light() {
                 </p>
                 <Link
                   href="/about/mark-davis"
-                  className="flex items-center gap-3 px-8 py-4 bg-white text-[#111] text-xs font-bold uppercase tracking-widest hover:bg-[#D4AF37] hover:text-white transition-colors"
+                  className="flex items-center gap-3 px-8 py-4 bg-white text-[#111] text-xs font-bold uppercase tracking-widest hover:bg-[#D4AF37] hover:text-[#111] transition-colors"
                 >
                   Meet Mark Davis <ArrowRight className="w-4 h-4" />
                 </Link>
+              </motion.div>
+              <motion.div
+                className="absolute bottom-6 right-6 lg:bottom-8 lg:right-8 w-14 h-14 lg:w-16 lg:h-16 mix-blend-screen pointer-events-none select-none z-10"
+                style={{ opacity: textOpacity }}
+              >
+                <Image src="/new-images/new-2/dg-favicon-fat-dark-background.png" alt="" fill className="object-contain opacity-25" />
               </motion.div>
             </motion.div>
 
@@ -295,10 +319,16 @@ export default function HomePageV1Light() {
                 </p>
                 <Link
                   href="/about/rachael-garnett"
-                  className="flex items-center gap-3 px-8 py-4 bg-white text-[#111] text-xs font-bold uppercase tracking-widest hover:bg-[#D4AF37] hover:text-white transition-colors"
+                  className="flex items-center gap-3 px-8 py-4 bg-white text-[#111] text-xs font-bold uppercase tracking-widest hover:bg-[#D4AF37] hover:text-[#111] transition-colors"
                 >
                   Meet Rachael Garnett <ArrowRight className="w-4 h-4" />
                 </Link>
+              </motion.div>
+              <motion.div
+                className="absolute bottom-6 right-6 lg:bottom-8 lg:right-8 w-14 h-14 lg:w-16 lg:h-16 mix-blend-screen pointer-events-none select-none z-10"
+                style={{ opacity: textOpacity }}
+              >
+                <Image src="/new-images/new-2/dg-favicon-fat-dark-background.png" alt="" fill className="object-contain opacity-25" />
               </motion.div>
             </motion.div>
           </div>
@@ -357,19 +387,45 @@ export default function HomePageV1Light() {
         </div>
       </section>
 
-      {/* ── STATS ── */}
-      <section className="py-24 px-8 bg-[#f5f3ef]">
+      {/* ── ADVISOR CREDENTIALS & PORTFOLIO METRICS ── */}
+      <section className="py-20 px-8 bg-[#f5f3ef]">
         <div className="max-w-screen-xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 divide-x-0 md:divide-x divide-[#111]/10 text-center">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {[
-              { stat: "$250M+", label: "Combined Team Advisory" },
-              { stat: "20+", label: "Years Experience" },
-              { stat: "5.0", label: "Client Rating" },
-              { stat: "100%", label: "Custom Representation" },
-            ].map(({ stat, label }) => (
-              <div key={label} className="flex flex-col gap-2">
-                <span className="text-4xl md:text-5xl font-aiveritas text-[#D4AF37]">{stat}</span>
-                <span className="text-xs uppercase tracking-widest text-[#111]/50 font-bold">{label}</span>
+              {
+                value: "$250M+",
+                label: "Combined Team Success",
+                sub: "Residential, Commercial & Land",
+              },
+              {
+                value: "20+",
+                label: "Years Experience",
+                sub: "CRE & RES Dual-Certified Agents",
+              },
+              {
+                value: "5.0 ★",
+                label: "Client Rating",
+                sub: "Tampa Bay & Central Florida",
+              },
+              {
+                value: "100%",
+                label: "Working For You",
+                sub: "Align Right Carrollwood · #BK3401606",
+              },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="bg-white border border-[#111]/10 rounded-2xl p-6 text-center shadow-sm flex flex-col justify-center gap-1.5"
+              >
+                <span className="text-2xl sm:text-3xl md:text-4xl font-aiveritas text-[#111]">
+                  {item.value}
+                </span>
+                <span className="text-[11px] uppercase tracking-[0.18em] text-[#9A7D3A] font-bold">
+                  {item.label}
+                </span>
+                <span className="text-xs text-[#111]/55 font-light">
+                  {item.sub}
+                </span>
               </div>
             ))}
           </div>
@@ -382,133 +438,345 @@ export default function HomePageV1Light() {
       </section>
       <div className="h-[8vh] bg-[#f5f3ef] pointer-events-none" />
 
-      {/* ── FEATURED DEVELOPMENTS & NEW CONSTRUCTION SPOTLIGHT ── */}
+      {/* ── TRENDING REAL ESTATE REGIONAL SLIDER ── */}
       <section className="py-32 px-8 bg-white border-t border-[#111]/10">
         <div className="max-w-screen-xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-8">
             <div>
               <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
-                New Construction &amp; Pre-Construction
+                Trending Hub · Commercial, Historic Districts &amp; New Construction
               </span>
               <h2 className="font-aiveritas text-4xl md:text-5xl lg:text-6xl text-[#111] mb-4 leading-tight">
-                Featured Tampa Bay<br className="sm:hidden" /> Developments
+                Trending Tampa Bay<br className="sm:hidden" /> Real Estate
               </h2>
               <p className="text-[#111]/75 text-base md:text-[17px] lg:text-[18px] font-light max-w-2xl leading-relaxed">
-                From waterfront condominiums on the Downtown Tampa Riverwalk and Bayshore Boulevard to resort-style master-planned communities in Wesley Chapel and Land O&apos; Lakes.
+                Explore established neighborhoods, active commercial corridors, 55+ communities, and new construction across Tampa Bay—from Clearwater, Dunedin &amp; St. Petersburg through Tampa and Wesley Chapel to Bradenton, Lakewood Ranch &amp; Sarasota.
               </p>
             </div>
-            <Link
-              href="/developments"
-              className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#111] text-white text-xs font-bold uppercase tracking-widest rounded-lg hover:bg-[#D4AF37] hover:text-[#111] transition-colors shrink-0"
-            >
-              Explore More Developments <ArrowRight className="w-4 h-4" />
-            </Link>
+            <div className="flex flex-wrap items-center gap-4 shrink-0">
+              <div className="flex items-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => scrollDevelopmentsSlider("left")}
+                  className="p-3 rounded-full bg-[#D4AF37] text-[#111] border border-[#9A7D3A]/50 shadow-md shadow-[#D4AF37]/30 hover:bg-[#111] hover:text-[#D4AF37] hover:scale-105 active:scale-95 transition-all"
+                  aria-label="Scroll Developments Left"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => scrollDevelopmentsSlider("right")}
+                  className="p-3 rounded-full bg-[#D4AF37] text-[#111] border border-[#9A7D3A]/50 shadow-md shadow-[#D4AF37]/30 hover:bg-[#111] hover:text-[#D4AF37] hover:scale-105 active:scale-95 transition-all"
+                  aria-label="Scroll Developments Right"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
+              <Link
+                href="/developments"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#111] text-white text-xs font-bold uppercase tracking-widest rounded-lg hover:bg-[#D4AF37] hover:text-[#111] transition-colors shrink-0"
+              >
+                Open Trending Hub <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-10 mb-12">
-            {/* Corridor 1: Downtown & Bayshore Luxury Condo Towers */}
-            <div className="bg-[#f5f3ef] border border-[#111]/10 rounded-2xl overflow-hidden flex flex-col justify-between">
-              <div className="relative aspect-[16/9] w-full overflow-hidden">
-                <Image
-                  src="/developments/pendry/downtown-tampa-luxury-living-pendry-residences-davis-garnett-residential-commercial-advisors-1.jpg"
-                  alt="Downtown Tampa, Water Street & Bayshore Luxury Towers"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
-                <div className="absolute top-4 left-4 bg-[#D4AF37] text-[#111] px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-sm flex items-center gap-1.5">
-                  <Building2 className="w-3.5 h-3.5" /> Urban Waterfront Skyscrapers
-                </div>
-                <div className="absolute bottom-6 left-6 right-6">
-                  <h3 className="font-aiveritas text-2xl xl:text-[26px] text-white mb-1">
-                    Downtown Tampa, Water St. &amp; Bayshore Towers
-                  </h3>
-                  <p className="text-white/80 text-xs uppercase tracking-widest">
-                    Five-Star Branded Residences • $850K – $7.8M+
-                  </p>
-                </div>
-              </div>
-              <div className="p-8">
-                <div className="grid sm:grid-cols-2 gap-4 mb-8">
-                  {[
-                    { name: "Pendry Residences Tampa", sub: "38-Story Riverwalk Hotel & Condos", slug: "pendry-residences-tampa" },
-                    { name: "The Ritz-Carlton Residences", sub: "Bayshore Blvd Waterfront Towers", slug: "the-ritz-carlton-residences-bayshore" },
-                    { name: "Water Street Phase 2 Tower", sub: "33-Story Mixed-Use District", slug: "water-street-tampa-phase-2" },
-                    { name: "ONE Tampa", sub: "42-Story Tallest Riverwalk Tower", slug: "one-tampa-riverwalk" },
-                  ].map((d) => (
-                    <Link
-                      key={d.slug}
-                      href={`/developments/${d.slug}`}
-                      className="p-4 bg-white rounded-xl border border-[#111]/8 hover:border-[#D4AF37] transition-colors group"
+          <div
+            ref={developmentsRef}
+            className="flex gap-7 lg:gap-10 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-thin"
+            style={{ scrollbarWidth: "none" }}
+          >
+            {[
+              {
+                badge: "Existing + Towers + Mixed-Use",
+                badgeGold: true,
+                icon: Building2,
+                heroImage: "/placeholders/dg-brand-placeholder.webp",
+                heroAlt: "Downtown Tampa, Bayshore & South Tampa Trending Real Estate",
+                title: "Downtown Tampa, Bayshore & South Tampa",
+                subtitle: "Hyde Park, Bayshore, Sky Condos & Westshore Offices • $600K – $7.8M+",
+                dualNote: "Historic Homes + Riverwalk Towers + 650K SqFt Urban Commercial",
+                footerNote: "Condo Reserves, Floor Plans & Commercial Pads",
+                ctaLabel: "Explore Tampa Core",
+                ctaHref: "/developments?corridor=downtown-bayshore#downtown-towers",
+                items: [
+                  { name: "Hyde Park & Bayshore Estates", sub: "Existing Historic Homes & Walkable Village", slug: "hyde-park-bayshore-established-south-tampa" },
+                  { name: "Pendry, Ritz & ONE Tampa", sub: "New Branded Riverwalk & Bayshore Towers", slug: "pendry-residences-tampa" },
+                  { name: "Gasworx & Water St. Mixed-Use", sub: "Class-A Offices, Condos & Street Retail", slug: "gasworx-ybor-channel-district" },
+                  { name: "Westshore Marina District", sub: "Bay Condos, Yacht Slips & Airport Offices", slug: "westshore-marina-international-plaza-district" },
+                ],
+              },
+              {
+                badge: "Golf + Lagoons + 55+ + Biotech",
+                badgeGold: false,
+                icon: Compass,
+                heroImage: "/placeholders/dg-brand-placeholder.webp",
+                heroAlt: "Wesley Chapel & Land O' Lakes Trending Real Estate",
+                title: "Wesley Chapel, Land O' Lakes & North",
+                subtitle: "Master Villages, Lagoons, New 55+ & Speros Biotech • $360K – $1.6M+",
+                dualNote: "Golf Resales + Two Rivers / Angeline + New 55+ & Biotech Parks",
+                footerNote: "Builder Buydowns, CDD Audits & Speros Growth",
+                ctaLabel: "Explore Wesley Chapel",
+                ctaHref: "/developments?corridor=north-tampa#north-tampa-communities",
+                items: [
+                  { name: "Two Rivers & Angeline", sub: "New Master Towns, Peak Surf & Speros FL", slug: "two-rivers-wesley-chapel" },
+                  { name: "Epperson, Mirada & Sunrise Hills", sub: "Crystal Lagoons Across Pasco & Hernando", slug: "epperson-mirada-lagoon-wesley-chapel" },
+                  { name: "Valencia Ridge & Medley 55+", sub: "Brand-New Gated Clubhouses & Villas", slug: "valencia-ridge-medley-mirada-55-plus" },
+                  { name: "Plantation Palms & Seven Oaks", sub: "Established Golf Streets & Lower Tax Bonds", slug: "seven-oaks-plantation-palms-bexley-resale" },
+                ],
+              },
+              {
+                badge: "Lakes + Bayfront + 55+ + UTC CRE",
+                badgeGold: true,
+                icon: MapPin,
+                heroImage: "/placeholders/dg-brand-placeholder.webp",
+                heroAlt: "Bradenton, Lakewood Ranch & Sarasota Trending Real Estate",
+                title: "Bradenton, Lakewood Ranch & Sarasota",
+                subtitle: "Lake Estates, Azario Golf, 55+, Quay Condos & UTC Retail • $300Ks – $10M+",
+                dualNote: "Waterside & Wild Blue + Cresswind 55+ + The Quay & UTC Commercial",
+                footerNote: "Manatee/Sarasota Advisory & 55+ Comparisons",
+                ctaLabel: "Explore Sarasota & LWR",
+                ctaHref: "/developments?corridor=sarasota-manatee#sarasota-manatee-communities",
+                items: [
+                  { name: "Waterside, Star Farms & Azario", sub: "LWR Custom Lakes, Golf & Town Centers", slug: "waterside-wild-blue-lakewood-ranch" },
+                  { name: "The Quay Sarasota & North River", sub: "Bayfront Sky Condos & Bradenton Villages", slug: "the-quay-sarasota-waterfront" },
+                  { name: "Cresswind & Del Webb 55+ (LWR)", sub: "Award-Winning 55+ Clubhouses & Villas", slug: "cresswind-del-webb-lakewood-ranch-55-plus" },
+                  { name: "UTC & LWR Main St. Commercial", sub: "I-75 Exit 213 Plazas & Medical Parks", slug: "university-parkway-utc-lakewood-ranch-commercial" },
+                ],
+              },
+              {
+                badge: "Boating + Towers + 55+ + CRE",
+                badgeGold: false,
+                icon: MapPin,
+                heroImage: "/placeholders/dg-brand-placeholder.webp",
+                heroAlt: "St. Petersburg, Bahama Shores & Pinellas Beaches Trending Real Estate",
+                title: "St. Petersburg & South Pinellas",
+                subtitle: "Bahama Shores, Old NE, Downtown Condos & Central Ave • $250K – $8.5M+",
+                dualNote: "Deep-Water Boating + Sky Towers + 55+ & EDGE District Retail",
+                footerNote: "Seawalls, Elevations & Central Ave Commercial",
+                ctaLabel: "Explore St. Petersburg",
+                ctaHref: "/developments?corridor=st-petersburg-pinellas#st-pete-region",
+                items: [
+                  { name: "Bahama Shores & Snell Isle", sub: "Deep-Water Estates & Historic Brick Streets", slug: "bahama-shores-snell-isle-st-petersburg" },
+                  { name: "Downtown St. Pete Sky Towers", sub: "Waldorf Astoria, Art House & Saltaire Condos", slug: "st-petersburg-downtown-towers-saltaire-art-house" },
+                  { name: "Point Brittany & Mainlands 55+", sub: "Bayfront Condos & Single-Story Villas", slug: "point-brittany-isla-del-sol-55-plus" },
+                  { name: "Central Ave & EDGE District CRE", sub: "Storefront Retail, Hospitality & Offices", slug: "edge-district-central-ave-commercial-st-pete" },
+                ],
+              },
+              {
+                badge: "Bluffs + Gulf Condos + 55+ + Retail",
+                badgeGold: true,
+                icon: Compass,
+                heroImage: "/placeholders/dg-brand-placeholder.webp",
+                heroAlt: "Clearwater Beach, Dunedin & North Pinellas Trending Real Estate",
+                title: "Clearwater, Dunedin & North Pinellas",
+                subtitle: "Pinellas Trail Towns, Sand Key, 55+ Golf & SR-60 CRE • $215K – $4.5M+",
+                dualNote: "Dunedin & Belleair + Beach Condos + OTOW 55+ & US-19 Commercial",
+                footerNote: "Coastal Reserve Checks & Dunedin Trail Living",
+                ctaLabel: "Explore Clearwater & Dunedin",
+                ctaHref: "/developments?corridor=clearwater-north-pinellas#clearwater-region",
+                items: [
+                  { name: "Dunedin, Belleair & Safety Harbor", sub: "High Zone-X Bluffs & Pinellas Trail Living", slug: "dunedin-safety-harbor-belleair-coastal" },
+                  { name: "Clearwater Beach & Sand Key", sub: "Gulf Condos & Island Estates Boat Slips", slug: "clearwater-beach-sand-key-waterfront-condos" },
+                  { name: "On Top of the World & Timber Greens", sub: "Zero-CDD 55+ Golf & Active-Adult Clubs", slug: "on-top-of-the-world-timber-greens-55-plus" },
+                  { name: "US-19 & Gulf-to-Bay Commercial", sub: "Medical Offices, Retail Plazas & Dining", slug: "us19-gulf-to-bay-dunedin-commercial" },
+                ],
+              },
+              {
+                badge: "Trails + Golf + Sponge Docks + CRE",
+                badgeGold: true,
+                icon: Trees,
+                heroImage: "/placeholders/dg-brand-placeholder.webp",
+                heroAlt: "Tarpon Springs, Palm Harbor & Trinity West Pasco Trending Real Estate",
+                title: "Tarpon Springs, Palm Harbor & Trinity",
+                subtitle: "Starkey Ranch, East Lake Golf, Sponge Docks & SR-54 CRE • $245K – $6.0M+",
+                dualNote: "Porch Towns + Lake Tarpon Boats + Timber Greens 55+ & SR-54 Medical",
+                footerNote: "Pinellas-Pasco Cost Comparisons & Builder Tours",
+                ctaLabel: "Explore West Pasco",
+                ctaHref: "/developments#west-pasco-region",
+                items: [
+                  { name: "Starkey Ranch & Asturia", sub: "20+ Miles of Trails & Walkable Schools", slug: "starkey-ranch-trinity-master-planned" },
+                  { name: "East Lake & Lansbrook", sub: "Private Lake Tarpon Docks & Guarded Golf", slug: "east-lake-woodlands-lansbrook-palm-harbor" },
+                  { name: "Tarpon Sponge Docks & SR-54 CRE", sub: "Hospital Medical Suites & Bayou Shops", slug: "tarpon-springs-sponge-docks-coastal" },
+                  { name: "Timber Greens 55+ Golf", sub: "Zero-CDD Guard-Gated Country Club Living", slug: "timber-greens-regency-park-west-pasco-55-plus" },
+                ],
+              },
+              {
+                badge: "Sailboat Canals + 55+ + Waterset",
+                badgeGold: false,
+                icon: Compass,
+                heroImage: "/placeholders/dg-brand-placeholder.webp",
+                heroAlt: "Apollo Beach, Ruskin & Sun City Center Trending Real Estate",
+                title: "Apollo Beach, Ruskin & Sun City",
+                subtitle: "MiraBay Docks, Waterset New Builds & Valencia del Sol 55+ • $195K – $6.5M",
+                dualNote: "Deep-Water Canals + New Builder Credits + Zero-CDD Golf-Cart 55+",
+                footerNote: "Seawalls, Flood Quotes & 55+ Cost Checks",
+                ctaLabel: "Explore SouthShore",
+                ctaHref: "/developments#south-shore-region",
+                items: [
+                  { name: "MiraBay & Symphony Isles", sub: "No-Bridge Sailboat Docks Into Tampa Bay", slug: "mirabay-symphony-isles-apollo-beach" },
+                  { name: "Waterset New Construction", sub: "WestBay & Weekley Floor Plans + 4 Pools", slug: "waterset-apollo-beach-new-construction" },
+                  { name: "Valencia del Sol & Sun City 55+", sub: "GL Homes Luxury Club & Golf-Cart Town", slug: "valencia-del-sol-wimauma-55-plus" },
+                  { name: "Big Bend Rd & US-41 CRE", sub: "St. Joseph's Hospital Retail & Marine Pads", slug: "us41-big-bend-apollo-beach-commercial" },
+                ],
+              },
+              {
+                badge: "Marina Towers + Offices + Canals",
+                badgeGold: true,
+                icon: Building2,
+                heroImage: "/placeholders/dg-brand-placeholder.webp",
+                heroAlt: "Westshore Marina District, Rocky Point & Town N Country Real Estate",
+                title: "Westshore Marina & Rocky Point",
+                subtitle: "150-Slip Bay Marina, Airport Offices & Baycrest Canals • $340K – $10M+",
+                dualNote: "Marina Pointe Condos + Class-A Corporate + Zero-HOA Boat Docks",
+                footerNote: "Airport Proximity, Marina Slips & Leases",
+                ctaLabel: "Explore Westshore",
+                ctaHref: "/developments#westshore-marina-region",
+                items: [
+                  { name: "Westshore Marina District", sub: "Bayfront Sky Condos & Rooftop Townhomes", slug: "westshore-marina-district-tampa-bayfront" },
+                  { name: "Rocky Point & Intl Plaza CRE", sub: "5-Min Airport Bayfront Offices & Retail", slug: "rocky-point-courtney-campbell-condos-office" },
+                  { name: "Baycrest & Dana Shores Canals", sub: "Zero-HOA Backyard Boat Docks on the Bay", slug: "baycrest-dana-shores-boating-canals" },
+                  { name: "W Hillsborough Veterans Flex", sub: "Airport Contractor Bays & Townhomes", slug: "hillsborough-ave-veterans-flex-commercial" },
+                ],
+              },
+              {
+                badge: "Downtown Lake + Beaches + 55+",
+                badgeGold: false,
+                icon: MapPin,
+                heroImage: "/placeholders/dg-brand-placeholder.webp",
+                heroAlt: "Venice, Wellen Park & North Port Trending Real Estate",
+                title: "Venice, Wellen Park & North Port",
+                subtitle: "Downtown Wellen, Historic Island, Solstice 55+ & Laurel CRE • $295K – $8.5M",
+                dualNote: "Top National Master Plan + Gulf Island Cottages + SMH Hospital Pads",
+                footerNote: "South Sarasota Builders, Island Checks & CRE",
+                ctaLabel: "Explore Venice & Wellen",
+                ctaHref: "/developments#venice-wellen-park-region",
+                items: [
+                  { name: "Wellen Park & CoolToday Park", sub: "Lakefront Downtown & Top Builder Plans", slug: "wellen-park-downtown-cooltoday-venice" },
+                  { name: "Historic Island of Venice", sub: "Venice Ave Boutiques & Beach Walk Blocks", slug: "island-of-venice-historic-gulf-beach" },
+                  { name: "Solstice & Grand Palm 55+", sub: "Toll Brothers Club & Nature Preserves", slug: "solstice-renaissance-wellen-park-55-plus" },
+                  { name: "Laurel Rd & SMH Exit 195 CRE", sub: "Hospital Clinics, Hotels & Retail Pads", slug: "nokomis-laurel-road-medical-commercial-corridor" },
+                ],
+              },
+              {
+                badge: "SBA CRE + Half-Acres + Hawkstone",
+                badgeGold: true,
+                icon: Building2,
+                heroImage: "/placeholders/dg-brand-placeholder.webp",
+                heroAlt: "Brandon, Valrico & East Hillsborough Trending Real Estate",
+                title: "Brandon, Valrico & East Hills",
+                subtitle: "SR-60 SBA Offices, No-HOA Seffner, Valrico & Hawkstone • $245K – $9.5M",
+                dualNote: "Active 126 Ridgewood CRE + FishHawk Trails + Sabal Park Industrial",
+                footerNote: "SBA 504 Buildings, Zero-CDD Yards & New Builds",
+                ctaLabel: "Explore Brandon & Valrico",
+                ctaHref: "/developments#east-hillsborough-region",
+                items: [
+                  { name: "SR-60 Brandon Commercial & SBA", sub: "126 Ridgewood Ave Offices & I-75 Flex", slug: "sr60-brandon-commercial-sba-mixed-use" },
+                  { name: "Valrico, Bloomingdale & Seffner", sub: "Half-Acre Yards, Golf & Zero-HOA Blocks", slug: "valrico-bloomingdale-family-neighborhoods" },
+                  { name: "Hawkstone & FishHawk Trails", sub: "New Construction Models & Top Schools", slug: "hawkstone-winthrop-riverview-new-construction" },
+                  { name: "Brandon & Woodberry Villas 55+", sub: "Step-Free Villas Minutes to Hospitals", slug: "bloomingdale-woodberry-courtyard-55-plus-villas" },
+                ],
+              },
+              {
+                badge: "I-4 Industrial + Lakes + Land",
+                badgeGold: false,
+                icon: Building2,
+                heroImage: "/placeholders/dg-brand-placeholder.webp",
+                heroAlt: "Lakeland, Plant City & Central Florida Land Trending Real Estate",
+                title: "Lakeland, Plant City & I-4 Land",
+                subtitle: "Lake Morton Classics, Bonnet Springs CRE & Hwy Acreage • $215K – $15M",
+                dualNote: "Active 79.54 Ac Frostproof & 19.72 Ac Fort McCoy + I-4 Distribution",
+                footerNote: "1031 Exchanges, Greenbelt Taxes & Lake Estates",
+                ctaLabel: "Explore Lakeland & Land",
+                ctaHref: "/developments#lakeland-polk-region",
+                items: [
+                  { name: "Lake Morton & Dixieland", sub: "Historic Brick Bungalows & 3-Mi Lake Trail", slug: "lake-morton-dixieland-historic-lakeland" },
+                  { name: "Bonnet Springs & Downtown CRE", sub: "Lakeland Retail, Medical & Office Suites", slug: "bonnet-springs-downtown-lakeland-mixed-use" },
+                  { name: "I-4 Logistics & Industrial", sub: "Plant City to Lakeland Warehouse & Yards", slug: "i4-plant-city-polk-industrial-logistics-land" },
+                  { name: "Frostproof & Fort McCoy Land", sub: "79.54 Ac Hwy Site & 19.72 Ac Greenbelt", slug: "polk-marion-us27-us98-acreage-greenbelt-land" },
+                ],
+              },
+              {
+                badge: "Home Office + Lakes + Nearby Devs",
+                badgeGold: true,
+                icon: Building2,
+                heroImage: "/placeholders/dg-brand-placeholder.webp",
+                heroAlt: "Align Right Realty Carrollwood & Surrounding Corridor Trending Real Estate",
+                title: "Align Right Carrollwood & Surroundings",
+                subtitle: "3903 Northdale Hub, Odessa Farms, Ski Lakes & Citrus Park • $265K – $4.5M+",
+                dualNote: "Home Brokerage Corridor + Odessa Barns + Zero-CDD Ski Lakes",
+                footerNote: "No-CDD Yards, ASC-1 Land & Northdale Offices",
+                ctaLabel: "Explore Carrollwood Hub",
+                ctaHref: "/developments#carrollwood-region",
+                items: [
+                  { name: "Original Carrollwood & Northdale", sub: "Oak Streets, Lake Carroll Park & $0 CDD", slug: "original-carrollwood-lake-magdalene-living" },
+                  { name: "Nearby New Builds & Cheval", sub: "Connerton/Bexley North + Guard-Gated Golf", slug: "cheval-lutz-keystone-acreage-estates" },
+                  { name: "Carrollwood Village Villas 55+", sub: "Step-Free Golf Condos Near Two Hospitals", slug: "carrollwood-village-northdale-villas-55-plus" },
+                  { name: "3903 Northdale & Dale Mabry CRE", sub: "Align Right Office Hub & Medical Suites", slug: "northdale-dale-mabry-commercial-office-corridor" },
+                ],
+              },
+            ].map((slide) => {
+              const BadgeIcon = slide.icon;
+              return (
+                <div
+                  key={slide.title}
+                  className="w-[84vw] sm:w-[76vw] lg:w-[calc(50%-20px)] shrink-0 snap-start bg-[#f5f3ef] border border-[#111]/10 rounded-2xl overflow-hidden flex flex-col justify-between"
+                >
+                  <div className="relative aspect-[16/9] w-full overflow-hidden">
+                    <Image
+                      src={slide.heroImage}
+                      alt={slide.heroAlt}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+                    <div
+                      className={`absolute top-4 left-4 px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-sm flex items-center gap-1.5 ${slide.badgeGold ? "bg-[#D4AF37] text-[#111]" : "bg-[#111] text-[#D4AF37]"
+                        }`}
                     >
-                      <div className="font-bold text-sm md:text-base text-[#111] group-hover:text-[#9A7D3A] transition-colors flex items-center justify-between">
-                        {d.name}
-                        <ArrowRight className="w-3.5 h-3.5 text-[#D4AF37]" />
-                      </div>
-                      <div className="text-xs md:text-sm text-[#111]/65 font-light mt-1">{d.sub}</div>
-                    </Link>
-                  ))}
+                      <BadgeIcon className="w-3.5 h-3.5" /> {slide.badge}
+                    </div>
+                    <div className="absolute bottom-5 left-6 right-6">
+                      <h3 className="font-aiveritas text-2xl xl:text-[26px] text-white mb-1">
+                        {slide.title}
+                      </h3>
+                      <p className="text-white/85 text-xs uppercase tracking-widest mb-1.5">
+                        {slide.subtitle}
+                      </p>
+                      <span className="inline-block text-[10px] font-bold uppercase tracking-wider text-[#D4AF37]">
+                        {slide.dualNote}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-8">
+                    <div className="grid sm:grid-cols-2 gap-4 mb-8">
+                      {slide.items.map((d) => (
+                        <Link
+                          key={`${slide.title}-${d.name}`}
+                          href={`/developments/${d.slug}`}
+                          className="p-4 bg-white rounded-xl border border-[#111]/8 hover:border-[#D4AF37] transition-colors group"
+                        >
+                          <div className="font-bold text-sm md:text-base text-[#111] group-hover:text-[#9A7D3A] transition-colors flex items-center justify-between gap-2">
+                            <span>{d.name}</span>
+                            <ArrowRight className="w-3.5 h-3.5 text-[#D4AF37] shrink-0" />
+                          </div>
+                          <div className="text-xs md:text-sm text-[#111]/65 font-light mt-1">{d.sub}</div>
+                        </Link>
+                      ))}
+                    </div>
+                    <div className="flex items-center justify-between pt-4 border-t border-[#111]/10 gap-4">
+                      <span className="text-xs text-[#111]/60">{slide.footerNote}</span>
+                      <Link
+                        href={slide.ctaHref}
+                        className="text-xs font-bold uppercase tracking-widest text-[#9A7D3A] hover:text-[#111] flex items-center gap-1 shrink-0"
+                      >
+                        {slide.ctaLabel} <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex items-center justify-between pt-4 border-t border-[#111]/10">
-                  <span className="text-xs text-[#111]/60">VIP Pre-Construction Floor Plans &amp; Allocation</span>
-                  <Link href="/developments?corridor=Downtown" className="text-xs font-bold uppercase tracking-widest text-[#9A7D3A] hover:text-[#111] flex items-center gap-1">
-                    View Towers <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Corridor 2: North Tampa Master-Planned Communities */}
-            <div className="bg-[#f5f3ef] border border-[#111]/10 rounded-2xl overflow-hidden flex flex-col justify-between">
-              <div className="relative aspect-[16/9] w-full overflow-hidden">
-                <Image
-                  src="/developments/epperson-mirada/tampa-bay-new-development-epperson-mirada-davis-garnett-residential-commercial-advisors-1.jpg"
-                  alt="Wesley Chapel & Land O' Lakes Master-Planned Communities"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
-                <div className="absolute top-4 left-4 bg-[#111] text-[#D4AF37] px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-sm flex items-center gap-1.5">
-                  <Compass className="w-3.5 h-3.5" /> North Tampa Growth Corridor
-                </div>
-                <div className="absolute bottom-6 left-6 right-6">
-                  <h3 className="font-aiveritas text-2xl xl:text-[26px] text-white mb-1">
-                    Wesley Chapel &amp; Land O&apos; Lakes Communities
-                  </h3>
-                  <p className="text-white/80 text-xs uppercase tracking-widest">
-                    Crystal Lagoons, Surf Parks &amp; Wellness Cities • $360K – $1.6M+
-                  </p>
-                </div>
-              </div>
-              <div className="p-8">
-                <div className="grid sm:grid-cols-2 gap-4 mb-8">
-                  {[
-                    { name: "Two Rivers (Wesley Chapel)", sub: "3,400 Acres • Peak Surf Park & The Nest", slug: "two-rivers-wesley-chapel" },
-                    { name: "Angeline (Land O' Lakes)", sub: "6,200 Acres • Moffitt Speros & Del Webb", slug: "angeline-land-o-lakes" },
-                    { name: "Epperson & Mirada Lagoons", sub: "7.5 & 15-Acre Crystal Lagoon Living", slug: "epperson-mirada-lagoon-wesley-chapel" },
-                    { name: "Sunrise Hills (Brooksville)", sub: "1,100 Acres • Metro Lagoon & DRB/Lennar", slug: "sunrise-hills-brooksville" },
-                  ].map((d) => (
-                    <Link
-                      key={d.slug}
-                      href={`/developments/${d.slug}`}
-                      className="p-4 bg-white rounded-xl border border-[#111]/8 hover:border-[#D4AF37] transition-colors group"
-                    >
-                      <div className="font-bold text-sm md:text-base text-[#111] group-hover:text-[#9A7D3A] transition-colors flex items-center justify-between">
-                        {d.name}
-                        <ArrowRight className="w-3.5 h-3.5 text-[#D4AF37]" />
-                      </div>
-                      <div className="text-xs md:text-sm text-[#111]/65 font-light mt-1">{d.sub}</div>
-                    </Link>
-                  ))}
-                </div>
-                <div className="flex items-center justify-between pt-4 border-t border-[#111]/10">
-                  <span className="text-xs text-[#111]/60">Builder Rate Buydowns &amp; Closing Credits</span>
-                  <Link href="/developments?corridor=NorthTampa" className="text-xs font-bold uppercase tracking-widest text-[#9A7D3A] hover:text-[#111] flex items-center gap-1">
-                    View Communities <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -712,102 +980,199 @@ export default function HomePageV1Light() {
         />
       </section>
 
-      {/* ── KNOWLEDGE HUB SPOTLIGHT ── */}
-      <section className="py-32 px-8 bg-[#f5f3ef]">
-        <div className="max-w-screen-xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+      {/* ── KNOWLEDGE HUB SPOTLIGHT (PRETTY + MOBILE-SWIPEABLE BREAKDOWN) ── */}
+      <section className="py-24 px-6 sm:px-8 bg-[#f5f3ef] relative overflow-hidden">
+        <div className="absolute -top-24 right-0 w-[520px] h-[520px] bg-[#D4AF37]/10 rounded-full blur-[130px] pointer-events-none" />
+        <div className="max-w-screen-xl mx-auto relative z-10">
+          {/* Header Row */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
             <div>
-              <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
-                Playbooks, Q&amp;A Classroom, Events &amp; Reports
+              <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
+                Playbooks, Tours, Q&amp;A Classroom, Tools &amp; Events
               </span>
-              <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111]">
-                Real Estate Knowledge Simplified
+              <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111] mb-2 leading-tight">
+                Real Estate Knowledge <span className="text-[#9A7D3A]">Simplified</span>
               </h2>
+              <p className="text-[#111]/70 text-base md:text-lg font-light max-w-xl">
+                Every guide, tour, tool, and plain-English answer inside our hub—ordered by where to start.
+              </p>
             </div>
             <Link
               href="/knowledge-hub"
-              className="flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-[#111] hover:text-[#9A7D3A] transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#111] text-white text-xs font-bold uppercase tracking-widest rounded-lg hover:bg-[#D4AF37] hover:text-[#111] transition-colors shrink-0 shadow-sm"
             >
-              Enter The Knowledge Hub <ArrowRight className="w-4 h-4" />
+              Enter Knowledge Hub <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          {/* Priority 01 & 02: Flagship Two-Card Editorial Spotlight With Visuals */}
+          <div className="grid lg:grid-cols-2 gap-6 mb-6">
+            <Link
+              href="/knowledge-hub#guides"
+              className="group relative bg-gradient-to-br from-[#161616] to-[#0a0a0a] text-white rounded-2xl border border-[#D4AF37]/45 hover:border-[#D4AF37] transition-all shadow-xl overflow-hidden flex flex-col-reverse sm:flex-row items-stretch"
+            >
+              <div className="absolute -left-10 -bottom-10 w-44 h-44 rounded-full bg-[#D4AF37]/10 blur-2xl pointer-events-none group-hover:bg-[#D4AF37]/20 transition-colors" />
+              <div className="relative z-10 flex-1 p-6 sm:p-7 flex flex-col justify-between gap-5">
+                <div>
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
+                    <div className="flex items-center gap-2.5">
+                      <span className="w-8 h-8 rounded-lg bg-[#D4AF37] text-[#111] font-bold text-xs flex items-center justify-center shadow-[0_0_18px_rgba(212,175,55,0.35)]">
+                        01
+                      </span>
+                      <span className="text-[11px] uppercase tracking-[0.2em] font-bold text-[#D4AF37]">
+                        Start Here • Playbooks
+                      </span>
+                    </div>
+                    <PdfAvailableBadge label="PDF Guides" />
+                  </div>
+                  <h3 className="font-aiveritas text-2xl xl:text-[26px] text-white group-hover:text-[#D4AF37] transition-colors mb-2 leading-snug">
+                    Buyer, Seller &amp; Commercial Playbooks
+                  </h3>
+                  <p className="text-white/75 font-light text-sm leading-relaxed">
+                    Step-by-step commercial and residential handbooks with saved notes and instant PDF downloads.
+                  </p>
+                </div>
+                <span className="text-xs font-bold uppercase tracking-widest text-[#D4AF37] flex items-center gap-1.5">
+                  Open Playbooks <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </div>
+              <div className="relative h-48 sm:h-auto sm:w-[40%] shrink-0 overflow-hidden bg-[#1a1a1a] border-b sm:border-b-0 sm:border-l border-[#D4AF37]/25">
+                <Image
+                  src="/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-9.jpg"
+                  alt="Mark Davis and Rachael Garnett reviewing Tampa Bay buyer, seller, and commercial playbooks"
+                  fill
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+                <span className="absolute bottom-3 left-3 right-3 text-center px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-sm border border-[#D4AF37]/30 text-[10px] font-bold uppercase tracking-[0.16em] text-[#D4AF37]">
+                  Saved Notes · Instant PDF
+                </span>
+              </div>
+            </Link>
+
+            <Link
+              href="/tours"
+              className="group relative bg-white text-[#111] rounded-2xl border border-[#111]/12 hover:border-[#D4AF37] transition-all shadow-sm hover:shadow-xl overflow-hidden flex flex-col-reverse sm:flex-row items-stretch"
+            >
+              <div className="absolute -left-10 -bottom-10 w-44 h-44 rounded-full bg-[#D4AF37]/10 blur-2xl pointer-events-none group-hover:bg-[#D4AF37]/20 transition-colors" />
+              <div className="relative z-10 flex-1 p-6 sm:p-7 flex flex-col justify-between gap-5">
+                <div>
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
+                    <div className="flex items-center gap-2.5">
+                      <span className="w-8 h-8 rounded-lg bg-[#111] group-hover:bg-[#D4AF37] text-[#D4AF37] group-hover:text-[#111] font-bold text-xs flex items-center justify-center shadow-sm transition-colors">
+                        02
+                      </span>
+                      <span className="text-[11px] uppercase tracking-[0.2em] font-bold text-[#9A7D3A]">
+                        #GuidedByDG • Tours
+                      </span>
+                    </div>
+                    <PdfAvailableBadge label="PDF Routes" />
+                  </div>
+                  <h3 className="font-aiveritas text-2xl xl:text-[26px] text-[#111] group-hover:text-[#9A7D3A] transition-colors mb-2 leading-snug">
+                    Guided Neighborhood &amp; Commercial Tours
+                  </h3>
+                  <p className="text-[#111]/70 font-light text-sm leading-relaxed">
+                    Neighborhood drives, retail &amp; commercial corridors, Google Maps routes, and printable PDFs.
+                  </p>
+                </div>
+                <span className="text-xs font-bold uppercase tracking-widest text-[#9A7D3A] flex items-center gap-1.5">
+                  Explore Area Tours <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </div>
+              <div className="relative h-48 sm:h-auto sm:w-[40%] shrink-0 overflow-hidden bg-[#111] border-b sm:border-b-0 sm:border-l border-[#111]/10">
+                <Image
+                  src="/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-3.jpg"
+                  alt="Mark Davis and Rachael Garnett hosting a guided Tampa Bay waterfront tour"
+                  fill
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                <span className="absolute bottom-3 left-3 right-3 text-center px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-sm border border-white/20 text-[10px] font-bold uppercase tracking-[0.16em] text-white">
+                  Mapped Local Routes
+                </span>
+              </div>
+            </Link>
+          </div>
+
+          {/* Priority 03–07: Horizontal Swipe Row on Mobile / Clean 5-Column Showcase on Desktop */}
+          <div className="flex items-center justify-between gap-4 mb-3 lg:hidden">
+            <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#9A7D3A]">
+              Swipe to Explore More Pillars →
+            </span>
+          </div>
+          <div
+            className="flex lg:grid lg:grid-cols-5 gap-4 overflow-x-auto lg:overflow-visible pb-3 lg:pb-0 snap-x snap-mandatory"
+            style={{ scrollbarWidth: "none" }}
+          >
             {[
               {
-                img: "/developments/ritz-carlton/downtown-tampa-luxury-living-ritz-carlton-residences-davis-garnett-residential-commercial-advisors-2.jpg",
-                tag: "Buyer Guide",
-                line1: "Buying Waterfront &",
-                line2: "Unique Homes in Tampa Bay",
-                desc: "What to check on seawalls, dock permits, flood insurance, and boating water before you buy.",
-                href: "/knowledge-hub/tampa-bay-luxury-home-buying-guide",
+                num: "03",
+                icon: MapPin,
+                title: "Areas We Work In",
+                sub: "Local corridor spotlights",
+                cta: "View Areas",
+                href: "/knowledge-hub#areas",
               },
               {
-                img: "/developments/water-st-phase-2/downtown-tampa-luxury-living-water-street-phase-two-residences-davis-garnett-residential-commercial-advisors-1.jpg",
-                tag: "Commercial Guide",
-                line1: "Commercial & Mixed-Use",
-                line2: "Property Guide in Florida",
-                desc: "A simple guide to buying office buildings, mixed-use properties, 1031 exchanges, and land.",
-                href: "/knowledge-hub/commercial-real-estate-investing-florida",
+                num: "04",
+                icon: Calculator,
+                title: "Florida Calculators",
+                sub: "Mortgage, NNN & 1031 math",
+                cta: "Run Numbers",
+                href: "/knowledge-hub#tools",
               },
               {
-                img: "/developments/epperson-mirada/tampa-bay-new-development-epperson-mirada-davis-garnett-residential-commercial-advisors-1.jpg",
-                tag: "Q&A Classroom",
-                line1: "CDD Fees vs. HOA Fees",
-                line2: "in Pasco & Hillsborough",
-                desc: "How CDD and HOA fees work in Wesley Chapel and Land O' Lakes neighborhoods.",
-                href: "/knowledge-hub/understanding-cdd-fees-in-pasco-and-hillsborough",
+                num: "05",
+                icon: MessageCircleQuestion,
+                title: "Q&A Classroom",
+                sub: "Plain-English answers",
+                cta: "Read Q&As",
+                href: "/knowledge-hub#questions",
               },
               {
-                img: "/developments/one-tampa/tampa-bay-new-development-one-tampa-davis-garnett-residential-commercial-advisors-1.png",
-                tag: "Market Report",
-                line1: "2026 Tampa Bay",
-                line2: "Real Estate Market Update",
-                desc: "A clear look at home prices, mortgage rates, and local buyer demand across Tampa and St. Pete.",
-                href: "/knowledge-hub/articles/tampa-bay-real-estate-market-outlook-2026",
+                num: "06",
+                icon: Calendar,
+                title: "Community Events",
+                sub: "Local shows & gatherings",
+                cta: "See Calendar",
+                href: "/knowledge-hub#events",
               },
               {
-                img: "/developments/two-rivers/tampa-bay-new-development-two-rivers-davis-garnett-residential-commercial-advisors-1.jpg",
-                tag: "Relocation Guide",
-                line1: "Moving Your Family or",
-                line2: "Business to Tampa Bay",
-                desc: "Helpful tips on Florida homestead tax savings, school zones, commute times, and neighborhoods.",
-                href: "/knowledge-hub/relocating-to-tampa-bay-handbook",
+                num: "07",
+                icon: FileText,
+                title: "Reports & Glossary",
+                sub: "Market stats & key terms",
+                cta: "Browse Data",
+                href: "/market-reports",
               },
-              {
-                img: "/developments/sunrise-hills/tampa-bay-new-development-sunrise-hills-davis-garnett-residential-commercial-advisors-2.png",
-                tag: "Land & Acreage",
-                line1: "What to Check Before",
-                line2: "Buying Florida Acreage",
-                desc: "Five simple things to verify on zoning, road access, high-and-dry land, and agricultural tax rules.",
-                href: "/knowledge-hub/what-due-diligence-is-needed-when-buying-acreage-in-central-florida",
-              },
-            ].map((article, i) => (
-              <Link key={i} href={article.href} className="group bg-white rounded-2xl overflow-hidden border border-[#111]/8 hover:border-[#D4AF37] transition-all shadow-sm hover:shadow-xl flex flex-col">
-                <div className="relative aspect-video overflow-hidden bg-[#ddd]">
-                  <Image
-                    src={article.img}
-                    alt={`${article.line1} ${article.line2}`}
-                    fill
-                    className="object-cover opacity-95 group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3 py-1 text-[0.6rem] uppercase tracking-widest text-[#9A7D3A] font-bold border border-[#111]/10 rounded-sm">
-                    {article.tag}
-                  </div>
-                </div>
-                <div className="p-6 lg:p-7 flex-1 flex flex-col justify-between">
+            ].map((pillar) => {
+              const Icon = pillar.icon;
+              return (
+                <Link
+                  key={pillar.num}
+                  href={pillar.href}
+                  className="group min-w-[66vw] sm:min-w-[42vw] lg:min-w-0 snap-start bg-white hover:bg-[#111] rounded-2xl p-5 sm:p-6 border border-[#111]/10 hover:border-[#D4AF37] hover:-translate-y-0.5 transition-all shadow-sm hover:shadow-xl flex flex-col justify-between gap-5"
+                >
                   <div>
-                    <h3 className="font-aiveritas text-xl xl:text-2xl text-[#111] mb-3 group-hover:text-[#9A7D3A] transition-colors leading-snug">
-                      <span className="block">{article.line1}</span>
-                      <span className="block">{article.line2}</span>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="w-7 h-7 rounded-md bg-[#f5f3ef] group-hover:bg-[#D4AF37] text-[#9A7D3A] group-hover:text-[#111] text-[10px] font-bold uppercase tracking-widest flex items-center justify-center transition-colors">
+                        {pillar.num}
+                      </span>
+                      <Icon className="w-4 h-4 text-[#9A7D3A] group-hover:text-[#D4AF37] transition-colors" />
+                    </div>
+                    <h3 className="font-aiveritas text-lg sm:text-xl text-[#111] group-hover:text-white transition-colors mb-1 leading-snug">
+                      {pillar.title}
                     </h3>
-                    <p className="text-[#111]/75 font-light text-base line-clamp-2 mb-5 leading-relaxed">{article.desc}</p>
+                    <p className="text-[#111]/65 group-hover:text-white/75 font-light text-xs sm:text-sm transition-colors">
+                      {pillar.sub}
+                    </p>
                   </div>
-                  <div className="text-xs font-bold uppercase tracking-widest text-[#9A7D3A] flex items-center gap-1.5">
-                    Read Guide <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                  </div>
-                </div>
-              </Link>
-            ))}
+                  <span className="text-[11px] font-bold uppercase tracking-widest text-[#9A7D3A] group-hover:text-[#D4AF37] flex items-center gap-1 transition-colors">
+                    {pillar.cta} <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                  </span>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>

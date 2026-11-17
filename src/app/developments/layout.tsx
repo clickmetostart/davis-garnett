@@ -1,9 +1,9 @@
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Tampa Bay New Developments & 55+ Communities | Davis & Garnett",
+  title: "Trending Real Estate & Tampa Bay Neighborhoods | Davis & Garnett",
   description:
-    "Compare Downtown Tampa luxury condo towers, North Tampa master-planned neighborhoods, and 9 top 55+ active-adult communities with current floor plans and HOA/CDD details.",
+    "Explore trending Tampa Bay neighborhoods, commercial districts, luxury condos, and new construction from Wesley Chapel to Sarasota.",
   path: "/developments",
   image: "/city-photos/tampa-downtown-towers-real.png",
 });

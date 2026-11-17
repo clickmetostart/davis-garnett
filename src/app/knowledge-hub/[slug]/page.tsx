@@ -8,7 +8,7 @@ import {
 } from "@/data/knowledgeHub";
 import { DEVELOPMENTS } from "@/data/developments";
 
-import { buildPageMetadata } from "@/lib/seo";
+import { buildPageMetadata, TEAM_SAME_AS } from "@/lib/seo";
 
 const BASE_URL = "https://www.davisgarnettsells.com";
 
@@ -57,6 +57,7 @@ export default async function KnowledgeItemPage({
         "@type": "Article",
         headline: item.title,
         description: item.quickAnswer || item.subtitle,
+        image: item.heroImage.startsWith("http") ? item.heroImage : `${BASE_URL}${item.heroImage}`,
         ...(item.publishedAt ? { datePublished: item.publishedAt } : {}),
         ...(item.updatedAt ? { dateModified: item.updatedAt } : {}),
         mainEntityOfPage: pageUrl,
@@ -70,6 +71,7 @@ export default async function KnowledgeItemPage({
           "@type": "RealEstateAgent",
           name: "Davis & Garnett Commercial / Residential Advisors — Align Right Realty Carrollwood",
           url: BASE_URL,
+          sameAs: TEAM_SAME_AS,
           address: {
             "@type": "PostalAddress",
             streetAddress: "3903 Northdale Blvd Suite 115W",

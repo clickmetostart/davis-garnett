@@ -26,6 +26,7 @@ import FaviconHeroBackground from "@/components/FaviconHeroBackground";
 import TourSliderSection from "@/components/TourSliderSection";
 import ConsultationModal from "@/components/ConsultationModal";
 import PdfAvailableBadge from "@/components/PdfAvailableBadge";
+import { smoothScrollToId } from "@/lib/smoothScroll";
 import { GUIDES, QUESTIONS, AREAS, EVENTS, ARTICLES } from "@/data/knowledgeHub";
 
 export default function KnowledgeHubPage() {
@@ -126,27 +127,54 @@ export default function KnowledgeHubPage() {
             />
           </div>
 
-          {/* Quick Jump Category Pills */}
-          <div className="flex flex-wrap items-center justify-center gap-3">
+          {/* Restrained Hero Action Buttons (Stay on Page) */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button
+              type="button"
+              onClick={() => smoothScrollToId("hub-sections")}
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-[#D4AF37] hover:bg-white text-[#111] text-xs font-bold uppercase tracking-[0.18em] transition-colors w-full sm:w-auto"
+            >
+              <BookOpen className="w-4 h-4 shrink-0" />
+              Browse Knowledge Pillars
+            </button>
+            <button
+              type="button"
+              onClick={() => smoothScrollToId("questions")}
+              className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-white/10 hover:bg-[#D4AF37] text-white hover:text-[#111] border border-white/25 text-xs font-bold uppercase tracking-[0.18em] transition-colors w-full sm:w-auto"
+            >
+              <MessageCircleQuestion className="w-4 h-4 text-[#D4AF37] group-hover:text-[#111] transition-colors shrink-0" />
+              Ask &amp; Q&amp;A Classroom
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Clean Below-Hero Section Jump Grid (Eased Smooth Glide) */}
+      <section id="hub-sections" className="py-8 px-6 md:px-8 bg-[#f5f3ef] border-b border-[#111]/10 scroll-mt-24">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
             {[
-              { label: "Playbooks & Guides", href: "#guides", icon: BookOpen },
-              { label: "Guided Area Tours", href: "#tours", icon: Compass },
-              { label: "Areas We Work In", href: "#areas", icon: MapPin },
-              { label: "Calculators & Glossary", href: "#tools", icon: Calculator },
-              { label: "The D&G Q&A Classroom", href: "#questions", icon: MessageCircleQuestion },
-              { label: "Community Events", href: "#events", icon: Calendar },
-              { label: "Market Articles", href: "#articles", icon: TrendingUp },
+              { label: "Playbooks & Guides", target: "guides", icon: BookOpen },
+              { label: "Neighborhood & CRE Tours", target: "tours", icon: Compass },
+              { label: "Areas We Work In", target: "areas", icon: MapPin },
+              { label: "Calculators & Glossary", target: "tools", icon: Calculator },
+              { label: "Q&A Classroom", target: "questions", icon: MessageCircleQuestion },
+              { label: "Community Events", target: "events", icon: Calendar },
+              { label: "Market Articles", target: "articles", icon: TrendingUp },
             ].map((pill) => {
               const Icon = pill.icon;
               return (
-                <a
+                <button
                   key={pill.label}
-                  href={pill.href}
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white/10 hover:bg-[#D4AF37] text-white hover:text-[#111] border border-white/15 text-xs font-bold uppercase tracking-widest transition-colors"
+                  type="button"
+                  onClick={() => smoothScrollToId(pill.target)}
+                  className="group p-3 rounded-xl bg-white hover:bg-[#111] border border-[#111]/10 hover:border-[#D4AF37] text-left transition-all flex items-center gap-2.5 shadow-xs"
                 >
-                  <Icon className="w-3.5 h-3.5 text-[#D4AF37] group-hover:text-[#111]" />
-                  {pill.label}
-                </a>
+                  <Icon className="w-4 h-4 text-[#9A7D3A] group-hover:text-[#D4AF37] shrink-0 transition-colors" />
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#111] group-hover:text-white leading-tight transition-colors">
+                    {pill.label}
+                  </span>
+                </button>
               );
             })}
           </div>
@@ -162,10 +190,10 @@ export default function KnowledgeHubPage() {
                 01 • Step-by-Step Handbooks
               </span>
               <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111] mb-3">
-                Buyer, Seller &amp; Investor Guides
+                Commercial &amp; Residential Guides
               </h2>
               <p className="text-[#111]/70 font-light max-w-2xl text-base md:text-[17px] lg:text-[18px] leading-relaxed">
-                Step-by-step guides covering waterfront home buying, home selling, commercial real estate, Florida Homestead tax rules, and CDD fees.
+                Step-by-step playbooks covering home buying and selling, waterfront estates, NNN commercial leases, land acquisitions, Florida Homestead rules, and CDD fees.
               </p>
             </div>
             <div className="flex items-center gap-3 shrink-0">
@@ -237,11 +265,11 @@ export default function KnowledgeHubPage() {
         </div>
       </section>
 
-      {/* ── SECTION 02: GUIDED AREA & COMMERCIAL TOURS (#GuidedByDG) ── */}
+      {/* ── SECTION 02: GUIDED NEIGHBORHOOD & COMMERCIAL TOURS (#GuidedByDG) ── */}
       <TourSliderSection
         id="tours"
         sectionEyebrow="02 • #GuidedByDG — Self-Guided Tour Kits Made by D&G"
-        sectionTitle="Guided Area &amp; Shopping Zone Tours"
+        sectionTitle="Guided Neighborhood &amp; Commercial Tours"
         bgClass="bg-[#f5f3ef]"
       />
       {/* ── SLIDER 3: AREAS WE WORK IN — GEOLOCATED NEIGHBORHOOD SPOTLIGHTS ── */}

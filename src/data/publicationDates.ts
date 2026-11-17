@@ -282,5 +282,265 @@ export const GIT_PUBLICATION_DATES: Record<string, { publishedAt: string; update
   "tampa-bay-condo-hoa-expo-2027": {
     "publishedAt": "2026-11-17T13:06:00-05:00",
     "updatedAt": "2026-11-17T13:06:00-05:00"
+  },
+  "waterside-wild-blue-lakewood-ranch": {
+    "publishedAt": "2026-11-17T16:00:00-05:00",
+    "updatedAt": "2026-11-17T16:00:00-05:00"
+  },
+  "star-farms-lakewood-ranch": {
+    "publishedAt": "2026-11-17T16:00:00-05:00",
+    "updatedAt": "2026-11-17T16:00:00-05:00"
+  },
+  "esplanade-at-azario-lakewood-ranch": {
+    "publishedAt": "2026-11-17T16:00:00-05:00",
+    "updatedAt": "2026-11-17T16:00:00-05:00"
+  },
+  "north-river-ranch-parrish-bradenton": {
+    "publishedAt": "2026-11-17T16:00:00-05:00",
+    "updatedAt": "2026-11-17T16:00:00-05:00"
+  },
+  "the-quay-sarasota-waterfront": {
+    "publishedAt": "2026-11-17T16:00:00-05:00",
+    "updatedAt": "2026-11-17T16:00:00-05:00"
+  },
+  "hyde-park-bayshore-established-south-tampa": {
+    "publishedAt": "2026-11-17T16:25:00-05:00",
+    "updatedAt": "2026-11-17T16:25:00-05:00"
+  },
+  "westshore-marina-international-plaza-district": {
+    "publishedAt": "2026-11-17T16:25:00-05:00",
+    "updatedAt": "2026-11-17T16:25:00-05:00"
+  },
+  "bahama-shores-snell-isle-st-petersburg": {
+    "publishedAt": "2026-11-17T16:25:00-05:00",
+    "updatedAt": "2026-11-17T16:25:00-05:00"
+  },
+  "st-petersburg-downtown-towers-saltaire-art-house": {
+    "publishedAt": "2026-11-17T16:25:00-05:00",
+    "updatedAt": "2026-11-17T16:25:00-05:00"
+  },
+  "point-brittany-isla-del-sol-55-plus": {
+    "publishedAt": "2026-11-17T16:25:00-05:00",
+    "updatedAt": "2026-11-17T16:25:00-05:00"
+  },
+  "edge-district-central-ave-commercial-st-pete": {
+    "publishedAt": "2026-11-17T16:25:00-05:00",
+    "updatedAt": "2026-11-17T16:25:00-05:00"
+  },
+  "dunedin-safety-harbor-belleair-coastal": {
+    "publishedAt": "2026-11-17T16:25:00-05:00",
+    "updatedAt": "2026-11-17T16:25:00-05:00"
+  },
+  "clearwater-beach-sand-key-waterfront-condos": {
+    "publishedAt": "2026-11-17T16:25:00-05:00",
+    "updatedAt": "2026-11-17T16:25:00-05:00"
+  },
+  "on-top-of-the-world-timber-greens-55-plus": {
+    "publishedAt": "2026-11-17T16:25:00-05:00",
+    "updatedAt": "2026-11-17T16:25:00-05:00"
+  },
+  "us19-gulf-to-bay-dunedin-commercial": {
+    "publishedAt": "2026-11-17T16:25:00-05:00",
+    "updatedAt": "2026-11-17T16:25:00-05:00"
+  },
+  "original-carrollwood-lake-magdalene-living": {
+    "publishedAt": "2026-11-17T16:25:00-05:00",
+    "updatedAt": "2026-11-17T16:25:00-05:00"
+  },
+  "cheval-lutz-keystone-acreage-estates": {
+    "publishedAt": "2026-11-17T16:25:00-05:00",
+    "updatedAt": "2026-11-17T16:25:00-05:00"
+  },
+  "carrollwood-village-northdale-villas-55-plus": {
+    "publishedAt": "2026-11-17T16:25:00-05:00",
+    "updatedAt": "2026-11-17T16:25:00-05:00"
+  },
+  "northdale-dale-mabry-commercial-office-corridor": {
+    "publishedAt": "2026-11-17T16:25:00-05:00",
+    "updatedAt": "2026-11-17T16:25:00-05:00"
+  },
+  "seven-oaks-plantation-palms-bexley-resale": {
+    "publishedAt": "2026-11-17T16:25:00-05:00",
+    "updatedAt": "2026-11-17T16:25:00-05:00"
+  },
+  "valencia-ridge-medley-mirada-55-plus": {
+    "publishedAt": "2026-11-17T16:25:00-05:00",
+    "updatedAt": "2026-11-17T16:25:00-05:00"
+  },
+  "sr60-brandon-commercial-sba-mixed-use": {
+    "publishedAt": "2026-11-17T16:25:00-05:00",
+    "updatedAt": "2026-11-17T16:25:00-05:00"
+  },
+  "fishhawk-ranch-seffner-apollo-beach-living": {
+    "publishedAt": "2026-11-17T16:25:00-05:00",
+    "updatedAt": "2026-11-17T16:25:00-05:00"
+  },
+  "sun-city-center-kings-point-valencia-lakes-55-plus": {
+    "publishedAt": "2026-11-17T16:25:00-05:00",
+    "updatedAt": "2026-11-17T16:25:00-05:00"
+  },
+  "polk-marion-us27-us98-acreage-greenbelt-land": {
+    "publishedAt": "2026-11-17T16:25:00-05:00",
+    "updatedAt": "2026-11-17T16:25:00-05:00"
+  },
+  "cresswind-del-webb-lakewood-ranch-55-plus": {
+    "publishedAt": "2026-11-17T16:25:00-05:00",
+    "updatedAt": "2026-11-17T16:25:00-05:00"
+  },
+  "university-parkway-utc-lakewood-ranch-commercial": {
+    "publishedAt": "2026-11-17T16:25:00-05:00",
+    "updatedAt": "2026-11-17T16:25:00-05:00"
+  },
+  "pass-a-grille-st-pete-beach-tierra-verde": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "grand-central-kenwood-st-pete-bungalows": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "belleair-safety-harbor-coastal-estates": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "highland-lakes-clearwater-55-plus-golf": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "starkey-ranch-trinity-master-planned": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "east-lake-woodlands-lansbrook-palm-harbor": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "tarpon-springs-sponge-docks-coastal": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "trinity-sr54-medical-retail-commercial": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "asturia-longleaf-odessa-walkable": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "timber-greens-regency-park-west-pasco-55-plus": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "mirabay-symphony-isles-apollo-beach": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "waterset-apollo-beach-new-construction": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "valencia-del-sol-wimauma-55-plus": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "us41-big-bend-apollo-beach-commercial": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "ruskin-little-manatee-river-acreage": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "westshore-marina-district-tampa-bayfront": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "rocky-point-courtney-campbell-condos-office": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "baycrest-dana-shores-boating-canals": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "westshore-international-plaza-corporate-corridor": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "town-n-country-classic-homes-hillsborough": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "hillsborough-ave-veterans-flex-commercial": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "valrico-bloomingdale-family-neighborhoods": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "brandon-i75-industrial-retail-corridor": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "hawkstone-winthrop-riverview-new-construction": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "bloomingdale-woodberry-courtyard-55-plus-villas": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "lake-morton-dixieland-historic-lakeland": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "bonnet-springs-downtown-lakeland-mixed-use": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "plant-city-walden-lake-strawberry-living": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "i4-plant-city-polk-industrial-logistics-land": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "highland-fairways-schalamar-creek-lakeland-55-plus": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "wellen-park-downtown-cooltoday-venice": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "island-of-venice-historic-gulf-beach": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "solstice-renaissance-wellen-park-55-plus": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "grand-palm-boca-royale-resort-living": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "nokomis-laurel-road-medical-commercial-corridor": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "north-port-warm-mineral-springs-growth-corridor": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "odessa-gunn-hwy-equestrian-lake-estates": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
+  },
+  "citrus-park-veterans-retail-medical-hub": {
+    "publishedAt": "2026-11-17T17:22:00-05:00",
+    "updatedAt": "2026-11-17T17:22:00-05:00"
   }
 };

@@ -26,6 +26,7 @@ import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 import SiteFooter from "@/components/SiteFooter";
 import listingsJson from "@/data/listings.json";
 import type { Listing } from "@/types/listings";
+import { smoothScrollToId } from "@/lib/smoothScroll";
 
 interface MlsPropertyItem {
   id: string;
@@ -42,8 +43,8 @@ interface MlsPropertyItem {
   bedrooms: number;
   bathrooms: number;
   sqFt: string;
-  propertyType: "Single Family" | "Condo / Tower" | "Townhome" | "Commercial" | "Waterfront Estate";
-  category: "Residential" | "Commercial";
+  propertyType: "Single Family" | "Condo / Tower" | "Townhome" | "Commercial" | "Land & Acreage" | "Waterfront Estate";
+  category: "Residential" | "Commercial" | "Land";
   status: string;
   imageUrl: string;
   source: "Davis & Garnett Exclusive" | "Align Right Carrollwood Office" | "Lofty Stellar MLS Feed";
@@ -70,10 +71,17 @@ const FALLBACK_MLS_LISTINGS: MlsPropertyItem[] = (listingsJson as unknown as Lis
     propertyType:
       item.category === "Commercial"
         ? "Commercial"
+        : item.category === "Land"
+        ? "Land & Acreage"
         : item.specs?.waterfrontFeet
         ? "Waterfront Estate"
         : "Single Family",
-    category: item.category === "Commercial" ? "Commercial" : "Residential",
+    category:
+      item.category === "Commercial"
+        ? "Commercial"
+        : item.category === "Land"
+        ? "Land"
+        : "Residential",
     status:
       item.listingOrigin === "align-right-office"
         ? "Align Right Carrollwood Office"
@@ -81,7 +89,7 @@ const FALLBACK_MLS_LISTINGS: MlsPropertyItem[] = (listingsJson as unknown as Lis
     imageUrl:
       typeof item.images?.main === "string"
         ? item.images.main
-        : "/davis-garnett-listings-1.jpg",
+        : "/placeholders/dg-brand-placeholder.webp",
     source:
       item.listingOrigin === "align-right-office"
         ? "Align Right Carrollwood Office"
@@ -152,8 +160,17 @@ export default function SearchMlsDiscoveryPortal() {
                   bathrooms: Number(l.bathrooms) || 2,
                   sqFt: l.sqFt || l.availableSpaceSqFt || "3,200",
                   propertyType:
-                    l.category === "Commercial" ? "Commercial" : "Single Family",
-                  category: l.category === "Commercial" ? "Commercial" : "Residential",
+                    l.category === "Commercial"
+                      ? "Commercial"
+                      : l.category === "Land"
+                      ? "Land & Acreage"
+                      : "Single Family",
+                  category:
+                    l.category === "Commercial"
+                      ? "Commercial"
+                      : l.category === "Land"
+                      ? "Land"
+                      : "Residential",
                   status: `Exclusive — ${l.transactionType || "Active"}`,
                   imageUrl:
                     l.images?.[0]?.url && !l.images[0].url.includes("unsplash.com")
@@ -313,18 +330,20 @@ export default function SearchMlsDiscoveryPortal() {
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-3">
-              <a
-                href="#lofty-idx-container"
-                className="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-xs uppercase tracking-[0.18em] font-bold text-white transition-colors"
+              <button
+                type="button"
+                onClick={() => smoothScrollToId("lofty-idx-container")}
+                className="group px-5 py-3 rounded-xl bg-white/10 hover:bg-white hover:text-[#111111] border border-white/20 hover:border-white text-xs uppercase tracking-[0.18em] font-bold text-white transition-colors flex items-center gap-2 cursor-pointer"
               >
-                Lofty IDX Portal ↓
-              </a>
-              <a
-                href="#pocket-listing-form"
-                className="px-5 py-3 rounded-xl bg-[#C8A951] hover:bg-white text-[#111111] text-xs uppercase tracking-[0.18em] font-bold transition-colors flex items-center gap-2"
+                <MapPin className="w-3.5 h-3.5 text-[#C8A951] group-hover:text-[#111111] transition-colors" /> Search With Map
+              </button>
+              <button
+                type="button"
+                onClick={() => smoothScrollToId("pocket-listing-form")}
+                className="group px-5 py-3 rounded-xl bg-[#C8A951] hover:bg-white text-[#111111] text-xs uppercase tracking-[0.18em] font-bold transition-colors flex items-center gap-2 cursor-pointer"
               >
-                <Lock className="w-3.5 h-3.5" /> Off-Market Access
-              </a>
+                <Lock className="w-3.5 h-3.5 text-[#111111] group-hover:text-[#9A7D3A] transition-colors" /> Off-Market Access
+              </button>
             </div>
           </div>
 
@@ -363,6 +382,7 @@ export default function SearchMlsDiscoveryPortal() {
                   <option value="Condo / Tower">Condo / Tower</option>
                   <option value="Waterfront Estate">Waterfront Estate</option>
                   <option value="Commercial">Commercial</option>
+                  <option value="Land & Acreage">Land &amp; Acreage</option>
                 </select>
               </div>
 
@@ -438,21 +458,24 @@ export default function SearchMlsDiscoveryPortal() {
                 Popular Searches:
               </span>
               {[
-                { label: "All Tampa Bay", query: "" },
+                { label: "All Markets", query: "" },
+                { label: "St. Petersburg / Bahama Shores", query: "St. Petersburg" },
+                { label: "Brandon Commercial", query: "Brandon" },
+                { label: "Polk / Marion Land", query: "Acres" },
                 { label: "South Tampa / Bayshore", query: "Bayshore" },
-                { label: "Davis Islands", query: "Davis Islands" },
-                { label: "Water Street / Downtown", query: "Water Street" },
+                { label: "Downtown / Water St.", query: "Water Street" },
                 { label: "Wesley Chapel", query: "Wesley Chapel" },
                 { label: "Land O' Lakes", query: "Land O' Lakes" },
-                { label: "St. Petersburg", query: "St. Petersburg" },
-                { label: "Westchase / Carrollwood", query: "Tampa" },
+                { label: "Clearwater / Dunedin", query: "Clearwater" },
+                { label: "Bradenton / Sarasota", query: "Bradenton" },
+                { label: "Carrollwood / Northdale", query: "Carrollwood" },
               ].map((pill) => (
                 <button
                   key={pill.label}
                   type="button"
                   onClick={() => setSearchQuery(pill.query)}
                   className={`px-3 py-1 rounded-full text-[11px] font-medium transition-colors border ${
-                    searchQuery === pill.query && pill.query !== ""
+                    searchQuery === pill.query
                       ? "bg-[#111111] text-[#C8A951] border-[#111111]"
                       : "bg-[#f5f3ef] text-[#111111]/75 border-[#111111]/10 hover:border-[#C8A951]"
                   }`}

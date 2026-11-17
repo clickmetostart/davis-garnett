@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
+import { smoothScrollToId } from "@/lib/smoothScroll";
 
 const COVERAGE_REGIONS = [
   {
@@ -294,18 +295,20 @@ export default function AlignRightCarrollwoodCoveragePage() {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <a
-                href="#coverage-regions"
-                className="inline-flex items-center gap-2.5 px-7 py-4 bg-[#ef5728] text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#D4AF37] hover:text-[#111111] transition-colors rounded-lg shadow-lg"
+              <button
+                type="button"
+                onClick={() => smoothScrollToId("coverage-regions")}
+                className="inline-flex items-center gap-2.5 px-7 py-4 bg-[#ef5728] text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#D4AF37] hover:text-[#111111] transition-colors rounded-lg shadow-lg cursor-pointer"
               >
                 View Regional Footprint <ArrowRight className="w-4 h-4" />
-              </a>
-              <a
-                href="#territory-consultation"
-                className="inline-flex items-center gap-2 px-7 py-4 border border-white/25 text-white text-xs font-bold uppercase tracking-[0.2em] hover:border-[#D4AF37] hover:text-[#D4AF37] transition-colors rounded-lg"
+              </button>
+              <button
+                type="button"
+                onClick={() => smoothScrollToId("territory-consultation")}
+                className="inline-flex items-center gap-2 px-7 py-4 border border-white/25 text-white text-xs font-bold uppercase tracking-[0.2em] hover:border-[#D4AF37] hover:text-[#D4AF37] transition-colors rounded-lg cursor-pointer"
               >
                 Consult on Your Market
-              </a>
+              </button>
             </div>
           </div>
 

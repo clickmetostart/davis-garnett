@@ -5,7 +5,7 @@ import { ArrowLeft, ChevronDown, Sparkles } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
 import { getLiveMarketReports, MARKET_REPORTS } from "@/data/marketReports";
-import { buildPageMetadata, SITE_URL } from "@/lib/seo";
+import { buildPageMetadata, SITE_URL, TEAM_SAME_AS } from "@/lib/seo";
 
 export function generateStaticParams() {
   return getLiveMarketReports().map((r) => ({ slug: r.slug }));
@@ -33,6 +33,7 @@ export async function generateMetadata({
     title: `${report.title} | Davis & Garnett`,
     description: report.quickAnswer,
     path: `/market-reports/${report.slug}`,
+    image: "/placeholders/dg-brand-placeholder.webp",
     type: "article",
   });
 }
@@ -60,6 +61,7 @@ export default async function MarketReportDetailPage({
         "@type": "Article",
         headline: report.title,
         description: report.quickAnswer,
+        image: `${SITE_URL}/placeholders/dg-brand-placeholder.webp`,
         datePublished: report.publishedAt,
         dateModified: report.updatedAt,
         mainEntityOfPage: pageUrl,
@@ -67,6 +69,7 @@ export default async function MarketReportDetailPage({
           "@type": "RealEstateAgent",
           name: "Davis & Garnett Commercial & Residential Advisors — Align Right Realty Carrollwood",
           url: SITE_URL,
+          sameAs: TEAM_SAME_AS,
         },
       },
       {

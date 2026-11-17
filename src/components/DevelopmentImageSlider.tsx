@@ -9,23 +9,27 @@ interface DevelopmentImageSliderProps {
   alt: string;
   intervalMs?: number;
   sizes?: string;
+  interactive?: boolean;
 }
 
 /**
- * Fills its (relatively positioned) parent. Swipe/scroll horizontally on touch or
- * trackpad, or let it auto-advance. Auto-play pauses while hovered or touched.
+ * Fills its (relatively positioned) parent. When `interactive` is true (default),
+ * supports horizontal swipe/scroll plus arrow & dot navigation. When `interactive`
+ * is false (for hub cards), auto-cycles silently with no controls or swipe capture.
  */
 export default function DevelopmentImageSlider({
   images,
   alt,
   intervalMs = 4500,
   sizes = "(min-width: 1024px) 40vw, 100vw",
+  interactive = true,
 }: DevelopmentImageSliderProps) {
   const trackRef = useRef<HTMLDivElement>(null);
   const pausedRef = useRef(false);
   const [active, setActive] = useState(0);
 
   const goTo = useCallback((index: number) => {
+    setActive(index);
     const el = trackRef.current;
     if (!el) return;
     el.scrollTo({ left: index * el.clientWidth, behavior: "smooth" });
@@ -40,13 +44,39 @@ export default function DevelopmentImageSlider({
   useEffect(() => {
     if (images.length < 2) return;
     const id = setInterval(() => {
+      if (pausedRef.current) return;
+      if (!interactive) {
+        setActive((prev) => (prev + 1) % images.length);
+        return;
+      }
       const el = trackRef.current;
-      if (!el || pausedRef.current) return;
+      if (!el || !el.clientWidth) return;
       const next = (Math.round(el.scrollLeft / el.clientWidth) + 1) % images.length;
       el.scrollTo({ left: next * el.clientWidth, behavior: "smooth" });
     }, intervalMs);
     return () => clearInterval(id);
-  }, [images.length, intervalMs]);
+  }, [images.length, intervalMs, interactive]);
+
+  if (!interactive) {
+    return (
+      <div className="absolute inset-0 pointer-events-none">
+        {images.map((src, i) => (
+          <Image
+            key={src}
+            src={src}
+            alt={`${alt} — image ${i + 1}`}
+            fill
+            sizes={sizes}
+            priority={i === 0}
+            draggable={false}
+            className={`object-cover transition-opacity duration-700 ${
+              i === active ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div
