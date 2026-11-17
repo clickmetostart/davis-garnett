@@ -17,6 +17,8 @@ import {
   Clock,
   CheckCircle2,
   ShieldCheck,
+  Compass,
+  Calculator,
 } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
@@ -125,10 +127,12 @@ export default function KnowledgeHubPage() {
           <div className="flex flex-wrap items-center justify-center gap-3">
             {[
               { label: "Playbooks & Guides", href: "#guides", icon: BookOpen },
-              { label: "The D&G Q&A Classroom", href: "#questions", icon: MessageCircleQuestion },
+              { label: "Guided Area Tours", href: "#tours", icon: Compass },
               { label: "Areas We Work In", href: "#areas", icon: MapPin },
+              { label: "Calculators & Glossary", href: "#tools", icon: Calculator },
+              { label: "The D&G Q&A Classroom", href: "#questions", icon: MessageCircleQuestion },
               { label: "Community Events", href: "#events", icon: Calendar },
-              { label: "Market Intelligence", href: "#articles", icon: TrendingUp },
+              { label: "Market Articles", href: "#articles", icon: TrendingUp },
             ].map((pill) => {
               const Icon = pill.icon;
               return (
@@ -227,84 +231,13 @@ export default function KnowledgeHubPage() {
         </div>
       </section>
 
-      {/* ── SLIDER 2: THE D&G CLASSROOM — TOP PURCHASE, SALE & INVESTMENT QUESTIONS (Q&A) ── */}
-      <section id="questions" className="py-24 px-8 bg-[#f5f3ef] border-b border-[#111]/8">
-        <div className="max-w-screen-xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-            <div>
-              <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-                02 • Davis &amp; Garnett Classroom
-              </span>
-              <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111] mb-3">
-                Top Buying, Selling &amp; Investing Questions
-              </h2>
-              <p className="text-[#111]/70 font-light max-w-2xl text-base md:text-[17px] lg:text-[18px] leading-relaxed">
-                Direct, plain-English answers to the most common questions buyers, sellers, and commercial investors ask about Florida real estate.
-              </p>
-            </div>
-            <div className="flex items-center gap-3 shrink-0">
-              <button
-                onClick={() => scrollSlider(qaRef, "left")}
-                className="p-3 rounded-full bg-[#D4AF37] text-[#111] border border-[#9A7D3A]/50 shadow-md shadow-[#D4AF37]/30 hover:bg-[#111] hover:text-[#D4AF37] hover:scale-105 active:scale-95 transition-all"
-                aria-label="Scroll Questions Left"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-              <button
-                onClick={() => scrollSlider(qaRef, "right")}
-                className="p-3 rounded-full bg-[#D4AF37] text-[#111] border border-[#9A7D3A]/50 shadow-md shadow-[#D4AF37]/30 hover:bg-[#111] hover:text-[#D4AF37] hover:scale-105 active:scale-95 transition-all"
-                aria-label="Scroll Questions Right"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
-            </div>
-          </div>
-
-          <div
-            ref={qaRef}
-            className="flex gap-7 overflow-x-auto pb-6 snap-x snap-mandatory"
-            style={{ scrollbarWidth: "none" }}
-          >
-            {filteredQuestions.map((qa) => (
-              <Link
-                key={qa.slug}
-                href={`/knowledge-hub/${qa.slug}`}
-                className="group min-w-[320px] md:min-w-[380px] max-w-[380px] snap-start bg-white border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl shrink-0"
-              >
-                <div>
-                  <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#111]">
-                    <Image
-                      src={qa.heroImage}
-                      alt={qa.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-                    <span className="absolute top-4 left-4 px-3 py-1 bg-[#111]/90 text-[#D4AF37] text-[10px] font-bold uppercase tracking-widest rounded-sm">
-                      {qa.category}
-                    </span>
-                  </div>
-                  <div className="p-7">
-                    <h3 className="font-aiveritas text-xl xl:text-2xl text-[#111] group-hover:text-[#9A7D3A] transition-colors mb-3 leading-snug line-clamp-2 min-h-[3.25rem]">
-                      {qa.title}
-                    </h3>
-                    <p className="text-[#111]/75 text-base font-light leading-relaxed line-clamp-3">
-                      {qa.subtitle}
-                    </p>
-                  </div>
-                </div>
-                <div className="px-7 pb-6 pt-4 border-t border-[#111]/8 flex items-center justify-between">
-                  <span className="text-[11px] text-[#111]/55 font-medium">{qa.author.name}</span>
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#9A7D3A] flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
-                    View Answer <ArrowRight className="w-3.5 h-3.5" />
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      {/* ── SECTION 02: GUIDED AREA & COMMERCIAL TOURS (#GuidedByDG) ── */}
+      <TourSliderSection
+        id="tours"
+        sectionEyebrow="02 • #GuidedByDG — Self-Guided & Escorted Routes"
+        sectionTitle="Guided Area &amp; Shopping Zone Tours"
+        bgClass="bg-[#f5f3ef]"
+      />
       {/* ── SLIDER 3: AREAS WE WORK IN — GEOLOCATED NEIGHBORHOOD SPOTLIGHTS ── */}
       <section id="areas" className="py-24 px-8 bg-white border-b border-[#111]/8">
         <div className="max-w-screen-xl mx-auto">
@@ -445,212 +378,60 @@ export default function KnowledgeHubPage() {
             ))}
           </div>
 
-          {/* Align Right Carrollwood Regional Coverage Callout (Positioned Below Slider) */}
-          <div className="mt-12 bg-[#111111] rounded-2xl p-6 sm:p-8 text-white border border-[#ef5728]/40 shadow-xl flex flex-col xl:flex-row items-center justify-between gap-6 relative overflow-hidden">
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#ef5728] via-[#D4AF37] to-[#ef5728]" />
-            
-            {/* Left: Thumbnail + Content */}
+          {/* Guided Area & Shopping Zone Tour Callout (Positioned Below Areas Slider) */}
+          <div className="mt-12 bg-[#111111] rounded-2xl p-6 sm:p-8 text-white border border-[#D4AF37]/40 shadow-xl flex flex-col xl:flex-row items-center justify-between gap-6 relative overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#D4AF37] via-[#ef5728] to-[#D4AF37]" />
+
+            {/* Left: Advisor Portraits + Content */}
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 text-center sm:text-left flex-1">
-              <div className="relative w-32 h-20 rounded-lg overflow-hidden border border-white/15 shrink-0 shadow-md">
-                <Image
-                  src="/new-images/new-2/davis-garnett-align-right-realty.jpg"
-                  alt="Align Right Realty Carrollwood"
-                  fill
-                  className="object-cover"
+              <div className="flex items-center -space-x-3 shrink-0">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/davis-garnett-headshots/mark-davis-avatar-footer.JPG"
+                  alt="Mark Davis"
+                  className="w-16 h-16 rounded-full object-cover object-top border-2 border-[#D4AF37] shadow-md"
+                />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/davis-garnett-headshots/rachael-garnett-avatar-footer.webp"
+                  alt="Rachael Garnett"
+                  className="w-16 h-16 rounded-full object-cover object-[center_30%] border-2 border-[#D4AF37] shadow-md"
                 />
               </div>
               <div className="flex-1">
-                <span className="text-[10px] uppercase tracking-[0.25em] text-[#ef5728] font-bold block mb-1">
-                  ALIGNED CORRECTLY REAL ESTATE • FL Lic #BK3401606
-                </span>
+                <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 mb-1.5">
+                  <span className="px-2.5 py-0.5 rounded-sm bg-[#D4AF37] text-[#111] text-[10px] font-bold uppercase tracking-[0.2em]">
+                    #GuidedByDG
+                  </span>
+                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#D4AF37] font-bold">
+                    Guided by Davis &amp; Garnett • Self-Guided or Ride-Along
+                  </span>
+                </div>
                 <h3 className="font-aiveritas text-xl sm:text-2xl text-white mb-1">
-                  Align Right Carrollwood: Regional Coverage &amp; Areas We Work In
+                  Want to Drive These Neighborhoods &amp; Commercial Corridors in Real Street Order?
                 </h3>
-                <p className="text-sm md:text-base text-white/80 font-light max-w-xl">
-                  Mark Davis &amp; Rachael Garnett help buyers and sellers across 5 Central Florida counties from our Carrollwood office.
+                <p className="text-sm md:text-base text-white/80 font-light max-w-2xl">
+                  Open any of our 10 turn-by-turn Google Maps routes with Mark &amp; Rachael&apos;s notes, school &amp; zoning snippets, and a printable tour workbook—or invite us to ride along.
                 </p>
               </div>
             </div>
 
-            {/* Right: Align Right Logo + CTA Button */}
-            <div className="flex flex-col sm:flex-row items-center gap-5 shrink-0">
-              <div className="relative w-36 h-11 shrink-0 opacity-90 hover:opacity-100 transition-opacity">
-                <Image
-                  src="/align-right-email-logo.png"
-                  alt="Align Right Realty Carrollwood"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <Link
-                href="/align-right-carrollwood-coverage"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#ef5728] hover:bg-[#D4AF37] text-white hover:text-[#111] text-xs font-bold uppercase tracking-widest rounded-lg transition-colors shrink-0 shadow-md"
+            {/* Right: CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+              <a
+                href="#tours"
+                className="inline-flex items-center gap-2 px-5 py-3.5 bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs font-bold uppercase tracking-widest rounded-lg transition-colors shrink-0"
               >
-                Explore Full Coverage <ArrowRight className="w-4 h-4" />
+                Preview Tours
+              </a>
+              <Link
+                href="/tours"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#D4AF37] hover:bg-white text-[#111] text-xs font-bold uppercase tracking-widest rounded-lg transition-colors shrink-0 shadow-md"
+              >
+                <Compass className="w-4 h-4" /> Take a Guided Tour <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ── SLIDER 4: COMMUNITY EVENTS, OUTREACH & VIP EXPERIENCES ── */}
-      <section id="events" className="py-24 px-8 bg-[#f5f3ef] border-b border-[#111]/8">
-        <div className="max-w-screen-xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-            <div>
-              <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-                04 • Local Gatherings &amp; Causes
-              </span>
-              <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111] mb-3">
-                Community Events &amp; Property Tours
-              </h2>
-              <p className="text-[#111]/70 font-light max-w-2xl text-base md:text-[17px] lg:text-[18px] leading-relaxed">
-                Join Mark Davis and Rachael Garnett for new construction tours, local real estate workshops, and Tampa Bay community outreach days.
-              </p>
-            </div>
-            <div className="flex items-center gap-3 shrink-0">
-              <button
-                onClick={() => scrollSlider(eventsRef, "left")}
-                className="p-3 rounded-full bg-[#D4AF37] text-[#111] border border-[#9A7D3A]/50 shadow-md shadow-[#D4AF37]/30 hover:bg-[#111] hover:text-[#D4AF37] hover:scale-105 active:scale-95 transition-all"
-                aria-label="Scroll Events Left"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-              <button
-                onClick={() => scrollSlider(eventsRef, "right")}
-                className="p-3 rounded-full bg-[#D4AF37] text-[#111] border border-[#9A7D3A]/50 shadow-md shadow-[#D4AF37]/30 hover:bg-[#111] hover:text-[#D4AF37] hover:scale-105 active:scale-95 transition-all"
-                aria-label="Scroll Events Right"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
-            </div>
-          </div>
-
-          <div
-            ref={eventsRef}
-            className="flex gap-7 overflow-x-auto pb-6 snap-x snap-mandatory"
-            style={{ scrollbarWidth: "none" }}
-          >
-            {filteredEvents.map((ev) => (
-              <Link
-                key={ev.slug}
-                href={`/knowledge-hub/events/${ev.slug}`}
-                className="group min-w-[320px] md:min-w-[380px] max-w-[380px] snap-start bg-white border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl shrink-0"
-              >
-                <div>
-                  <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#111]">
-                    <Image
-                      src={ev.heroImage}
-                      alt={ev.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
-                    <span className="absolute top-4 left-4 px-3 py-1 bg-[#D4AF37] text-[#111] text-[10px] font-bold uppercase tracking-widest rounded-sm">
-                      {ev.category}
-                    </span>
-                  </div>
-                  <div className="p-7">
-                    <div className="text-xs font-bold uppercase tracking-wider text-[#9A7D3A] mb-2 flex items-center gap-1.5">
-                      <Calendar className="w-3.5 h-3.5" /> {ev.date}
-                    </div>
-                    <h3 className="font-aiveritas text-xl xl:text-2xl text-[#111] group-hover:text-[#9A7D3A] transition-colors mb-3 leading-snug line-clamp-2 min-h-[3.25rem]">
-                      {ev.title}
-                    </h3>
-                    <p className="text-[#111]/75 text-base font-light leading-relaxed line-clamp-3">
-                      {ev.summary}
-                    </p>
-                    {ev.externalAction && (
-                      <span className="inline-flex items-center gap-1.5 mt-3 text-[10px] uppercase tracking-wider font-bold text-[#ef5728]">
-                        ✦ {ev.externalAction.type === "donate" ? "Charity Donation / Official Site" : ev.externalAction.type === "register" ? "Official Builder Registration" : "Official Tickets Portal"}
-                      </span>
-                    )}
-                  </div>
-                </div>
-                <div className="px-7 pb-6 pt-4 border-t border-[#111]/8 flex items-center justify-between">
-                  <span className="text-[11px] text-[#111]/55 truncate max-w-[180px]">{ev.location}</span>
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#9A7D3A] flex items-center gap-1.5">
-                    RSVP / Details <ArrowRight className="w-3.5 h-3.5" />
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── SECTION 05: MARKET INTELLIGENCE & EDITORIAL REPORTS (LOAD MORE GRID) ── */}
-      <section id="articles" className="py-24 px-8 bg-white border-b border-[#111]/8">
-        <div className="max-w-screen-xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-            <div>
-              <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-                05 • Market Updates &amp; Articles
-              </span>
-              <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111] mb-3">
-                Tampa Bay Market Updates &amp; Articles
-              </h2>
-              <p className="text-[#111]/70 font-light max-w-2xl text-base md:text-[17px] lg:text-[18px] leading-relaxed">
-                Local market updates, relocation insights, and residential and commercial real estate articles across the Tampa Bay region.
-              </p>
-            </div>
-          </div>
-
-          {/* 2 Rows of 3 Columns Grid (all cards kept in SSR DOM for full search crawlability) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredArticles.map((art, idx) => (
-              <Link
-                key={art.slug}
-                href={`/knowledge-hub/articles/${art.slug}`}
-                className={`${
-                  idx >= visibleArticlesCount ? "hidden" : "flex"
-                } group bg-[#f5f3ef] border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex-col justify-between transition-all hover:shadow-xl`}
-              >
-                <div>
-                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#111]">
-                    <Image
-                      src={art.heroImage}
-                      alt={art.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
-                    <span className="absolute top-4 left-4 px-3 py-1 bg-white text-[#111] text-[10px] font-bold uppercase tracking-widest rounded-sm">
-                      {art.category}
-                    </span>
-                  </div>
-                  <div className="p-7">
-                    <h3 className="font-aiveritas text-xl xl:text-2xl text-[#111] group-hover:text-[#9A7D3A] transition-colors mb-3 leading-snug line-clamp-2 min-h-[3.25rem]">
-                      {art.title}
-                    </h3>
-                    <p className="text-[#111]/75 text-base font-light leading-relaxed line-clamp-3">
-                      {art.summary}
-                    </p>
-                  </div>
-                </div>
-                <div className="px-7 pb-6 pt-4 border-t border-[#111]/8 flex items-center justify-between">
-                  <span className="text-[11px] text-[#111]/55">{art.author.name} • {art.readTime}</span>
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#9A7D3A] flex items-center gap-1.5">
-                    Read Article <ArrowRight className="w-3.5 h-3.5" />
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
-
-          {/* Load More Button (+3 articles / 1 row each click) */}
-          {visibleArticlesCount < filteredArticles.length && (
-            <div className="mt-14 text-center">
-              <button
-                type="button"
-                onClick={() => setVisibleArticlesCount((prev) => prev + 3)}
-                className="inline-flex items-center gap-3 px-8 py-4 bg-[#111] hover:bg-[#ef5728] text-white text-xs font-bold uppercase tracking-widest rounded-xl transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 cursor-pointer border border-[#ef5728]/30 group"
-              >
-                <span>Load More</span>
-                <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
-              </button>
-            </div>
-          )}
         </div>
       </section>
 
@@ -660,7 +441,7 @@ export default function KnowledgeHubPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
               <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-                06 • Interactive Tools &amp; Glossary
+                04 • Interactive Tools &amp; Glossary
               </span>
               <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111] mb-3">
                 Calculators &amp; Financial Planning Tools
@@ -769,13 +550,244 @@ export default function KnowledgeHubPage() {
         </div>
       </section>
 
-      {/* ── SECTION 07: GUIDED AREA & COMMERCIAL TOURS (DRIVE WITH D&G) ── */}
-      <TourSliderSection
-        id="tours"
-        sectionEyebrow="07 • Drive Tampa Bay With Davis & Garnett"
-        sectionTitle="Guided Area &amp; Shopping Zone Tours"
-        bgClass="bg-white"
-      />
+      {/* ── SLIDER 2: THE D&G CLASSROOM — TOP PURCHASE, SALE & INVESTMENT QUESTIONS (Q&A) ── */}
+      <section id="questions" className="py-24 px-8 bg-white border-b border-[#111]/8">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div>
+              <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
+                05 • Davis &amp; Garnett Classroom
+              </span>
+              <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111] mb-3">
+                Top Buying, Selling &amp; Investing Questions
+              </h2>
+              <p className="text-[#111]/70 font-light max-w-2xl text-base md:text-[17px] lg:text-[18px] leading-relaxed">
+                Direct, plain-English answers to the most common questions buyers, sellers, and commercial investors ask about Florida real estate.
+              </p>
+            </div>
+            <div className="flex items-center gap-3 shrink-0">
+              <button
+                onClick={() => scrollSlider(qaRef, "left")}
+                className="p-3 rounded-full bg-[#D4AF37] text-[#111] border border-[#9A7D3A]/50 shadow-md shadow-[#D4AF37]/30 hover:bg-[#111] hover:text-[#D4AF37] hover:scale-105 active:scale-95 transition-all"
+                aria-label="Scroll Questions Left"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                onClick={() => scrollSlider(qaRef, "right")}
+                className="p-3 rounded-full bg-[#D4AF37] text-[#111] border border-[#9A7D3A]/50 shadow-md shadow-[#D4AF37]/30 hover:bg-[#111] hover:text-[#D4AF37] hover:scale-105 active:scale-95 transition-all"
+                aria-label="Scroll Questions Right"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+
+          <div
+            ref={qaRef}
+            className="flex gap-7 overflow-x-auto pb-6 snap-x snap-mandatory"
+            style={{ scrollbarWidth: "none" }}
+          >
+            {filteredQuestions.map((qa) => (
+              <Link
+                key={qa.slug}
+                href={`/knowledge-hub/${qa.slug}`}
+                className="group min-w-[320px] md:min-w-[380px] max-w-[380px] snap-start bg-[#f5f3ef] border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl shrink-0"
+              >
+                <div>
+                  <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#111]">
+                    <Image
+                      src={qa.heroImage}
+                      alt={qa.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+                    <span className="absolute top-4 left-4 px-3 py-1 bg-[#111]/90 text-[#D4AF37] text-[10px] font-bold uppercase tracking-widest rounded-sm">
+                      {qa.category}
+                    </span>
+                  </div>
+                  <div className="p-7">
+                    <h3 className="font-aiveritas text-xl xl:text-2xl text-[#111] group-hover:text-[#9A7D3A] transition-colors mb-3 leading-snug line-clamp-2 min-h-[3.25rem]">
+                      {qa.title}
+                    </h3>
+                    <p className="text-[#111]/75 text-base font-light leading-relaxed line-clamp-3">
+                      {qa.subtitle}
+                    </p>
+                  </div>
+                </div>
+                <div className="px-7 pb-6 pt-4 border-t border-[#111]/8 flex items-center justify-between">
+                  <span className="text-[11px] text-[#111]/55 font-medium">{qa.author.name}</span>
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#9A7D3A] flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+                    View Answer <ArrowRight className="w-3.5 h-3.5" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── SLIDER 4: COMMUNITY EVENTS, OUTREACH & VIP EXPERIENCES ── */}
+      <section id="events" className="py-24 px-8 bg-[#f5f3ef] border-b border-[#111]/8">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div>
+              <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
+                06 • Local Gatherings &amp; Causes
+              </span>
+              <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111] mb-3">
+                Community Events &amp; Property Tours
+              </h2>
+              <p className="text-[#111]/70 font-light max-w-2xl text-base md:text-[17px] lg:text-[18px] leading-relaxed">
+                Join Mark Davis and Rachael Garnett for new construction tours, local real estate workshops, and Tampa Bay community outreach days.
+              </p>
+            </div>
+            <div className="flex items-center gap-3 shrink-0">
+              <button
+                onClick={() => scrollSlider(eventsRef, "left")}
+                className="p-3 rounded-full bg-[#D4AF37] text-[#111] border border-[#9A7D3A]/50 shadow-md shadow-[#D4AF37]/30 hover:bg-[#111] hover:text-[#D4AF37] hover:scale-105 active:scale-95 transition-all"
+                aria-label="Scroll Events Left"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                onClick={() => scrollSlider(eventsRef, "right")}
+                className="p-3 rounded-full bg-[#D4AF37] text-[#111] border border-[#9A7D3A]/50 shadow-md shadow-[#D4AF37]/30 hover:bg-[#111] hover:text-[#D4AF37] hover:scale-105 active:scale-95 transition-all"
+                aria-label="Scroll Events Right"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+
+          <div
+            ref={eventsRef}
+            className="flex gap-7 overflow-x-auto pb-6 snap-x snap-mandatory"
+            style={{ scrollbarWidth: "none" }}
+          >
+            {filteredEvents.map((ev) => (
+              <Link
+                key={ev.slug}
+                href={`/knowledge-hub/events/${ev.slug}`}
+                className="group min-w-[320px] md:min-w-[380px] max-w-[380px] snap-start bg-white border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl shrink-0"
+              >
+                <div>
+                  <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#111]">
+                    <Image
+                      src={ev.heroImage}
+                      alt={ev.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
+                    <span className="absolute top-4 left-4 px-3 py-1 bg-[#D4AF37] text-[#111] text-[10px] font-bold uppercase tracking-widest rounded-sm">
+                      {ev.category}
+                    </span>
+                  </div>
+                  <div className="p-7">
+                    <div className="text-xs font-bold uppercase tracking-wider text-[#9A7D3A] mb-2 flex items-center gap-1.5">
+                      <Calendar className="w-3.5 h-3.5" /> {ev.date}
+                    </div>
+                    <h3 className="font-aiveritas text-xl xl:text-2xl text-[#111] group-hover:text-[#9A7D3A] transition-colors mb-3 leading-snug line-clamp-2 min-h-[3.25rem]">
+                      {ev.title}
+                    </h3>
+                    <p className="text-[#111]/75 text-base font-light leading-relaxed line-clamp-3">
+                      {ev.summary}
+                    </p>
+                    {ev.externalAction && (
+                      <span className="inline-flex items-center gap-1.5 mt-3 text-[10px] uppercase tracking-wider font-bold text-[#ef5728]">
+                        ✦ {ev.externalAction.type === "donate" ? "Charity Donation / Official Site" : ev.externalAction.type === "register" ? "Official Builder Registration" : "Official Tickets Portal"}
+                      </span>
+                    )}
+                  </div>
+                </div>
+                <div className="px-7 pb-6 pt-4 border-t border-[#111]/8 flex items-center justify-between">
+                  <span className="text-[11px] text-[#111]/55 truncate max-w-[180px]">{ev.location}</span>
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#9A7D3A] flex items-center gap-1.5">
+                    RSVP / Details <ArrowRight className="w-3.5 h-3.5" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 05: MARKET INTELLIGENCE & EDITORIAL REPORTS (LOAD MORE GRID) ── */}
+      <section id="articles" className="py-24 px-8 bg-white border-b border-[#111]/8">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div>
+              <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
+                07 • Market Updates &amp; Articles
+              </span>
+              <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111] mb-3">
+                Tampa Bay Market Updates &amp; Articles
+              </h2>
+              <p className="text-[#111]/70 font-light max-w-2xl text-base md:text-[17px] lg:text-[18px] leading-relaxed">
+                Local market updates, relocation insights, and residential and commercial real estate articles across the Tampa Bay region.
+              </p>
+            </div>
+          </div>
+
+          {/* 2 Rows of 3 Columns Grid (all cards kept in SSR DOM for full search crawlability) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredArticles.map((art, idx) => (
+              <Link
+                key={art.slug}
+                href={`/knowledge-hub/articles/${art.slug}`}
+                className={`${
+                  idx >= visibleArticlesCount ? "hidden" : "flex"
+                } group bg-[#f5f3ef] border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex-col justify-between transition-all hover:shadow-xl`}
+              >
+                <div>
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#111]">
+                    <Image
+                      src={art.heroImage}
+                      alt={art.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
+                    <span className="absolute top-4 left-4 px-3 py-1 bg-white text-[#111] text-[10px] font-bold uppercase tracking-widest rounded-sm">
+                      {art.category}
+                    </span>
+                  </div>
+                  <div className="p-7">
+                    <h3 className="font-aiveritas text-xl xl:text-2xl text-[#111] group-hover:text-[#9A7D3A] transition-colors mb-3 leading-snug line-clamp-2 min-h-[3.25rem]">
+                      {art.title}
+                    </h3>
+                    <p className="text-[#111]/75 text-base font-light leading-relaxed line-clamp-3">
+                      {art.summary}
+                    </p>
+                  </div>
+                </div>
+                <div className="px-7 pb-6 pt-4 border-t border-[#111]/8 flex items-center justify-between">
+                  <span className="text-[11px] text-[#111]/55">{art.author.name} • {art.readTime}</span>
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#9A7D3A] flex items-center gap-1.5">
+                    Read Article <ArrowRight className="w-3.5 h-3.5" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          {/* Load More Button (+3 articles / 1 row each click) */}
+          {visibleArticlesCount < filteredArticles.length && (
+            <div className="mt-14 text-center">
+              <button
+                type="button"
+                onClick={() => setVisibleArticlesCount((prev) => prev + 3)}
+                className="inline-flex items-center gap-3 px-8 py-4 bg-[#111] hover:bg-[#ef5728] text-white text-xs font-bold uppercase tracking-widest rounded-xl transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 cursor-pointer border border-[#ef5728]/30 group"
+              >
+                <span>Load More</span>
+                <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
+              </button>
+            </div>
+          )}
+        </div>
+      </section>
 
       {/* ── ASK AN ADVISOR / EMPOWER YOUR REAL ESTATE JOURNEY CTA ── */}
       <section className="py-24 px-8 bg-[#111] text-white">

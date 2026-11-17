@@ -200,7 +200,7 @@ export default function SiteFooter() {
               <li><Link href="/knowledge-hub/areas/land-o-lakes" className="hover:text-white transition-colors">Land O&apos; Lakes Corridor</Link></li>
               <li><Link href="/knowledge-hub/areas/brandon-riverview" className="hover:text-white transition-colors">Brandon &amp; East Hillsborough</Link></li>
               <li><Link href="/knowledge-hub/areas/central-florida-acreage" className="hover:text-white transition-colors">Central FL Acreage &amp; Land</Link></li>
-              <li><Link href="/tours" className="text-[#D4AF37] hover:text-white transition-colors font-medium">Guided Area Tours (#TourWithDG)</Link></li>
+              <li><Link href="/tours" className="text-[#D4AF37] hover:text-white transition-colors font-medium">Guided Area Tours (#GuidedByDG)</Link></li>
             </ul>
           </div>
 

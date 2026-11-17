@@ -286,7 +286,7 @@ export default function ResidentialAdvisoryGuidePage() {
 
           <div className="mt-10 pt-8 border-t border-white/10 flex flex-wrap items-center justify-center gap-3 text-xs">
             <Link href="/tours" className="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-[#C8A951] hover:text-[#111] font-bold transition-colors">
-              Guided Area Tours (#TourWithDG)
+              Guided Area Tours (#GuidedByDG)
             </Link>
             <Link href="/tools/mortgage-calculator" className="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-[#C8A951] hover:text-[#111] font-bold transition-colors">
               Florida Mortgage &amp; CDD Tool

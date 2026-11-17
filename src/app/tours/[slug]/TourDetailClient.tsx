@@ -141,7 +141,7 @@ export default function TourDetailClient({
               {tour.badge}
             </span>
             <span className="px-3 py-1 bg-white/10 border border-[#D4AF37]/40 text-[#D4AF37] font-bold rounded-sm">
-              #TourWithDG
+              #GuidedByDG
             </span>
             <span className="flex items-center gap-1.5">
               <Clock className="w-3.5 h-3.5 text-[#D4AF37]" /> {tour.duration}
@@ -210,7 +210,7 @@ export default function TourDetailClient({
               </div>
               <div>
                 <span className="text-[10px] uppercase tracking-widest font-bold text-[#9A7D3A] block">
-                  {tour.host.role} • #TourWithDG
+                  {tour.host.role} • #GuidedByDG
                 </span>
                 <h2 className="font-aiveritas text-xl text-[#111]">
                   {tour.host.name} &amp; {tour.host.coHostName} Are Leading Your Tour
