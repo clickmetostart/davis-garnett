@@ -650,22 +650,21 @@ export default function PropertiesPage() {
               </div>
             </div>
 
-            {/* Deck Navigation Pills / Pagination Dots */}
+            {/* Minimal Pagination Dots */}
             {featuredCount > 1 && (
-              <div className="mt-8 flex flex-wrap items-center justify-center gap-2.5">
+              <div className="mt-7 flex items-center justify-center gap-2.5">
                 {activeListings.map((item, idx) => (
                   <button
                     key={`featured-dot-${item.slug}`}
                     type="button"
                     onClick={() => setFeaturedIndex(idx)}
-                    className={`px-3.5 py-2 rounded-full text-xs font-bold transition-all border ${
+                    aria-label={`View ${item.title}`}
+                    className={`h-2.5 rounded-full transition-all ${
                       idx === safeFeaturedIndex
-                        ? "bg-[#111111] text-[#C8A951] border-[#111111] shadow-sm"
-                        : "bg-[#f5f3ef] text-[#111111]/65 border-[#111111]/10 hover:border-[#C8A951] hover:text-[#111111]"
+                        ? "w-8 bg-[#C8A951]"
+                        : "w-2.5 bg-[#111111]/20 hover:bg-[#111111]/45"
                     }`}
-                  >
-                    {item.title}
-                  </button>
+                  />
                 ))}
               </div>
             )}
