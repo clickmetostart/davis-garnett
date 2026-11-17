@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -30,11 +30,6 @@ export default function TourSliderSection({
   bgClass = "bg-white",
 }: TourSliderSectionProps) {
   const sliderRef = useRef<HTMLDivElement>(null);
-  const [filterTrack, setFilterTrack] = useState<"all" | "residential" | "commercial">("all");
-
-  const filteredTours = LIVE_GUIDED_TOURS.filter(
-    (t) => filterTrack === "all" || t.track === filterTrack
-  );
 
   const scrollSlider = (dir: "left" | "right") => {
     if (!sliderRef.current) return;
@@ -85,37 +80,13 @@ export default function TourSliderSection({
           </div>
         </div>
 
-        {/* Clean Filter Pills */}
-        <div className="flex flex-wrap items-center gap-2.5 mb-8">
-          {(
-            [
-              { key: "all", label: `All Guided Tours (${LIVE_GUIDED_TOURS.length})` },
-              { key: "residential", label: "Residential & Neighborhood Loops (5)" },
-              { key: "commercial", label: "Commercial & Shopping Zones (5)" },
-            ] as const
-          ).map((tab) => (
-            <button
-              key={tab.key}
-              type="button"
-              onClick={() => setFilterTrack(tab.key)}
-              className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${
-                filterTrack === tab.key
-                  ? "bg-[#111] text-[#D4AF37] shadow-sm"
-                  : "bg-[#f5f3ef] text-[#111]/75 hover:bg-[#e8e3d8] border border-[#111]/10"
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
-
         {/* Horizontal Scrollable Tour Cards (All cards remain rendered in DOM) */}
         <div
           ref={sliderRef}
           className="flex gap-7 overflow-x-auto pb-6 snap-x snap-mandatory"
           style={{ scrollbarWidth: "none" }}
         >
-          {filteredTours.map((tour) => {
+          {LIVE_GUIDED_TOURS.map((tour) => {
             const routeUrl = buildGoogleMapsRouteUrl(tour.stops);
             return (
               <div
