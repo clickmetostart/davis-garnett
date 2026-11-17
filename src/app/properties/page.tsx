@@ -261,28 +261,28 @@ export default function PropertiesPage() {
             </p>
           </div>
 
-          {/* Executive Stats Ribbon */}
+          {/* Advisor Credentials & Accolades Ribbon */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto mb-8">
             {[
               {
-                value: "$9.29M+",
-                label: "Featured Listings",
-                sub: "Homes, Land & Commercial"
+                value: "CRE & RES",
+                label: "Dual-Certified Agents",
+                sub: "Residential, Commercial & Land"
               },
               {
-                value: "99.65+ Ac",
-                label: "Featured Land & Waterfront",
-                sub: "Polk, Marion & Pinellas"
+                value: "Tampa Bay",
+                label: "& Central Florida",
+                sub: "Hillsborough · Pinellas · Pasco · Polk"
               },
               {
-                value: "Proven",
-                label: "2026 Closed Sales",
-                sub: "Verified Gulf Coast Closings"
+                value: "FL Licensed",
+                label: "#3209459 & #3378601",
+                sub: "Mark Davis & Rachael Garnett"
               },
               {
-                value: "Full-Service",
-                label: "Two-Agent Team",
-                sub: "Residential · Commercial · Land"
+                value: "Align Right",
+                label: "Carrollwood Office",
+                sub: "Brokerage Lic. #BK3401606"
               }
             ].map((stat) => (
               <div
