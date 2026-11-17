@@ -24,6 +24,7 @@ import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
 import FaviconHeroBackground from "@/components/FaviconHeroBackground";
 import TourSliderSection from "@/components/TourSliderSection";
+import ConsultationModal from "@/components/ConsultationModal";
 import { GUIDES, QUESTIONS, AREAS, EVENTS, ARTICLES } from "@/data/knowledgeHub";
 
 export default function KnowledgeHubPage() {
@@ -36,6 +37,7 @@ export default function KnowledgeHubPage() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [visibleArticlesCount, setVisibleArticlesCount] = useState(6);
+  const [vipTourModalOpen, setVipTourModalOpen] = useState(false);
 
   const guidesRef = useRef<HTMLDivElement>(null);
   const qaRef = useRef<HTMLDivElement>(null);
@@ -234,7 +236,7 @@ export default function KnowledgeHubPage() {
       {/* ── SECTION 02: GUIDED AREA & COMMERCIAL TOURS (#GuidedByDG) ── */}
       <TourSliderSection
         id="tours"
-        sectionEyebrow="02 • #GuidedByDG — Self-Guided & Escorted Routes"
+        sectionEyebrow="02 • #GuidedByDG — Self-Guided Tour Kits Made by D&G"
         sectionTitle="Guided Area &amp; Shopping Zone Tours"
         bgClass="bg-[#f5f3ef]"
       />
@@ -404,32 +406,33 @@ export default function KnowledgeHubPage() {
                     #GuidedByDG
                   </span>
                   <span className="text-[10px] uppercase tracking-[0.22em] text-[#D4AF37] font-bold">
-                    Guided by Davis &amp; Garnett • Self-Guided or Ride-Along
+                    Self-Guided Tour Kits Made by D&amp;G • Or Ride With Us
                   </span>
                 </div>
                 <h3 className="font-aiveritas text-xl sm:text-2xl text-white mb-1">
-                  Want to Drive These Neighborhoods &amp; Commercial Corridors in Real Street Order?
+                  Take a Tour Built by Mark &amp; Rachael
                 </h3>
                 <p className="text-sm md:text-base text-white/80 font-light max-w-2xl">
-                  Open any of our 10 turn-by-turn Google Maps routes with Mark &amp; Rachael&apos;s notes, school &amp; zoning snippets, and a printable tour workbook—or invite us to ride along.
+                  Drive our self-guided Google Maps routes with Mark &amp; Rachael&apos;s notes and printable workbooks—or book a private VIP tour with us.
                 </p>
               </div>
             </div>
 
             {/* Right: CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
-              <a
-                href="#tours"
-                className="inline-flex items-center gap-2 px-5 py-3.5 bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs font-bold uppercase tracking-widest rounded-lg transition-colors shrink-0"
-              >
-                Preview Tours
-              </a>
               <Link
                 href="/tours"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#D4AF37] hover:bg-white text-[#111] text-xs font-bold uppercase tracking-widest rounded-lg transition-colors shrink-0 shadow-md"
+                className="inline-flex items-center gap-2 px-5 py-3.5 bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs font-bold uppercase tracking-widest rounded-lg transition-colors shrink-0"
               >
-                <Compass className="w-4 h-4" /> Take a Guided Tour <ArrowRight className="w-4 h-4" />
+                View Self-Guided Tours
               </Link>
+              <button
+                type="button"
+                onClick={() => setVipTourModalOpen(true)}
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#D4AF37] hover:bg-white text-[#111] text-xs font-bold uppercase tracking-widest rounded-lg transition-colors shrink-0 shadow-md cursor-pointer"
+              >
+                <Compass className="w-4 h-4" /> Book a VIP Tour <ArrowRight className="w-4 h-4" />
+              </button>
             </div>
           </div>
         </div>
@@ -929,6 +932,14 @@ export default function KnowledgeHubPage() {
       />
 
       <SiteFooter />
+
+      <ConsultationModal
+        isOpen={vipTourModalOpen}
+        onClose={() => setVipTourModalOpen(false)}
+        defaultInterest="VIP Guided Area or Shopping Zone Tour"
+        defaultAdvisor="Mark Davis & Rachael Garnett"
+        title="Schedule Your VIP Tour With Mark & Rachael"
+      />
     </div>
   );
 }

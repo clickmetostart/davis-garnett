@@ -24,9 +24,9 @@ interface TourSliderSectionProps {
 
 export default function TourSliderSection({
   id = "tours",
-  sectionEyebrow = "Tour With Davis & Garnett • Self-Guided or Escorted",
+  sectionEyebrow = "#GuidedByDG • Self-Guided Tour Kits Made by D&G",
   sectionTitle = "Tampa Bay Area & Shopping Zone Tours",
-  sectionSubtitle = "Drive Tampa Bay neighborhoods and commercial shopping strips in real street order with Mark Davis & Rachael Garnett. Open Google Maps routes, take notes online, or ask us to ride along.",
+  sectionSubtitle = "Drive Tampa Bay neighborhoods and commercial corridors in real street order using turn-by-turn routes and companion workbooks made by Mark Davis & Rachael Garnett—or book a private VIP ride-along.",
   bgClass = "bg-white",
 }: TourSliderSectionProps) {
   const sliderRef = useRef<HTMLDivElement>(null);
