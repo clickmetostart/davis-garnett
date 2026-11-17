@@ -36,20 +36,19 @@ export default function ContactPage() {
     e.preventDefault();
     setSubmitting(true);
     try {
-      await fetch("/api/leads", {
+      await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: `${firstName} ${lastName}`.trim(),
           firstName,
           lastName,
           email,
           phone,
           assignedAdvisor: recipient,
-          propertyInterest: interest,
-          notes: message,
-          source: "Contact Us Page",
-          status: "New",
+          subject: interest,
+          interest,
+          message,
+          source: "Contact Us Page (/contact)",
         }),
       });
       setSubmitted(true);
@@ -465,7 +464,7 @@ export default function ContactPage() {
                   Thank You, {firstName}.
                 </h3>
                 <p className="text-[#111]/70 font-light max-w-md mx-auto mb-8 leading-relaxed">
-                  Your message has been logged in our ClickMe CRM and routed directly to{" "}
+                  Your message has been sent directly to{" "}
                   <strong>{recipient}</strong>. We value your inquiry and strive to respond within six hours — almost always the same day and always ASAP.
                 </p>
                 <button

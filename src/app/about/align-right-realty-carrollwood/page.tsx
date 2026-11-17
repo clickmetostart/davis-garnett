@@ -38,7 +38,7 @@ export default function AlignRightRealtyCarrollwoodPage() {
     e.preventDefault();
     setSubmitting(true);
     try {
-      await fetch("/api/leads", {
+      await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -46,9 +46,11 @@ export default function AlignRightRealtyCarrollwoodPage() {
           lastName: formData.lastName,
           email: formData.email,
           phone: formData.phone,
-          source: "Align Right Realty Carrollwood Spoke (/about/align-right-realty-carrollwood)",
-          pipelineStage: "Brokerage / Office Inquiry",
-          notes: `[Align Right Carrollwood #BK3401606 — ${formData.topic}] ${formData.notes}`,
+          category: "general",
+          subject: formData.topic || "Align Right Carrollwood Office Inquiry",
+          topic: formData.topic,
+          source: "Align Right Carrollwood (/about/align-right-realty-carrollwood)",
+          message: formData.notes,
         }),
       });
       setSubmitted(true);

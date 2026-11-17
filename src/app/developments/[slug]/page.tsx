@@ -93,21 +93,21 @@ export default function DevelopmentDetailSpokePage({
     e.preventDefault();
     setFormStatus("submitting");
     try {
-      const res = await fetch("/api/leads", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: leadForm.name,
           email: leadForm.email,
           phone: leadForm.phone,
-          source: `Development Spoke: ${dev.name}`,
-          status: "New",
-          labels: [
-            "Development Inquiry",
-            dev.name,
-            dev.corridor === "downtown-bayshore" ? "Luxury Tower" : "Master-Planned Community",
-          ],
-          notes: `Development: ${dev.name} | Preferred Tier: ${leadForm.preferredTier} | Request: ${leadForm.requestType} | Timeline: ${leadForm.timeline} | Message: ${leadForm.message}`,
+          category: "developments",
+          subject: `${dev.name} — ${leadForm.requestType}`,
+          development: dev.name,
+          preferredTier: leadForm.preferredTier,
+          requestType: leadForm.requestType,
+          timeline: leadForm.timeline,
+          message: leadForm.message,
+          source: `Development Page (${dev.slug})`,
         }),
       });
       if (!res.ok) throw new Error("Failed to submit");

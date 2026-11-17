@@ -1,32 +1,42 @@
 [
   {
-    "name": "General Contacts",
-    "color": "#4b5563",
+    "name": "General Inquiries",
+    "color": "#334155",
     "isSystem": true
   },
   {
-    "name": "First-Time Homebuyers",
+    "name": "Advisory Consultation",
+    "color": "#b45309",
+    "isSystem": true
+  },
+  {
+    "name": "Private Showing Request",
     "color": "#059669",
-    "isSystem": false
+    "isSystem": true
   },
   {
-    "name": "Interest Rate Watch",
-    "color": "#2563eb",
-    "isSystem": false
+    "name": "Commercial & Mixed-Use",
+    "color": "#1e3a8a",
+    "isSystem": true
   },
   {
-    "name": "Review Request Pipeline",
-    "color": "#d97706",
-    "isSystem": false
+    "name": "Developments & 55+",
+    "color": "#0f766e",
+    "isSystem": true
   },
   {
-    "name": "Past Clients",
-    "color": "#8b5cf6",
-    "isSystem": false
+    "name": "Land & Acreage",
+    "color": "#15803d",
+    "isSystem": true
   },
   {
-    "name": "VIP Partners",
-    "color": "#db2777",
-    "isSystem": false
+    "name": "Strategic Partners",
+    "color": "#7c3aed",
+    "isSystem": true
+  },
+  {
+    "name": "Community & Schools",
+    "color": "#be185d",
+    "isSystem": true
   }
 ]

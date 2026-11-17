@@ -407,21 +407,26 @@ export default function SearchMlsDiscoveryPortal() {
     e.preventDefault();
     setFormStatus("submitting");
     try {
-      const res = await fetch("/api/leads", {
+      const catLower = pocketForm.propertyCategory.toLowerCase();
+      const inquiryCategory = catLower.includes("commercial")
+        ? "commercial"
+        : catLower.includes("land") || catLower.includes("acreage")
+        ? "land"
+        : "showing";
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: pocketForm.name,
           email: pocketForm.email,
           phone: pocketForm.phone,
-          source: "Search MLS Portal — Off-Market & Pocket Listing Access",
-          status: "New",
-          labels: [
-            "Pocket Listing Request",
-            pocketForm.propertyCategory,
-            pocketForm.priceRange,
-          ],
-          notes: `Target Corridors: ${pocketForm.targetCorridors} | Category: ${pocketForm.propertyCategory} | Budget: ${pocketForm.priceRange} | Specific Criteria: ${pocketForm.criteriaNotes}`,
+          category: inquiryCategory,
+          subject: `Custom Property Search — ${pocketForm.propertyCategory}`,
+          targetCorridors: pocketForm.targetCorridors,
+          propertyCategory: pocketForm.propertyCategory,
+          priceRange: pocketForm.priceRange,
+          message: pocketForm.criteriaNotes,
+          source: "Property Search Page (/search-mls)",
         }),
       });
       if (!res.ok) throw new Error("Failed");

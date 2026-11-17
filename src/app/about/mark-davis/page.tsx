@@ -116,7 +116,13 @@ export default function MarkDavisAdvisorPage() {
     setSubmitting(true);
     setError("");
     try {
-      const res = await fetch("/api/leads", {
+      const focusLower = formData.assetFocus.toLowerCase();
+      const inquiryCategory = focusLower.includes("commercial") || focusLower.includes("mixed")
+        ? "commercial"
+        : focusLower.includes("land") || focusLower.includes("acreage")
+        ? "land"
+        : "consultation";
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -124,15 +130,13 @@ export default function MarkDavisAdvisorPage() {
           lastName: formData.lastName,
           email: formData.email,
           phone: formData.phone,
-          source: "Mark Davis Executive Profile (/about/mark-davis)",
-          owner: "mark@davisgarnettsells.com",
-          pipelineStage: "New Commercial/Land Lead",
-          buySideConfig: {
-            budget: formData.budgetOrAcreage || "TBD",
-            preApprovalStatus: formData.assetFocus,
-            timeframe: "Immediate Consultation",
-          },
-          notes: `[Mark Davis Direct Inquiry — ${formData.assetFocus}] ${formData.notes}`,
+          category: inquiryCategory,
+          assignedAdvisor: "Mark Davis",
+          subject: `${formData.assetFocus} Inquiry for Mark Davis`,
+          assetFocus: formData.assetFocus,
+          budgetOrAcreage: formData.budgetOrAcreage || "Not specified",
+          source: "Mark Davis Profile (/about/mark-davis)",
+          message: formData.notes,
         }),
       });
       if (!res.ok) throw new Error("Submission failed");

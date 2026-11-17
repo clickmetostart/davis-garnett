@@ -213,7 +213,13 @@ export default function AlignRightCarrollwoodCoveragePage() {
     e.preventDefault();
     setSubmitting(true);
     try {
-      await fetch("/api/leads", {
+      const txLower = formData.transactionType.toLowerCase();
+      const inquiryCategory = txLower.includes("commercial")
+        ? "commercial"
+        : txLower.includes("land") || txLower.includes("acreage")
+        ? "land"
+        : "consultation";
+      await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -221,9 +227,12 @@ export default function AlignRightCarrollwoodCoveragePage() {
           lastName: formData.lastName,
           email: formData.email,
           phone: formData.phone,
-          source: "Align Right Carrollwood Coverage Page (/align-right-carrollwood-coverage)",
-          pipelineStage: "Territory Coverage Inquiry",
-          notes: `[Align Right Carrollwood Coverage #BK3401606 — Region: ${formData.region} | Type: ${formData.transactionType}] ${formData.notes}`,
+          category: inquiryCategory,
+          subject: `${formData.region} — ${formData.transactionType}`,
+          region: formData.region,
+          transactionType: formData.transactionType,
+          source: "Tampa Bay Coverage Area (/align-right-carrollwood-coverage)",
+          message: formData.notes,
         }),
       });
       setSubmitted(true);

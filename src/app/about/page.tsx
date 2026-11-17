@@ -44,7 +44,13 @@ export default function AboutHubPage() {
     setSubmitting(true);
     setError("");
     try {
-      const res = await fetch("/api/leads", {
+      const typeLower = formData.inquiryType.toLowerCase();
+      const inquiryCategory = typeLower.includes("commercial")
+        ? "commercial"
+        : typeLower.includes("land") || typeLower.includes("acreage")
+        ? "land"
+        : "consultation";
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -52,11 +58,12 @@ export default function AboutHubPage() {
           lastName: formData.lastName,
           email: formData.email,
           phone: formData.phone,
-          source: "About Collective Hub (/about)",
+          category: inquiryCategory,
+          subject: formData.inquiryType,
+          source: "About Davis & Garnett (/about)",
           advisorPreference: formData.advisorPreference,
           inquiryType: formData.inquiryType,
-          notes: `[${formData.inquiryType} | Preferred: ${formData.advisorPreference}] ${formData.notes}`,
-          pipelineStage: "New Inquiry",
+          message: formData.notes,
         }),
       });
       if (!res.ok) throw new Error("Failed to submit inquiry");

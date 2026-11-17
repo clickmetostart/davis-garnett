@@ -42,11 +42,11 @@ export default function ConsultationModal({
           lastName,
           email,
           phone,
-          subject: `Consultation Modal: ${interest}`,
+          subject: interest,
           interest,
           assignedAdvisor: advisor,
           message: notes,
-          source: "Website Consultation Modal",
+          source: "davisgarnettsells.com — Private Advisory",
         }),
       });
       setSubmitted(true);

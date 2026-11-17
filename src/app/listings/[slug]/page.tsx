@@ -187,26 +187,26 @@ export default function ListingDetailPage() {
     e.preventDefault();
     setFormStatus("submitting");
     try {
-      const fullName = `${leadForm.firstName} ${leadForm.lastName}`.trim();
-      const res = await fetch("/api/leads", {
+      const inquiryCategory =
+        listing.category === "Commercial"
+          ? "commercial"
+          : listing.category === "Land"
+          ? "land"
+          : "showing";
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           firstName: leadForm.firstName,
           lastName: leadForm.lastName,
-          name: fullName,
           email: leadForm.email,
           phone: leadForm.phone,
+          category: inquiryCategory,
+          subject: `${listing.status === "Sold" ? "Comparable Property Inquiry" : "Private Showing Request"} — ${listing.title}`,
           propertyInterest: `${listing.title} (${listing.city}, ${listing.state}) — ${displayPrice}`,
-          notes: leadForm.notes,
           message: leadForm.notes,
-          source: "Custom Listing Page",
-          labels: [
-            listing.status === "Sold" ? "Comparable / Valuation Inquiry" : "Active Listing Inquiry",
-            listing.category,
-            listing.mlsId ? `MLS#${listing.mlsId}` : listing.slug
-          ]
-        })
+          source: `Property Details (${listing.slug})`,
+        }),
       });
       if (!res.ok) throw new Error("Failed");
       setFormStatus("success");

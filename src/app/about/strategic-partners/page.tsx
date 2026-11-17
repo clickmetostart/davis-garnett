@@ -207,7 +207,7 @@ export default function StrategicPartnersPage() {
     e.preventDefault();
     setSubmitting(true);
     try {
-      await fetch("/api/leads", {
+      await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -215,9 +215,13 @@ export default function StrategicPartnersPage() {
           lastName: formData.lastName,
           email: formData.email,
           phone: formData.phone,
-          source: "Strategic Partners Spoke (/about/strategic-partners)",
-          pipelineStage: "Partner / Vendor Desk",
-          notes: `[${formData.requestMode} | Category: ${formData.category} | Org/Prop: ${formData.companyOrProperty}] ${formData.notes}`,
+          category: "partner",
+          subject: `${formData.requestMode}: ${formData.category}`,
+          requestType: formData.requestMode,
+          partnerCategory: formData.category,
+          companyOrProperty: formData.companyOrProperty,
+          source: "Strategic Partners (/about/strategic-partners)",
+          message: formData.notes,
         }),
       });
       setSubmitted(true);

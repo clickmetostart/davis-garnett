@@ -53,24 +53,24 @@ export default function DevelopmentsHubPage() {
     e.preventDefault();
     setFormStatus("submitting");
     try {
-      const response = await fetch("/api/leads", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: leadForm.name,
           email: leadForm.email,
           phone: leadForm.phone,
-          source: `Developments Hub — ${leadForm.developmentOfInterest}`,
-          status: "New",
-          labels: [
-            "New Construction VIP",
-            leadForm.developmentOfInterest,
-            leadForm.budgetRange,
-          ],
-          notes: `Corridor: ${leadForm.corridorPreference} | Budget: ${leadForm.budgetRange} | Timeline: ${leadForm.timeline} | Notes: ${leadForm.message}`,
+          category: "developments",
+          subject: `${leadForm.developmentOfInterest} — Tampa Bay Development Inquiry`,
+          development: leadForm.developmentOfInterest,
+          corridorPreference: leadForm.corridorPreference,
+          budgetRange: leadForm.budgetRange,
+          timeline: leadForm.timeline,
+          message: leadForm.message,
+          source: "Featured Developments (/developments)",
         }),
       });
-      if (!response.ok) throw new Error("Failed to submit lead");
+      if (!response.ok) throw new Error("Failed to submit inquiry");
       setFormStatus("success");
     } catch (err) {
       console.error(err);
@@ -380,13 +380,12 @@ export default function DevelopmentsHubPage() {
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <h3 className="font-aiveritas text-3xl text-[#111111] mb-3">
-                    VIP Developer Dossier Request Received
+                    Development Update Request Received
                   </h3>
                   <p className="text-[#111111]/70 max-w-md mx-auto mb-8 font-light leading-relaxed">
                     Thank you, <strong className="text-[#111111]">{leadForm.name}</strong>. Mark Davis
-                    and Rachael Garnett are preparing your floor plans, price sheets, and current
-                    builder incentive breakdown for{" "}
-                    <strong className="text-[#111111]">{leadForm.developmentOfInterest}</strong>.
+                    and Rachael Garnett are preparing floor plans, current pricing, and community updates for{" "}
+                    <strong className="text-[#111111]">{leadForm.developmentOfInterest}</strong>. We value your inquiry and strive to respond within six hours — almost always the same day and always ASAP.
                   </p>
                   <button
                     onClick={() => setFormStatus("idle")}

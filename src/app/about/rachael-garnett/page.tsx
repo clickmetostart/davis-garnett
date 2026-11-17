@@ -101,7 +101,13 @@ export default function RachaelGarnettAdvisorPage() {
     setSubmitting(true);
     setError("");
     try {
-      const res = await fetch("/api/leads", {
+      const focusLower = formData.inquiryFocus.toLowerCase();
+      const inquiryCategory = focusLower.includes("commercial")
+        ? "commercial"
+        : focusLower.includes("showing") || focusLower.includes("buy")
+        ? "showing"
+        : "consultation";
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -109,15 +115,13 @@ export default function RachaelGarnettAdvisorPage() {
           lastName: formData.lastName,
           email: formData.email,
           phone: formData.phone,
-          source: "Rachael Garnett Executive Profile (/about/rachael-garnett)",
-          owner: "rachael@davisgarnettsells.com",
-          pipelineStage: "New Luxury Residential Lead",
-          buySideConfig: {
-            budget: formData.targetCommunities || "Luxury Residential",
-            preApprovalStatus: formData.inquiryFocus,
-            timeframe: "Immediate Consultation",
-          },
-          notes: `[Rachael Garnett Direct Inquiry — ${formData.inquiryFocus}] Communities: ${formData.targetCommunities}. ${formData.notes}`,
+          category: inquiryCategory,
+          assignedAdvisor: "Rachael Garnett",
+          subject: `${formData.inquiryFocus} Inquiry for Rachael Garnett`,
+          inquiryFocus: formData.inquiryFocus,
+          targetCommunities: formData.targetCommunities || "Tampa Bay",
+          source: "Rachael Garnett Profile (/about/rachael-garnett)",
+          message: formData.notes,
         }),
       });
       if (!res.ok) throw new Error("Submission failed");

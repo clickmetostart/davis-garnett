@@ -66,19 +66,18 @@ export default function KnowledgeHubPage() {
     e.preventDefault();
     setSubmitting(true);
     try {
-      await fetch("/api/leads", {
+      await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: `${firstName} ${lastName}`.trim(),
           firstName,
           lastName,
           email,
           phone,
-          propertyInterest: "Knowledge Hub Question / Advisory Inquiry",
-          notes: questionText,
-          source: "Knowledge Hub Page",
-          status: "New",
+          category: "consultation",
+          subject: "Tampa Bay Real Estate Question",
+          message: questionText,
+          source: "Knowledge Hub (/knowledge-hub)",
         }),
       });
       setSubmitted(true);

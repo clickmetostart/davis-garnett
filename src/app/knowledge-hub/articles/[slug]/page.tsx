@@ -27,6 +27,7 @@ export default function ArticleSpokePage({
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [notes, setNotes] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
@@ -34,18 +35,18 @@ export default function ArticleSpokePage({
     e.preventDefault();
     setSubmitting(true);
     try {
-      await fetch("/api/leads", {
+      await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: `${firstName} ${lastName}`.trim(),
           firstName,
           lastName,
           email,
           phone,
-          propertyInterest: `Market Report Inquiry: ${article.title}`,
-          source: `Article Page (${article.slug})`,
-          status: "New",
+          category: "consultation",
+          subject: article.title,
+          message: notes,
+          source: `Market Update (${article.slug})`,
         }),
       });
       setSubmitted(true);
@@ -183,6 +184,13 @@ export default function ArticleSpokePage({
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder="Phone Number *"
                       className="w-full px-3.5 py-3 bg-white border border-[#111]/15 rounded-lg text-xs"
+                    />
+                    <textarea
+                      rows={3}
+                      value={notes}
+                      onChange={(e) => setNotes(e.target.value)}
+                      placeholder="Questions or Notes (Optional)"
+                      className="w-full px-3.5 py-3 bg-white border border-[#111]/15 rounded-lg text-xs resize-none"
                     />
                     <button
                       type="submit"

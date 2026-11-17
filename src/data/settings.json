@@ -9,30 +9,13 @@
     "dummyClientEntered": false
   },
   "formRouting": {
-    "Purchase": [
-      "Purchase"
-    ],
-    "Refinance": [
-      "Refinance"
-    ],
-    "Pre-Approval": [
-      "Purchase",
-      "Apply Now Flow"
-    ],
-    "Coaching": [
-      "Coaching & Partnerships"
-    ],
-    "Agent Coaching": [
-      "Coaching & Partnerships"
-    ],
-    "Strategic Partnership": [
-      "Coaching & Partnerships"
-    ],
-    "Question": [
-      "General Contacts"
-    ],
-    "Apply Now Flow": [
-      "Apply Now Flow"
-    ]
+    "Commercial / Mixed-Use Acquisition": ["Commercial & Mixed-Use"],
+    "Private Property Showing": ["Private Showing Request"],
+    "General Real Estate Advisory": ["Advisory Consultation"],
+    "New Development / 55+ Interest": ["Developments & 55+"],
+    "Land & Acreage Inquiry": ["Land & Acreage"],
+    "Strategic Partner Desk": ["Strategic Partners"],
+    "Community & Schools Outreach": ["Community & Schools"],
+    "General Contact": ["General Inquiries"]
   }
 }

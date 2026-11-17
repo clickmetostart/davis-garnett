@@ -37,19 +37,23 @@ export default function AreaSpokePage({
     e.preventDefault();
     setSubmitting(true);
     try {
-      await fetch("/api/leads", {
+      const cat = area.slug.includes("acreage")
+        ? "land"
+        : area.slug.includes("brandon")
+        ? "commercial"
+        : "consultation";
+      await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: `${firstName} ${lastName}`.trim(),
           firstName,
           lastName,
           email,
           phone,
-          propertyInterest: `Area Guide Inquiry: ${area.name}`,
-          notes,
-          source: `Area Guide (${area.slug})`,
-          status: "New",
+          category: cat,
+          subject: `${area.name} Area Inquiry`,
+          message: notes,
+          source: `Neighborhood Guide (${area.name})`,
         }),
       });
       setSubmitted(true);

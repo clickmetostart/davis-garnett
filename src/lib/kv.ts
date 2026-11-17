@@ -7,6 +7,7 @@
 import { Redis } from '@upstash/redis';
 import fs from 'fs/promises';
 import path from 'path';
+import { CRM_SEED_LABELS } from '@/lib/inquiries';
 
 let _redis: Redis | null | undefined;
 
@@ -89,7 +90,25 @@ export async function kv_setLeads(leads: any[]): Promise<void> {
 }
 
 export async function kv_getLabels(): Promise<any[]> {
-  return kvGet<any[]>(KEYS.labels, 'labels.json', []);
+  const existing = await kvGet<any[]>(KEYS.labels, 'labels.json', CRM_SEED_LABELS);
+  // Ensure the 8 Davis & Garnett inquiry categories exist and match colors cleanly
+  const byName = new Map(existing.map((l: any) => [l.name, l]));
+  let updated = false;
+  for (const seedLabel of CRM_SEED_LABELS) {
+    const found = byName.get(seedLabel.name);
+    if (!found) {
+      existing.push(seedLabel);
+      updated = true;
+    } else if (found.color !== seedLabel.color) {
+      found.color = seedLabel.color;
+      found.isSystem = true;
+      updated = true;
+    }
+  }
+  if (updated) {
+    await kv_setLabels(existing);
+  }
+  return existing;
 }
 
 export async function kv_setLabels(labels: any[]): Promise<void> {

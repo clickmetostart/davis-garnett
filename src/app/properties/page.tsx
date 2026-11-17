@@ -86,22 +86,26 @@ export default function PropertiesPage() {
     e.preventDefault();
     setValStatus("submitting");
     try {
-      const fullName = `${valForm.firstName} ${valForm.lastName}`.trim();
-      const res = await fetch("/api/leads", {
+      const catLower = `${valForm.assetCategory} ${valForm.inquiryType}`.toLowerCase();
+      const inquiryCategory = catLower.includes("commercial")
+        ? "commercial"
+        : catLower.includes("land") || catLower.includes("acreage")
+        ? "land"
+        : "consultation";
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           firstName: valForm.firstName,
           lastName: valForm.lastName,
-          name: fullName,
           email: valForm.email,
           phone: valForm.phone,
-          propertyInterest: `${valForm.inquiryType} — ${valForm.propertyAddress || valForm.assetCategory}`,
-          notes: `Asset Category: ${valForm.assetCategory} | Address: ${valForm.propertyAddress} | Notes: ${valForm.notes}`,
+          category: inquiryCategory,
+          subject: `${valForm.inquiryType} — ${valForm.propertyAddress || valForm.assetCategory}`,
+          propertyInterest: `${valForm.inquiryType} — ${valForm.assetCategory}`,
           message: valForm.notes,
-          source: "Portfolio Hub — Confidential Valuation & Portfolio Review",
-          labels: ["Portfolio Review", valForm.assetCategory, valForm.inquiryType]
-        })
+          source: "Portfolio Page (/properties)",
+        }),
       });
       if (!res.ok) throw new Error("Failed");
       setValStatus("success");

@@ -86,7 +86,7 @@ export default function CommunityOutreachGivingPage() {
     e.preventDefault();
     setSubmitting(true);
     try {
-      await fetch("/api/leads", {
+      await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -94,9 +94,12 @@ export default function CommunityOutreachGivingPage() {
           lastName: formData.lastName,
           email: formData.email,
           phone: formData.phone,
-          source: "Community Outreach & Giving Spoke (/about/community-outreach-giving)",
-          pipelineStage: "Community / Ministry Partnership",
-          notes: `[Community Cause Partnership | Org: ${formData.organizationName} | Focus: ${formData.causeCategory}] ${formData.notes}`,
+          category: "outreach",
+          subject: `${formData.causeCategory} — ${formData.organizationName || "Community Outreach"}`,
+          organizationName: formData.organizationName,
+          causeCategory: formData.causeCategory,
+          source: "Community Outreach (/about/community-outreach-giving)",
+          message: formData.notes,
         }),
       });
       setSubmitted(true);

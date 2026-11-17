@@ -30,6 +30,7 @@ export default function EventSpokePage({
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [guests, setGuests] = useState("1");
+  const [notes, setNotes] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
@@ -37,19 +38,20 @@ export default function EventSpokePage({
     e.preventDefault();
     setSubmitting(true);
     try {
-      await fetch("/api/leads", {
+      await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: `${firstName} ${lastName}`.trim(),
           firstName,
           lastName,
           email,
           phone,
-          propertyInterest: `Event RSVP: ${event.title}`,
-          notes: `Guests: ${guests} | Date: ${event.date}`,
-          source: `Event Page (${event.slug})`,
-          status: "New",
+          category: "outreach",
+          subject: `${event.title} (${guests} Guests)`,
+          message: notes
+            ? `Event Date: ${event.date} | Guests: ${guests}\nNotes: ${notes}`
+            : `Event Date: ${event.date} | Guests: ${guests}`,
+          source: `Community Event (${event.title})`,
         }),
       });
       setSubmitted(true);
@@ -218,6 +220,13 @@ export default function EventSpokePage({
                     <option value="2">2 Attendees</option>
                     <option value="3">3+ Attendees</option>
                   </select>
+                  <textarea
+                    rows={3}
+                    value={notes}
+                    onChange={(e) => setNotes(e.target.value)}
+                    placeholder="Questions or Notes (Optional)"
+                    className="w-full px-3.5 py-3 bg-white border border-[#111]/15 rounded-lg text-xs resize-none"
+                  />
                   <button
                     type="submit"
                     disabled={submitting}
