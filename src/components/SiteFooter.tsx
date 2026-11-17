@@ -139,12 +139,12 @@ export default function SiteFooter() {
               Featured Properties
             </Link>
             <ul className="space-y-2.5 text-xs text-white/60">
-              <li><Link href="/properties" className="hover:text-white transition-colors">All Active &amp; Sold Listings</Link></li>
-              <li><Link href="/listings/6100-bahama-shores-dr-s-st-petersburg" className="hover:text-white transition-colors">6100 Bahama Shores Dr S</Link></li>
-              <li><Link href="/listings/126-ridgewood-ave-brandon" className="hover:text-white transition-colors">126 Ridgewood Ave Mixed-Use</Link></li>
-              <li><Link href="/listings/770-old-stokes-rd-frostproof" className="hover:text-white transition-colors">770 Old Stokes Rd (79.54 Ac)</Link></li>
-              <li><Link href="/listings/ne-90th-street-rd-fort-mccoy" className="hover:text-white transition-colors">NE 90th Street Rd (19.72 Ac)</Link></li>
-              <li><Link href="/properties?status=Sold" className="hover:text-white transition-colors">2026 Sold Track Record</Link></li>
+              <li><Link href="/properties" className="hover:text-white transition-colors">Portfolio Hub Overview</Link></li>
+              <li><Link href="/properties#featured" className="hover:text-white transition-colors">Featured Exclusive Listings</Link></li>
+              <li><Link href="/properties#new-listings" className="hover:text-white transition-colors">New &amp; Upcoming Listings</Link></li>
+              <li><Link href="/properties#carrollwood-office" className="hover:text-white transition-colors">Align Right Carrollwood Office</Link></li>
+              <li><Link href="/properties#commercial-land" className="hover:text-white transition-colors">Commercial &amp; Land Offerings</Link></li>
+              <li><Link href="/properties#sold-track-record" className="hover:text-white transition-colors">2026–2027 Sold Track Record</Link></li>
             </ul>
           </div>
 

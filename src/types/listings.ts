@@ -86,6 +86,10 @@ export interface Listing {
   propertyType: string;
   status: ListingStatus;
   representation?: ListingRepresentation;
+  listingOrigin?: "dg-exclusive" | "align-right-office" | "external-reference" | "lofty-mls";
+  listingOfficeName?: string;
+  notListedByUs?: boolean;
+  brokerageAttribution?: string;
   soldDate?: string;
   featured: boolean;
   publishedAt?: string;

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -19,7 +19,13 @@ import {
   Award,
   Send,
   Phone,
-  Mail
+  Mail,
+  ChevronLeft,
+  ChevronRight,
+  Calculator,
+  Search,
+  Sparkles,
+  RefreshCw,
 } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
@@ -47,9 +53,71 @@ const CATEGORY_BADGE_STYLE: Record<string, string> = {
   Land: "bg-[#2D4A3E] text-white"
 };
 
+interface OfficeLoftyItem {
+  id: string;
+  title: string;
+  city: string;
+  state: string;
+  zip: string;
+  askingPrice: string;
+  bedrooms?: string | number;
+  bathrooms?: string | number;
+  sqFt?: string | number;
+  propertyType: string;
+  images?: { id: string; url: string }[];
+  status: string;
+  listingOfficeName?: string;
+  slug?: string;
+}
+
 export default function PropertiesPage() {
-  const allListings = listingsData as unknown as Listing[];
+  const staticListings = listingsData as unknown as Listing[];
   const [selectedTab, setSelectedTab] = useState<FilterTab>("All");
+  const [liveKvListings, setLiveKvListings] = useState<Listing[]>([]);
+  const [officeLoftyListings, setOfficeLoftyListings] = useState<OfficeLoftyItem[]>([]);
+  const [loftyOfficeConnected, setLoftyOfficeConnected] = useState(false);
+
+  const newListingsRef = useRef<HTMLDivElement>(null);
+  const carrollwoodRef = useRef<HTMLDivElement>(null);
+  const commercialRef = useRef<HTMLDivElement>(null);
+
+  const scrollSlider = (ref: React.RefObject<HTMLDivElement | null>, dir: "left" | "right") => {
+    if (!ref.current) return;
+    ref.current.scrollBy({ left: dir === "left" ? -420 : 420, behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    async function syncFeeds() {
+      try {
+        const [kvRes, officeRes] = await Promise.allSettled([
+          fetch("/api/listings"),
+          fetch("/api/lofty/listings?scope=office"),
+        ]);
+        if (kvRes.status === "fulfilled" && kvRes.value.ok) {
+          const kvData = await kvRes.value.json();
+          if (Array.isArray(kvData)) setLiveKvListings(kvData);
+        }
+        if (officeRes.status === "fulfilled" && officeRes.value.ok) {
+          const officeData = await officeRes.value.json();
+          if (Array.isArray(officeData)) {
+            setOfficeLoftyListings(officeData);
+            setLoftyOfficeConnected(true);
+          }
+        }
+      } catch {
+        // Fallback smoothly to curated static listings
+      }
+    }
+    syncFeeds();
+  }, []);
+
+  // Merge static listings + live KV custom listings without duplicates
+  const seenSlugs = new Set(staticListings.map((l) => l.slug));
+  const mergedListings: Listing[] = [
+    ...staticListings,
+    ...liveKvListings.filter((k) => k.slug && !seenSlugs.has(k.slug)),
+  ].filter((l) => l.editorialStatus !== "draft");
+  const allListings = mergedListings;
 
   // Valuation / Portfolio Review Form State
   const [valForm, setValForm] = useState({
@@ -80,6 +148,18 @@ export default function PropertiesPage() {
 
   const soldListings = allListings.filter(
     (l) => l.status === "Sold" && matchesTab(l)
+  );
+
+  const commercialAndLandListings = allListings.filter(
+    (l) => l.status === "Active" && (l.category === "Commercial" || l.category === "Land")
+  );
+
+  const staticOfficeListings = allListings.filter(
+    (l) => l.status === "Active" && l.listingOrigin === "align-right-office"
+  );
+
+  const newestActiveListings = allListings.filter(
+    (l) => l.status === "Active" && l.listingOrigin !== "external-reference"
   );
 
   const handleValuationSubmit = async (e: React.FormEvent) => {
@@ -184,23 +264,33 @@ export default function PropertiesPage() {
             ))}
           </div>
 
-          {/* Quick Jump Section Buttons (Smooth Scroll to Page Sections) */}
+          {/* Quick Jump Section Buttons (Smooth Scroll to Hub Sections) */}
           <div className="flex flex-wrap items-center justify-center gap-3">
             {[
               {
-                label: "Featured Florida Listings",
-                href: "#featured-listings",
+                label: "Featured Exclusives",
+                href: "#featured",
                 icon: Award,
               },
               {
-                label: "Recent Sold Properties",
-                href: "#sold-properties",
-                icon: CheckCircle,
+                label: "New & Upcoming Listings",
+                href: "#new-listings",
+                icon: Sparkles,
               },
               {
-                label: "How We Represent You",
-                href: "#how-we-work",
-                icon: Compass,
+                label: "Carrollwood Office",
+                href: "#carrollwood-office",
+                icon: Building2,
+              },
+              {
+                label: "Commercial & Land",
+                href: "#commercial-land",
+                icon: Trees,
+              },
+              {
+                label: "Sold Track Record",
+                href: "#sold-track-record",
+                icon: CheckCircle,
               },
               {
                 label: "Free Value Estimate",
@@ -237,7 +327,8 @@ export default function PropertiesPage() {
           COLLECTIVE SECTION 1: ACTIVE SIGNATURE LISTINGS
          ══════════════════════════════════════════════════════════════════ */}
       {activeListings.length > 0 && (
-        <section id="featured-listings" className="py-20 px-6 lg:px-10 bg-white border-b border-[#111111]/8">
+        <section id="featured" className="py-20 px-6 lg:px-10 bg-white border-b border-[#111111]/8 scroll-mt-24">
+          <div id="featured-listings" />
           <div className="max-w-screen-xl mx-auto">
             <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 gap-6">
               <div>
@@ -484,10 +575,392 @@ export default function PropertiesPage() {
       )}
 
       {/* ══════════════════════════════════════════════════════════════════
+          PORTFOLIO HUB RAIL 1: NEW & UPCOMING LISTINGS + CORRIDOR JUMP-OFFS
+         ══════════════════════════════════════════════════════════════════ */}
+      <section id="new-listings" className="py-20 px-6 lg:px-10 bg-[#f5f3ef] border-b border-[#111111]/10 scroll-mt-24">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+            <div>
+              <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
+                Portfolio Hub · New Releases &amp; Live Area Sync
+              </span>
+              <h2 className="font-aiveritas text-3xl sm:text-5xl text-[#111111] mb-3">
+                New &amp; Upcoming Florida Listings
+              </h2>
+              <p className="text-[#111111]/70 font-light max-w-2xl text-base leading-relaxed">
+                Explore custom Davis &amp; Garnett releases rolling out this season. Auto-populated regional IDX area feeds are coming as soon as brokerage approval and Lofty MLS feed hookup go live.
+              </p>
+            </div>
+            <div className="flex items-center gap-3 shrink-0">
+              <button
+                type="button"
+                onClick={() => scrollSlider(newListingsRef, "left")}
+                className="p-3 rounded-full bg-white text-[#111111] border border-[#111111]/15 hover:bg-[#111111] hover:text-[#C8A951] transition-colors"
+                aria-label="Scroll New Listings Left"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollSlider(newListingsRef, "right")}
+                className="p-3 rounded-full bg-white text-[#111111] border border-[#111111]/15 hover:bg-[#111111] hover:text-[#C8A951] transition-colors"
+                aria-label="Scroll New Listings Right"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+
+          <div
+            ref={newListingsRef}
+            className="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory"
+            style={{ scrollbarWidth: "none" }}
+          >
+            {newestActiveListings.map((item) => (
+              <Link
+                key={`new-${item.slug}`}
+                href={`/listings/${item.slug}`}
+                className="group min-w-[300px] sm:min-w-[340px] max-w-[340px] snap-start bg-white rounded-2xl overflow-hidden border border-[#111111]/10 hover:border-[#C8A951] shadow-sm hover:shadow-xl transition-all flex flex-col shrink-0"
+              >
+                <div className="relative h-48 bg-[#111111]">
+                  <Image
+                    src={item.images?.main || "/davis-garnett-listings-1.jpg"}
+                    alt={item.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    unoptimized
+                  />
+                  <span className="absolute top-3 left-3 px-2.5 py-1 bg-[#111111]/85 text-[#C8A951] text-[10px] font-bold uppercase tracking-widest rounded">
+                    {item.listingOrigin === "align-right-office" ? "Align Right Office" : item.category}
+                  </span>
+                  <span className="absolute bottom-3 left-3 font-aiveritas text-2xl text-white drop-shadow">
+                    {item.price}
+                  </span>
+                </div>
+                <div className="p-5 flex-1 flex flex-col justify-between">
+                  <div>
+                    <div className="text-[11px] font-bold uppercase tracking-wider text-[#9A7D3A] mb-1">
+                      {item.city}, {item.state} {item.zip}
+                    </div>
+                    <h3 className="font-aiveritas text-xl text-[#111111] group-hover:text-[#9A7D3A] mb-2">
+                      {item.title}
+                    </h3>
+                  </div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#111111] flex items-center gap-1 pt-3 border-t border-[#111111]/8">
+                    View Property Dossier <ArrowRight className="w-3.5 h-3.5 text-[#9A7D3A]" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+
+            {/* Upcoming Auto-Populated Lofty / IDX Area Card */}
+            <Link
+              href="/search-mls"
+              className="min-w-[300px] sm:min-w-[340px] max-w-[340px] snap-start bg-[#111111] text-white rounded-2xl p-6 border border-[#C8A951]/40 flex flex-col justify-between shrink-0"
+            >
+              <div>
+                <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-widest font-bold text-[#C8A951] mb-3">
+                  <RefreshCw className="w-3.5 h-3.5" /> Lofty &amp; Stellar IDX Feed
+                </span>
+                <h3 className="font-aiveritas text-2xl text-white mb-3">
+                  Live Regional Auto-Feed Areas Coming Soon
+                </h3>
+                <p className="text-xs text-white/75 font-light leading-relaxed">
+                  Area-based IDX search slices for South Tampa, St. Petersburg Waterfront, Wesley Chapel, and 55+ communities will auto-populate here as soon as final MLS IDX approval and Lofty sync are hooked up.
+                </p>
+              </div>
+              <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#C8A951] mt-6">
+                Open Live MLS Portal &amp; Pocket Alerts <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
+          </div>
+
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <span className="text-[11px] uppercase tracking-widest font-bold text-[#111111]/55 mr-1">
+              Jump to Specialized Hubs:
+            </span>
+            <Link href="/hub/waterfront-st-petersburg" className="px-3.5 py-2 rounded-lg bg-white border border-[#111111]/12 hover:border-[#C8A951] text-xs font-bold text-[#111111]">
+              St. Pete Waterfront Hub →
+            </Link>
+            <Link href="/hub/55-plus-tampa-bay" className="px-3.5 py-2 rounded-lg bg-white border border-[#111111]/12 hover:border-[#C8A951] text-xs font-bold text-[#111111]">
+              55+ Active Adult Hub →
+            </Link>
+            <Link href="/developments" className="px-3.5 py-2 rounded-lg bg-white border border-[#111111]/12 hover:border-[#C8A951] text-xs font-bold text-[#111111]">
+              New Construction Communities →
+            </Link>
+            <Link href="/search-mls" className="px-3.5 py-2 rounded-lg bg-[#111111] text-[#C8A951] hover:bg-[#C8A951] hover:text-[#111111] text-xs font-bold inline-flex items-center gap-1.5 transition-colors">
+              <Search className="w-3.5 h-3.5" /> Search Full MLS
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════════════
+          PORTFOLIO HUB RAIL 2: ALIGN RIGHT REALTY CARROLLWOOD OFFICE LISTINGS
+         ══════════════════════════════════════════════════════════════════ */}
+      <section id="carrollwood-office" className="py-20 px-6 lg:px-10 bg-white border-b border-[#111111]/10 scroll-mt-24">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+            <div>
+              <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
+                Brokerage Branch · #BK3401606
+              </span>
+              <h2 className="font-aiveritas text-3xl sm:text-5xl text-[#111111] mb-3">
+                Align Right Realty Carrollwood Office Listings
+              </h2>
+              <p className="text-[#111111]/70 font-light max-w-2xl text-base leading-relaxed">
+                Active brokerage listings from our Align Right Realty Carrollwood office. Properties listed by fellow office brokers are clearly attributed while Mark Davis (FL Lic #3209459) and Rachael Garnett (FL Lic #3378601) serve as your dedicated showing and buyer advisors.
+              </p>
+            </div>
+            <div className="flex items-center gap-3 shrink-0">
+              <button
+                type="button"
+                onClick={() => scrollSlider(carrollwoodRef, "left")}
+                className="p-3 rounded-full bg-[#f5f3ef] text-[#111111] border border-[#111111]/15 hover:bg-[#111111] hover:text-[#C8A951] transition-colors"
+                aria-label="Scroll Office Listings Left"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollSlider(carrollwoodRef, "right")}
+                className="p-3 rounded-full bg-[#f5f3ef] text-[#111111] border border-[#111111]/15 hover:bg-[#111111] hover:text-[#C8A951] transition-colors"
+                aria-label="Scroll Office Listings Right"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+
+          <div
+            ref={carrollwoodRef}
+            className="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory"
+            style={{ scrollbarWidth: "none" }}
+          >
+            {staticOfficeListings.map((off) => (
+              <Link
+                key={`office-static-${off.slug}`}
+                href={`/listings/${off.slug}`}
+                className="group min-w-[310px] sm:min-w-[350px] max-w-[350px] snap-start bg-[#fbfbf9] rounded-2xl overflow-hidden border border-[#111111]/10 hover:border-[#C8A951] shadow-sm transition-all flex flex-col shrink-0"
+              >
+                <div className="relative h-48 bg-[#111111]">
+                  <Image
+                    src={off.images?.main || "/davis-garnett-listings-1.jpg"}
+                    alt={off.title}
+                    fill
+                    className="object-cover"
+                    unoptimized
+                  />
+                  <span className="absolute top-3 left-3 px-2.5 py-1 bg-[#111111]/90 text-[#C8A951] text-[10px] font-bold uppercase tracking-wider rounded">
+                    Align Right Carrollwood Office
+                  </span>
+                  <span className="absolute bottom-3 left-3 font-aiveritas text-2xl text-white drop-shadow">
+                    {off.price}
+                  </span>
+                </div>
+                <div className="p-5 flex-1 flex flex-col justify-between">
+                  <div>
+                    <div className="text-[11px] font-bold uppercase tracking-wider text-[#9A7D3A] mb-1">
+                      {off.city}, {off.state} {off.zip}
+                    </div>
+                    <h3 className="font-aiveritas text-xl text-[#111111] mb-2">{off.title}</h3>
+                    <p className="text-[11px] text-[#111111]/60 leading-snug mb-3">
+                      Listed by {off.listingOfficeName || "Align Right Realty Carrollwood"} · Buyer representation &amp; showing info by Davis &amp; Garnett.
+                    </p>
+                  </div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#111111] flex items-center gap-1 pt-3 border-t border-[#111111]/8">
+                    Request Info / Showing <ArrowRight className="w-3.5 h-3.5 text-[#9A7D3A]" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+
+            {officeLoftyListings.map((ol) => (
+              <Link
+                key={`lofty-office-${ol.id}`}
+                href="/search-mls"
+                className="group min-w-[310px] sm:min-w-[350px] max-w-[350px] snap-start bg-[#fbfbf9] rounded-2xl overflow-hidden border border-[#111111]/10 hover:border-[#C8A951] shadow-sm transition-all flex flex-col shrink-0"
+              >
+                <div className="relative h-48 bg-[#111111]">
+                  <Image
+                    src={ol.images?.[0]?.url || "/davis-garnett-listings-1.jpg"}
+                    alt={ol.title}
+                    fill
+                    className="object-cover"
+                    unoptimized
+                  />
+                  <span className="absolute top-3 left-3 px-2.5 py-1 bg-[#111111]/90 text-[#C8A951] text-[10px] font-bold uppercase tracking-wider rounded">
+                    Branch Lofty Live Sync
+                  </span>
+                  <span className="absolute bottom-3 left-3 font-aiveritas text-2xl text-white drop-shadow">
+                    {ol.askingPrice}
+                  </span>
+                </div>
+                <div className="p-5 flex-1 flex flex-col justify-between">
+                  <div>
+                    <div className="text-[11px] font-bold uppercase tracking-wider text-[#9A7D3A] mb-1">
+                      {ol.city}, {ol.state} {ol.zip}
+                    </div>
+                    <h3 className="font-aiveritas text-xl text-[#111111] mb-2">{ol.title}</h3>
+                    <p className="text-[11px] text-[#111111]/60 leading-snug mb-3">
+                      Listed with {ol.listingOfficeName || "Align Right Realty Carrollwood"} · Advised by Mark Davis &amp; Rachael Garnett.
+                    </p>
+                  </div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#111111] flex items-center gap-1 pt-3 border-t border-[#111111]/8">
+                    View in MLS Portal <ArrowRight className="w-3.5 h-3.5 text-[#9A7D3A]" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+
+            {staticOfficeListings.length === 0 && !loftyOfficeConnected && (
+              <div className="w-full rounded-2xl bg-[#f5f3ef] border border-[#111111]/10 p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                <div className="max-w-2xl">
+                  <span className="text-[10px] uppercase tracking-[0.25em] font-bold text-[#9A7D3A] block mb-2">
+                    Branch Feed Hookup Ready
+                  </span>
+                  <h3 className="font-aiveritas text-2xl text-[#111111] mb-2">
+                    Align Right Realty Carrollwood Office Feed Syncing Upon Final Approval
+                  </h3>
+                  <p className="text-sm text-[#111111]/70 font-light leading-relaxed">
+                    Once brokerage Lofty/IDX approval is finalized, new residential listings from our Align Right Realty Carrollwood office auto-populate right here with Davis &amp; Garnett as your local buyer advisors. Need Carrollwood or Northdale homes today?
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-3 shrink-0">
+                  <Link
+                    href="/hub/carrollwood-northdale-homes"
+                    className="px-5 py-3 rounded-xl bg-[#111111] text-[#C8A951] hover:bg-[#C8A951] hover:text-[#111111] text-xs font-bold uppercase tracking-widest transition-colors"
+                  >
+                    Carrollwood &amp; Northdale Hub →
+                  </Link>
+                  <Link
+                    href="/align-right-carrollwood-coverage"
+                    className="px-5 py-3 rounded-xl bg-white border border-[#111111]/15 text-[#111111] hover:border-[#C8A951] text-xs font-bold uppercase tracking-widest transition-colors"
+                  >
+                    Office Coverage Map
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div className="mt-4 flex flex-wrap items-center gap-3">
+            <Link href="/hub/carrollwood-northdale-homes" className="px-3.5 py-2 rounded-lg bg-[#f5f3ef] border border-[#111111]/10 hover:border-[#C8A951] text-xs font-bold text-[#111111]">
+              Carrollwood &amp; Northdale Guide Hub →
+            </Link>
+            <Link href="/tools/seller-net-proceeds" className="px-3.5 py-2 rounded-lg bg-[#f5f3ef] border border-[#111111]/10 hover:border-[#C8A951] text-xs font-bold text-[#111111] inline-flex items-center gap-1.5">
+              <Calculator className="w-3.5 h-3.5 text-[#9A7D3A]" /> Estimate Carrollwood Seller Net Proceeds
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════════════
+          PORTFOLIO HUB RAIL 3: CUSTOM COMMERCIAL & CENTRAL FL LAND
+         ══════════════════════════════════════════════════════════════════ */}
+      <section id="commercial-land" className="py-20 px-6 lg:px-10 bg-[#111111] text-white border-b border-[#C8A951]/25 scroll-mt-24">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+            <div>
+              <span className="text-[#C8A951] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
+                Custom Commercial &amp; Acreage Advisory
+              </span>
+              <h2 className="font-aiveritas text-3xl sm:text-5xl text-white mb-3">
+                Commercial, Mixed-Use &amp; Land Offerings
+              </h2>
+              <p className="text-white/75 font-light max-w-2xl text-base leading-relaxed">
+                Every commercial and land dossier is individually researched for zoning, utilities, road frontage, and yield. For off-market or external commercial reference assets not listed directly by our team, property information and buyer representation remain available through Mark &amp; Rachael.
+              </p>
+            </div>
+            <div className="flex items-center gap-3 shrink-0">
+              <button
+                type="button"
+                onClick={() => scrollSlider(commercialRef, "left")}
+                className="p-3 rounded-full bg-white/10 text-white border border-white/15 hover:bg-[#C8A951] hover:text-[#111111] transition-colors"
+                aria-label="Scroll Commercial and Land Left"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollSlider(commercialRef, "right")}
+                className="p-3 rounded-full bg-white/10 text-white border border-white/15 hover:bg-[#C8A951] hover:text-[#111111] transition-colors"
+                aria-label="Scroll Commercial and Land Right"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+
+          <div
+            ref={commercialRef}
+            className="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory"
+            style={{ scrollbarWidth: "none" }}
+          >
+            {commercialAndLandListings.map((item) => (
+              <Link
+                key={`cre-${item.slug}`}
+                href={`/listings/${item.slug}`}
+                className="group min-w-[300px] sm:min-w-[350px] max-w-[350px] snap-start bg-white/5 hover:bg-white/10 rounded-2xl overflow-hidden border border-white/10 hover:border-[#C8A951] transition-all flex flex-col shrink-0"
+              >
+                <div className="relative h-48 bg-black">
+                  <Image
+                    src={item.images?.main || "/davis-garnett-listings-1.jpg"}
+                    alt={item.title}
+                    fill
+                    className="object-cover"
+                    unoptimized
+                  />
+                  <span className="absolute top-3 left-3 px-2.5 py-1 bg-[#C8A951] text-[#111111] text-[10px] font-bold uppercase tracking-wider rounded">
+                    {item.notListedByUs ? "Info Available via D&G" : item.category}
+                  </span>
+                  <span className="absolute bottom-3 left-3 font-aiveritas text-2xl text-white drop-shadow">
+                    {item.price}
+                  </span>
+                </div>
+                <div className="p-5 flex-1 flex flex-col justify-between">
+                  <div>
+                    <div className="text-[11px] font-bold uppercase tracking-wider text-[#C8A951] mb-1">
+                      {item.city}, {item.state} • {item.specs?.zoning || item.specs?.lotSize || item.county}
+                    </div>
+                    <h3 className="font-aiveritas text-xl text-white mb-2">{item.title}</h3>
+                    {item.notListedByUs && (
+                      <p className="text-[11px] text-white/60 mb-2">
+                        Information available through Davis &amp; Garnett — not listed directly by our team.
+                      </p>
+                    )}
+                  </div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#C8A951] flex items-center gap-1 pt-3 border-t border-white/10">
+                    Open Zoning &amp; Offering Sheet <ArrowRight className="w-3.5 h-3.5" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <Link href="/hub/commercial-tampa-bay" className="px-4 py-2.5 rounded-lg bg-[#C8A951] text-[#111111] hover:bg-white text-xs font-bold uppercase tracking-wider transition-colors">
+              Tampa Bay Commercial Hub →
+            </Link>
+            <Link href="/hub/land-acreage-central-florida" className="px-4 py-2.5 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider transition-colors">
+              Central FL Land &amp; Acreage Hub →
+            </Link>
+            <Link href="/tools/cap-rate-calculator" className="px-4 py-2.5 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider inline-flex items-center gap-1.5 transition-colors">
+              <Calculator className="w-3.5 h-3.5 text-[#C8A951]" /> Cap Rate Calculator
+            </Link>
+            <Link href="/tools/1031-deadline-calculator" className="px-4 py-2.5 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider transition-colors">
+              1031 Deadline Calculator →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════════════
           COLLECTIVE SECTION 2: 2026 PROVEN TRACK RECORD — RECENT TRANSACTIONS
          ══════════════════════════════════════════════════════════════════ */}
       {soldListings.length > 0 && (
-        <section id="sold-properties" className="py-24 px-6 lg:px-10 bg-[#f5f3ef] border-b border-[#111111]/10">
+        <section id="sold-track-record" className="py-24 px-6 lg:px-10 bg-[#f5f3ef] border-b border-[#111111]/10 scroll-mt-24">
+          <div id="sold-properties" />
           <div className="max-w-screen-xl mx-auto">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
               <div>

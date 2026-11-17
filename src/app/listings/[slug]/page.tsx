@@ -593,6 +593,10 @@ export default function ListingDetailPage() {
                   <p className="text-[#9A7D3A] text-xs uppercase tracking-[0.25em] font-bold mb-2">
                     {isSold
                       ? `Closed Transaction · ${listing.representation || "Davis & Garnett Track Record"}`
+                      : listing.listingOrigin === "align-right-office"
+                      ? `Align Right Realty Carrollwood Office Listing · Advisory by Davis & Garnett`
+                      : listing.notListedByUs || listing.listingOrigin === "external-reference"
+                      ? `Property Information Available Through Davis & Garnett · ${listing.category}`
                       : `${listing.representation || "Exclusive Offering"} · ${listing.category}`}
                   </p>
                   <div className="flex items-baseline gap-4 flex-wrap">
@@ -739,6 +743,20 @@ export default function ListingDetailPage() {
                   </span>
                 </div>
               </div>
+
+              {(listing.listingOrigin === "align-right-office" ||
+                listing.notListedByUs ||
+                listing.listingOrigin === "external-reference") && (
+                <div className="mt-4 p-4 rounded-xl bg-white border border-[#C8A951]/40 text-xs text-[#111111]/75 leading-relaxed">
+                  <strong className="text-[#111111] uppercase tracking-wider text-[10px] block mb-1">
+                    Brokerage &amp; Representation Notice
+                  </strong>
+                  {listing.brokerageAttribution ||
+                    (listing.listingOrigin === "align-right-office"
+                      ? `Listed with ${listing.listingOfficeName || "Align Right Realty Carrollwood"}. Property information and buyer advisory services are provided by Mark Davis (FL Lic. #3209459) & Rachael Garnett (FL Lic. #3378601).`
+                      : `Property information is available through Davis & Garnett for advisory and buyer-representation evaluation; this asset is not an exclusive listing of the Davis & Garnett team.`)}
+                </div>
+              )}
             </div>
 
             {/* Access / Security Notice (e.g. Fort McCoy Gated Land) */}

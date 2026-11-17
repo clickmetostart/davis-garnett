@@ -664,6 +664,78 @@ export default function KnowledgeHubPage() {
         </div>
       </section>
 
+      {/* ── SECTION 06: INTERACTIVE CALCULATORS & PLANNING TOOLS ── */}
+      <section id="tools" className="py-24 px-8 bg-[#f5f3ef] border-b border-[#111]/10 scroll-mt-24">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div>
+              <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
+                06 • Interactive Tools &amp; Glossary
+              </span>
+              <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111] mb-3">
+                Calculators &amp; Financial Planning Tools
+              </h2>
+              <p className="text-[#111]/70 font-light max-w-2xl text-base md:text-[17px] leading-relaxed">
+                Run your own Tampa Bay closing proceeds, IRS Section 1031 exchange deadlines, or commercial NNN cap rate scenarios before making a move.
+              </p>
+            </div>
+            <Link
+              href="/glossary"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white border border-[#111]/15 hover:border-[#D4AF37] text-xs font-bold uppercase tracking-widest text-[#111] shrink-0"
+            >
+              Browse Real Estate Glossary <ArrowRight className="w-4 h-4 text-[#9A7D3A]" />
+            </Link>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-7">
+            {[
+              {
+                tag: "Seller Tool • Hillsborough & Pinellas",
+                title: "Florida Seller Net Proceeds Calculator",
+                desc: "Estimate Florida deed documentary stamps ($0.70 per $100), owner title insurance, mortgage payoff, tax prorations, and net equity.",
+                href: "/tools/seller-net-proceeds",
+                cta: "Estimate Net Proceeds",
+              },
+              {
+                tag: "Commercial & Investment",
+                title: "Commercial Cap Rate & NOI Calculator",
+                desc: "Model Net Operating Income, capitalization rate, Gross Rent Multiple, and valuation sensitivity across Tampa Bay NNN assets.",
+                href: "/tools/cap-rate-calculator",
+                cta: "Calculate Cap Rate",
+              },
+              {
+                tag: "Tax-Deferred Exchange",
+                title: "IRS 1031 Deadline Calculator",
+                desc: "Enter your closing date to lock in your exact Day 45 written identification deadline and Day 180 closing deadline.",
+                href: "/tools/1031-deadline-calculator",
+                cta: "Calculate 1031 Dates",
+              },
+            ].map((tool) => (
+              <Link
+                key={tool.href}
+                href={tool.href}
+                className="group bg-white rounded-2xl p-8 border border-[#111]/10 hover:border-[#D4AF37] shadow-sm hover:shadow-xl transition-all flex flex-col justify-between"
+              >
+                <div>
+                  <span className="text-[10px] uppercase tracking-[0.22em] font-bold text-[#9A7D3A] block mb-3">
+                    {tool.tag}
+                  </span>
+                  <h3 className="font-aiveritas text-2xl text-[#111] group-hover:text-[#9A7D3A] transition-colors mb-3">
+                    {tool.title}
+                  </h3>
+                  <p className="text-sm text-[#111]/70 font-light leading-relaxed mb-6">
+                    {tool.desc}
+                  </p>
+                </div>
+                <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#111] group-hover:text-[#9A7D3A]">
+                  {tool.cta} <ArrowRight className="w-4 h-4" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── ASK AN ADVISOR / EMPOWER YOUR REAL ESTATE JOURNEY CTA ── */}
       <section className="py-24 px-8 bg-[#111] text-white">
         <div className="max-w-4xl mx-auto bg-white/5 border border-[#D4AF37]/30 rounded-2xl p-8 md:p-12">

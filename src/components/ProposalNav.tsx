@@ -37,12 +37,12 @@ const NAV_GROUPS: NavGroup[] = [
     label: "Portfolio",
     href: "/properties",
     dropdown: [
-      { label: "All Active & Sold Properties", desc: "Browse our active listings & recent closings across Tampa Bay", href: "/properties" },
-      { label: "6100 Bahama Shores Dr S", desc: "St. Petersburg Waterfront Custom Estate • $4,553,900", href: "/listings/6100-bahama-shores-dr-s-st-petersburg" },
-      { label: "126 Ridgewood Ave Mixed-Use", desc: "Brandon 2-Building Commercial & Residential • $845,000", href: "/listings/126-ridgewood-ave-brandon" },
-      { label: "770 Old Stokes Rd (79.54 Acres)", desc: "Frostproof Prime Central FL Acreage • $3,550,000", href: "/listings/770-old-stokes-rd-frostproof" },
-      { label: "NE 90th Street Rd (19.72 Acres)", desc: "Fort McCoy Agricultural Timberland • $350,000", href: "/listings/ne-90th-street-rd-fort-mccoy" },
-      { label: "2026 Sold Track Record", desc: "Recent residential, waterfront, commercial & land closings", href: "/properties?status=Sold" },
+      { label: "Portfolio Hub Overview", desc: "Explore active offerings, branch listings & category hubs across Tampa Bay", href: "/properties" },
+      { label: "Featured Exclusive Listings", desc: "Highlighted residential, waterfront, commercial & land opportunities", href: "/properties#featured" },
+      { label: "New & Upcoming Listings", desc: "Newest team releases plus upcoming live IDX & Lofty feed areas", href: "/properties#new-listings" },
+      { label: "Align Right Carrollwood Office", desc: "Active listings from our Align Right Realty Carrollwood brokerage", href: "/properties#carrollwood-office" },
+      { label: "Commercial, Mixed-Use & Land", desc: "Custom commercial buildings, NNN assets & Central Florida acreage", href: "/properties#commercial-land" },
+      { label: "2026–2027 Sold Track Record", desc: "Recent residential, waterfront, commercial & land closings", href: "/properties#sold-track-record" },
     ],
   },
   {
@@ -70,6 +70,8 @@ const NAV_GROUPS: NavGroup[] = [
       { label: "Areas We Work In", desc: "St. Pete, Downtown Tampa, Wesley Chapel, Land O' Lakes & Brandon", href: "/knowledge-hub#areas" },
       { label: "Local Events & Open Houses", desc: "Upcoming community tours, buyer workshops & charity events", href: "/knowledge-hub#events" },
       { label: "Tampa Bay Market Updates", desc: "Easy-to-read local market updates & neighborhood trends", href: "/knowledge-hub#articles" },
+      { label: "Calculators & Planning Tools", desc: "Cap Rate, IRS 1031 Deadline & Seller Net Proceeds calculators", href: "/knowledge-hub#tools" },
+      { label: "Florida Real Estate Glossary", desc: "Plain-English definitions of CDDs, HOAs, 4-Point & Wind Mitigation", href: "/glossary" },
     ],
   },
 ];

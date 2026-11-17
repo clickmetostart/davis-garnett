@@ -4,6 +4,9 @@ import path from 'path';
 
 export async function GET(req: Request) {
   try {
+    const { searchParams } = new URL(req.url);
+    const scopeParam = searchParams.get('scope') === 'office' ? 'office' : 'all';
+
     const dataPath = path.join(process.cwd(), 'src', 'data', 'loftyToken.json');
     let tokenData;
     
@@ -18,7 +21,7 @@ export async function GET(req: Request) {
         return NextResponse.json({ error: 'Access token missing.' }, { status: 401 });
     }
 
-    // Call Lofty API
+    // Call Lofty API (supports ?scope=office for Align Right Carrollwood branch sync)
     const response = await fetch('https://api.lofty.com/v2.0/listings/search', {
       method: 'POST',
       headers: {
@@ -26,7 +29,7 @@ export async function GET(req: Request) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        searchScope: 'all',
+        searchScope: scopeParam,
         soldFlag: false,
         pageSize: 20,
         pageNum: 1
@@ -40,7 +43,6 @@ export async function GET(req: Request) {
     }
 
     // Map Lofty API response to our app's Listing format
-    // (Assuming Lofty returns results in data.list or data.results)
     const loftyListings = data.data?.list || data.list || data.results || [];
     
     const mappedListings = loftyListings.map((l: any) => ({
@@ -58,6 +60,8 @@ export async function GET(req: Request) {
       status: l.status || 'Active',
       featured: false,
       sourcePlatform: 'Lofty',
+      listingOrigin: scopeParam === 'office' ? 'align-right-office' : 'lofty-mls',
+      listingOfficeName: l.officeName || l.listingOfficeName || 'Align Right Realty Carrollwood',
     }));
 
     return NextResponse.json(mappedListings, { status: 200 });

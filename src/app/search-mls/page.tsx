@@ -24,6 +24,8 @@ import ProposalNav from "@/components/ProposalNav";
 import FaviconHeroBackground from "@/components/FaviconHeroBackground";
 import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 import SiteFooter from "@/components/SiteFooter";
+import listingsJson from "@/data/listings.json";
+import type { Listing } from "@/types/listings";
 
 interface MlsPropertyItem {
   id: string;
@@ -44,203 +46,48 @@ interface MlsPropertyItem {
   category: "Residential" | "Commercial";
   status: string;
   imageUrl: string;
-  source: "Davis & Garnett Exclusive" | "Lofty Stellar MLS Feed";
+  source: "Davis & Garnett Exclusive" | "Align Right Carrollwood Office" | "Lofty Stellar MLS Feed";
   href: string;
 }
 
-const FALLBACK_MLS_LISTINGS: MlsPropertyItem[] = [
-  {
-    id: "dg-mls-1",
-    slug: "6100-bahama-shores-dr-s-lot-10-st-petersburg",
-    mlsNumber: "TB8391042",
-    title: "Bahama Shores Waterfront Building Lot — St. Petersburg",
-    streetAddress: "6100 Bahama Shores Dr S",
-    city: "St. Petersburg",
-    neighborhood: "Bahama Shores",
-    state: "FL",
-    zip: "33705",
-    askingPrice: "$1,499,000",
-    numericPrice: 1499000,
-    bedrooms: 0,
-    bathrooms: 0,
-    sqFt: "11,250 Lot",
-    propertyType: "Waterfront Estate",
-    category: "Residential",
-    status: "Active — Featured",
-    imageUrl: "/res_modern_mansion_1787632812473.png",
-    source: "Davis & Garnett Exclusive",
-    href: "/listings/6100-bahama-shores-dr-s-lot-10-st-petersburg",
-  },
-  {
-    id: "dg-mls-2",
-    slug: "126-ridgewood-ave-brandon",
-    mlsNumber: "TB8391088",
-    title: "126 Ridgewood Ave Commercial Mixed-Use — Brandon",
-    streetAddress: "126 Ridgewood Ave",
-    city: "Brandon",
-    neighborhood: "Brandon",
-    state: "FL",
-    zip: "33510",
-    askingPrice: "$949,900",
-    numericPrice: 949900,
-    bedrooms: 0,
-    bathrooms: 3,
-    sqFt: "4,358",
-    propertyType: "Commercial",
-    category: "Commercial",
-    status: "Active — For Sale",
-    imageUrl: "/com_luxury_retail_1787632885082.png",
-    source: "Davis & Garnett Exclusive",
-    href: "/listings/126-ridgewood-ave-brandon",
-  },
-  {
-    id: "lofty-mls-3",
-    mlsNumber: "TB8402119",
-    title: "Bayshore Boulevard Panoramic Sky Residence",
-    streetAddress: "3104 S Bayshore Blvd #1802",
-    city: "Tampa",
-    neighborhood: "South Tampa / Bayshore",
-    state: "FL",
-    zip: "33629",
-    askingPrice: "$3,450,000",
-    numericPrice: 3450000,
-    bedrooms: 3,
-    bathrooms: 3.5,
-    sqFt: "3,120",
-    propertyType: "Condo / Tower",
-    category: "Residential",
-    status: "Active MLS",
-    imageUrl: "/res_luxury_condo_1787632822869.png",
-    source: "Lofty Stellar MLS Feed",
-    href: "/developments/the-ritz-carlton-residences-bayshore",
-  },
-  {
-    id: "lofty-mls-4",
-    mlsNumber: "TB8405580",
-    title: "Davis Islands Deep-Water Yacht Estate",
-    streetAddress: "418 Blanca Ave",
-    city: "Tampa",
-    neighborhood: "Davis Islands",
-    state: "FL",
-    zip: "33606",
-    askingPrice: "$5,850,000",
-    numericPrice: 5850000,
-    bedrooms: 5,
-    bathrooms: 6,
-    sqFt: "5,680",
-    propertyType: "Waterfront Estate",
-    category: "Residential",
-    status: "Active MLS",
-    imageUrl: "/res_waterfront_estate_1787632802890.png",
-    source: "Lofty Stellar MLS Feed",
-    href: "#pocket-listing-form",
-  },
-  {
-    id: "lofty-mls-5",
-    mlsNumber: "TB8408912",
-    title: "Two Rivers 80' Conservation Custom Pool Estate",
-    streetAddress: "34912 Grand Oak Preserve Way",
-    city: "Wesley Chapel",
-    neighborhood: "Two Rivers / SR-56",
-    state: "FL",
-    zip: "33541",
-    askingPrice: "$1,195,000",
-    numericPrice: 1195000,
-    bedrooms: 5,
-    bathrooms: 4.5,
-    sqFt: "4,420",
-    propertyType: "Single Family",
-    category: "Residential",
-    status: "New Construction QMI",
-    imageUrl: "/res_golf_course_home_1787632854609.png",
-    source: "Lofty Stellar MLS Feed",
-    href: "/developments/two-rivers-wesley-chapel",
-  },
-  {
-    id: "lofty-mls-6",
-    mlsNumber: "TB8409401",
-    title: "Snell Isle Waterfront Mediterranean Villa",
-    streetAddress: "1420 Brightwaters Blvd NE",
-    city: "St. Petersburg",
-    neighborhood: "Snell Isle / Downtown St. Pete",
-    state: "FL",
-    zip: "33704",
-    askingPrice: "$4,200,000",
-    numericPrice: 4200000,
-    bedrooms: 5,
-    bathrooms: 5.5,
-    sqFt: "4,950",
-    propertyType: "Waterfront Estate",
-    category: "Residential",
-    status: "Active MLS",
-    imageUrl: "/res_beachfront_villa_1787632843222.png",
-    source: "Lofty Stellar MLS Feed",
-    href: "#pocket-listing-form",
-  },
-  {
-    id: "lofty-mls-7",
-    mlsNumber: "TB8411024",
-    title: "Connerton 'The Estates II' WestBay Artisan Residence",
-    streetAddress: "8814 Conner Preserve Ct",
-    city: "Land O' Lakes",
-    neighborhood: "Connerton",
-    state: "FL",
-    zip: "34637",
-    askingPrice: "$925,000",
-    numericPrice: 925000,
-    bedrooms: 4,
-    bathrooms: 4,
-    sqFt: "3,890",
-    propertyType: "Single Family",
-    category: "Residential",
-    status: "Active MLS",
-    imageUrl: "/res_historic_estate_1787632833084.png",
-    source: "Lofty Stellar MLS Feed",
-    href: "/developments/connerton-land-o-lakes",
-  },
-  {
-    id: "lofty-mls-8",
-    mlsNumber: "TB8412990",
-    title: "Water Street District Sky Residence",
-    streetAddress: "1011 E Cumberland Ave #2405",
-    city: "Tampa",
-    neighborhood: "Water Street / Downtown",
-    state: "FL",
-    zip: "33602",
-    askingPrice: "$2,150,000",
-    numericPrice: 2150000,
-    bedrooms: 2,
-    bathrooms: 2.5,
-    sqFt: "1,980",
-    propertyType: "Condo / Tower",
-    category: "Residential",
-    status: "Active MLS",
-    imageUrl: "/com_office_tower_1787632874122.png",
-    source: "Lofty Stellar MLS Feed",
-    href: "/developments/water-street-tampa-phase-2",
-  },
-  {
-    id: "lofty-mls-9",
-    mlsNumber: "TB8414305",
-    title: "Mirada Crystal Lagoon Semi-Custom Pool Home",
-    streetAddress: "31408 Bora Bora Way",
-    city: "Wesley Chapel",
-    neighborhood: "Mirada Lagoon / San Antonio",
-    state: "FL",
-    zip: "33576",
-    askingPrice: "$685,000",
-    numericPrice: 685000,
-    bedrooms: 4,
-    bathrooms: 3,
-    sqFt: "2,940",
-    propertyType: "Single Family",
-    category: "Residential",
-    status: "Active MLS",
-    imageUrl: "/davis-garnett-listings-4.jpg",
-    source: "Lofty Stellar MLS Feed",
-    href: "/developments/epperson-mirada-lagoon-wesley-chapel",
-  },
-];
+const FALLBACK_MLS_LISTINGS: MlsPropertyItem[] = (listingsJson as unknown as Listing[])
+  .filter((item) => item.status === "Active" && item.editorialStatus !== "draft")
+  .map((item) => ({
+    id: `dg-active-${item.id}`,
+    slug: item.slug,
+    mlsNumber: item.mlsId || `DG-${item.id}`,
+    title: item.subtitle ? `${item.title} — ${item.subtitle}` : item.title,
+    streetAddress: item.address || item.streetAddress || item.title,
+    city: item.city,
+    neighborhood: item.neighborhood || item.county,
+    state: item.state,
+    zip: item.zip,
+    askingPrice: item.price || item.askingPrice || "Contact Advisors",
+    numericPrice: item.priceNumeric || 0,
+    bedrooms: Number(item.specs?.beds || 0),
+    bathrooms: Number(item.specs?.baths || 0),
+    sqFt: item.specs?.sqft || item.specs?.lotSize || "Custom Offering",
+    propertyType:
+      item.category === "Commercial"
+        ? "Commercial"
+        : item.specs?.waterfrontFeet
+        ? "Waterfront Estate"
+        : "Single Family",
+    category: item.category === "Commercial" ? "Commercial" : "Residential",
+    status:
+      item.listingOrigin === "align-right-office"
+        ? "Align Right Carrollwood Office"
+        : `${item.status} — ${item.representation || "Exclusive"}`,
+    imageUrl:
+      typeof item.images?.main === "string"
+        ? item.images.main
+        : "/davis-garnett-listings-1.jpg",
+    source:
+      item.listingOrigin === "align-right-office"
+        ? "Align Right Carrollwood Office"
+        : "Davis & Garnett Exclusive",
+    href: `/listings/${item.slug}`,
+  }));
 
 export default function SearchMlsDiscoveryPortal() {
   const [listings, setListings] = useState<MlsPropertyItem[]>(FALLBACK_MLS_LISTINGS);
@@ -627,8 +474,8 @@ export default function SearchMlsDiscoveryPortal() {
                 <RefreshCw className={`w-3.5 h-3.5 ${loadingFeed ? "animate-spin" : ""}`} />
                 <span>
                   {loftyConnected
-                    ? "Connected to Live Lofty CRM + Exclusive Portfolio"
-                    : "Displaying Curated Stellar MLS & Exclusive D&G Inventory"}
+                    ? "Connected to Live Lofty MLS + Davis & Garnett Exclusive Portfolio"
+                    : "Active Davis & Garnett Offerings · Live Stellar MLS & Lofty IDX Feeds Connecting Soon"}
                 </span>
               </div>
               <h2 className="font-aiveritas text-3xl md:text-4xl text-[#111111]">
@@ -641,16 +488,35 @@ export default function SearchMlsDiscoveryPortal() {
                 href="/properties"
                 className="px-5 py-2.5 rounded-xl bg-[#f5f3ef] hover:bg-[#111111] text-[#111111] hover:text-white border border-[#111111]/15 text-xs uppercase tracking-[0.18em] font-bold transition-colors"
               >
-                View Exclusive D&amp;G Portfolio →
+                Explore Portfolio Hub →
               </Link>
               <Link
                 href="/developments"
                 className="px-5 py-2.5 rounded-xl bg-[#C8A951]/15 hover:bg-[#C8A951] text-[#9A7D3A] hover:text-[#111111] border border-[#C8A951]/40 text-xs uppercase tracking-[0.18em] font-bold transition-colors"
               >
-                9 New Developments →
+                New Developments →
               </Link>
             </div>
           </div>
+
+          {!loftyConnected && !loadingFeed && (
+            <div className="mb-10 p-6 rounded-2xl bg-[#f5f3ef] border border-[#C8A951]/40 flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div>
+                <span className="text-[10px] uppercase tracking-[0.22em] font-bold text-[#9A7D3A] block mb-1">
+                  MLS / Lofty IDX Integration Status
+                </span>
+                <p className="text-sm text-[#111111]/80 font-light">
+                  Live neighborhood Stellar MLS &amp; Lofty IDX feeds are coming as soon as final brokerage approval and feed hookup are completed. Browse our verified active offerings below or request custom pocket alerts directly from Mark &amp; Rachael.
+                </p>
+              </div>
+              <Link
+                href="/properties#carrollwood-office"
+                className="px-5 py-2.5 rounded-xl bg-[#111111] text-[#C8A951] hover:bg-[#C8A951] hover:text-[#111111] text-xs font-bold uppercase tracking-widest shrink-0 transition-colors"
+              >
+                View Carrollwood Office Hub →
+              </Link>
+            </div>
+          )}
 
           {filteredListings.length === 0 ? (
             <div className="bg-[#f5f3ef] border border-[#111111]/10 rounded-3xl p-16 text-center">
