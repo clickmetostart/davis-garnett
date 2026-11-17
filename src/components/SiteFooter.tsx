@@ -136,7 +136,7 @@ export default function SiteFooter() {
           {/* Col 1: Featured Portfolio */}
           <div>
             <Link href="/properties" className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4AF37] block mb-4 hover:text-white transition-colors">
-              Featured Properties
+              Portfolio Hub
             </Link>
             <ul className="space-y-2.5 text-xs text-white/60">
               <li><Link href="/properties" className="hover:text-white transition-colors">Portfolio Hub Overview</Link></li>

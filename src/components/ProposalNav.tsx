@@ -34,10 +34,10 @@ const NAV_GROUPS: NavGroup[] = [
     ],
   },
   {
-    label: "Portfolio",
+    label: "Portfolio Hub",
     href: "/properties",
     dropdown: [
-      { label: "Portfolio Hub Overview", desc: "Explore active offerings, branch listings & category hubs across Tampa Bay", href: "/properties" },
+      { label: "Davis & Garnett Portfolio Hub", desc: "Explore active offerings, branch listings & category hubs across Tampa Bay", href: "/properties" },
       { label: "Featured Exclusive Listings", desc: "Highlighted residential, waterfront, commercial & land opportunities", href: "/properties#featured" },
       { label: "New & Upcoming Listings", desc: "Newest team releases plus upcoming live IDX & Lofty feed areas", href: "/properties#new-listings" },
       { label: "Align Right Carrollwood Office", desc: "Active listings from our Align Right Realty Carrollwood brokerage", href: "/properties#carrollwood-office" },

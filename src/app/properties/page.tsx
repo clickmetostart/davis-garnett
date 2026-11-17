@@ -161,6 +161,16 @@ export default function PropertiesPage() {
     (l) => l.status === "Active" && l.listingOrigin === "align-right-office"
   );
 
+  const resolveListingImage = (item: Listing): string => {
+    if (typeof item.images?.main === "string" && item.images.main) return item.images.main;
+    if (Array.isArray(item.images) && item.images[0]?.url) return item.images[0].url;
+    if (Array.isArray(item.images?.gallery) && item.images.gallery[0]) return item.images.gallery[0];
+    return "/davis-garnett-listings-1.jpg";
+  };
+
+  const resolveListingPrice = (item: Listing): string =>
+    item.price || item.askingPrice || "Contact Advisors";
+
   const newestActiveListings = allListings.filter(
     (l) => l.status === "Active" && l.listingOrigin !== "external-reference"
   );
@@ -218,10 +228,10 @@ export default function PropertiesPage() {
         <div className="relative z-10 w-full max-w-screen-xl mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-10">
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
-              Davis &amp; Garnett · Tampa Bay &amp; Central Florida
+              Davis &amp; Garnett Portfolio Hub · Tampa Bay &amp; Central Florida
             </span>
             <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-[#111111] leading-none mb-6">
-              Florida <span className="text-[#9A7D3A]">Portfolio</span>
+              Florida <span className="text-[#9A7D3A]">Portfolio Hub</span>
             </h1>
             <p className="text-[#111111]/75 font-light text-base md:text-[17px] lg:text-[18px] leading-relaxed">
               Explore featured residential homes, commercial properties, Central Florida land, waterfront and unique properties, and recent sales across Tampa Bay and Florida.
@@ -585,13 +595,13 @@ export default function PropertiesPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
             <div>
               <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-                Portfolio Hub · New Releases &amp; Live Area Sync
+                Portfolio Hub · All Active D&amp;G Releases ({newestActiveListings.length}) &amp; Live Area Sync
               </span>
               <h2 className="font-aiveritas text-3xl sm:text-5xl text-[#111111] mb-3">
                 New &amp; Upcoming Florida Listings
               </h2>
               <p className="text-[#111111]/70 font-light max-w-2xl text-base leading-relaxed">
-                Explore custom Davis &amp; Garnett releases rolling out this season. Auto-populated regional IDX area feeds are coming as soon as brokerage approval and Lofty MLS feed hookup go live.
+                Explore all active Davis &amp; Garnett residential, waterfront, commercial, and land releases across Florida. Auto-populated regional IDX area feeds are coming as soon as brokerage approval and Lofty MLS feed hookup go live.
               </p>
             </div>
             <div className="flex items-center gap-3 shrink-0">
@@ -627,7 +637,7 @@ export default function PropertiesPage() {
               >
                 <div className="relative h-48 bg-[#111111]">
                   <Image
-                    src={item.images?.main || "/davis-garnett-listings-1.jpg"}
+                    src={resolveListingImage(item)}
                     alt={item.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -637,7 +647,7 @@ export default function PropertiesPage() {
                     {item.listingOrigin === "align-right-office" ? "Align Right Office" : item.category}
                   </span>
                   <span className="absolute bottom-3 left-3 font-aiveritas text-2xl text-white drop-shadow">
-                    {item.price}
+                    {resolveListingPrice(item)}
                   </span>
                 </div>
                 <div className="p-5 flex-1 flex flex-col justify-between">
@@ -748,7 +758,7 @@ export default function PropertiesPage() {
               >
                 <div className="relative h-48 bg-[#111111]">
                   <Image
-                    src={off.images?.main || "/davis-garnett-listings-1.jpg"}
+                    src={resolveListingImage(off)}
                     alt={off.title}
                     fill
                     className="object-cover"
@@ -758,7 +768,7 @@ export default function PropertiesPage() {
                     Align Right Carrollwood Office
                   </span>
                   <span className="absolute bottom-3 left-3 font-aiveritas text-2xl text-white drop-shadow">
-                    {off.price}
+                    {resolveListingPrice(off)}
                   </span>
                 </div>
                 <div className="p-5 flex-1 flex flex-col justify-between">
@@ -908,7 +918,7 @@ export default function PropertiesPage() {
               >
                 <div className="relative h-48 bg-black">
                   <Image
-                    src={item.images?.main || "/davis-garnett-listings-1.jpg"}
+                    src={resolveListingImage(item)}
                     alt={item.title}
                     fill
                     className="object-cover"
@@ -918,7 +928,7 @@ export default function PropertiesPage() {
                     {item.notListedByUs ? "Info Available via D&G" : item.category}
                   </span>
                   <span className="absolute bottom-3 left-3 font-aiveritas text-2xl text-white drop-shadow">
-                    {item.price}
+                    {resolveListingPrice(item)}
                   </span>
                 </div>
                 <div className="p-5 flex-1 flex flex-col justify-between">
@@ -1101,7 +1111,7 @@ export default function PropertiesPage() {
                   <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
                 </button>
                 <p className="text-[11px] uppercase tracking-widest text-[#111111]/45 font-bold">
-                  {soldListings.length} Verified Closings Available
+                  * Recently Closed
                 </p>
               </div>
             )}
