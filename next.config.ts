@@ -29,6 +29,11 @@ const nextConfig: NextConfig = {
         destination: "/align-right-carrollwood-coverage",
         permanent: true,
       },
+      {
+        source: "/knowledge-hub/articles/clearwater-beach-sand-key-condo-regulations",
+        destination: "/knowledge-hub/clearwater-beach-sand-key-condo-regulations",
+        permanent: true,
+      },
     ];
   },
 };

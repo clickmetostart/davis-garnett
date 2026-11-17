@@ -1020,6 +1020,83 @@ export const GUIDES: KnowledgeItem[] = [
       },
     ],
   },
+  {
+    slug: "clearwater-beach-sand-key-condo-regulations",
+    type: "guide",
+    category: "Beachfront Condos",
+    title: "Clearwater Beach vs. Sand Key: Condo Buying Guide",
+    subtitle: "Compare vacation rental zoning on Clearwater Beach against quieter owner-focused condo towers on Sand Key.",
+    quickAnswer: "Clearwater Beach holds select tourist zones allowing weekly vacation rentals, while Sand Key and Belleair Beach generally mandate 30-to-90+ day minimum leases. Under Florida condo law, every 3-story+ buyer must inspect SIRS reserve studies before closing.",
+    readTime: "6 Min Read",
+    publishDate: "November 2026",
+    updatedAt: "2026-11-17T11:30:00-05:00",
+    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-26.jpg",
+    author: RACHAEL_AUTHOR,
+    propertyType: ["condo-townhome", "waterfront", "luxury", "55-plus"],
+    audience: ["home-buyers", "investors", "55-plus-buyers"],
+    county: ["pinellas"],
+    corridor: ["clearwater-beaches"],
+    relatedGlossarySlugs: ["hoa", "elevation-certificate", "wind-mitigation", "four-point-inspection"],
+    relatedGuideSlugs: [
+      "florida-55-plus-condo-milestone-reserves-vs-villa",
+      "flood-zones-x-ae-ve-tampa-bay-homebuyers",
+    ],
+    relatedAreaSlugs: ["clearwater-pinellas-county", "st-petersburg"],
+    relatedServiceRoutes: [
+      { label: "Clearwater & Pinellas Area Guide", href: "/knowledge-hub/areas/clearwater-pinellas-county" },
+      { label: "Run Florida Mortgage & Condo Tool", href: "/tools/mortgage-calculator" },
+      { label: "Browse Clearwater Beach MLS Condos", href: "/search-mls" },
+    ],
+    ctaLabel: "Schedule Clearwater Condo Consult",
+    ctaHref: "/contact",
+    howWeHandleIt: "Before coastal condo buyers bid on Sand Key or Clearwater Beach, Rachael and Mark check municipal tourist-zoning maps, request SIRS structural reserve balances, and confirm mortgage warrantability upfront.",
+    sources: [
+      { label: "City of Clearwater Community Development Code (Short-Term Rental Rules)" },
+      { label: "Florida Statutes Chapter 718 (Structural Integrity Reserve Studies)" },
+    ],
+    keyTakeaways: [
+      "Pinellas cities tightly limit weekly Airbnb rentals—verify exact parcel zoning before buying.",
+      "Sand Key high-rises offer wide quiet beaches and private boat slips across from Sand Key Park.",
+      "Florida Chapter 718 requires buildings 3+ stories tall to fund structural repair reserves.",
+      "Use your 3-business-day review window to verify reserve budgets and special assessments.",
+    ],
+    sections: [
+      {
+        heading: "1. Vacation Rental Cash Flow vs. Peaceful Owner Beaches",
+        body: "Even towers just one mile apart across Clearwater Pass follow totally different rental laws. Main Clearwater Beach contains specific Tourist (T) zoning pockets where licensed daily or weekly vacation rentals remain legal inside compliant buildings. Cross the Clearwater Pass bridge onto Sand Key, and almost every Gulf tower sets 30-day, 90-day, or seasonal lease minimums to keep lobbies calm for full-time residents and snowbirds.",
+        bullets: [
+          "Verify Both City Maps & Condo Bylaws: City code might allow 30-day leases while an HOA declaration restricts owners to two rentals per year.",
+          "Check Boat Slip & Covered Parking Deeds: Confirm whether marina slips and garage spaces transfer on your deed or follow waitlists.",
+        ],
+      },
+      {
+        heading: "2. Navigating Post-Surfside Structural Reserves on the Coast",
+        body: "Salt spray wears concrete balconies, stucco coatings, and flat roofs faster on barrier islands. Under Florida Chapter 718, associations running buildings three habitable stories or taller must pass milestone inspections and fund structural repair reserves fully. Reviewing Phase 1/Phase 2 engineering reports, SIRS reserve schedules, and wind insurance deductibles protects buyers from surprise special assessments.",
+        bullets: [
+          "Check Lender Warrantability Early: Conventional banks reject condos with under-funded wind deductibles or delayed concrete work.",
+          "Two-Story Coastal Alternative: Smaller 1- and 2-story condo courts sit outside Florida's mandatory 3-story structural reserve trigger.",
+        ],
+      },
+      {
+        heading: "3. Fast Airport Access Across the Courtney Campbell Causeway",
+        body: "Living on Sand Key or Belleair Shore connects cleanly to the mainland. A quick trip across the Courtney Campbell Causeway (SR-60) drops seasonal owners and business travelers straight at Tampa International Airport in roughly 25 to 30 minutes, keeping weekend getaways simple year-round.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Can I rent out my Sand Key condo every week on vacation booking apps?",
+        answer: "Generally no. Nearly all Sand Key buildings enforce 30-to-90+ day minimum rental periods under city zoning and condo rules. Weekly rentals sit mainly inside Tourist-zoned pockets of Clearwater Beach.",
+      },
+      {
+        question: "How long does a Florida resale condo buyer get to read HOA documents?",
+        answer: "Under Florida Statutes Chapter 718, resale buyers receive a 3-business-day cancellation window after receiving complete condo docs, budgets, and reserve disclosures.",
+      },
+      {
+        question: "Do Barrier Island condos also need separate Flood and Wind coverage?",
+        answer: "Association master policies insure the building shell, while condo unit owners buy an HO-6 interior policy covering drywall, flooring, and personal belongings.",
+      },
+    ],
+  },
 ];
 
 export const QUESTIONS: KnowledgeItem[] = [
@@ -2586,6 +2663,7 @@ export const AREAS: AreaItem[] = [
     corridor: ["clearwater-beaches", "st-petersburg-waterfront"],
     relatedGlossarySlugs: ["hoa", "elevation-certificate", "wind-mitigation", "four-point-inspection"],
     relatedGuideSlugs: [
+      "clearwater-beach-sand-key-condo-regulations",
       "florida-55-plus-condo-milestone-reserves-vs-villa",
       "flood-zones-x-ae-ve-tampa-bay-homebuyers",
       "tampa-bay-luxury-home-buying-guide",
@@ -3320,75 +3398,6 @@ export const ARTICLES: ArticleItem[] = [
       {
         question: "How far is Keystone from Downtown Tampa and Tampa Airport?",
         answer: "Most Keystone estate driveways connect onto the Veterans Expressway within ten minutes, reaching Tampa Airport in roughly 25 minutes.",
-      },
-    ],
-  },
-  {
-    slug: "clearwater-beach-sand-key-condo-regulations",
-    title: "Clearwater Beach vs. Sand Key: Condo Buying Guide",
-    category: "Beachfront Condos",
-    publishDate: "November 2026",
-    updatedAt: "2026-11-17T11:30:00-05:00",
-    readTime: "6 Min Read",
-    heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-26.jpg",
-    summary: "Compare vacation rental zoning on Clearwater Beach against quieter owner-focused condo towers on Sand Key.",
-    quickAnswer: "Clearwater Beach holds select tourist zones allowing weekly vacation rentals, while Sand Key and Belleair Beach generally mandate 30-to-90+ day minimum leases. Under Florida condo law, every 3-story+ buyer must inspect SIRS reserve studies before closing.",
-    author: RACHAEL_AUTHOR,
-    propertyType: ["condo-townhome", "waterfront", "luxury", "55-plus"],
-    audience: ["home-buyers", "investors", "55-plus-buyers"],
-    county: ["pinellas"],
-    corridor: ["clearwater-beaches"],
-    relatedGlossarySlugs: ["hoa", "elevation-certificate", "wind-mitigation", "four-point-inspection"],
-    relatedGuideSlugs: [
-      "florida-55-plus-condo-milestone-reserves-vs-villa",
-      "flood-zones-x-ae-ve-tampa-bay-homebuyers",
-    ],
-    relatedAreaSlugs: ["clearwater-pinellas-county", "st-petersburg"],
-    howWeHandleIt: "Before coastal condo buyers bid on Sand Key or Clearwater Beach, Rachael and Mark check municipal tourist-zoning maps, request SIRS structural reserve balances, and confirm mortgage warrantability upfront.",
-    sources: [
-      { label: "City of Clearwater Community Development Code (Short-Term Rental Rules)" },
-      { label: "Florida Statutes Chapter 718 (Structural Integrity Reserve Studies)" },
-    ],
-    keyTakeaways: [
-      "Pinellas cities tightly limit weekly Airbnb rentals—verify exact parcel zoning before buying.",
-      "Sand Key high-rises offer wide quiet beaches and private boat slips across from Sand Key Park.",
-      "Florida Chapter 718 requires buildings 3+ stories tall to fund structural repair reserves.",
-      "Use your 3-business-day review window to verify reserve budgets and special assessments.",
-    ],
-    sections: [
-      {
-        heading: "1. Vacation Rental Cash Flow vs. Peaceful Owner Beaches",
-        body: "Even towers just one mile apart across Clearwater Pass follow totally different rental laws. Main Clearwater Beach contains specific Tourist (T) zoning pockets where licensed daily or weekly vacation rentals remain legal inside compliant buildings. Cross the Clearwater Pass bridge onto Sand Key, and almost every Gulf tower sets 30-day, 90-day, or seasonal lease minimums to keep lobbies calm for full-time residents and snowbirds.",
-        bullets: [
-          "Verify Both City Maps & Condo Bylaws: City code might allow 30-day leases while an HOA declaration restricts owners to two rentals per year.",
-          "Check Boat Slip & Covered Parking Deeds: Confirm whether marina slips and garage spaces transfer on your deed or follow waitlists.",
-        ],
-      },
-      {
-        heading: "2. Navigating Post-Surfside Structural Reserves on the Coast",
-        body: "Salt spray wears concrete balconies, stucco coatings, and flat roofs faster on barrier islands. Under Florida Chapter 718, associations running buildings three habitable stories or taller must pass milestone inspections and fund structural repair reserves fully. Reviewing Phase 1/Phase 2 engineering reports, SIRS reserve schedules, and wind insurance deductibles protects buyers from surprise special assessments.",
-        bullets: [
-          "Check Lender Warrantability Early: Conventional banks reject condos with under-funded wind deductibles or delayed concrete work.",
-          "Two-Story Coastal Alternative: Smaller 1- and 2-story condo courts sit outside Florida's mandatory 3-story structural reserve trigger.",
-        ],
-      },
-      {
-        heading: "3. Fast Airport Access Across the Courtney Campbell Causeway",
-        body: "Living on Sand Key or Belleair Shore connects cleanly to the mainland. A quick trip across the Courtney Campbell Causeway (SR-60) drops seasonal owners and business travelers straight at Tampa International Airport in roughly 25 to 30 minutes, keeping weekend getaways simple year-round.",
-      },
-    ],
-    faqs: [
-      {
-        question: "Can I rent out my Sand Key condo every week on vacation booking apps?",
-        answer: "Generally no. Nearly all Sand Key buildings enforce 30-to-90+ day minimum rental periods under city zoning and condo rules. Weekly rentals sit mainly inside Tourist-zoned pockets of Clearwater Beach.",
-      },
-      {
-        question: "How long does a Florida resale condo buyer get to read HOA documents?",
-        answer: "Under Florida Statutes Chapter 718, resale buyers receive a 3-business-day cancellation window after receiving complete condo docs, budgets, and reserve disclosures.",
-      },
-      {
-        question: "Do Barrier Island condos also need separate Flood and Wind coverage?",
-        answer: "Association master policies insure the building shell, while condo unit owners buy an HO-6 interior policy covering drywall, flooring, and personal belongings.",
       },
     ],
   },
