@@ -300,16 +300,16 @@ export default function PropertiesPage() {
             ))}
           </div>
 
-          {/* Quick Jump Section Buttons (Smooth Scroll to Hub Sections) */}
-          <div className="flex flex-wrap items-center justify-center gap-3">
+          {/* Quick Jump Section Buttons (Single-Line Desktop Row) */}
+          <div className="flex flex-wrap lg:flex-nowrap items-center justify-center gap-2">
             {[
               {
-                label: "Featured Exclusives",
+                label: "Featured",
                 href: "#featured",
                 icon: Award,
               },
               {
-                label: "New & Upcoming Listings",
+                label: "New & Upcoming",
                 href: "#new-listings",
                 icon: Sparkles,
               },
@@ -324,12 +324,12 @@ export default function PropertiesPage() {
                 icon: Trees,
               },
               {
-                label: "Sold Track Record",
+                label: "Recently Sold",
                 href: "#sold-track-record",
                 icon: CheckCircle,
               },
               {
-                label: "Free Value Estimate",
+                label: "Value Estimate",
                 href: "#valuation-request",
                 icon: TrendingUp,
               },
@@ -348,9 +348,9 @@ export default function PropertiesPage() {
                         ?.scrollIntoView({ behavior: "smooth", block: "start" });
                     }, 10);
                   }}
-                  className="group inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white hover:bg-[#111111] text-[#111111] hover:text-[#C8A951] border border-[#111111]/15 hover:border-[#111111] text-xs font-bold uppercase tracking-widest transition-colors shadow-xs"
+                  className="group inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-lg bg-white hover:bg-[#111111] text-[#111111] hover:text-[#C8A951] border border-[#111111]/15 hover:border-[#111111] text-[11px] font-bold uppercase tracking-[0.12em] whitespace-nowrap shrink-0 transition-colors shadow-xs"
                 >
-                  <Icon className="w-3.5 h-3.5 text-[#9A7D3A] group-hover:text-[#C8A951]" />
+                  <Icon className="w-3.5 h-3.5 text-[#9A7D3A] group-hover:text-[#C8A951] shrink-0" />
                   {pill.label}
                 </a>
               );
