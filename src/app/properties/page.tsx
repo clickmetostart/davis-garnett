@@ -231,7 +231,7 @@ export default function PropertiesPage() {
               Davis &amp; Garnett Portfolio Hub · Tampa Bay &amp; Central Florida
             </span>
             <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-[#111111] leading-none mb-6">
-              Florida <span className="text-[#9A7D3A]">Portfolio Hub</span>
+              Florida <span className="text-[#9A7D3A]">Portfolio</span>
             </h1>
             <p className="text-[#111111]/75 font-light text-base md:text-[17px] lg:text-[18px] leading-relaxed">
               Explore featured residential homes, commercial properties, Central Florida land, waterfront and unique properties, and recent sales across Tampa Bay and Florida.
