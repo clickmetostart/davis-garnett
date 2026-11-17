@@ -640,10 +640,10 @@ export default function KnowledgeHubPage() {
                 06 • Local Gatherings &amp; Causes
               </span>
               <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111] mb-3">
-                Community Events &amp; Property Tours
+                Community Events &amp; Local Gatherings
               </h2>
               <p className="text-[#111]/70 font-light max-w-2xl text-base md:text-[17px] lg:text-[18px] leading-relaxed">
-                Join Mark Davis and Rachael Garnett for new construction tours, local real estate workshops, and Tampa Bay community outreach days.
+                Join Mark Davis and Rachael Garnett for local real estate workshops, builder previews, and Tampa Bay community outreach days.
               </p>
             </div>
             <div className="flex items-center gap-3 shrink-0">
