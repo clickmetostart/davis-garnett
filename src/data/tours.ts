@@ -198,7 +198,7 @@ export const GUIDED_TOURS: GuidedTour[] = [
     distanceSummary: "12 Miles South-to-North",
     routeDirectionNote: "Strictly South-to-North along Bahama Shores -> I-275 / 4th St S -> Beach Dr -> Coffee Pot Bayou -> Snell Isle Blvd.",
     startAddress: "6100 Bahama Shores Dr S, St. Petersburg, FL 33705",
-    heroImage: "/city-photos/st-petersburg-waterfront.jpg",
+    heroImage: "/placeholders/dg-brand-placeholder.webp",
     host: {
       name: "Rachael Garnett",
       role: "Your Pinellas Waterfront Host",
@@ -520,7 +520,7 @@ export const GUIDED_TOURS: GuidedTour[] = [
     distanceSummary: "22 Miles Straight South-to-North",
     routeDirectionNote: "Strictly South-to-North along Gunn Hwy -> Lutz-Lake Fern Rd -> US-41 / Collier Pkwy -> SR-589 / SR-52.",
     startAddress: "Lake Keystone / Tarpon Springs Rd & Gunn Hwy, Odessa, FL 33556",
-    heroImage: "/city-photos/land-o-lakes-luxury.jpg",
+    heroImage: "/placeholders/dg-brand-placeholder.webp",
     host: {
       name: "Mark Davis",
       role: "Your Suncoast Corridor Host",
@@ -842,7 +842,7 @@ export const GUIDED_TOURS: GuidedTour[] = [
     distanceSummary: "3.2 Miles Streetcar / Walk Loop",
     routeDirectionNote: "Strictly West-to-East-to-North along Tampa St -> Water St -> Channelside Dr -> N 15th St (links via TECO Streetcar).",
     startAddress: "400 N Ashley Dr, Tampa, FL 33602",
-    heroImage: "/city-photos/tampa-downtown-towers-real.png",
+    heroImage: "/placeholders/dg-brand-placeholder.webp",
     host: {
       name: "Rachael Garnett",
       role: "Your Downtown Mixed-Use Host",
