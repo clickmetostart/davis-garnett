@@ -22,6 +22,7 @@ import {
   Mail,
   ChevronLeft,
   ChevronRight,
+  ChevronDown,
   Calculator,
   Search,
   Sparkles,
@@ -76,6 +77,8 @@ export default function PropertiesPage() {
   const [liveKvListings, setLiveKvListings] = useState<Listing[]>([]);
   const [officeLoftyListings, setOfficeLoftyListings] = useState<OfficeLoftyItem[]>([]);
   const [loftyOfficeConnected, setLoftyOfficeConnected] = useState(false);
+  const [visibleSoldCount, setVisibleSoldCount] = useState(6);
+  const [soldExpandedByUser, setSoldExpandedByUser] = useState(false);
 
   const newListingsRef = useRef<HTMLDivElement>(null);
   const carrollwoodRef = useRef<HTMLDivElement>(null);
@@ -976,12 +979,14 @@ export default function PropertiesPage() {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
-              {soldListings.map((sold) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+              {soldListings.slice(0, visibleSoldCount).map((sold, idx) => (
                 <Link
                   key={sold.id}
                   href={`/listings/${sold.slug}`}
-                  className="group bg-white rounded-2xl overflow-hidden border border-[#111111]/8 hover:border-[#C8A951]/60 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
+                  className={`${
+                    !soldExpandedByUser && idx > 0 ? "hidden md:flex" : "flex"
+                  } group bg-white rounded-2xl overflow-hidden border border-[#111111]/8 hover:border-[#C8A951]/60 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex-col`}
                 >
                   {/* Image */}
                   <div className="relative aspect-[16/10] overflow-hidden bg-[#eae6df]">
@@ -1074,6 +1079,32 @@ export default function PropertiesPage() {
                 </Link>
               ))}
             </div>
+
+            {(visibleSoldCount < soldListings.length || (!soldExpandedByUser && soldListings.length > 1)) && (
+              <div className="mt-14 text-center space-y-3">
+                <button
+                  type="button"
+                  onClick={() => {
+                    const isMobileViewport =
+                      typeof window !== "undefined" && window.innerWidth < 768;
+                    if (!soldExpandedByUser && isMobileViewport) {
+                      setSoldExpandedByUser(true);
+                      setVisibleSoldCount(Math.min(4, soldListings.length));
+                    } else {
+                      setSoldExpandedByUser(true);
+                      setVisibleSoldCount((prev) => prev + 3);
+                    }
+                  }}
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-[#111] hover:bg-[#ef5728] text-white text-xs font-bold uppercase tracking-widest rounded-xl transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 cursor-pointer border border-[#ef5728]/30 group"
+                >
+                  <span>Load More Sold Properties</span>
+                  <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
+                </button>
+                <p className="text-[11px] uppercase tracking-widest text-[#111111]/45 font-bold">
+                  {soldListings.length} Verified Closings Available
+                </p>
+              </div>
+            )}
           </div>
         </section>
       )}
