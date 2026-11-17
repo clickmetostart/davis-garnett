@@ -282,25 +282,5 @@ export const GIT_PUBLICATION_DATES: Record<string, { publishedAt: string; update
   "tampa-bay-condo-hoa-expo-2027": {
     "publishedAt": "2026-11-17T13:06:00-05:00",
     "updatedAt": "2026-11-17T13:06:00-05:00"
-  },
-  "busch-gardens-christmas-town-tampa": {
-    "publishedAt": "2026-11-17T13:04:00-05:00",
-    "updatedAt": "2026-11-17T13:04:00-05:00"
-  },
-  "zootampa-christmas-in-the-wild": {
-    "publishedAt": "2026-11-17T13:04:00-05:00",
-    "updatedAt": "2026-11-17T13:04:00-05:00"
-  },
-  "holiday-harbour-armature-works-tree-lightings": {
-    "publishedAt": "2026-11-17T13:04:00-05:00",
-    "updatedAt": "2026-11-17T13:04:00-05:00"
-  },
-  "hyde-park-ybor-holiday-celebrations": {
-    "publishedAt": "2026-11-17T13:04:00-05:00",
-    "updatedAt": "2026-11-17T13:04:00-05:00"
-  },
-  "tampa-bay-condo-hoa-expo-2027": {
-    "publishedAt": "2026-11-17T13:06:00-05:00",
-    "updatedAt": "2026-11-17T13:06:00-05:00"
   }
 };

@@ -62,13 +62,13 @@ export default function ToursIndexClient() {
           <div className="grid lg:grid-cols-[1.45fr_1fr] gap-10 items-center">
             <div>
               <span className="inline-flex items-center gap-2 text-[#D4AF37] text-xs font-bold uppercase tracking-[0.28em] mb-4">
-                <Compass className="w-4 h-4" /> Tour Tampa Bay With Davis &amp; Garnett
+                <Compass className="w-4 h-4" /> #GuidedByDG • Tour Tampa Bay With Davis &amp; Garnett
               </span>
               <h1 className="font-aiveritas text-4xl sm:text-6xl text-white mb-5 leading-tight">
-                Guided Area &amp; Shopping Corridor Tours
+                Best of Tampa Bay: Neighborhoods, Malls, Zoos &amp; Parks
               </h1>
               <p className="text-white/80 text-base md:text-xl font-light max-w-2xl leading-relaxed mb-8">
-                Drive Tampa Bay neighborhoods, top school streets, and commercial shopping strips in real road order. Take notes online, launch Google Maps directions, download your workbook, or invite Mark Davis &amp; Rachael Garnett to ride along live.
+                Explore Tampa Bay&apos;s favorite neighborhoods, trending developments, waterfront boardwalks, malls, zoos, aquariums, and state parks in real road order—or invite Mark Davis &amp; Rachael Garnett along for a private tour.
               </p>
 
               <div className="flex flex-wrap items-center gap-3">
@@ -142,9 +142,9 @@ export default function ToursIndexClient() {
           <div className="flex flex-wrap items-center gap-2">
             {(
               [
-                { key: "all", label: "All Tours" },
-                { key: "residential", label: "Residential Neighborhoods" },
-                { key: "commercial", label: "Commercial & Shopping Zones" },
+                { key: "all", label: "All Destinations" },
+                { key: "residential", label: "Neighborhoods, Parks & Beaches" },
+                { key: "commercial", label: "Malls, Trends & Attractions" },
               ] as const
             ).map((btn) => (
               <button
@@ -223,7 +223,7 @@ export default function ToursIndexClient() {
                               : "bg-[#D4AF37] text-[#111]"
                           }`}
                         >
-                          {tour.track === "commercial" ? "Commercial Retail Tour" : "Residential Area Tour"}
+                          {tour.badge}
                         </span>
                         <span className="absolute bottom-3 left-4 text-[11px] font-bold text-white flex items-center gap-1.5">
                           <Clock className="w-3.5 h-3.5 text-[#D4AF37]" /> {tour.duration}

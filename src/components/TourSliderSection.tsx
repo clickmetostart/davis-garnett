@@ -25,8 +25,8 @@ interface TourSliderSectionProps {
 export default function TourSliderSection({
   id = "tours",
   sectionEyebrow = "#GuidedByDG • Self-Guided Tour Kits Made by D&G",
-  sectionTitle = "Tampa Bay Area & Shopping Zone Tours",
-  sectionSubtitle = "Drive Tampa Bay neighborhoods and commercial corridors in real street order using turn-by-turn routes and companion workbooks made by Mark Davis & Rachael Garnett—or book a private VIP ride-along.",
+  sectionTitle = "Tampa Bay Destinations, Neighborhoods & Parks Tours",
+  sectionSubtitle = "Explore Tampa Bay's top neighborhoods, trending developments, zoos, aquariums, outdoor malls, parks, and beaches in street order with Mark Davis & Rachael Garnett—or book a private VIP tour.",
   bgClass = "bg-white",
 }: TourSliderSectionProps) {
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -110,7 +110,7 @@ export default function TourSliderSection({
                             : "bg-[#D4AF37] text-[#111]"
                         }`}
                       >
-                        {tour.track === "commercial" ? "Commercial Retail Tour" : "Residential Area Tour"}
+                        {tour.badge}
                       </span>
                       <span className="absolute bottom-3 left-4 text-[11px] font-bold text-white flex items-center gap-1.5">
                         <Clock className="w-3.5 h-3.5 text-[#D4AF37]" /> {tour.duration}
