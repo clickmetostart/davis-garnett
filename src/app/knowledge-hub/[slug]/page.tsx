@@ -57,6 +57,8 @@ export default async function KnowledgeItemPage({
         "@type": "Article",
         headline: item.title,
         description: item.quickAnswer || item.subtitle,
+        ...(item.publishedAt ? { datePublished: item.publishedAt } : {}),
+        ...(item.updatedAt ? { dateModified: item.updatedAt } : {}),
         mainEntityOfPage: pageUrl,
         author: {
           "@type": "Person",

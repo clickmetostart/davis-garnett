@@ -57,6 +57,8 @@ export default async function ArticleSpokePage({
         "@type": "Article",
         headline: article.title,
         description: article.quickAnswer || article.summary,
+        ...(article.publishedAt ? { datePublished: article.publishedAt } : {}),
+        ...(article.updatedAt ? { dateModified: article.updatedAt } : {}),
         mainEntityOfPage: pageUrl,
         author: {
           "@type": "Person",

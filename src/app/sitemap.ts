@@ -2,12 +2,12 @@ import { MetadataRoute } from "next";
 import listingsData from "@/data/listings.json";
 import { DEVELOPMENTS } from "@/data/developments";
 import { ALL_GUIDES_AND_QUESTIONS, AREAS, EVENTS, ARTICLES } from "@/data/knowledgeHub";
+import { getLiveMarketReports } from "@/data/marketReports";
 
 const BASE_URL = "https://www.davisgarnettsells.com";
+const STATIC_LAST_MODIFIED = new Date("2026-11-17T09:35:43-05:00");
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
-
   const staticRoutes = [
     "",
     "/about",
@@ -28,54 +28,60 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/privacy-policy",
   ];
 
-  const listingUrls = (listingsData as Array<{ slug?: string; id?: string }>).map((item) => ({
-    url: `${BASE_URL}/listings/${item.slug || item.id}`,
-    lastModified: now,
-    changeFrequency: "daily" as const,
-    priority: 0.9,
-  }));
+  // Exclude sold, closed, inactive, or draft listings from sitemap
+  const listingUrls = (
+    listingsData as Array<{
+      slug?: string;
+      id?: string;
+      status?: string;
+      editorialStatus?: string;
+      updatedAt?: string;
+    }>
+  )
+    .filter(
+      (item) =>
+        !/sold|closed|inactive|draft/i.test(item.status || "") &&
+        item.editorialStatus !== "draft"
+    )
+    .map((item) => ({
+      url: `${BASE_URL}/listings/${item.slug || item.id}`,
+      lastModified: item.updatedAt ? new Date(item.updatedAt) : STATIC_LAST_MODIFIED,
+    }));
 
-  const developmentUrls = DEVELOPMENTS.map((dev) => ({
+  const developmentUrls = DEVELOPMENTS.filter((d) => d.editorialStatus !== "draft").map((dev) => ({
     url: `${BASE_URL}/developments/${dev.slug}`,
-    lastModified: now,
-    changeFrequency: "weekly" as const,
-    priority: 0.85,
+    lastModified: dev.updatedAt ? new Date(dev.updatedAt) : STATIC_LAST_MODIFIED,
   }));
 
-  const guideUrls = ALL_GUIDES_AND_QUESTIONS.map((g) => ({
+  const guideUrls = ALL_GUIDES_AND_QUESTIONS.filter((g) => g.status !== "draft").map((g) => ({
     url: `${BASE_URL}/knowledge-hub/${g.slug}`,
-    lastModified: now,
-    changeFrequency: "weekly" as const,
-    priority: 0.85,
+    lastModified: g.updatedAt ? new Date(g.updatedAt) : STATIC_LAST_MODIFIED,
   }));
 
-  const areaUrls = AREAS.map((a) => ({
+  const areaUrls = AREAS.filter((a) => a.status !== "draft").map((a) => ({
     url: `${BASE_URL}/knowledge-hub/areas/${a.slug}`,
-    lastModified: now,
-    changeFrequency: "weekly" as const,
-    priority: 0.85,
+    lastModified: a.updatedAt ? new Date(a.updatedAt) : STATIC_LAST_MODIFIED,
   }));
 
-  const eventUrls = EVENTS.map((e) => ({
+  const eventUrls = EVENTS.filter((e) => e.status !== "draft").map((e) => ({
     url: `${BASE_URL}/knowledge-hub/events/${e.slug}`,
-    lastModified: now,
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
+    lastModified: e.updatedAt ? new Date(e.updatedAt) : STATIC_LAST_MODIFIED,
   }));
 
-  const articleUrls = ARTICLES.map((a) => ({
+  const articleUrls = ARTICLES.filter((a) => a.status !== "draft").map((a) => ({
     url: `${BASE_URL}/knowledge-hub/articles/${a.slug}`,
-    lastModified: now,
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
+    lastModified: a.updatedAt ? new Date(a.updatedAt) : STATIC_LAST_MODIFIED,
+  }));
+
+  const marketReportUrls = getLiveMarketReports().map((r) => ({
+    url: `${BASE_URL}/market-reports/${r.slug}`,
+    lastModified: new Date(r.updatedAt),
   }));
 
   return [
     ...staticRoutes.map((route) => ({
       url: `${BASE_URL}${route}`,
-      lastModified: now,
-      changeFrequency: "weekly" as const,
-      priority: route === "" ? 1.0 : 0.9,
+      lastModified: STATIC_LAST_MODIFIED,
     })),
     ...listingUrls,
     ...developmentUrls,
@@ -83,5 +89,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...areaUrls,
     ...eventUrls,
     ...articleUrls,
+    ...marketReportUrls,
   ];
 }

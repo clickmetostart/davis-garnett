@@ -2,7 +2,7 @@ import HomePageClient from "@/components/HomePageClient";
 import { buildPageMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Davis & Garnett | Commercial & Residential Realtors in Tampa Bay",
+  title: "Davis & Garnett | Tampa Bay Residential & Commercial Real Estate Advisors",
   description:
     "Work directly with Mark Davis and Rachael Garnett at Align Right Realty Carrollwood for residential homes, waterfront estates, 55+ communities, land, and commercial real estate across Tampa Bay.",
   path: "/",

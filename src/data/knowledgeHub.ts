@@ -1,3 +1,5 @@
+import { GIT_PUBLICATION_DATES } from "@/data/publicationDates";
+
 export interface KnowledgeSection {
   heading: string;
   body: string;
@@ -14,6 +16,8 @@ export interface RelatedServiceLink {
   href: string;
 }
 
+export type PublicationStatus = "draft" | "live";
+
 export interface KnowledgeItem {
   slug: string;
   type: "guide" | "question";
@@ -23,6 +27,9 @@ export interface KnowledgeItem {
   quickAnswer?: string;
   readTime: string;
   publishDate: string;
+  publishedAt?: string;
+  updatedAt?: string;
+  status?: PublicationStatus;
   heroImage: string;
   author: {
     name: string;
@@ -49,6 +56,9 @@ export interface AreaItem {
   name: string;
   tagline: string;
   quickAnswer?: string;
+  publishedAt?: string;
+  updatedAt?: string;
+  status?: PublicationStatus;
   county: string;
   heroImage: string;
   medianPrice: string;
@@ -69,6 +79,9 @@ export interface EventItem {
   category: string;
   date: string;
   time: string;
+  publishedAt?: string;
+  updatedAt?: string;
+  status?: PublicationStatus;
   location: string;
   address: string;
   heroImage: string;
@@ -90,6 +103,9 @@ export interface ArticleItem {
   title: string;
   category: string;
   publishDate: string;
+  publishedAt?: string;
+  updatedAt?: string;
+  status?: PublicationStatus;
   readTime: string;
   heroImage: string;
   summary: string;
@@ -1479,28 +1495,36 @@ export const EVENTS: EventItem[] = [
 export const ARTICLES: ArticleItem[] = [
   {
     slug: "tampa-bay-real-estate-market-outlook-2026",
-    title: "2026 Tampa Bay Real Estate Market Update & Trends",
+    title: "2027 Tampa Bay Real Estate Market Outlook & Trends",
     category: "Market Update",
     publishDate: "November 2026",
+    updatedAt: "2026-11-17T10:15:00-05:00",
     readTime: "5 Min Read",
     heroImage: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-7.jpg",
-    summary: "Why waterfront homes, newer suburban neighborhoods, and commercial properties in Tampa Bay continue to draw steady buyer demand.",
+    summary: "Why move-in-ready homes, 55+ clubhouses, waterfront lots, and commercial buildings across Tampa Bay continue to anchor buyer demand heading into 2027.",
+    quickAnswer: "Heading into 2027, Tampa Bay buyers reward updated roofs, clean 4-Point inspections, and clear flood elevations. Builders in Pasco and Wesley Chapel keep offering rate buydowns, while waterfront lots and Brandon-to-Carrollwood commercial parcels draw steady demand.",
     author: MARK_AUTHOR,
     keyTakeaways: [
-      "Families and business owners moving to Florida continue to drive steady demand for homes and commercial space across Tampa Bay.",
-      "New construction homes with builder rate buydowns are helping buyers lock in lower monthly payments in Pasco and northern Hillsborough County.",
-      "Waterfront lots in St. Petersburg and South Tampa remain limited, helping waterfront homes hold their long-term value.",
+      "Heading into 2027, families, 55+ downsizers, and business owners relocating to Florida drive steady demand across Tampa Bay.",
+      "New construction builders in Pasco and northern Hillsborough continue offering rate buydowns and closing-cost incentives.",
+      "Move-in-ready homes with newer roofs and wind mitigation sell faster than older properties needing insurance updates.",
     ],
     sections: [
       {
-        heading: "1. Move-In-Ready Homes vs. Homes Needing Work",
-        body: "Across Tampa Bay in 2026, buyers are paying close attention to roof age, flood insurance, and move-in condition. Older homes with aging roofs sit longer on the market, while updated homes in top school zones (like our recent sales in Plantation Palms and Ballantrae) and new custom waterfront estates (like 6100 Bahama Shores Dr S in St. Petersburg) attract strong interest.",
+        heading: "1. What Buyers Focus On Heading Into 2027",
+        body: "Across Tampa Bay entering 2027, buyers focus closely on roof age, flood insurance costs, and move-in condition. Older homes with aging roofs sit longer on the market, while updated homes in sought-after school zones and new custom waterfront estates—like 6100 Bahama Shores Dr S in St. Petersburg—attract strong interest.",
       },
       {
-        heading: "2. Strong Demand for Commercial Buildings & Land",
-        body: "Small warehouses, professional offices along busy roads like Brandon Blvd (Hwy 60), and Central Florida acreage remain top picks for local business owners and 1031 exchange buyers.",
+        heading: "2. Demand for 55+ Villas, Commercial Buildings & Land",
+        body: "Active-adult 55+ neighborhoods in Wesley Chapel and South Shore, small warehouses and offices along busy corridors like Brandon Blvd (Hwy 60), and Central Florida acreage remain top picks for business owners and 1031 exchange buyers preparing for 2027.",
       },
     ],
+    relatedGuideSlugs: [
+      "first-time-and-relocation-buyer-costs-tampa-bay",
+      "florida-home-insurance-roof-age-wind-mitigation",
+      "best-55-plus-active-adult-communities-tampa-bay",
+    ],
+    relatedAreaSlugs: ["carrollwood-northdale", "wesley-chapel", "st-petersburg"],
   },
   {
     slug: "why-tech-and-finance-executives-are-moving-to-bayshore-and-water-street",
@@ -1804,7 +1828,21 @@ export const ARTICLES: ArticleItem[] = [
   },
 ];
 
-export const ALL_GUIDES_AND_QUESTIONS: KnowledgeItem[] = [...GUIDES, ...QUESTIONS];
+for (const entry of [...GUIDES, ...QUESTIONS, ...AREAS, ...EVENTS, ...ARTICLES] as Array<{
+  slug: string;
+  publishedAt?: string;
+  updatedAt?: string;
+  status?: PublicationStatus;
+}>) {
+  const gitDates = GIT_PUBLICATION_DATES[entry.slug];
+  entry.publishedAt = entry.publishedAt || gitDates?.publishedAt;
+  entry.updatedAt = entry.updatedAt || gitDates?.updatedAt;
+  entry.status = entry.status || "live";
+}
+
+export const ALL_GUIDES_AND_QUESTIONS: KnowledgeItem[] = [...GUIDES, ...QUESTIONS].filter(
+  (item) => item.status !== "draft"
+);
 
 const TOPIC_FALLBACK_MAP: Record<string, string[]> = {
   "55+": ["best-55-plus-active-adult-communities-tampa-bay", "55-plus-hoa-cdd-fees-tampa-bay", "florida-55-plus-condo-milestone-reserves-vs-villa"],

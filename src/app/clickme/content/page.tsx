@@ -15,6 +15,7 @@ function ContentPipelineContent() {
     { id: 3, title: 'Tampa Market Update: Fall 2026', description: 'Analyzing current cap rates and why waiting until spring might cost you in the current Pinellas County inventory squeeze.', date: '2026-08-20', status: 'Queue', platform: 'All Channels' },
   ]);
   const [generating, setGenerating] = useState(false);
+  const [previewPost, setPreviewPost] = useState<any | null>(null);
   
   // Pre-Created Post State
   const [isPreCreatedModalOpen, setIsPreCreatedModalOpen] = useState(false);
@@ -167,6 +168,28 @@ function ContentPipelineContent() {
                   </span>
                 </div>
                 <p style={{ color: '#4b5563', fontSize: '0.95rem', margin: 0, lineHeight: '1.5' }}>{post.description}</p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '0.85rem' }}>
+                  <button
+                    type="button"
+                    onClick={() => setPreviewPost(post)}
+                    style={{ background: '#f3f4f6', color: '#111827', border: '1px solid #d1d5db', padding: '0.4rem 0.85rem', borderRadius: '6px', fontWeight: 600, fontSize: '0.8rem', cursor: 'pointer' }}
+                  >
+                    Preview Draft
+                  </button>
+                  {post.status !== 'Signed Off & Live' && (
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setPosts((prev) =>
+                          prev.map((p) => (p.id === post.id ? { ...p, status: 'Signed Off & Live' } : p))
+                        )
+                      }
+                      style={{ background: '#111827', color: '#ffffff', border: 'none', padding: '0.4rem 0.9rem', borderRadius: '6px', fontWeight: 700, fontSize: '0.8rem', cursor: 'pointer' }}
+                    >
+                      Sign Off &amp; Publish
+                    </button>
+                  )}
+                </div>
               </div>
               <div style={{ textAlign: 'right' }}>
                 <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#111827', marginBottom: '0.25rem' }}>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</div>
@@ -176,6 +199,41 @@ function ContentPipelineContent() {
           ))}
         </div>
       </div>
+
+      {/* Portal Draft Preview & Sign-Off Modal */}
+      {previewPost && (
+        <div style={{ position: 'fixed', inset: 0, zIndex: 110, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem', background: 'rgba(17, 24, 39, 0.72)', backdropFilter: 'blur(4px)' }}>
+          <div style={{ background: '#ffffff', width: '100%', maxWidth: '640px', maxHeight: '90vh', overflowY: 'auto', borderRadius: '16px', padding: '2rem', boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.2)', position: 'relative' }}>
+            <button onClick={() => setPreviewPost(null)} style={{ position: 'absolute', top: '1.25rem', right: '1.25rem', background: 'transparent', border: 'none', color: '#6b7280', cursor: 'pointer', fontSize: '1.25rem', fontWeight: 700 }}>
+              &times;
+            </button>
+            <span style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.15em', color: '#9A7D3A', fontWeight: 800, display: 'block', marginBottom: '0.5rem' }}>
+              Portal Draft Preview &bull; {previewPost.platform}
+            </span>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#111827', margin: '0 0 0.75rem 0' }}>{previewPost.title}</h2>
+            <p style={{ color: '#374151', lineHeight: 1.7, fontSize: '0.95rem', marginBottom: '1.5rem' }}>{previewPost.description}</p>
+            <div style={{ padding: '1rem', borderRadius: '8px', background: '#f9fafb', border: '1px solid #e5e7eb', fontSize: '0.8rem', color: '#4b5563', marginBottom: '1.5rem' }}>
+              <strong>Publishing Gate:</strong> Portal-generated posts stay in draft review until signed off by Mark Davis, Rachael Garnett, or Super Admin.
+            </div>
+            <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'flex-end' }}>
+              <button onClick={() => setPreviewPost(null)} style={{ background: '#f3f4f6', border: '1px solid #d1d5db', padding: '0.6rem 1.25rem', borderRadius: '8px', fontWeight: 600, cursor: 'pointer' }}>
+                Close Preview
+              </button>
+              <button
+                onClick={() => {
+                  setPosts((prev) =>
+                    prev.map((p) => (p.id === previewPost.id ? { ...p, status: 'Signed Off & Live' } : p))
+                  );
+                  setPreviewPost(null);
+                }}
+                style={{ background: '#059669', color: '#ffffff', border: 'none', padding: '0.6rem 1.25rem', borderRadius: '8px', fontWeight: 700, cursor: 'pointer' }}
+              >
+                Sign Off &amp; Approve
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Pre-Created Post Modal */}
       {isPreCreatedModalOpen && (

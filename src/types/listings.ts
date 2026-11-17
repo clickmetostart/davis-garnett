@@ -88,6 +88,8 @@ export interface Listing {
   representation?: ListingRepresentation;
   soldDate?: string;
   featured: boolean;
+  publishedAt?: string;
+  editorialStatus?: "draft" | "live";
   specs?: ListingSpecs;
   description?: string;
   highlights: string[];

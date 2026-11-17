@@ -1,3 +1,5 @@
+import { GIT_PUBLICATION_DATES } from "@/data/publicationDates";
+
 export type DevelopmentCorridor = "downtown-bayshore" | "north-tampa";
 
 export interface HoaCddBreakdown {
@@ -58,9 +60,12 @@ export interface Development {
   officialSources?: DevelopmentSource[];
   sourceAttributionNotice?: string;
   isMixedUseCommercialResidential?: boolean;
+  publishedAt?: string;
+  updatedAt?: string;
+  editorialStatus?: "draft" | "live";
 }
 
-export const DEVELOPMENTS: Development[] = [
+const RAW_DEVELOPMENTS: Development[] = [
   // ============================================================================
   // CORRIDOR A: Downtown Tampa, Riverwalk, Water Street & Bayshore Luxury Towers
   // ============================================================================
@@ -1468,6 +1473,16 @@ export const DEVELOPMENTS: Development[] = [
     coordinates: { lat: 28.5530, lng: -82.3900 },
   },
 ];
+
+export const DEVELOPMENTS: Development[] = RAW_DEVELOPMENTS.map((dev) => {
+  const gitDates = GIT_PUBLICATION_DATES[dev.slug];
+  return {
+    ...dev,
+    publishedAt: dev.publishedAt || gitDates?.publishedAt,
+    updatedAt: dev.updatedAt || gitDates?.updatedAt,
+    editorialStatus: dev.editorialStatus || "live",
+  };
+}).filter((dev) => dev.editorialStatus !== "draft");
 
 export function getDevelopmentBySlug(slug: string): Development | undefined {
   return DEVELOPMENTS.find((dev) => dev.slug === slug);
