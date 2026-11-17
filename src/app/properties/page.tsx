@@ -27,9 +27,12 @@ import {
   Search,
   Sparkles,
   RefreshCw,
+  Pause,
+  Play,
 } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
+import { swipeHandlers, SWIPE_STYLE } from "@/lib/swipe";
 import listingsData from "@/data/listings.json";
 import { Listing } from "@/types/listings";
 
@@ -79,6 +82,8 @@ export default function PropertiesPage() {
   const [loftyOfficeConnected, setLoftyOfficeConnected] = useState(false);
   const [visibleSoldCount, setVisibleSoldCount] = useState(6);
   const [soldExpandedByUser, setSoldExpandedByUser] = useState(false);
+  const [featuredIndex, setFeaturedIndex] = useState(0);
+  const [isFeaturedPaused, setIsFeaturedPaused] = useState(false);
 
   const newListingsRef = useRef<HTMLDivElement>(null);
   const carrollwoodRef = useRef<HTMLDivElement>(null);
@@ -145,9 +150,27 @@ export default function PropertiesPage() {
     return true;
   };
 
-  const activeListings = allListings.filter(
-    (l) => l.status === "Active" && (selectedTab === "Recent Transactions (Sold)" ? false : matchesTab(l))
-  );
+  const activeListings = allListings.filter((l) => l.status === "Active");
+  const featuredCount = activeListings.length;
+  const safeFeaturedIndex = featuredCount > 0 ? featuredIndex % featuredCount : 0;
+
+  const prevFeatured = () => {
+    if (featuredCount <= 1) return;
+    setFeaturedIndex((prev) => (prev - 1 + featuredCount) % featuredCount);
+  };
+
+  const nextFeatured = () => {
+    if (featuredCount <= 1) return;
+    setFeaturedIndex((prev) => (prev + 1) % featuredCount);
+  };
+
+  useEffect(() => {
+    if (featuredCount <= 1 || isFeaturedPaused) return;
+    const timer = window.setInterval(() => {
+      setFeaturedIndex((prev) => (prev + 1) % featuredCount);
+    }, 5500);
+    return () => window.clearInterval(timer);
+  }, [featuredCount, isFeaturedPaused]);
 
   const soldListings = allListings.filter(
     (l) => l.status === "Sold" && matchesTab(l)
@@ -337,13 +360,18 @@ export default function PropertiesPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════════
-          COLLECTIVE SECTION 1: ACTIVE SIGNATURE LISTINGS
+          COLLECTIVE SECTION 1: FEATURED DECK SLIDER (AUTO-PLAY & GRABBABLE)
          ══════════════════════════════════════════════════════════════════ */}
       {activeListings.length > 0 && (
-        <section id="featured" className="py-20 px-6 lg:px-10 bg-white border-b border-[#111111]/8 scroll-mt-24">
+        <section
+          id="featured"
+          className="py-20 px-6 lg:px-10 bg-white border-b border-[#111111]/8 scroll-mt-24"
+          onMouseEnter={() => setIsFeaturedPaused(true)}
+          onMouseLeave={() => setIsFeaturedPaused(false)}
+        >
           <div id="featured-listings" />
           <div className="max-w-screen-xl mx-auto">
-            <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 gap-6">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-6">
               <div>
                 <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
                   Featured Offerings · Active Inventory
@@ -352,237 +380,295 @@ export default function PropertiesPage() {
                   Featured Florida Listings
                 </h2>
               </div>
-              <div className="flex flex-wrap items-center gap-2">
-                {(["All", "Residential", "Commercial & Mixed-Use", "Land & Acreage"] as FilterTab[]).map((tab) => {
-                  const isActive = selectedTab === tab;
-                  return (
-                    <button
-                      key={tab}
-                      onClick={() => setSelectedTab(tab)}
-                      className={`px-4 py-2.5 rounded-lg text-xs font-bold uppercase tracking-widest border transition-colors ${
-                        isActive
-                          ? "bg-[#111111] text-[#C8A951] border-[#111111]"
-                          : "bg-[#f5f3ef] text-[#111111]/75 border-[#111111]/10 hover:border-[#C8A951] hover:text-[#111111]"
-                      }`}
-                    >
-                      {tab}
-                    </button>
-                  );
-                })}
+
+              <div className="flex items-center gap-3 self-start sm:self-end">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#111111]/60 px-3 py-2 rounded-lg bg-[#f5f3ef] border border-[#111111]/10">
+                  {String(safeFeaturedIndex + 1).padStart(2, "0")} /{" "}
+                  {String(featuredCount).padStart(2, "0")}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setIsFeaturedPaused((p) => !p)}
+                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#f5f3ef] hover:bg-[#111111] text-[#111111] hover:text-[#C8A951] border border-[#111111]/10 text-xs font-bold uppercase tracking-wider transition-colors"
+                  aria-label={isFeaturedPaused ? "Play Featured Slider" : "Pause Featured Slider"}
+                >
+                  {isFeaturedPaused ? (
+                    <>
+                      <Play className="w-3.5 h-3.5" /> Play
+                    </>
+                  ) : (
+                    <>
+                      <Pause className="w-3.5 h-3.5" /> Auto
+                    </>
+                  )}
+                </button>
               </div>
             </div>
 
-            <div className="space-y-12">
-              {activeListings.map((listing, idx) => {
-                const isEven = idx % 2 === 1;
-                return (
-                  <div
-                    key={listing.id}
-                    className="group bg-[#fbfbf9] rounded-3xl overflow-hidden border border-[#111111]/10 hover:border-[#C8A951]/60 hover:shadow-xl transition-all duration-500 grid lg:grid-cols-12"
-                  >
-                    {/* Image Column */}
-                    <div
-                      className={`relative min-h-[340px] sm:min-h-[420px] lg:col-span-6 overflow-hidden ${
-                        isEven ? "lg:order-2" : "lg:order-1"
-                      }`}
+            {/* Full-Section Grabbable Slider Deck + Sticky Viewport Edge Arrows */}
+            <div className="relative">
+              {featuredCount > 1 && (
+                <div className="absolute inset-0 z-20 pointer-events-none">
+                  <div className="sticky top-[46%] flex items-center justify-between -mx-2 sm:-mx-4 lg:-mx-6">
+                    <button
+                      type="button"
+                      onClick={prevFeatured}
+                      className="pointer-events-auto w-12 h-12 rounded-full bg-[#111111]/90 hover:bg-[#C8A951] text-[#C8A951] hover:text-[#111111] border border-[#C8A951]/50 shadow-xl flex items-center justify-center transition-all hover:scale-105 active:scale-95"
+                      aria-label="Previous Featured Listing"
                     >
-                      <Link href={`/listings/${listing.slug}`} className="block w-full h-full">
-                        <Image
-                          src={listing.images?.main || "/listings/bahama-shores-1.jpg"}
-                          alt={listing.title}
-                          fill
-                          sizes="(max-width: 1024px) 100vw, 50vw"
-                          className="object-cover transition-transform duration-700 group-hover:scale-105"
-                          priority={idx < 2}
-                          unoptimized
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
-
-                        <div className="absolute top-5 left-5 flex flex-wrap gap-2">
-                          <span className="bg-[#22c55e] text-white text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-sm">
-                            ● Featured Active
-                          </span>
-                          <span
-                            className={`text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-sm ${
-                              CATEGORY_BADGE_STYLE[listing.category] || "bg-black text-white"
-                            }`}
-                          >
-                            {listing.category}
-                          </span>
-                          {listing.mlsId && (
-                            <span className="bg-black/65 backdrop-blur text-white text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-sm">
-                              MLS# {listing.mlsId}
-                            </span>
-                          )}
-                        </div>
-
-                        <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between text-white">
-                          <div>
-                            <span className="text-[#C8A951] text-[10px] uppercase tracking-[0.25em] font-bold block">
-                              {listing.neighborhood || listing.county}
-                            </span>
-                            <span className="font-aiveritas text-3xl sm:text-4xl">
-                              {listing.price}
-                            </span>
-                          </div>
-                          {listing.images?.gallery && (
-                            <span className="bg-black/60 backdrop-blur text-white/90 text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">
-                              {listing.images.gallery.length} Photos
-                            </span>
-                          )}
-                        </div>
-                      </Link>
-                    </div>
-
-                    {/* Editorial Details Column */}
-                    <div
-                      className={`p-8 sm:p-10 lg:p-12 lg:col-span-6 flex flex-col justify-between ${
-                        isEven ? "lg:order-1" : "lg:order-2"
-                      }`}
+                      <ChevronLeft className="w-6 h-6" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={nextFeatured}
+                      className="pointer-events-auto w-12 h-12 rounded-full bg-[#111111]/90 hover:bg-[#C8A951] text-[#C8A951] hover:text-[#111111] border border-[#C8A951]/50 shadow-xl flex items-center justify-center transition-all hover:scale-105 active:scale-95"
+                      aria-label="Next Featured Listing"
                     >
-                      <div>
-                        <div className="flex items-center justify-between gap-2 mb-3">
-                          <span className="text-[#9A7D3A] text-xs font-bold uppercase tracking-[0.22em]">
-                            {listing.propertyType}
-                          </span>
-                          <div className="flex items-center gap-2">
-                            <div className="flex -space-x-2">
-                              {/* eslint-disable-next-line @next/next/no-img-element */}
-                              <img
-                                src="/davis-garnett-headshots/mark-davis-avatar-footer.JPG"
-                                alt="Mark Davis"
-                                className="w-6 h-6 rounded-full object-cover object-top border border-[#C8A951]"
-                              />
-                              {/* eslint-disable-next-line @next/next/no-img-element */}
-                              <img
-                                src="/davis-garnett-headshots/rachael-garnett-avatar-footer.webp"
-                                alt="Rachael Garnett"
-                                className="w-6 h-6 rounded-full object-cover object-[center_30%] border border-[#C8A951]"
-                              />
-                            </div>
-                            <span className="text-xs text-[#111111]/60 font-medium">
-                              Mark Davis &amp; Rachael Garnett
-                            </span>
-                          </div>
-                        </div>
-
-                        <Link href={`/listings/${listing.slug}`}>
-                          <h3 className="font-aiveritas text-3xl sm:text-4xl text-[#111111] group-hover:text-[#9A7D3A] transition-colors mb-2">
-                            {listing.title}
-                          </h3>
-                        </Link>
-
-                        <p className="text-[#111111]/60 text-sm flex items-center gap-1.5 mb-5">
-                          <MapPin className="w-4 h-4 text-[#C8A951] shrink-0" />
-                          {listing.address}, {listing.city}, {listing.state} {listing.zip} ({listing.county})
-                        </p>
-
-                        <p className="text-[#111111]/75 font-light text-base leading-relaxed mb-6 line-clamp-3">
-                          {listing.description}
-                        </p>
-
-                        {/* Highlights 2-col checklist */}
-                        <div className="grid sm:grid-cols-2 gap-2.5 mb-6">
-                          {listing.highlights.slice(0, 4).map((h) => (
-                            <div
-                              key={h}
-                              className="flex items-start gap-2 text-xs md:text-sm text-[#111111]/80"
-                            >
-                              <CheckCircle className="w-3.5 h-3.5 text-[#C8A951] shrink-0 mt-0.5" />
-                              <span className="line-clamp-2">{h}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div>
-                        {/* Executive Specs Strip */}
-                        <div className="flex flex-wrap gap-6 border-t border-[#111111]/10 pt-5 mb-6 text-xs">
-                          {listing.specs?.beds !== undefined && (
-                            <div>
-                              <span className="text-[#111111]/45 uppercase tracking-wider block text-[10px] font-bold">
-                                Bedrooms
-                              </span>
-                              <span className="font-bold text-[#111111] text-sm">
-                                {listing.specs.beds} Beds
-                              </span>
-                            </div>
-                          )}
-                          {listing.specs?.baths !== undefined && (
-                            <div>
-                              <span className="text-[#111111]/45 uppercase tracking-wider block text-[10px] font-bold">
-                                Bathrooms
-                              </span>
-                              <span className="font-bold text-[#111111] text-sm">
-                                {listing.specs.baths} Baths
-                              </span>
-                            </div>
-                          )}
-                          {listing.specs?.buildings !== undefined && (
-                            <div>
-                              <span className="text-[#111111]/45 uppercase tracking-wider block text-[10px] font-bold">
-                                Structures
-                              </span>
-                              <span className="font-bold text-[#111111] text-sm">
-                                {listing.specs.buildings} Buildings
-                              </span>
-                            </div>
-                          )}
-                          {listing.specs?.sqft && (
-                            <div>
-                              <span className="text-[#111111]/45 uppercase tracking-wider block text-[10px] font-bold">
-                                Area / SqFt
-                              </span>
-                              <span className="font-bold text-[#111111] text-sm">
-                                {listing.specs.sqft} SqFt
-                              </span>
-                            </div>
-                          )}
-                          {listing.specs?.lotSize && (
-                            <div>
-                              <span className="text-[#111111]/45 uppercase tracking-wider block text-[10px] font-bold">
-                                Acreage / Lot
-                              </span>
-                              <span className="font-bold text-[#111111] text-sm">
-                                {listing.specs.lotSize}
-                              </span>
-                            </div>
-                          )}
-                          {listing.specs?.waterfrontFeet && (
-                            <div>
-                              <span className="text-[#111111]/45 uppercase tracking-wider block text-[10px] font-bold">
-                                Waterfront
-                              </span>
-                              <span className="font-bold text-[#9A7D3A] text-sm">
-                                ~{listing.specs.waterfrontFeet} Linear Ft
-                              </span>
-                            </div>
-                          )}
-                        </div>
-
-                        {/* CTA Buttons */}
-                        <div className="flex flex-wrap items-center gap-3">
-                          <Link
-                            href={`/listings/${listing.slug}`}
-                            className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#111111] text-white text-xs font-bold uppercase tracking-[0.2em] rounded-xl hover:bg-[#C8A951] hover:text-[#111111] transition-colors"
-                          >
-                            Explore Custom Showcase <ArrowRight className="w-4 h-4" />
-                          </Link>
-                          <Link
-                            href={`/listings/${listing.slug}#crm-lead-form`}
-                            className="inline-flex items-center gap-2 px-6 py-3.5 border border-[#111111]/20 text-[#111111] text-xs font-bold uppercase tracking-[0.2em] rounded-xl hover:border-[#111111] transition-colors"
-                          >
-                            {listing.category === "Residential"
-                              ? "Schedule Showing"
-                              : "Request Offering Memo"}
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
+                      <ChevronRight className="w-6 h-6" />
+                    </button>
                   </div>
-                );
-              })}
+                </div>
+              )}
+
+              <div
+                className="overflow-hidden rounded-3xl cursor-grab active:cursor-grabbing"
+                style={SWIPE_STYLE}
+                {...swipeHandlers(prevFeatured, nextFeatured)}
+              >
+                <div
+                  className="flex transition-transform duration-700 ease-out"
+                  style={{ transform: `translateX(-${safeFeaturedIndex * 100}%)` }}
+                >
+                  {activeListings.map((listing, idx) => (
+                    <div
+                      key={listing.id}
+                      className="w-full shrink-0 group bg-[#fbfbf9] rounded-3xl overflow-hidden border border-[#111111]/10 grid lg:grid-cols-12"
+                    >
+                      {/* Full Showcase Image Column */}
+                      <div className="relative min-h-[340px] sm:min-h-[460px] lg:col-span-6 overflow-hidden">
+                        <Link
+                          href={`/listings/${listing.slug}`}
+                          className="block w-full h-full"
+                          draggable={false}
+                        >
+                          <Image
+                            src={resolveListingImage(listing)}
+                            alt={listing.title}
+                            fill
+                            sizes="(max-width: 1024px) 100vw, 50vw"
+                            className="object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none"
+                            priority={idx === 0}
+                            draggable={false}
+                            unoptimized
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
+
+                          <div className="absolute top-5 left-5 flex flex-wrap gap-2">
+                            <span className="bg-[#22c55e] text-white text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-sm">
+                              ● Featured Active
+                            </span>
+                            <span
+                              className={`text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-sm ${
+                                CATEGORY_BADGE_STYLE[listing.category] || "bg-black text-white"
+                              }`}
+                            >
+                              {listing.category}
+                            </span>
+                            {listing.mlsId && (
+                              <span className="bg-black/65 backdrop-blur text-white text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-sm">
+                                MLS# {listing.mlsId}
+                              </span>
+                            )}
+                          </div>
+
+                          <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between text-white">
+                            <div>
+                              <span className="text-[#C8A951] text-[10px] uppercase tracking-[0.25em] font-bold block">
+                                {listing.neighborhood || listing.county}
+                              </span>
+                              <span className="font-aiveritas text-3xl sm:text-4xl">
+                                {resolveListingPrice(listing)}
+                              </span>
+                            </div>
+                            {listing.images?.gallery && (
+                              <span className="bg-black/60 backdrop-blur text-white/90 text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">
+                                {listing.images.gallery.length} Photos
+                              </span>
+                            )}
+                          </div>
+                        </Link>
+                      </div>
+
+                      {/* Editorial Details Column */}
+                      <div className="p-8 sm:p-10 lg:p-12 lg:col-span-6 flex flex-col justify-between">
+                        <div>
+                          <div className="flex items-center justify-between gap-2 mb-3">
+                            <span className="text-[#9A7D3A] text-xs font-bold uppercase tracking-[0.22em]">
+                              {listing.propertyType}
+                            </span>
+                            <div className="flex items-center gap-2">
+                              <div className="flex -space-x-2">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                  src="/davis-garnett-headshots/mark-davis-avatar-footer.JPG"
+                                  alt="Mark Davis"
+                                  draggable={false}
+                                  className="w-6 h-6 rounded-full object-cover object-top border border-[#C8A951]"
+                                />
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                  src="/davis-garnett-headshots/rachael-garnett-avatar-footer.webp"
+                                  alt="Rachael Garnett"
+                                  draggable={false}
+                                  className="w-6 h-6 rounded-full object-cover object-[center_30%] border border-[#C8A951]"
+                                />
+                              </div>
+                              <span className="text-xs text-[#111111]/60 font-medium">
+                                Mark Davis &amp; Rachael Garnett
+                              </span>
+                            </div>
+                          </div>
+
+                          <Link href={`/listings/${listing.slug}`} draggable={false}>
+                            <h3 className="font-aiveritas text-3xl sm:text-4xl text-[#111111] group-hover:text-[#9A7D3A] transition-colors mb-2">
+                              {listing.title}
+                            </h3>
+                          </Link>
+
+                          <p className="text-[#111111]/60 text-sm flex items-center gap-1.5 mb-5">
+                            <MapPin className="w-4 h-4 text-[#C8A951] shrink-0" />
+                            {listing.address}, {listing.city}, {listing.state} {listing.zip} ({listing.county})
+                          </p>
+
+                          <p className="text-[#111111]/75 font-light text-base leading-relaxed mb-6 line-clamp-3">
+                            {listing.description}
+                          </p>
+
+                          {/* Highlights 2-col checklist */}
+                          <div className="grid sm:grid-cols-2 gap-2.5 mb-6">
+                            {(listing.highlights || []).slice(0, 4).map((h) => (
+                              <div
+                                key={h}
+                                className="flex items-start gap-2 text-xs md:text-sm text-[#111111]/80"
+                              >
+                                <CheckCircle className="w-3.5 h-3.5 text-[#C8A951] shrink-0 mt-0.5" />
+                                <span className="line-clamp-2">{h}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div>
+                          {/* Executive Specs Strip */}
+                          <div className="flex flex-wrap gap-6 border-t border-[#111111]/10 pt-5 mb-6 text-xs">
+                            {listing.specs?.beds !== undefined && (
+                              <div>
+                                <span className="text-[#111111]/45 uppercase tracking-wider block text-[10px] font-bold">
+                                  Bedrooms
+                                </span>
+                                <span className="font-bold text-[#111111] text-sm">
+                                  {listing.specs.beds} Beds
+                                </span>
+                              </div>
+                            )}
+                            {listing.specs?.baths !== undefined && (
+                              <div>
+                                <span className="text-[#111111]/45 uppercase tracking-wider block text-[10px] font-bold">
+                                  Bathrooms
+                                </span>
+                                <span className="font-bold text-[#111111] text-sm">
+                                  {listing.specs.baths} Baths
+                                </span>
+                              </div>
+                            )}
+                            {listing.specs?.buildings !== undefined && (
+                              <div>
+                                <span className="text-[#111111]/45 uppercase tracking-wider block text-[10px] font-bold">
+                                  Structures
+                                </span>
+                                <span className="font-bold text-[#111111] text-sm">
+                                  {listing.specs.buildings} Buildings
+                                </span>
+                              </div>
+                            )}
+                            {listing.specs?.sqft && (
+                              <div>
+                                <span className="text-[#111111]/45 uppercase tracking-wider block text-[10px] font-bold">
+                                  Area / SqFt
+                                </span>
+                                <span className="font-bold text-[#111111] text-sm">
+                                  {listing.specs.sqft} SqFt
+                                </span>
+                              </div>
+                            )}
+                            {listing.specs?.lotSize && (
+                              <div>
+                                <span className="text-[#111111]/45 uppercase tracking-wider block text-[10px] font-bold">
+                                  Acreage / Lot
+                                </span>
+                                <span className="font-bold text-[#111111] text-sm">
+                                  {listing.specs.lotSize}
+                                </span>
+                              </div>
+                            )}
+                            {listing.specs?.waterfrontFeet && (
+                              <div>
+                                <span className="text-[#111111]/45 uppercase tracking-wider block text-[10px] font-bold">
+                                  Waterfront
+                                </span>
+                                <span className="font-bold text-[#9A7D3A] text-sm">
+                                  ~{listing.specs.waterfrontFeet} Linear Ft
+                                </span>
+                              </div>
+                            )}
+                          </div>
+
+                          {/* CTA Buttons */}
+                          <div className="flex flex-wrap items-center gap-3">
+                            <Link
+                              href={`/listings/${listing.slug}`}
+                              draggable={false}
+                              className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#111111] text-white text-xs font-bold uppercase tracking-[0.2em] rounded-xl hover:bg-[#C8A951] hover:text-[#111111] transition-colors"
+                            >
+                              Explore Custom Showcase <ArrowRight className="w-4 h-4" />
+                            </Link>
+                            <Link
+                              href={`/listings/${listing.slug}#crm-lead-form`}
+                              draggable={false}
+                              className="inline-flex items-center gap-2 px-6 py-3.5 border border-[#111111]/20 text-[#111111] text-xs font-bold uppercase tracking-[0.2em] rounded-xl hover:border-[#111111] transition-colors"
+                            >
+                              {listing.category === "Residential"
+                                ? "Schedule Showing"
+                                : "Request Offering Memo"}
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
+
+            {/* Deck Navigation Pills / Pagination Dots */}
+            {featuredCount > 1 && (
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-2.5">
+                {activeListings.map((item, idx) => (
+                  <button
+                    key={`featured-dot-${item.slug}`}
+                    type="button"
+                    onClick={() => setFeaturedIndex(idx)}
+                    className={`px-3.5 py-2 rounded-full text-xs font-bold transition-all border ${
+                      idx === safeFeaturedIndex
+                        ? "bg-[#111111] text-[#C8A951] border-[#111111] shadow-sm"
+                        : "bg-[#f5f3ef] text-[#111111]/65 border-[#111111]/10 hover:border-[#C8A951] hover:text-[#111111]"
+                    }`}
+                  >
+                    {item.title}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         </section>
       )}
