@@ -17,6 +17,8 @@ import {
 } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
+import { GlossaryAutoText } from "@/components/GlossaryAutoText";
+import { getRelatedGlossaryTermsForTaxonomy } from "@/data/glossary";
 import type { AreaItem, KnowledgeItem } from "@/data/knowledgeHub";
 import type { Development } from "@/data/developments";
 
@@ -73,6 +75,18 @@ export default function AreaSpokeClient({
   };
 
   const quickAnswerText = area.quickAnswer || `${area.tagline} — ${area.overview}`;
+  const usedGlossarySlugs = new Set<string>();
+  const lastUpdatedLabel = (area.updatedAt || area.publishedAt || "2026-11-17").slice(0, 10);
+  const relatedGlossary = getRelatedGlossaryTermsForTaxonomy({
+    text: `${area.name} ${area.tagline} ${area.overview}`,
+    city: area.name,
+    explicitSlugs: area.relatedGlossarySlugs,
+    propertyType: area.propertyType,
+    audience: area.audience,
+    county: area.countyTags,
+    corridor: area.corridor,
+    limit: 4,
+  });
 
   return (
     <div className="min-h-screen bg-white text-[#111] font-sans selection:bg-[#D4AF37] selection:text-white">
@@ -86,6 +100,14 @@ export default function AreaSpokeClient({
         </div>
 
         <div className="relative z-10 max-w-screen-xl mx-auto">
+          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-widest text-white/60 mb-5">
+            <Link href="/" className="hover:text-[#D4AF37] transition-colors">Home</Link>
+            <span>/</span>
+            <Link href="/knowledge-hub#areas" className="hover:text-[#D4AF37] transition-colors">Areas We Serve</Link>
+            <span>/</span>
+            <span className="text-[#D4AF37]">{area.name}</span>
+          </nav>
+
           <Link
             href="/knowledge-hub#areas"
             className="inline-flex items-center gap-2 text-[#D4AF37] hover:text-white text-xs font-bold uppercase tracking-widest mb-8 transition-colors"
@@ -100,6 +122,7 @@ export default function AreaSpokeClient({
             <span className="flex items-center gap-1.5 text-[#D4AF37] font-bold">
               <TrendingUp className="w-3.5 h-3.5" /> {area.yoyGrowth}
             </span>
+            <span className="text-white/65">Last updated {lastUpdatedLabel}</span>
           </div>
 
           <h1 className="font-aiveritas text-4xl md:text-6xl text-white max-w-4xl mb-4 leading-tight">
@@ -143,7 +166,7 @@ export default function AreaSpokeClient({
                 <Sparkles className="w-4 h-4" /> Area At-a-Glance
               </div>
               <p className="text-sm md:text-base text-white/90 leading-relaxed font-light">
-                {quickAnswerText}
+                <GlossaryAutoText text={quickAnswerText} usedSlugs={usedGlossarySlugs} />
               </p>
             </div>
 
@@ -151,7 +174,7 @@ export default function AreaSpokeClient({
               Market Overview &amp; Neighborhood Intelligence
             </h2>
             <p className="text-[#111]/75 text-base md:text-lg font-light leading-relaxed mb-10">
-              {area.overview}
+              <GlossaryAutoText text={area.overview} usedSlugs={usedGlossarySlugs} />
             </p>
 
             {/* Top Neighborhoods Chips */}
@@ -180,10 +203,40 @@ export default function AreaSpokeClient({
                     {sec.heading}
                   </h3>
                   <p className="text-[#111]/75 font-light leading-relaxed text-base md:text-lg">
-                    {sec.body}
+                    <GlossaryAutoText text={sec.body} usedSlugs={usedGlossarySlugs} />
                   </p>
                 </div>
               ))}
+            </div>
+
+            {/* How Mark & Rachael Handle It + Glossary Terms */}
+            <div className="mt-12 p-6 md:p-8 rounded-2xl bg-[#f5f3ef] border border-[#D4AF37]/40 space-y-4">
+              <span className="text-[10px] uppercase tracking-[0.25em] font-bold text-[#9A7D3A] block">
+                Local Advisor Playbook
+              </span>
+              <h3 className="font-aiveritas text-2xl text-[#111]">
+                How Mark &amp; Rachael Advise Buyers &amp; Sellers in {area.name}
+              </h3>
+              <p className="text-sm md:text-base text-[#111]/80 leading-relaxed font-light">
+                {area.howWeHandleIt ||
+                  `In ${area.name}, property taxes, flood elevations, HOA/CDD budgets, and roof-age underwriting vary block by block. Mark Davis (FL Lic #3209459) and Rachael Garnett (FL Lic #3378601) compare true carrying costs and micro-street comps before you write an offer or price a home.`}
+              </p>
+              {relatedGlossary.length > 0 && (
+                <div className="pt-3 border-t border-[#111]/10 flex flex-wrap items-center gap-2">
+                  <span className="text-[10px] uppercase tracking-widest font-bold text-[#9A7D3A] mr-1">
+                    Key Terms:
+                  </span>
+                  {relatedGlossary.map((term) => (
+                    <Link
+                      key={term.slug}
+                      href={`/glossary/${term.slug}`}
+                      className="px-3 py-1.5 rounded-lg bg-white border border-[#111]/12 hover:border-[#D4AF37] text-xs font-bold text-[#111] transition-colors"
+                    >
+                      {term.shortTitle}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Featured Portfolio + Search MLS Links */}

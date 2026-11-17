@@ -32,12 +32,18 @@ import {
   School,
   FileText,
   X,
-  Expand
+  Expand,
+  BookOpen,
+  Download,
+  Sparkles,
+  Calculator
 } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
 import EmailActionBox from "@/components/EmailActionBox";
+import GuideDownloadModal from "@/components/GuideDownloadModal";
 import { swipeHandlers, SWIPE_STYLE } from "@/lib/swipe";
+import { getSpiderwebForListing } from "@/lib/spiderweb";
 import listingsData from "@/data/listings.json";
 import { Listing } from "@/types/listings";
 
@@ -82,6 +88,7 @@ export default function ListingDetailPage() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [saved, setSaved] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [omModalOpen, setOmModalOpen] = useState(false);
 
   const [leadForm, setLeadForm] = useState({
     firstName: "",
@@ -321,6 +328,78 @@ export default function ListingDetailPage() {
       : [])
   ].slice(0, 4);
 
+  const spiderweb = getSpiderwebForListing(listing);
+  const findFinancial = (needle: string) =>
+    listing.financials?.find((f) => f.label.toLowerCase().includes(needle))?.value;
+
+  const offeringFacts = isCommercialOrLand
+    ? [
+        {
+          label: "Zoning Classification",
+          value: listing.specs?.zoning || listing.zoning || "Verify with County Planning",
+        },
+        {
+          label: "Utilities & Infrastructure",
+          value:
+            listing.utilities ||
+            findFinancial("utilit") ||
+            (listing.category === "Commercial"
+              ? "Municipal Water, Sewer & Power"
+              : "Well / Septic Feasibility (Confirm Utility Tie-In)"),
+        },
+        {
+          label: "FEMA Flood Zone",
+          value:
+            listing.floodZone ||
+            findFinancial("flood") ||
+            "Verify Elevation Certificate / FEMA Map",
+        },
+        {
+          label: "Access & Frontage",
+          value:
+            listing.accessInfo ||
+            findFinancial("access") ||
+            (listing.streetAddress || listing.address
+              ? `Direct frontage along ${listing.city} corridor`
+              : "Deeded Access / Survey Confirmation"),
+        },
+        {
+          label: "Parcel / Folio ID",
+          value:
+            listing.parcelId ||
+            findFinancial("parcel") ||
+            findFinancial("folio") ||
+            `${listing.county} Property Appraiser Record`,
+        },
+        {
+          label: "Price & Yield Context",
+          value:
+            listing.specs?.capRate ||
+            listing.capRate ||
+            listing.specs?.pricePerAcre ||
+            listing.specs?.pricePerSqft ||
+            displayPrice,
+        },
+      ]
+    : [];
+
+  const offeringQuickAnswer =
+    listing.quickAnswer ||
+    `${listing.title} is an ${listing.category.toLowerCase()} offering in ${listing.city}, ${listing.state} (${listing.county}) listed at ${displayPrice}. Advised by Mark Davis (FL Lic #3209459) and Rachael Garnett (FL Lic #3378601) with full zoning, utility, and comparable valuation underwriting available upon request.`;
+
+  const omSections = [
+    {
+      heading: "Offering Executive Summary",
+      body: offeringQuickAnswer,
+      bullets: (listing.highlights || []).filter(Boolean),
+    },
+    {
+      heading: "Zoning, Site & Underwriting Specifications",
+      body: `Property Location: ${listing.city}, ${listing.state} ${listing.zip} (${listing.county}).`,
+      bullets: offeringFacts.map((f) => `${f.label}: ${f.value}`),
+    },
+  ];
+
   const otherActiveListings = (listingsData as unknown as Listing[])
     .filter((l) => l.status === "Active" && l.slug !== listing.slug)
     .slice(0, 3);
@@ -558,6 +637,53 @@ export default function ListingDetailPage() {
                 ))}
               </div>
             </div>
+
+            {/* Commercial & Land Offering Template: Quick Answer + Zoning/Utilities/Flood/Parcel Grid + Gated OM */}
+            {isCommercialOrLand && (
+              <div className="space-y-6">
+                <div className="bg-[#111111] text-white rounded-2xl p-8 border border-[#C8A951]/40 shadow-lg">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                    <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em] text-[#C8A951]">
+                      <Sparkles className="w-4 h-4" /> Offering Summary &amp; Quick Answer
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setOmModalOpen(true)}
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#C8A951] hover:bg-white text-[#111111] text-xs font-bold uppercase tracking-widest transition-colors"
+                    >
+                      <Download className="w-4 h-4" /> Request Offering Memorandum (PDF)
+                    </button>
+                  </div>
+                  <p className="text-sm md:text-base text-white/90 font-light leading-relaxed">
+                    {offeringQuickAnswer}
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#111111]/8">
+                  <span className="text-[#9A7D3A] text-[10px] uppercase tracking-[0.25em] font-bold block mb-2">
+                    Due Diligence Fact Sheet
+                  </span>
+                  <h2 className="font-aiveritas text-3xl text-[#111111] mb-6">
+                    Zoning, Utilities, Flood Zone &amp; Parcel Data
+                  </h2>
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {offeringFacts.map((fact) => (
+                      <div
+                        key={fact.label}
+                        className="p-4 bg-[#f5f3ef] rounded-xl border border-[#111111]/8"
+                      >
+                        <span className="text-[10px] uppercase tracking-widest font-bold text-[#9A7D3A] block mb-1">
+                          {fact.label}
+                        </span>
+                        <span className="text-sm font-bold text-[#111111] leading-snug block">
+                          {fact.value}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* Editorial Narrative */}
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#111111]/8">
@@ -819,6 +945,83 @@ export default function ListingDetailPage() {
                 />
               </div>
             </div>
+
+            {/* Bidirectional Spiderweb: Related Guides, Glossary Terms & Tools */}
+            {(spiderweb.guides.length > 0 || spiderweb.glossaryTerms.length > 0) && (
+              <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#111111]/8 space-y-6">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <div>
+                    <span className="text-[#9A7D3A] text-[10px] uppercase tracking-[0.25em] font-bold block mb-1">
+                      Connected Planning Resources
+                    </span>
+                    <h2 className="font-aiveritas text-2xl text-[#111111]">
+                      Related Guides, Glossary &amp; {isCommercialOrLand ? "Underwriting Tools" : "Area Intelligence"}
+                    </h2>
+                  </div>
+                  {isCommercialOrLand && (
+                    <div className="flex flex-wrap gap-2">
+                      <Link
+                        href="/tools/cap-rate-calculator"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#111111] text-[#C8A951] hover:bg-[#C8A951] hover:text-[#111111] text-[11px] font-bold uppercase tracking-wider transition-colors"
+                      >
+                        <Calculator className="w-3.5 h-3.5" /> Cap Rate Tool
+                      </Link>
+                      <Link
+                        href="/tools/1031-deadline-calculator"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#f5f3ef] border border-[#111111]/12 hover:border-[#C8A951] text-[11px] font-bold uppercase tracking-wider text-[#111111] transition-colors"
+                      >
+                        1031 Calculator
+                      </Link>
+                    </div>
+                  )}
+                </div>
+
+                {spiderweb.guides.length > 0 && (
+                  <div className="grid sm:grid-cols-3 gap-4">
+                    {spiderweb.guides.map((g) => (
+                      <Link
+                        key={g.slug}
+                        href={`/knowledge-hub/${g.slug}`}
+                        className="p-4 rounded-xl bg-[#f5f3ef] hover:bg-[#C8A951]/15 border border-[#111111]/8 transition-colors flex flex-col justify-between"
+                      >
+                        <div>
+                          <span className="text-[10px] uppercase tracking-widest font-bold text-[#9A7D3A] flex items-center gap-1 mb-1">
+                            <BookOpen className="w-3 h-3" /> {g.category}
+                          </span>
+                          <div className="text-sm font-bold text-[#111111] leading-snug">{g.title}</div>
+                        </div>
+                        <span className="text-[11px] font-bold text-[#9A7D3A] mt-3 inline-flex items-center gap-1">
+                          Read Guide <ArrowRight className="w-3 h-3" />
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+
+                {(spiderweb.areas.length > 0 || spiderweb.glossaryTerms.length > 0) && (
+                  <div className="pt-4 border-t border-[#111111]/8 flex flex-wrap items-center gap-2">
+                    {spiderweb.areas.map((area) => (
+                      <Link
+                        key={area.slug}
+                        href={`/knowledge-hub/areas/${area.slug}`}
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#f5f3ef] border border-[#111111]/10 hover:border-[#C8A951] text-xs font-bold text-[#111111]"
+                      >
+                        <MapPin className="w-3 h-3 text-[#9A7D3A]" /> {area.name}
+                      </Link>
+                    ))}
+                    {spiderweb.glossaryTerms.map((term) => (
+                      <Link
+                        key={term.slug}
+                        href={`/glossary/${term.slug}`}
+                        className="px-3 py-1.5 rounded-lg bg-white border border-[#111111]/12 hover:border-[#C8A951] text-xs font-medium text-[#111111]"
+                      >
+                        {term.shortTitle}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
 
             {/* Brokerage Compliance Disclaimer */}
             <div className="p-6 bg-white/70 border border-[#111111]/8 rounded-xl">
@@ -1214,6 +1417,20 @@ export default function ListingDetailPage() {
             ))}
           </div>
         </div>
+      )}
+
+      {isCommercialOrLand && (
+        <GuideDownloadModal
+          isOpen={omModalOpen}
+          onClose={() => setOmModalOpen(false)}
+          title={`${listing.title} — Offering Memorandum`}
+          category={`${listing.category} Offering Memorandum`}
+          slug={`${listing.slug}-om`}
+          quickAnswer={offeringQuickAnswer}
+          keyTakeaways={(listing.highlights || []).filter(Boolean).slice(0, 6)}
+          sections={omSections}
+          authorName={agent.name}
+        />
       )}
 
       {/* ── FOOTER ── */}

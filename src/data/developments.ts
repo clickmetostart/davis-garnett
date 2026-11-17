@@ -63,6 +63,15 @@ export interface Development {
   publishedAt?: string;
   updatedAt?: string;
   editorialStatus?: "draft" | "live";
+  propertyTypeTags?: string[];
+  audience?: string[];
+  county?: string[];
+  corridorTags?: string[];
+  relatedGlossarySlugs?: string[];
+  relatedGuideSlugs?: string[];
+  relatedAreaSlugs?: string[];
+  relatedDevelopmentSlugs?: string[];
+  relatedServiceRoutes?: string[];
 }
 
 const RAW_DEVELOPMENTS: Development[] = [

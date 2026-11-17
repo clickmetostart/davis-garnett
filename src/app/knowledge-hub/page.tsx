@@ -636,7 +636,7 @@ export default function KnowledgeHubPage() {
 
           {/* Load More Button (+3 articles / 1 row each click) */}
           {visibleArticlesCount < filteredArticles.length && (
-            <div className="mt-14 text-center">
+            <div className="mt-14 text-center space-y-6">
               <button
                 type="button"
                 onClick={() => setVisibleArticlesCount((prev) => prev + 3)}
@@ -645,6 +645,20 @@ export default function KnowledgeHubPage() {
                 <span>Load More</span>
                 <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
               </button>
+              <div className="pt-4 border-t border-[#111]/8 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-[#111]/65">
+                <span className="text-[10px] uppercase tracking-widest font-bold text-[#9A7D3A]">
+                  More Market Briefings:
+                </span>
+                {filteredArticles.slice(visibleArticlesCount).map((art) => (
+                  <Link
+                    key={art.slug}
+                    href={`/knowledge-hub/articles/${art.slug}`}
+                    className="hover:text-[#9A7D3A] underline decoration-[#111]/20 underline-offset-4 transition-colors"
+                  >
+                    {art.title}
+                  </Link>
+                ))}
+              </div>
             </div>
           )}
         </div>
@@ -737,6 +751,36 @@ export default function KnowledgeHubPage() {
               </form>
             </>
           )}
+
+          <div className="mt-10 pt-8 border-t border-white/10 flex flex-wrap items-center justify-center gap-2.5 text-xs">
+            <Link href="/glossary" className="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-[#D4AF37] hover:text-[#111] font-bold transition-colors">
+              Real Estate Glossary
+            </Link>
+            <Link href="/hub/55-plus-tampa-bay" className="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-[#D4AF37] hover:text-[#111] font-bold transition-colors">
+              55+ Communities Hub
+            </Link>
+            <Link href="/hub/commercial-tampa-bay" className="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-[#D4AF37] hover:text-[#111] font-bold transition-colors">
+              Commercial Hub
+            </Link>
+            <Link href="/hub/waterfront-st-petersburg" className="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-[#D4AF37] hover:text-[#111] font-bold transition-colors">
+              St. Pete Waterfront Hub
+            </Link>
+            <Link href="/hub/land-acreage-central-florida" className="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-[#D4AF37] hover:text-[#111] font-bold transition-colors">
+              Land &amp; Acreage Hub
+            </Link>
+            <Link href="/hub/carrollwood-northdale-homes" className="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-[#D4AF37] hover:text-[#111] font-bold transition-colors">
+              Carrollwood Hub
+            </Link>
+            <Link href="/tools/seller-net-proceeds" className="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-[#D4AF37] hover:text-[#111] font-bold transition-colors">
+              Seller Net Proceeds Tool
+            </Link>
+            <Link href="/tools/cap-rate-calculator" className="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-[#D4AF37] hover:text-[#111] font-bold transition-colors">
+              Cap Rate Calculator
+            </Link>
+            <Link href="/tools/1031-deadline-calculator" className="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-[#D4AF37] hover:text-[#111] font-bold transition-colors">
+              1031 Deadline Calculator
+            </Link>
+          </div>
         </div>
       </section>
 

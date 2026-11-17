@@ -222,7 +222,7 @@ export default function ContactPage() {
                   View Mark&apos;s Full Bio &amp; Listings <ArrowUpRight className="w-4 h-4 text-[#D4AF37]" />
                 </Link>
                 <Link
-                  href="/mark"
+                  href="/about/mark-davis"
                   className="text-[11px] font-bold uppercase tracking-widest text-[#9A7D3A] hover:text-[#111] transition-colors"
                 >
                   Digital Business Card →
@@ -330,7 +330,7 @@ export default function ContactPage() {
                   View Rachael&apos;s Full Bio &amp; Listings <ArrowUpRight className="w-4 h-4 text-[#D4AF37]" />
                 </Link>
                 <Link
-                  href="/rachael"
+                  href="/about/rachael-garnett"
                   className="text-[11px] font-bold uppercase tracking-widest text-[#9A7D3A] hover:text-[#111] transition-colors"
                 >
                   Digital Business Card →

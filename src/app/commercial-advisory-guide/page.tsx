@@ -250,6 +250,24 @@ export default function CommercialAdvisoryGuidePage() {
               <Phone className="w-3.5 h-3.5 text-[#C8A951]" /> Mark Davis: 941-737-4127
             </a>
           </div>
+
+          <div className="mt-10 pt-8 border-t border-white/10 flex flex-wrap items-center justify-center gap-3 text-xs">
+            <Link href="/hub/commercial-tampa-bay" className="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-[#C8A951] hover:text-[#111] font-bold transition-colors">
+              Commercial Hub
+            </Link>
+            <Link href="/hub/land-acreage-central-florida" className="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-[#C8A951] hover:text-[#111] font-bold transition-colors">
+              Land &amp; Acreage Hub
+            </Link>
+            <Link href="/tools/cap-rate-calculator" className="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-[#C8A951] hover:text-[#111] font-bold transition-colors">
+              Cap Rate Calculator
+            </Link>
+            <Link href="/tools/1031-deadline-calculator" className="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-[#C8A951] hover:text-[#111] font-bold transition-colors">
+              1031 Deadline Tool
+            </Link>
+            <Link href="/glossary" className="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-[#C8A951] hover:text-[#111] font-bold transition-colors">
+              Commercial Glossary
+            </Link>
+          </div>
         </div>
       </section>
 

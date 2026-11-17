@@ -18,6 +18,8 @@ import {
 import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
 import GuideDownloadModal from "@/components/GuideDownloadModal";
+import { GlossaryAutoText } from "@/components/GlossaryAutoText";
+import { getRelatedGlossaryTermsForTaxonomy } from "@/data/glossary";
 import type { ArticleItem, KnowledgeItem, AreaItem } from "@/data/knowledgeHub";
 
 interface Props {
@@ -69,6 +71,18 @@ export default function ArticleSpokeClient({
   };
 
   const quickAnswerText = article.quickAnswer || article.summary;
+  const usedGlossarySlugs = new Set<string>();
+  const lastUpdatedLabel = (article.updatedAt || article.publishedAt || article.publishDate || "2026-11-17").slice(0, 10);
+  const relatedGlossary = getRelatedGlossaryTermsForTaxonomy({
+    text: `${article.title} ${article.summary} ${article.sections.map((s) => s.body).join(" ")}`,
+    category: article.category,
+    explicitSlugs: article.relatedGlossarySlugs,
+    propertyType: article.propertyType,
+    audience: article.audience,
+    county: article.county,
+    corridor: article.corridor,
+    limit: 4,
+  });
 
   return (
     <div className="min-h-screen bg-white text-[#111] font-sans selection:bg-[#D4AF37] selection:text-white">
@@ -81,6 +95,14 @@ export default function ArticleSpokeClient({
         </div>
 
         <div className="relative z-10 max-w-screen-xl mx-auto">
+          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-widest text-white/60 mb-5">
+            <Link href="/" className="hover:text-[#D4AF37] transition-colors">Home</Link>
+            <span>/</span>
+            <Link href="/knowledge-hub#articles" className="hover:text-[#D4AF37] transition-colors">Market Intelligence</Link>
+            <span>/</span>
+            <span className="text-[#D4AF37] truncate max-w-xs sm:max-w-md">{article.title}</span>
+          </nav>
+
           <Link
             href="/knowledge-hub#articles"
             className="inline-flex items-center gap-2 text-[#D4AF37] hover:text-white text-xs font-bold uppercase tracking-widest mb-8 transition-colors"
@@ -93,7 +115,7 @@ export default function ArticleSpokeClient({
               {article.category}
             </span>
             <span className="flex items-center gap-1.5">
-              <Calendar className="w-3.5 h-3.5 text-[#D4AF37]" /> {article.publishDate}
+              <Calendar className="w-3.5 h-3.5 text-[#D4AF37]" /> Last updated {lastUpdatedLabel}
             </span>
             <span className="flex items-center gap-1.5">
               <Clock className="w-3.5 h-3.5 text-[#D4AF37]" /> {article.readTime}
@@ -126,7 +148,7 @@ export default function ArticleSpokeClient({
                   <Sparkles className="w-4 h-4" /> Quick Summary
                 </div>
                 <p className="text-sm md:text-base text-white/90 leading-relaxed font-light">
-                  {quickAnswerText}
+                  <GlossaryAutoText text={quickAnswerText} usedSlugs={usedGlossarySlugs} />
                 </p>
               </div>
             )}
@@ -139,7 +161,7 @@ export default function ArticleSpokeClient({
                 {article.keyTakeaways.map((kt, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm md:text-base text-[#111]/85">
                     <CheckCircle2 className="w-5 h-5 text-[#9A7D3A] shrink-0 mt-0.5" />
-                    <span>{kt}</span>
+                    <span><GlossaryAutoText text={kt} usedSlugs={usedGlossarySlugs} /></span>
                   </li>
                 ))}
               </ul>
@@ -156,10 +178,40 @@ export default function ArticleSpokeClient({
                     {sec.heading}
                   </h2>
                   <p className="text-[#111]/75 text-base md:text-lg font-light leading-relaxed">
-                    {sec.body}
+                    <GlossaryAutoText text={sec.body} usedSlugs={usedGlossarySlugs} />
                   </p>
                 </div>
               ))}
+            </div>
+
+            {/* How Mark & Rachael Handle It + Glossary Terms */}
+            <div className="mt-12 p-6 md:p-8 rounded-2xl bg-[#f5f3ef] border border-[#D4AF37]/40 space-y-4">
+              <span className="text-[10px] uppercase tracking-[0.25em] font-bold text-[#9A7D3A] block">
+                Advisor Perspective
+              </span>
+              <h3 className="font-aiveritas text-2xl text-[#111]">
+                How Mark &amp; Rachael Apply This Data for Clients
+              </h3>
+              <p className="text-sm md:text-base text-[#111]/80 leading-relaxed font-light">
+                {article.howWeHandleIt ||
+                  "Mark Davis (FL Lic #3209459) and Rachael Garnett (FL Lic #3378601) pair county property-appraiser records, active inventory trends, and carrier underwriting rules so buyers and sellers price off real closed outcomes rather than headlines."}
+              </p>
+              {relatedGlossary.length > 0 && (
+                <div className="pt-3 border-t border-[#111]/10 flex flex-wrap items-center gap-2">
+                  <span className="text-[10px] uppercase tracking-widest font-bold text-[#9A7D3A] mr-1">
+                    Glossary:
+                  </span>
+                  {relatedGlossary.map((term) => (
+                    <Link
+                      key={term.slug}
+                      href={`/glossary/${term.slug}`}
+                      className="px-3 py-1.5 rounded-lg bg-white border border-[#111]/12 hover:border-[#D4AF37] text-xs font-bold text-[#111] transition-colors"
+                    >
+                      {term.shortTitle}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Connected Spiderweb Links + MLS/Contact Banner */}

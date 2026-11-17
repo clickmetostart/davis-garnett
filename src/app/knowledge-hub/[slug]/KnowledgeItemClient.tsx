@@ -22,6 +22,8 @@ import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
 import EmailActionBox from "@/components/EmailActionBox";
 import GuideDownloadModal from "@/components/GuideDownloadModal";
+import { GlossaryAutoText } from "@/components/GlossaryAutoText";
+import { getRelatedGlossaryTermsForTaxonomy } from "@/data/glossary";
 import type { KnowledgeItem, AreaItem } from "@/data/knowledgeHub";
 import type { Development } from "@/data/developments";
 
@@ -77,6 +79,22 @@ export default function KnowledgeItemClient({
   const quickAnswerText =
     item.quickAnswer || `${item.subtitle} ${item.keyTakeaways[0] || ""}`.trim();
 
+  const usedGlossarySlugs = new Set<string>();
+  const lastUpdatedLabel = (item.updatedAt || item.publishedAt || item.publishDate || "2026-11-17").slice(0, 10);
+  const relatedGlossary = getRelatedGlossaryTermsForTaxonomy({
+    text: `${item.title} ${item.subtitle} ${item.sections.map((s) => s.body).join(" ")}`,
+    category: item.category,
+    explicitSlugs: item.relatedGlossarySlugs,
+    propertyType: item.propertyType,
+    audience: item.audience,
+    county: item.county,
+    corridor: item.corridor,
+    limit: 4,
+  });
+  const howWeHandleText =
+    item.howWeHandleIt ||
+    `When walking clients through ${item.category.toLowerCase()} decisions in Tampa Bay, Mark Davis (${item.author.license === "FL Lic #3209459" ? "FL Lic #3209459" : "FL Lic #3209459"}) and Rachael Garnett (FL Lic #3378601) verify county records, HOA/CDD budgets, insurance inspectability, and net-proceeds math before an offer or listing ever goes live.`;
+
   return (
     <div className="min-h-screen bg-white text-[#111] font-sans selection:bg-[#D4AF37] selection:text-white">
       <ProposalNav />
@@ -89,6 +107,14 @@ export default function KnowledgeItemClient({
         </div>
 
         <div className="relative z-10 max-w-screen-xl mx-auto">
+          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-widest text-white/60 mb-5">
+            <Link href="/" className="hover:text-[#D4AF37] transition-colors">Home</Link>
+            <span>/</span>
+            <Link href="/knowledge-hub" className="hover:text-[#D4AF37] transition-colors">Knowledge Hub</Link>
+            <span>/</span>
+            <span className="text-[#D4AF37] truncate max-w-xs sm:max-w-md">{item.title}</span>
+          </nav>
+
           <Link
             href="/knowledge-hub"
             className="inline-flex items-center gap-2 text-[#D4AF37] hover:text-white text-xs font-bold uppercase tracking-widest mb-8 transition-colors"
@@ -101,7 +127,7 @@ export default function KnowledgeItemClient({
               {item.category}
             </span>
             <span className="flex items-center gap-1.5">
-              <Calendar className="w-3.5 h-3.5 text-[#D4AF37]" /> {item.publishDate}
+              <Calendar className="w-3.5 h-3.5 text-[#D4AF37]" /> Last updated {lastUpdatedLabel}
             </span>
             <span className="flex items-center gap-1.5">
               <Clock className="w-3.5 h-3.5 text-[#D4AF37]" /> {item.readTime}
@@ -145,7 +171,7 @@ export default function KnowledgeItemClient({
                   <Sparkles className="w-4 h-4" /> Quick Answer
                 </div>
                 <p className="text-sm md:text-base text-white/90 leading-relaxed font-light">
-                  {quickAnswerText}
+                  <GlossaryAutoText text={quickAnswerText} usedSlugs={usedGlossarySlugs} />
                 </p>
               </div>
             )}
@@ -159,7 +185,7 @@ export default function KnowledgeItemClient({
                 {item.keyTakeaways.map((kt, idx) => (
                   <li key={idx} className="flex items-start gap-3 text-sm md:text-base text-[#111]/85 leading-relaxed">
                     <CheckCircle2 className="w-5 h-5 text-[#9A7D3A] shrink-0 mt-0.5" />
-                    <span>{kt}</span>
+                    <span><GlossaryAutoText text={kt} usedSlugs={usedGlossarySlugs} /></span>
                   </li>
                 ))}
               </ul>
@@ -178,20 +204,53 @@ export default function KnowledgeItemClient({
                     {sec.heading}
                   </h2>
                   <p className="text-[#111]/75 text-base md:text-lg font-light leading-relaxed mb-4">
-                    {sec.body}
+                    <GlossaryAutoText text={sec.body} usedSlugs={usedGlossarySlugs} />
                   </p>
                   {sec.bullets && sec.bullets.length > 0 && (
                     <ul className="space-y-2.5 pl-1 mt-4">
                       {sec.bullets.map((b, bIdx) => (
                         <li key={bIdx} className="flex items-start gap-3 text-sm md:text-base text-[#111]/80">
                           <span className="w-2 h-2 rounded-full bg-[#D4AF37] mt-2 shrink-0" />
-                          <span>{b}</span>
+                          <span><GlossaryAutoText text={b} usedSlugs={usedGlossarySlugs} /></span>
                         </li>
                       ))}
                     </ul>
                   )}
                 </div>
               ))}
+            </div>
+
+            {/* How Mark & Rachael Handle It */}
+            <div className="mt-12 p-6 md:p-8 rounded-2xl bg-[#f5f3ef] border border-[#D4AF37]/40">
+              <span className="text-[10px] uppercase tracking-[0.25em] font-bold text-[#9A7D3A] block mb-2">
+                Local Advisor Playbook
+              </span>
+              <h3 className="font-aiveritas text-2xl text-[#111] mb-3">
+                How Mark &amp; Rachael Handle It
+              </h3>
+              <p className="text-sm md:text-base text-[#111]/80 leading-relaxed font-light">
+                <GlossaryAutoText text={howWeHandleText} usedSlugs={usedGlossarySlugs} />
+              </p>
+              {item.sources && item.sources.length > 0 && (
+                <div className="mt-4 pt-4 border-t border-[#111]/10 text-xs text-[#111]/65 flex flex-wrap items-center gap-3">
+                  <span className="font-bold uppercase tracking-wider text-[#111]/80">Named Sources:</span>
+                  {item.sources.map((src, sIdx) =>
+                    src.url ? (
+                      <a
+                        key={sIdx}
+                        href={src.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline hover:text-[#9A7D3A]"
+                      >
+                        {src.label}
+                      </a>
+                    ) : (
+                      <span key={sIdx}>{src.label}</span>
+                    )
+                  )}
+                </div>
+              )}
             </div>
 
             {/* Next-Step Action Banner */}
@@ -241,9 +300,34 @@ export default function KnowledgeItemClient({
                         <ChevronDown className="w-5 h-5 text-[#9A7D3A] transition-transform group-open:rotate-180" />
                       </summary>
                       <div className="px-6 pb-6 text-sm md:text-base text-[#111]/75 font-light leading-relaxed">
-                        {faq.answer}
+                        <GlossaryAutoText text={faq.answer} usedSlugs={usedGlossarySlugs} />
                       </div>
                     </details>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Related Glossary Terms */}
+            {relatedGlossary.length > 0 && (
+              <div className="mt-12 p-6 rounded-2xl bg-[#f5f3ef] border border-[#111]/10">
+                <div className="flex items-center justify-between gap-4 mb-4">
+                  <span className="text-[10px] uppercase tracking-[0.25em] font-bold text-[#9A7D3A]">
+                    Plain-English Florida Glossary
+                  </span>
+                  <Link href="/glossary" className="text-xs font-bold text-[#111] hover:text-[#9A7D3A] underline">
+                    All Terms →
+                  </Link>
+                </div>
+                <div className="flex flex-wrap gap-2.5">
+                  {relatedGlossary.map((term) => (
+                    <Link
+                      key={term.slug}
+                      href={`/glossary/${term.slug}`}
+                      className="px-3.5 py-2 rounded-lg bg-white border border-[#111]/12 hover:border-[#D4AF37] text-xs font-bold text-[#111] transition-colors"
+                    >
+                      {term.shortTitle}
+                    </Link>
                   ))}
                 </div>
               </div>

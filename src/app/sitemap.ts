@@ -2,6 +2,8 @@ import { MetadataRoute } from "next";
 import listingsData from "@/data/listings.json";
 import { DEVELOPMENTS } from "@/data/developments";
 import { ALL_GUIDES_AND_QUESTIONS, AREAS, EVENTS, ARTICLES } from "@/data/knowledgeHub";
+import { LIVE_GLOSSARY_TERMS } from "@/data/glossary";
+import { LIVE_TOPIC_HUBS } from "@/data/topicHubs";
 import { getLiveMarketReports } from "@/data/marketReports";
 
 const BASE_URL = "https://www.davisgarnettsells.com";
@@ -24,6 +26,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/properties",
     "/developments",
     "/knowledge-hub",
+    "/glossary",
+    "/tools/cap-rate-calculator",
+    "/tools/1031-deadline-calculator",
+    "/tools/seller-net-proceeds",
     "/search-mls",
     "/privacy-policy",
   ];
@@ -78,6 +84,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(r.updatedAt),
   }));
 
+  const glossaryUrls = LIVE_GLOSSARY_TERMS.map((term) => ({
+    url: `${BASE_URL}/glossary/${term.slug}`,
+    lastModified: new Date(term.updatedAt),
+  }));
+
+  const hubUrls = LIVE_TOPIC_HUBS.map((hub) => ({
+    url: `${BASE_URL}/hub/${hub.slug}`,
+    lastModified: new Date(hub.updatedAt),
+  }));
+
   return [
     ...staticRoutes.map((route) => ({
       url: `${BASE_URL}${route}`,
@@ -89,6 +105,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...areaUrls,
     ...eventUrls,
     ...articleUrls,
+    ...glossaryUrls,
+    ...hubUrls,
     ...marketReportUrls,
   ];
 }

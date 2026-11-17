@@ -1,4 +1,17 @@
 import { GIT_PUBLICATION_DATES } from "@/data/publicationDates";
+import {
+  inferTaxonomyTags,
+  scoreTaxonomyOverlap,
+  type AudienceTag,
+  type CorridorTag,
+  type CountyTag,
+  type PropertyTypeTag,
+} from "@/lib/taxonomy";
+
+export interface NamedSource {
+  label: string;
+  url?: string;
+}
 
 export interface KnowledgeSection {
   heading: string;
@@ -46,7 +59,14 @@ export interface KnowledgeItem {
   relatedGuideSlugs?: string[];
   relatedAreaSlugs?: string[];
   relatedDevelopmentSlugs?: string[];
+  relatedGlossarySlugs?: string[];
   relatedServiceRoutes?: RelatedServiceLink[];
+  propertyType?: PropertyTypeTag[];
+  audience?: AudienceTag[];
+  county?: CountyTag[];
+  corridor?: CorridorTag[];
+  howWeHandleIt?: string;
+  sources?: NamedSource[];
   ctaLabel?: string;
   ctaHref?: string;
 }
@@ -71,6 +91,14 @@ export interface AreaItem {
   featuredListingSlugs: string[];
   relatedGuideSlugs?: string[];
   relatedDevelopmentSlugs?: string[];
+  relatedGlossarySlugs?: string[];
+  relatedServiceRoutes?: RelatedServiceLink[];
+  propertyType?: PropertyTypeTag[];
+  audience?: AudienceTag[];
+  countyTags?: CountyTag[];
+  corridor?: CorridorTag[];
+  howWeHandleIt?: string;
+  sources?: NamedSource[];
 }
 
 export interface EventItem {
@@ -89,6 +117,15 @@ export interface EventItem {
   description: string;
   agenda: string[];
   host: string;
+  propertyType?: PropertyTypeTag[];
+  audience?: AudienceTag[];
+  county?: CountyTag[];
+  corridor?: CorridorTag[];
+  relatedGuideSlugs?: string[];
+  relatedAreaSlugs?: string[];
+  relatedDevelopmentSlugs?: string[];
+  relatedGlossarySlugs?: string[];
+  relatedServiceRoutes?: RelatedServiceLink[];
   externalAction?: {
     url: string;
     label: string;
@@ -119,9 +156,18 @@ export interface ArticleItem {
   };
   keyTakeaways: string[];
   sections: KnowledgeSection[];
+  faqs?: KnowledgeFAQ[];
+  howWeHandleIt?: string;
+  sources?: NamedSource[];
   relatedGuideSlugs?: string[];
   relatedAreaSlugs?: string[];
   relatedDevelopmentSlugs?: string[];
+  relatedGlossarySlugs?: string[];
+  relatedServiceRoutes?: RelatedServiceLink[];
+  propertyType?: PropertyTypeTag[];
+  audience?: AudienceTag[];
+  county?: CountyTag[];
+  corridor?: CorridorTag[];
 }
 
 const MARK_AUTHOR = {
@@ -1844,20 +1890,44 @@ export const ALL_GUIDES_AND_QUESTIONS: KnowledgeItem[] = [...GUIDES, ...QUESTION
   (item) => item.status !== "draft"
 );
 
-const TOPIC_FALLBACK_MAP: Record<string, string[]> = {
-  "55+": ["best-55-plus-active-adult-communities-tampa-bay", "55-plus-hoa-cdd-fees-tampa-bay", "florida-55-plus-condo-milestone-reserves-vs-villa"],
-  "Commercial": ["commercial-real-estate-investing-florida", "commercial-bpo-vs-appraisal-florida", "how-does-commercial-mixed-use-zoning-work-in-brandon-fl"],
-  "Insurance": ["flood-zones-x-ae-ve-tampa-bay-homebuyers", "florida-home-insurance-roof-age-wind-mitigation", "first-time-and-relocation-buyer-costs-tampa-bay"],
-  "Neighborhood": ["best-tampa-neighborhoods-no-hoa-no-cdd", "understanding-cdd-fees-in-pasco-and-hillsborough", "north-tampa-wesley-chapel-top-school-corridors"],
-  "Seller": ["selling-your-home-in-tampa-bay", "how-much-are-closing-costs-for-sellers-in-hillsborough-county", "can-i-buy-a-house-in-florida-while-selling-my-current-one"],
-  "Waterfront": ["tampa-bay-luxury-home-buying-guide", "what-are-the-rules-for-private-docks-and-seawalls-in-st-petersburg", "flood-zones-x-ae-ve-tampa-bay-homebuyers"],
-  "Land": ["what-due-diligence-is-needed-when-buying-acreage-in-central-florida", "best-tampa-neighborhoods-no-hoa-no-cdd", "what-is-the-difference-between-hoa-and-cdd-in-tampa-bay"],
-  "Tax": ["florida-homestead-exemption-and-property-taxes", "first-time-and-relocation-buyer-costs-tampa-bay", "understanding-cdd-fees-in-pasco-and-hillsborough"],
-};
+export function getTaxonomyForKnowledgeItem(item: {
+  slug?: string;
+  title?: string;
+  category?: string;
+  propertyType?: PropertyTypeTag[];
+  audience?: AudienceTag[];
+  county?: CountyTag[];
+  corridor?: CorridorTag[];
+}) {
+  return inferTaxonomyTags({
+    text: `${item.slug || ""} ${item.title || ""}`,
+    category: item.category,
+    explicit: {
+      propertyType: item.propertyType,
+      audience: item.audience,
+      county: item.county,
+      corridor: item.corridor,
+    },
+  });
+}
+
+export function getTaxonomyForAreaItem(area: AreaItem) {
+  return inferTaxonomyTags({
+    text: `${area.slug} ${area.name} ${area.tagline} ${area.topNeighborhoods.join(" ")}`,
+    countyText: area.county,
+    explicit: {
+      propertyType: area.propertyType,
+      audience: area.audience,
+      county: area.countyTags,
+      corridor: area.corridor,
+    },
+  });
+}
 
 export function getRelatedKnowledgeForItem(item: KnowledgeItem, limit = 3): KnowledgeItem[] {
   const result: KnowledgeItem[] = [];
   const seen = new Set<string>([item.slug]);
+  const itemTags = getTaxonomyForKnowledgeItem(item);
 
   const addBySlug = (slug: string) => {
     if (seen.has(slug) || result.length >= limit) return;
@@ -1878,57 +1948,63 @@ export function getRelatedKnowledgeForItem(item: KnowledgeItem, limit = 3): Know
     }
   }
 
-  // Topic/category keyword match fallback (never blind .slice(0, 3))
-  const haystack = `${item.category} ${item.title} ${item.slug}`.toLowerCase();
-  for (const [key, slugs] of Object.entries(TOPIC_FALLBACK_MAP)) {
-    if (haystack.includes(key.toLowerCase())) {
-      for (const s of slugs) addBySlug(s);
-    }
-  }
+  // Scored shared-tag taxonomy matching (propertyType, audience, county, corridor)
+  const scored = ALL_GUIDES_AND_QUESTIONS.filter((c) => !seen.has(c.slug))
+    .map((candidate) => {
+      const candidateTags = getTaxonomyForKnowledgeItem(candidate);
+      let score = scoreTaxonomyOverlap(itemTags, candidateTags);
+      if (candidate.category === item.category) score += 2;
+      if (candidate.type !== item.type) score += 1;
+      return { candidate, score };
+    })
+    .sort((a, b) => b.score - a.score);
 
-  for (const candidate of ALL_GUIDES_AND_QUESTIONS) {
+  for (const entry of scored) {
     if (result.length >= limit) break;
-    if (!seen.has(candidate.slug) && candidate.category === item.category) {
-      addBySlug(candidate.slug);
-    }
-  }
-
-  for (const candidate of ALL_GUIDES_AND_QUESTIONS) {
-    if (result.length >= limit) break;
-    addBySlug(candidate.slug);
+    addBySlug(entry.candidate.slug);
   }
 
   return result;
 }
 
-export function getRelatedAreasForItem(item: { relatedAreaSlugs?: string[]; category?: string; slug?: string; title?: string }, limit = 3): AreaItem[] {
+export function getRelatedAreasForItem(
+  item: {
+    relatedAreaSlugs?: string[];
+    category?: string;
+    slug?: string;
+    title?: string;
+    propertyType?: PropertyTypeTag[];
+    audience?: AudienceTag[];
+    county?: CountyTag[];
+    corridor?: CorridorTag[];
+  },
+  limit = 3
+): AreaItem[] {
   const result: AreaItem[] = [];
   const seen = new Set<string>();
+  const itemTags = getTaxonomyForKnowledgeItem(item);
+
   for (const slug of item.relatedAreaSlugs || []) {
     if (result.length >= limit) break;
-    const area = AREAS.find((a) => a.slug === slug);
+    const area = AREAS.find((a) => a.slug === slug && a.status !== "draft");
     if (area && !seen.has(area.slug)) {
       seen.add(area.slug);
       result.push(area);
     }
   }
-  const text = `${item.category || ""} ${item.title || ""} ${item.slug || ""}`.toLowerCase();
-  const inferred = text.includes("55") || text.includes("wesley") || text.includes("cdd")
-    ? ["wesley-chapel", "clearwater-pinellas-county", "carrollwood-northdale"]
-    : text.includes("commercial") || text.includes("bpo") || text.includes("brandon")
-    ? ["brandon-riverview", "tampa-downtown-water-street", "carrollwood-northdale"]
-    : text.includes("waterfront") || text.includes("flood") || text.includes("st.")
-    ? ["st-petersburg", "clearwater-pinellas-county", "tampa-downtown-water-street"]
-    : text.includes("acreage") || text.includes("land") || text.includes("hoa")
-    ? ["keystone", "carrollwood-northdale", "central-florida-acreage"]
-    : ["carrollwood-northdale", "st-petersburg", "wesley-chapel"];
-  for (const s of inferred) {
+
+  const scoredAreas = AREAS.filter((a) => a.status !== "draft" && !seen.has(a.slug))
+    .map((area) => {
+      let score = scoreTaxonomyOverlap(itemTags, getTaxonomyForAreaItem(area));
+      if (item.slug && area.relatedGuideSlugs?.includes(item.slug)) score += 10;
+      return { area, score };
+    })
+    .sort((a, b) => b.score - a.score);
+
+  for (const entry of scoredAreas) {
     if (result.length >= limit) break;
-    const area = AREAS.find((a) => a.slug === s);
-    if (area && !seen.has(area.slug)) {
-      seen.add(area.slug);
-      result.push(area);
-    }
+    seen.add(entry.area.slug);
+    result.push(entry.area);
   }
   return result;
 }
@@ -1936,6 +2012,8 @@ export function getRelatedAreasForItem(item: { relatedAreaSlugs?: string[]; cate
 export function getRelatedGuidesForArea(area: AreaItem, limit = 3): KnowledgeItem[] {
   const result: KnowledgeItem[] = [];
   const seen = new Set<string>();
+  const areaTags = getTaxonomyForAreaItem(area);
+
   for (const s of area.relatedGuideSlugs || []) {
     if (result.length >= limit) break;
     const found = ALL_GUIDES_AND_QUESTIONS.find((k) => k.slug === s);
@@ -1951,34 +2029,35 @@ export function getRelatedGuidesForArea(area: AreaItem, limit = 3): KnowledgeIte
       result.push(candidate);
     }
   }
-  for (const fallback of ["how-to-choose-a-commercial-or-residential-realtor-tampa-bay", "first-time-and-relocation-buyer-costs-tampa-bay", "florida-homestead-exemption-and-property-taxes"]) {
+
+  const scored = ALL_GUIDES_AND_QUESTIONS.filter((k) => !seen.has(k.slug))
+    .map((candidate) => ({
+      candidate,
+      score: scoreTaxonomyOverlap(areaTags, getTaxonomyForKnowledgeItem(candidate)),
+    }))
+    .sort((a, b) => b.score - a.score);
+
+  for (const entry of scored) {
     if (result.length >= limit) break;
-    const found = ALL_GUIDES_AND_QUESTIONS.find((k) => k.slug === fallback);
-    if (found && !seen.has(found.slug)) {
-      seen.add(found.slug);
-      result.push(found);
-    }
+    seen.add(entry.candidate.slug);
+    result.push(entry.candidate);
   }
   return result;
 }
 
 export function getRelatedArticlesForArticle(article: ArticleItem, limit = 3): ArticleItem[] {
-  const result: ArticleItem[] = [];
-  const seen = new Set<string>([article.slug]);
-  for (const candidate of ARTICLES) {
-    if (result.length >= limit) break;
-    if (!seen.has(candidate.slug) && candidate.category === article.category) {
-      seen.add(candidate.slug);
-      result.push(candidate);
-    }
-  }
-  for (const candidate of ARTICLES) {
-    if (result.length >= limit) break;
-    if (!seen.has(candidate.slug)) {
-      seen.add(candidate.slug);
-      result.push(candidate);
-    }
-  }
-  return result;
+  const articleTags = getTaxonomyForKnowledgeItem(article);
+  const liveArticles = ARTICLES.filter((a) => a.status !== "draft" && a.slug !== article.slug);
+
+  return liveArticles
+    .map((candidate) => {
+      let score = scoreTaxonomyOverlap(articleTags, getTaxonomyForKnowledgeItem(candidate));
+      if (candidate.category === article.category) score += 3;
+      if (article.relatedGuideSlugs?.includes(candidate.slug)) score += 8;
+      return { candidate, score };
+    })
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map((entry) => entry.candidate);
 }
 
