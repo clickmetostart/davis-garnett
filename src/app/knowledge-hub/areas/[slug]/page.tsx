@@ -4,6 +4,8 @@ import AreaSpokeClient from "./AreaSpokeClient";
 import { AREAS, getRelatedGuidesForArea } from "@/data/knowledgeHub";
 import { DEVELOPMENTS } from "@/data/developments";
 
+import { buildPageMetadata } from "@/lib/seo";
+
 const BASE_URL = "https://www.davisgarnettsells.com";
 
 export function generateStaticParams() {
@@ -19,20 +21,12 @@ export async function generateMetadata({
   const area = AREAS.find((a) => a.slug === slug);
   if (!area) return { title: "Tampa Bay Areas | Davis & Garnett" };
 
-  const description = area.quickAnswer || area.overview;
-  const url = `${BASE_URL}/knowledge-hub/areas/${area.slug}`;
-
-  return {
+  return buildPageMetadata({
     title: `${area.name} Real Estate Guide | Davis & Garnett`,
-    description,
-    alternates: { canonical: url },
-    openGraph: {
-      title: `${area.name} — Homes, Neighborhoods & Market Insights`,
-      description,
-      url,
-      images: [{ url: area.heroImage }],
-    },
-  };
+    description: area.quickAnswer || area.overview,
+    path: `/knowledge-hub/areas/${area.slug}`,
+    image: area.heroImage,
+  });
 }
 
 export default async function AreaSpokePage({

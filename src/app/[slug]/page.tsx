@@ -1,8 +1,38 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import fs from 'fs';
 import path from 'path';
 import LinktreeProfile from '@/components/LinktreeProfile';
+import { buildPageMetadata } from '@/lib/seo';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  if (!slug.endsWith('-links')) {
+    return { title: 'Davis & Garnett' };
+  }
+  const nameParts = slug.replace('-links', '').split('-');
+  const first = nameParts[0] ? nameParts[0][0].toUpperCase() + nameParts[0].slice(1) : 'Davis';
+  const last = nameParts[1] ? nameParts[1][0].toUpperCase() + nameParts[1].slice(1) : 'Garnett';
+  const coverImage =
+    first.toLowerCase() === 'mark'
+      ? '/mark-commerical-banner-1.jpg'
+      : first.toLowerCase() === 'rachael'
+      ? '/rachael-banner-2.jpg'
+      : undefined;
+
+  return buildPageMetadata({
+    title: `${first} ${last} | Direct Links & Listings — Davis & Garnett`,
+    description: `Connect directly with ${first} ${last} at Davis & Garnett Real Estate Advisors (Align Right Realty Carrollwood), browse featured Tampa Bay properties, and request a call.`,
+    path: `/${slug}`,
+    image: coverImage,
+    type: 'profile',
+  });
+}
 
 export default async function LinktreePage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;

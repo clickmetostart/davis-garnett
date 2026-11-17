@@ -8,6 +8,8 @@ import {
 } from "@/data/knowledgeHub";
 import { DEVELOPMENTS } from "@/data/developments";
 
+import { buildPageMetadata } from "@/lib/seo";
+
 const BASE_URL = "https://www.davisgarnettsells.com";
 
 export function generateStaticParams() {
@@ -23,21 +25,13 @@ export async function generateMetadata({
   const item = ALL_GUIDES_AND_QUESTIONS.find((i) => i.slug === slug);
   if (!item) return { title: "Knowledge Hub | Davis & Garnett" };
 
-  const description = item.quickAnswer || item.subtitle;
-  const url = `${BASE_URL}/knowledge-hub/${item.slug}`;
-
-  return {
+  return buildPageMetadata({
     title: `${item.title} | Davis & Garnett Tampa Bay`,
-    description,
-    alternates: { canonical: url },
-    openGraph: {
-      title: item.title,
-      description,
-      url,
-      type: "article",
-      images: [{ url: item.heroImage }],
-    },
-  };
+    description: item.quickAnswer || item.subtitle,
+    path: `/knowledge-hub/${item.slug}`,
+    image: item.heroImage,
+    type: "article",
+  });
 }
 
 export default async function KnowledgeItemPage({

@@ -33,10 +33,29 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "ClickMe × Davis & Garnett | A Partnership Proposal",
-  description: "A strategic proposal for Davis & Garnett Commercial & Residential Advisors — Tampa Bay's premier real estate duo — to dominate AI-powered search and build lasting digital authority.",
+  metadataBase: new URL("https://www.davisgarnettsells.com"),
+  title: "Davis & Garnett | Commercial & Residential Real Estate Advisors in Tampa Bay",
+  description:
+    "Mark Davis and Rachael Garnett are Commercial and Residential Real Estate Advisors with Align Right Realty Carrollwood, serving Tampa, St. Petersburg, Carrollwood, Wesley Chapel, and Clearwater.",
   openGraph: {
-    images: ["/davis-garnett-real-combo.png"],
+    siteName: "Davis & Garnett Real Estate Advisors",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/davis-garnett-real-estate-advisors-cover-image-2.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Davis & Garnett Commercial and Residential Real Estate Advisors in Tampa Bay",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Davis & Garnett | Commercial & Residential Real Estate Advisors",
+    description:
+      "Serving homebuyers, sellers, 55+ communities, and commercial investors across Greater Tampa Bay.",
+    images: ["/davis-garnett-real-estate-advisors-cover-image-2.jpg"],
   },
 };
 

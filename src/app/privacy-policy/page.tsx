@@ -1,13 +1,15 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Privacy Policy | Davis & Garnett Commercial / Residential Advisors",
   description:
     "How Davis & Garnett and ClickMe collect, use, and protect your contact details, email requests, and SMS consent preferences.",
-};
+  path: "/privacy-policy",
+  image: "/davis-garnett-hero.png",
+});
 
 export default function PrivacyPolicyPage() {
   return (

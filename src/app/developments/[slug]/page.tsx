@@ -4,6 +4,8 @@ import DevelopmentDetailClient from "./DevelopmentDetailClient";
 import { DEVELOPMENTS, getDevelopmentBySlug } from "@/data/developments";
 import { ALL_GUIDES_AND_QUESTIONS } from "@/data/knowledgeHub";
 
+import { buildPageMetadata } from "@/lib/seo";
+
 const BASE_URL = "https://www.davisgarnettsells.com";
 
 export function generateStaticParams() {
@@ -19,18 +21,12 @@ export async function generateMetadata({
   const dev = getDevelopmentBySlug(slug);
   if (!dev) return { title: "Tampa Bay New Developments | Davis & Garnett" };
 
-  const url = `${BASE_URL}/developments/${dev.slug}`;
-  return {
+  return buildPageMetadata({
     title: `${dev.name} — Floor Plans, Pricing & Reviews | Davis & Garnett`,
     description: dev.summary,
-    alternates: { canonical: url },
-    openGraph: {
-      title: `${dev.name} | ${dev.corridorLabel}`,
-      description: dev.summary,
-      url,
-      images: [{ url: dev.heroImage }],
-    },
-  };
+    path: `/developments/${dev.slug}`,
+    image: dev.heroImage,
+  });
 }
 
 export default async function DevelopmentDetailSpokePage({

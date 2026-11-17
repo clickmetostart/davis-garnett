@@ -8,6 +8,8 @@ import {
   getRelatedAreasForItem,
 } from "@/data/knowledgeHub";
 
+import { buildPageMetadata } from "@/lib/seo";
+
 const BASE_URL = "https://www.davisgarnettsells.com";
 
 export function generateStaticParams() {
@@ -23,21 +25,13 @@ export async function generateMetadata({
   const article = ARTICLES.find((a) => a.slug === slug);
   if (!article) return { title: "Market Updates | Davis & Garnett" };
 
-  const description = article.quickAnswer || article.summary;
-  const url = `${BASE_URL}/knowledge-hub/articles/${article.slug}`;
-
-  return {
+  return buildPageMetadata({
     title: `${article.title} | Davis & Garnett`,
-    description,
-    alternates: { canonical: url },
-    openGraph: {
-      title: article.title,
-      description,
-      url,
-      type: "article",
-      images: [{ url: article.heroImage }],
-    },
-  };
+    description: article.quickAnswer || article.summary,
+    path: `/knowledge-hub/articles/${article.slug}`,
+    image: article.heroImage,
+    type: "article",
+  });
 }
 
 export default async function ArticleSpokePage({
