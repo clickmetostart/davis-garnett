@@ -21,6 +21,7 @@ import {
 import ProposalNav from "@/components/ProposalNav";
 import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 import SiteFooter from "@/components/SiteFooter";
+import EmailActionBox from "@/components/EmailActionBox";
 
 const SOLD_2026_PORTFOLIO = [
   {
@@ -30,14 +31,6 @@ const SOLD_2026_PORTFOLIO = [
     status: "2026 Sold",
     image: "/listings/valencia-cove-lol-1.webp",
     notes: "Executive cul-de-sac golf community estate closed at $550,000.",
-  },
-  {
-    address: "3037 Downan Point Dr, Land O' Lakes, FL 34638",
-    submarket: "Ballantrae • $450,000 (MLS# TB8490089)",
-    category: "5BD / 3BA • 2,260 SqFt • Screened Lanai",
-    status: "2026 Sold",
-    image: "/listings/d-g-residential-1.webp",
-    notes: "Updated 2-story residence with first-floor primary suite & 3D Matterport tour.",
   },
   {
     address: "7608 Teal Trce, Bradenton, FL 34203",
@@ -222,13 +215,12 @@ export default function RachaelGarnettAdvisorPage() {
                 <span className="text-[10px] uppercase tracking-[0.2em] text-[#9A7D3A] font-bold block mb-1">
                   Direct Email
                 </span>
-                <a
-                  href="mailto:rachael@davisgarnettsells.com"
-                  className="inline-flex items-center gap-2 text-sm font-bold text-[#111111] hover:text-[#9A7D3A] break-all"
-                >
-                  <Mail className="w-4 h-4 text-[#9A7D3A] shrink-0" />
-                  rachael@davisgarnettsells.com
-                </a>
+                <EmailActionBox
+                  email="rachael@davisgarnettsells.com"
+                  variant="light"
+                  size="sm"
+                  className="font-bold"
+                />
               </div>
               <div>
                 <span className="text-[10px] uppercase tracking-[0.2em] text-[#9A7D3A] font-bold block mb-1">

@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/clickme/', '/api/'],
+      disallow: ['/clickme/', '/api/', '/login'],
     },
     sitemap: 'https://www.davisgarnettsells.com/sitemap.xml',
   };

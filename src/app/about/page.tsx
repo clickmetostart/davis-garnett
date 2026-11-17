@@ -23,6 +23,7 @@ import {
 import ProposalNav from "@/components/ProposalNav";
 import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 import SiteFooter from "@/components/SiteFooter";
+import EmailActionBox from "@/components/EmailActionBox";
 
 export default function AboutHubPage() {
   const [formData, setFormData] = useState({
@@ -313,11 +314,12 @@ export default function AboutHubPage() {
                           941-737-4127
                         </a>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <Mail className="w-3.5 h-3.5 text-[#9A7D3A]" />
-                        <a href="mailto:mark@davisgarnettsells.com" className="hover:text-[#9A7D3A] font-medium">
-                          mark@davisgarnettsells.com
-                        </a>
+                      <div className="flex items-start gap-2">
+                        <EmailActionBox
+                          email="mark@davisgarnettsells.com"
+                          variant="light"
+                          className="font-medium"
+                        />
                       </div>
                     </div>
                   </div>
@@ -394,11 +396,12 @@ export default function AboutHubPage() {
                           727-808-3344
                         </a>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <Mail className="w-3.5 h-3.5 text-[#9A7D3A]" />
-                        <a href="mailto:rachael@davisgarnettsells.com" className="hover:text-[#9A7D3A] font-medium">
-                          rachael@davisgarnettsells.com
-                        </a>
+                      <div className="flex items-start gap-2">
+                        <EmailActionBox
+                          email="rachael@davisgarnettsells.com"
+                          variant="light"
+                          className="font-medium"
+                        />
                       </div>
                     </div>
                   </div>

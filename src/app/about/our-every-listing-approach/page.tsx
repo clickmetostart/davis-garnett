@@ -68,15 +68,15 @@ export default function EveryListingApproachPage() {
       category: "Floor Plans & 3D",
     },
     {
-      line1: "Custom Print Brochures",
-      line2: "& Property Guides",
-      desc: "We design clean, easy-to-read print flyers, commercial property summaries, and digital brochures buyers can review at home.",
+      line1: "Tailored Print & Digital",
+      line2: "Property Materials",
+      desc: "We prepare custom property brochures, digital flyers, and commercial offering summaries tailored to each listing's price point, asset type, and marketing plan.",
       category: "Print & Digital Materials",
     },
     {
       line1: "Full Stellar MLS &",
-      line2: "Commercial Portal Reach",
-      desc: "Your listing goes live on Stellar MLS and syndicates to Zillow, Realtor.com, Redfin, Homes.com, CoStar, LoopNet, and Crexi.",
+      line2: "Targeted Portal Reach",
+      desc: "Your listing goes live on Stellar MLS and major consumer portals (Zillow, Realtor.com, Redfin, Homes.com), with LoopNet, CoStar, and Crexi evaluated per property.",
       category: "Online Reach",
     },
     {

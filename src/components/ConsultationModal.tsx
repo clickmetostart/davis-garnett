@@ -34,20 +34,19 @@ export default function ConsultationModal({
     e.preventDefault();
     setSubmitting(true);
     try {
-      await fetch("/api/leads", {
+      await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: `${firstName} ${lastName}`.trim(),
           firstName,
           lastName,
           email,
           phone,
-          propertyInterest: interest,
+          subject: `Consultation Modal: ${interest}`,
+          interest,
           assignedAdvisor: advisor,
-          notes,
+          message: notes,
           source: "Website Consultation Modal",
-          status: "New",
         }),
       });
       setSubmitted(true);
@@ -96,7 +95,7 @@ export default function ConsultationModal({
               </h3>
               <p className="text-[#111]/70 font-light max-w-md mx-auto mb-8 leading-relaxed">
                 Your inquiry has been routed directly to our executive desk at{" "}
-                <strong>Davis &amp; Garnett</strong>. Mark or Rachael will reach out personally within 2 business hours.
+                <strong>Davis &amp; Garnett</strong>. We value your inquiry and strive to respond within six hours — almost always the same day and always ASAP.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-xs text-[#111]/70 mb-8">
                 <a href="tel:941-737-4127" className="flex items-center gap-2 px-4 py-2.5 bg-[#f5f3ef] rounded-lg hover:bg-[#D4AF37]/20 transition-colors">

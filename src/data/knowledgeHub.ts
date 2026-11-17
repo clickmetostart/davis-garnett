@@ -665,8 +665,8 @@ export const AREAS: AreaItem[] = [
     overview: "Positioned directly north of Lutz and Carrollwood with effortless access to the Suncoast Parkway (SR-589) and US-41, Land O' Lakes combines natural Florida lakes and conservation preserves with massive economic expansion—headlined by the 6,200-acre Angeline community and Moffitt's 775-acre Speros FL global innovation campus.",
     sections: [
       {
-        heading: "Proven Track Record in Plantation Palms, Ballantrae & Beyond",
-        body: "Davis & Garnett has a deep transaction footprint in Land O' Lakes, including recent 2026 closings at 3537 Valencia Cove Ct in Plantation Palms ($550,000) and 3037 Downan Point Dr in Ballantrae ($450,000), alongside active buyer representation in Angeline and Connerton.",
+        heading: "Proven Track Record in Plantation Palms, Angeline & Beyond",
+        body: "Davis & Garnett has a deep transaction footprint in Land O' Lakes, including our 2026 closing at 3537 Valencia Cove Ct in Plantation Palms ($550,000) alongside active buyer representation in Angeline and Connerton.",
       },
     ],
     faqs: [
@@ -675,7 +675,7 @@ export const AREAS: AreaItem[] = [
         answer: "Speros FL is Moffitt Cancer Center's 775-acre global biotechnology and life-sciences campus located directly inside the Angeline master-planned community along the Suncoast Parkway.",
       },
     ],
-    featuredListingSlugs: ["3537-valencia-cove-ct-land-o-lakes", "3037-downan-point-dr-land-o-lakes"],
+    featuredListingSlugs: ["3537-valencia-cove-ct-land-o-lakes"],
   },
   {
     slug: "brandon-riverview",

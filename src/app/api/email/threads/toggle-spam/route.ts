@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs/promises';
-import path from 'path';
+import { kv_getThreads, kv_setThreads } from '@/lib/kv';
 
 export async function POST(req: Request) {
   try {
@@ -11,16 +10,9 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Missing threadId or threadIds' }, { status: 400 });
     }
 
-    const inboxPath = path.join(process.cwd(), 'src', 'data', 'web_inbox.json');
-    let allThreads = [];
-    try {
-      const data = await fs.readFile(inboxPath, 'utf8');
-      allThreads = JSON.parse(data);
-    } catch (err) {
-      return NextResponse.json({ error: 'Failed to read inbox data' }, { status: 500 });
-    }
-
+    let allThreads = await kv_getThreads();
     let updatedCount = 0;
+
     allThreads = allThreads.map((t: any) => {
       if (idsToUpdate.includes(t.id)) {
         t.isSpam = isSpam;
@@ -33,8 +25,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'No threads found to update' }, { status: 404 });
     }
 
-    await fs.writeFile(inboxPath, JSON.stringify(allThreads, null, 2));
-
+    await kv_setThreads(allThreads);
     return NextResponse.json({ success: true, updatedCount });
   } catch (err: any) {
     console.error('Spam toggle error:', err);

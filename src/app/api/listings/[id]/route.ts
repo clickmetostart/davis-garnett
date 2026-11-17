@@ -1,25 +1,24 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs/promises';
-import path from 'path';
+import { kv_getListings, kv_setListings } from '@/lib/kv';
 
 export async function PUT(req: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     const body = await req.json();
     const resolvedParams = await params;
-    const dataPath = path.join(process.cwd(), 'src', 'data', 'listings.json');
-    const fileData = await fs.readFile(dataPath, 'utf8').catch(() => '[]');
-    let listings = JSON.parse(fileData);
+    const listings = await kv_getListings();
 
     const index = listings.findIndex((l: any) => l.id === resolvedParams.id);
     if (index === -1) {
       return NextResponse.json({ message: 'Listing not found' }, { status: 404 });
     }
 
-    // Update the listing with the new data
-    listings[index] = { ...listings[index], ...body, updatedAt: new Date().toISOString() };
+    listings[index] = {
+      ...listings[index],
+      ...body,
+      updatedAt: new Date().toISOString(),
+    };
 
-    await fs.writeFile(dataPath, JSON.stringify(listings, null, 2));
-
+    await kv_setListings(listings);
     return NextResponse.json({ message: 'Success', listing: listings[index] }, { status: 200 });
   } catch (error) {
     console.error('Error updating listing:', error);
@@ -27,12 +26,10 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
   }
 }
 
-export async function DELETE(req: Request, { params }: { params: Promise<{ id: string }> }) {
+export async function DELETE(_req: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     const resolvedParams = await params;
-    const dataPath = path.join(process.cwd(), 'src', 'data', 'listings.json');
-    const fileData = await fs.readFile(dataPath, 'utf8').catch(() => '[]');
-    let listings = JSON.parse(fileData);
+    const listings = await kv_getListings();
 
     const index = listings.findIndex((l: any) => l.id === resolvedParams.id);
     if (index === -1) {
@@ -40,8 +37,7 @@ export async function DELETE(req: Request, { params }: { params: Promise<{ id: s
     }
 
     listings.splice(index, 1);
-
-    await fs.writeFile(dataPath, JSON.stringify(listings, null, 2));
+    await kv_setListings(listings);
 
     return NextResponse.json({ message: 'Deleted' }, { status: 200 });
   } catch (error) {

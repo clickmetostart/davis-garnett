@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs/promises';
-import path from 'path';
+import { kv_getThreads } from '@/lib/kv';
 
 export const dynamic = 'force-dynamic';
 
@@ -9,18 +8,8 @@ export async function GET(request: Request) {
     const urlObj = new URL(request.url);
     const type = urlObj.searchParams.get('type') || 'general'; // 'general', 'apply', 'spam'
 
-    const inboxPath = path.join(process.cwd(), 'src', 'data', 'web_inbox.json');
-    let inboxData = '[]';
-    try {
-      inboxData = await fs.readFile(inboxPath, 'utf8');
-      console.log(`[API /resend/threads] Successfully read ${inboxPath}. Size: ${inboxData.length}`);
-    } catch (fsErr: any) {
-      console.error(`[API /resend/threads] ERROR reading ${inboxPath}:`, fsErr);
-      inboxData = '[]';
-    }
-    const allThreads = JSON.parse(inboxData);
+    const allThreads = await kv_getThreads();
 
-    // Filter by type
     const validThreads = allThreads.filter((t: any) => {
       if (type === 'spam') {
         return t.isSpam;
@@ -31,15 +20,12 @@ export async function GET(request: Request) {
       }
     });
 
-    console.log(`[API /resend/threads] Requested type: ${type}. Returning ${validThreads.length} threads.`);
-
-    return NextResponse.json({ threads: validThreads, nextPageToken: null }, {
-      headers: {
-        'Cache-Control': 'no-store, max-age=0'
-      }
-    });
+    return NextResponse.json(
+      { threads: validThreads, nextPageToken: null },
+      { headers: { 'Cache-Control': 'no-store, max-age=0' } }
+    );
   } catch (error: any) {
-    console.error('Local Inbox Read Error:', error);
+    console.error('Inbox Read Error:', error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }

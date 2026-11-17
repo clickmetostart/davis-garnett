@@ -36,6 +36,7 @@ import {
 } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
+import EmailActionBox from "@/components/EmailActionBox";
 import { swipeHandlers, SWIPE_STYLE } from "@/lib/swipe";
 import listingsData from "@/data/listings.json";
 import { Listing } from "@/types/listings";
@@ -763,7 +764,7 @@ export default function ListingDetailPage() {
               </div>
             )}
 
-            {/* 3D Matterport Walkthrough (if available, e.g. 3037 Downan Point Dr) */}
+            {/* 3D Matterport Walkthrough */}
             {listing.matterportUrl && (
               <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[#111111]/8">
                 <div className="p-8 pb-5 flex items-center justify-between">
@@ -935,12 +936,11 @@ export default function ListingDetailPage() {
                           {adv.phone}
                         </a>
                         <span className="text-[#111111]/20">|</span>
-                        <a
-                          href={`mailto:${adv.email}`}
-                          className="text-[#111111]/65 hover:text-[#9A7D3A] truncate transition-colors"
-                        >
-                          {adv.email}
-                        </a>
+                        <EmailActionBox
+                          email={adv.email}
+                          variant="light"
+                          showIcon={false}
+                        />
                       </div>
                     </div>
                   </div>
@@ -965,7 +965,7 @@ export default function ListingDetailPage() {
                   </h4>
                   <p className="text-[#111111]/65 text-xs leading-relaxed mb-4">
                     Thank you, {leadForm.firstName}. Your inquiry for{" "}
-                    <strong>{listing.title}</strong> has been logged for Mark Davis &amp; Rachael Garnett.
+                    <strong>{listing.title}</strong> has been logged for Mark Davis &amp; Rachael Garnett. We value your inquiry and strive to respond within six hours — almost always the same day and always ASAP.
                   </p>
                   <button
                     onClick={() => setFormStatus("idle")}
@@ -1048,12 +1048,11 @@ export default function ListingDetailPage() {
               )}
 
               <div className="flex flex-wrap items-center justify-center gap-4 mt-5 pt-4 border-t border-[#111111]/8">
-                <a
-                  href="mailto:list@davisgarnettsells.com"
-                  className="flex items-center gap-1.5 text-[#111111]/60 hover:text-[#111111] text-[11px] font-bold uppercase tracking-widest transition-colors"
-                >
-                  <Mail className="w-3.5 h-3.5 text-[#C8A951]" /> list@davisgarnettsells.com
-                </a>
+                <EmailActionBox
+                  email="list@davisgarnettsells.com"
+                  variant="light"
+                  className="text-[11px] font-bold uppercase tracking-widest"
+                />
               </div>
             </div>
 

@@ -135,13 +135,55 @@ const PARTNER_CATEGORIES = [
         firm: "Stellar MLS (StellarMLS.com) & Matterport 3D Architectural Media",
         specialty: "3D Matterport Digital Twins, Aerial Drone Cinematography & Global IDX Syndication",
         coverage: "Tampa Bay & Central Florida MLS Footprint",
-        highlight: "Full-scale digital twin walkthroughs (featured on our listings like 3037 Downan Point Dr), 4K drone video, and syndication to Realtor.com, Zillow, and Homes.com.",
+        highlight: "Full-scale 3D digital twin walkthroughs, 4K drone photography, and global syndication to Realtor.com, Zillow, and Homes.com.",
       },
       {
         firm: "Davis & Garnett White-Glove Pre-List Staging & Preparation Concierge",
         specialty: "Interior Staging, Curb-Appeal Refresh, Lighting & Editorial Launch Strategy",
         coverage: "Greater Tampa Bay • Coordinated Directly by Rachael Garnett & Mark Davis",
         highlight: "We treat every property—commercial or residential, big or small, land or condo—with genuine respect for the value it brings to the neighborhood and community.",
+      },
+    ],
+  },
+  {
+    id: "contractors-construction",
+    icon: Building2,
+    category: "07 · Commercial & Residential General Contractors",
+    summary:
+      "Licensed Tampa Bay general contractors, build-out specialists, and residential renovation pros helping buyers evaluate repairs, TI allowances, and construction timelines.",
+    partners: [
+      {
+        firm: "Commercial Contractors & Tenant Build-Out Specialists",
+        specialty: "Retail/Office Tenant Improvements, Warehouse Retrofits & Code Upgrades",
+        coverage: "Greater Tampa Bay · Hillsborough, Pinellas, Pasco & Polk Counties",
+        highlight: "Trusted Florida licensed commercial GCs who walk properties with buyers before closing to estimate build-out budgets and permitting schedules.",
+      },
+      {
+        firm: "General Residential Contractors & Remodeling Partners",
+        specialty: "Structural Repairs, Additions, Kitchen/Bath Renovations & Roof Replacements",
+        coverage: "Carrollwood, Lutz, Wesley Chapel, St. Pete & Surrounding Communities",
+        highlight: "Dependable residential contractors for pre-listing refresh projects or post-closing renovation estimates.",
+      },
+    ],
+  },
+  {
+    id: "septic-environmental",
+    icon: ShieldCheck,
+    category: "08 · Septic Services & Environmental Due Diligence",
+    summary:
+      "Specialized Florida septic inspectors and environmental consultants essential for acreage, rural estates, and commercial site acquisitions.",
+    partners: [
+      {
+        firm: "Licensed Septic Service Providers & Inspectors",
+        specialty: "Septic Tank Pump-Outs, Drainfield Evaluations, Certifications & Repairs",
+        coverage: "Pasco, Hernando, Polk, Hillsborough & Marion Acreage Corridors",
+        highlight: "Thorough septic system inspections and certification reports for acreage homes, horse properties, and commercial rural parcels.",
+      },
+      {
+        firm: "Environmental Inspectors & Due Diligence Specialists",
+        specialty: "Phase I & Phase II Environmental Site Assessments (ESA), Asbestos & Mold Audits",
+        coverage: "Tampa Bay & Central Florida Commercial & Land Transactions",
+        highlight: "Critical commercial and land due diligence protecting SBA borrowers, developers, and rural buyers from hidden environmental liabilities.",
       },
     ],
   },
@@ -372,7 +414,7 @@ export default function StrategicPartnersPage() {
                 Partner Request Received
               </h3>
               <p className="text-sm text-[#111111]/70 max-w-md mx-auto mb-6">
-                Thank you, {formData.firstName}. Mark Davis and Rachael Garnett will review your request and coordinate your introduction directly.
+                Thank you, {formData.firstName}. Your request has been received by Mark Davis and Rachael Garnett. We value your inquiry and strive to respond within six hours — almost always the same day and always ASAP.
               </p>
               <button
                 type="button"
@@ -461,12 +503,16 @@ export default function StrategicPartnersPage() {
                     onChange={(e) => setFormData({ ...formData, category: e.target.value })}
                     className="w-full px-4 py-3.5 rounded-lg bg-white border border-[#111111]/15 text-sm"
                   >
-                    <option>Preferred Residential & Jumbo Lending</option>
-                    <option>Commercial & SBA Financing</option>
-                    <option>Real Estate Title & Escrow Counsel</option>
-                    <option>Certified Home & Seawall Inspectors</option>
-                    <option>Civil Engineering & Land Surveying</option>
-                    <option>Architectural Staging & Interior Design</option>
+                    <option>Preferred Residential &amp; Jumbo Lending</option>
+                    <option>Commercial &amp; SBA Financing</option>
+                    <option>Real Estate Title &amp; Escrow Counsel</option>
+                    <option>Certified Home &amp; Seawall Inspectors</option>
+                    <option>Commercial Contractors</option>
+                    <option>General Residential Contractors</option>
+                    <option>Septic Service Providers &amp; Inspectors</option>
+                    <option>Environmental Inspectors &amp; Due Diligence Specialists</option>
+                    <option>Civil Engineering &amp; Land Surveying</option>
+                    <option>Architectural Staging &amp; Interior Design</option>
                   </select>
                 </div>
               </div>

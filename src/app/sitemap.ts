@@ -18,16 +18,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/align-right-carrollwood-coverage",
     "/about/strategic-partners",
     "/about/community-outreach-giving",
-    "/about/contact",
     "/commercial-advisory-guide",
     "/residential-advisory-guide",
     "/contact",
-    "/davis",
-    "/garnett",
     "/properties",
     "/developments",
     "/knowledge-hub",
     "/search-mls",
+    "/privacy-policy",
   ];
 
   const listingUrls = (listingsData as Array<{ slug?: string; id?: string }>).map((item) => ({

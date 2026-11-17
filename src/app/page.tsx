@@ -109,7 +109,19 @@ export default function HomePageV1Light() {
         </div>
 
         <div className="relative z-20 text-center px-8 flex flex-col items-center w-full max-w-4xl mx-auto pt-12">
-          <DavisGarnettLogo variant="dark" className="w-[90%] md:w-[70%] max-w-[680px] mx-auto mb-4 drop-shadow-2xl" />
+          <DavisGarnettLogo variant="dark" className="w-[90%] md:w-[70%] max-w-[680px] mx-auto mb-3 drop-shadow-2xl" />
+          <Link
+            href="/about/align-right-realty-carrollwood"
+            className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-black/55 backdrop-blur-md border border-[#ef5728]/50 hover:border-[#D4AF37] text-xs md:text-sm font-semibold uppercase tracking-[0.24em] text-white/95 hover:text-[#D4AF37] mb-5 transition-colors shadow-lg"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/align-right-email-logo.png"
+              alt="Align Right Realty Carrollwood"
+              className="h-5 w-auto object-contain"
+            />
+            <span>Align Right Realty Carrollwood</span>
+          </Link>
           <h1 className="font-aiveritas text-5xl md:text-7xl lg:text-8xl mb-6 font-bold tracking-tight text-white drop-shadow-2xl">
             Your Tampa Bay <br />
             <span className="text-[#D4AF37]">Real Estate Team.</span>

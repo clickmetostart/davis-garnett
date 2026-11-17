@@ -82,16 +82,16 @@ export default function ProposalNav() {
   return (
     <>
       <nav className="fixed top-0 w-full z-50 bg-[#050505]/95 backdrop-blur-xl border-b border-white/10">
-        <div className="max-w-[1680px] mx-auto px-6 xl:px-10 h-20 flex items-center justify-between gap-6">
-          <Link href="/" className="flex items-center gap-4 hover:opacity-85 transition-opacity shrink-0">
-            <DavisGarnettLogo variant="dark" className="w-40 xl:w-44 max-w-full" />
+        <div className="max-w-[1680px] mx-auto px-5 xl:px-8 h-20 flex items-center justify-between gap-4">
+          <Link href="/" className="flex items-center hover:opacity-85 transition-opacity shrink-0">
+            <DavisGarnettLogo variant="dark" className="w-36 xl:w-40 max-w-full" />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden xl:flex items-center gap-9 2xl:gap-11 shrink-0">
+          <div className="hidden xl:flex items-center gap-5 2xl:gap-8 shrink-0">
             <Link
               href="/"
-              className="text-xs 2xl:text-[13px] font-bold tracking-[0.16em] uppercase text-white/85 hover:text-[#D4AF37] transition-colors py-6 whitespace-nowrap shrink-0"
+              className="text-xs 2xl:text-[13px] font-bold tracking-[0.15em] uppercase text-white/85 hover:text-[#D4AF37] transition-colors py-6 whitespace-nowrap shrink-0"
             >
               Home
             </Link>
@@ -105,7 +105,7 @@ export default function ProposalNav() {
               >
                 <Link
                   href={group.href}
-                  className="flex items-center gap-1.5 text-xs 2xl:text-[13px] font-bold tracking-[0.16em] uppercase text-white/85 hover:text-[#D4AF37] transition-colors py-6 whitespace-nowrap"
+                  className="flex items-center gap-1 text-xs 2xl:text-[13px] font-bold tracking-[0.15em] uppercase text-white/85 hover:text-[#D4AF37] transition-colors py-6 whitespace-nowrap"
                 >
                   <span>{group.label}</span>
                   {group.dropdown && (
@@ -141,10 +141,10 @@ export default function ProposalNav() {
               </div>
             ))}
 
-            <div className="flex items-center gap-6 2xl:gap-7 shrink-0">
+            <div className="flex items-center gap-3 2xl:gap-4 shrink-0">
               <Link
                 href="/search-mls"
-                className="flex items-center gap-1.5 text-xs 2xl:text-[13px] font-bold tracking-[0.16em] uppercase text-[#D4AF37] hover:text-white transition-colors py-2.5 px-4 border border-[#D4AF37]/40 rounded-lg bg-[#D4AF37]/10 whitespace-nowrap shrink-0"
+                className="flex items-center gap-1.5 text-xs 2xl:text-[13px] font-bold tracking-[0.14em] uppercase text-[#D4AF37] hover:text-white transition-colors py-2.5 px-3.5 border border-[#D4AF37]/40 rounded-lg bg-[#D4AF37]/10 whitespace-nowrap shrink-0"
               >
                 <Search className="w-3.5 h-3.5 shrink-0" />
                 <span>Search MLS</span>
@@ -152,21 +152,36 @@ export default function ProposalNav() {
 
               <button
                 onClick={() => setModalOpen(true)}
-                className="px-4 py-2.5 bg-[#D4AF37] hover:bg-white text-[#111] text-xs 2xl:text-[13px] font-bold uppercase tracking-[0.16em] rounded-lg transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+                className="px-3.5 py-2.5 bg-[#D4AF37] hover:bg-white text-[#111] text-xs 2xl:text-[13px] font-bold uppercase tracking-[0.14em] rounded-lg transition-colors whitespace-nowrap shrink-0 cursor-pointer"
               >
                 Need Advice?
               </button>
             </div>
           </div>
 
-          {/* Mobile Hamburger */}
-          <button
-            className="xl:hidden p-2 text-white/80 hover:text-white"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle Menu"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Upper-Right Align Right Brokerage Dual Brand + Mobile Hamburger */}
+          <div className="flex items-center gap-3 shrink-0">
+            <Link
+              href="/about/align-right-realty-carrollwood"
+              className="hidden sm:flex items-center pl-3 xl:border-l xl:border-white/15 hover:opacity-85 transition-opacity shrink-0"
+              title="Align Right Realty Carrollwood — Broker #BK3401606"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/align-right-email-logo.png"
+                alt="Align Right Realty Carrollwood"
+                className="h-9 xl:h-10 w-auto object-contain"
+              />
+            </Link>
+
+            <button
+              className="xl:hidden p-2 text-white/80 hover:text-white"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle Menu"
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu Drawer */}

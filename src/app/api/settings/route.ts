@@ -1,72 +1,33 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
-
-const dataFilePath = path.join(process.cwd(), 'src', 'data', 'settings.json');
-
-// Helper to safely read data
-const readData = () => {
-  try {
-    if (!fs.existsSync(dataFilePath)) {
-      // Create default if missing
-      const defaultData = {
-        onboarding: {
-          profileSetup: false,
-          officeLocationEntered: false,
-          teamSetupWalkthrough: false,
-          analyticsAcknowledged: false,
-          socialTraining: false,
-          aiContentTraining: false,
-          dummyClientEntered: false,
-          listingsWalkthrough: false,
-          flowWalkthrough: false,
-          assetsWalkthrough: false,
-          marketingWalkthrough: false,
-          schedulerWalkthrough: false,
-          reputationWalkthrough: false,
-          communicationsWalkthrough: false
-        }
-      };
-      fs.writeFileSync(dataFilePath, JSON.stringify(defaultData, null, 2));
-      return defaultData;
-    }
-    const fileData = fs.readFileSync(dataFilePath, 'utf8');
-    return JSON.parse(fileData);
-  } catch (err) {
-    console.error('Error reading settings file:', err);
-    return null;
-  }
-};
+import { kv_getSettings, kv_setSettings } from '@/lib/kv';
 
 export async function GET() {
-  const data = readData();
-  if (!data) return NextResponse.json({ error: 'Failed to read data' }, { status: 500 });
-  return NextResponse.json(data);
+  try {
+    const data = await kv_getSettings();
+    return NextResponse.json(data);
+  } catch (error) {
+    console.error('Error fetching settings:', error);
+    return NextResponse.json({ error: 'Failed to read data' }, { status: 500 });
+  }
 }
 
 export async function PUT(request: Request) {
   try {
     const body = await request.json();
-    const data = readData();
-    
-    if (!data) {
-      return NextResponse.json({ error: 'Failed to read data' }, { status: 500 });
-    }
+    const data = await kv_getSettings();
 
-    // Merge top-level keys if they exist
     if (body.onboarding) {
       data.onboarding = {
-        ...data.onboarding,
-        ...body.onboarding
+        ...(data.onboarding || {}),
+        ...body.onboarding,
       };
     }
-    
+
     if (body.formRouting) {
       data.formRouting = body.formRouting;
     }
 
-    fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2));
-    
+    await kv_setSettings(data);
     return NextResponse.json({ success: true, settings: data });
   } catch (error) {
     console.error('Error updating settings:', error);

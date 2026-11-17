@@ -19,6 +19,7 @@ import {
 import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
 import FaviconHeroBackground from "@/components/FaviconHeroBackground";
+import EmailActionBox from "@/components/EmailActionBox";
 
 export default function ContactPage() {
   const [firstName, setFirstName] = useState("");
@@ -176,22 +177,22 @@ export default function ContactPage() {
                       </div>
                     </a>
 
-                    <a
-                      href="mailto:mark@davisgarnettsells.com"
-                      className="flex items-center gap-3.5 p-4 rounded-xl bg-[#f5f3ef] hover:bg-[#111] text-[#111] hover:text-white transition-colors group"
-                    >
-                      <div className="w-10 h-10 rounded-lg bg-[#D4AF37]/20 text-[#9A7D3A] group-hover:bg-[#D4AF37] group-hover:text-[#111] flex items-center justify-center shrink-0 transition-colors">
+                    <div className="flex items-start gap-3.5 p-4 rounded-xl bg-[#f5f3ef] text-[#111]">
+                      <div className="w-10 h-10 rounded-lg bg-[#D4AF37]/20 text-[#9A7D3A] flex items-center justify-center shrink-0">
                         <Mail className="w-4 h-4" />
                       </div>
-                      <div className="overflow-hidden">
-                        <span className="text-[10px] uppercase tracking-widest opacity-60 block font-bold">
+                      <div className="min-w-0">
+                        <span className="text-[10px] uppercase tracking-widest opacity-60 block font-bold mb-0.5">
                           Direct Email
                         </span>
-                        <span className="text-xs font-bold block truncate">
-                          mark@davisgarnettsells.com
-                        </span>
+                        <EmailActionBox
+                          email="mark@davisgarnettsells.com"
+                          variant="light"
+                          showIcon={false}
+                          className="font-bold"
+                        />
                       </div>
-                    </a>
+                    </div>
                   </div>
 
                   {/* Focus Tags */}
@@ -284,22 +285,22 @@ export default function ContactPage() {
                       </div>
                     </a>
 
-                    <a
-                      href="mailto:rachael@davisgarnettsells.com"
-                      className="flex items-center gap-3.5 p-4 rounded-xl bg-[#f5f3ef] hover:bg-[#111] text-[#111] hover:text-white transition-colors group"
-                    >
-                      <div className="w-10 h-10 rounded-lg bg-[#D4AF37]/20 text-[#9A7D3A] group-hover:bg-[#D4AF37] group-hover:text-[#111] flex items-center justify-center shrink-0 transition-colors">
+                    <div className="flex items-start gap-3.5 p-4 rounded-xl bg-[#f5f3ef] text-[#111]">
+                      <div className="w-10 h-10 rounded-lg bg-[#D4AF37]/20 text-[#9A7D3A] flex items-center justify-center shrink-0">
                         <Mail className="w-4 h-4" />
                       </div>
-                      <div className="overflow-hidden">
-                        <span className="text-[10px] uppercase tracking-widest opacity-60 block font-bold">
+                      <div className="min-w-0">
+                        <span className="text-[10px] uppercase tracking-widest opacity-60 block font-bold mb-0.5">
                           Direct Email
                         </span>
-                        <span className="text-xs font-bold block truncate">
-                          rachael@davisgarnettsells.com
-                        </span>
+                        <EmailActionBox
+                          email="rachael@davisgarnettsells.com"
+                          variant="light"
+                          showIcon={false}
+                          className="font-bold"
+                        />
                       </div>
-                    </a>
+                    </div>
                   </div>
 
                   {/* Focus Tags */}
@@ -405,15 +406,21 @@ export default function ContactPage() {
                       >
                         (813) 374-6050
                       </a>
-                      <a
-                        href="mailto:officeadmin@alignrightcarrollwood.com"
-                        className="text-xs text-white/75 hover:text-[#ef5728] block mt-1 break-all transition-colors"
-                      >
-                        officeadmin@alignrightcarrollwood.com
-                      </a>
-                      <span className="text-[11px] text-white/45 block mt-1">
-                        Team Desk: list@davisgarnettsells.com
-                      </span>
+                      <div className="mt-1">
+                        <EmailActionBox
+                          email="officeadmin@alignrightcarrollwood.com"
+                          variant="dark"
+                          showIcon={false}
+                        />
+                      </div>
+                      <div className="mt-1.5">
+                        <EmailActionBox
+                          email="list@davisgarnettsells.com"
+                          prefixLabel="Team Desk: "
+                          variant="dark"
+                          showIcon={false}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -459,7 +466,7 @@ export default function ContactPage() {
                 </h3>
                 <p className="text-[#111]/70 font-light max-w-md mx-auto mb-8 leading-relaxed">
                   Your message has been logged in our ClickMe CRM and routed directly to{" "}
-                  <strong>{recipient}</strong>. We will respond within 2 business hours.
+                  <strong>{recipient}</strong>. We value your inquiry and strive to respond within six hours — almost always the same day and always ASAP.
                 </p>
                 <button
                   onClick={() => {

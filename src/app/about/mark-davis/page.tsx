@@ -22,6 +22,7 @@ import {
 import ProposalNav from "@/components/ProposalNav";
 import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 import SiteFooter from "@/components/SiteFooter";
+import EmailActionBox from "@/components/EmailActionBox";
 
 const ACTIVE_LISTINGS = [
   {
@@ -77,13 +78,6 @@ const SOLD_2026_TRANSACTIONS = [
     property: "3537 Valencia Cove Ct, Land O' Lakes, FL 34639",
     location: "Plantation Palms Golf Club • Pasco County",
     type: "4BD/3BA • 2,518 SqFt Golf Community Estate ($550,000)",
-    year: "2026 Sold",
-    role: "Davis & Garnett Team Representation",
-  },
-  {
-    property: "3037 Downan Point Dr, Land O' Lakes, FL 34638",
-    location: "Ballantrae • Pasco County (MLS# TB8490089)",
-    type: "5BD/3BA • 2,260 SqFt Residence ($450,000)",
     year: "2026 Sold",
     role: "Davis & Garnett Team Representation",
   },
@@ -236,13 +230,12 @@ export default function MarkDavisAdvisorPage() {
                 <span className="text-[10px] uppercase tracking-[0.2em] text-[#9A7D3A] font-bold block mb-1">
                   Direct Email
                 </span>
-                <a
-                  href="mailto:mark@davisgarnettsells.com"
-                  className="inline-flex items-center gap-2 text-sm font-bold text-[#111111] hover:text-[#9A7D3A] break-all"
-                >
-                  <Mail className="w-4 h-4 text-[#9A7D3A] shrink-0" />
-                  mark@davisgarnettsells.com
-                </a>
+                <EmailActionBox
+                  email="mark@davisgarnettsells.com"
+                  variant="light"
+                  size="sm"
+                  className="font-bold"
+                />
               </div>
               <div>
                 <span className="text-[10px] uppercase tracking-[0.2em] text-[#9A7D3A] font-bold block mb-1">

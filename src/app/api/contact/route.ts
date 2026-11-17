@@ -1,6 +1,11 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs/promises';
-import path from 'path';
+import {
+  kv_getLeads,
+  kv_setLeads,
+  kv_getSettings,
+  kv_getThreads,
+  kv_setThreads,
+} from '@/lib/kv';
 import { sendEmail, wrapDavisGarnettEmail } from '@/lib/mail';
 
 function escapeHtml(value: unknown): string {
@@ -55,10 +60,7 @@ export async function POST(req: Request) {
       : ['Contact Form: General'];
     
     try {
-      const settingsPath = path.join(process.cwd(), 'src', 'data', 'settings.json');
-      const settingsData = await fs.readFile(settingsPath, 'utf8').catch(() => '{}');
-      const settings = JSON.parse(settingsData);
-      
+      const settings = await kv_getSettings();
       if (settings.formRouting && settings.formRouting[routeTrigger]) {
         assignedLabels = settings.formRouting[routeTrigger];
       }
@@ -66,76 +68,76 @@ export async function POST(req: Request) {
       // Ignore routing errors, default to General Contacts
     }
 
-    // --- LOCAL CRM CAPTURE ---
+    // --- CLOUD CRM CAPTURE (Upstash Redis `dg:leads`) ---
     if (!isSpam) {
       try {
-        const dataPath = path.join(process.cwd(), 'src', 'data', 'leads.json');
-        const fileData = await fs.readFile(dataPath, 'utf8').catch(() => '[]');
-        const leads = JSON.parse(fileData);
-      
-      const existingLeadIndex = leads.findIndex((l: any) => l.email && email && l.email.toLowerCase() === email.toLowerCase());
+        const leads = await kv_getLeads();
 
-      if (existingLeadIndex !== -1) {
-        const existingLead = leads[existingLeadIndex];
-        
-        if (message) {
-          const timestamp = new Date().toLocaleString();
-          existingLead.message = existingLead.message 
-            ? `${existingLead.message}\n\n--- New Message on ${timestamp} ---\n${message}`
-            : message;
-        }
+        const existingLeadIndex = leads.findIndex(
+          (l: any) => l.email && email && l.email.toLowerCase() === email.toLowerCase()
+        );
 
-        for (const label of assignedLabels) {
-          if (!existingLead.labels.includes(label)) {
-            existingLead.labels.push(label);
+        if (existingLeadIndex !== -1) {
+          const existingLead = leads[existingLeadIndex];
+
+          if (message) {
+            const timestamp = new Date().toLocaleString();
+            existingLead.message = existingLead.message
+              ? `${existingLead.message}\n\n--- New Message on ${timestamp} ---\n${message}`
+              : message;
           }
+
+          for (const label of assignedLabels) {
+            if (!existingLead.labels.includes(label)) {
+              existingLead.labels.push(label);
+            }
+          }
+
+          existingLead.customFields = {
+            ...existingLead.customFields,
+            ...customFields,
+          };
+
+          existingLead.status = 'Recently Corresponded';
+          existingLead.date = new Date().toISOString();
+          if (phone && phone !== 'N/A') existingLead.phone = phone;
+          if (method && method !== 'N/A') existingLead.method = method;
+
+          leads.splice(existingLeadIndex, 1);
+          leads.unshift(existingLead);
+
+          console.log('Existing lead updated in ClickMe CRM:', name);
+        } else {
+          const newLead = {
+            id: Date.now(),
+            name,
+            firstName: firstName || '',
+            lastName: lastName || '',
+            email,
+            phone: phone || 'N/A',
+            subject: routeTrigger,
+            message: message || '',
+            method: method || 'N/A',
+            source: source || 'N/A',
+            customFields,
+            status: 'New',
+            isSpam,
+            isTrashed: isSpam,
+            isShared: !isSpam,
+            labels: assignedLabels,
+            date: new Date().toISOString(),
+          };
+
+          leads.unshift(newLead);
+          console.log('Lead captured in ClickMe CRM:', name);
         }
-        
-        existingLead.customFields = {
-          ...existingLead.customFields,
-          ...customFields
-        };
 
-        existingLead.status = 'Recently Corresponded';
-        existingLead.date = new Date().toISOString();
-        if (phone && phone !== 'N/A') existingLead.phone = phone;
-        if (method && method !== 'N/A') existingLead.method = method;
-
-        leads.splice(existingLeadIndex, 1);
-        leads.unshift(existingLead);
-
-        console.log('Existing lead updated in local CRM database:', name);
-      } else {
-        const newLead = {
-          id: Date.now(),
-          name,
-          firstName: firstName || '',
-          lastName: lastName || '',
-          email,
-          phone: phone || 'N/A',
-          subject: routeTrigger,
-          message: message || '',
-          method: method || 'N/A',
-          source: source || 'N/A',
-          customFields,
-          status: 'New',
-          isSpam,
-          isTrashed: isSpam,
-          isShared: !isSpam, // Drop into D&G CRM unless it's spam
-          labels: assignedLabels,
-          date: new Date().toISOString()
-        };
-        
-        leads.unshift(newLead);
-        console.log('Lead captured in local CRM database:', name, isSpam ? '(FLAGGED AS SPAM)' : '');
-      }
-
-        await fs.writeFile(dataPath, JSON.stringify(leads, null, 2));
+        await kv_setLeads(leads);
       } catch (err) {
-        console.error('Failed to save lead to local CRM:', err);
+        console.error('Failed to save lead to ClickMe CRM:', err);
       }
     } else {
-      console.log('Spam detected. Skipping local CRM capture for:', name);
+      console.log('Spam detected. Skipping CRM capture for:', name);
     }
     // ------------------------------------------------------
 
@@ -270,34 +272,14 @@ ${message || 'No message provided.'}
       console.warn(`Spam detected — suppressing outbound email for: ${name} <${email}>`);
     }
 
-    // --- LOCAL INBOX CAPTURE ---
+    // --- CLOUD INBOX CAPTURE (Upstash Redis `dg:threads`) ---
     try {
-      const inboxPath = path.join(process.cwd(), 'src', 'data', 'web_inbox.json');
-      const inboxData = await fs.readFile(inboxPath, 'utf8').catch(() => '[]');
-      const threads = JSON.parse(inboxData);
-      
-      const emailBody = `
-You have received a new lead from ClickMe Template.
-
-Contact Details:
-- First Name: ${firstName || 'N/A'}
-- Last Name: ${lastName || 'N/A'}
-- Email: ${email || 'N/A'}
-- Phone: ${phone || 'N/A'}
-- Preferred Contact Method: ${method || 'N/A'}
-- How Did You Find Us?: ${source || 'N/A'}
-
-Custom Fields:
-${customFieldsText || 'None'}
-
-Message/Questions:
-${message || 'No message provided.'}
-      `.trim();
+      const threads = await kv_getThreads();
 
       const snippet = emailBody.substring(0, 100).replace(/\n/g, ' ') + '...';
       const emailSubject = `${isSpam ? '[SPAM?] ' : ''}New Lead: ${name} - ${routeTrigger}`;
       const now = new Date();
-      
+
       threads.unshift({
         id: Date.now().toString(),
         snippet,
@@ -305,18 +287,20 @@ ${message || 'No message provided.'}
         from: `ClickMe Leads <${fromEmail}>`,
         date: now.toLocaleDateString(),
         isSpam,
-        messages: [{
-          id: Date.now().toString(),
-          from: `ClickMe Leads <${fromEmail}>`,
-          text: emailBody,
-          time: now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-          isMine: false
-        }]
+        messages: [
+          {
+            id: Date.now().toString(),
+            from: `ClickMe Leads <${fromEmail}>`,
+            text: emailBody,
+            time: now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+            isMine: false,
+          },
+        ],
       });
-      
-      await fs.writeFile(inboxPath, JSON.stringify(threads, null, 2));
+
+      await kv_setThreads(threads);
     } catch (err) {
-      console.error('Failed to save to local inbox:', err);
+      console.error('Failed to save to inbox threads:', err);
     }
     // ---------------------------
 

@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
+import { Phone, MapPin, ArrowUpRight } from "lucide-react";
 import DavisGarnettLogo from "@/components/DavisGarnettLogo";
+import EmailActionBox from "@/components/EmailActionBox";
 
 export default function SiteFooter() {
   return (
@@ -39,12 +40,14 @@ export default function SiteFooter() {
               />
               Working together as Commercial &amp; Residential Agents at Align Right Realty Carrollwood, Mark Davis and Rachael Garnett help clients buy and sell homes, commercial buildings, and Florida land across Tampa Bay.
             </p>
-            <a
-              href="mailto:list@davisgarnettsells.com"
-              className="text-[#D4AF37] hover:text-white transition-colors font-bold tracking-widest uppercase text-[10px] mt-3 block clear-both"
-            >
-              list@davisgarnettsells.com
-            </a>
+            <div className="mt-3 clear-both">
+              <EmailActionBox
+                email="list@davisgarnettsells.com"
+                variant="dark"
+                showIcon={false}
+                className="font-bold tracking-widest uppercase text-[10px]"
+              />
+            </div>
           </div>
 
           {/* Mark Davis Card */}
@@ -79,9 +82,7 @@ export default function SiteFooter() {
                 </Link>
               </div>
               <div className="space-y-1 text-xs mt-2">
-                <a href="mailto:mark@davisgarnettsells.com" className="flex items-center gap-2 text-[#D4AF37] hover:text-white transition-colors truncate">
-                  <Mail className="w-3.5 h-3.5 shrink-0" /> mark@davisgarnettsells.com
-                </a>
+                <EmailActionBox email="mark@davisgarnettsells.com" variant="dark" />
                 <a href="tel:941-737-4127" className="flex items-center gap-2 text-[#D4AF37] hover:text-white transition-colors">
                   <Phone className="w-3.5 h-3.5 shrink-0" /> 941-737-4127
                 </a>
@@ -121,9 +122,7 @@ export default function SiteFooter() {
                 </Link>
               </div>
               <div className="space-y-1 text-xs mt-2">
-                <a href="mailto:rachael@davisgarnettsells.com" className="flex items-center gap-2 text-[#D4AF37] hover:text-white transition-colors truncate">
-                  <Mail className="w-3.5 h-3.5 shrink-0" /> rachael@davisgarnettsells.com
-                </a>
+                <EmailActionBox email="rachael@davisgarnettsells.com" variant="dark" />
                 <a href="tel:727-808-3344" className="flex items-center gap-2 text-[#D4AF37] hover:text-white transition-colors">
                   <Phone className="w-3.5 h-3.5 shrink-0" /> 727-808-3344
                 </a>
@@ -236,7 +235,10 @@ export default function SiteFooter() {
           {/* Compliance Col 2 */}
           <div className="flex flex-col gap-4 text-center md:text-left">
             <p>
-              MLS IDX information is for personal, non-commercial use only; data is deemed reliable but not guaranteed. Mobile information, including SMS opt-in data and consent, WILL NOT be shared with third parties or affiliates for marketing purposes.
+              MLS IDX information is for personal, non-commercial use only; data is deemed reliable but not guaranteed. Mobile information, including SMS opt-in data and consent, WILL NOT be shared with third parties or affiliates for marketing purposes.{" "}
+              <Link href="/privacy-policy" className="text-[#D4AF37] hover:text-white underline transition-colors">
+                Privacy Policy
+              </Link>
             </p>
           </div>
 

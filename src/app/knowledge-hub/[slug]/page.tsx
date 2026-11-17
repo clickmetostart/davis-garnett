@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
+import EmailActionBox from "@/components/EmailActionBox";
 import { ALL_GUIDES_AND_QUESTIONS } from "@/data/knowledgeHub";
 
 export default function KnowledgeItemPage({
@@ -44,20 +45,19 @@ export default function KnowledgeItemPage({
     e.preventDefault();
     setSubmitting(true);
     try {
-      await fetch("/api/leads", {
+      await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: `${firstName} ${lastName}`.trim(),
           firstName,
           lastName,
           email,
           phone,
-          propertyInterest: `${item.category}: ${item.title}`,
+          subject: `Knowledge Hub: ${item.title}`,
+          interest: `${item.category}: ${item.title}`,
           assignedAdvisor: item.author.name,
-          notes,
+          message: notes,
           source: `Knowledge Hub (${item.slug})`,
-          status: "New",
         }),
       });
       setSubmitted(true);
@@ -209,9 +209,11 @@ export default function KnowledgeItemPage({
                   <a href={`tel:${item.author.phone.replace(/[^0-9]/g, "")}`} className="flex items-center gap-1.5 text-[#D4AF37] hover:text-white">
                     <Phone className="w-3.5 h-3.5" /> {item.author.phone}
                   </a>
-                  <a href={`mailto:${item.author.email}`} className="flex items-center gap-1.5 text-white/80 hover:text-white">
-                    <Mail className="w-3.5 h-3.5 text-[#D4AF37]" /> {item.author.email}
-                  </a>
+                  <EmailActionBox
+                    email={item.author.email}
+                    variant="dark"
+                    className="font-medium"
+                  />
                   <Link href={item.author.profileHref} className="underline text-white/80 hover:text-[#D4AF37]">
                     View Full Profile →
                   </Link>
@@ -229,7 +231,7 @@ export default function KnowledgeItemPage({
                   <CheckCircle2 className="w-12 h-12 text-[#9A7D3A] mx-auto mb-4" />
                   <h4 className="font-aiveritas text-2xl text-[#111] mb-2">Inquiry Received</h4>
                   <p className="text-sm text-[#111]/70 font-light">
-                    {item.author.name} will reach out personally shortly.
+                    We value your inquiry and strive to respond within six hours — almost always the same day and always ASAP. {item.author.name} will be in touch with you directly.
                   </p>
                 </div>
               ) : (

@@ -1,12 +1,9 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs/promises';
-import path from 'path';
+import { kv_getLabels, kv_setLabels } from '@/lib/kv';
 
 export async function GET() {
   try {
-    const dataPath = path.join(process.cwd(), 'src', 'data', 'labels.json');
-    const fileData = await fs.readFile(dataPath, 'utf8').catch(() => '[]');
-    const labels = JSON.parse(fileData);
+    const labels = await kv_getLabels();
     return NextResponse.json({ labels }, { status: 200 });
   } catch (error) {
     console.error('Error fetching labels:', error);
@@ -17,18 +14,16 @@ export async function GET() {
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const dataPath = path.join(process.cwd(), 'src', 'data', 'labels.json');
-    const fileData = await fs.readFile(dataPath, 'utf8').catch(() => '[]');
-    const labels = JSON.parse(fileData);
+    const labels = await kv_getLabels();
 
     const newLabel = {
       name: body.name,
-      color: body.color || '#319795', // default teal if missing
-      isSystem: false
+      color: body.color || '#319795',
+      isSystem: false,
     };
-    
+
     labels.push(newLabel);
-    await fs.writeFile(dataPath, JSON.stringify(labels, null, 2));
+    await kv_setLabels(labels);
 
     return NextResponse.json({ message: 'Success', label: newLabel }, { status: 201 });
   } catch (error) {
