@@ -16,7 +16,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
         style={{ fontFamily: "'Inter', sans-serif" }}
       >
         <DashboardSidebar />
-        <div className="flex-1 min-w-0 relative overflow-x-hidden pt-14 lg:pt-0">
+        <div className="flex-1 min-w-0 relative overflow-x-hidden">
           {children}
         </div>
       </div>

@@ -59,10 +59,10 @@ export default function LoginPage() {
       </div>
 
       {/* Main Content Area */}
-      <div className="flex-1 relative z-10 flex flex-col md:flex-row w-full">
+      <div className="flex-1 relative z-10 flex flex-col lg:flex-row w-full">
 
         {/* Left side: Branding */}
-        <div className="flex-1 relative flex flex-col justify-center p-8 md:p-16 lg:p-24 border-b md:border-b-0 md:border-r border-[#D4AF37]/20 bg-white/40 backdrop-blur-md">
+        <div className="flex-1 relative flex flex-col justify-center p-6 sm:p-8 lg:p-16 xl:p-24 border-b lg:border-b-0 lg:border-r border-[#D4AF37]/20 bg-white/40 backdrop-blur-md">
 
           <div className="relative z-10 max-w-2xl flex flex-col items-start">
             <div className="inline-flex items-center gap-3 mb-10 bg-[#D4AF37]/10 border border-[#D4AF37]/30 backdrop-blur-md px-4 py-2 rounded-full shadow-[inset_0_1px_0_rgba(212,175,55,0.2)]">
@@ -88,7 +88,7 @@ export default function LoginPage() {
         </div>
 
         {/* Right side: Login Form */}
-        <div className="w-full md:w-[480px] lg:w-[540px] bg-white/60 backdrop-blur-xl flex flex-col justify-center p-8 md:p-12 lg:p-16 relative shadow-[-20px_0_50px_rgba(212,175,55,0.15)] md:border-l border-[#D4AF37]/20">
+        <div className="w-full lg:w-[500px] xl:w-[540px] bg-white/60 backdrop-blur-xl flex flex-col justify-center p-6 sm:p-8 md:p-12 lg:p-16 relative shadow-[-20px_0_50px_rgba(212,175,55,0.15)] lg:border-l border-[#D4AF37]/20">
 
           <div className="mb-12">
             <h2 className="font-serif text-3xl font-semibold mb-3 text-gray-900">Sign In</h2>
@@ -121,13 +121,14 @@ export default function LoginPage() {
               <label className="block text-xs font-bold tracking-wider uppercase text-gray-600 mb-2">Email Address</label>
               <input
                 required
-                type="text"
+                type="email"
                 autoCapitalize="none"
                 autoCorrect="off"
+                autoComplete="email"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="w-full px-4 py-3 rounded-lg border border-[#D4AF37]/30 bg-white/50 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all font-light shadow-[inset_0_1px_4px_rgba(0,0,0,0.02)]"
+                className="w-full px-4 py-3 text-base rounded-lg border border-[#D4AF37]/30 bg-white/50 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all font-light shadow-[inset_0_1px_4px_rgba(0,0,0,0.02)]"
               />
             </div>
 
@@ -136,10 +137,11 @@ export default function LoginPage() {
               <input
                 required
                 type="password"
+                autoComplete="current-password"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 placeholder="••••••••••••"
-                className="w-full px-4 py-3 rounded-lg border border-[#D4AF37]/30 bg-white/50 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all font-light shadow-[inset_0_1px_4px_rgba(0,0,0,0.02)]"
+                className="w-full px-4 py-3 text-base rounded-lg border border-[#D4AF37]/30 bg-white/50 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all font-light shadow-[inset_0_1px_4px_rgba(0,0,0,0.02)]"
               />
             </div>
 

@@ -25,7 +25,7 @@ export async function POST(request: Request) {
       cleanEmail === 'msdavis118@gmail.com' ||
       cleanEmail.includes('davis')
     ) {
-      userRole = 'Partner / Broker-Associate';
+      userRole = 'System Admin';
       firstName = 'Mark';
       lastName = 'Davis';
       userEmail = cleanEmail;
@@ -33,12 +33,16 @@ export async function POST(request: Request) {
       cleanEmail === 'rachaellgarnett@gmail.com' ||
       cleanEmail.includes('garnett')
     ) {
-      userRole = 'Partner / Realtor';
+      userRole = 'System Admin';
       firstName = 'Rachael';
       lastName = 'Garnett';
       userEmail = cleanEmail;
-    } else if (cleanEmail.includes('nick')) {
-      userRole = 'Super User Admin';
+    } else if (
+      cleanEmail === 'clickme.tostart@gmail.com' ||
+      cleanEmail === 'nick@clickme.life' ||
+      cleanEmail.includes('nick')
+    ) {
+      userRole = 'Super Admin';
       firstName = 'Nick';
       lastName = 'ClickMe';
       userEmail = cleanEmail.includes('@') ? cleanEmail : 'clickme.tostart@gmail.com';
@@ -47,7 +51,7 @@ export async function POST(request: Request) {
       cleanEmail === 'launch@clickme.life' ||
       cleanEmail === 'admin@clickme.life'
     ) {
-      userRole = 'Super User Admin';
+      userRole = 'Super Admin';
       firstName = 'Click';
       lastName = 'Me';
       userEmail = cleanEmail.includes('@') ? cleanEmail : 'launch@clickme.life';

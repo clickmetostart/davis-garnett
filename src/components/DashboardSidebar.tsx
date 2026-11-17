@@ -311,7 +311,7 @@ export default function DashboardSidebar() {
   return (
     <>
       {/* Mobile / Portrait-Tablet Top Header (< 1024px) */}
-      <header className="lg:hidden fixed top-0 left-0 right-0 z-40 h-14 bg-white border-b border-gray-200 px-4 flex items-center justify-between shadow-xs">
+      <header className="lg:hidden sticky top-0 z-40 w-full shrink-0 h-14 bg-white border-b border-gray-200 px-4 flex items-center justify-between shadow-xs">
         <Link href="/clickme" className="flex items-center gap-2.5 min-w-0">
           <img
             src="/clickme-life-logo-medium.png"
