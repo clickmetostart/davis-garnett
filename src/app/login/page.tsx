@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import DavisGarnettLogo from '@/components/DavisGarnettLogo';
 
 import alignRightLogo from '../../../public/align-right-email-logo.png';
@@ -13,7 +12,6 @@ export default function LoginPage() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [showAccessModal, setShowAccessModal] = useState(false);
-  const router = useRouter();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,9 +33,14 @@ export default function LoginPage() {
         return;
       }
 
-      // Success! Redirect to the project proposal (root)
-      router.push('/');
-      router.refresh();
+      // Redirect back to the requested protected route (e.g. /clickme) or workspace root
+      const params = new URLSearchParams(window.location.search);
+      const rawRedirect = params.get('redirect') || '';
+      const safeRedirect =
+        rawRedirect.startsWith('/') && !rawRedirect.startsWith('//')
+          ? rawRedirect
+          : '/clickme';
+      window.location.assign(safeRedirect);
     } catch (err) {
       setError('An unexpected error occurred. Please try again.');
       setLoading(false);

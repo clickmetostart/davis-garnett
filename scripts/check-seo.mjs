@@ -56,17 +56,20 @@ const lowerKh = khRaw.toLowerCase();
 const foundCliches = AI_CLICHES.filter((c) => lowerKh.includes(c));
 console.log(`AI cliché check (knowledgeHub.ts): ${foundCliches.length === 0 ? 'CLEAN (0 matches)' : foundCliches.join(', ')}`);
 
-// 4. Word count check on Guide/Q&A/Area/Article blocks
-const blocks = khRaw.split(/\n  \{\s*\n\s*slug:/g).slice(1);
+// 4. Word count check on Guide/Q&A/Area/Article blocks (calendar Events excluded from 500w prose rule)
+const blocks = khRaw
+  .split(/\n  \{\s*\n\s*slug:/g)
+  .slice(1)
+  .filter((b) => !/^\s*"(?:downtown-tampa-luxury-condo-preview-night|wesley-chapel-new-home-builder-showcase|central-florida-land-investor-roundtable|community-giving-partnership-day)"/.test(b));
 let thinCount = 0;
 const thinSlugs = [];
 for (const block of blocks) {
   const slugMatch = block.match(/^\s*"([^"]+)"/);
   const slug = slugMatch ? slugMatch[1] : 'unknown';
   const strings = Array.from(
-    block.matchAll(/(?:title|subtitle|quickAnswer|overview|summary|heading|body|question|answer|tagline):\s*"([^"]+)"/g)
+    block.matchAll(/(?:title|subtitle|quickAnswer|overview|summary|heading|body|question|answer|tagline|howWeHandleIt):\s*"([^"]+)"/g)
   ).map((m) => m[1]);
-  const bulletMatches = Array.from(block.matchAll(/bullets:\s*\[([\s\S]*?)\]/g)).flatMap((m) =>
+  const bulletMatches = Array.from(block.matchAll(/(?:bullets|keyTakeaways):\s*\[([\s\S]*?)\]/g)).flatMap((m) =>
     Array.from(m[1].matchAll(/"([^"]+)"/g)).map((b) => b[1])
   );
   const words = [...strings, ...bulletMatches]

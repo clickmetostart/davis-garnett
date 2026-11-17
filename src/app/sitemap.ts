@@ -27,6 +27,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/developments",
     "/knowledge-hub",
     "/glossary",
+    "/tools/mortgage-calculator",
+    "/tools/commercial-rent-calculator",
     "/tools/cap-rate-calculator",
     "/tools/1031-deadline-calculator",
     "/tools/seller-net-proceeds",

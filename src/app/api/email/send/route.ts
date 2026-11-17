@@ -16,6 +16,7 @@ export async function POST(req: Request) {
       rawHtml = false,
       ctaLabel,
       ctaUrl,
+      isPreview = false,
     } = body;
 
     if (!to || !subject || (!html && !text)) {
@@ -48,6 +49,7 @@ export async function POST(req: Request) {
       subject,
       html: finalHtml,
       replyTo: replyTo || 'list@davisgarnettsells.com',
+      isPreview: Boolean(isPreview),
     });
 
     if (!result.ok) {

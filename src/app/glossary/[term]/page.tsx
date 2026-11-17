@@ -44,12 +44,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 const SERVICE_LABEL_MAP: Record<string, string> = {
+  "/tools/mortgage-calculator": "Florida Mortgage & CDD Calculator",
+  "/tools/commercial-rent-calculator": "Commercial Rent & NNN Calculator",
   "/tools/1031-deadline-calculator": "1031 Exchange Deadline Calculator",
   "/tools/cap-rate-calculator": "Commercial Cap Rate Calculator",
   "/tools/seller-net-proceeds": "Florida Seller Net Proceeds Calculator",
   "/commercial-advisory-guide": "Commercial Advisory Guide",
   "/align-right-carrollwood-coverage": "Tampa Bay Areas & Coverage",
   "/developments": "New Developments & Communities",
+  "/hub/commercial-tampa-bay": "Tampa Bay Commercial Hub",
   "/hub/waterfront-st-petersburg": "St. Petersburg Waterfront Hub",
   "/hub/land-acreage-central-florida": "Central Florida Land & Acreage Hub",
   "/contact": "Talk With Mark & Rachael",

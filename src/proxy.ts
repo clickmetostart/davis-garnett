@@ -37,7 +37,9 @@ export function proxy(request: NextRequest) {
 
     if (!isAuthenticated) {
       const url = request.nextUrl.clone();
+      const target = `${pathname}${request.nextUrl.search}`;
       url.pathname = '/login';
+      url.search = `?redirect=${encodeURIComponent(target)}`;
       return NextResponse.redirect(url);
     }
   }

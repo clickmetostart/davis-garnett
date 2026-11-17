@@ -78,6 +78,7 @@ export default function EmailPreviewsPage() {
           subject: `[PREVIEW ADMIN · ${advisorTier.toUpperCase()}] ${current.adminSubject}`,
           html: current.adminHtml,
           rawHtml: true,
+          isPreview: true,
         }),
       });
       const r2 = await fetch("/api/email/send", {
@@ -88,6 +89,7 @@ export default function EmailPreviewsPage() {
           subject: `[PREVIEW CLIENT · ${advisorTier.toUpperCase()}] ${current.clientSubject}`,
           html: current.clientHtml,
           rawHtml: true,
+          isPreview: true,
         }),
       });
       if (r1.ok && r2.ok) {

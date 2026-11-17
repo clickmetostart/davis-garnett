@@ -38,6 +38,7 @@ export default function KnowledgeHubPage() {
   const qaRef = useRef<HTMLDivElement>(null);
   const areasRef = useRef<HTMLDivElement>(null);
   const eventsRef = useRef<HTMLDivElement>(null);
+  const toolsRef = useRef<HTMLDivElement>(null);
 
   const scrollSlider = (ref: React.RefObject<HTMLDivElement | null>, dir: "left" | "right") => {
     if (!ref.current) return;
@@ -594,13 +595,15 @@ export default function KnowledgeHubPage() {
             </div>
           </div>
 
-          {/* 2 Rows of 3 Columns Grid */}
+          {/* 2 Rows of 3 Columns Grid (all cards kept in SSR DOM for full search crawlability) */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredArticles.slice(0, visibleArticlesCount).map((art) => (
+            {filteredArticles.map((art, idx) => (
               <Link
                 key={art.slug}
                 href={`/knowledge-hub/articles/${art.slug}`}
-                className="group bg-[#f5f3ef] border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl"
+                className={`${
+                  idx >= visibleArticlesCount ? "hidden" : "flex"
+                } group bg-[#f5f3ef] border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex-col justify-between transition-all hover:shadow-xl`}
               >
                 <div>
                   <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#111]">
@@ -636,7 +639,7 @@ export default function KnowledgeHubPage() {
 
           {/* Load More Button (+3 articles / 1 row each click) */}
           {visibleArticlesCount < filteredArticles.length && (
-            <div className="mt-14 text-center space-y-6">
+            <div className="mt-14 text-center">
               <button
                 type="button"
                 onClick={() => setVisibleArticlesCount((prev) => prev + 3)}
@@ -645,20 +648,6 @@ export default function KnowledgeHubPage() {
                 <span>Load More</span>
                 <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
               </button>
-              <div className="pt-4 border-t border-[#111]/8 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-[#111]/65">
-                <span className="text-[10px] uppercase tracking-widest font-bold text-[#9A7D3A]">
-                  More Market Briefings:
-                </span>
-                {filteredArticles.slice(visibleArticlesCount).map((art) => (
-                  <Link
-                    key={art.slug}
-                    href={`/knowledge-hub/articles/${art.slug}`}
-                    className="hover:text-[#9A7D3A] underline decoration-[#111]/20 underline-offset-4 transition-colors"
-                  >
-                    {art.title}
-                  </Link>
-                ))}
-              </div>
             </div>
           )}
         </div>
@@ -676,19 +665,55 @@ export default function KnowledgeHubPage() {
                 Calculators &amp; Financial Planning Tools
               </h2>
               <p className="text-[#111]/70 font-light max-w-2xl text-base md:text-[17px] leading-relaxed">
-                Run your own Tampa Bay closing proceeds, IRS Section 1031 exchange deadlines, or commercial NNN cap rate scenarios before making a move.
+                Run your own Tampa Bay mortgage payment (with HOA &amp; CDD fees), commercial NNN vs. Gross lease rent, seller closing proceeds, cap rate, or IRS 1031 deadlines before making a move.
               </p>
             </div>
-            <Link
-              href="/glossary"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white border border-[#111]/15 hover:border-[#D4AF37] text-xs font-bold uppercase tracking-widest text-[#111] shrink-0"
-            >
-              Browse Real Estate Glossary <ArrowRight className="w-4 h-4 text-[#9A7D3A]" />
-            </Link>
+            <div className="flex flex-wrap items-center gap-3 shrink-0">
+              <Link
+                href="/glossary"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white border border-[#111]/15 hover:border-[#D4AF37] text-xs font-bold uppercase tracking-widest text-[#111] shrink-0"
+              >
+                Browse Real Estate Glossary <ArrowRight className="w-4 h-4 text-[#9A7D3A]" />
+              </Link>
+              <div className="flex items-center gap-3 shrink-0">
+                <button
+                  onClick={() => scrollSlider(toolsRef, "left")}
+                  className="p-3 rounded-full bg-[#D4AF37] text-[#111] border border-[#9A7D3A]/50 shadow-md shadow-[#D4AF37]/30 hover:bg-[#111] hover:text-[#D4AF37] hover:scale-105 active:scale-95 transition-all"
+                  aria-label="Scroll Tools Left"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={() => scrollSlider(toolsRef, "right")}
+                  className="p-3 rounded-full bg-[#D4AF37] text-[#111] border border-[#9A7D3A]/50 shadow-md shadow-[#D4AF37]/30 hover:bg-[#111] hover:text-[#D4AF37] hover:scale-105 active:scale-95 transition-all"
+                  aria-label="Scroll Tools Right"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-7">
+          <div
+            ref={toolsRef}
+            className="flex gap-7 overflow-x-auto pb-6 snap-x snap-mandatory"
+            style={{ scrollbarWidth: "none" }}
+          >
             {[
+              {
+                tag: "Residential Financing • PITI + CDD",
+                title: "Florida Mortgage, Tax, Insurance & CDD Calculator",
+                desc: "Estimate monthly P&I payments alongside county property taxes, Florida windstorm insurance, HOA dues, and non-ad valorem CDD fees.",
+                href: "/tools/mortgage-calculator",
+                cta: "Calculate Mortgage Payment",
+              },
+              {
+                tag: "Commercial Leasing • NNN & CAM",
+                title: "Commercial Rent & NNN Lease Calculator",
+                desc: "Compare Triple Net (NNN), Modified Gross, and Full-Service leases with CAM, taxes, insurance, annual escalations, and 5-year schedules.",
+                href: "/tools/commercial-rent-calculator",
+                cta: "Model Commercial Lease",
+              },
               {
                 tag: "Seller Tool • Hillsborough & Pinellas",
                 title: "Florida Seller Net Proceeds Calculator",
@@ -710,11 +735,18 @@ export default function KnowledgeHubPage() {
                 href: "/tools/1031-deadline-calculator",
                 cta: "Calculate 1031 Dates",
               },
+              {
+                tag: "Plain-English Field Manual • 18 Terms",
+                title: "Tampa Bay & Commercial Real Estate Glossary",
+                desc: "Clear definitions covering Cap Rate, NOI, CAM, NNN, TI Allowance, Estoppels, Phase I ESA, CDDs, Homestead Portability, and 4-Points.",
+                href: "/glossary",
+                cta: "Explore All 18 Terms",
+              },
             ].map((tool) => (
               <Link
                 key={tool.href}
                 href={tool.href}
-                className="group bg-white rounded-2xl p-8 border border-[#111]/10 hover:border-[#D4AF37] shadow-sm hover:shadow-xl transition-all flex flex-col justify-between"
+                className="group min-w-[320px] md:min-w-[380px] max-w-[380px] snap-start shrink-0 bg-white rounded-2xl p-8 border border-[#111]/10 hover:border-[#D4AF37] shadow-sm hover:shadow-xl transition-all flex flex-col justify-between"
               >
                 <div>
                   <span className="text-[10px] uppercase tracking-[0.22em] font-bold text-[#9A7D3A] block mb-3">

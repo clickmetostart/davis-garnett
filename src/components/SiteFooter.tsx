@@ -179,6 +179,8 @@ export default function SiteFooter() {
               <li><Link href="/knowledge-hub/what-is-the-difference-between-hoa-and-cdd-in-tampa-bay" className="hover:text-white transition-colors">HOA vs. CDD Fees in Tampa</Link></li>
               <li><Link href="/knowledge-hub/can-i-buy-a-house-in-florida-while-selling-my-current-one" className="hover:text-white transition-colors">Buying While Selling in FL</Link></li>
               <li><Link href="/glossary" className="text-[#D4AF37] hover:text-white transition-colors font-medium">Florida Real Estate Glossary</Link></li>
+              <li><Link href="/tools/mortgage-calculator" className="hover:text-white transition-colors">Florida Mortgage &amp; CDD Calculator</Link></li>
+              <li><Link href="/tools/commercial-rent-calculator" className="hover:text-white transition-colors">Commercial Rent &amp; NNN Calculator</Link></li>
               <li><Link href="/tools/cap-rate-calculator" className="hover:text-white transition-colors">Cap Rate &amp; NOI Calculator</Link></li>
               <li><Link href="/tools/1031-deadline-calculator" className="hover:text-white transition-colors">1031 Deadline Calculator</Link></li>
               <li><Link href="/tools/seller-net-proceeds" className="hover:text-white transition-colors">Seller Net Proceeds Tool</Link></li>

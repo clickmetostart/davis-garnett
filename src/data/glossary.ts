@@ -462,6 +462,337 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     publishedAt: "2026-11-17T10:30:00-05:00",
     updatedAt: "2026-11-17T10:30:00-05:00",
     status: "live"
+  },
+  {
+    slug: "cap-rate",
+    term: "Capitalization Rate (Cap Rate)",
+    shortTitle: "Cap Rate",
+    aliases: ["Capitalization Rate", "Cap Rate", "Cap Rates"],
+    category: "Commercial & Investment",
+    quickAnswer:
+      "Capitalization rate (Cap Rate) measures a commercial property's annual unlevered yield. Divide yearly Net Operating Income (NOI) by the purchase price to compare returns across retail, office, medical, and industrial deals.",
+    definition: [
+      "Cap Rate shows what a commercial building pays per year if you buy it with all cash. A property earning $80,000 in NOI at a $1,000,000 price trades at an 8.0% Cap Rate.",
+      "Lower Cap Rates (such as 5.0% to 6.25%) usually point to national single-tenant NNN credit tenants or prime Tampa infill locations. Higher Cap Rates (7.5% to 9.0%+) often reflect multi-tenant centers, older roofs, or shorter lease terms.",
+      "Cap Rate ignores your loan payment. Always check both unlevered Cap Rate and actual Debt Service Coverage Ratio (DSCR) with your commercial lender before making an offer."
+    ],
+    tampaBayExample:
+      "A stabilized Brandon retail strip near SR 60 with staggered 3% annual rent bumps might trade near a 6.75% Cap Rate. A single-tenant neighborhood medical office in Clearwater with only two years left on its lease may command an 8.0% Cap Rate to price renewal risk.",
+    howWeHandleIt:
+      "Mark & Rachael verify true T-12 income, strip out fake pro-forma assumptions, stress-test rising Florida windstorm insurance, and model Cap Rate sensitivity before you submit an offer.",
+    faqs: [
+      {
+        q: "Is a higher Cap Rate always better for a buyer?",
+        a: "No. Higher Cap Rates often signal higher vacancy risk, near-term lease rollovers, or deferred roof and parking lot capital repairs. Lower Cap Rates usually reflect stronger credit tenants and predictable income."
+      },
+      {
+        q: "How do Cap Rate and NOI connect to sale price?",
+        a: "Purchase Price equals NOI divided by Cap Rate. Adding $20,000 of verified annual NOI at a 7.0% market Cap Rate can add roughly $285,700 in building value."
+      }
+    ],
+    propertyType: ["commercial", "land-acreage"],
+    audience: ["investors", "home-sellers"],
+    county: ["hillsborough", "pinellas", "pasco", "polk"],
+    corridor: ["brandon-i75", "downtown-bayshore", "clearwater-beaches"],
+    relatedGuideSlugs: [
+      "commercial-real-estate-investing-florida",
+      "how-triple-net-nnn-leases-work-florida",
+      "commercial-bpo-vs-appraisal-florida"
+    ],
+    relatedServiceRoutes: ["/tools/cap-rate-calculator", "/tools/commercial-rent-calculator", "/hub/commercial-tampa-bay"],
+    relatedGlossarySlugs: ["noi", "nnn-lease", "cam", "bpo"],
+    publishedAt: "2026-11-17T11:35:00-05:00",
+    updatedAt: "2026-11-17T11:35:00-05:00",
+    status: "live"
+  },
+  {
+    slug: "noi",
+    term: "Net Operating Income (NOI)",
+    shortTitle: "NOI",
+    aliases: ["Net Operating Income", "NOI"],
+    category: "Commercial & Investment",
+    quickAnswer:
+      "Net Operating Income (NOI) is a commercial property's annual gross rental and reimbursement income minus its real estate operating expenses. It excludes mortgage payments, income taxes, and major capital replacements.",
+    definition: [
+      "Lenders and buyers calculate NOI by adding base rent plus NNN reimbursements, subtracting real vacancy, and deducting taxes, insurance, management, landscaping, and routine maintenance.",
+      "NOI does not include loan principal, loan interest, IRS depreciation, or tenant build-out capital allowances. Two buyers using different loans still underwrite the same property NOI.",
+      "Underwriting accurate Florida NOI requires adjusting historical property taxes to the buyer's post-sale reassessment level and checking current commercial windstorm insurance quotes."
+    ],
+    tampaBayExample:
+      "If a small office plaza on Fletcher Avenue collects $180,000 in gross rent and CAM recoveries while paying $58,000 in taxes, insurance, lawn care, and repairs, its true NOI is $122,000.",
+    howWeHandleIt:
+      "When preparing a commercial BPO or buyer underwriting sheet, we rebuild the seller's profit-and-loss statement line by line so post-sale property taxes and insurance do not erase your expected cash flow.",
+    faqs: [
+      {
+        q: "What is the difference between NOI and cash flow?",
+        a: "NOI measures building income before your loan payment. Cash flow before taxes is what remains after subtracting annual mortgage principal and interest from NOI."
+      },
+      {
+        q: "Can sellers use pro-forma vacant rent to inflate NOI?",
+        a: "No lender or experienced buyer values a property on empty-suite pro-forma rent alone. Banks lend primarily against actual signed leases and Trailing-12 (T-12) collected income."
+      }
+    ],
+    propertyType: ["commercial"],
+    audience: ["investors", "home-sellers"],
+    county: ["hillsborough", "pinellas", "pasco", "polk"],
+    corridor: ["downtown-bayshore", "brandon-i75", "st-petersburg-waterfront"],
+    relatedGuideSlugs: [
+      "commercial-real-estate-investing-florida",
+      "how-triple-net-nnn-leases-work-florida",
+      "commercial-bpo-vs-appraisal-florida"
+    ],
+    relatedServiceRoutes: ["/tools/cap-rate-calculator", "/tools/commercial-rent-calculator", "/hub/commercial-tampa-bay"],
+    relatedGlossarySlugs: ["cap-rate", "cam", "nnn-lease", "modified-gross-lease"],
+    publishedAt: "2026-11-17T11:35:00-05:00",
+    updatedAt: "2026-11-17T11:35:00-05:00",
+    status: "live"
+  },
+  {
+    slug: "cam",
+    term: "Common Area Maintenance (CAM)",
+    shortTitle: "CAM",
+    aliases: ["Common Area Maintenance", "CAM", "CAM charges", "CAM fees"],
+    category: "Commercial & Investment",
+    quickAnswer:
+      "Common Area Maintenance (CAM) refers to shared property expenses—like parking lot lighting, landscaping, trash, security, and exterior cleaning—passed through to commercial tenants in addition to base rent.",
+    definition: [
+      "In retail plazas, medical suites, and flex industrial parks, each tenant typically pays their pro-rata square-foot share of shared building upkeep.",
+      "Most landlords estimate monthly CAM charges in advance and perform an annual reconciliation each spring to credit overpayments or bill shortfalls.",
+      "Always inspect the CAM exclusions clause in a lease draft. Strong tenant representation negotiates annual caps on controllable CAM increases (often 3% to 5%) and excludes landlord capital roof replacements."
+    ],
+    tampaBayExample:
+      "A 2,400 sq. ft. medical office tenant in a 24,000 sq. ft. Carrollwood plaza holds a 10% pro-rata share. If plaza CAM, taxes, and insurance total $8.50 per square foot yearly, that adds $1,700 per month on top of base rent.",
+    howWeHandleIt:
+      "We run side-by-side NNN and CAM lease occupancy models before letters of intent go out so tenants know their true all-in monthly rent and buyers verify landlord cost recovery.",
+    faqs: [
+      {
+        q: "What is the difference between controllable and non-controllable CAM?",
+        a: "Controllable CAM covers items the landlord bids out, like landscaping, sweeping, and pressure washing. Non-controllable expenses include county property taxes, commercial property insurance, and municipal utilities."
+      },
+      {
+        q: "Can a landlord charge a management admin fee inside CAM?",
+        a: "Yes, many commercial leases include a 10% to 15% administrative fee on CAM expenses or a separate property management fee, unless negotiated out during lease drafting."
+      }
+    ],
+    propertyType: ["commercial"],
+    audience: ["investors", "home-buyers"],
+    county: ["hillsborough", "pinellas", "pasco", "polk"],
+    corridor: ["downtown-bayshore", "wesley-chapel-new-tampa", "brandon-i75"],
+    relatedGuideSlugs: [
+      "how-triple-net-nnn-leases-work-florida",
+      "commercial-real-estate-investing-florida"
+    ],
+    relatedServiceRoutes: ["/tools/commercial-rent-calculator", "/commercial-advisory-guide", "/hub/commercial-tampa-bay"],
+    relatedGlossarySlugs: ["nnn-lease", "modified-gross-lease", "ti-allowance", "noi"],
+    publishedAt: "2026-11-17T11:35:00-05:00",
+    updatedAt: "2026-11-17T11:35:00-05:00",
+    status: "live"
+  },
+  {
+    slug: "modified-gross-lease",
+    term: "Modified Gross & Full-Service Gross Lease",
+    shortTitle: "Modified Gross Lease",
+    aliases: ["Modified Gross Lease", "Modified Gross", "Full-Service Gross", "FSG Lease"],
+    category: "Commercial & Investment",
+    quickAnswer:
+      "A Modified Gross lease splits operating costs between landlord and tenant—often bundling property taxes and base building insurance into rent while the tenant pays utilities, janitorial, or increases above a base year.",
+    definition: [
+      "Unlike a pure Triple Net (NNN) lease where tenants pay every property expense directly, a Full-Service Gross (FSG) lease wraps taxes, insurance, CAM, and often electricity into one flat dollar rate per square foot.",
+      "A Modified Gross lease sits in between. Commonly, the landlord pays base-year taxes and insurance while the tenant pays electric, suite janitorial, and its share of future expense increases.",
+      "When comparing two suites across Tampa Bay, converting Modified Gross and NNN quotes into a single monthly total is essential so a lower headline rate does not trick you into higher total rent."
+    ],
+    tampaBayExample:
+      "Downtown Tampa Class A office towers frequently quote Full-Service Gross rates including janitorial and daytime HVAC. Meanwhile, small flex warehouses along US 301 often quote Modified Gross rent where tenants pay only suite electric and water.",
+    howWeHandleIt:
+      "Use our Commercial Rent & NNN Calculator or ask our team to normalize NNN, Modified Gross, and Full-Service quotes onto a single all-in monthly occupancy sheet before touring suites.",
+    faqs: [
+      {
+        q: "What is a Base Year Expense Stop in a Modified Gross lease?",
+        a: "The landlord covers operating expenses up to the total cost paid during year one of the lease. In year two and beyond, the tenant pays its pro-rata share of any increase over that base year."
+      },
+      {
+        q: "Which lease type do small Florida office tenants prefer?",
+        a: "First-time business tenants often favor Modified Gross or Full-Service leases because monthly bills are easier to budget without surprise windstorm insurance pass-throughs."
+      }
+    ],
+    propertyType: ["commercial"],
+    audience: ["investors", "home-buyers"],
+    county: ["hillsborough", "pinellas", "pasco", "polk"],
+    corridor: ["downtown-bayshore", "st-petersburg-waterfront", "brandon-i75"],
+    relatedGuideSlugs: [
+      "how-triple-net-nnn-leases-work-florida",
+      "commercial-real-estate-investing-florida"
+    ],
+    relatedServiceRoutes: ["/tools/commercial-rent-calculator", "/tools/cap-rate-calculator", "/hub/commercial-tampa-bay"],
+    relatedGlossarySlugs: ["nnn-lease", "cam", "ti-allowance", "letter-of-intent"],
+    publishedAt: "2026-11-17T11:35:00-05:00",
+    updatedAt: "2026-11-17T11:35:00-05:00",
+    status: "live"
+  },
+  {
+    slug: "ti-allowance",
+    term: "Tenant Improvement Allowance (TI Allowance)",
+    shortTitle: "TI Allowance",
+    aliases: ["Tenant Improvement Allowance", "TI Allowance", "TIA", "Tenant Improvements"],
+    category: "Commercial & Investment",
+    quickAnswer:
+      "A Tenant Improvement (TI) Allowance is the dollar credit per square foot a commercial landlord gives a tenant to build out, remodel, or customize leased space before opening for business.",
+    definition: [
+      "Empty retail or office shells rarely work right out of the box for dental clinics, restaurants, or professional firms. Landlords frequently offer a TI Allowance—such as $20 to $45 per rentable square foot—to fund drywall, flooring, plumbing, and ADA restrooms.",
+      "Alternatively, a landlord may deliver a Turnkey Buildout, where the owner hires contractors and pays to finish the suite to an agreed floorplan.",
+      "Always clarify whether base building HVAC units, fire sprinklers, and electrical panels come in working order before counting your TI dollars."
+    ],
+    tampaBayExample:
+      "A fast-growing therapy group leasing 3,000 sq. ft. in Wesley Chapel negotiates a $35/sq. ft. TI Allowance ($105,000) toward exam rooms, paired with 90 days of free rent during permitting and construction.",
+    howWeHandleIt:
+      "During Letter of Intent (LOI) negotiations, Mark & Rachael line up contractor bids early so your TI Allowance, free-rent abatement, and rent commencement date actually match Hillsborough or Pinellas permitting timelines.",
+    faqs: [
+      {
+        q: "Does a higher TI Allowance raise monthly base rent?",
+        a: "Usually yes. Landlords amortize larger buildout allowances across the primary lease term, so balancing cash TI dollars against lower base rent depends on your startup capital."
+      },
+      {
+        q: "When is the TI Allowance paid out?",
+        a: "Most landlords reimburse TI funds once work finishes, lien waivers are signed, and the tenant opens for business with a Certificate of Occupancy."
+      }
+    ],
+    propertyType: ["commercial"],
+    audience: ["investors", "home-buyers"],
+    county: ["hillsborough", "pinellas", "pasco", "polk"],
+    corridor: ["wesley-chapel-new-tampa", "downtown-bayshore", "clearwater-beaches"],
+    relatedGuideSlugs: [
+      "how-triple-net-nnn-leases-work-florida",
+      "commercial-real-estate-investing-florida"
+    ],
+    relatedServiceRoutes: ["/tools/commercial-rent-calculator", "/commercial-advisory-guide", "/hub/commercial-tampa-bay"],
+    relatedGlossarySlugs: ["letter-of-intent", "modified-gross-lease", "cam"],
+    publishedAt: "2026-11-17T11:35:00-05:00",
+    updatedAt: "2026-11-17T11:35:00-05:00",
+    status: "live"
+  },
+  {
+    slug: "estoppel-certificate",
+    term: "Tenant Estoppel Certificate",
+    shortTitle: "Estoppel Certificate",
+    aliases: ["Estoppel Certificate", "Tenant Estoppel", "Estoppel Letter"],
+    category: "Commercial & Investment",
+    quickAnswer:
+      "An Estoppel Certificate is a signed legal statement from an existing commercial tenant confirming the exact lease rent, security deposit, expiration date, and that neither tenant nor landlord is in default before a sale closes.",
+    definition: [
+      "When buying a leased retail strip, office building, or industrial warehouse, the seller's rent roll alone is not proof enough for a buyer or commercial lender.",
+      "Before closing, each tenant signs an Estoppel Certificate verifying their monthly rent, prepaid rent, CAM share, renewal options, and any unwritten side promises made by the seller.",
+      "Once signed, the tenant is legally prevented ('estopped') from later claiming lower rent, hidden TI credits, or unrecorded purchase options against the new owner."
+    ],
+    tampaBayExample:
+      "During due diligence on a multi-tenant plaza in Pinellas Park, Tenant Estoppels uncover that one tenant holds an unrecorded right-of-first-refusal or claims a landlord roof leak credit—allowing the buyer to resolve the issue prior to closing.",
+    howWeHandleIt:
+      "We structure commercial purchase contracts so receipt of clean, lender-approved Tenant Estoppels (typically covering 80%–100% of leased square footage) is an explicit condition of closing.",
+    faqs: [
+      {
+        q: "How long do tenants usually have to return an Estoppel Certificate?",
+        a: "Most commercial leases require tenants to return a completed Estoppel within 10 to 15 days of written request, with failure sometimes triggering automatic landlord certification."
+      },
+      {
+        q: "What is an SNDA alongside an Estoppel?",
+        a: "A Subordination, Non-Disturbance, and Attornment (SNDA) agreement sets the legal order between the buyer's mortgage lender and the tenant, protecting the tenant's lease if foreclosure ever occurs."
+      }
+    ],
+    propertyType: ["commercial"],
+    audience: ["investors", "home-sellers"],
+    county: ["hillsborough", "pinellas", "pasco", "polk"],
+    corridor: ["st-petersburg-waterfront", "brandon-i75", "downtown-bayshore"],
+    relatedGuideSlugs: [
+      "commercial-real-estate-investing-florida",
+      "how-triple-net-nnn-leases-work-florida"
+    ],
+    relatedServiceRoutes: ["/tools/cap-rate-calculator", "/commercial-advisory-guide", "/hub/commercial-tampa-bay"],
+    relatedGlossarySlugs: ["noi", "nnn-lease", "phase-one-esa", "letter-of-intent"],
+    publishedAt: "2026-11-17T11:35:00-05:00",
+    updatedAt: "2026-11-17T11:35:00-05:00",
+    status: "live"
+  },
+  {
+    slug: "phase-one-esa",
+    term: "Phase I Environmental Site Assessment (Phase I ESA)",
+    shortTitle: "Phase I ESA",
+    aliases: ["Phase I ESA", "Phase I Environmental Site Assessment", "Phase 1 ESA"],
+    category: "Commercial & Investment",
+    quickAnswer:
+      "A Phase I Environmental Site Assessment (ASTM E1527-21) reviews historical records, regulatory databases, and site conditions on commercial or industrial land to spot contamination risks before a buyer closes.",
+    definition: [
+      "Almost every SBA 504, SBA 7(a), and commercial bank loan requires a fresh Phase I ESA ordered directly by the lender or an approved environmental engineer.",
+      "Investigators review historical aerial photos, city directories, dry-cleaner permits, underground storage tank logs, and neighboring spills without drilling soil samples.",
+      "If the Phase I flags a Recognized Environmental Condition (REC), the buyer typically requests a targeted Phase II ESA—collecting soil and groundwater lab samples—before waiving inspection contingencies."
+    ],
+    tampaBayExample:
+      "Acquiring an older commercial corner along Nebraska Avenue or US Highway 19 near a former auto repair shop or dry cleaner requires a clean Phase I ESA (plus potential soil testing) so buyers preserve federal Innocent Landowner liability protection.",
+    howWeHandleIt:
+      "We build 30 to 45 day environmental feasibility periods into commercial and land contracts and keep trusted Florida environmental engineering firms ready to run ASTM-compliant reviews fast.",
+    faqs: [
+      {
+        q: "How long does a Phase I ESA take in Florida?",
+        a: "A standard Phase I ESA usually takes 2 to 3 weeks from engagement. If soil boring under a Phase II is needed, budget an additional 3 to 4 weeks for lab results."
+      },
+      {
+        q: "How long is a Phase I ESA valid for commercial lenders?",
+        a: "Under ASTM E1527-21 standards, a Phase I ESA must generally be dated within 180 days prior to the property closing date to preserve All Appropriate Inquiries liability protection."
+      }
+    ],
+    propertyType: ["commercial", "land-acreage"],
+    audience: ["investors", "land-buyers"],
+    county: ["hillsborough", "pinellas", "pasco", "polk"],
+    corridor: ["brandon-i75", "downtown-bayshore", "central-florida-corridor"],
+    relatedGuideSlugs: [
+      "commercial-real-estate-investing-florida",
+      "buying-vacant-land-central-florida-zoning-utilities",
+      "commercial-bpo-vs-appraisal-florida"
+    ],
+    relatedServiceRoutes: ["/commercial-advisory-guide", "/hub/commercial-tampa-bay", "/hub/land-acreage-central-florida"],
+    relatedGlossarySlugs: ["estoppel-certificate", "1031-exchange", "bpo"],
+    publishedAt: "2026-11-17T11:35:00-05:00",
+    updatedAt: "2026-11-17T11:35:00-05:00",
+    status: "live"
+  },
+  {
+    slug: "letter-of-intent",
+    term: "Commercial Letter of Intent (LOI)",
+    shortTitle: "Letter of Intent (LOI)",
+    aliases: ["Letter of Intent", "LOI"],
+    category: "Commercial & Investment",
+    quickAnswer:
+      "A Letter of Intent (LOI) is a short, usually non-binding business summary outlining proposed price, lease rate, TI allowance, inspection period, and closing timeline before attorneys draft a formal commercial contract or lease.",
+    definition: [
+      "Residential deals jump straight into a standard Florida FAR/BAR contract. Commercial sales and leases almost always start with a 1 to 3 page Letter of Intent first.",
+      "An LOI lets both parties confirm big-ticket economics—purchase price, earnest money, 30-to-45-day due diligence window, rent bumps, NNN structure, and personal guarantees—without racking up thousands in legal drafting fees prematurely.",
+      "Wait for the signed LOI to guide attorney drafting, and confirm any confidentiality or exclusivity paragraphs are clearly labeled if intended to be binding."
+    ],
+    tampaBayExample:
+      "Before leasing a 4,200 sq. ft. showroom in South Tampa or putting an industrial warehouse under contract near Port Tampa, a clear LOI locks in base rent, 3% annual escalations, TI Allowance, and inspection windows in 48 hours.",
+    howWeHandleIt:
+      "We draft clean, market-tested commercial LOIs tailored to Tampa Bay sellers and landlords so your attorneys step into clear business terms with zero wasted motion.",
+    faqs: [
+      {
+        q: "Is a Commercial Letter of Intent legally binding in Florida?",
+        a: "Usually an LOI explicitly states that business terms are non-binding until a formal Purchase Agreement or Lease is signed, though exclusivity and confidentiality clauses can be drafted as binding."
+      },
+      {
+        q: "Do I pay earnest money when submitting a commercial LOI?",
+        a: "No. Earnest money or initial security deposits are normally wired to the title company or escrow agent only after the formal Purchase Agreement or Lease is signed."
+      }
+    ],
+    propertyType: ["commercial", "land-acreage"],
+    audience: ["investors", "land-buyers", "home-sellers"],
+    county: ["hillsborough", "pinellas", "pasco", "polk"],
+    corridor: ["downtown-bayshore", "st-petersburg-waterfront", "brandon-i75"],
+    relatedGuideSlugs: [
+      "commercial-real-estate-investing-florida",
+      "how-triple-net-nnn-leases-work-florida"
+    ],
+    relatedServiceRoutes: ["/tools/commercial-rent-calculator", "/commercial-advisory-guide", "/hub/commercial-tampa-bay"],
+    relatedGlossarySlugs: ["ti-allowance", "nnn-lease", "estoppel-certificate", "cap-rate"],
+    publishedAt: "2026-11-17T11:35:00-05:00",
+    updatedAt: "2026-11-17T11:35:00-05:00",
+    status: "live"
   }
 ];
 

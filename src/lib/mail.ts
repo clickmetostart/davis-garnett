@@ -16,6 +16,7 @@ export interface SendEmailOptions {
   replyTo?: string;
   fromName?: string;
   attachments?: EmailAttachment[];
+  isPreview?: boolean;
 }
 
 export interface TeamRecipientRouting {
@@ -357,9 +358,26 @@ export async function sendEmail({
   replyTo,
   fromName = 'Davis & Garnett Advisors',
   attachments,
+  isPreview = false,
 }: SendEmailOptions): Promise<{ ok: boolean; mocked?: boolean; messageId?: string; error?: string }> {
   const user = process.env.GMAIL_USER;
   const recipients = Array.isArray(to) ? to.join(', ') : to;
+
+  const isNonProdOrOverride =
+    Boolean(process.env.NOTIFY_EMAIL_OVERRIDE) ||
+    process.env.VERCEL_ENV === 'preview' ||
+    process.env.NODE_ENV !== 'production';
+  const flaggedAsPreview = isPreview || isNonProdOrOverride || /^\s*\[?PREVIEW\b/i.test(subject);
+
+  const finalSubject =
+    flaggedAsPreview && !/^\s*\[?PREVIEW\b/i.test(subject)
+      ? `[PREVIEW] ${subject}`
+      : subject;
+
+  const previewBanner = flaggedAsPreview
+    ? `<div style="max-width:620px;margin:0 auto 12px auto;padding:10px 16px;background:#fef3c7;border:2px solid #d97706;border-radius:8px;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#92400e;text-align:center;">PREVIEW EMAIL &bull; TEST / NON-PRODUCTION SEND</div>`
+    : '';
+  const finalHtml = `${previewBanner}${html}`;
 
   const transporter = await createTransporter();
 
@@ -367,7 +385,7 @@ export async function sendEmail({
     console.warn('\n--- MAIL ROUTING WARNING ---');
     console.warn('Gmail OAuth credentials are NOT configured in environment variables.');
     console.warn(`Would have sent to: ${recipients}`);
-    console.warn(`Subject: ${subject}`);
+    console.warn(`Subject: ${finalSubject}`);
     console.warn('---------------------------\n');
     return { ok: true, mocked: true };
   }
@@ -378,8 +396,8 @@ export async function sendEmail({
       to,
       cc,
       bcc,
-      subject,
-      html,
+      subject: finalSubject,
+      html: finalHtml,
       replyTo,
       attachments: attachments?.map((att) => ({
         filename: att.filename,

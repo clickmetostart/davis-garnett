@@ -39,9 +39,9 @@ export const TOPIC_HUBS: TopicHubConfig[] = [
     subtitle:
       "Compare HOA vs. CDD costs, villa maintenance versus condo milestone reserves, and premier active-adult corridors across Hillsborough, Pinellas, and Pasco.",
     quickAnswer:
-      "Tampa Bay offers over 30 major 55+ enclaves spanning gated new-construction villas like Valencia del Sol in Wimauma, established golf communities in Sun City Center, and low-maintenance condos across Clearwater and St. Petersburg. True monthly ownership cost hinges on whether a community separates CDD taxes, flood coverage, and structural condo reserves.",
+      "Tampa Bay holds over 30 major 55+ clubs. Options span new gated villas like Valencia del Sol in Wimauma, established golf towns like Sun City Center, and condos in Clearwater and St. Petersburg. True monthly cost depends on CDD taxes, flood coverage, and condo reserve rules.",
     howWeHandleIt:
-      "Mark Davis (FL Lic #3209459) and Rachael Garnett (FL Lic #3378601) build side-by-side carrying-cost sheets showing HOA fees, CDD debt payoffs, Florida Homestead Portability savings, and post-Surfside condo reserve studies so retirees never buy into surprise special assessments.",
+      "Mark Davis (FL Lic #3209459) and Rachael Garnett (FL Lic #3378601) build side-by-side cost sheets for buyers. Each sheet lists HOA dues, CDD tax payoffs, Homestead Portability savings, and condo reserve reports so you never face surprise special assessments.",
     localFacts: [
       { label: "Top 55+ Corridors", value: "Wimauma, Sun City Center, Wesley Chapel, Clearwater", source: "Davis & Garnett Local Market Advisory" },
       { label: "Ownership Structures", value: "Fee-Simple Villas vs. Chapter 718 Condos", source: "Florida Statutes Chapters 718 & 720" },
@@ -64,6 +64,7 @@ export const TOPIC_HUBS: TopicHubConfig[] = [
       corridor: ["brandon-i75", "wesley-chapel-new-tampa", "clearwater-beaches"],
     },
     toolLinks: [
+      { label: "Mortgage & CDD Calculator", href: "/tools/mortgage-calculator", desc: "Add HOA dues and CDD taxes to your monthly loan quote." },
       { label: "Seller Net Proceeds Calculator", href: "/tools/seller-net-proceeds", desc: "Estimate equity rolling from your current Florida home." },
       { label: "CDD vs. HOA Glossary", href: "/glossary/cdd", desc: "See how non-ad valorem tax districts work." },
     ],
@@ -77,11 +78,11 @@ export const TOPIC_HUBS: TopicHubConfig[] = [
     badge: "Property-Type Hub • Commercial & CRE",
     title: "Tampa Bay Commercial Real Estate & NNN Advisory",
     subtitle:
-      "Retail plazas, medical office suites, flex warehouses, BPO valuations, and 1031 exchange acquisitions along Hillsborough and Pinellas growth corridors.",
+      "Retail plazas, medical suites, flex warehouses, BPO valuations, and 1031 exchange deals across Hillsborough and Pinellas.",
     quickAnswer:
-      "Commercial properties in Greater Tampa Bay—from Brandon and I-75 retail corridors to St. Petersburg mixed-use suites and industrial flex parks—are valued on Net Operating Income (NOI), lease structure (NNN vs. Modified Gross), zoning entitlements, and verifiable tenant credit. Accurate underwriting separates stabilized cash flow from upside repositioning.",
+      "Commercial buildings in Tampa Bay trade on Net Operating Income (NOI), lease type, and tenant credit. Key corridors stretch from Brandon and I-75 into St. Petersburg and North Tampa. Clear underwriting splits steady cash flow from empty upside.",
     howWeHandleIt:
-      "Before pricing or bidding on commercial assets, Mark & Rachael deliver a custom Broker Price Opinion (BPO), audit NNN expense recoveries, run cap-rate sensitivity models, and coordinate 1031 exchange deadlines with local title and Qualified Intermediary teams.",
+      "Mark and Rachael deliver a custom Broker Price Opinion (BPO) before you bid or list. We check NNN expense bills, test Cap Rate math, and line up 1031 exchange dates with local title teams.",
     localFacts: [
       { label: "Primary Valuation Metric", value: "NOI ÷ Asking Price (Cap Rate)", source: "CCIM / Tampa Bay CRE Standard Practice" },
       { label: "IRS Exchange Deadlines", value: "45-Day Identification / 180-Day Closing", source: "IRS Code Section 1031" },
@@ -90,11 +91,11 @@ export const TOPIC_HUBS: TopicHubConfig[] = [
     faqs: [
       {
         question: "How do I evaluate a Florida Triple Net (NNN) lease before buying?",
-        answer: "Verify whether the landlord retains roof, parking lot, or structural HVAC replacement obligations, and review how rising Florida commercial windstorm premiums pass through to tenants."
+        answer: "Verify whether the landlord keeps roof, lot, or HVAC replacement duties. Also check how rising Florida windstorm insurance passes through to tenants."
       },
       {
         question: "When should commercial sellers start planning a 1031 exchange?",
-        answer: "Before accepting a binding contract on the relinquished asset—your Qualified Intermediary must be in place prior to closing so you never take constructive receipt of sale proceeds."
+        answer: "Start before signing a binding sale contract. Your Qualified Intermediary must be engaged before closing so you never hold sale proceeds."
       }
     ],
     tags: {
@@ -104,6 +105,7 @@ export const TOPIC_HUBS: TopicHubConfig[] = [
       corridor: ["brandon-i75", "downtown-bayshore", "central-florida-corridor"],
     },
     toolLinks: [
+      { label: "Commercial Rent & NNN Calculator", href: "/tools/commercial-rent-calculator", desc: "Compare NNN, Modified Gross, and Full-Service lease costs." },
       { label: "Commercial Cap Rate Calculator", href: "/tools/cap-rate-calculator", desc: "Model NOI, cap rate, and implied asset pricing." },
       { label: "1031 Deadline Calculator", href: "/tools/1031-deadline-calculator", desc: "Lock in your exact Day 45 and Day 180 IRS dates." },
     ],
@@ -117,11 +119,11 @@ export const TOPIC_HUBS: TopicHubConfig[] = [
     badge: "Corridor Hub • St. Petersburg Waterfront",
     title: "St. Petersburg Waterfront Homes, Docks & Flood Zone Guide",
     subtitle:
-      "Navigating Tampa Bay seawalls, deep-water slips, FEMA Flood Zones X/AE/VE, Elevation Certificates, and Old Northeast to Bahama Shores neighborhoods.",
+      "Tampa Bay seawalls, deep-water docks, Flood Zones X/AE/VE, Elevation Certificates, and Bahama Shores to Snell Isle.",
     quickAnswer:
-      "St. Petersburg waterfront and near-coastal properties deliver unmatched boating access across Tampa Bay and Boca Ciega Bay, but value depends directly on seawall condition, bridge clearance, and finished floor height relative to FEMA Base Flood Elevation (BFE). Checking Elevation Certificates early prevents major insurance surprises.",
+      "St. Petersburg waterfront homes offer top boating across Tampa Bay and Boca Ciega Bay. True value depends on seawall health, bridge clearance, and floor height above Base Flood Elevation (BFE). Checking Elevation Certificates early stops costly insurance shocks.",
     howWeHandleIt:
-      "We evaluate every Pinellas waterfront home block-by-block—pulling recorded Elevation Certificates, checking permit history against FEMA's 50% Rule, inspecting seawall cap integrity, and arranging both NFIP and private flood quotes during your inspection window.",
+      "We evaluate Pinellas waterfront homes block by block. Our team pulls city permits, checks FEMA 50% Rule history, arranges seawall dive checks, and gets NFIP plus private flood quotes early.",
     localFacts: [
       { label: "Key St. Pete Enclaves", value: "Bahama Shores, Snell Isle, Old Northeast, Shore Acres", source: "Pinellas County Property Appraiser" },
       { label: "Flood Underwriting Tool", value: "FEMA Elevation Certificate & Risk Rating 2.0", source: "FEMA National Flood Insurance Program" },
@@ -130,11 +132,11 @@ export const TOPIC_HUBS: TopicHubConfig[] = [
     faqs: [
       {
         question: "What does FEMA's 50% Rule mean for older St. Petersburg homes?",
-        answer: "If an older ground-level home in a Special Flood Hazard Area undergoes renovations costing 50% or more of the structure's market value (excluding land), city code requires elevating the home to current Base Flood Elevation."
+        answer: "Remodeling an older ground-level Zone AE house past 50% of building value triggers elevation rules. The city then requires raising the home up to current flood code."
       },
       {
         question: "Do all St. Petersburg waterfront lots allow private boat lifts?",
-        answer: "Dock and boat-lift dimensions depend on Pinellas County Water & Navigation Authority permitting, riparian line setbacks, and protected seagrass or mangrove surveys."
+        answer: "Dock and lift sizes depend on Pinellas County Water and Navigation rules. Side-line water setbacks and protected seagrass zones also govern slip permits."
       }
     ],
     tags: {
@@ -144,6 +146,7 @@ export const TOPIC_HUBS: TopicHubConfig[] = [
       corridor: ["st-petersburg-waterfront", "clearwater-beaches", "downtown-bayshore"],
     },
     toolLinks: [
+      { label: "Florida Mortgage & Flood Estimator", href: "/tools/mortgage-calculator", desc: "Combine monthly P&I, coastal wind, and flood quotes." },
       { label: "Elevation Certificate Glossary", href: "/glossary/elevation-certificate", desc: "Learn how BFE impacts your flood quote." },
       { label: "Wind Mitigation Discounts", href: "/glossary/wind-mitigation", desc: "See how roof clips and impact glass cut premiums." },
     ],
@@ -157,11 +160,11 @@ export const TOPIC_HUBS: TopicHubConfig[] = [
     badge: "Property-Type Hub • Land & Acreage",
     title: "Central Florida Land, Ranches & Build-Ready Acreage",
     subtitle:
-      "Due diligence for Polk, Marion, Pasco, and rural Hillsborough parcels—zoning, perc tests, road easements, wetlands, and Florida Greenbelt tax exemptions.",
+      "Due diligence for Polk, Marion, Pasco, and rural Hillsborough tracts covering zoning, road easements, wetlands, and Greenbelt tax breaks.",
     quickAnswer:
-      "Buying vacant acreage or commercial land across Polk, Marion, or outer Tampa Bay counties requires far deeper due diligence than buying an existing house. Buyers must verify legal road access, county zoning density, wetland buffers, septic percolation, and utility connection fees before waiving contingencies.",
+      "Buying vacant acreage or commercial land in Polk, Marion, or outer Tampa Bay needs deep checks before closing. Buyers must verify legal road access, county zoning density, wetland lines, septic perc tests, and power access.",
     howWeHandleIt:
-      "Mark & Rachael coordinate boundary surveys, county Future Land Use verifications, Greenbelt agricultural tax transfer checklists, and well/septic feasibility reviews so rural estate buyers and land developers avoid unbuildable tracts.",
+      "Mark and Rachael coordinate boundary surveys and Future Land Use reviews. We also verify Greenbelt farm tax steps plus well and septic feasibility so rural buyers avoid unbuildable tracts.",
     localFacts: [
       { label: "Agricultural Tax Break", value: "Florida Statutes Section 193.461 Greenbelt", source: "Florida Statutes Chapter 193" },
       { label: "Key Rural Counties", value: "Polk (Frostproof), Marion (Fort McCoy), Pasco, Hillsborough", source: "Davis & Garnett Active Portfolio" },
@@ -170,11 +173,11 @@ export const TOPIC_HUBS: TopicHubConfig[] = [
     faqs: [
       {
         question: "Do vacant land loans work the same as residential mortgages?",
-        answer: "No. Raw and agricultural land typically requires 20% to 50% down payment through local Florida credit unions, farm credit lenders, or seller financing with shorter amortization schedules."
+        answer: "No. Unimproved land usually needs 20% to 50% down payment through Florida Farm Credit, local credit unions, or seller financing."
       },
       {
         question: "How do I keep a Greenbelt exemption after buying agricultural acreage?",
-        answer: "You must file a new Agricultural Classification application with the county Property Appraiser by March 1 and maintain active bona fide agricultural operations as of January 1."
+        answer: "Keep active cattle, hay, or timber work running on January 1. Then file a fresh Agricultural Classification form with the county Property Appraiser by March 1."
       }
     ],
     tags: {
@@ -197,11 +200,11 @@ export const TOPIC_HUBS: TopicHubConfig[] = [
     badge: "Corridor Hub • Carrollwood & North Tampa",
     title: "Carrollwood, Northdale & Lake Magdalene Real Estate Hub",
     subtitle:
-      "Established tree-lined neighborhoods, zero-CDD single-family homes, top North Tampa commute routes, and Align Right Realty's home turf.",
+      "Oak-shaded neighborhoods, zero-CDD single-family homes, top North Tampa commute routes, and Align Right Realty's home turf.",
     quickAnswer:
-      "Carrollwood, Northdale, and Lake Magdalene sit in the heart of Northwest Hillsborough County—offering mature oak canopies, larger residential lots without CDD fees, fast access to Dale Mabry Highway and I-275, and proximity to Tampa International Airport and Westshore employers.",
+      "Carrollwood, Northdale, and Lake Magdalene sit in Northwest Hillsborough County. Buyers get shaded residential lots without CDD fees, quick access to Dale Mabry Highway and I-275, and 20-minute drives to Tampa Airport.",
     howWeHandleIt:
-      "With our office anchored right in Carrollwood, Rachael Garnett and Mark Davis track off-market renovations, roof-age insurance credits, and micro-pocket school boundaries daily so buyers and sellers move with certainty.",
+      "With our office anchored in Carrollwood, Rachael and Mark track new listings and renovations daily. We check roof permits, electrical panels, and school boundary lines so buyers move with certainty.",
     localFacts: [
       { label: "Brokerage Home Office", value: "Align Right Realty Carrollwood", source: "Davis & Garnett Advisory" },
       { label: "Typical District Overhead", value: "Many Classic Subdivisions Carry Zero CDD Fees", source: "Hillsborough County Tax Collector" },
@@ -210,11 +213,11 @@ export const TOPIC_HUBS: TopicHubConfig[] = [
     faqs: [
       {
         question: "Why do many Tampa buyers prefer Carrollwood over outer new-construction suburbs?",
-        answer: "Established Carrollwood and Northdale homes typically feature larger lots, mature landscaping, lower or zero CDD assessments, and shorter commutes to Westshore, St. Joseph's Hospital, USF, and Tampa International Airport."
+        answer: "Established Carrollwood and Northdale homes offer wider oak-shaded yards, zero CDD fees, and shorter drives to Westshore, St. Joseph's Hospital, and Tampa Airport."
       },
       {
         question: "What inspections matter most on 1970s–1990s Carrollwood homes?",
-        answer: "Insurance carriers focus heavily on a 4-Point Inspection and Wind Mitigation form checking roof remaining life, electrical panel brand (avoiding legacy Zinsco/Federal Pacific), and supply plumbing."
+        answer: "Insurance companies inspect Four-Point and Wind Mitigation forms closely. Key checks cover remaining roof life, modern breaker panels, and supply plumbing."
       }
     ],
     tags: {
@@ -224,6 +227,7 @@ export const TOPIC_HUBS: TopicHubConfig[] = [
       corridor: ["north-tampa-carrollwood", "wesley-chapel-new-tampa"],
     },
     toolLinks: [
+      { label: "Mortgage & Insurance Calculator", href: "/tools/mortgage-calculator", desc: "Estimate North Tampa monthly P&I, taxes, and insurance." },
       { label: "Seller Net Proceeds Calculator", href: "/tools/seller-net-proceeds", desc: "Estimate Hillsborough closing costs and equity." },
       { label: "4-Point Inspection Glossary", href: "/glossary/four-point-inspection", desc: "What insurers inspect on 1970s–1990s homes." },
     ],
