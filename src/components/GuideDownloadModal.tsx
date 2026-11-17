@@ -1,9 +1,90 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { X, Download, CheckCircle2, BookOpen, ShieldCheck } from "lucide-react";
 import type { PdfWorkbookState } from "@/lib/pdfBuilder";
+
+const COOKIE_NAME = "dg_pdf_unlocked";
+const STORAGE_KEY = "dg_pdf_unlocked_v1";
+const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
+
+interface CachedPdfReader {
+  fullName: string;
+  email: string;
+  phone?: string;
+  interest?: string;
+  unlockedAt: number;
+  expiresAt: number;
+}
+
+function readCachedReader(): CachedPdfReader | null {
+  if (typeof window === "undefined") return null;
+  const now = Date.now();
+  try {
+    const rawLs = window.localStorage.getItem(STORAGE_KEY);
+    if (rawLs) {
+      const parsed = JSON.parse(rawLs) as CachedPdfReader;
+      if (parsed?.fullName && parsed?.email && parsed?.expiresAt > now) {
+        return parsed;
+      }
+    }
+  } catch {
+    // fallback to cookie check
+  }
+
+  try {
+    const match = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith(`${COOKIE_NAME}=`));
+    if (match) {
+      const val = decodeURIComponent(match.slice(COOKIE_NAME.length + 1));
+      const parsed = JSON.parse(val) as CachedPdfReader;
+      if (parsed?.fullName && parsed?.email && parsed?.expiresAt > now) {
+        return parsed;
+      }
+    }
+  } catch {
+    // ignore malformed cookie
+  }
+  return null;
+}
+
+function saveCachedReader(reader: Omit<CachedPdfReader, "unlockedAt" | "expiresAt">) {
+  if (typeof window === "undefined") return;
+  const now = Date.now();
+  const payload: CachedPdfReader = {
+    ...reader,
+    unlockedAt: now,
+    expiresAt: now + THIRTY_DAYS_MS,
+  };
+  try {
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+  } catch {
+    // ignore quota errors
+  }
+  try {
+    const maxAgeSec = Math.floor(THIRTY_DAYS_MS / 1000);
+    const secureFlag = window.location.protocol === "https:" ? "; Secure" : "";
+    document.cookie = `${COOKIE_NAME}=${encodeURIComponent(JSON.stringify(payload))}; Max-Age=${maxAgeSec}; Path=/; SameSite=Lax${secureFlag}`;
+  } catch {
+    // ignore cookie write errors
+  }
+}
+
+function clearCachedReader() {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.removeItem(STORAGE_KEY);
+  } catch {
+    // ignore
+  }
+  try {
+    document.cookie = `${COOKIE_NAME}=; Max-Age=0; Path=/; SameSite=Lax`;
+  } catch {
+    // ignore
+  }
+}
 
 interface GuideDownloadModalProps {
   isOpen: boolean;
@@ -51,21 +132,23 @@ export default function GuideDownloadModal({
   );
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [cachedPassUsed, setCachedPassUsed] = useState(false);
   const [pdfDownloading, setPdfDownloading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
-
-  if (!isOpen) return null;
+  const autoDownloadedRef = useRef(false);
 
   const isTour = contentType === "tour";
   const docLabelLower = isTour ? "tour guide" : "workbook";
   const docLabelTitle = isTour ? "Tour Guide" : "Workbook";
 
-  const triggerPdfDownload = async () => {
+  const triggerPdfDownload = async (overrideName?: string) => {
     setPdfDownloading(true);
     try {
+      const resolvedName =
+        overrideName?.trim() || fullName.trim() || workbookState?.preparedForName || undefined;
       const mergedWorkbook: PdfWorkbookState = {
         ...workbookState,
-        preparedForName: fullName.trim() || workbookState?.preparedForName || undefined,
+        preparedForName: resolvedName,
       };
 
       const res = await fetch("/api/guides/pdf", {
@@ -102,6 +185,29 @@ export default function GuideDownloadModal({
       setPdfDownloading(false);
     }
   };
+
+  useEffect(() => {
+    if (!isOpen) {
+      autoDownloadedRef.current = false;
+      return;
+    }
+
+    const cached = readCachedReader();
+    if (cached && !autoDownloadedRef.current) {
+      autoDownloadedRef.current = true;
+      setFullName(cached.fullName);
+      setEmail(cached.email);
+      if (cached.phone) setPhone(cached.phone);
+      if (cached.interest) setInterest(cached.interest);
+      setCachedPassUsed(true);
+      setSubmitted(true);
+      setErrorMsg("");
+      void triggerPdfDownload(cached.fullName);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen, slug]);
+
+  if (!isOpen) return null;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -146,8 +252,15 @@ export default function GuideDownloadModal({
       });
 
       if (!res.ok) throw new Error("Failed to submit contact info");
+      saveCachedReader({
+        fullName: fullName.trim(),
+        email: email.trim(),
+        phone: phone.trim(),
+        interest,
+      });
+      setCachedPassUsed(false);
       setSubmitted(true);
-      await triggerPdfDownload();
+      await triggerPdfDownload(fullName.trim());
     } catch {
       setErrorMsg("Could not finish right now. Please check your name and email.");
     } finally {
@@ -183,7 +296,15 @@ export default function GuideDownloadModal({
               <div>
                 <h4 className="font-aiveritas text-2xl text-[#111] mb-2">Your Branded PDF Is Ready</h4>
                 <p className="text-sm text-[#111]/75 font-light max-w-md mx-auto leading-relaxed">
-                  We saved your request for <strong>{fullName}</strong> and started downloading your personalized Davis &amp; Garnett {docLabelLower}.
+                  {cachedPassUsed ? (
+                    <>
+                      Welcome back, <strong>{fullName}</strong>! Your 30-day reader pass is active, so we skipped the form and started downloading your personalized Davis &amp; Garnett {docLabelLower}.
+                    </>
+                  ) : (
+                    <>
+                      We saved your request for <strong>{fullName}</strong> (and unlocked 30-day one-click downloads on this browser) and started downloading your personalized Davis &amp; Garnett {docLabelLower}.
+                    </>
+                  )}
                 </p>
               </div>
 
@@ -193,7 +314,7 @@ export default function GuideDownloadModal({
                 <button
                   type="button"
                   disabled={pdfDownloading}
-                  onClick={triggerPdfDownload}
+                  onClick={() => triggerPdfDownload()}
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#111] hover:bg-[#D4AF37] text-white hover:text-[#111] text-xs font-bold uppercase tracking-widest rounded-xl transition-colors"
                 >
                   <Download className="w-4 h-4" />
@@ -207,12 +328,35 @@ export default function GuideDownloadModal({
                   Back to Page
                 </button>
               </div>
+
+              <button
+                type="button"
+                onClick={() => {
+                  clearCachedReader();
+                  setCachedPassUsed(false);
+                  setSubmitted(false);
+                  setFullName("");
+                  setEmail("");
+                  setPhone("");
+                }}
+                className="text-[11px] text-[#111]/55 hover:text-[#9A7D3A] underline transition-colors cursor-pointer"
+              >
+                Use a different name or email
+              </button>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
-              <p className="text-sm text-[#111]/75 font-light leading-relaxed">
-                Enter your name, email, and goal below to download your clean Davis &amp; Garnett PDF {docLabelLower}—with your saved online notes included.
-              </p>
+              <div className="space-y-2">
+                <p className="text-sm text-[#111]/75 font-light leading-relaxed">
+                  Enter your name, email, and goal below to download your clean Davis &amp; Garnett PDF {docLabelLower}—with your saved online notes included.
+                </p>
+                <div className="rounded-xl bg-[#f5f3ef] border border-[#D4AF37]/40 px-3.5 py-2.5 text-xs text-[#111]/85 flex items-start gap-2">
+                  <ShieldCheck className="w-4 h-4 text-[#9A7D3A] shrink-0 mt-0.5" />
+                  <span>
+                    <strong>Enter once, download any guide for 30 days:</strong> We remember your pass in this browser for 30 days so future guide and tour PDFs download automatically without re-filling this form.
+                  </span>
+                </div>
+              </div>
 
               <div>
                 <label className="block text-[10px] uppercase tracking-widest font-bold text-[#111]/70 mb-1.5">
