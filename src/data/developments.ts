@@ -779,14 +779,7 @@ const RAW_DEVELOPMENTS: Development[] = [
     unitsOrAcreage: "3,400+ Acres | ~6,400 Planned Homes | Surrounded by Hillsborough River Parklands",
     propertyTypes: ["Luxury Single-Family Estates", "Executive Pool Homes", "Villas & Townhomes"],
     heroImage: "/images/developments/two-rivers-wesley-chapel.jpg",
-    gallery: [
-      "/developments/two-rivers/tampa-bay-new-development-two-rivers-davis-garnett-residential-commercial-advisors-1.jpg",
-      "/developments/two-rivers/tampa-bay-new-development-two-rivers-davis-garnett-residential-commercial-advisors-2.jpg",
-      "/developments/two-rivers/tampa-bay-new-development-two-rivers-davis-garnett-residential-commercial-advisors-3.webp",
-      "/developments/two-rivers/tampa-bay-new-development-two-rivers-davis-garnett-residential-commercial-advisors-4.webp",
-      "/developments/two-rivers/tampa-bay-new-development-two-rivers-davis-garnett-residential-commercial-advisors-5.jpg",
-      "/developments/two-rivers/tampa-bay-new-development-two-rivers-davis-garnett-residential-commercial-advisors-6.png",
-    ],
+    gallery: ["/images/developments/two-rivers-wesley-chapel.jpg"],
     officialWebsiteUrl: "https://tworiversfl.com/",
     officialSources: [
       {
@@ -912,14 +905,7 @@ const RAW_DEVELOPMENTS: Development[] = [
     unitsOrAcreage: "6,200+ Acres | 3,600 Acres of Green Space | 100-Mile Trail Network",
     propertyTypes: ["Single-Family Homes", "55+ Active Adult Resort Homes", "Villas & Townhomes"],
     heroImage: "/images/developments/angeline-land-o-lakes.jpg",
-    gallery: [
-      "/developments/angeline/tampa-bay-new-development-angeline-davis-garnett-residential-commercial-advisors-1.jpg",
-      "/developments/angeline/tampa-bay-new-development-angeline-davis-garnett-residential-commercial-advisors-2.jpg",
-      "/developments/angeline/tampa-bay-new-development-angeline-davis-garnett-residential-commercial-advisors-3.jpg",
-      "/developments/angeline/tampa-bay-new-development-angeline-davis-garnett-residential-commercial-advisors-4.jpg",
-      "/developments/angeline/tampa-bay-new-development-angeline-davis-garnett-residential-commercial-advisors-5.jpg",
-      "/developments/angeline/tampa-bay-new-development-angeline-davis-garnett-residential-commercial-advisors-6.jpg",
-    ],
+    gallery: ["/images/developments/angeline-land-o-lakes.jpg"],
     officialWebsiteUrl: "https://metrodevelopmentgroup.com/communities/angeline/",
     officialSources: [
       {
@@ -1047,14 +1033,7 @@ const RAW_DEVELOPMENTS: Development[] = [
     unitsOrAcreage: "7.5-Acre Lagoon (Epperson) & 15-Acre Lagoon (Mirada) | 7,000+ Combined Homes",
     propertyTypes: ["Single-Family Pool Homes", "Semi-Custom Estates", "55+ Active Adult", "Townhomes"],
     heroImage: "/images/developments/epperson-mirada-lagoon-wesley-chapel.jpg",
-    gallery: [
-      "/developments/epperson-mirada/tampa-bay-new-development-epperson-mirada-davis-garnett-residential-commercial-advisors-1.jpg",
-      "/developments/epperson-mirada/tampa-bay-new-development-epperson-mirada-davis-garnett-residential-commercial-advisors-2.jpg",
-      "/developments/epperson-mirada/tampa-bay-new-development-epperson-mirada-davis-garnett-residential-commercial-advisors-3.jpg",
-      "/developments/epperson-mirada/tampa-bay-new-development-epperson-mirada-davis-garnett-residential-commercial-advisors-4.png",
-      "/developments/epperson-mirada/tampa-bay-new-development-epperson-mirada-davis-garnett-residential-commercial-advisors-5.jpg",
-      "/developments/epperson-mirada/tampa-bay-new-development-epperson-mirada-davis-garnett-residential-commercial-advisors-6.jpg",
-    ],
+    gallery: ["/images/developments/epperson-mirada-lagoon-wesley-chapel.jpg"],
     officialWebsiteUrl: "https://metrodevelopmentgroup.com/epperson/",
     officialSources: [
       {
@@ -1420,14 +1399,7 @@ const RAW_DEVELOPMENTS: Development[] = [
     unitsOrAcreage: "1,100 Acres | Nearly 4,000 Planned Homes",
     propertyTypes: ["Single-Family Homes", "Villas", "Townhomes"],
     heroImage: "/images/developments/sunrise-hills-brooksville.jpg",
-    gallery: [
-      "/developments/sunrise-hills/tampa-bay-new-development-sunrise-hills-davis-garnett-residential-commercial-advisors-1.png",
-      "/developments/sunrise-hills/tampa-bay-new-development-sunrise-hills-davis-garnett-residential-commercial-advisors-2.png",
-      "/developments/sunrise-hills/tampa-bay-new-development-sunrise-hills-davis-garnett-residential-commercial-advisors-3.jpg",
-      "/developments/sunrise-hills/tampa-bay-new-development-sunrise-hills-davis-garnett-residential-commercial-advisors-4.jpg",
-      "/developments/sunrise-hills/tampa-bay-new-development-sunrise-hills-davis-garnett-residential-commercial-advisors-5.jpg",
-      "/developments/sunrise-hills/tampa-bay-new-development-sunrise-hills-davis-garnett-residential-commercial-advisors-6.jpg",
-    ],
+    gallery: ["/images/developments/sunrise-hills-brooksville.jpg"],
     officialWebsiteUrl: "https://metrodevelopmentgroup.com/sunrise-hills/",
     officialSources: [
       {
@@ -1937,7 +1909,7 @@ const RAW_DEVELOPMENTS: Development[] = [
     unitsOrAcreage: "Tampa Bay's Top Airport-Adjacent Office, Retail & Yacht Marina Hub",
     propertyTypes: ["Marina Bayfront Condos", "Canal Homes (Beach Park / Sunset Park)", "Class-A Office & Retail"],
     heroImage: "/images/developments/westshore-marina-international-plaza-district.jpg",
-    gallery: ["/city-photos/downtown-tampa-skyline.jpg"],
+    gallery: ["/images/developments/westshore-marina-international-plaza-district.jpg"],
     trendingKind: "Commercial & Mixed-Use",
     isMixedUseCommercialResidential: true,
     summary: "Westshore joins new Marina Pointe condo towers and yacht docks on Tampa Bay with Beach Park homes. It also sits steps from International Plaza shops and main work offices.",
@@ -1994,7 +1966,7 @@ const RAW_DEVELOPMENTS: Development[] = [
     unitsOrAcreage: "Deep-Water Sailboat Canals & Tampa Bay Views Just 10 Min from Downtown",
     propertyTypes: ["Deep-Water Bayfront Estates", "Brick Bungalows", "Inland Zone X Family Homes"],
     heroImage: "/images/developments/bahama-shores-snell-isle-st-petersburg.jpg",
-    gallery: ["/new-images/new-2/davis-garnett-tampa-residential-real-estate-saint-petersburg-downtown-and-beaches-florida.jpg"],
+    gallery: ["/images/developments/bahama-shores-snell-isle-st-petersburg.jpg"],
     trendingKind: "Existing Neighborhood",
     summary: "Bahama Shores, Snell Isle, and Old Northeast bring calm deep boat water, brick streets, and parks ten minutes from Downtown St. Pete and Gulf beaches.",
     description: "Home to our flagship $4,553,900 custom estate at 6100 Bahama Shores Dr S, South and Northeast St. Pete deliver wide waterfront lots with quick boat runs out to Tampa Bay and the Sunshine Skyway.",
@@ -2670,7 +2642,7 @@ const RAW_DEVELOPMENTS: Development[] = [
     unitsOrAcreage: "Proven Landscaping, Schools & Lower Remaining Bonds Than Brand-New Tracts",
     propertyTypes: ["Golf Course Homes", "Resort Pool Villages", "Low-CDD Resales"],
     heroImage: "/images/developments/seven-oaks-plantation-palms-bexley-resale.jpg",
-    gallery: ["/new-images/new-2/davis-garnett-tampa-residential-real-estate-land-o-lakes-florida.jpg"],
+    gallery: ["/images/developments/seven-oaks-plantation-palms-bexley-resale.jpg"],
     trendingKind: "Existing Neighborhood",
     summary: "Plantation Palms, Seven Oaks, and Bexley offer shade trees, golf lanes, bike parks, and smaller remaining tax bills than brand-new tracts.",
     description: "Home to Mark and Rachael's $550,000 sale at 3537 Valencia Cove Ct in Plantation Palms, these established Wesley Chapel and Land O' Lakes communities deliver mature landscaping right beside Wiregrass shops and SR-54.",
@@ -2726,7 +2698,7 @@ const RAW_DEVELOPMENTS: Development[] = [
     unitsOrAcreage: "Resort Pools, Culinary Studios, Sports Courts & Crystal Lagoon Access",
     propertyTypes: ["New 55+ Paired Villas", "Single-Family Resort Homes", "Brand-New Clubhouses"],
     heroImage: "/images/developments/valencia-ridge-medley-mirada-55-plus.jpg",
-    gallery: ["/city-photos/florida-resort-community-real.jpg"],
+    gallery: ["/images/developments/valencia-ridge-medley-mirada-55-plus.jpg"],
     trendingKind: "55+ Community",
     summary: "Valencia Ridge, Medley at Mirada, and Esplanade at Wiregrass make Pasco a top spot for new 55+ villas and warm resort clubs.",
     description: "Built specifically for active adults wanting impact windows, new builder warranties, and full-time social clubs, Wesley Chapel and San Antonio 55+ gates put AdventHealth hospital care and SR-56 dining minutes away.",
