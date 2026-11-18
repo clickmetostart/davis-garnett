@@ -77,16 +77,14 @@ const NAV_GROUPS: NavGroup[] = [
     href: "/knowledge-hub",
     dropdown: [
       { label: "Real Estate Knowledge Simplified", desc: "Buyer & seller guides, common questions, neighborhoods & market updates", href: "/knowledge-hub" },
-      { label: "Commercial Get Started Worksheet", desc: "Outline SBA 504, NNN cap rates, land & 1031 goals + PDF worksheet", href: "/knowledge-hub#get-started" },
-      { label: "Residential Get Started Worksheet", desc: "Plan your Tampa Bay move online & download our printable guide PDF", href: "/knowledge-hub#get-started" },
+      { label: "Get Started: Commercial & Residential", desc: "Interactive 8-step discovery worksheets & printable PDFs for commercial, land & home goals", href: "/knowledge-hub#get-started" },
       { label: "Buyer & Seller Step-by-Step Guides", desc: "Commercial & residential guides for buying, selling & HOA/CDD fees", href: "/knowledge-hub#guides" },
       { label: "Guided Neighborhood & Commercial Tours", desc: "Full-day residential neighborhood, commercial corridor & landmark routes (#GuidedByDG)", href: "/tours" },
       { label: "Common Real Estate Questions", desc: "Plain-English answers to top Florida buying, selling & tax questions", href: "/knowledge-hub#questions" },
       { label: "Areas We Work In", desc: "St. Pete, Downtown Tampa, Wesley Chapel, Land O' Lakes & Brandon", href: "/knowledge-hub#areas" },
       { label: "Local Events & Open Houses", desc: "Upcoming community tours, buyer workshops & charity events", href: "/knowledge-hub#events" },
       { label: "Tampa Bay Market Updates", desc: "Easy-to-read local market updates & neighborhood trends", href: "/knowledge-hub#articles" },
-      { label: "Calculators & Planning Tools", desc: "Cap Rate, IRS 1031 Deadline & Seller Net Proceeds calculators", href: "/knowledge-hub#tools" },
-      { label: "Florida Real Estate Glossary", desc: "Plain-English definitions of CDDs, HOAs, 4-Point & Wind Mitigation", href: "/glossary" },
+      { label: "Calculators, Tools & Glossary", desc: "Cap Rate, 1031 Deadline, Net Proceeds calculators & plain-English Florida glossary", href: "/knowledge-hub#tools" },
     ],
   },
 ];
