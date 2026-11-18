@@ -23,8 +23,8 @@ const NAV_GROUPS: NavGroup[] = [
     label: "Your Realtors",
     href: "/about",
     dropdown: [
-      { label: "Commercial Realtor Hub", desc: "Owner-user SBA 504, NNN retail, 1031 exchanges, BPO valuations & Florida land", href: "/commercial" },
-      { label: "Residential Realtor Hub", desc: "Homes, waterfront docks, 55+ clubs, downtown condos & neighborhood guides", href: "/residential" },
+      { label: "Commercial Realtor Team", desc: "Owner-user SBA 504, NNN retail, 1031 exchanges, BPO valuations & Florida land", href: "/commercial" },
+      { label: "Residential Realtor Team", desc: "Homes, waterfront docks, 55+ clubs, downtown condos & neighborhood guides", href: "/residential" },
     ],
   },
   {
@@ -46,8 +46,8 @@ const NAV_GROUPS: NavGroup[] = [
     href: "/properties",
     dropdown: [
       { label: "Davis & Garnett Portfolio Hub", desc: "Explore active offerings, branch listings & category hubs across Tampa Bay", href: "/properties" },
-      { label: "Residential Realtor Hub", desc: "Homes, waterfront docks, 55+ villas, condos & move planning", href: "/residential" },
-      { label: "Commercial Realtor Hub", desc: "SBA 504, NNN leases, 1031 exchanges, BPOs & Central Florida land", href: "/commercial" },
+      { label: "Residential Realtor Team", desc: "Homes, waterfront docks, 55+ villas, condos & move planning", href: "/residential" },
+      { label: "Commercial Realtor Team", desc: "SBA 504, NNN leases, 1031 exchanges, BPOs & Central Florida land", href: "/commercial" },
       { label: "Featured Exclusive Listings", desc: "Highlighted residential, waterfront, commercial & land opportunities", href: "/properties#featured" },
       { label: "New & Upcoming Listings", desc: "Newest team releases plus upcoming live IDX & Lofty feed areas", href: "/properties#new-listings" },
       { label: "Align Right Carrollwood Office", desc: "Active listings from our Align Right Realty Carrollwood brokerage", href: "/properties#carrollwood-office" },

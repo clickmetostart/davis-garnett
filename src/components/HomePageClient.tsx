@@ -384,7 +384,7 @@ export default function HomePageV1Light() {
                 </div>
                 <div>
                   <span className="inline-flex items-center gap-2.5 px-5 py-3 rounded-lg bg-[#D4AF37] group-hover:bg-white text-[#111] text-xs uppercase tracking-widest font-bold transition-colors shadow-md">
-                    Explore Commercial Hub <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    Commercial Realtor Team <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </span>
                 </div>
               </div>
@@ -423,7 +423,7 @@ export default function HomePageV1Light() {
                 </div>
                 <div>
                   <span className="inline-flex items-center gap-2.5 px-5 py-3 rounded-lg bg-[#D4AF37] group-hover:bg-white text-[#111] text-xs uppercase tracking-widest font-bold transition-colors shadow-md">
-                    Explore Residential Hub <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    Residential Realtor Team <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </span>
                 </div>
               </div>
