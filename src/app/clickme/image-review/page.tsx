@@ -52,7 +52,7 @@ const TRENDING_REGIONS = [
     title: "Downtown Tampa, Bayshore & South Tampa",
     description:
       "Classic Hyde Park bungalows and Bayshore estates alongside Riverwalk sky condos, Westshore marinas, and 650,000+ sq. ft. of new urban office and retail.",
-    image: "/placeholders/dg-brand-placeholder.webp",
+    image: "/images/regions/downtown-towers.jpg",
   },
   {
     id: "north-tampa-communities",
@@ -68,7 +68,7 @@ const TRENDING_REGIONS = [
     title: "Bradenton, Lakewood Ranch & Sarasota",
     description:
       "Lakeside custom estates, bundled golf, award-winning 55+ villages, downtown bayfront condos, and UTC corporate and retail centers south along I-75.",
-    image: "/placeholders/dg-brand-placeholder.webp",
+    image: "/images/regions/sarasota-manatee-communities.png",
   },
   {
     id: "st-pete-region",
@@ -76,7 +76,7 @@ const TRENDING_REGIONS = [
     title: "St. Petersburg & South Pinellas",
     description:
       "Deep-water boating canals in Bahama Shores and Snell Isle paired with Downtown sky towers, 55+ bayfront clubs, and bustling Central Avenue commerce.",
-    image: "/placeholders/dg-brand-placeholder.webp",
+    image: "/images/regions/st-pete-region.jpg",
   },
   {
     id: "clearwater-region",
@@ -84,7 +84,7 @@ const TRENDING_REGIONS = [
     title: "Clearwater, Dunedin & North Pinellas",
     description:
       "High coastal bluffs along the Pinellas Trail, barrier island condos, classic zero-CDD 55+ clubs, and busy US-19 and Gulf-to-Bay commercial plazas.",
-    image: "/placeholders/dg-brand-placeholder.webp",
+    image: "/images/regions/clearwater-region.jpg",
   },
   {
     id: "west-pasco-region",
