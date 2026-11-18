@@ -18,13 +18,23 @@ import {
 } from "lucide-react";
 import { GUIDES, QUESTIONS, AREAS, EVENTS, ARTICLES } from "@/data/knowledgeHub";
 import { LIVE_GUIDED_TOURS } from "@/data/tours";
+import { DEVELOPMENTS } from "@/data/developments";
 import type { ImageReviewRecord } from "@/lib/kv";
 
 type ReviewStatus = ImageReviewRecord["status"];
 
 interface ReviewItem {
   id: string;
-  section: "Guide" | "Guided Tour" | "Area Guide" | "Q&A" | "Event" | "Article";
+  section:
+    | "Guide"
+    | "Guided Tour"
+    | "Area Guide"
+    | "Q&A"
+    | "Event"
+    | "Article"
+    | "Get Started"
+    | "Trending Region"
+    | "Development";
   slug: string;
   title: string;
   category: string;
@@ -34,6 +44,105 @@ interface ReviewItem {
   isPlaceholder: boolean;
   isNewGenerated: boolean;
 }
+
+const TRENDING_REGIONS = [
+  {
+    id: "downtown-towers",
+    eyebrow: "Region 01 • Downtown Tampa & South Tampa",
+    title: "Downtown Tampa, Bayshore & South Tampa",
+    description:
+      "Classic Hyde Park bungalows and Bayshore estates alongside Riverwalk sky condos, Westshore marinas, and 650,000+ sq. ft. of new urban office and retail.",
+    image: "/placeholders/dg-brand-placeholder.webp",
+  },
+  {
+    id: "north-tampa-communities",
+    eyebrow: "Region 02 • Wesley Chapel, Land O' Lakes & Hernando",
+    title: "Wesley Chapel, Land O' Lakes & Hernando",
+    description:
+      "Proven zero/low-bond golf villages alongside flagship Crystal Lagoons, brand-new 55+ clubhouses, and Pasco's booming biotech and SR-56 retail corridors.",
+    image: "/placeholders/dg-brand-placeholder.webp",
+  },
+  {
+    id: "sarasota-manatee-communities",
+    eyebrow: "Region 03 • Bradenton, Lakewood Ranch & Sarasota",
+    title: "Bradenton, Lakewood Ranch & Sarasota",
+    description:
+      "Lakeside custom estates, bundled golf, award-winning 55+ villages, downtown bayfront condos, and UTC corporate and retail centers south along I-75.",
+    image: "/placeholders/dg-brand-placeholder.webp",
+  },
+  {
+    id: "st-pete-region",
+    eyebrow: "Region 04 • St. Petersburg & South Pinellas",
+    title: "St. Petersburg & South Pinellas",
+    description:
+      "Deep-water boating canals in Bahama Shores and Snell Isle paired with Downtown sky towers, 55+ bayfront clubs, and bustling Central Avenue commerce.",
+    image: "/placeholders/dg-brand-placeholder.webp",
+  },
+  {
+    id: "clearwater-region",
+    eyebrow: "Region 05 • Clearwater, Dunedin & North Pinellas",
+    title: "Clearwater, Dunedin & North Pinellas",
+    description:
+      "High coastal bluffs along the Pinellas Trail, barrier island condos, classic zero-CDD 55+ clubs, and busy US-19 and Gulf-to-Bay commercial plazas.",
+    image: "/placeholders/dg-brand-placeholder.webp",
+  },
+  {
+    id: "west-pasco-region",
+    eyebrow: "Region 06 • Tarpon Springs, Palm Harbor & Trinity",
+    title: "Tarpon Springs, Palm Harbor & Trinity / West Pasco",
+    description:
+      "Starkey Ranch trails and East Lake Woodlands golf alongside Sponge Docks storefronts, Trinity hospital medical suites, and Timber Greens 55+.",
+    image: "/placeholders/dg-brand-placeholder.webp",
+  },
+  {
+    id: "south-shore-region",
+    eyebrow: "Region 07 • Apollo Beach, Ruskin & Sun City Center",
+    title: "Apollo Beach, Ruskin & Sun City Center",
+    description:
+      "Deep-water sailboat canals in MiraBay, new Waterset trails, Big Bend Rd hospital commerce, and Florida's golf-cart 55+ hubs.",
+    image: "/placeholders/dg-brand-placeholder.webp",
+  },
+  {
+    id: "westshore-marina-region",
+    eyebrow: "Region 08 • Westshore Marina & Rocky Point",
+    title: "Westshore Marina, Rocky Point & Town 'N Country",
+    description:
+      "Bayfront marina towers, 5-minute airport waterfront offices, zero-HOA Baycrest boat canals, and Westshore corporate suites.",
+    image: "/placeholders/dg-brand-placeholder.webp",
+  },
+  {
+    id: "venice-wellen-park-region",
+    eyebrow: "Region 09 • Venice, Wellen Park & North Port",
+    title: "Venice, Wellen Park & North Port",
+    description:
+      "Downtown Wellen lakefront concerts, historic Island of Venice boutiques, Solstice 55+ villas, and Sarasota Memorial Laurel Rd medical growth.",
+    image: "/placeholders/dg-brand-placeholder.webp",
+  },
+  {
+    id: "east-hillsborough-region",
+    eyebrow: "Region 10 • Brandon, Valrico & East Hillsborough",
+    title: "Brandon, Valrico & East Hillsborough",
+    description:
+      "Active SBA mixed-use buildings off SR-60, no-HOA Seffner lots, shaded Valrico golf neighborhoods, Hawkstone new builds, and Sabal Park logistics.",
+    image: "/placeholders/dg-brand-placeholder.webp",
+  },
+  {
+    id: "lakeland-polk-region",
+    eyebrow: "Region 11 • Lakeland, Plant City & I-4 Corridor",
+    title: "Lakeland, Plant City & I-4 Corridor",
+    description:
+      "Historic brick Lake Morton & Walden Lake living, Bonnet Springs urban growth, I-4 logistics warehouses, and strategic 20-to-80 acre Florida tracts.",
+    image: "/placeholders/dg-brand-placeholder.webp",
+  },
+  {
+    id: "carrollwood-region",
+    eyebrow: "Region 12 • Align Right Carrollwood Corridor",
+    title: "Align Right Carrollwood & Surrounding Corridor",
+    description:
+      "Our home brokerage backyard—zero-CDD ski lakes in Carrollwood, Odessa horse farms, Cheval golf, Keystone acreage, Citrus Park retail, and Dale Mabry offices.",
+    image: "/placeholders/dg-brand-placeholder.webp",
+  },
+];
 
 const STORAGE_KEY = "dg_image_review_v2";
 const PLACEHOLDER_PATH = "/placeholders/dg-brand-placeholder.webp";
@@ -130,6 +239,50 @@ export default function ImageReviewPage() {
           description: art.summary,
           image: art.heroImage,
           liveHref: `/knowledge-hub/articles/${art.slug}`,
+        })
+      ),
+      mapItem({
+        id: "get-started:commercial",
+        section: "Get Started",
+        slug: "davis-garnett-knowledge-hub-commercial-1",
+        title: "Commercial & Land Get Started Plan",
+        category: "Commercial & Land",
+        description: "Knowledge Hub Get Started 2-column feature card for Commercial & Land discovery deck.",
+        image: "/images/knowledge-hub/davis-garnett-knowledge-hub-commercial-1.jpg",
+        liveHref: "/knowledge-hub#get-started",
+      }),
+      mapItem({
+        id: "get-started:residential",
+        section: "Get Started",
+        slug: "davis-garnett-knowledge-hub-residential-1",
+        title: "Residential Get Started & Moving Plan",
+        category: "Residential",
+        description: "Knowledge Hub Get Started 2-column feature card for Residential discovery deck.",
+        image: "/images/knowledge-hub/davis-garnett-knowledge-hub-residential-1.jpg",
+        liveHref: "/knowledge-hub#get-started",
+      }),
+      ...TRENDING_REGIONS.map((reg) =>
+        mapItem({
+          id: `region:${reg.id}`,
+          section: "Trending Region",
+          slug: reg.id,
+          title: reg.title,
+          category: reg.eyebrow,
+          description: reg.description,
+          image: reg.image,
+          liveHref: `/developments#${reg.id}`,
+        })
+      ),
+      ...DEVELOPMENTS.map((dev) =>
+        mapItem({
+          id: `dev:${dev.slug}`,
+          section: "Development",
+          slug: dev.slug,
+          title: dev.name,
+          category: dev.corridorLabel,
+          description: dev.summary || dev.subtitle,
+          image: dev.heroImage,
+          liveHref: `/developments/${dev.slug}`,
         })
       ),
     ];
@@ -529,6 +682,9 @@ export default function ImageReviewPage() {
               className="px-3.5 py-2 rounded-lg bg-[#f5f3ef] border border-[#111]/10 text-xs font-bold uppercase tracking-wider text-[#111]"
             >
               <option value="all">All Sections</option>
+              <option value="Trending Region">Trending Regions (12)</option>
+              <option value="Development">Developments ({DEVELOPMENTS.length})</option>
+              <option value="Get Started">Get Started Cards (2)</option>
               <option value="Guided Tour">Guided Tours</option>
               <option value="Guide">Guides</option>
               <option value="Area Guide">Areas We Work In</option>

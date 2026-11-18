@@ -205,7 +205,7 @@ export default function KnowledgeHubPage() {
                 title: "Commercial & Land Get Started Plan",
                 description:
                   "Map out SBA 504 financing, NNN cap rates, 1031 exchange deadlines, zoning needs, or raw land acquisition goals—plus a printable strategy packet.",
-                image: "/davis-garnett-knowledge-hub-commercial-1.jfif",
+                image: "/images/knowledge-hub/davis-garnett-knowledge-hub-commercial-1.jpg",
                 href: "/commercial/get-started",
                 cta: "Start Commercial Plan",
               },
@@ -215,7 +215,7 @@ export default function KnowledgeHubPage() {
                 title: "Residential Get Started & Moving Plan",
                 description:
                   "Outline your Tampa Bay neighborhood goals, budget, home style, timing, and HOA/CDD preferences online—or print our matching client worksheet.",
-                image: "/davis-garnett-knowledge-hub-residential-1.jfif",
+                image: "/images/knowledge-hub/davis-garnett-knowledge-hub-residential-1.jpg",
                 href: "/residential/get-started",
                 cta: "Start Residential Plan",
               },
