@@ -93,7 +93,7 @@ export const GUIDED_TOURS: GuidedTour[] = [
     distanceSummary: "6.5 Miles North-to-East Waterfront",
     routeDirectionNote: "Armature Works Coffee -> ONE Tampa & Pendry -> Water Street & Aquarium Lunch -> Gasworx & Ybor.",
     startAddress: "1910 N Ola Ave, Tampa, FL 33602",
-    heroImage: "/placeholders/dg-brand-placeholder.webp",
+    heroImage: "/images/tours/downtown-tampa-water-street-channelside-tour.jpg",
     host: {
       name: "Mark Davis",
       role: "Your Downtown Tampa Day Planner",
@@ -209,7 +209,7 @@ export const GUIDED_TOURS: GuidedTour[] = [
     distanceSummary: "15 Miles Historic-to-Waterfront Loop",
     routeDirectionNote: "Hyde Park Coffee & Davis Islands -> Midtown Lunch -> International Plaza -> Bayshore Ritz-Carlton & Sunset.",
     startAddress: "1602 W Snow Ave, Tampa, FL 33606",
-    heroImage: "/placeholders/dg-brand-placeholder.webp",
+    heroImage: "/images/tours/south-tampa-bayshore-hyde-park-tour.jpg",
     host: {
       name: "Rachael Garnett",
       role: "Your South Tampa Insider Host",
@@ -325,7 +325,7 @@ export const GUIDED_TOURS: GuidedTour[] = [
     distanceSummary: "18 Miles Intracoastal-to-Sunset Loop",
     routeDirectionNote: "Harbor Bluffs & Belleair -> Sand Key Condos -> Dunedin Lunch -> Clearwater Aquarium & Frenchy's Sunset.",
     startAddress: "Belleair Bluffs / Harbor Bluffs Overlook, Largo, FL 33770",
-    heroImage: "/placeholders/dg-brand-placeholder.webp",
+    heroImage: "/images/tours/clearwater-dunedin-beaches-destinations-tour.jpg",
     host: {
       name: "Rachael Garnett",
       role: "Your Pinellas Coast & Beach Insider",
@@ -456,7 +456,7 @@ export const GUIDED_TOURS: GuidedTour[] = [
     distanceSummary: "8 Miles Coastal Neighborhood & Bayfront Arc",
     routeDirectionNote: "Sunken Gardens & Snell Isle -> Kahwa & Cassis Lunch -> St. Pete Pier -> Dali Museum Harbor.",
     startAddress: "1825 4th St N, St. Petersburg, FL 33704",
-    heroImage: "/placeholders/dg-brand-placeholder.webp",
+    heroImage: "/images/tours/st-pete-waterfront-beach-drive-tour.jpg",
     host: {
       name: "Rachael Garnett",
       role: "Your Downtown St. Pete & Bayfront Host",
@@ -572,7 +572,7 @@ export const GUIDED_TOURS: GuidedTour[] = [
     distanceSummary: "18 Miles Bay-to-Barrier-Islands Drive",
     routeDirectionNote: "Bandit Coffee & EDGE District -> Kenwood & Bodega Lunch -> Pass-a-Grille -> Fort De Soto Sunset.",
     startAddress: "2662 Central Ave, St. Petersburg, FL 33712",
-    heroImage: "/placeholders/dg-brand-placeholder.webp",
+    heroImage: "/images/tours/st-pete-central-ave-edge-district-tour.jpg",
     host: {
       name: "Mark Davis",
       role: "Your Creative St. Pete & Beach Host",
@@ -688,7 +688,7 @@ export const GUIDED_TOURS: GuidedTour[] = [
     distanceSummary: "16 Miles River-to-Lakes Loop",
     routeDirectionNote: "Lowry Coffee & ZooTampa -> Lake Carroll Streets -> Carrollwood Park Lunch -> Citrus Park Smoothie.",
     startAddress: "1101 W Sligh Ave, Tampa, FL 33604",
-    heroImage: "/placeholders/dg-brand-placeholder.webp",
+    heroImage: "/images/tours/carrollwood-northdale-lakes-tour.jpg",
     host: {
       name: "Mark Davis",
       role: "Your North Tampa & Carrollwood Host",
@@ -804,7 +804,7 @@ export const GUIDED_TOURS: GuidedTour[] = [
     distanceSummary: "24 Miles Growth-and-Lifestyle Loop",
     routeDirectionNote: "KRATE Coffee -> Wiregrass Lunch -> Two Rivers Homes (SR-56) -> Epperson & Mirada Lagoons.",
     startAddress: "5817 Wesley Grove Blvd, Wesley Chapel, FL 33544",
-    heroImage: "/placeholders/dg-brand-placeholder.webp",
+    heroImage: "/images/tours/wesley-chapel-lagoons-schools-tour.jpg",
     host: {
       name: "Rachael Garnett",
       role: "Your Pasco Lifestyle & New-Home Host",
@@ -920,7 +920,7 @@ export const GUIDED_TOURS: GuidedTour[] = [
     distanceSummary: "26 Miles Green-Canopy & Suncoast Loop",
     routeDirectionNote: "Westchase Coffee & Bay Park -> Keystone Lakes & Cheval -> Starkey Market Lunch -> Angeline Innovation Hub.",
     startAddress: "9540 W Linebaugh Ave, Tampa, FL 33626",
-    heroImage: "/placeholders/dg-brand-placeholder.webp",
+    heroImage: "/images/tours/land-o-lakes-cheval-keystone-tour.jpg",
     host: {
       name: "Mark Davis",
       role: "Your Keystone, Westchase & Pasco Host",
@@ -1036,7 +1036,7 @@ export const GUIDED_TOURS: GuidedTour[] = [
     distanceSummary: "28 Miles River-to-Springs Loop",
     routeDirectionNote: "Temple Terrace Coffee & Busch Gardens -> Lettuce Lake -> Topgolf & Brandon Lunch -> Lithia Springs & FishHawk.",
     startAddress: "10165 N McKinley Dr, Tampa, FL 33612",
-    heroImage: "/placeholders/dg-brand-placeholder.webp",
+    heroImage: "/images/tours/brandon-sr60-mixed-use-commercial-tour.jpg",
     host: {
       name: "Mark Davis",
       role: "Your East Tampa Thrills & Villages Host",
@@ -1152,7 +1152,7 @@ export const GUIDED_TOURS: GuidedTour[] = [
     distanceSummary: "13 Miles Bayfront-to-Stadium Arc",
     routeDirectionNote: "Westshore Marina Coffee -> International Plaza -> Rocky Point Lunch -> Raymond James & Al Lopez Park.",
     startAddress: "5200 W Tyson Ave, Tampa, FL 33611",
-    heroImage: "/placeholders/dg-brand-placeholder.webp",
+    heroImage: "/images/tours/westshore-dale-mabry-retail-office-tour.jpg",
     host: {
       name: "Rachael Garnett",
       role: "Your Westshore & Bayfront Host",
@@ -1268,7 +1268,7 @@ export const GUIDED_TOURS: GuidedTour[] = [
     distanceSummary: "38 Miles Lake-to-Ridge Showcase",
     routeDirectionNote: "Concord Coffee -> Bonnet Springs Lunch -> Lake Hollingsworth & Lakeside -> Bok Tower Gardens.",
     startAddress: "1037 Florida Ave S, Lakeland, FL 33803",
-    heroImage: "/placeholders/dg-brand-placeholder.webp",
+    heroImage: "/images/tours/central-florida-us27-us98-land-corridor-tour.jpg",
     host: {
       name: "Mark Davis",
       role: "Your Central Florida Insider Host",

@@ -77,8 +77,8 @@ const NAV_GROUPS: NavGroup[] = [
     href: "/knowledge-hub",
     dropdown: [
       { label: "Real Estate Knowledge Simplified", desc: "Buyer & seller guides, common questions, neighborhoods & market updates", href: "/knowledge-hub" },
-      { label: "Residential Get Started Worksheet", desc: "Plan your Tampa Bay move online & download our printable guide PDF", href: "/residential/get-started" },
-      { label: "Commercial Get Started Worksheet", desc: "Outline SBA 504, NNN cap rates, land & 1031 goals + PDF worksheet", href: "/commercial/get-started" },
+      { label: "Commercial Get Started Worksheet", desc: "Outline SBA 504, NNN cap rates, land & 1031 goals + PDF worksheet", href: "/knowledge-hub#get-started" },
+      { label: "Residential Get Started Worksheet", desc: "Plan your Tampa Bay move online & download our printable guide PDF", href: "/knowledge-hub#get-started" },
       { label: "Buyer & Seller Step-by-Step Guides", desc: "Commercial & residential guides for buying, selling & HOA/CDD fees", href: "/knowledge-hub#guides" },
       { label: "Guided Neighborhood & Commercial Tours", desc: "Full-day residential neighborhood, commercial corridor & landmark routes (#GuidedByDG)", href: "/tours" },
       { label: "Common Real Estate Questions", desc: "Plain-English answers to top Florida buying, selling & tax questions", href: "/knowledge-hub#questions" },

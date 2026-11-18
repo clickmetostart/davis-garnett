@@ -152,8 +152,9 @@ export default function KnowledgeHubPage() {
       {/* Clean Below-Hero Section Jump Grid (Eased Smooth Glide) */}
       <section id="hub-sections" className="py-8 px-6 md:px-8 bg-[#f5f3ef] border-b border-[#111]/10 scroll-mt-24">
         <div className="max-w-screen-xl mx-auto">
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
             {[
+              { label: "Get Started Worksheets", target: "get-started", icon: CheckCircle2 },
               { label: "Playbooks & Guides", target: "guides", icon: BookOpen },
               { label: "Neighborhood & CRE Tours", target: "tours", icon: Compass },
               { label: "Areas We Work In", target: "areas", icon: MapPin },
@@ -177,6 +178,89 @@ export default function KnowledgeHubPage() {
                 </button>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── GET STARTED: COMMERCIAL & RESIDENTIAL WORKSHEETS (2-COLUMN FEATURE) ── */}
+      <section id="get-started" className="py-20 px-8 bg-[#fbfbf9] border-b border-[#111]/8 scroll-mt-24">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="mb-10">
+            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
+              Start Your Plan · Interactive Worksheets &amp; PDFs
+            </span>
+            <h2 className="font-aiveritas text-3xl md:text-5xl text-[#111] mb-3">
+              Get Started: Commercial &amp; Residential
+            </h2>
+            <p className="text-[#111]/70 font-light max-w-2xl text-base md:text-[17px] lg:text-[18px] leading-relaxed">
+              Choose your lane below to launch our 8-step Getting Started discovery deck online or download the matching printable PDF worksheet.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              {
+                slug: "commercial-get-started",
+                badge: "Commercial & Land",
+                title: "Commercial & Land Get Started Plan",
+                description:
+                  "Map out SBA 504 financing, NNN cap rates, 1031 exchange deadlines, zoning needs, or raw land acquisition goals—plus a printable strategy packet.",
+                image: "/placeholders/dg-brand-placeholder.webp",
+                href: "/commercial/get-started",
+                cta: "Start Commercial Plan",
+              },
+              {
+                slug: "residential-get-started",
+                badge: "Residential",
+                title: "Residential Get Started & Moving Plan",
+                description:
+                  "Outline your Tampa Bay neighborhood goals, budget, home style, timing, and HOA/CDD preferences online—or print our matching client worksheet.",
+                image: "/placeholders/dg-brand-placeholder.webp",
+                href: "/residential/get-started",
+                cta: "Start Residential Plan",
+              },
+            ].map((card) => (
+              <Link
+                key={card.slug}
+                href={card.href}
+                className="group bg-[#f5f3ef] border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl"
+              >
+                <div>
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#111]">
+                    <Image
+                      src={card.image}
+                      alt={card.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                    <div className="absolute top-3.5 left-4 right-4 flex flex-col items-start gap-2 pointer-events-none">
+                      <span className="px-3 py-1 bg-[#D4AF37] text-[#111] text-[10px] font-bold uppercase tracking-widest rounded-sm whitespace-nowrap">
+                        {card.badge}
+                      </span>
+                      <PdfAvailableBadge />
+                    </div>
+                    <span className="absolute bottom-3 right-4 text-[11px] text-white/90 flex items-center gap-1 font-medium">
+                      <Clock className="w-3.5 h-3.5 text-[#D4AF37]" /> 8-Step Worksheet
+                    </span>
+                  </div>
+                  <div className="p-7">
+                    <h3 className="font-aiveritas text-xl xl:text-2xl text-[#111] group-hover:text-[#9A7D3A] transition-colors mb-3 leading-snug">
+                      {card.title}
+                    </h3>
+                    <p className="text-[#111]/75 text-base font-light leading-relaxed">
+                      {card.description}
+                    </p>
+                  </div>
+                </div>
+                <div className="px-7 pb-6 pt-4 border-t border-[#111]/8 flex items-center justify-between">
+                  <span className="text-[11px] text-[#111]/55 font-medium">Interactive + Printable PDF</span>
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#9A7D3A] flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+                    {card.cta} <ArrowRight className="w-3.5 h-3.5" />
+                  </span>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -772,9 +856,8 @@ export default function KnowledgeHubPage() {
               <Link
                 key={art.slug}
                 href={`/knowledge-hub/articles/${art.slug}`}
-                className={`${
-                  idx >= visibleArticlesCount ? "hidden" : "flex"
-                } group bg-[#f5f3ef] border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex-col justify-between transition-all hover:shadow-xl`}
+                className={`${idx >= visibleArticlesCount ? "hidden" : "flex"
+                  } group bg-[#f5f3ef] border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex-col justify-between transition-all hover:shadow-xl`}
               >
                 <div>
                   <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#111]">
