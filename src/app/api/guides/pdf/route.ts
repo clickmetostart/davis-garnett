@@ -10,6 +10,12 @@ import {
   generateBrandedGuidePdf,
   PdfWorkbookState,
 } from "@/lib/pdfBuilder";
+import {
+  getDiscoveryDeck,
+  getPersonalizedMatches,
+  type DiscoveryAnswersState,
+  type DiscoveryTrack,
+} from "@/data/discoveryDecks";
 
 function formatShortDate(iso?: string): string {
   if (!iso) return "Nov 17, 2026";
@@ -24,105 +30,161 @@ function formatShortDate(iso?: string): string {
 
 function getStandaloneGuidePayload(
   slug: string,
-  workbook?: PdfWorkbookState
+  workbook?: PdfWorkbookState,
+  discoveryOpts?: {
+    mode?: "blank" | "filled";
+    state?: DiscoveryAnswersState;
+  }
 ): BrandedPdfInput | null {
-  if (slug === "residential-advisory-guide") {
+  if (
+    slug === "residential-advisory-guide" ||
+    slug === "residential-getting-started" ||
+    slug === "residential-discovery" ||
+    slug === "residential"
+  ) {
+    const deck = getDiscoveryDeck("residential");
+    const mode: "blank" | "filled" = discoveryOpts?.mode || (discoveryOpts?.state ? "filled" : "blank");
+    const preparedName = discoveryOpts?.state?.contact?.fullName?.trim() || workbook?.preparedForName;
     return {
-      slug,
-      title: "Tampa Bay Residential & Luxury Home Advisory Guide",
+      slug: "residential-getting-started-guide",
+      title: "Tampa Bay Residential Getting Started Guide & Discovery Workbook",
       subtitle:
-        "How Rachael Garnett & Mark Davis help buyers and sellers navigate homes, waterfront estates, condos, and new construction across Tampa Bay.",
-      category: "Residential Advisory Guide",
+        "How Rachael Garnett & Mark Davis help buyers and sellers navigate homes, waterfront docks, condos, and new construction—plus our matching 7-card discovery questionnaire.",
+      category: "Residential Getting Started Guide",
+      pageUrl: "/residential/get-started",
       authorLine: "Rachael Garnett (FL Lic #3378601) & Mark Davis (FL Lic #3209459)",
       createdDateLabel: "Nov 17, 2026",
       quickAnswer:
-        "Buying or selling a Tampa Bay home smoothly starts with checking real monthly escrow costs, roof and 4-Point insurance rules, flood elevations, and neighborhood HOA or CDD terms before signing any contract.",
+        "This complete packet includes our 5-step residential guide plus our matching 7-part Client Priorities Worksheet. Complete the steps online at davisgarnettsells.com/residential/get-started or print this PDF to fill in before we meet.",
       keyTakeaways: [
-        "Set your must-haves first: commute drive times, flood zones, yard size, and school boundaries.",
+        "Set must-haves first: commute drive times, flood zones, yard privacy, and school lines.",
         "Always check HOA dues and annual CDD tax bills side by side before picking a neighborhood.",
         "Verify roof permit age, breaker panels, and Wind Mitigation savings during week one.",
-        "Bring your own buyer advisor before touring new-construction builder model centers.",
+        "Bring Mark & Rachael before visiting any builder model center so your representation stays protected.",
       ],
       sections: [
         {
           heading: "Step 01 — Listening to What Matters Most to You",
-          body: "We begin with a simple talk about your daily life: preferred neighborhoods, commute limits, boat slip depth, lot privacy, or downsizing convenience across St. Petersburg, Tampa, Carrollwood, and Pasco.",
+          body: "We begin with a simple conversation about daily life: preferred corridors, commute windows, deepwater dock clearance, lot privacy, or downsizing convenience across St. Petersburg, Tampa, Carrollwood, and Pasco.",
         },
         {
-          heading: "Step 02 — Touring Neighborhoods & Comparing Total Costs",
-          body: "Alongside Stellar MLS homes, we show off-market opportunities, builder rate buydown incentives, and zero-CDD resale pockets so every monthly payment number is clear upfront.",
+          heading: "Step 02 — Touring Neighborhoods & Comparing Total Monthly Costs",
+          body: "Alongside active MLS homes, we review off-market options, builder closing incentives, and zero-CDD resale streets so your full monthly payment number holds zero surprises.",
         },
         {
           heading: "Step 03 — Clean Offers & Deposit Protection",
-          body: "We structure Florida FAR/BAR As-Is or Standard offers with clear inspection windows, financing contingencies, and condo/HOA statutory review protections.",
+          body: "We write clear Florida FAR/BAR offers with inspection windows, financing contingencies, and condo or HOA document review rights protecting your escrow deposit.",
         },
         {
           heading: "Step 04 — Deep Checks on Roofs, Flood Zones, Docks & HOAs",
-          body: "For older suburbs like Carrollwood and Northdale, we arrange early 4-Point and Wind Mitigation checks. For St. Pete bayfront homes, we review Elevation Certificates and dive seawalls. For new builds, we audit builder warranties and CDD bonds.",
+          body: "For classic Carrollwood and Northdale homes, we arrange 4-Point and Wind Mitigation checks early. For waterfront homes, we pull seawall records and Elevation Certificates. For new builds, we audit CDD bond balances.",
         },
         {
-          heading: "Step 05 — Closing & Filing Homestead Portability",
-          body: "We coordinate closely with your lender and title team through final walk-through and remind primary-residence buyers how to file Florida Homestead and DR-501T Portability by March 1.",
+          heading: "Step 05 — Smooth Closing & Filing Homestead Portability",
+          body: "We coordinate closely with your lender and title team through walk-through day and remind primary buyers how to file Florida Homestead and DR-501T Portability by March 1.",
         },
       ],
+      relatedLinks: [
+        { label: "Explore Tampa Bay Residential Realtor Hub", url: "/residential" },
+        { label: "Complete Residential Getting Started Worksheet Online", url: "/residential/get-started" },
+        { label: "Florida Mortgage, HOA & CDD Calculator", url: "/tools/mortgage-calculator" },
+        { label: "Seller Net Proceeds Calculator", url: "/tools/seller-net-proceeds" },
+      ],
       howWeHandleIt:
-        "You never get handed off to an unknown junior assistant. Mark Davis and Rachael Garnett work together directly with you from neighborhood scouting to closing day.",
+        "You never get passed off to an unknown junior assistant. Mark Davis and Rachael Garnett work directly with you from neighborhood discovery all the way to the closing table.",
       sources: [
         "Florida Statutes Chapters 718 (Condos) & 720 (HOAs)",
         "Florida Department of Revenue Form DR-501T (Homestead Portability)",
         "FEMA National Flood Insurance Program Risk Rating 2.0",
       ],
-      workbook,
+      workbook: {
+        ...workbook,
+        preparedForName: preparedName,
+      },
+      discoveryChecklist: {
+        mode,
+        cards: deck.cards,
+        state: discoveryOpts?.state,
+        recommendations: discoveryOpts?.state
+          ? getPersonalizedMatches("residential", discoveryOpts.state)
+          : undefined,
+      },
     };
   }
 
-  if (slug === "commercial-advisory-guide") {
+  if (
+    slug === "commercial-advisory-guide" ||
+    slug === "commercial-getting-started" ||
+    slug === "commercial-discovery" ||
+    slug === "commercial"
+  ) {
+    const deck = getDiscoveryDeck("commercial");
+    const mode: "blank" | "filled" = discoveryOpts?.mode || (discoveryOpts?.state ? "filled" : "blank");
+    const preparedName = discoveryOpts?.state?.contact?.fullName?.trim() || workbook?.preparedForName;
     return {
-      slug,
-      title: "Tampa Bay Commercial & Land Advisory Guide",
+      slug: "commercial-getting-started-guide",
+      title: "Tampa Bay Commercial & Land Getting Started Guide & Workbook",
       subtitle:
-        "Our practical process for buying, selling, pricing (BPO), or exchanging NNN retail, mixed-use buildings, and Central Florida acreage.",
-      category: "Commercial & Land Guide",
+        "Our practical process for buying, selling, pricing (BPO), or exchanging NNN retail, mixed-use buildings, and Central Florida acreage—plus our matching 7-card discovery questionnaire.",
+      category: "Commercial & Land Getting Started Guide",
+      pageUrl: "/commercial/get-started",
       authorLine: "Mark Davis (FL Lic #3209459) & Rachael Garnett (FL Lic #3378601)",
       createdDateLabel: "Nov 17, 2026",
       quickAnswer:
-        "Commercial buildings and land trade on verified Net Operating Income (NOI), lease pass-through structure (NNN vs Modified Gross), zoning rules, and environmental readiness—not automated online estimates.",
+        "This complete packet includes our 5-step commercial and land guide plus our matching 7-part Planning Worksheet. Complete the steps online at davisgarnettsells.com/commercial/get-started or print this PDF to bring to our strategy session.",
       keyTakeaways: [
         "Business owners using 51%+ of a building often qualify for 10%-down SBA 504 fixed loans.",
         "Always normalize NNN, CAM, insurance, and tax pass-throughs before comparing lease quotes.",
-        "Order boundary surveys, wetland overlays, and Phase I ESAs inside a clear 30–45 day feasibility period.",
+        "Order boundary surveys, wetland checks, and Phase I ESAs inside a clear 30–45 day feasibility period.",
         "Set up your IRS 1031 Qualified Intermediary before closing your relinquished asset.",
       ],
       sections: [
         {
-          heading: "Step 01 — Clarifying Investment, SBA or 1031 Goals",
-          body: "We map out whether you need an owner-occupied SBA office like 126 Ridgewood Ave in Brandon, a passive Triple Net (NNN) building, or highway land along US-27/US-98 in Central Florida.",
+          heading: "Step 01 — Clarifying Business, SBA 504, NNN or 1031 Goals",
+          body: "We map out whether you need an owner-occupied SBA building, a passive Triple Net (NNN) retail asset, or highway acreage along US-27, US-98, or I-4 in Central Florida.",
         },
         {
           heading: "Step 02 — Auditing NOI, Cap Rates & Zoning Rules",
-          body: "We strip out padded pro-forma rents, check trailing 12-month operating numbers, model post-sale property taxes and commercial wind insurance, and confirm county parking and use permits.",
+          body: "We strip out padded pro-forma rents, audit trailing 12-month expenses, recalculate post-sale property taxes and commercial wind coverage, and check county parking and use codes.",
         },
         {
           heading: "Step 03 — BPO Valuation & Multi-Platform Exposure",
-          body: "Sellers receive a data-backed Broker Price Opinion (BPO) followed by syndication across Stellar MLS, Crexi, LoopNet, CoStar, and private Tampa Bay buyer lists.",
+          body: "Sellers receive a data-backed Broker Price Opinion (BPO) followed by confidential outreach or full marketing across Stellar MLS, Crexi, LoopNet, and CoStar.",
         },
         {
-          heading: "Step 04 — Clean LOIs & Due Diligence Contracts",
-          body: "We negotiate tight Letters of Intent (LOIs) locking price, TI allowance or cap-rate targets, Estoppel Certificates, and Phase I ESA inspection windows before heavy legal billing begins.",
+          heading: "Step 04 — Clean Letters of Intent (LOIs) & Due Diligence",
+          body: "We negotiate tight LOIs locking price, lease terms, tenant Estoppel Certificates, and Phase I ESA inspection timelines before heavy legal fees begin.",
         },
         {
           heading: "Step 05 — Closing Through Permitting, Survey & 1031 Deadlines",
-          body: "We track county zoning confirmations, utility meters, Estoppels, and strict IRS 45-day and 180-day 1031 dates all the way to closing.",
+          body: "Mark and Rachael track county zoning verifications, utility lines, Estoppel deliveries, and strict IRS Day-45 and Day-180 1031 dates through closing.",
         },
       ],
+      relatedLinks: [
+        { label: "Explore Tampa Bay Commercial Realtor Hub", url: "/commercial" },
+        { label: "Complete Commercial Getting Started Worksheet Online", url: "/commercial/get-started" },
+        { label: "Commercial Broker Price Opinions (BPO)", url: "/services/commercial-bpo" },
+        { label: "Cap Rate, Rent & 1031 Calculators", url: "/tools/cap-rate-calculator" },
+      ],
       howWeHandleIt:
-        "Mark Davis brings hands-on underwriting and local zoning fluency alongside Rachael Garnett so commercial owners and buyers make clear, fast moves across Tampa Bay.",
+        "Mark Davis brings hands-on commercial underwriting and zoning fluency alongside Rachael Garnett so business owners, investors, and landowners move with clarity.",
       sources: [
         "Florida Statutes Section 475.612 (BPO Standards)",
         "IRS Section 1031 (45/180-Day Like-Kind Rules)",
         "U.S. Small Business Administration (SBA 504 Rules)",
       ],
-      workbook,
+      workbook: {
+        ...workbook,
+        preparedForName: preparedName,
+      },
+      discoveryChecklist: {
+        mode,
+        cards: deck.cards,
+        state: discoveryOpts?.state,
+        recommendations: discoveryOpts?.state
+          ? getPersonalizedMatches("commercial", discoveryOpts.state)
+          : undefined,
+      },
     };
   }
 
@@ -138,16 +200,29 @@ export async function POST(req: Request) {
       contentType,
       workbook,
       customPayload,
+      track,
+      mode,
+      discoveryState,
     }: {
       slug?: string;
       type?: string;
       contentType?: string;
       workbook?: PdfWorkbookState;
       customPayload?: Partial<BrandedPdfInput>;
+      track?: DiscoveryTrack;
+      mode?: "blank" | "filled";
+      discoveryState?: DiscoveryAnswersState;
     } = body || {};
 
     const resolvedType = type || contentType;
     let pdfInput: BrandedPdfInput | null = null;
+
+    if (resolvedType === "discovery-questionnaire" && track) {
+      pdfInput = getStandaloneGuidePayload(track, workbook, {
+        mode: mode || (discoveryState ? "filled" : "blank"),
+        state: discoveryState,
+      });
+    }
 
     if (slug && (resolvedType === "tour" || !resolvedType)) {
       const tour = LIVE_GUIDED_TOURS.find((t) => t.slug === slug);
@@ -270,7 +345,10 @@ export async function POST(req: Request) {
     }
 
     if (!pdfInput && slug) {
-      pdfInput = getStandaloneGuidePayload(slug, workbook);
+      pdfInput = getStandaloneGuidePayload(slug, workbook, {
+        mode: mode || (discoveryState ? "filled" : "blank"),
+        state: discoveryState,
+      });
     }
 
     if (!pdfInput && customPayload?.title && customPayload?.sections?.length) {
@@ -298,7 +376,11 @@ export async function POST(req: Request) {
 
     const pdfBytes = await generateBrandedGuidePdf(pdfInput);
     const safeFileName = (pdfInput.slug || "davis-garnett-guide").replace(/[^a-z0-9-_]/gi, "-");
-    const fileSuffix = pdfInput.routeMeta ? "tour-guide" : "workbook";
+    const fileSuffix = pdfInput.routeMeta
+      ? "tour-guide"
+      : pdfInput.discoveryChecklist
+      ? `questionnaire-${pdfInput.discoveryChecklist.mode}`
+      : "workbook";
 
     return new NextResponse(Buffer.from(pdfBytes), {
       status: 200,

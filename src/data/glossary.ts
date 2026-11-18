@@ -163,7 +163,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     relatedServiceRoutes: [
       "/tools/1031-deadline-calculator",
       "/tools/cap-rate-calculator",
-      "/commercial-advisory-guide"
+      "/commercial"
     ],
     relatedGlossarySlugs: ["bpo", "nnn-lease"],
     publishedAt: "2026-11-17T10:30:00-05:00",
@@ -208,7 +208,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     relatedServiceRoutes: [
       "/tools/cap-rate-calculator",
       "/tools/seller-net-proceeds",
-      "/commercial-advisory-guide"
+      "/commercial"
     ],
     relatedGlossarySlugs: ["nnn-lease", "1031-exchange"],
     publishedAt: "2026-11-17T10:30:00-05:00",
@@ -250,7 +250,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
       "commercial-real-estate-investing-tampa-bay",
       "1031-exchange-tampa-bay-commercial-investors"
     ],
-    relatedServiceRoutes: ["/tools/cap-rate-calculator", "/commercial-advisory-guide"],
+    relatedServiceRoutes: ["/tools/cap-rate-calculator", "/commercial"],
     relatedGlossarySlugs: ["bpo", "1031-exchange"],
     publishedAt: "2026-11-17T10:30:00-05:00",
     updatedAt: "2026-11-17T10:30:00-05:00",
@@ -457,7 +457,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
       "buying-vacant-land-central-florida-zoning-utilities",
       "property-taxes-cdd-fees-florida-explained"
     ],
-    relatedServiceRoutes: ["/hub/land-acreage-central-florida", "/commercial-advisory-guide"],
+    relatedServiceRoutes: ["/hub/land-acreage-central-florida", "/commercial"],
     relatedGlossarySlugs: ["homestead-portability", "bpo", "1031-exchange"],
     publishedAt: "2026-11-17T10:30:00-05:00",
     updatedAt: "2026-11-17T10:30:00-05:00",
@@ -582,7 +582,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
       "how-triple-net-nnn-leases-work-florida",
       "commercial-real-estate-investing-florida"
     ],
-    relatedServiceRoutes: ["/tools/commercial-rent-calculator", "/commercial-advisory-guide", "/hub/commercial-tampa-bay"],
+    relatedServiceRoutes: ["/tools/commercial-rent-calculator", "/commercial", "/hub/commercial-tampa-bay"],
     relatedGlossarySlugs: ["nnn-lease", "modified-gross-lease", "ti-allowance", "noi"],
     publishedAt: "2026-11-17T11:35:00-05:00",
     updatedAt: "2026-11-17T11:35:00-05:00",
@@ -664,7 +664,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
       "how-triple-net-nnn-leases-work-florida",
       "commercial-real-estate-investing-florida"
     ],
-    relatedServiceRoutes: ["/tools/commercial-rent-calculator", "/commercial-advisory-guide", "/hub/commercial-tampa-bay"],
+    relatedServiceRoutes: ["/tools/commercial-rent-calculator", "/commercial", "/hub/commercial-tampa-bay"],
     relatedGlossarySlugs: ["letter-of-intent", "modified-gross-lease", "cam"],
     publishedAt: "2026-11-17T11:35:00-05:00",
     updatedAt: "2026-11-17T11:35:00-05:00",
@@ -705,7 +705,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
       "commercial-real-estate-investing-florida",
       "how-triple-net-nnn-leases-work-florida"
     ],
-    relatedServiceRoutes: ["/tools/cap-rate-calculator", "/commercial-advisory-guide", "/hub/commercial-tampa-bay"],
+    relatedServiceRoutes: ["/tools/cap-rate-calculator", "/commercial", "/hub/commercial-tampa-bay"],
     relatedGlossarySlugs: ["noi", "nnn-lease", "phase-one-esa", "letter-of-intent"],
     publishedAt: "2026-11-17T11:35:00-05:00",
     updatedAt: "2026-11-17T11:35:00-05:00",
@@ -747,7 +747,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
       "buying-vacant-land-central-florida-zoning-utilities",
       "commercial-bpo-vs-appraisal-florida"
     ],
-    relatedServiceRoutes: ["/commercial-advisory-guide", "/hub/commercial-tampa-bay", "/hub/land-acreage-central-florida"],
+    relatedServiceRoutes: ["/commercial", "/hub/commercial-tampa-bay", "/hub/land-acreage-central-florida"],
     relatedGlossarySlugs: ["estoppel-certificate", "1031-exchange", "bpo"],
     publishedAt: "2026-11-17T11:35:00-05:00",
     updatedAt: "2026-11-17T11:35:00-05:00",
@@ -788,7 +788,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
       "commercial-real-estate-investing-florida",
       "how-triple-net-nnn-leases-work-florida"
     ],
-    relatedServiceRoutes: ["/tools/commercial-rent-calculator", "/commercial-advisory-guide", "/hub/commercial-tampa-bay"],
+    relatedServiceRoutes: ["/tools/commercial-rent-calculator", "/commercial", "/hub/commercial-tampa-bay"],
     relatedGlossarySlugs: ["ti-allowance", "nnn-lease", "estoppel-certificate", "cap-rate"],
     publishedAt: "2026-11-17T11:35:00-05:00",
     updatedAt: "2026-11-17T11:35:00-05:00",

@@ -140,6 +140,8 @@ export default function SiteFooter() {
             </Link>
             <ul className="space-y-2.5 text-xs text-white/60">
               <li><Link href="/properties" className="hover:text-white transition-colors">Portfolio Hub Overview</Link></li>
+              <li><Link href="/residential" className="text-[#D4AF37] hover:text-white transition-colors font-medium">Tampa Bay Residential Hub</Link></li>
+              <li><Link href="/commercial" className="text-[#D4AF37] hover:text-white transition-colors font-medium">Commercial &amp; Florida Land Hub</Link></li>
               <li><Link href="/properties#featured" className="hover:text-white transition-colors">Featured Exclusive Listings</Link></li>
               <li><Link href="/properties#new-listings" className="hover:text-white transition-colors">New &amp; Upcoming Listings</Link></li>
               <li><Link href="/properties#carrollwood-office" className="hover:text-white transition-colors">Align Right Carrollwood Office</Link></li>
@@ -176,6 +178,8 @@ export default function SiteFooter() {
             </Link>
             <ul className="space-y-2.5 text-xs text-white/60">
               <li><Link href="/knowledge-hub" className="hover:text-white transition-colors">Real Estate Knowledge Simplified</Link></li>
+              <li><Link href="/residential/get-started" className="text-[#D4AF37] hover:text-white transition-colors font-medium">Residential Get Started &amp; PDF</Link></li>
+              <li><Link href="/commercial/get-started" className="text-[#D4AF37] hover:text-white transition-colors font-medium">Commercial Get Started &amp; PDF</Link></li>
               <li><Link href="/knowledge-hub/tampa-bay-luxury-home-buying-guide" className="hover:text-white transition-colors">Buying a Home in Tampa Bay</Link></li>
               <li><Link href="/knowledge-hub/selling-your-home-in-tampa-bay" className="hover:text-white transition-colors">Selling Your Home for Top Dollar</Link></li>
               <li><Link href="/knowledge-hub/commercial-real-estate-investing-florida" className="hover:text-white transition-colors">Buying Commercial Real Estate</Link></li>

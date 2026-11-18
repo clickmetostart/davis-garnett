@@ -34,6 +34,16 @@ const nextConfig: NextConfig = {
         destination: "/knowledge-hub/clearwater-beach-sand-key-condo-regulations",
         permanent: true,
       },
+      {
+        source: "/residential-advisory-guide",
+        destination: "/residential/get-started",
+        permanent: true,
+      },
+      {
+        source: "/commercial-advisory-guide",
+        destination: "/commercial/get-started",
+        permanent: true,
+      },
     ];
   },
 };

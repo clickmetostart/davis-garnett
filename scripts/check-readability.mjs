@@ -67,6 +67,7 @@ const files = [
   "src/data/knowledgeHub.ts",
   "src/data/glossary.ts",
   "src/data/topicHubs.ts",
+  "src/data/pillarHubs.ts",
   "src/data/developments.ts",
   "src/data/tours.ts",
 ];

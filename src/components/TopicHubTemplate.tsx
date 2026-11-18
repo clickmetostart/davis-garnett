@@ -166,11 +166,9 @@ export default function TopicHubTemplate({ hub }: { hub: TopicHubConfig }) {
               <div className="grid sm:grid-cols-2 gap-5">
                 {listings.map((listing) => {
                   const heroSrc =
-                    typeof listing.images?.hero === "string"
-                      ? listing.images.hero
-                      : Array.isArray(listing.images) && listing.images[0]
-                      ? listing.images[0]
-                      : "/tampa-bay-luxury-market.jpg";
+                    (typeof listing.images?.main === "string" && listing.images.main) ||
+                    (Array.isArray(listing.images?.gallery) && listing.images.gallery[0]) ||
+                    "/placeholders/dg-brand-placeholder.webp";
                   return (
                     <Link
                       key={listing.slug}
@@ -178,7 +176,7 @@ export default function TopicHubTemplate({ hub }: { hub: TopicHubConfig }) {
                       className="group rounded-2xl overflow-hidden border border-[#111]/10 hover:border-[#D4AF37] bg-white shadow-sm transition-all"
                     >
                       <div className="relative h-44 bg-[#111]">
-                        <Image src={heroSrc} alt={listing.title} fill className="object-cover" />
+                        <Image src={heroSrc} alt={listing.title} fill unoptimized className="object-cover" />
                         <span className="absolute top-3 left-3 px-2.5 py-1 bg-[#111]/85 text-[#D4AF37] text-[10px] font-bold uppercase tracking-widest rounded">
                           {listing.category}
                         </span>

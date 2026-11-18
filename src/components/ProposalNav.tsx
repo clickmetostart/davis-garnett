@@ -20,6 +20,14 @@ interface NavGroup {
 
 const NAV_GROUPS: NavGroup[] = [
   {
+    label: "Your Realtors",
+    href: "/about",
+    dropdown: [
+      { label: "Commercial Realtor Hub", desc: "Owner-user SBA 504, NNN retail, 1031 exchanges, BPO valuations & Florida land", href: "/commercial" },
+      { label: "Residential Realtor Hub", desc: "Homes, waterfront docks, 55+ clubs, downtown condos & neighborhood guides", href: "/residential" },
+    ],
+  },
+  {
     label: "Why Us?",
     href: "/about/our-every-listing-approach",
     dropdown: [
@@ -38,6 +46,8 @@ const NAV_GROUPS: NavGroup[] = [
     href: "/properties",
     dropdown: [
       { label: "Davis & Garnett Portfolio Hub", desc: "Explore active offerings, branch listings & category hubs across Tampa Bay", href: "/properties" },
+      { label: "Residential Realtor Hub", desc: "Homes, waterfront docks, 55+ villas, condos & move planning", href: "/residential" },
+      { label: "Commercial Realtor Hub", desc: "SBA 504, NNN leases, 1031 exchanges, BPOs & Central Florida land", href: "/commercial" },
       { label: "Featured Exclusive Listings", desc: "Highlighted residential, waterfront, commercial & land opportunities", href: "/properties#featured" },
       { label: "New & Upcoming Listings", desc: "Newest team releases plus upcoming live IDX & Lofty feed areas", href: "/properties#new-listings" },
       { label: "Align Right Carrollwood Office", desc: "Active listings from our Align Right Realty Carrollwood brokerage", href: "/properties#carrollwood-office" },
@@ -67,6 +77,8 @@ const NAV_GROUPS: NavGroup[] = [
     href: "/knowledge-hub",
     dropdown: [
       { label: "Real Estate Knowledge Simplified", desc: "Buyer & seller guides, common questions, neighborhoods & market updates", href: "/knowledge-hub" },
+      { label: "Residential Get Started Worksheet", desc: "Plan your Tampa Bay move online & download our printable guide PDF", href: "/residential/get-started" },
+      { label: "Commercial Get Started Worksheet", desc: "Outline SBA 504, NNN cap rates, land & 1031 goals + PDF worksheet", href: "/commercial/get-started" },
       { label: "Buyer & Seller Step-by-Step Guides", desc: "Commercial & residential guides for buying, selling & HOA/CDD fees", href: "/knowledge-hub#guides" },
       { label: "Guided Neighborhood & Commercial Tours", desc: "Full-day residential neighborhood, commercial corridor & landmark routes (#GuidedByDG)", href: "/tours" },
       { label: "Common Real Estate Questions", desc: "Plain-English answers to top Florida buying, selling & tax questions", href: "/knowledge-hub#questions" },
@@ -93,10 +105,10 @@ export default function ProposalNav() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden xl:flex items-center gap-5 2xl:gap-8 shrink-0">
+          <div className="hidden xl:flex items-center gap-4 2xl:gap-7 shrink-0">
             <Link
               href="/"
-              className="text-xs 2xl:text-[13px] font-bold tracking-[0.15em] uppercase text-white/85 hover:text-[#D4AF37] transition-colors py-6 whitespace-nowrap shrink-0"
+              className="text-xs 2xl:text-[13px] font-bold tracking-[0.14em] uppercase text-white/85 hover:text-[#D4AF37] transition-colors py-6 whitespace-nowrap shrink-0"
             >
               Home
             </Link>
@@ -110,7 +122,7 @@ export default function ProposalNav() {
               >
                 <Link
                   href={group.href}
-                  className="flex items-center gap-1 text-xs 2xl:text-[13px] font-bold tracking-[0.15em] uppercase text-white/85 hover:text-[#D4AF37] transition-colors py-6 whitespace-nowrap"
+                  className="flex items-center gap-1 text-xs 2xl:text-[13px] font-bold tracking-[0.14em] uppercase text-white/85 hover:text-[#D4AF37] transition-colors py-6 whitespace-nowrap"
                 >
                   <span>{group.label}</span>
                   {group.dropdown && (

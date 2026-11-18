@@ -134,7 +134,7 @@ for (const [route, file] of routeToHtml.entries()) {
   }
 }
 
-// 4. BFS click depth from /knowledge-hub and /commercial-advisory-guide
+// 4. BFS click depth from /knowledge-hub, /commercial, and /residential
 function bfsDistances(startRoutes) {
   const dist = new Map();
   const queue = [];
@@ -157,7 +157,7 @@ function bfsDistances(startRoutes) {
   return dist;
 }
 
-const distances = bfsDistances(["/knowledge-hub", "/commercial-advisory-guide"]);
+const distances = bfsDistances(["/knowledge-hub", "/commercial", "/residential"]);
 
 // 5. Inspect sitemap.xml.body completeness
 const sitemapMissing = [];

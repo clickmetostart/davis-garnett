@@ -27,7 +27,7 @@ export default function CommercialRentCalculatorLayout({ children }: { children:
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
-          { "@type": "ListItem", position: 2, name: "Commercial Advisory", item: `${SITE_URL}/commercial-advisory-guide` },
+          { "@type": "ListItem", position: 2, name: "Commercial Hub", item: `${SITE_URL}/commercial` },
           { "@type": "ListItem", position: 3, name: "Commercial Rent Calculator", item: `${SITE_URL}/tools/commercial-rent-calculator` },
         ],
       },

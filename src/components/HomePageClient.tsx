@@ -336,12 +336,14 @@ export default function HomePageV1Light() {
       )}
 
       {/* ── THE DUAL ADVANTAGE ── */}
-      <section className="relative z-10 py-32 px-8 bg-white border-t border-[#111]/10">
+      <section className="relative z-10 py-24 md:py-28 px-8 bg-white border-t border-[#111]/10">
         <div className="max-w-screen-xl mx-auto">
-          <div className="text-center mb-20">
-            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">Commercial &amp; Residential Real Estate</span>
-            <h2 className="font-aiveritas text-4xl md:text-5xl lg:text-6xl text-[#111] mb-6 leading-tight">
-              How We Help You<br className="sm:hidden" /> in Tampa Bay
+          <div className="text-center mb-14 md:mb-16">
+            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
+              Commercial &amp; Residential Real Estate
+            </span>
+            <h2 className="font-aiveritas text-4xl md:text-5xl lg:text-6xl text-[#111] mb-5 leading-tight">
+              How We Help You<br className="sm:hidden" /> in <span className="text-[#9A7D3A]">Tampa Bay</span>
             </h2>
             <p className="text-[#111]/75 text-base md:text-[17px] lg:text-[18px] font-light max-w-3xl mx-auto leading-relaxed">
               Because both Mark and Rachael are certified in commercial and residential real estate, you get one approachable team whether you are buying or selling a home, a business property, or land.
@@ -349,37 +351,80 @@ export default function HomePageV1Light() {
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             <Link
-              href="/commercial-advisory-guide"
-              className="group relative min-h-[420px] md:min-h-0 md:aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer block shadow-lg hover:shadow-2xl transition-shadow"
+              href="/commercial"
+              className="group rounded-2xl overflow-hidden cursor-pointer bg-[#111111] border border-[#111]/15 hover:border-[#D4AF37] shadow-xl hover:shadow-2xl transition-all flex flex-col justify-between"
             >
-              <Image src="/new-images/new-2/davis-garnett-tampa-commercial-real-estate-1.jpg" alt="Commercial Real Estate" fill unoptimized className="object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
-              <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
-                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.25em] font-bold mb-2">Commercial &amp; Land</span>
-                <h3 className="font-aiveritas text-3xl lg:text-4xl text-white mb-3 drop-shadow-lg">Commercial Real Estate</h3>
-                <p className="text-white/90 font-light max-w-md mb-6 text-base md:text-[17px] lg:text-[18px] leading-relaxed">
-                  Helping business owners and investors buy, sell, and lease office buildings, mixed-use properties, retail spaces, and Florida land.
-                </p>
-                <div className="flex items-center gap-2 text-[#D4AF37] text-xs uppercase tracking-widest font-bold">
-                  View Commercial Guide <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#0a0a0a]">
+                <Image
+                  src="/new-images/new-2/davis-garnett-tampa-commercial-real-estate-1.jpg"
+                  alt="Tampa Bay Commercial Real Estate Building & Mixed-Use Corridor"
+                  fill
+                  unoptimized
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-black/25 pointer-events-none" />
+                <div className="absolute top-5 left-5">
+                  <span className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-[#D4AF37]/45 text-[10px] font-bold uppercase tracking-[0.2em] text-[#D4AF37]">
+                    Commercial Hub · CRE · Land
+                  </span>
+                </div>
+              </div>
+              <div className="p-7 sm:p-9 pt-4 flex-1 flex flex-col justify-between bg-[#111111]">
+                <div>
+                  <div className="w-10 h-[2px] bg-[#D4AF37] mb-4" />
+                  <span className="text-[#D4AF37] text-[11px] uppercase tracking-[0.24em] font-bold block mb-2">
+                    Commercial &amp; Land Hub
+                  </span>
+                  <h3 className="font-aiveritas text-3xl lg:text-[34px] text-white group-hover:text-[#D4AF37] transition-colors mb-3 leading-tight">
+                    Commercial Real Estate
+                  </h3>
+                  <p className="text-white/80 font-light mb-7 text-base leading-relaxed">
+                    Helping business owners and investors buy, sell, and lease office buildings, mixed-use properties, retail spaces, and Florida land.
+                  </p>
+                </div>
+                <div>
+                  <span className="inline-flex items-center gap-2.5 px-5 py-3 rounded-lg bg-[#D4AF37] group-hover:bg-white text-[#111] text-xs uppercase tracking-widest font-bold transition-colors shadow-md">
+                    Explore Commercial Hub <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </span>
                 </div>
               </div>
             </Link>
 
             <Link
-              href="/residential-advisory-guide"
-              className="group relative min-h-[420px] md:min-h-0 md:aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer block shadow-lg hover:shadow-2xl transition-shadow"
+              href="/residential"
+              className="group rounded-2xl overflow-hidden cursor-pointer bg-[#111111] border border-[#111]/15 hover:border-[#D4AF37] shadow-xl hover:shadow-2xl transition-all flex flex-col justify-between"
             >
-              <Image src="/new-images/new-2/davis-garnett-tampa-residential-real-estate-1.jpg" alt="Residential Real Estate" fill unoptimized className="object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
-              <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
-                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.25em] font-bold mb-2">Homes &amp; Condos</span>
-                <h3 className="font-aiveritas text-3xl lg:text-4xl text-white mb-3 drop-shadow-lg">Residential Real Estate</h3>
-                <p className="text-white/90 font-light max-w-md mb-6 text-base md:text-[17px] lg:text-[18px] leading-relaxed">
-                  Helping buyers and sellers with single-family homes, downtown condos, new construction, and waterfront and unique properties.
-                </p>
-                <div className="flex items-center gap-2 text-[#D4AF37] text-xs uppercase tracking-widest font-bold">
-                  View Residential Guide <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#0a0a0a]">
+                <Image
+                  src="/res_waterfront_estate_1787632802890.png"
+                  alt="Tampa Bay Luxury Waterfront Residential Estate at Sunset"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-black/25 pointer-events-none" />
+                <div className="absolute top-5 left-5">
+                  <span className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-[#D4AF37]/45 text-[10px] font-bold uppercase tracking-[0.2em] text-[#D4AF37]">
+                    Residential Hub · Homes · Condos
+                  </span>
+                </div>
+              </div>
+              <div className="p-7 sm:p-9 pt-4 flex-1 flex flex-col justify-between bg-[#111111]">
+                <div>
+                  <div className="w-10 h-[2px] bg-[#D4AF37] mb-4" />
+                  <span className="text-[#D4AF37] text-[11px] uppercase tracking-[0.24em] font-bold block mb-2">
+                    Residential Hub
+                  </span>
+                  <h3 className="font-aiveritas text-3xl lg:text-[34px] text-white group-hover:text-[#D4AF37] transition-colors mb-3 leading-tight">
+                    Residential Real Estate
+                  </h3>
+                  <p className="text-white/80 font-light mb-7 text-base leading-relaxed">
+                    Helping buyers and sellers with single-family homes, downtown condos, new construction, and waterfront and unique properties.
+                  </p>
+                </div>
+                <div>
+                  <span className="inline-flex items-center gap-2.5 px-5 py-3 rounded-lg bg-[#D4AF37] group-hover:bg-white text-[#111] text-xs uppercase tracking-widest font-bold transition-colors shadow-md">
+                    Explore Residential Hub <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </span>
                 </div>
               </div>
             </Link>

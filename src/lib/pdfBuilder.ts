@@ -1,6 +1,11 @@
 import fs from "fs/promises";
 import path from "path";
 import { PDFDocument, PDFFont, PDFImage, PDFPage, PDFString, StandardFonts, rgb } from "pdf-lib";
+import type {
+  DiscoveryAnswersState,
+  DiscoveryCard,
+  RecommendedResource,
+} from "@/data/discoveryDecks";
 
 export interface PdfSectionInput {
   heading: string;
@@ -48,6 +53,12 @@ export interface BrandedPdfInput {
     googleMapsUrl?: string;
   };
   workbook?: PdfWorkbookState;
+  discoveryChecklist?: {
+    mode: "blank" | "filled";
+    cards: DiscoveryCard[];
+    state?: DiscoveryAnswersState;
+    recommendations?: RecommendedResource[];
+  };
 }
 
 const COLORS = {
@@ -745,6 +756,302 @@ export async function generateBrandedGuidePdf(input: BrandedPdfInput): Promise<U
       gy -= 14;
     }
     cursorY -= gh + 14;
+  }
+
+  // Interactive Discovery Flashcards & Printable Questionnaire Block (Blank or Pre-Filled)
+  if (input.discoveryChecklist && input.discoveryChecklist.cards.length > 0) {
+    const { mode, cards, state, recommendations } = input.discoveryChecklist;
+    const isFilled = mode === "filled";
+    const selections = state?.selections || {};
+    const notesByCard = state?.notesByCard || {};
+    const contact = state?.contact;
+
+    const drawDiscoveryStartPage = () => {
+      page = pdfDoc.addPage([PAGE_W, PAGE_H]);
+      page.drawRectangle({
+        x: 0,
+        y: PAGE_H - 4,
+        width: PAGE_W,
+        height: 4,
+        color: COLORS.gold,
+      });
+      page.drawText("DAVIS & GARNETT  |  DISCOVERY WORKBOOK & QUESTIONNAIRE", {
+        x: MARGIN_X,
+        y: PAGE_H - 28,
+        size: 8.2,
+        font: sansBold,
+        color: COLORS.darkGold,
+      });
+      page.drawLine({
+        start: { x: MARGIN_X, y: PAGE_H - 36 },
+        end: { x: PAGE_W - MARGIN_X, y: PAGE_H - 36 },
+        thickness: 0.75,
+        color: COLORS.borderLight,
+      });
+      cursorY = PAGE_H - 58;
+    };
+
+    const ensureChecklistSpace = (neededH: number) => {
+      if (cursorY - neededH < MIN_CONTENT_Y) {
+        drawDiscoveryStartPage();
+      }
+    };
+
+    // Start Discovery Questionnaire cleanly on a fresh page so it doubles as an easy-to-hand-out packet
+    drawDiscoveryStartPage();
+
+    page.drawText(
+      isFilled
+        ? "YOUR PERSONALIZED DISCOVERY QUESTIONNAIRE SUMMARY"
+        : "CLIENT DISCOVERY QUESTIONNAIRE (IN-PERSON & SELF-PREP WORKSHEET)",
+      {
+        x: MARGIN_X,
+        y: cursorY,
+        size: 13.5,
+        font: serifBold,
+        color: COLORS.obsidian,
+      }
+    );
+    cursorY -= 16;
+
+    const introNote = isFilled
+      ? "Every choice and workbook note you completed online is checked off below so you and your advisor share the exact same roadmap."
+      : "Use this matching worksheet during a coffee meeting or fill it out at home before we tour. Check every box that fits and jot your notes below each card.";
+    for (const line of wrapText(introNote, sansRegular, 9.4, CONTENT_W)) {
+      page.drawText(line, { x: MARGIN_X, y: cursorY, size: 9.4, font: sansRegular, color: COLORS.textMuted });
+      cursorY -= 13;
+    }
+    cursorY -= 8;
+
+    // Client info box (Pre-filled or neat blank lines for pen)
+    const infoBoxH = 62;
+    page.drawRectangle({
+      x: MARGIN_X,
+      y: cursorY - infoBoxH,
+      width: CONTENT_W,
+      height: infoBoxH,
+      color: COLORS.noteBg,
+      borderColor: COLORS.gold,
+      borderWidth: 1,
+    });
+    const nameStr = contact?.fullName ? sanitizeWinAnsi(contact.fullName) : "____________________________________";
+    const phoneStr = contact?.phone ? sanitizeWinAnsi(contact.phone) : "___________________________";
+    const emailStr = contact?.email ? sanitizeWinAnsi(contact.email) : "____________________________________";
+    const prefStr = contact?.preferredMethod ? sanitizeWinAnsi(contact.preferredMethod) : "Call  /  Text  /  Email  /  Coffee";
+
+    page.drawText(`Client Name: ${nameStr}`, {
+      x: MARGIN_X + 12,
+      y: cursorY - 20,
+      size: 9.2,
+      font: sansBold,
+      color: COLORS.obsidian,
+    });
+    page.drawText(`Best Phone: ${phoneStr}`, {
+      x: MARGIN_X + CONTENT_W / 2 + 6,
+      y: cursorY - 20,
+      size: 9.2,
+      font: sansRegular,
+      color: COLORS.textDark,
+    });
+    page.drawText(`Email: ${emailStr}`, {
+      x: MARGIN_X + 12,
+      y: cursorY - 40,
+      size: 9.2,
+      font: sansRegular,
+      color: COLORS.textDark,
+    });
+    page.drawText(`Preferred: ${prefStr}`, {
+      x: MARGIN_X + CONTENT_W / 2 + 6,
+      y: cursorY - 40,
+      size: 9.2,
+      font: sansRegular,
+      color: COLORS.textDark,
+    });
+    cursorY -= infoBoxH + 16;
+
+    // Draw each Discovery Card cleanly with 2-column checkboxes and note box
+    for (const card of cards) {
+      const cardHeaderLines = wrapText(`${card.stepNumber}. ${card.title}`, serifBold, 12.2, CONTENT_W - 20);
+      const cardSubLines = wrapText(card.subtitle, sansRegular, 8.8, CONTENT_W - 20);
+      const userCardNote = notesByCard[card.id]?.trim() || "";
+      const noteLines = userCardNote
+        ? wrapText(userCardNote, sansRegular, 9, CONTENT_W - 24)
+        : [];
+
+      // Estimate card height accurately before drawing so cards rarely split awkwardly
+      let estOptionsH = 0;
+      for (const q of card.questions) {
+        estOptionsH += 18;
+        const rows = Math.ceil(q.options.length / 2);
+        estOptionsH += rows * 17 + 8;
+      }
+      const noteBlockH = userCardNote ? Math.max(34, noteLines.length * 12 + 24) : 44;
+      const totalCardH = cardHeaderLines.length * 15 + cardSubLines.length * 11 + estOptionsH + noteBlockH + 26;
+
+      ensureChecklistSpace(Math.min(totalCardH, 240));
+
+      // Card header strip
+      const stripH = cardHeaderLines.length * 15 + 8;
+      page.drawRectangle({
+        x: MARGIN_X,
+        y: cursorY - stripH,
+        width: CONTENT_W,
+        height: stripH,
+        color: COLORS.cream,
+        borderColor: COLORS.gold,
+        borderWidth: 0.9,
+      });
+      let hy = cursorY - 14;
+      for (const hl of cardHeaderLines) {
+        page.drawText(hl, { x: MARGIN_X + 10, y: hy, size: 12.2, font: serifBold, color: COLORS.obsidian });
+        hy -= 15;
+      }
+      cursorY -= stripH + 8;
+
+      for (const sl of cardSubLines) {
+        ensureChecklistSpace(16);
+        page.drawText(sl, { x: MARGIN_X + 4, y: cursorY, size: 8.8, font: sansRegular, color: COLORS.textMuted });
+        cursorY -= 12;
+      }
+      cursorY -= 4;
+
+      const colW = (CONTENT_W - 14) / 2;
+      for (const q of card.questions) {
+        ensureChecklistSpace(34);
+        const qModeHint = q.selectionMode === "single" ? "(pick one)" : "(check all that apply)";
+        page.drawText(sanitizeWinAnsi(`${q.prompt} ${qModeHint}`), {
+          x: MARGIN_X + 4,
+          y: cursorY,
+          size: 8.8,
+          font: sansBold,
+          color: COLORS.darkGold,
+        });
+        cursorY -= 14;
+
+        const selectedSet = new Set(selections[q.id] || []);
+        for (let idx = 0; idx < q.options.length; idx += 2) {
+          ensureChecklistSpace(18);
+          for (let col = 0; col < 2; col++) {
+            const opt = q.options[idx + col];
+            if (!opt) continue;
+            const ox = MARGIN_X + 6 + col * (colW + 10);
+            const isChecked = isFilled && selectedSet.has(opt.id);
+
+            // Checkbox square
+            page.drawRectangle({
+              x: ox,
+              y: cursorY - 1.5,
+              width: 9,
+              height: 9,
+              color: isChecked ? COLORS.gold : COLORS.white,
+              borderColor: isChecked ? COLORS.obsidian : COLORS.textMuted,
+              borderWidth: 0.9,
+            });
+            if (isChecked) {
+              page.drawText("X", {
+                x: ox + 2,
+                y: cursorY - 0.5,
+                size: 7.5,
+                font: sansBold,
+                color: COLORS.obsidian,
+              });
+            }
+
+            const optText = sanitizeWinAnsi(opt.label);
+            const clipped = optText.length > 39 ? `${optText.slice(0, 36)}...` : optText;
+            page.drawText(clipped, {
+              x: ox + 14,
+              y: cursorY,
+              size: 8.7,
+              font: isChecked ? sansBold : sansRegular,
+              color: isChecked ? COLORS.obsidian : COLORS.textDark,
+            });
+          }
+          cursorY -= 16;
+        }
+        cursorY -= 4;
+      }
+
+      // Card workbook notes box (ruled lines when blank, printed text when filled)
+      const actualNoteH = userCardNote ? Math.max(36, noteLines.length * 12 + 24) : 44;
+      ensureChecklistSpace(actualNoteH + 14);
+      page.drawRectangle({
+        x: MARGIN_X,
+        y: cursorY - actualNoteH,
+        width: CONTENT_W,
+        height: actualNoteH,
+        color: COLORS.white,
+        borderColor: COLORS.borderLight,
+        borderWidth: 0.9,
+      });
+      page.drawText(sanitizeWinAnsi(`Notes — ${card.notePrompt}`), {
+        x: MARGIN_X + 8,
+        y: cursorY - 13,
+        size: 7.8,
+        font: sansBold,
+        color: COLORS.darkGold,
+      });
+
+      if (userCardNote) {
+        let ny = cursorY - 26;
+        for (const nl of noteLines) {
+          page.drawText(nl, { x: MARGIN_X + 8, y: ny, size: 8.9, font: sansRegular, color: COLORS.obsidian });
+          ny -= 12;
+        }
+      } else {
+        // Two clean writing lines for pen input during in-person meetings
+        page.drawLine({
+          start: { x: MARGIN_X + 8, y: cursorY - 26 },
+          end: { x: PAGE_W - MARGIN_X - 8, y: cursorY - 26 },
+          thickness: 0.5,
+          color: COLORS.borderLight,
+        });
+        page.drawLine({
+          start: { x: MARGIN_X + 8, y: cursorY - 38 },
+          end: { x: PAGE_W - MARGIN_X - 8, y: cursorY - 38 },
+          thickness: 0.5,
+          color: COLORS.borderLight,
+        });
+      }
+      cursorY -= actualNoteH + 14;
+    }
+
+    // Personalized Recommendations Summary if Filled
+    if (isFilled && recommendations && recommendations.length > 0) {
+      const recH = recommendations.length * 16 + 34;
+      ensureChecklistSpace(recH + 12);
+      page.drawRectangle({
+        x: MARGIN_X,
+        y: cursorY - recH,
+        width: CONTENT_W,
+        height: recH,
+        color: COLORS.cream,
+        borderColor: COLORS.gold,
+        borderWidth: 1,
+      });
+      page.drawText("TAILORED HUBS, TOOLS & TOURS MATCHED TO YOUR ANSWERS:", {
+        x: MARGIN_X + 12,
+        y: cursorY - 16,
+        size: 8.5,
+        font: sansBold,
+        color: COLORS.darkGold,
+      });
+      let ry = cursorY - 32;
+      for (const rec of recommendations) {
+        drawClickableLinkText(
+          pdfDoc,
+          page,
+          `[${rec.kind}] ${rec.label} ->`,
+          toAbsoluteWebsiteUrl(rec.href),
+          MARGIN_X + 12,
+          ry,
+          8.8,
+          sansBold
+        );
+        ry -= 15;
+      }
+      cursorY -= recH + 14;
+    }
   }
 
   // How Mark & Rachael Handle It + Sources + Contact Strip

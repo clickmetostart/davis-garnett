@@ -41,7 +41,7 @@ export default function CapRateCalculatorPage() {
           <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-[11px] uppercase tracking-widest text-white/60 mb-5">
             <Link href="/" className="hover:text-[#D4AF37]">Home</Link>
             <span>/</span>
-            <Link href="/commercial-advisory-guide" className="hover:text-[#D4AF37]">Commercial Advisory</Link>
+            <Link href="/commercial" className="hover:text-[#D4AF37]">Commercial Hub</Link>
             <span>/</span>
             <span className="text-[#D4AF37]">Cap Rate Calculator</span>
           </nav>
