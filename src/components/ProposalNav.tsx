@@ -136,7 +136,7 @@ export default function ProposalNav() {
                     <div className="flex flex-col divide-y divide-[#111]/5">
                       {group.dropdown.map((item) => (
                         <Link
-                          key={item.href}
+                          key={`${item.href}-${item.label}`}
                           href={item.href}
                           onClick={() => setActiveDropdown(null)}
                           className="group/item p-3 rounded-lg hover:bg-[#f5f3ef] transition-colors flex items-start justify-between gap-3"
@@ -225,7 +225,7 @@ export default function ProposalNav() {
                   <div className="pl-3 flex flex-col gap-2.5 border-l border-[#D4AF37]/30">
                     {group.dropdown.map((item) => (
                       <Link
-                        key={item.href}
+                        key={`${item.href}-${item.label}`}
                         href={item.href}
                         onClick={() => setIsOpen(false)}
                         className="text-xs text-white/75 hover:text-white py-0.5 block"
