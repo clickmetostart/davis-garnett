@@ -1,35 +1,39 @@
 import type { Metadata } from "next";
-import { Outfit, DM_Sans, Playfair_Display, Cormorant_Garamond } from "next/font/google";
+import localFont from "next/font/local";
 import AmbientBackground from "@/components/AmbientBackground";
 import DragScrollProvider from "@/components/DragScrollProvider";
 import "./globals.css";
 
 // Modern, sleek geometric sans-serif for the proposal display/heading text
-const outfit = Outfit({
+const outfit = localFont({
+  src: "./fonts/outfit-latin.woff2",
   variable: "--font-serif", // Keeping the variable name same to avoid refactoring the proposal
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: "100 900",
+  display: "swap",
 });
 
 // Clean, precise sans-serif for body, labels, UI
-const dmSans = DM_Sans({
+const dmSans = localFont({
+  src: "./fonts/dm-sans-latin.woff2",
   variable: "--font-sans",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: "100 1000",
+  display: "swap",
 });
 
 // Editorial luxury serif option for card/box titles
-const playfair = Playfair_Display({
+const playfair = localFont({
+  src: "./fonts/playfair-display-latin.woff2",
   variable: "--font-playfair",
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: "400 900",
+  display: "swap",
 });
 
 // High-contrast classical serif option for card/box titles
-const cormorant = Cormorant_Garamond({
+const cormorant = localFont({
+  src: "./fonts/cormorant-garamond-latin.woff2",
   variable: "--font-cormorant",
-  subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: "300 700",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
