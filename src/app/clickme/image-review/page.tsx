@@ -26,15 +26,18 @@ type ReviewStatus = ImageReviewRecord["status"];
 interface ReviewItem {
   id: string;
   section:
-    | "Guide"
+    | "Home Page"
+    | "About & Team"
+    | "Hubs & Portfolio"
+    | "Trending Region"
+    | "Development"
+    | "Get Started"
     | "Guided Tour"
+    | "Guide"
     | "Area Guide"
     | "Q&A"
     | "Event"
-    | "Article"
-    | "Get Started"
-    | "Trending Region"
-    | "Development";
+    | "Article";
   slug: string;
   title: string;
   category: string;
@@ -44,6 +47,222 @@ interface ReviewItem {
   isPlaceholder: boolean;
   isNewGenerated: boolean;
 }
+
+const HOME_PAGE_IMAGES = [
+  {
+    id: "home:mark-davis-portrait",
+    slug: "home-mark-davis-portrait",
+    title: "Homepage: Mark Davis Team Portrait",
+    category: "Team Triptych",
+    description: "Mark Davis portrait card on the Homepage.",
+    image: "/new-images/new-2/mark-davis-residential-commerical-advisor-tampa-real-estate-3.jpg",
+    liveHref: "/",
+  },
+  {
+    id: "home:rachael-garnett-portrait",
+    slug: "home-rachael-garnett-portrait",
+    title: "Homepage: Rachael Garnett Team Portrait",
+    category: "Team Triptych",
+    description: "Rachael Garnett portrait card on the Homepage.",
+    image: "/new-images/new-2/rachael-garnett-residential-commerical-advisor-tampa-real-estate-homepage-1.jpg",
+    liveHref: "/",
+  },
+  {
+    id: "home:team-center-hero",
+    slug: "home-team-center-hero",
+    title: "Homepage: Davis & Garnett Team Center Photo",
+    category: "Team Triptych",
+    description: "Center team photograph on the Homepage scroll triptych.",
+    image: "/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-8.jpg",
+    liveHref: "/",
+  },
+  {
+    id: "home:commercial-team-card",
+    slug: "home-commercial-team-card",
+    title: "Homepage: Commercial Realtor Team Card",
+    category: "Discipline Card",
+    description: "Commercial & Land discipline card on the Homepage.",
+    image: "/new-images/new-2/davis-garnett-tampa-commercial-real-estate-1.jpg",
+    liveHref: "/",
+  },
+  {
+    id: "home:residential-team-card",
+    slug: "home-residential-team-card",
+    title: "Homepage: Residential Realtor Team Card",
+    category: "Discipline Card",
+    description: "Residential & Luxury waterfront discipline card on the Homepage.",
+    image: "/res_waterfront_estate_1787632802890.png",
+    liveHref: "/",
+  },
+  {
+    id: "home:every-listing-approach",
+    slug: "home-every-listing-approach",
+    title: "Homepage: Our Every Listing Approach Feature",
+    category: "Approach Card",
+    description: "Mark & Rachael reviewing buyer, seller & commercial playbooks on Homepage.",
+    image: "/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-9.jpg",
+    liveHref: "/",
+  },
+  {
+    id: "home:align-right-carrollwood",
+    slug: "home-align-right-carrollwood",
+    title: "Homepage: Align Right Realty Carrollwood Card",
+    category: "Brokerage Card",
+    description: "Align Right Realty Carrollwood office card on the Homepage.",
+    image: "/new-images/new-2/davis-garnett-align-right-realty.jpg",
+    liveHref: "/",
+  },
+  {
+    id: "home:advisory-cta-banner",
+    slug: "home-advisory-cta-banner",
+    title: "Homepage: Advisory CTA Background Banner",
+    category: "CTA Banner",
+    description: "Full-width advisory background photo near the bottom of the Homepage.",
+    image: "/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-5.jpg",
+    liveHref: "/",
+  },
+  {
+    id: "home:grid-bahama-shores",
+    slug: "home-grid-bahama-shores",
+    title: "Homepage Grid: 6100 Bahama Shores Dr S",
+    category: "Bottom Showcase Grid",
+    description: "Waterfront luxury estate tile in Homepage bottom showcase grid.",
+    image: "/listings/bahama-shores-1.webp",
+    liveHref: "/",
+  },
+  {
+    id: "home:grid-ridgewood-brandon",
+    slug: "home-grid-ridgewood-brandon",
+    title: "Homepage Grid: 126 Ridgewood Ave Commercial",
+    category: "Bottom Showcase Grid",
+    description: "Commercial mixed-use asset tile in Homepage bottom showcase grid.",
+    image: "/listings/ridgewood-brandon-2.jpg",
+    liveHref: "/",
+  },
+  {
+    id: "home:grid-bahama-shores-lot",
+    slug: "home-grid-bahama-shores-lot",
+    title: "Homepage Grid: 6100 Bahama Shores Lot 10",
+    category: "Bottom Showcase Grid",
+    description: "Pre-construction homesite tile in Homepage bottom showcase grid.",
+    image: "/listings/bahama-shores-lot-1.jpg",
+    liveHref: "/",
+  },
+  {
+    id: "home:grid-justamere-tampa",
+    slug: "home-grid-justamere-tampa",
+    title: "Homepage Grid: 3012 Justamere Ln",
+    category: "Bottom Showcase Grid",
+    description: "Lakefront estate tile in Homepage bottom showcase grid.",
+    image: "/listings/justamere-tampa-1.jpg",
+    liveHref: "/",
+  },
+  {
+    id: "home:grid-beverly-hills-zephyrhills",
+    slug: "home-grid-beverly-hills-zephyrhills",
+    title: "Homepage Grid: 6389 Beverly Hills Dr",
+    category: "Bottom Showcase Grid",
+    description: "Abbott Square closed home tile in Homepage bottom showcase grid.",
+    image: "/listings/beverly-hills-zephyrhills-1.jpg",
+    liveHref: "/",
+  },
+];
+
+const ABOUT_PAGE_IMAGES = [
+  {
+    id: "about:team-hero",
+    slug: "about-team-hero",
+    title: "About Team: Mark & Rachael Hero Photo",
+    category: "/about",
+    description: "Main team photograph on the About Davis & Garnett page.",
+    image: "/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-3.jpg",
+    liveHref: "/about",
+  },
+  {
+    id: "about:rachael-garnett-bio",
+    slug: "about-rachael-garnett-bio",
+    title: "About Rachael: Bio Portrait",
+    category: "/about/rachael-garnett",
+    description: "Rachael Garnett featured portrait on her bio page.",
+    image: "/new-images/new-2/rachael-garnett-residential-commerical-advisor-tampa-real-estate-6.jpg",
+    liveHref: "/about/rachael-garnett",
+  },
+  {
+    id: "about:mark-old-stokes",
+    slug: "about-mark-old-stokes",
+    title: "About Mark: Old Stokes Road Listing",
+    category: "/about/mark-davis",
+    description: "Featured closed property on Mark Davis bio page.",
+    image: "/listings/old-stokes-road-cover-image-davis-garnett.jpg",
+    liveHref: "/about/mark-davis",
+  },
+  {
+    id: "about:mark-land-listing",
+    slug: "about-mark-land-listing",
+    title: "About Mark: Central FL Land Cover",
+    category: "/about/mark-davis",
+    description: "Land listing showcase on Mark Davis bio page.",
+    image: "/listings/d-g-land-listing-cover.webp",
+    liveHref: "/about/mark-davis",
+  },
+  {
+    id: "about:outreach-1",
+    slug: "about-outreach-1",
+    title: "Community Outreach: Feature Photo 1",
+    category: "/about/community-outreach-giving",
+    description: "Community outreach gallery image 1.",
+    image: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-16.jpg",
+    liveHref: "/about/community-outreach-giving",
+  },
+  {
+    id: "about:outreach-2",
+    slug: "about-outreach-2",
+    title: "Community Outreach: Feature Photo 2",
+    category: "/about/community-outreach-giving",
+    description: "Community outreach gallery image 2.",
+    image: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-17.jpg",
+    liveHref: "/about/community-outreach-giving",
+  },
+  {
+    id: "about:outreach-3",
+    slug: "about-outreach-3",
+    title: "Community Outreach: Feature Photo 3",
+    category: "/about/community-outreach-giving",
+    description: "Community outreach gallery image 3.",
+    image: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-10.jpg",
+    liveHref: "/about/community-outreach-giving",
+  },
+];
+
+const HUB_PAGE_IMAGES = [
+  {
+    id: "hub-page:residential",
+    slug: "hub-page-residential",
+    title: "Residential Realtor Team Hub Hero (/residential)",
+    category: "/residential",
+    description: "Flagship hero image for the Residential Realtor Team page.",
+    image: "/res_waterfront_estate_1787632802890.png",
+    liveHref: "/residential",
+  },
+  {
+    id: "hub-page:commercial",
+    slug: "hub-page-commercial",
+    title: "Commercial Realtor Team Hub Hero (/commercial)",
+    category: "/commercial",
+    description: "Flagship hero image for the Commercial Realtor Team page.",
+    image: "/new-images/new-2/davis-garnett-tampa-commercial-real-estate-1.jpg",
+    liveHref: "/commercial",
+  },
+  {
+    id: "hub-page:properties-residential",
+    slug: "hub-page-properties-residential",
+    title: "Portfolio Hub: Residential Fallback Cover (/properties)",
+    category: "/properties",
+    description: "Residential portfolio cover image on /properties.",
+    image: "/listings/d-g-residential-1.webp",
+    liveHref: "/properties",
+  },
+];
 
 const TRENDING_REGIONS = [
   {
@@ -285,6 +504,24 @@ export default function ImageReviewPage() {
           liveHref: `/developments/${dev.slug}`,
         })
       ),
+      ...HOME_PAGE_IMAGES.map((item) =>
+        mapItem({
+          ...item,
+          section: "Home Page",
+        })
+      ),
+      ...ABOUT_PAGE_IMAGES.map((item) =>
+        mapItem({
+          ...item,
+          section: "About & Team",
+        })
+      ),
+      ...HUB_PAGE_IMAGES.map((item) =>
+        mapItem({
+          ...item,
+          section: "Hubs & Portfolio",
+        })
+      ),
     ];
   }, []);
 
@@ -468,8 +705,11 @@ export default function ImageReviewPage() {
     return item.image;
   };
 
-  const getEffectiveStatus = (item: ReviewItem): ReviewStatus =>
-    records[item.id]?.status || "unreviewed";
+  const getEffectiveStatus = (item: ReviewItem): ReviewStatus => {
+    const rec = records[item.id];
+    if (rec?.status) return rec.status;
+    return item.isPlaceholder ? "unreviewed" : "approved";
+  };
 
   const q = searchQuery.trim().toLowerCase();
   const visibleItems = allItems.filter((item) => {
@@ -681,16 +921,19 @@ export default function ImageReviewPage() {
               aria-label="Filter by section"
               className="px-3.5 py-2 rounded-lg bg-[#f5f3ef] border border-[#111]/10 text-xs font-bold uppercase tracking-wider text-[#111]"
             >
-              <option value="all">All Sections</option>
+              <option value="all">All Pages &amp; Sections ({allItems.length})</option>
+              <option value="Home Page">Home Page ({HOME_PAGE_IMAGES.length})</option>
+              <option value="About & Team">About &amp; Team Pages ({ABOUT_PAGE_IMAGES.length})</option>
+              <option value="Hubs & Portfolio">Hubs &amp; Portfolio Pages ({HUB_PAGE_IMAGES.length})</option>
               <option value="Trending Region">Trending Regions (12)</option>
               <option value="Development">Developments ({DEVELOPMENTS.length})</option>
               <option value="Get Started">Get Started Cards (2)</option>
-              <option value="Guided Tour">Guided Tours</option>
-              <option value="Guide">Guides</option>
-              <option value="Area Guide">Areas We Work In</option>
-              <option value="Q&A">Q&amp;A Classroom</option>
-              <option value="Event">Events</option>
-              <option value="Article">Articles</option>
+              <option value="Guided Tour">Guided Tours ({LIVE_GUIDED_TOURS.length})</option>
+              <option value="Guide">Guides ({GUIDES.length})</option>
+              <option value="Area Guide">Areas We Work In ({AREAS.length})</option>
+              <option value="Q&A">Q&amp;A Classroom ({QUESTIONS.length})</option>
+              <option value="Event">Events ({EVENTS.length})</option>
+              <option value="Article">Articles ({ARTICLES.length})</option>
             </select>
 
             <div className="relative">
