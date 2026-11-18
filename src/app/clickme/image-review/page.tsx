@@ -279,7 +279,7 @@ const TRENDING_REGIONS = [
     title: "Wesley Chapel, Land O' Lakes & Hernando",
     description:
       "Proven zero/low-bond golf villages alongside flagship Crystal Lagoons, brand-new 55+ clubhouses, and Pasco's booming biotech and SR-56 retail corridors.",
-    image: "/placeholders/dg-brand-placeholder.webp",
+    image: "/images/regions/north-tampa-communities.jpg",
   },
   {
     id: "sarasota-manatee-communities",
@@ -311,7 +311,7 @@ const TRENDING_REGIONS = [
     title: "Tarpon Springs, Palm Harbor & Trinity / West Pasco",
     description:
       "Starkey Ranch trails and East Lake Woodlands golf alongside Sponge Docks storefronts, Trinity hospital medical suites, and Timber Greens 55+.",
-    image: "/placeholders/dg-brand-placeholder.webp",
+    image: "/images/regions/west-pasco-region.jpg",
   },
   {
     id: "south-shore-region",
@@ -319,7 +319,7 @@ const TRENDING_REGIONS = [
     title: "Apollo Beach, Ruskin & Sun City Center",
     description:
       "Deep-water sailboat canals in MiraBay, new Waterset trails, Big Bend Rd hospital commerce, and Florida's golf-cart 55+ hubs.",
-    image: "/placeholders/dg-brand-placeholder.webp",
+    image: "/images/regions/south-shore-region.jpg",
   },
   {
     id: "westshore-marina-region",
@@ -327,7 +327,7 @@ const TRENDING_REGIONS = [
     title: "Westshore Marina, Rocky Point & Town 'N Country",
     description:
       "Bayfront marina towers, 5-minute airport waterfront offices, zero-HOA Baycrest boat canals, and Westshore corporate suites.",
-    image: "/placeholders/dg-brand-placeholder.webp",
+    image: "/images/regions/westshore-marina-region.jpg",
   },
   {
     id: "venice-wellen-park-region",
@@ -335,7 +335,7 @@ const TRENDING_REGIONS = [
     title: "Venice, Wellen Park & North Port",
     description:
       "Downtown Wellen lakefront concerts, historic Island of Venice boutiques, Solstice 55+ villas, and Sarasota Memorial Laurel Rd medical growth.",
-    image: "/placeholders/dg-brand-placeholder.webp",
+    image: "/images/regions/venice-wellen-park-region.jpg",
   },
   {
     id: "east-hillsborough-region",
@@ -343,7 +343,7 @@ const TRENDING_REGIONS = [
     title: "Brandon, Valrico & East Hillsborough",
     description:
       "Active SBA mixed-use buildings off SR-60, no-HOA Seffner lots, shaded Valrico golf neighborhoods, Hawkstone new builds, and Sabal Park logistics.",
-    image: "/placeholders/dg-brand-placeholder.webp",
+    image: "/images/regions/east-hillsborough-region.jpg",
   },
   {
     id: "lakeland-polk-region",
@@ -351,7 +351,7 @@ const TRENDING_REGIONS = [
     title: "Lakeland, Plant City & I-4 Corridor",
     description:
       "Historic brick Lake Morton & Walden Lake living, Bonnet Springs urban growth, I-4 logistics warehouses, and strategic 20-to-80 acre Florida tracts.",
-    image: "/placeholders/dg-brand-placeholder.webp",
+    image: "/images/regions/lakeland-polk-region.jpg",
   },
   {
     id: "carrollwood-region",
@@ -359,7 +359,7 @@ const TRENDING_REGIONS = [
     title: "Align Right Carrollwood & Surrounding Corridor",
     description:
       "Our home brokerage backyard—zero-CDD ski lakes in Carrollwood, Odessa horse farms, Cheval golf, Keystone acreage, Citrus Park retail, and Dale Mabry offices.",
-    image: "/placeholders/dg-brand-placeholder.webp",
+    image: "/images/regions/carrollwood-region.jpg",
   },
 ];
 
