@@ -111,7 +111,7 @@ export default function HomePageV1Light() {
       <section className="relative w-full h-screen flex items-center justify-center pt-16 bg-[#050505] overflow-hidden">
         <div className="absolute inset-0 z-0 flex w-full h-full">
           {[
-            { id: 1, src: "/hero-videos-homepage/davis-garnett-hero-video-3.mp4" },
+            { id: 1, src: "/hero-videos-homepage/davis-garnett-home-realtor-video-hero-placement-1.mp4" },
             { id: 2, src: "/new-images/new-2/davis-garnett-residential-commercial-real-estate-advisors-tampa-fl-sp2.mp4" },
             { id: 3, src: "/hero-videos-homepage/davis-garnett-hero-video-4.mp4" },
             { id: 4, src: "/new-images/new-2/davis-garnett-residential-commercial-real-estate-advisors-tampa-fl-sp4.mp4" },
