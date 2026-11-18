@@ -226,7 +226,7 @@ export default function ServiceInquiryForm({
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
               <span className="text-[11px] text-white/65 flex items-center gap-1.5">
                 <ShieldCheck className="w-4 h-4 text-[#D4AF37] shrink-0" />
-                Confidential Review · Align Right Realty Carrollwood (#BK3401606)
+                Confidential Review · Align Right Realty Carrollwood (BK3401606)
               </span>
               <button
                 type="submit"

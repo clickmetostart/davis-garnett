@@ -97,9 +97,9 @@ export const GUIDED_TOURS: GuidedTour[] = [
     host: {
       name: "Mark Davis",
       role: "Your Downtown Tampa Day Planner",
-      license: "FL Lic #3209459",
+      license: "FL Lic BK3209459",
       coHostName: "Rachael Garnett",
-      coHostLicense: "FL Lic #3378601",
+      coHostLicense: "FL Lic SL3378601",
       inviteNote: "Tour Water Street Phase 2, Pendry, ONE Tampa, and Hotel ORA with us—or tell us your favorite coffee patio.",
     },
     howWeHandleIt:
@@ -213,9 +213,9 @@ export const GUIDED_TOURS: GuidedTour[] = [
     host: {
       name: "Rachael Garnett",
       role: "Your South Tampa Insider Host",
-      license: "FL Lic #3378601",
+      license: "FL Lic SL3378601",
       coHostName: "Mark Davis",
-      coHostLicense: "FL Lic #3209459",
+      coHostLicense: "FL Lic BK3209459",
       inviteNote: "From high-and-dry Golfview estates to canal-front Davis Islands homes and Ritz-Carlton sky villas, we map out South Tampa block by block.",
     },
     howWeHandleIt:
@@ -329,9 +329,9 @@ export const GUIDED_TOURS: GuidedTour[] = [
     host: {
       name: "Rachael Garnett",
       role: "Your Pinellas Coast & Beach Insider",
-      license: "FL Lic #3378601",
+      license: "FL Lic SL3378601",
       coHostName: "Mark Davis",
-      coHostLicense: "FL Lic #3209459",
+      coHostLicense: "FL Lic BK3209459",
       inviteNote: "Love coastal water without losing daily calm? See Harbor Bluffs, Belleair, and Sand Key before sunset at Frenchy's.",
     },
     howWeHandleIt:
@@ -460,9 +460,9 @@ export const GUIDED_TOURS: GuidedTour[] = [
     host: {
       name: "Rachael Garnett",
       role: "Your Downtown St. Pete & Bayfront Host",
-      license: "FL Lic #3378601",
+      license: "FL Lic SL3378601",
       coHostName: "Mark Davis",
-      coHostLicense: "FL Lic #3209459",
+      coHostLicense: "FL Lic BK3209459",
       inviteNote: "St. Pete mixes 1920s brick streets with bright bayfront towers. Let us walk Old Northeast, Snell Isle, and Saltaire with you.",
     },
     howWeHandleIt:
@@ -576,9 +576,9 @@ export const GUIDED_TOURS: GuidedTour[] = [
     host: {
       name: "Mark Davis",
       role: "Your Creative St. Pete & Beach Host",
-      license: "FL Lic #3209459",
+      license: "FL Lic BK3209459",
       coHostName: "Rachael Garnett",
-      coHostLicense: "FL Lic #3378601",
+      coHostLicense: "FL Lic SL3378601",
       inviteNote: "If you want murals, friendly porches, indie shops, and calm white beaches without tall hotels, you will love this day.",
     },
     howWeHandleIt:
@@ -692,9 +692,9 @@ export const GUIDED_TOURS: GuidedTour[] = [
     host: {
       name: "Mark Davis",
       role: "Your North Tampa & Carrollwood Host",
-      license: "FL Lic #3209459",
+      license: "FL Lic BK3209459",
       coHostName: "Rachael Garnett",
-      coHostLicense: "FL Lic #3378601",
+      coHostLicense: "FL Lic SL3378601",
       inviteNote: "This is our home turf right near Align Right Carrollwood. Ask us which lake streets offer private boat ramps and zero CDD taxes.",
     },
     howWeHandleIt:
@@ -808,9 +808,9 @@ export const GUIDED_TOURS: GuidedTour[] = [
     host: {
       name: "Rachael Garnett",
       role: "Your Pasco Lifestyle & New-Home Host",
-      license: "FL Lic #3378601",
+      license: "FL Lic SL3378601",
       coHostName: "Mark Davis",
-      coHostLicense: "FL Lic #3209459",
+      coHostLicense: "FL Lic BK3209459",
       inviteNote: "Before stepping into a builder model gallery at Two Rivers or Mirada, let us register with you so you keep independent agent advice.",
     },
     howWeHandleIt:
@@ -924,9 +924,9 @@ export const GUIDED_TOURS: GuidedTour[] = [
     host: {
       name: "Mark Davis",
       role: "Your Keystone, Westchase & Pasco Host",
-      license: "FL Lic #3209459",
+      license: "FL Lic BK3209459",
       coHostName: "Rachael Garnett",
-      coHostLicense: "FL Lic #3378601",
+      coHostLicense: "FL Lic SL3378601",
       inviteNote: "This route connects our favorite bay trails and horse country streets straight up to Pasco's newest planned towns.",
     },
     howWeHandleIt:
@@ -1040,9 +1040,9 @@ export const GUIDED_TOURS: GuidedTour[] = [
     host: {
       name: "Mark Davis",
       role: "Your East Tampa Thrills & Villages Host",
-      license: "FL Lic #3209459",
+      license: "FL Lic BK3209459",
       coHostName: "Rachael Garnett",
-      coHostLicense: "FL Lic #3378601",
+      coHostLicense: "FL Lic SL3378601",
       inviteNote: "Skip dull highway corridors. This route links famous parks and quiet river woods straight into our favorite FishHawk & Brandon pockets.",
     },
     howWeHandleIt:
@@ -1156,9 +1156,9 @@ export const GUIDED_TOURS: GuidedTour[] = [
     host: {
       name: "Rachael Garnett",
       role: "Your Westshore & Bayfront Host",
-      license: "FL Lic #3378601",
+      license: "FL Lic SL3378601",
       coHostName: "Mark Davis",
-      coHostLicense: "FL Lic #3209459",
+      coHostLicense: "FL Lic BK3209459",
       inviteNote: "Fly often out of TPA? See Marina Pointe towers and Rocky Point just six miles from the airport.",
     },
     howWeHandleIt:
@@ -1272,9 +1272,9 @@ export const GUIDED_TOURS: GuidedTour[] = [
     host: {
       name: "Mark Davis",
       role: "Your Central Florida Insider Host",
-      license: "FL Lic #3209459",
+      license: "FL Lic BK3209459",
       coHostName: "Rachael Garnett",
-      coHostLicense: "FL Lic #3378601",
+      coHostLicense: "FL Lic SL3378601",
       inviteNote: "Take a drive through Lakeland's brick lakefronts and hear Bok Tower bells at sunset. It feels like another world just east of Tampa.",
     },
     howWeHandleIt:

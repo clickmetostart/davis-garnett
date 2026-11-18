@@ -62,7 +62,7 @@ export default function ToolLeadCaptureCard({
         <CheckCircle2 className="w-10 h-10 text-[#D4AF37] mx-auto mb-3" />
         <h3 className="font-aiveritas text-2xl mb-2">Scenario Saved &amp; Sent</h3>
         <p className="text-sm text-white/75 font-light">
-          Mark Davis (FL Lic #3209459) and Rachael Garnett (FL Lic #3378601) received your numbers and will reply with tailored local comps and guidance.
+          Mark Davis (FL Lic BK3209459) and Rachael Garnett (FL Lic SL3378601) received your numbers and will reply with tailored local comps and guidance.
         </p>
       </div>
     );

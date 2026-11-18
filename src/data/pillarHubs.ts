@@ -105,7 +105,7 @@ export const RESIDENTIAL_PILLAR_HUB: PillarHubConfig = {
   quickAnswer:
     "Great home moves start with daily life, not just nice photos. Drive times, lot sunlight, quiet streets, layout flow, and resale value matter most. Pick a street that fits how you live five years from now.",
   howWeHandleIt:
-    "Rachael Garnett (FL Lic #3378601) and Mark Davis (FL Lic #3209459) take every call in person. We compare local home values, talk through repair asks, and guide your move from our Carrollwood office.",
+    "Rachael Garnett (FL Lic SL3378601) and Mark Davis (FL Lic BK3209459) take every call in person. We compare local home values, talk through repair asks, and guide your move from our Carrollwood office.",
   tags: {
     propertyType: ["residential", "waterfront", "luxury", "condo-townhome", "55-plus", "new-construction"],
     audience: ["home-buyers", "home-sellers", "relocating", "55-plus-buyers", "new-build-buyers"],
@@ -410,7 +410,7 @@ export const COMMERCIAL_PILLAR_HUB: PillarHubConfig = {
   quickAnswer:
     "Strong business deals start with how a building works day to day. Check car traffic, customer parking, inside room flow, lease bumps, and operating costs up front before making any offer.",
   howWeHandleIt:
-    "Mark Davis (FL Lic #3209459) and Rachael Garnett (FL Lic #3378601) work straight with local firms, plaza owners, and land families. Whether you need a quiet sale value, a home for your staff, or I-4 land, you get clear facts fast.",
+    "Mark Davis (FL Lic BK3209459) and Rachael Garnett (FL Lic SL3378601) work straight with local firms, plaza owners, and land families. Whether you need a quiet sale value, a home for your staff, or I-4 land, you get clear facts fast.",
   tags: {
     propertyType: ["commercial", "retail-office", "industrial-flex", "land-acreage"],
     audience: ["commercial-owners", "investors", "land-buyers"],

@@ -195,7 +195,7 @@ export default function LoginPage() {
               <div>
                 <strong className="text-[#D4AF37] text-base block font-serif">Mark Davis</strong>
                 <span>Commercial & Residential Advisor</span><br />
-                <span className="text-white/40 text-[10px] uppercase tracking-widest mt-1 block">Agent License #3209459</span>
+                <span className="text-white/40 text-[10px] uppercase tracking-widest mt-1 block">Agent License BK3209459</span>
               </div>
               <div className="flex flex-col gap-0.5 mt-1">
                 <a href="mailto:mark@davisgarnettsells.com" className="text-[#D4AF37] hover:text-white transition-colors">
@@ -216,7 +216,7 @@ export default function LoginPage() {
               <div>
                 <strong className="text-[#D4AF37] text-base block font-serif">Rachael Garnett</strong>
                 <span>Commercial & Residential Advisor</span><br />
-                <span className="text-white/40 text-[10px] uppercase tracking-widest mt-1 block">Agent License #3378601</span>
+                <span className="text-white/40 text-[10px] uppercase tracking-widest mt-1 block">Agent License SL3378601</span>
               </div>
               <div className="flex flex-col gap-0.5 mt-1">
                 <a href="mailto:rachael@davisgarnettsells.com" className="text-[#D4AF37] hover:text-white transition-colors">

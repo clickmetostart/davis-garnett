@@ -57,8 +57,8 @@ export default function CommercialMentoringPage() {
           telephone: "+1-941-737-4127",
           email: "list@davisgarnettsells.com",
           member: [
-            { "@type": "Person", name: "Mark Davis", identifier: "FL Lic #3209459" },
-            { "@type": "Person", name: "Rachael Garnett", identifier: "FL Lic #3378601" },
+            { "@type": "Person", name: "Mark Davis", identifier: "FL Lic BK3209459" },
+            { "@type": "Person", name: "Rachael Garnett", identifier: "FL Lic SL3378601" },
           ],
         },
       },

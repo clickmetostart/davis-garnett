@@ -70,7 +70,7 @@ export default function SiteFooter() {
                     Certified Commercial &amp; Residential Agent
                   </span>
                   <span className="text-[10px] uppercase tracking-widest text-white/40 font-bold block mt-0.5">
-                    FL License #3209459
+                    FL License BK3209459
                   </span>
                 </div>
                 <Link
@@ -110,7 +110,7 @@ export default function SiteFooter() {
                     Certified Commercial &amp; Residential Agent
                   </span>
                   <span className="text-[10px] uppercase tracking-widest text-white/40 font-bold block mt-0.5">
-                    FL License #3378601
+                    FL License SL3378601
                   </span>
                 </div>
                 <Link

@@ -329,7 +329,7 @@ export default function KnowledgeHubPage() {
                   </span>
                   <div className="absolute bottom-4 left-4 right-4 text-white z-10">
                     <div className="text-xs uppercase tracking-widest text-[#ef5728] font-bold">
-                      FL Lic #BK3401606
+                      FL Lic BK3401606
                     </div>
                   </div>
                 </div>
@@ -338,7 +338,7 @@ export default function KnowledgeHubPage() {
                     Carrollwood &amp; Regional Coverage
                   </h3>
                   <p className="text-white/80 text-base font-light leading-relaxed line-clamp-3 mb-4">
-                    Our Carrollwood office at Align Right Realty Carrollwood (#BK3401606)—supporting buyers and sellers across Hillsborough, Pinellas, Pasco, Polk, and Marion counties.
+                    Our Carrollwood office at Align Right Realty Carrollwood (BK3401606)—supporting buyers and sellers across Hillsborough, Pinellas, Pasco, Polk, and Marion counties.
                   </p>
                   <div className="flex flex-wrap gap-1.5">
                     {["3903 Northdale Blvd", "Hillsborough", "Pinellas", "Pasco", "Polk", "Marion"].map((n) => (

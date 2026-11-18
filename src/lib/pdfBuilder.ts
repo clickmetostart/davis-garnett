@@ -270,7 +270,7 @@ export async function generateBrandedGuidePdf(input: BrandedPdfInput): Promise<U
     });
   }
 
-  const brokerHeaderRight = sanitizeWinAnsi("Align Right Realty Carrollwood  *  FL Lic #BK3401606");
+  const brokerHeaderRight = sanitizeWinAnsi("Align Right Realty Carrollwood  *  FL Lic BK3401606");
   const bhW = sansBold.widthOfTextAtSize(brokerHeaderRight, 8.2);
   cover.drawText(brokerHeaderRight, {
     x: PAGE_W - MARGIN_X - bhW,
@@ -1175,7 +1175,7 @@ export async function generateBrandedGuidePdf(input: BrandedPdfInput): Promise<U
     font: sansBold,
     color: COLORS.darkGold,
   });
-  page.drawText("Mark Davis (FL Lic #3209459): 941-737-4127   |   Rachael Garnett (FL Lic #3378601): 727-808-3344", {
+  page.drawText("Mark Davis (FL Lic BK3209459): 941-737-4127   |   Rachael Garnett (FL Lic SL3378601): 727-808-3344", {
     x: MARGIN_X + 14,
     y: cursorY - 36,
     size: 9,

@@ -32,7 +32,7 @@ const COVERAGE_REGIONS = [
     fallbackImg: "/city-photos/downtown-tampa-skyline.jpg",
     address: "3903 Northdale Blvd Suite 115W, Tampa, FL 33624",
     corridors: "Dale Mabry Hwy • Northdale Blvd • Veterans Expwy • Citrus Park",
-    desc: "The central command post for Align Right Realty Carrollwood (License #BK3401606). Serving as the private conference hub where Mark Davis and Rachael Garnett host confidential contract reviews, commercial underwriting presentations, and portfolio consultations.",
+    desc: "The central command post for Align Right Realty Carrollwood (License BK3401606). Serving as the private conference hub where Mark Davis and Rachael Garnett host confidential contract reviews, commercial underwriting presentations, and portfolio consultations.",
     capabilities: [
       "Principal Brokerage Compliance & Escrow Review",
       "Dale Mabry & Northdale Commercial Medical/Professional Office",
@@ -261,11 +261,11 @@ export default function AlignRightCarrollwoodCoveragePage() {
             </Link>
             <span>|</span>
             <Link href="/about/mark-davis" className="hover:text-[#9A7D3A]">
-              Mark Davis (#3209459)
+              Mark Davis (BK3209459)
             </Link>
             <span>|</span>
             <Link href="/about/rachael-garnett" className="hover:text-[#9A7D3A]">
-              Rachael Garnett (#3378601)
+              Rachael Garnett (SL3378601)
             </Link>
           </div>
         </div>
@@ -280,7 +280,7 @@ export default function AlignRightCarrollwoodCoveragePage() {
         <div className="max-w-screen-xl mx-auto relative z-10 grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
           <div>
             <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
-              Align Right Realty Carrollwood · FL Lic #BK3401606
+              Align Right Realty Carrollwood · FL Lic BK3401606
             </span>
             <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-white leading-none mb-6">
               Areas We <span className="text-[#D4AF37]">Work In</span>
@@ -291,7 +291,7 @@ export default function AlignRightCarrollwoodCoveragePage() {
             </p>
 
             <p className="text-base md:text-[17px] lg:text-[18px] text-white/75 font-light leading-relaxed mb-8">
-              Based out of our Carrollwood office at Align Right Realty Carrollwood (#BK3401606), Mark Davis and Rachael Garnett give you two approachable, hands-on local agents backed by statewide MLS and commercial marketing reach.
+              Based out of our Carrollwood office at Align Right Realty Carrollwood (BK3401606), Mark Davis and Rachael Garnett give you two approachable, hands-on local agents backed by statewide MLS and commercial marketing reach.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -340,7 +340,7 @@ export default function AlignRightCarrollwoodCoveragePage() {
               <div className="grid grid-cols-2 gap-4 border-b border-white/10 pb-4">
                 <div>
                   <span className="text-[10px] uppercase tracking-widest text-white/50 block">Broker License</span>
-                  <span className="text-white font-bold text-sm">#BK3401606</span>
+                  <span className="text-white font-bold text-sm">BK3401606</span>
                 </div>
                 <div>
                   <span className="text-[10px] uppercase tracking-widest text-white/50 block">Office Desk</span>
@@ -351,11 +351,11 @@ export default function AlignRightCarrollwoodCoveragePage() {
               <div className="space-y-2 pt-1 text-white/75">
                 <p className="flex items-center gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-[#D4AF37]" />
-                  Mark Davis — Co-Founder &amp; Principal Advisor (#3209459)
+                  Mark Davis — Co-Founder &amp; Principal Advisor (BK3209459)
                 </p>
                 <p className="flex items-center gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-[#D4AF37]" />
-                  Rachael Garnett — Co-Founder &amp; Principal Advisor (#3378601)
+                  Rachael Garnett — Co-Founder &amp; Principal Advisor (SL3378601)
                 </p>
                 <p className="flex items-center gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-[#D4AF37]" />

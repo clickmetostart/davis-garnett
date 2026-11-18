@@ -33,9 +33,9 @@ const NAV_GROUPS: NavGroup[] = [
     dropdown: [
       { label: "Our Every Listing Approach", desc: "Our why, full checklist & how we take care of every property we list", href: "/about/our-every-listing-approach" },
       { label: "About The Davis & Garnett Team", desc: "Local knowledge, honest advice & a team working together for you", href: "/about" },
-      { label: "Meet Mark Davis, REALTOR®", desc: "Certified Commercial & Residential Agent • FL Lic #3209459", href: "/about/mark-davis" },
-      { label: "Meet Rachael Garnett, REALTOR®", desc: "Certified Commercial & Residential Agent • FL Lic #3378601", href: "/about/rachael-garnett" },
-      { label: "Align Right Realty Carrollwood", desc: "Our Carrollwood office, local support & coverage area (#BK3401606)", href: "/about/align-right-realty-carrollwood" },
+      { label: "Meet Mark Davis, REALTOR®", desc: "Certified Commercial & Residential Agent • FL Lic BK3209459", href: "/about/mark-davis" },
+      { label: "Meet Rachael Garnett, REALTOR®", desc: "Certified Commercial & Residential Agent • FL Lic SL3378601", href: "/about/rachael-garnett" },
+      { label: "Align Right Realty Carrollwood", desc: "Our Carrollwood office, local support & coverage area (BK3401606)", href: "/about/align-right-realty-carrollwood" },
       { label: "Meet Our Strategic Partners", desc: "Trusted local lenders, title companies, inspectors & home pros", href: "/about/strategic-partners" },
       { label: "Community Outreach & Causes", desc: "How we give back to local Tampa Bay church & youth programs", href: "/about/community-outreach-giving" },
       { label: "Contact Us", desc: "Call, text, or email Mark & Rachael or visit our Carrollwood office", href: "/contact" },
@@ -181,7 +181,7 @@ export default function ProposalNav() {
             <Link
               href="/about/align-right-realty-carrollwood"
               className="hidden sm:flex items-center pl-3 xl:border-l xl:border-white/15 hover:opacity-85 transition-opacity shrink-0"
-              title="Align Right Realty Carrollwood — Broker #BK3401606"
+              title="Align Right Realty Carrollwood — Broker BK3401606"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img

@@ -140,13 +140,13 @@ export default function PropertiesStickyStack() {
               <div>
                 <span className="font-aiveritas text-xl text-[#9A7D3A] block">FL Licensed</span>
                 <span className="block text-[10px] uppercase tracking-widest text-[#111111]/60 font-bold mt-0.5">
-                  #3209459 &amp; #3378601
+                  BK3209459 &amp; SL3378601
                 </span>
               </div>
               <div>
                 <span className="font-aiveritas text-xl text-[#9A7D3A] block">Align Right</span>
                 <span className="block text-[10px] uppercase tracking-widest text-[#111111]/60 font-bold mt-0.5">
-                  Carrollwood • #BK3401606
+                  Carrollwood • BK3401606
                 </span>
               </div>
             </div>

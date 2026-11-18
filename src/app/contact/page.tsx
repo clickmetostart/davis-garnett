@@ -178,7 +178,7 @@ export default function ContactPage() {
                         Mark Davis
                       </h3>
                       <p className="text-xs uppercase tracking-widest text-[#111]/55 font-bold mb-3">
-                        Co-Founder &amp; REALTOR® • FL Lic #3209459
+                        Co-Founder &amp; REALTOR® • FL Lic BK3209459
                       </p>
                       <p className="text-base text-[#111]/75 font-light leading-relaxed">
                         Helping clients buy and sell residential homes, commercial properties, and Florida land—with a steady, numbers-first approach to pricing, zoning, and 1031 exchanges.
@@ -286,7 +286,7 @@ export default function ContactPage() {
                         Rachael Garnett
                       </h3>
                       <p className="text-xs uppercase tracking-widest text-[#111]/55 font-bold mb-3">
-                        Co-Founder &amp; REALTOR® • FL Lic #3378601
+                        Co-Founder &amp; REALTOR® • FL Lic SL3378601
                       </p>
                       <p className="text-base text-[#111]/75 font-light leading-relaxed">
                         Helping clients buy and sell residential homes, commercial properties, and waterfront and unique properties—bringing warm communication, standout property marketing, and strong negotiation.
@@ -595,10 +595,10 @@ export default function ContactPage() {
                           Both Agents (Mark Davis &amp; Rachael Garnett)
                         </option>
                         <option value="Mark Davis (Commercial & Residential Agent)">
-                          Mark Davis, REALTOR® — Commercial &amp; Residential Agent (#3209459)
+                          Mark Davis, REALTOR® — Commercial &amp; Residential Agent (BK3209459)
                         </option>
                         <option value="Rachael Garnett (Commercial & Residential Agent)">
-                          Rachael Garnett, REALTOR® — Commercial &amp; Residential Agent (#3378601)
+                          Rachael Garnett, REALTOR® — Commercial &amp; Residential Agent (SL3378601)
                         </option>
                       </select>
                     </div>

@@ -185,11 +185,11 @@ export default function CommunityOutreachGivingPage() {
           </Link>
           <div className="flex flex-wrap items-center gap-4 text-[11px] uppercase tracking-widest text-[#111111]/60 font-semibold">
             <Link href="/about/mark-davis" className="hover:text-[#9A7D3A]">
-              Mark Davis (#3209459)
+              Mark Davis (BK3209459)
             </Link>
             <span>|</span>
             <Link href="/about/rachael-garnett" className="hover:text-[#9A7D3A]">
-              Rachael Garnett (#3378601)
+              Rachael Garnett (SL3378601)
             </Link>
             <span>|</span>
             <Link href="/about/strategic-partners" className="hover:text-[#9A7D3A]">

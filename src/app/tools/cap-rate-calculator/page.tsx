@@ -185,7 +185,7 @@ export default function CapRateCalculatorPage() {
           <ToolLeadCaptureCard
             intentTag="cap-rate-calculator"
             heading="Request Local Cap Rate Comps"
-            subheading="Send your scenario to Mark Davis (FL Lic #3209459) & Rachael Garnett (FL Lic #3378601) for verified Tampa Bay comparable sales and NNN inventory."
+            subheading="Send your scenario to Mark Davis (FL Lic BK3209459) & Rachael Garnett (FL Lic SL3378601) for verified Tampa Bay comparable sales and NNN inventory."
             summaryText={`Price: ${formatUsd(purchasePrice)} | NOI: ${formatUsd(metrics.noi)} | Cap Rate: ${metrics.capRate.toFixed(2)}%`}
           />
         </aside>

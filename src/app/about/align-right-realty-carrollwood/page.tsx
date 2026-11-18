@@ -74,11 +74,11 @@ export default function AlignRightRealtyCarrollwoodPage() {
           </Link>
           <div className="flex flex-wrap items-center gap-4 text-[11px] uppercase tracking-widest text-[#111111]/60 font-semibold">
             <Link href="/about/mark-davis" className="hover:text-[#9A7D3A]">
-              Mark Davis (#3209459)
+              Mark Davis (BK3209459)
             </Link>
             <span>|</span>
             <Link href="/about/rachael-garnett" className="hover:text-[#9A7D3A]">
-              Rachael Garnett (#3378601)
+              Rachael Garnett (SL3378601)
             </Link>
             <span>|</span>
             <Link href="/about/strategic-partners" className="hover:text-[#9A7D3A]">
@@ -93,7 +93,7 @@ export default function AlignRightRealtyCarrollwoodPage() {
         <div className="max-w-screen-xl mx-auto grid lg:grid-cols-[1.15fr_0.85fr] gap-16 items-center">
           <div>
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
-              Brokerage of Record · FL License #BK3401606
+              Brokerage of Record · FL License BK3401606
             </span>
             <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-[#111111] leading-none mb-6">
               Our <span className="text-[#9A7D3A]">Brokerage</span>
@@ -101,12 +101,12 @@ export default function AlignRightRealtyCarrollwoodPage() {
             <p className="text-lg md:text-xl text-[#111111]/75 font-light leading-relaxed mb-6">
               Behind every home, commercial building, land parcel, and waterfront or unique property we buy or sell stands the full support and statewide reach of{" "}
               <strong className="font-semibold text-[#111111]">
-                Align Right Realty Carrollwood (License #BK3401606)
+                Align Right Realty Carrollwood (License BK3401606)
               </strong>
               .
             </p>
             <p className="text-base text-[#111111]/65 font-light leading-relaxed mb-8">
-              Mark Davis (#3209459) and Rachael Garnett (#3378601) partner with Align Right Realty Carrollwood so you get the best of both worlds: personal, approachable service from two hands-on agents backed by a trusted Tampa Bay brokerage.
+              Mark Davis (BK3209459) and Rachael Garnett (SL3378601) partner with Align Right Realty Carrollwood so you get the best of both worlds: personal, approachable service from two hands-on agents backed by a trusted Tampa Bay brokerage.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -176,11 +176,11 @@ export default function AlignRightRealtyCarrollwoodPage() {
               <div className="pt-4 border-t border-white/10 text-xs text-white/70 space-y-2">
                 <p className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#C8A951]" />
-                  Mark Davis, REALTOR® — Certified Commercial &amp; Residential Agent (#3209459)
+                  Mark Davis, REALTOR® — Certified Commercial &amp; Residential Agent (BK3209459)
                 </p>
                 <p className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#C8A951]" />
-                  Rachael Garnett, REALTOR® — Certified Commercial &amp; Residential Agent (#3378601)
+                  Rachael Garnett, REALTOR® — Certified Commercial &amp; Residential Agent (SL3378601)
                 </p>
               </div>
             </div>
@@ -209,7 +209,7 @@ export default function AlignRightRealtyCarrollwoodPage() {
               {
                 icon: ShieldCheck,
                 title: "Careful Contract & Escrow Protection",
-                desc: "Every commercial and residential contract, addendum, and escrow deposit is backed by full broker compliance review under Florida License #BK3401606.",
+                desc: "Every commercial and residential contract, addendum, and escrow deposit is backed by full broker compliance review under Florida License BK3401606.",
               },
               {
                 icon: Globe,
@@ -265,7 +265,7 @@ export default function AlignRightRealtyCarrollwoodPage() {
               <div className="lg:col-span-8">
                 <div className="flex flex-wrap items-center gap-3 mb-4">
                   <span className="px-3 py-1 rounded bg-[#ef5728]/20 border border-[#ef5728]/50 text-[10px] uppercase tracking-[0.22em] text-[#ef5728] font-bold">
-                    ALIGNED CORRECTLY REAL ESTATE • FL License #BK3401606
+                    ALIGNED CORRECTLY REAL ESTATE • FL License BK3401606
                   </span>
                 </div>
                 <h2 className="font-aiveritas text-3xl md:text-5xl text-white mb-4 leading-tight">
@@ -381,7 +381,7 @@ export default function AlignRightRealtyCarrollwoodPage() {
                     Direct Principal Advisory Lines
                   </h4>
                   <p className="text-xs text-[#111111]/65 mt-1">
-                    Mark Davis (#3209459): 941-737-4127 • Rachael Garnett (#3378601): 727-808-3344
+                    Mark Davis (BK3209459): 941-737-4127 • Rachael Garnett (SL3378601): 727-808-3344
                   </p>
                 </div>
               </div>

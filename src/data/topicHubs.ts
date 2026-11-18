@@ -41,7 +41,7 @@ export const TOPIC_HUBS: TopicHubConfig[] = [
     quickAnswer:
       "Tampa Bay holds over 30 active 55+ clubs. Buyers pick from gated villas in Wimauma, golf towns like Sun City Center, or coastal condos in Clearwater. Your true monthly budget hinges on CDD taxes, flood rates, and condo reserve funding.",
     howWeHandleIt:
-      "Mark Davis (FL Lic #3209459) and Rachael Garnett (FL Lic #3378601) map out clear monthly cost sheets before you tour. Each sheet lists HOA dues, CDD tax payoffs, Homestead Portability savings, and condo reserve reports. You will know every fee up front.",
+      "Mark Davis (FL Lic BK3209459) and Rachael Garnett (FL Lic SL3378601) map out clear monthly cost sheets before you tour. Each sheet lists HOA dues, CDD tax payoffs, Homestead Portability savings, and condo reserve reports. You will know every fee up front.",
     localFacts: [
       { label: "Top 55+ Corridors", value: "Wimauma, Sun City Center, Wesley Chapel, Clearwater", source: "Davis & Garnett Local Market Advisory" },
       { label: "Ownership Structures", value: "Fee-Simple Villas vs. Chapter 718 Condos", source: "Florida Statutes Chapters 718 & 720" },

@@ -297,7 +297,7 @@ export default function MortgageCalculatorPage() {
           <ToolLeadCaptureCard
             intentTag="mortgage-calculator"
             heading="Get Custom Pre-Approval & Tax Estimates"
-            subheading="Send your target payment to Mark Davis (FL Lic #3209459) & Rachael Garnett (FL Lic #3378601). We pair you with trusted Florida lending partners like MadCity Home Loans and pull exact CDD & insurance figures."
+            subheading="Send your target payment to Mark Davis (FL Lic BK3209459) & Rachael Garnett (FL Lic SL3378601). We pair you with trusted Florida lending partners like MadCity Home Loans and pull exact CDD & insurance figures."
             summaryText={`Price: ${formatUsd(homePrice)} (${downPaymentPct}% down @ ${interestRate}%) | Est. Total: ${formatUsd(calc.totalMonthly)}/mo`}
           />
         </aside>

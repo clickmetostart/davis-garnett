@@ -65,8 +65,8 @@ export default async function TourDetailPage({ params }: PageProps) {
           },
         },
         author: [
-          { "@type": "Person", name: "Mark Davis", identifier: "FL Lic #3209459" },
-          { "@type": "Person", name: "Rachael Garnett", identifier: "FL Lic #3378601" },
+          { "@type": "Person", name: "Mark Davis", identifier: "FL Lic BK3209459" },
+          { "@type": "Person", name: "Rachael Garnett", identifier: "FL Lic SL3378601" },
         ],
         publisher: {
           "@type": "RealEstateAgent",

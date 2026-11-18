@@ -191,7 +191,7 @@ export default function HomePageV1Light() {
                 </div>
               </div>
               <h3 className="font-aiveritas text-3xl text-[#111] mb-1">Mark Davis</h3>
-              <p className="text-[#D4AF37] text-xs uppercase tracking-widest mb-3">REALTOR® · Certified Commercial &amp; Residential Agent • FL Lic #3209459</p>
+              <p className="text-[#D4AF37] text-xs uppercase tracking-widest mb-3">REALTOR® · Certified Commercial &amp; Residential Agent • FL Lic BK3209459</p>
               <p className="text-[#111]/75 text-base font-light mb-5 leading-relaxed">
                 Mark helps clients buy and sell residential homes, commercial properties, and Florida land. He loves digging into the numbers, checking zoning details, and making sure every step of your deal makes sense.
               </p>
@@ -211,7 +211,7 @@ export default function HomePageV1Light() {
                 </div>
               </div>
               <h3 className="font-aiveritas text-3xl text-[#111] mb-1">Rachael Garnett</h3>
-              <p className="text-[#D4AF37] text-xs uppercase tracking-widest mb-3">REALTOR® · Certified Commercial &amp; Residential Agent • FL Lic #3378601</p>
+              <p className="text-[#D4AF37] text-xs uppercase tracking-widest mb-3">REALTOR® · Certified Commercial &amp; Residential Agent • FL Lic SL3378601</p>
               <p className="text-[#111]/75 text-base font-light mb-5 leading-relaxed">
                 Rachael works with buyers, sellers, and investors across residential homes, commercial spaces, and waterfront and unique properties. She brings thoughtful marketing, clear communication, and strong negotiation to every table.
               </p>
@@ -282,7 +282,7 @@ export default function HomePageV1Light() {
                 className="absolute inset-0 flex flex-col items-center justify-end pb-24 px-10 lg:px-14 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-transparent"
                 style={{ opacity: textOpacity, y: textY }}
               >
-                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.28em] font-bold mb-4 text-center">REALTOR® · Commercial &amp; Residential Agent • #3209459</span>
+                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.28em] font-bold mb-4 text-center">REALTOR® · Commercial &amp; Residential Agent • BK3209459</span>
                 <h2 className="font-aiveritas text-5xl lg:text-6xl text-white mb-5">Mark Davis</h2>
                 <p className="text-white/90 text-center max-w-lg text-base md:text-[17px] lg:text-[18px] font-light mb-10 leading-relaxed">
                   Mark works across residential homes, commercial properties, and Florida land. Clients count on his calm, practical approach to pricing, zoning, and getting deals across the finish line.
@@ -312,7 +312,7 @@ export default function HomePageV1Light() {
                 className="absolute inset-0 flex flex-col items-center justify-end pb-24 px-10 lg:px-14 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-transparent"
                 style={{ opacity: textOpacity, y: textY }}
               >
-                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.28em] font-bold mb-4 text-center">REALTOR® · Commercial &amp; Residential Agent • #3378601</span>
+                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.28em] font-bold mb-4 text-center">REALTOR® · Commercial &amp; Residential Agent • SL3378601</span>
                 <h2 className="font-aiveritas text-5xl lg:text-6xl text-white mb-5">Rachael Garnett</h2>
                 <p className="text-white/90 text-center max-w-lg text-base md:text-[17px] lg:text-[18px] font-light mb-10 leading-relaxed">
                   Rachael works across residential homes, commercial properties, and waterfront and unique properties. She brings energy, thoughtful marketing, and clear day-to-day communication to every client she serves.
@@ -455,7 +455,7 @@ export default function HomePageV1Light() {
               {
                 value: "100%",
                 label: "Working For You",
-                sub: "Align Right Carrollwood · #BK3401606",
+                sub: "Align Right Carrollwood · BK3401606",
               },
             ].map((item) => (
               <div
@@ -1009,14 +1009,14 @@ export default function HomePageV1Light() {
                   "@type": "Person",
                   name: "Mark Davis",
                   jobTitle: "Commercial & Residential Advisor",
-                  identifier: "FL License #3209459",
+                  identifier: "FL License BK3209459",
                   telephone: "941-737-4127",
                 },
                 {
                   "@type": "Person",
                   name: "Rachael Garnett",
                   jobTitle: "Commercial & Residential Advisor",
-                  identifier: "FL License #3378601",
+                  identifier: "FL License SL3378601",
                   telephone: "727-808-3344",
                 },
               ],
@@ -1251,7 +1251,7 @@ export default function HomePageV1Light() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent" />
               <div className="absolute top-3 left-3.5 right-3.5 flex items-center justify-between">
                 <span className="px-2.5 py-0.5 rounded bg-black/75 backdrop-blur-md text-[9px] font-bold uppercase tracking-widest text-[#ef5728] border border-[#ef5728]/30">
-                  Carrollwood HQ • FL Lic #BK3401606
+                  Carrollwood HQ • FL Lic BK3401606
                 </span>
               </div>
               <div className="absolute bottom-3 left-3.5 right-3.5 flex items-end justify-between gap-2 text-left">

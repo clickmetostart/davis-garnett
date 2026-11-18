@@ -148,11 +148,11 @@ export default function RachaelGarnettAdvisorPage() {
           </Link>
           <div className="flex flex-wrap items-center gap-4 text-[11px] uppercase tracking-widest text-[#111111]/60 font-semibold">
             <Link href="/about/mark-davis" className="hover:text-[#9A7D3A]">
-              ← Meet Mark Davis (#3209459)
+              ← Meet Mark Davis (BK3209459)
             </Link>
             <span>|</span>
             <Link href="/about/align-right-realty-carrollwood" className="hover:text-[#9A7D3A]">
-              Align Right Carrollwood (#BK3401606)
+              Align Right Carrollwood (BK3401606)
             </Link>
           </div>
         </div>
@@ -165,7 +165,7 @@ export default function RachaelGarnettAdvisorPage() {
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-[#111111]/10 bg-[#111111]">
               <Image
                 src="/new-images/new-2/rachael-garnett-residential-commerical-advisor-tampa-real-estate-6.jpg"
-                alt="Rachael Garnett, REALTOR® — Certified Commercial & Residential Agent (#3378601)"
+                alt="Rachael Garnett, REALTOR® — Certified Commercial & Residential Agent (SL3378601)"
                 fill
                 priority
                 unoptimized
@@ -174,11 +174,11 @@ export default function RachaelGarnettAdvisorPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/80 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 text-white">
                 <span className="inline-block px-3 py-1 rounded bg-[#C8A951] text-[#111111] text-[10px] font-bold uppercase tracking-[0.2em] mb-2">
-                  REALTOR® • FL License #3378601
+                  REALTOR® • FL License SL3378601
                 </span>
                 <p className="font-aiveritas text-2xl">Rachael Garnett, REALTOR®</p>
                 <p className="text-xs text-white/75">
-                  Align Right Realty Carrollwood • License #BK3401606
+                  Align Right Realty Carrollwood • License BK3401606
                 </p>
               </div>
             </div>
@@ -198,7 +198,7 @@ export default function RachaelGarnettAdvisorPage() {
               Rachael Garnett is a <strong className="font-semibold text-[#111111]">REALTOR® and Certified Commercial &amp; Residential Agent</strong> who helps buyers, sellers, and business owners across residential homes, commercial properties, and waterfront and unique properties in St. Petersburg, Tampa, Carrollwood, Lutz, Land O&apos; Lakes, Bradenton, and Wesley Chapel. Clients love Rachael for her warm, honest communication, eye for property presentation, and strong negotiation at the contract table.
             </p>
             <p className="text-base md:text-[17px] lg:text-[18px] text-[#111111]/75 font-light leading-relaxed mb-8">
-              Rachael co-founded <strong className="font-semibold text-[#111111]">Davis &amp; Garnett</strong> alongside her partner <strong className="font-semibold text-[#111111]">Mark Davis (#3209459)</strong> so clients get two hands-on agents working together on every move. Whether you are buying a home, selling a commercial building, or investing in land, Rachael and Mark make the entire process clear, personal, and stress-free.
+              Rachael co-founded <strong className="font-semibold text-[#111111]">Davis &amp; Garnett</strong> alongside her partner <strong className="font-semibold text-[#111111]">Mark Davis (BK3209459)</strong> so clients get two hands-on agents working together on every move. Whether you are buying a home, selling a commercial building, or investing in land, Rachael and Mark make the entire process clear, personal, and stress-free.
             </p>
 
             {/* Direct Contact Bar */}
@@ -232,7 +232,7 @@ export default function RachaelGarnettAdvisorPage() {
                 </span>
                 <span className="inline-flex items-center gap-2 text-sm font-bold text-[#111111]">
                   <ShieldCheck className="w-4 h-4 text-[#9A7D3A]" />
-                  FL Lic. #3378601
+                  FL Lic. SL3378601
                 </span>
               </div>
             </div>
@@ -410,7 +410,7 @@ export default function RachaelGarnettAdvisorPage() {
                 </div>
                 <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-[11px] text-white/50">
                   <span>Represented by Rachael Garnett</span>
-                  <span>#3378601</span>
+                  <span>SL3378601</span>
                 </div>
               </div>
             ))}
@@ -575,7 +575,7 @@ export default function RachaelGarnettAdvisorPage() {
               Send Rachael a Message
             </h2>
             <p className="text-base text-[#111111]/70 font-light">
-              FL Real Estate License #3378601 • Direct: 727-808-3344 • rachael@davisgarnettsells.com
+              FL Real Estate License SL3378601 • Direct: 727-808-3344 • rachael@davisgarnettsells.com
             </p>
           </div>
 
@@ -583,7 +583,7 @@ export default function RachaelGarnettAdvisorPage() {
             <div className="p-10 rounded-xl bg-white border border-[#C8A951] text-center">
               <CheckCircle2 className="w-12 h-12 text-[#9A7D3A] mx-auto mb-4" />
               <h3 className="font-aiveritas text-2xl text-[#111111] mb-2">
-                Inquiry Routed to Rachael Garnett (#3378601)
+                Inquiry Routed to Rachael Garnett (SL3378601)
               </h3>
               <p className="text-sm text-[#111111]/70 max-w-md mx-auto mb-6">
                 Thank you, {formData.firstName}. Rachael has received your message and will reach out personally.

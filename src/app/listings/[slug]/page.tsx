@@ -56,7 +56,7 @@ const ADVISOR_TEAM = [
     phone: "941-737-4127",
     image: "/davis-garnett-headshots/mark-davis-avatar-footer.JPG",
     imagePosition: "object-top",
-    license: "FL Lic. #3209459",
+    license: "FL Lic. BK3209459",
     brokerage: "Align Right Realty Carrollwood",
     profileHref: "/about/mark-davis"
   },
@@ -68,7 +68,7 @@ const ADVISOR_TEAM = [
     phone: "727-808-3344",
     image: "/davis-garnett-headshots/rachael-garnett-avatar-footer.webp",
     imagePosition: "object-[center_30%]",
-    license: "FL Lic. #3378601",
+    license: "FL Lic. SL3378601",
     brokerage: "Align Right Realty Carrollwood",
     profileHref: "/about/rachael-garnett"
   }
@@ -385,7 +385,7 @@ export default function ListingDetailPage() {
 
   const offeringQuickAnswer =
     listing.quickAnswer ||
-    `${listing.title} is an ${listing.category.toLowerCase()} offering in ${listing.city}, ${listing.state} (${listing.county}) listed at ${displayPrice}. Advised by Mark Davis (FL Lic #3209459) and Rachael Garnett (FL Lic #3378601) with full zoning, utility, and comparable valuation underwriting available upon request.`;
+    `${listing.title} is an ${listing.category.toLowerCase()} offering in ${listing.city}, ${listing.state} (${listing.county}) listed at ${displayPrice}. Advised by Mark Davis (FL Lic BK3209459) and Rachael Garnett (FL Lic SL3378601) with full zoning, utility, and comparable valuation underwriting available upon request.`;
 
   const omSections = [
     {
@@ -753,7 +753,7 @@ export default function ListingDetailPage() {
                   </strong>
                   {listing.brokerageAttribution ||
                     (listing.listingOrigin === "align-right-office"
-                      ? `Listed with ${listing.listingOfficeName || "Align Right Realty Carrollwood"}. Property information and buyer advisory services are provided by Mark Davis (FL Lic. #3209459) & Rachael Garnett (FL Lic. #3378601).`
+                      ? `Listed with ${listing.listingOfficeName || "Align Right Realty Carrollwood"}. Property information and buyer advisory services are provided by Mark Davis (FL Lic. BK3209459) & Rachael Garnett (FL Lic. SL3378601).`
                       : `Property information is available through Davis & Garnett for advisory and buyer-representation evaluation; this asset is not an exclusive listing of the Davis & Garnett team.`)}
                 </div>
               )}
@@ -1049,7 +1049,7 @@ export default function ListingDetailPage() {
                 {listing.mlsId ? `MLS #${listing.mlsId}. ` : ""}All information is deemed
                 reliable but not guaranteed and should be independently verified by prospective
                 purchasers. Properties are subject to prior sale, price change, or withdrawal
-                without notice. Equal Housing Opportunity. Advisors: Mark Davis (FL Lic. #3209459) &amp; Rachael Garnett (FL Lic. #3378601).
+                without notice. Equal Housing Opportunity. Advisors: Mark Davis (FL Lic. BK3209459) &amp; Rachael Garnett (FL Lic. SL3378601).
               </p>
             </div>
           </div>

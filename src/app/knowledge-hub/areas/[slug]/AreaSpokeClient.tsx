@@ -245,7 +245,7 @@ export default function AreaSpokeClient({
               </h3>
               <p className="text-sm md:text-base text-[#111]/80 leading-relaxed font-light">
                 {area.howWeHandleIt ||
-                  `In ${area.name}, property taxes, flood elevations, HOA/CDD budgets, and roof-age underwriting vary block by block. Mark Davis (FL Lic #3209459) and Rachael Garnett (FL Lic #3378601) compare true carrying costs and micro-street comps before you write an offer or price a home.`}
+                  `In ${area.name}, property taxes, flood elevations, HOA/CDD budgets, and roof-age underwriting vary block by block. Mark Davis (FL Lic BK3209459) and Rachael Garnett (FL Lic SL3378601) compare true carrying costs and micro-street comps before you write an offer or price a home.`}
               </p>
               {relatedGlossary.length > 0 && (
                 <div className="pt-3 border-t border-[#111]/10 flex flex-wrap items-center gap-2">

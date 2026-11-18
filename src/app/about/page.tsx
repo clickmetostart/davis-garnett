@@ -105,14 +105,14 @@ export default function AboutHubPage() {
     parentOrganization: {
       "@type": "RealEstateAgent",
       name: "Align Right Realty Carrollwood",
-      identifier: "FL Real Estate Brokerage License #BK3401606",
+      identifier: "FL Real Estate Brokerage License BK3401606",
     },
     member: [
       {
         "@type": "Person",
         name: "Mark Davis",
         jobTitle: "Commercial & Residential Advisor",
-        identifier: "FL License #3209459",
+        identifier: "FL License BK3209459",
         telephone: "+1-941-737-4127",
         email: "mark@davisgarnettsells.com",
         url: "https://www.davisgarnettsells.com/about/mark-davis",
@@ -121,7 +121,7 @@ export default function AboutHubPage() {
         "@type": "Person",
         name: "Rachael Garnett",
         jobTitle: "Commercial & Residential Advisor",
-        identifier: "FL License #3378601",
+        identifier: "FL License SL3378601",
         telephone: "+1-727-808-3344",
         email: "rachael@davisgarnettsells.com",
         url: "https://www.davisgarnettsells.com/about/rachael-garnett",
@@ -162,19 +162,19 @@ export default function AboutHubPage() {
               href="/about/mark-davis"
               className="px-3.5 py-1.5 rounded-full bg-[#f5f3ef] hover:bg-[#111111] hover:text-white transition-colors"
             >
-              Meet Mark Davis (#3209459)
+              Meet Mark Davis (BK3209459)
             </Link>
             <Link
               href="/about/rachael-garnett"
               className="px-3.5 py-1.5 rounded-full bg-[#f5f3ef] hover:bg-[#111111] hover:text-white transition-colors"
             >
-              Meet Rachael Garnett (#3378601)
+              Meet Rachael Garnett (SL3378601)
             </Link>
             <Link
               href="/about/align-right-realty-carrollwood"
               className="px-3.5 py-1.5 rounded-full bg-[#f5f3ef] hover:bg-[#111111] hover:text-white transition-colors"
             >
-              Align Right Carrollwood (#BK3401606)
+              Align Right Carrollwood (BK3401606)
             </Link>
             <Link
               href="/about/strategic-partners"
@@ -251,7 +251,7 @@ export default function AboutHubPage() {
                     Mark Davis & Rachael Garnett
                   </p>
                   <p className="text-xs text-white/75 font-light">
-                    Align Right Realty Carrollwood • License #BK3401606
+                    Align Right Realty Carrollwood • License BK3401606
                   </p>
                 </div>
               </div>
@@ -318,7 +318,7 @@ export default function AboutHubPage() {
                       Mark Davis
                     </h3>
                     <p className="text-xs uppercase tracking-widest text-[#111111]/50 font-semibold mb-4">
-                      REALTOR® • FL Real Estate License #3209459
+                      REALTOR® • FL Real Estate License BK3209459
                     </p>
                     <p className="text-base text-[#111111]/75 font-light leading-relaxed mb-6">
                       Mark helps families, business owners, and investors buy and sell homes, commercial buildings, and land across Tampa Bay and Central Florida. He is known for his steady, numbers-first approach and practical guidance on zoning, pricing, and negotiations.
@@ -400,7 +400,7 @@ export default function AboutHubPage() {
                       Rachael Garnett
                     </h3>
                     <p className="text-xs uppercase tracking-widest text-[#111111]/50 font-semibold mb-4">
-                      REALTOR® • FL Real Estate License #3378601
+                      REALTOR® • FL Real Estate License SL3378601
                     </p>
                     <p className="text-base text-[#111111]/75 font-light leading-relaxed mb-6">
                       Rachael works with buyers, sellers, and business owners across residential homes, commercial properties, and waterfront and unique properties. She brings warm, responsive communication, creative marketing, and strong negotiation to every client.
@@ -760,7 +760,7 @@ export default function AboutHubPage() {
               Start a Conversation With Us
             </h2>
             <p className="text-base md:text-[17px] lg:text-[18px] text-[#111111]/70 font-light leading-relaxed">
-              Reach out directly to Mark Davis (#3209459) and Rachael Garnett (#3378601) about buying or selling a home, a commercial property, or land in Tampa Bay.
+              Reach out directly to Mark Davis (BK3209459) and Rachael Garnett (SL3378601) about buying or selling a home, a commercial property, or land in Tampa Bay.
             </p>
           </div>
 
@@ -863,8 +863,8 @@ export default function AboutHubPage() {
                     className="w-full px-4 py-3.5 rounded-lg bg-[#fbfbf9] border border-[#111111]/15 text-sm text-[#111111] focus:outline-none focus:border-[#C8A951]"
                   >
                     <option>Both Agents (Mark Davis &amp; Rachael Garnett)</option>
-                    <option>Mark Davis, REALTOR® — Commercial &amp; Residential Agent (#3209459)</option>
-                    <option>Rachael Garnett, REALTOR® — Commercial &amp; Residential Agent (#3378601)</option>
+                    <option>Mark Davis, REALTOR® — Commercial &amp; Residential Agent (BK3209459)</option>
+                    <option>Rachael Garnett, REALTOR® — Commercial &amp; Residential Agent (SL3378601)</option>
                   </select>
                 </div>
                 <div>

@@ -99,8 +99,8 @@ export default async function GlossaryTermPage({ params }: PageProps) {
         datePublished: term.publishedAt,
         dateModified: term.updatedAt,
         author: [
-          { "@type": "Person", name: "Mark Davis", identifier: "FL Lic #3209459" },
-          { "@type": "Person", name: "Rachael Garnett", identifier: "FL Lic #3378601" },
+          { "@type": "Person", name: "Mark Davis", identifier: "FL Lic BK3209459" },
+          { "@type": "Person", name: "Rachael Garnett", identifier: "FL Lic SL3378601" },
         ],
         publisher: {
           "@type": "RealEstateAgent",
@@ -168,7 +168,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
             What Is a {term.term} in Florida Real Estate?
           </h1>
           <p className="text-white/75 text-sm md:text-base max-w-3xl font-light">
-            Advised by Mark Davis (FL Lic #3209459) &amp; Rachael Garnett (FL Lic #3378601) — Align Right Realty Carrollwood
+            Advised by Mark Davis (FL Lic BK3209459) &amp; Rachael Garnett (FL Lic SL3378601) — Align Right Realty Carrollwood
           </p>
         </div>
       </section>

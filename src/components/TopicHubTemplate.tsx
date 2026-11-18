@@ -108,7 +108,7 @@ export default function TopicHubTemplate({ hub }: { hub: TopicHubConfig }) {
             {hub.subtitle}
           </p>
           <p className="text-xs uppercase tracking-widest text-white/60">
-            Mark Davis (FL Lic #3209459) &amp; Rachael Garnett (FL Lic #3378601) • Align Right Realty Carrollwood
+            Mark Davis (FL Lic BK3209459) &amp; Rachael Garnett (FL Lic SL3378601) • Align Right Realty Carrollwood
           </p>
         </div>
       </section>

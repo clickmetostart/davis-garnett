@@ -75,7 +75,7 @@ export const RESIDENTIAL_DISCOVERY_DECK: DiscoveryDeckConfig = {
   headline: "Plan Your Tampa Bay Move",
   intro:
     "Take three minutes to tell Mark and Rachael what matters most—your timeline, areas, budget comfort, and must-haves. Move back and forth anytime, or download the matching PDF guide to fill out on paper.",
-  leadAdvisor: "Rachael Garnett (FL Lic #3378601) & Mark Davis (FL Lic #3209459)",
+  leadAdvisor: "Rachael Garnett (FL Lic SL3378601) & Mark Davis (FL Lic BK3209459)",
   cards: [
     {
       id: "res-role-timing",
@@ -325,7 +325,7 @@ export const COMMERCIAL_DISCOVERY_DECK: DiscoveryDeckConfig = {
   headline: "Plan Your Commercial or Land Move",
   intro:
     "Step through seven short questions to clarify asset type, SBA or NNN numbers, zoning needs, and timing. Go back and forth anytime, send directly to Mark & Rachael, or download the matching printable PDF guide.",
-  leadAdvisor: "Mark Davis (FL Lic #3209459) & Rachael Garnett (FL Lic #3378601)",
+  leadAdvisor: "Mark Davis (FL Lic BK3209459) & Rachael Garnett (FL Lic SL3378601)",
   cards: [
     {
       id: "com-goal-role",

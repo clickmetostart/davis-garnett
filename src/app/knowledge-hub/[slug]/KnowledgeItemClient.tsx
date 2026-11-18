@@ -97,7 +97,7 @@ export default function KnowledgeItemClient({
   });
   const howWeHandleText =
     item.howWeHandleIt ||
-    `When walking clients through ${item.category.toLowerCase()} decisions in Tampa Bay, Mark Davis (${item.author.license === "FL Lic #3209459" ? "FL Lic #3209459" : "FL Lic #3209459"}) and Rachael Garnett (FL Lic #3378601) verify county records, HOA/CDD budgets, insurance inspectability, and net-proceeds math before an offer or listing ever goes live.`;
+    `When walking clients through ${item.category.toLowerCase()} decisions in Tampa Bay, Mark Davis (${item.author.license === "FL Lic BK3209459" ? "FL Lic BK3209459" : "FL Lic BK3209459"}) and Rachael Garnett (FL Lic SL3378601) verify county records, HOA/CDD budgets, insurance inspectability, and net-proceeds math before an offer or listing ever goes live.`;
 
   return (
     <div className="min-h-screen bg-white text-[#111] font-sans selection:bg-[#D4AF37] selection:text-white">

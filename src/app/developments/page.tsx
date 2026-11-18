@@ -1061,7 +1061,7 @@ export default function DevelopmentsHubPage() {
         <div className="max-w-screen-xl mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-[#111111]/65">
           <p className="leading-relaxed">
             <span className="text-[#9A7D3A] font-bold mr-1">*</span>
-            Independent buyer, commercial, and leasing representation by Davis &amp; Garnett (Align Right Realty Carrollwood · #BK3401606). Pricing and availability are subject to change without notice.
+            Independent buyer, commercial, and leasing representation by Davis &amp; Garnett (Align Right Realty Carrollwood · BK3401606). Pricing and availability are subject to change without notice.
           </p>
           <button
             type="button"
@@ -1108,7 +1108,7 @@ export default function DevelopmentsHubPage() {
             <div className="p-6 sm:p-8 overflow-y-auto space-y-6 text-sm text-[#111111]/80 leading-relaxed">
               <div className="p-5 rounded-2xl bg-[#f5f3ef] border border-[#111111]/10 space-y-3 text-xs sm:text-sm">
                 <p>
-                  <strong className="text-[#111111] font-semibold">Independent Agency Notice:</strong> Davis &amp; Garnett (Mark Davis, FL Lic. #3209459, and Rachael Garnett, FL Lic. #3378601, brokered by Align Right Realty Carrollwood, Lic. #BK3401606) is an independent licensed real estate team representing prospective buyers, sellers, commercial tenants, assignees, and investors.
+                  <strong className="text-[#111111] font-semibold">Independent Agency Notice:</strong> Davis &amp; Garnett (Mark Davis, FL Lic. BK3209459, and Rachael Garnett, FL Lic. SL3378601, brokered by Align Right Realty Carrollwood, Lic. BK3401606) is an independent licensed real estate team representing prospective buyers, sellers, commercial tenants, assignees, and investors.
                 </p>
                 <p>
                   Unless explicitly noted on an active listing, Davis &amp; Garnett is not the exclusive developer sales agency, project sponsor, or affiliate of any private builder, master developer, hospitality brand, or district listed on this hub. Trademarks, project names, and marks belong to their respective owners and appear strictly for editorial evaluation and consumer identification. Pricing, floor plans, HOA/CDD budgets, and timelines remain subject to change and independent verification prior to contract.

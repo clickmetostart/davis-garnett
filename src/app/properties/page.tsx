@@ -298,13 +298,13 @@ export default function PropertiesPage() {
               },
               {
                 value: "FL Licensed",
-                label: "#3209459 & #3378601",
+                label: "BK3209459 & SL3378601",
                 sub: "Mark Davis & Rachael Garnett"
               },
               {
                 value: "Align Right",
                 label: "Carrollwood Office",
-                sub: "Brokerage Lic. #BK3401606"
+                sub: "Brokerage Lic. BK3401606"
               }
             ].map((stat) => (
               <div
@@ -808,13 +808,13 @@ export default function PropertiesPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
             <div>
               <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-                Brokerage Branch · #BK3401606
+                Brokerage Branch · BK3401606
               </span>
               <h2 className="font-aiveritas text-3xl sm:text-5xl text-[#111111] mb-3">
                 Align Right Realty Carrollwood Office Listings
               </h2>
               <p className="text-[#111111]/70 font-light max-w-2xl text-base leading-relaxed">
-                Active brokerage listings from our Align Right Realty Carrollwood office. Properties listed by fellow office brokers are clearly attributed while Mark Davis (FL Lic #3209459) and Rachael Garnett (FL Lic #3378601) serve as your dedicated showing and buyer advisors.
+                Active brokerage listings from our Align Right Realty Carrollwood office. Properties listed by fellow office brokers are clearly attributed while Mark Davis (FL Lic BK3209459) and Rachael Garnett (FL Lic SL3378601) serve as your dedicated showing and buyer advisors.
               </p>
             </div>
             <div className="flex items-center gap-3 shrink-0">
@@ -1351,7 +1351,7 @@ export default function PropertiesPage() {
                   <div>
                     <p className="font-bold text-[#111111] text-sm">Mark Davis</p>
                     <p className="text-xs text-[#9A7D3A] font-semibold">
-                      Commercial &amp; Residential Advisor · FL Lic. #3209459
+                      Commercial &amp; Residential Advisor · FL Lic. BK3209459
                     </p>
                     <p className="text-xs text-[#111111]/55 mt-0.5">mark@davisgarnettsells.com</p>
                   </div>
@@ -1375,7 +1375,7 @@ export default function PropertiesPage() {
                   <div>
                     <p className="font-bold text-[#111111] text-sm">Rachael Garnett</p>
                     <p className="text-xs text-[#9A7D3A] font-semibold">
-                      Commercial &amp; Residential Advisor · FL Lic. #3378601
+                      Commercial &amp; Residential Advisor · FL Lic. SL3378601
                     </p>
                     <p className="text-xs text-[#111111]/55 mt-0.5">
                       rachael@davisgarnettsells.com

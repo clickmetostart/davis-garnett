@@ -52,7 +52,7 @@ function getStandaloneGuidePayload(
         "How Rachael Garnett & Mark Davis help buyers and sellers navigate homes, waterfront docks, condos, and new construction—plus our matching 7-card discovery questionnaire.",
       category: "Residential Getting Started Guide",
       pageUrl: "/residential/get-started",
-      authorLine: "Rachael Garnett (FL Lic #3378601) & Mark Davis (FL Lic #3209459)",
+      authorLine: "Rachael Garnett (FL Lic SL3378601) & Mark Davis (FL Lic BK3209459)",
       createdDateLabel: "Nov 17, 2026",
       quickAnswer:
         "This complete packet includes our 5-step residential guide plus our matching 7-part Client Priorities Worksheet. Complete the steps online at davisgarnettsells.com/residential/get-started or print this PDF to fill in before we meet.",
@@ -128,7 +128,7 @@ function getStandaloneGuidePayload(
         "Our practical process for buying, selling, pricing (BPO), or exchanging NNN retail, mixed-use buildings, and Central Florida acreage—plus our matching 7-card discovery questionnaire.",
       category: "Commercial & Land Getting Started Guide",
       pageUrl: "/commercial/get-started",
-      authorLine: "Mark Davis (FL Lic #3209459) & Rachael Garnett (FL Lic #3378601)",
+      authorLine: "Mark Davis (FL Lic BK3209459) & Rachael Garnett (FL Lic SL3378601)",
       createdDateLabel: "Nov 17, 2026",
       quickAnswer:
         "This complete packet includes our 5-step commercial and land guide plus our matching 7-part Planning Worksheet. Complete the steps online at davisgarnettsells.com/commercial/get-started or print this PDF to bring to our strategy session.",
@@ -275,7 +275,7 @@ export async function POST(req: Request) {
           subtitle: area.tagline,
           category: `Area Guide • ${area.county}`,
           pageUrl: `/knowledge-hub/areas/${area.slug}`,
-          authorLine: "Mark Davis (FL Lic #3209459) & Rachael Garnett (FL Lic #3378601)",
+          authorLine: "Mark Davis (FL Lic BK3209459) & Rachael Garnett (FL Lic SL3378601)",
           createdDateLabel: formatShortDate(area.updatedAt || area.publishedAt),
           quickAnswer: area.quickAnswer || area.overview,
           keyTakeaways: area.topNeighborhoods.map((n) => `Key Enclave to Drive: ${n}`),
@@ -359,7 +359,7 @@ export async function POST(req: Request) {
         category: customPayload.category || "Tampa Bay Real Estate Guide",
         authorLine:
           customPayload.authorLine ||
-          "Mark Davis (FL Lic #3209459) & Rachael Garnett (FL Lic #3378601)",
+          "Mark Davis (FL Lic BK3209459) & Rachael Garnett (FL Lic SL3378601)",
         createdDateLabel: customPayload.createdDateLabel || "Nov 17, 2026",
         quickAnswer: customPayload.quickAnswer,
         keyTakeaways: customPayload.keyTakeaways || [],

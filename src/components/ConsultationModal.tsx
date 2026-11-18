@@ -122,7 +122,7 @@ export default function ConsultationModal({
                   {title}
                 </h2>
                 <p className="text-[#111]/60 text-sm font-light leading-relaxed">
-                  Connect directly with Commercial &amp; Residential Advisors Mark Davis (#3209459) and Rachael Garnett (#3378601). We look forward to learning more about your property goals and delivering tailored guidance for your Tampa Bay real estate journey.
+                  Connect directly with Commercial &amp; Residential Advisors Mark Davis (BK3209459) and Rachael Garnett (SL3378601). We look forward to learning more about your property goals and delivering tailored guidance for your Tampa Bay real estate journey.
                 </p>
               </div>
 
@@ -214,8 +214,8 @@ export default function ConsultationModal({
                       className="w-full px-4 py-3 bg-[#f5f3ef] border border-[#111]/10 rounded-lg text-sm text-[#111] focus:outline-none focus:border-[#D4AF37]"
                     >
                       <option value="Mark Davis & Rachael Garnett">Both Agents (Mark Davis &amp; Rachael Garnett)</option>
-                      <option value="Mark Davis (Commercial & Residential Agent)">Mark Davis, REALTOR® — Certified Commercial &amp; Residential Agent (#3209459)</option>
-                      <option value="Rachael Garnett (Commercial & Residential Agent)">Rachael Garnett, REALTOR® — Certified Commercial &amp; Residential Agent (#3378601)</option>
+                      <option value="Mark Davis (Commercial & Residential Agent)">Mark Davis, REALTOR® — Certified Commercial &amp; Residential Agent (BK3209459)</option>
+                      <option value="Rachael Garnett (Commercial & Residential Agent)">Rachael Garnett, REALTOR® — Certified Commercial &amp; Residential Agent (SL3378601)</option>
                     </select>
                   </div>
                 </div>

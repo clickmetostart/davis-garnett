@@ -71,7 +71,7 @@ export default function GlossaryIndexPage() {
             Florida &amp; Tampa Bay Real Estate Glossary
           </h1>
           <p className="text-white/75 text-base md:text-xl font-light max-w-3xl leading-relaxed">
-            Clear definitions, real Hillsborough, Pinellas, Pasco, and Polk County examples, and how Mark Davis (FL Lic #3209459) and Rachael Garnett (FL Lic #3378601) navigate each rule before you sign.
+            Clear definitions, real Hillsborough, Pinellas, Pasco, and Polk County examples, and how Mark Davis (FL Lic BK3209459) and Rachael Garnett (FL Lic SL3378601) navigate each rule before you sign.
           </p>
         </div>
       </section>

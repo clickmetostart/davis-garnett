@@ -163,11 +163,11 @@ export default function MarkDavisAdvisorPage() {
           </Link>
           <div className="flex flex-wrap items-center gap-4 text-[11px] uppercase tracking-widest text-[#111111]/60 font-semibold">
             <Link href="/about/rachael-garnett" className="hover:text-[#9A7D3A]">
-              Meet Rachael Garnett (#3378601) →
+              Meet Rachael Garnett (SL3378601) →
             </Link>
             <span>|</span>
             <Link href="/about/align-right-realty-carrollwood" className="hover:text-[#9A7D3A]">
-              Align Right Carrollwood (#BK3401606)
+              Align Right Carrollwood (BK3401606)
             </Link>
           </div>
         </div>
@@ -180,7 +180,7 @@ export default function MarkDavisAdvisorPage() {
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-[#111111]/10 bg-[#111111]">
               <Image
                 src="/new-images/new-2/mark-davis-residential-commerical-advisor-tampa-real-estate-3.jpg"
-                alt="Mark Davis, REALTOR® — Certified Commercial & Residential Agent (#3209459)"
+                alt="Mark Davis, REALTOR® — Certified Commercial & Residential Agent (BK3209459)"
                 fill
                 priority
                 unoptimized
@@ -189,11 +189,11 @@ export default function MarkDavisAdvisorPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/80 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 text-white">
                 <span className="inline-block px-3 py-1 rounded bg-[#C8A951] text-[#111111] text-[10px] font-bold uppercase tracking-[0.2em] mb-2">
-                  REALTOR® • FL License #3209459
+                  REALTOR® • FL License BK3209459
                 </span>
                 <p className="font-aiveritas text-2xl">Mark Davis, REALTOR®</p>
                 <p className="text-xs text-white/75">
-                  Align Right Realty Carrollwood • License #BK3401606
+                  Align Right Realty Carrollwood • License BK3401606
                 </p>
               </div>
             </div>
@@ -247,7 +247,7 @@ export default function MarkDavisAdvisorPage() {
                 </span>
                 <span className="inline-flex items-center gap-2 text-sm font-bold text-[#111111]">
                   <ShieldCheck className="w-4 h-4 text-[#9A7D3A]" />
-                  FL Lic. #3209459
+                  FL Lic. BK3209459
                 </span>
               </div>
             </div>
@@ -273,7 +273,7 @@ export default function MarkDavisAdvisorPage() {
         {/* Career Metrics Strip */}
         <div className="max-w-screen-xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-12 border-t border-[#111111]/10">
           {[
-            { metric: "#3209459", label: "Florida Real Estate License" },
+            { metric: "BK3209459", label: "Florida Real Estate License" },
             { metric: "Resi + CRE", label: "Certified in Homes & Commercial" },
             { metric: "99.26+ Ac", label: "Active Florida Land & Acreage" },
             { metric: "15+ Counties", label: "Tampa Bay & Central FL Coverage" },
@@ -558,7 +558,7 @@ export default function MarkDavisAdvisorPage() {
               Send Mark a Message
             </h2>
             <p className="text-base text-[#111111]/70 font-light">
-              FL Real Estate License #3209459 • Direct: 941-737-4127 • mark@davisgarnettsells.com
+              FL Real Estate License BK3209459 • Direct: 941-737-4127 • mark@davisgarnettsells.com
             </p>
           </div>
 
@@ -566,7 +566,7 @@ export default function MarkDavisAdvisorPage() {
             <div className="p-10 rounded-xl bg-[#fbfbf9] border border-[#C8A951] text-center">
               <CheckCircle2 className="w-12 h-12 text-[#9A7D3A] mx-auto mb-4" />
               <h3 className="font-aiveritas text-2xl text-[#111111] mb-2">
-                Inquiry Routed to Mark Davis (#3209459)
+                Inquiry Routed to Mark Davis (BK3209459)
               </h3>
               <p className="text-sm text-[#111111]/70 max-w-md mx-auto mb-6">
                 Thank you, {formData.firstName}. Mark has received your commercial/land request and will follow up directly.

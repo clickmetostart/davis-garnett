@@ -58,8 +58,8 @@ export default function CommercialBpoPage() {
           telephone: "+1-941-737-4127",
           email: "list@davisgarnettsells.com",
           member: [
-            { "@type": "Person", name: "Mark Davis", identifier: "FL Lic #3209459" },
-            { "@type": "Person", name: "Rachael Garnett", identifier: "FL Lic #3378601" },
+            { "@type": "Person", name: "Mark Davis", identifier: "FL Lic BK3209459" },
+            { "@type": "Person", name: "Rachael Garnett", identifier: "FL Lic SL3378601" },
           ],
         },
       },
@@ -224,7 +224,7 @@ export default function CommercialBpoPage() {
               Florida Statutes Chapter 475 (§475.612) Disclosure
             </div>
             <p className="text-xs sm:text-sm text-amber-950/85 leading-relaxed">
-              A Broker Price Opinion (BPO) prepared by Mark Davis (FL Lic #3209459) and Rachael Garnett (FL Lic #3378601) at Align Right Realty Carrollwood (#BK3401606) is an opinion of probable selling or leasing price prepared by licensed Florida real estate brokers. <strong>It is not a certified real estate appraisal</strong> and may not be used in place of an appraisal where state law or federal lending rules require a state-certified appraiser.
+              A Broker Price Opinion (BPO) prepared by Mark Davis (FL Lic BK3209459) and Rachael Garnett (FL Lic SL3378601) at Align Right Realty Carrollwood (BK3401606) is an opinion of probable selling or leasing price prepared by licensed Florida real estate brokers. <strong>It is not a certified real estate appraisal</strong> and may not be used in place of an appraisal where state law or federal lending rules require a state-certified appraiser.
             </p>
           </div>
         </div>

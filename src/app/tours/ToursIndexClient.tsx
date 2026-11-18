@@ -114,7 +114,7 @@ export default function ToursIndexClient() {
                     Mark Davis &amp; Rachael Garnett
                   </h2>
                   <p className="text-xs text-white/70">
-                    FL Lic #3209459 &amp; #3378601 • Align Right Realty Carrollwood
+                    FL Lic BK3209459 &amp; SL3378601 • Align Right Realty Carrollwood
                   </p>
                 </div>
               </div>

@@ -175,7 +175,7 @@ export interface ArticleItem {
 const MARK_AUTHOR = {
   name: "Mark Davis",
   role: "Commercial & Residential Advisor",
-  license: "FL Lic #3209459",
+  license: "FL Lic BK3209459",
   phone: "941-737-4127",
   email: "mark@davisgarnettsells.com",
   image: "/davis-garnett-headshots/mark-davis-avatar-footer.JPG",
@@ -185,7 +185,7 @@ const MARK_AUTHOR = {
 const RACHAEL_AUTHOR = {
   name: "Rachael Garnett",
   role: "Commercial & Residential Advisor",
-  license: "FL Lic #3378601",
+  license: "FL Lic SL3378601",
   phone: "727-808-3344",
   email: "rachael@davisgarnettsells.com",
   image: "/davis-garnett-headshots/rachael-garnett-avatar-footer.webp",
@@ -220,7 +220,7 @@ export const GUIDES: KnowledgeItem[] = [
       { label: "Explore St. Pete Waterfront Hub", href: "/hub/waterfront-st-petersburg" },
       { label: "Browse Active Waterfront Portfolio", href: "/properties#featured" },
     ],
-    howWeHandleIt: "Before our buyers make an offer on the water, Mark Davis (FL Lic #3209459) and Rachael Garnett (FL Lic #3378601) pull county sketches, old Elevation Certificates, and dock permits. We also get live flood quotes early. On Day 1 of your review window, we bring a seawall diver along with your home inspector.",
+    howWeHandleIt: "Before our buyers make an offer on the water, Mark Davis (FL Lic BK3209459) and Rachael Garnett (FL Lic SL3378601) pull county sketches, old Elevation Certificates, and dock permits. We also get live flood quotes early. On Day 1 of your review window, we bring a seawall diver along with your home inspector.",
     sources: [
       { label: "Pinellas County Water & Navigation Regulations" },
       { label: "FEMA National Flood Insurance Program (Risk Rating 2.0)" },
@@ -970,10 +970,10 @@ export const GUIDES: KnowledgeItem[] = [
       { label: "Meet Rachael Garnett", href: "/about/rachael-garnett" },
       { label: "Our Every-Listing Approach", href: "/about/our-every-listing-approach" },
     ],
-    howWeHandleIt: "At Davis & Garnett, you never get passed to a junior helper after signing. Mark Davis (FL Lic #3209459) and Rachael Garnett (FL Lic #3378601) run your pricing, attend inspections, track loan dates, and share their direct cell numbers.",
+    howWeHandleIt: "At Davis & Garnett, you never get passed to a junior helper after signing. Mark Davis (FL Lic BK3209459) and Rachael Garnett (FL Lic SL3378601) run your pricing, attend inspections, track loan dates, and share their direct cell numbers.",
     sources: [
       { label: "Florida Statutes Chapter 475 (Real Estate Brokerage Duties)" },
-      { label: "Align Right Realty Carrollwood (#BK3401606)" },
+      { label: "Align Right Realty Carrollwood (BK3401606)" },
       { label: "Davis & Garnett Client Advisory Standards" },
     ],
     keyTakeaways: [
@@ -993,7 +993,7 @@ export const GUIDES: KnowledgeItem[] = [
           "What comes standard when selling my home? Ask for real custom web pages, drone aerials, 3D scans, and broad ad plans.",
           "How fast do you text or call back? In hot zip codes, waiting a full day costs families the house they wanted.",
           "Can you guide both main homes and 1031 commercial deals? Keeping one team saves time when selling a business asset and buying a home.",
-          "Who backs your brokerage compliance? Align Right Realty Carrollwood (#BK3401606) supports every deal with deep closing and legal backing.",
+          "Who backs your brokerage compliance? Align Right Realty Carrollwood (BK3401606) supports every deal with deep closing and legal backing.",
         ],
       },
       {
@@ -1020,7 +1020,7 @@ export const GUIDES: KnowledgeItem[] = [
       },
       {
         question: "What areas do you actively serve out of Align Right Realty Carrollwood?",
-        answer: "From our Northdale office (#BK3401606), we help home, water, business, and land clients across Tampa, St. Pete, Clearwater, Wesley Chapel, Land O' Lakes, Brandon, Lutz, Odessa, Polk, and Marion.",
+        answer: "From our Northdale office (BK3401606), we help home, water, business, and land clients across Tampa, St. Pete, Clearwater, Wesley Chapel, Land O' Lakes, Brandon, Lutz, Odessa, Polk, and Marion.",
       },
     ],
   },
@@ -2910,7 +2910,7 @@ export const AREAS: AreaItem[] = [
     ],
     howWeHandleIt: "Our brokerage office at Align Right sits right on Northdale Blvd. Mark and Rachael tour Carrollwood houses each week and check roofs, panels, and lake rights.",
     sources: [
-      { label: "Align Right Realty Carrollwood (#BK3401606) Office Advisory" },
+      { label: "Align Right Realty Carrollwood (BK3401606) Office Advisory" },
       { label: "Hillsborough County Property Appraiser Non-Ad Valorem Rolls" },
     ],
     overview: "Right along North Dale Mabry and Northdale Blvd 15 minutes from Tampa Airport, Carrollwood and Northdale blend tall oaks, calm ski lakes, and zero CDD bills.",
@@ -3965,7 +3965,7 @@ export const ARTICLES: ArticleItem[] = [
     relatedAreaSlugs: ["carrollwood-northdale", "cheval"],
     howWeHandleIt: "Just blocks from our office on Northdale Blvd, we check roof age, Lake Carroll park rights, and high dry Zone X maps for each buyer.",
     sources: [
-      { label: "Align Right Realty Carrollwood (#BK3401606) Market Advisory" },
+      { label: "Align Right Realty Carrollwood (BK3401606) Market Advisory" },
       { label: "Original Carrollwood Recreation District & Civic Records" },
     ],
     keyTakeaways: [

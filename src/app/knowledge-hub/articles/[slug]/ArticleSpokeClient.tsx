@@ -194,7 +194,7 @@ export default function ArticleSpokeClient({
               </h3>
               <p className="text-sm md:text-base text-[#111]/80 leading-relaxed font-light">
                 {article.howWeHandleIt ||
-                  "Mark Davis (FL Lic #3209459) and Rachael Garnett (FL Lic #3378601) pair county property-appraiser records, active inventory trends, and carrier underwriting rules so buyers and sellers price off real closed outcomes rather than headlines."}
+                  "Mark Davis (FL Lic BK3209459) and Rachael Garnett (FL Lic SL3378601) pair county property-appraiser records, active inventory trends, and carrier underwriting rules so buyers and sellers price off real closed outcomes rather than headlines."}
               </p>
               {relatedGlossary.length > 0 && (
                 <div className="pt-3 border-t border-[#111]/10 flex flex-wrap items-center gap-2">
