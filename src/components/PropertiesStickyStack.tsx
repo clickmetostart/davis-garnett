@@ -1,8 +1,10 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight, MapPin, ChevronLeft, ChevronRight } from "lucide-react";
+import { scrollCardTrack } from "@/lib/smoothScroll";
 
 const activeSignatureProperties = [
   {
@@ -69,24 +71,139 @@ const activeSignatureProperties = [
 
 export default function PropertiesStickyStack() {
   const CARD_H = "66svh";
+  const mobileTrackRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className="w-[92%] md:w-[90%] max-w-[1680px] mx-auto relative">
-      {/* ── Mobile & Portrait Tablet header (hidden on lg+ desktop/landscape) ── */}
-      <div className="block lg:hidden px-2 pt-14 pb-6 text-center">
-        <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
-          Featured Listings · 2026
-        </span>
-        <h2 className="font-aiveritas text-4xl sm:text-5xl text-[#111111] mb-4 leading-tight">
-          Featured<br />
-          <span className="text-[#9A7D3A]">Listings</span>
-        </h2>
-        <p className="text-[#111111]/70 font-light text-base leading-relaxed max-w-md mx-auto">
-          Explore our featured residential, commercial, and land listings across Tampa Bay and Central Florida.
-        </p>
+      {/* ── Mobile & Portrait Tablet Fluid Swipe Deck (clean photo + below-image details) ── */}
+      <div className="lg:hidden py-14">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+          <div>
+            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-2.5">
+              Mark &amp; Rachael · Active Listings
+            </span>
+            <h2 className="font-aiveritas text-4xl sm:text-5xl text-[#111111] leading-tight">
+              Featured <span className="text-[#9A7D3A]">Listings</span>
+            </h2>
+          </div>
+
+          <div className="flex items-center justify-between sm:justify-end gap-3">
+            <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#9A7D3A]">
+              Swipe Listings →
+            </span>
+            <div className="flex items-center gap-2 shrink-0">
+              <button
+                type="button"
+                onClick={() => scrollCardTrack(mobileTrackRef.current, "left")}
+                className="p-2.5 rounded-full bg-[#D4AF37] text-[#111] border border-[#9A7D3A]/50 shadow-sm hover:bg-[#111] hover:text-[#D4AF37] active:scale-95 transition-all cursor-pointer"
+                aria-label="Scroll Featured Listings Left"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollCardTrack(mobileTrackRef.current, "right")}
+                className="p-2.5 rounded-full bg-[#D4AF37] text-[#111] border border-[#9A7D3A]/50 shadow-sm hover:bg-[#111] hover:text-[#D4AF37] active:scale-95 transition-all cursor-pointer"
+                aria-label="Scroll Featured Listings Right"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          ref={mobileTrackRef}
+          className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory"
+          style={{ scrollbarWidth: "none" }}
+        >
+          {activeSignatureProperties.map((prop, i) => (
+            <Link
+              key={`mobile-${prop.id}`}
+              href={`/listings/${prop.slug}`}
+              className="group w-full sm:w-[370px] md:w-[410px] snap-start snap-always shrink-0 bg-white rounded-2xl overflow-hidden border border-[#111111]/10 hover:border-[#C8A951] shadow-md flex flex-col justify-between transition-all"
+            >
+              <div>
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#111111]">
+                  <Image
+                    src={prop.img}
+                    alt={prop.title}
+                    fill
+                    sizes="(max-width: 640px) 92vw, 410px"
+                    priority={i === 0}
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-black/20 pointer-events-none" />
+                  <span className="absolute top-3.5 left-3.5 px-2.5 py-1 rounded bg-[#C8A951] text-[#111111] text-[10px] font-bold uppercase tracking-wider">
+                    {prop.badge}
+                  </span>
+                  <span className="absolute top-3.5 right-3.5 px-2.5 py-1 rounded-full bg-black/65 backdrop-blur-md border border-[#C8A951]/40 text-[10px] font-bold uppercase tracking-widest text-[#C8A951]">
+                    0{i + 1} / 0{activeSignatureProperties.length}
+                  </span>
+                  <span className="absolute bottom-3.5 left-4 font-aiveritas text-2xl sm:text-3xl text-white drop-shadow">
+                    {prop.price}
+                  </span>
+                </div>
+
+                <div className="p-5">
+                  <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#9A7D3A] mb-1">
+                    {prop.type} · MLS# {prop.mlsId}
+                  </div>
+                  <h3 className="font-aiveritas text-xl sm:text-2xl text-[#111111] group-hover:text-[#9A7D3A] transition-colors mb-1.5 leading-snug">
+                    {prop.title}
+                  </h3>
+                  <p className="text-xs text-[#111111]/65 flex items-center gap-1.5 mb-2.5">
+                    <MapPin className="w-3.5 h-3.5 text-[#C8A951] shrink-0" />
+                    <span className="truncate">{prop.location}</span>
+                  </p>
+                  <p className="text-xs text-[#111111]/75 font-light leading-relaxed line-clamp-2">
+                    {prop.specs}
+                  </p>
+                </div>
+              </div>
+
+              <div className="px-5 pb-5 pt-3 border-t border-[#111111]/8 flex items-center justify-between text-xs font-bold uppercase tracking-widest text-[#9A7D3A] group-hover:text-[#111111] transition-colors">
+                <span>View Property Details</span>
+                <ArrowRight className="w-4 h-4 text-[#C8A951] group-hover:translate-x-1 transition-transform" />
+              </div>
+            </Link>
+          ))}
+
+          {/* Closing Portfolio Hub Slide */}
+          <div className="w-full sm:w-[370px] md:w-[410px] snap-start snap-always shrink-0 rounded-2xl overflow-hidden shadow-md bg-[#111111] flex flex-col justify-between p-6 border border-[#C8A951]/30">
+            <div>
+              <span className="text-[#C8A951] text-[10px] uppercase tracking-[0.25em] font-bold block mb-3">
+                Local Knowledge &amp; Personal Service
+              </span>
+              <h3 className="font-aiveritas text-3xl text-white leading-tight mb-3">
+                Serving Greater Tampa Bay{" "}
+                <span className="text-[#C8A951]">&amp; Central Florida</span>
+              </h3>
+              <div className="w-10 h-[1px] bg-[#C8A951] mb-4" />
+              <p className="text-white/75 font-light text-sm leading-relaxed">
+                Representing residential and commercial clients across Pinellas, Hillsborough, Pasco, Polk, and Marion Counties.
+              </p>
+            </div>
+            <div className="flex flex-col gap-2.5 pt-6">
+              <Link
+                href="/properties"
+                className="w-full text-center py-3.5 rounded-xl font-bold tracking-[0.18em] uppercase text-xs bg-[#C8A951] text-[#111111] hover:bg-white transition-colors"
+              >
+                View All Active &amp; Sold Listings
+              </Link>
+              <Link
+                href="/knowledge-hub"
+                className="w-full text-center py-3 rounded-xl font-bold tracking-[0.18em] uppercase text-xs border border-white/20 text-white/90 hover:border-[#C8A951] hover:text-[#C8A951] transition-colors"
+              >
+                Explore Guides &amp; Market Info
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
+      {/* ── Desktop & Landscape Sticky Card Stack ── */}
+      <div className="hidden lg:flex flex-row gap-6 lg:gap-10">
         {/* ══ COLUMN 1 — Sticky editorial panel (lg+ only so portrait tablets never squeeze into a narrow rail) ══ */}
         <div className="hidden lg:block lg:w-[36%] shrink-0 relative">
           <div className="sticky top-0 h-screen flex flex-col justify-center py-8 pr-2 lg:pr-6">
