@@ -1,4 +1,4 @@
-import { MetadataRoute } from "next";
+import { NextResponse } from "next/server";
 import listingsData from "@/data/listings.json";
 import { DEVELOPMENTS } from "@/data/developments";
 import { ALL_GUIDES_AND_QUESTIONS, AREAS, EVENTS, ARTICLES } from "@/data/knowledgeHub";
@@ -10,7 +10,21 @@ import { getLiveMarketReports, isMarketReportsEnabled } from "@/data/marketRepor
 const BASE_URL = "https://www.davisgarnettsells.com";
 const STATIC_LAST_MODIFIED = new Date("2026-11-18T22:10:00-05:00");
 
-export default function sitemap(): MetadataRoute.Sitemap {
+interface SitemapEntry {
+  url: string;
+  lastModified: Date;
+}
+
+function escapeXml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
+
+function buildEntries(): SitemapEntry[] {
   const staticRoutes = [
     "",
     "/about",
@@ -49,7 +63,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   // Exclude sold, closed, inactive, or draft listings from sitemap
-  const listingUrls = (
+  const listingUrls: SitemapEntry[] = (
     listingsData as Array<{
       slug?: string;
       id?: string;
@@ -68,47 +82,51 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: item.updatedAt ? new Date(item.updatedAt) : STATIC_LAST_MODIFIED,
     }));
 
-  const developmentUrls = DEVELOPMENTS.filter((d) => d.editorialStatus !== "draft").map((dev) => ({
+  const developmentUrls: SitemapEntry[] = DEVELOPMENTS.filter(
+    (d) => d.editorialStatus !== "draft"
+  ).map((dev) => ({
     url: `${BASE_URL}/developments/${dev.slug}`,
     lastModified: dev.updatedAt ? new Date(dev.updatedAt) : STATIC_LAST_MODIFIED,
   }));
 
-  const guideUrls = ALL_GUIDES_AND_QUESTIONS.filter((g) => g.status !== "draft").map((g) => ({
+  const guideUrls: SitemapEntry[] = ALL_GUIDES_AND_QUESTIONS.filter(
+    (g) => g.status !== "draft"
+  ).map((g) => ({
     url: `${BASE_URL}/knowledge-hub/${g.slug}`,
     lastModified: g.updatedAt ? new Date(g.updatedAt) : STATIC_LAST_MODIFIED,
   }));
 
-  const areaUrls = AREAS.filter((a) => a.status !== "draft").map((a) => ({
+  const areaUrls: SitemapEntry[] = AREAS.filter((a) => a.status !== "draft").map((a) => ({
     url: `${BASE_URL}/knowledge-hub/areas/${a.slug}`,
     lastModified: a.updatedAt ? new Date(a.updatedAt) : STATIC_LAST_MODIFIED,
   }));
 
-  const eventUrls = EVENTS.filter((e) => e.status !== "draft").map((e) => ({
+  const eventUrls: SitemapEntry[] = EVENTS.filter((e) => e.status !== "draft").map((e) => ({
     url: `${BASE_URL}/knowledge-hub/events/${e.slug}`,
     lastModified: e.updatedAt ? new Date(e.updatedAt) : STATIC_LAST_MODIFIED,
   }));
 
-  const articleUrls = ARTICLES.filter((a) => a.status !== "draft").map((a) => ({
+  const articleUrls: SitemapEntry[] = ARTICLES.filter((a) => a.status !== "draft").map((a) => ({
     url: `${BASE_URL}/knowledge-hub/articles/${a.slug}`,
     lastModified: a.updatedAt ? new Date(a.updatedAt) : STATIC_LAST_MODIFIED,
   }));
 
-  const marketReportUrls = getLiveMarketReports().map((r) => ({
+  const marketReportUrls: SitemapEntry[] = getLiveMarketReports().map((r) => ({
     url: `${BASE_URL}/market-reports/${r.slug}`,
     lastModified: new Date(r.updatedAt),
   }));
 
-  const glossaryUrls = LIVE_GLOSSARY_TERMS.map((term) => ({
+  const glossaryUrls: SitemapEntry[] = LIVE_GLOSSARY_TERMS.map((term) => ({
     url: `${BASE_URL}/glossary/${term.slug}`,
     lastModified: new Date(term.updatedAt),
   }));
 
-  const hubUrls = LIVE_TOPIC_HUBS.map((hub) => ({
+  const hubUrls: SitemapEntry[] = LIVE_TOPIC_HUBS.map((hub) => ({
     url: `${BASE_URL}/hub/${hub.slug}`,
     lastModified: new Date(hub.updatedAt),
   }));
 
-  const tourUrls = LIVE_GUIDED_TOURS.map((tour) => ({
+  const tourUrls: SitemapEntry[] = LIVE_GUIDED_TOURS.map((tour) => ({
     url: `${BASE_URL}/tours/${tour.slug}`,
     lastModified: new Date(tour.updatedAt),
   }));
@@ -130,3 +148,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...marketReportUrls,
   ];
 }
+
+export function GET() {
+  const entries = buildEntries();
+  const xmlRows = entries
+    .map(
+      (entry) =>
+        `  <url>\n    <loc>${escapeXml(entry.url)}</loc>\n    <lastmod>${entry.lastModified.toISOString()}</lastmod>\n  </url>`
+    )
+    .join("\n");
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${xmlRows}
+</urlset>
+`;
+
+  return new NextResponse(xml, {
+    status: 200,
+    headers: {
+      "Content-Type": "application/xml; charset=utf-8",
+      "Cache-Control": "public, max-age=3600, s-maxage=3600, stale-while-revalidate=86400",
+    },
+  });
+}
+
