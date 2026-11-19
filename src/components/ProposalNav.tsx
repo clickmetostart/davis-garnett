@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, X, ChevronDown, Search, ArrowUpRight, Phone } from "lucide-react";
 import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 import ConsultationModal from "@/components/ConsultationModal";
+import SocialIconsStrip from "@/components/SocialIconsStrip";
 
 interface NavDropdownItem {
   label: string;
@@ -260,6 +261,9 @@ export default function ProposalNav() {
                 <a href="tel:727-808-3344" className="flex items-center justify-center gap-1.5 py-2.5 bg-white/5 rounded-lg">
                   <Phone className="w-3.5 h-3.5 text-[#D4AF37]" /> Rachael: 727-808-3344
                 </a>
+              </div>
+              <div className="pt-3 mt-1 border-t border-white/10">
+                <SocialIconsStrip className="justify-center" innerBgClass="bg-[#050505]" />
               </div>
             </div>
             </div>

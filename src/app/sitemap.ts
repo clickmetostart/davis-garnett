@@ -43,6 +43,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/tools/seller-net-proceeds",
     "/search-mls",
     "/privacy-policy",
+    "/terms-of-service",
+    "/fair-housing",
+    "/accessibility",
   ];
 
   // Exclude sold, closed, inactive, or draft listings from sitemap

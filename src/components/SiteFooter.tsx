@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Phone, MapPin, ArrowUpRight } from "lucide-react";
 import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 import EmailActionBox from "@/components/EmailActionBox";
+import SocialIconsStrip from "@/components/SocialIconsStrip";
 
 export default function SiteFooter() {
   return (
@@ -136,7 +137,7 @@ export default function SiteFooter() {
         </div>
 
         {/* 5-Column Sitemap Links */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-8">
           {/* Col 1: Featured Portfolio */}
           <div>
             <Link href="/properties" className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4AF37] block mb-4 hover:text-white transition-colors">
@@ -233,6 +234,9 @@ export default function SiteFooter() {
           </div>
         </div>
 
+        {/* Social Links Strip — Solid Gold Icons With Gold-Gradient Borders (Single Line on Mobile) */}
+        <SocialIconsStrip className="justify-center md:justify-end pb-6" innerBgClass="bg-[#0c0b09]" />
+
         {/* Tier 2: Compliance Bottom Horizontal (3-Column matching Login Footer) */}
         <div className="border-t border-[#ef5728]/40 pt-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-[#888] text-[11px] leading-snug items-end">
           {/* Compliance Col 1 */}
@@ -284,6 +288,34 @@ export default function SiteFooter() {
               (813) 374-6050 &nbsp;|&nbsp; <span className="break-all sm:break-normal">officeadmin@alignrightcarrollwood.com</span>
             </p>
           </div>
+        </div>
+
+        {/* Tier 3: Subtle Bottom Legal & SEO Links */}
+        <div className="border-t border-[#ef5728]/30 mt-8 pt-4 flex flex-wrap items-center justify-center md:justify-between gap-x-5 gap-y-2 text-[11px] text-white/45">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5">
+            <Link href="/privacy-policy" className="hover:text-[#D4AF37] transition-colors">
+              Privacy Policy
+            </Link>
+            <span aria-hidden="true" className="text-white/20">·</span>
+            <Link href="/terms-of-service" className="hover:text-[#D4AF37] transition-colors">
+              Terms of Service
+            </Link>
+            <span aria-hidden="true" className="text-white/20">·</span>
+            <Link href="/fair-housing" className="hover:text-[#D4AF37] transition-colors">
+              Fair Housing &amp; Equal Opportunity
+            </Link>
+            <span aria-hidden="true" className="text-white/20">·</span>
+            <Link href="/accessibility" className="hover:text-[#D4AF37] transition-colors">
+              Accessibility
+            </Link>
+            <span aria-hidden="true" className="text-white/20">·</span>
+            <Link href="/sitemap.xml" className="hover:text-[#D4AF37] transition-colors">
+              Sitemap
+            </Link>
+          </div>
+          <span className="text-[10px] tracking-wide text-white/35">
+            Tampa Bay Commercial &amp; Residential Real Estate · Florida Licensed Brokerage
+          </span>
         </div>
       </div>
     </footer>
