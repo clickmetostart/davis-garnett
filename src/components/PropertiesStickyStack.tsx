@@ -70,8 +70,8 @@ const activeSignatureProperties = [
 ];
 
 export default function PropertiesStickyStack() {
-  const CARD_H = "66svh";
   const mobileTrackRef = useRef<HTMLDivElement>(null);
+  const desktopTrackRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className="w-[92%] md:w-[90%] max-w-[1680px] mx-auto relative">
@@ -202,11 +202,11 @@ export default function PropertiesStickyStack() {
         </div>
       </div>
 
-      {/* ── Desktop & Landscape Sticky Card Stack ── */}
-      <div className="hidden lg:flex flex-row gap-6 lg:gap-10">
-        {/* ══ COLUMN 1 — Sticky editorial panel (lg+ only so portrait tablets never squeeze into a narrow rail) ══ */}
-        <div className="hidden lg:block lg:w-[36%] shrink-0 relative">
-          <div className="sticky top-0 h-screen flex flex-col justify-center py-8 pr-2 lg:pr-6">
+      {/* ── Desktop & Landscape 2-Column Showcase + Full-Width Column Slider ── */}
+      <div className="hidden lg:flex flex-row items-center gap-6 lg:gap-10 py-14 lg:py-20">
+        {/* ══ COLUMN 1 — Editorial panel (lg+ only so portrait tablets never squeeze into a narrow rail) ══ */}
+        <div className="hidden lg:block lg:w-[36%] shrink-0">
+          <div className="flex flex-col justify-center pr-2 lg:pr-6">
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
               Mark &amp; Rachael · Active Listings
             </span>
@@ -270,35 +270,58 @@ export default function PropertiesStickyStack() {
           </div>
         </div>
 
-        {/* ══ COLUMN 2 — Scrolling sticky card stack ══ */}
-        <div className="w-full lg:w-[64%] py-6 lg:py-12">
-          <div className="h-2 lg:hidden" />
+        {/* ══ COLUMN 2 — Full-size horizontal left/right slider ══ */}
+        <div className="w-full lg:w-[64%] min-w-0">
+          <div className="flex items-center justify-between mb-4">
+            <span className="text-[#9A7D3A] text-[11px] uppercase tracking-[0.25em] font-bold">
+              Featured Active Portfolio &middot; Slide to Explore
+            </span>
+            <div className="flex items-center gap-2.5">
+              <button
+                type="button"
+                onClick={() => scrollCardTrack(desktopTrackRef.current, "left")}
+                aria-label="Previous property"
+                className="w-10 h-10 rounded-full border border-black/15 bg-white text-[#111111] flex items-center justify-center hover:border-[#C8A951] hover:bg-[#C8A951] transition-colors shadow-sm cursor-pointer"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollCardTrack(desktopTrackRef.current, "right")}
+                aria-label="Next property"
+                className="w-10 h-10 rounded-full border border-black/15 bg-white text-[#111111] flex items-center justify-center hover:border-[#C8A951] hover:bg-[#C8A951] transition-colors shadow-sm cursor-pointer"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
 
-          <div className="flex flex-col gap-[10svh] pb-[8svh]">
+          <div
+            ref={desktopTrackRef}
+            className="flex gap-6 overflow-x-auto pb-2 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            style={{ WebkitOverflowScrolling: "touch" }}
+          >
             {activeSignatureProperties.map((prop, i) => {
-              const zIndex = 10 + i;
-
               return (
                 <div
                   key={prop.id}
-                  className="sticky rounded-2xl overflow-hidden shadow-xl border border-black/15 min-h-[440px] max-h-[640px]"
-                  style={{ top: `calc(13svh + ${i * 10}px)`, height: CARD_H, zIndex }}
+                  className="relative w-full shrink-0 snap-start snap-always h-[540px] xl:h-[600px] rounded-2xl overflow-hidden shadow-xl border border-black/15"
                 >
                   <Image
                     src={prop.img}
                     alt={prop.title}
                     fill
-                    sizes="(max-width: 768px) 92vw, 58vw"
+                    sizes="58vw"
                     priority={i === 0}
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/15" />
 
-                  <div className="absolute top-5 right-5 md:top-7 md:right-7 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-[#C8A951]/40 text-[10px] font-bold uppercase tracking-[0.2em] text-[#C8A951] z-10">
+                  <div className="absolute top-6 right-6 px-3.5 py-1 rounded-full bg-black/70 backdrop-blur-md border border-[#C8A951]/40 text-[10px] font-bold uppercase tracking-[0.2em] text-[#C8A951] z-10">
                     0{i + 1} / 0{activeSignatureProperties.length}
                   </div>
 
-                  <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-9">
+                  <div className="absolute inset-0 flex flex-col justify-end p-8 xl:p-10">
                     <div className="flex flex-wrap items-center gap-2 mb-3">
                       <span className="bg-[#C8A951] text-[#111111] text-[10px] uppercase tracking-[0.2em] font-bold py-1 px-3 rounded-sm">
                         {prop.badge}
@@ -311,22 +334,22 @@ export default function PropertiesStickyStack() {
                       </span>
                     </div>
 
-                    <h3 className="font-aiveritas text-2xl md:text-4xl text-white mb-1.5 leading-snug">
+                    <h3 className="font-aiveritas text-3xl xl:text-4xl text-white mb-1.5 leading-snug">
                       {prop.title}
                     </h3>
-                    <p className="text-white/85 font-light text-sm md:text-base mb-2.5 max-w-xl leading-relaxed">
+                    <p className="text-white/85 font-light text-sm xl:text-base mb-2.5 max-w-xl leading-relaxed">
                       {prop.subtitle}
                     </p>
-                    <p className="text-white/75 text-xs md:text-sm flex items-center gap-1.5 mb-4">
+                    <p className="text-white/75 text-xs xl:text-sm flex items-center gap-1.5 mb-4">
                       <MapPin className="w-3.5 h-3.5 text-[#C8A951]" /> {prop.location}
                     </p>
 
                     <div className="flex flex-wrap items-center justify-between gap-4 border-t border-white/20 pt-4">
                       <div>
-                        <p className="text-white/75 font-medium text-xs md:text-sm tracking-wide mb-1">
+                        <p className="text-white/75 font-medium text-xs xl:text-sm tracking-wide mb-1">
                           {prop.specs}
                         </p>
-                        <strong className="font-aiveritas text-[#C8A951] text-2xl md:text-3xl font-normal">
+                        <strong className="font-aiveritas text-[#C8A951] text-2xl xl:text-3xl font-normal">
                           {prop.price}
                         </strong>
                       </div>
@@ -344,22 +367,19 @@ export default function PropertiesStickyStack() {
               );
             })}
 
-            {/* ── Closing Portfolio Hub Card ── */}
-            <div
-              className="sticky rounded-2xl overflow-hidden shadow-xl bg-[#111111] flex flex-col items-center justify-center p-7 md:p-10 border border-[#C8A951]/25 min-h-[440px] max-h-[640px]"
-              style={{ top: `calc(13svh + ${activeSignatureProperties.length * 10}px)`, height: CARD_H, zIndex: 20 }}
-            >
+            {/* ── Closing Portfolio Hub Slide ── */}
+            <div className="relative w-full shrink-0 snap-start snap-always h-[540px] xl:h-[600px] rounded-2xl overflow-hidden shadow-xl bg-[#111111] flex flex-col items-center justify-center p-8 xl:p-10 border border-[#C8A951]/25">
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,#1a1810_0%,#0c0b09_70%)]" />
               <div className="relative z-10 flex flex-col items-center w-full max-w-lg gap-4 text-center">
                 <span className="text-[#C8A951] text-xs uppercase tracking-[0.3em] font-bold">
                   Local Knowledge &amp; Personal Service
                 </span>
-                <h3 className="font-aiveritas text-3xl md:text-5xl text-white leading-tight">
+                <h3 className="font-aiveritas text-3xl xl:text-5xl text-white leading-tight">
                   Serving Greater Tampa Bay<br />
                   <span className="text-[#C8A951]">&amp; Central Florida</span>
                 </h3>
                 <div className="w-12 h-[1px] bg-[#C8A951] my-2" />
-                <p className="text-white/80 font-light text-base md:text-[17px] lg:text-[18px] leading-relaxed max-w-md mb-2">
+                <p className="text-white/80 font-light text-base xl:text-[18px] leading-relaxed max-w-md mb-2">
                   Representing residential and commercial clients across Pinellas, Hillsborough, Pasco, Polk, and Marion Counties.
                 </p>
 
