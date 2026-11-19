@@ -37,17 +37,149 @@ import ConsultationModal from "@/components/ConsultationModal";
 import PdfAvailableBadge from "@/components/PdfAvailableBadge";
 import { smoothScrollToId, scrollCardTrack } from "@/lib/smoothScroll";
 
-export default function HomePageV1Light() {
-  const router = useRouter();
+function DesktopTeamTriptych() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const developmentsRef = useRef<HTMLDivElement>(null);
-  const pillarsRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
   });
 
-  const [isMobile, setIsMobile] = useState(false);
+  // Left Image (Mark) — holds steady from 0 to 0.38 so the opening state (center card + left/right text) pauses generously both scrolling down and scrolling back up
+  const leftLeft = useTransform(scrollYProgress, [0, 0.38, 0.50, 0.62, 0.74, 1], ["50%", "50%", "17%", "17%", "25%", "25%"]);
+  const leftWidth = useTransform(scrollYProgress, [0, 0.38, 0.50, 0.62, 0.74, 1], ["30vw", "30vw", "30vw", "30vw", "50vw", "50vw"]);
+  const leftHeight = useTransform(scrollYProgress, [0, 0.38, 0.50, 0.62, 0.74, 1], ["75vh", "75vh", "75vh", "75vh", "100vh", "100vh"]);
+  const leftZIndex = useTransform(scrollYProgress, [0, 0.61, 0.62, 1], [0, 0, 20, 20]);
+  const borderRadius = useTransform(scrollYProgress, [0.62, 0.74], ["1rem", "0rem"]);
+
+  // Right Image (Rachael)
+  const rightLeft = useTransform(scrollYProgress, [0, 0.38, 0.50, 0.62, 0.74, 1], ["50%", "50%", "83%", "83%", "75%", "75%"]);
+  const rightWidth = useTransform(scrollYProgress, [0, 0.38, 0.50, 0.62, 0.74, 1], ["30vw", "30vw", "30vw", "30vw", "50vw", "50vw"]);
+  const rightHeight = useTransform(scrollYProgress, [0, 0.38, 0.50, 0.62, 0.74, 1], ["75vh", "75vh", "75vh", "75vh", "100vh", "100vh"]);
+  const rightZIndex = useTransform(scrollYProgress, [0, 0.61, 0.62, 1], [0, 0, 20, 20]);
+
+  const centerScale = useTransform(scrollYProgress, [0, 0.62, 0.74], [1, 1, 0.8]);
+  const textOpacity = useTransform(scrollYProgress, [0.74, 0.82, 1], [0, 1, 1]);
+  const textY = useTransform(scrollYProgress, [0.74, 0.82, 1], [40, 0, 0]);
+  const initialTextOpacity = useTransform(scrollYProgress, [0, 0.36, 0.43], [1, 1, 0]);
+
+  return (
+    <section ref={containerRef} className="relative w-full h-[1150vh] bg-[#f5f3ef]">
+      <div className="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center z-0">
+        {/* Center Image */}
+        <motion.div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 rounded-2xl overflow-hidden shadow-2xl group"
+          style={{ width: "30vw", height: "75vh", scale: centerScale }}
+        >
+          <Image src="/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-8.jpg" alt="Davis & Garnett Team" fill sizes="32vw" className="object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
+          <div className="absolute bottom-8 left-0 right-0 text-center px-6 flex flex-col items-center">
+            <h3 className="font-aiveritas text-3xl lg:text-4xl text-white drop-shadow-md mb-1.5">Mark &amp; Rachael</h3>
+            <p className="text-[#D4AF37] text-[11px] uppercase tracking-widest mb-5">REALTORS® · Certified Commercial &amp; Residential Agents</p>
+            <Link
+              href="/about"
+              className="flex items-center gap-3 px-7 py-3.5 bg-white text-[#111] text-xs font-bold uppercase tracking-widest hover:bg-[#D4AF37] hover:text-[#111] transition-colors shadow-lg"
+            >
+              Meet Our Team <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </motion.div>
+
+        {/* Initial Text (Left) */}
+        <motion.div
+          className="absolute top-1/2 -translate-y-1/2 z-0 text-center w-[30vw] px-6"
+          style={{ left: "17%", x: "-50%", opacity: initialTextOpacity }}
+        >
+          <h3 className="font-aiveritas text-4xl xl:text-5xl 2xl:text-6xl font-bold text-[#D4AF37] mb-5 leading-tight">
+            One Team<br />on Your Side
+          </h3>
+          <p className="text-[#111]/80 text-base xl:text-[17px] 2xl:text-[18px] font-light leading-relaxed max-w-sm mx-auto">
+            Two full-time agents helping Tampa Bay clients buy and sell homes, land, and business sites.
+          </p>
+        </motion.div>
+
+        {/* Initial Text (Right) */}
+        <motion.div
+          className="absolute top-1/2 -translate-y-1/2 z-0 text-center w-[30vw] px-6"
+          style={{ left: "83%", x: "-50%", opacity: initialTextOpacity }}
+        >
+          <h3 className="font-aiveritas text-4xl xl:text-5xl 2xl:text-6xl font-bold text-[#D4AF37] mb-5 leading-tight">
+            Easy to<br />Talk To
+          </h3>
+          <p className="text-[#111]/80 text-base xl:text-[17px] 2xl:text-[18px] font-light leading-relaxed max-w-sm mx-auto">
+            No pushy sales talk or confusing jargon. Just honest local advice, clear answers, and hard work from start to finish.
+          </p>
+        </motion.div>
+
+        {/* Left Image (Mark) */}
+        <motion.div
+          className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden group shadow-2xl"
+          style={{ left: leftLeft, width: leftWidth, height: leftHeight, zIndex: leftZIndex, borderRadius }}
+        >
+          <Image src="/new-images/new-2/mark-davis-residential-commerical-advisor-tampa-real-estate-3.jpg" alt="Mark Davis" fill className="object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+          <motion.div
+            className="absolute inset-0 flex flex-col items-center justify-end pb-12 xl:pb-20 px-8 xl:px-14 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-transparent"
+            style={{ opacity: textOpacity, y: textY }}
+          >
+            <span className="text-[#D4AF37] text-xs uppercase tracking-[0.24em] xl:tracking-[0.28em] font-bold mb-3 xl:mb-4 text-center">REALTOR® · Commercial &amp; Residential Agent • BK3209459</span>
+            <h2 className="font-aiveritas text-4xl xl:text-6xl text-white mb-4 xl:mb-5">Mark Davis</h2>
+            <p className="text-white/90 text-center max-w-lg text-sm xl:text-[17px] 2xl:text-[18px] font-light mb-6 xl:mb-9 leading-relaxed">
+              Mark works across residential homes, commercial properties, and Florida land. Clients count on his calm, practical approach to pricing, zoning, and getting deals across the finish line.
+            </p>
+            <Link
+              href="/about/mark-davis"
+              className="flex items-center gap-3 px-8 py-4 bg-white text-[#111] text-xs font-bold uppercase tracking-widest hover:bg-[#D4AF37] hover:text-[#111] transition-colors"
+            >
+              Meet Mark Davis <ArrowRight className="w-4 h-4" />
+            </Link>
+          </motion.div>
+          <motion.div
+            className="absolute bottom-6 right-6 lg:bottom-8 lg:right-8 w-14 h-14 lg:w-16 lg:h-16 mix-blend-screen pointer-events-none select-none z-10"
+            style={{ opacity: textOpacity }}
+          >
+            <Image src="/new-images/new-2/dg-favicon-fat-dark-background.png" alt="" fill className="object-contain opacity-25" />
+          </motion.div>
+        </motion.div>
+
+        {/* Right Image (Rachael) */}
+        <motion.div
+          className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden group shadow-2xl"
+          style={{ left: rightLeft, width: rightWidth, height: rightHeight, zIndex: rightZIndex, borderRadius }}
+        >
+          <Image src="/new-images/new-2/rachael-garnett-residential-commerical-advisor-tampa-real-estate-homepage-1.jpg" alt="Rachael Garnett" fill className="object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+          <motion.div
+            className="absolute inset-0 flex flex-col items-center justify-end pb-12 xl:pb-20 px-8 xl:px-14 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-transparent"
+            style={{ opacity: textOpacity, y: textY }}
+          >
+            <span className="text-[#D4AF37] text-xs uppercase tracking-[0.24em] xl:tracking-[0.28em] font-bold mb-3 xl:mb-4 text-center">REALTOR® · Commercial &amp; Residential Agent • SL3378601</span>
+            <h2 className="font-aiveritas text-4xl xl:text-6xl text-white mb-4 xl:mb-5">Rachael Garnett</h2>
+            <p className="text-white/90 text-center max-w-lg text-sm xl:text-[17px] 2xl:text-[18px] font-light mb-6 xl:mb-9 leading-relaxed">
+              Rachael helps clients buy and sell homes, business spaces, and coastal estates. She brings warm energy, smart marketing, and clear updates every step of the way.
+            </p>
+            <Link
+              href="/about/rachael-garnett"
+              className="flex items-center gap-3 px-8 py-4 bg-white text-[#111] text-xs font-bold uppercase tracking-widest hover:bg-[#D4AF37] hover:text-[#111] transition-colors"
+            >
+              Meet Rachael Garnett <ArrowRight className="w-4 h-4" />
+            </Link>
+          </motion.div>
+          <motion.div
+            className="absolute bottom-6 right-6 lg:bottom-8 lg:right-8 w-14 h-14 lg:w-16 lg:h-16 mix-blend-screen pointer-events-none select-none z-10"
+            style={{ opacity: textOpacity }}
+          >
+            <Image src="/new-images/new-2/dg-favicon-fat-dark-background.png" alt="" fill className="object-contain opacity-25" />
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+export default function HomePageV1Light() {
+  const router = useRouter();
+  const developmentsRef = useRef<HTMLDivElement>(null);
+  const pillarsRef = useRef<HTMLDivElement>(null);
+
+  const [isMobile, setIsMobile] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalConfig, setModalConfig] = useState({
     interest: "General Real Estate Advisory",
@@ -81,24 +213,6 @@ export default function HomePageV1Light() {
     if (mlsType !== "All") params.set("type", mlsType);
     router.push(`/search-mls${params.toString() ? `?${params.toString()}` : ""}`);
   };
-
-  // Left Image (Mark) — holds steady from 0 to 0.38 so the opening state (center card + left/right text) pauses generously both scrolling down and scrolling back up
-  const leftLeft = useTransform(scrollYProgress, [0, 0.38, 0.50, 0.62, 0.74, 1], ["50%", "50%", "17%", "17%", "25%", "25%"]);
-  const leftWidth = useTransform(scrollYProgress, [0, 0.38, 0.50, 0.62, 0.74, 1], ["30vw", "30vw", "30vw", "30vw", "50vw", "50vw"]);
-  const leftHeight = useTransform(scrollYProgress, [0, 0.38, 0.50, 0.62, 0.74, 1], ["75vh", "75vh", "75vh", "75vh", "100vh", "100vh"]);
-  const leftZIndex = useTransform(scrollYProgress, [0, 0.61, 0.62, 1], [0, 0, 20, 20]);
-  const borderRadius = useTransform(scrollYProgress, [0.62, 0.74], ["1rem", "0rem"]);
-
-  // Right Image (Rachael)
-  const rightLeft = useTransform(scrollYProgress, [0, 0.38, 0.50, 0.62, 0.74, 1], ["50%", "50%", "83%", "83%", "75%", "75%"]);
-  const rightWidth = useTransform(scrollYProgress, [0, 0.38, 0.50, 0.62, 0.74, 1], ["30vw", "30vw", "30vw", "30vw", "50vw", "50vw"]);
-  const rightHeight = useTransform(scrollYProgress, [0, 0.38, 0.50, 0.62, 0.74, 1], ["75vh", "75vh", "75vh", "75vh", "100vh", "100vh"]);
-  const rightZIndex = useTransform(scrollYProgress, [0, 0.61, 0.62, 1], [0, 0, 20, 20]);
-
-  const centerScale = useTransform(scrollYProgress, [0, 0.62, 0.74], [1, 1, 0.8]);
-  const textOpacity = useTransform(scrollYProgress, [0.74, 0.82, 1], [0, 1, 1]);
-  const textY = useTransform(scrollYProgress, [0.74, 0.82, 1], [40, 0, 0]);
-  const initialTextOpacity = useTransform(scrollYProgress, [0, 0.36, 0.43], [1, 1, 0]);
 
   return (
     <div className="min-h-screen text-[#111] bg-white selection:bg-[#D4AF37] selection:text-white font-sans">
@@ -286,114 +400,7 @@ export default function HomePageV1Light() {
           </div>
         </section>
       ) : (
-        <section ref={containerRef} className="relative w-full h-[1150vh] bg-[#f5f3ef]">
-          <div className="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center z-0">
-            {/* Center Image */}
-            <motion.div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 rounded-2xl overflow-hidden shadow-2xl group"
-              style={{ width: "30vw", height: "75vh", scale: centerScale }}
-            >
-              <Image src="/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-8.jpg" alt="Davis & Garnett Team" fill sizes="32vw" className="object-cover object-top transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
-              <div className="absolute bottom-8 left-0 right-0 text-center px-6 flex flex-col items-center">
-                <h3 className="font-aiveritas text-3xl lg:text-4xl text-white drop-shadow-md mb-1.5">Mark &amp; Rachael</h3>
-                <p className="text-[#D4AF37] text-[11px] uppercase tracking-widest mb-5">REALTORS® · Certified Commercial &amp; Residential Agents</p>
-                <Link
-                  href="/about"
-                  className="flex items-center gap-3 px-7 py-3.5 bg-white text-[#111] text-xs font-bold uppercase tracking-widest hover:bg-[#D4AF37] hover:text-[#111] transition-colors shadow-lg"
-                >
-                  Meet Our Team <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </motion.div>
-
-            {/* Initial Text (Left) */}
-            <motion.div
-              className="absolute top-1/2 -translate-y-1/2 z-0 text-center w-[30vw] px-6"
-              style={{ left: "17%", x: "-50%", opacity: initialTextOpacity }}
-            >
-              <h3 className="font-aiveritas text-4xl xl:text-5xl 2xl:text-6xl font-bold text-[#D4AF37] mb-5 leading-tight">
-                One Team<br />on Your Side
-              </h3>
-              <p className="text-[#111]/80 text-base xl:text-[17px] 2xl:text-[18px] font-light leading-relaxed max-w-sm mx-auto">
-                Two full-time agents helping Tampa Bay clients buy and sell homes, land, and business sites.
-              </p>
-            </motion.div>
-
-            {/* Initial Text (Right) */}
-            <motion.div
-              className="absolute top-1/2 -translate-y-1/2 z-0 text-center w-[30vw] px-6"
-              style={{ left: "83%", x: "-50%", opacity: initialTextOpacity }}
-            >
-              <h3 className="font-aiveritas text-4xl xl:text-5xl 2xl:text-6xl font-bold text-[#D4AF37] mb-5 leading-tight">
-                Easy to<br />Talk To
-              </h3>
-              <p className="text-[#111]/80 text-base xl:text-[17px] 2xl:text-[18px] font-light leading-relaxed max-w-sm mx-auto">
-                No pushy sales talk or confusing jargon. Just honest local advice, clear answers, and hard work from start to finish.
-              </p>
-            </motion.div>
-
-            {/* Left Image (Mark) */}
-            <motion.div
-              className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden group shadow-2xl"
-              style={{ left: leftLeft, width: leftWidth, height: leftHeight, zIndex: leftZIndex, borderRadius }}
-            >
-              <Image src="/new-images/new-2/mark-davis-residential-commerical-advisor-tampa-real-estate-3.jpg" alt="Mark Davis" fill className="object-cover object-top transition-transform duration-700 group-hover:scale-105" />
-              <motion.div
-                className="absolute inset-0 flex flex-col items-center justify-end pb-12 xl:pb-20 px-8 xl:px-14 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-transparent"
-                style={{ opacity: textOpacity, y: textY }}
-              >
-                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.24em] xl:tracking-[0.28em] font-bold mb-3 xl:mb-4 text-center">REALTOR® · Commercial &amp; Residential Agent • BK3209459</span>
-                <h2 className="font-aiveritas text-4xl xl:text-6xl text-white mb-4 xl:mb-5">Mark Davis</h2>
-                <p className="text-white/90 text-center max-w-lg text-sm xl:text-[17px] 2xl:text-[18px] font-light mb-6 xl:mb-9 leading-relaxed">
-                  Mark works across residential homes, commercial properties, and Florida land. Clients count on his calm, practical approach to pricing, zoning, and getting deals across the finish line.
-                </p>
-                <Link
-                  href="/about/mark-davis"
-                  className="flex items-center gap-3 px-8 py-4 bg-white text-[#111] text-xs font-bold uppercase tracking-widest hover:bg-[#D4AF37] hover:text-[#111] transition-colors"
-                >
-                  Meet Mark Davis <ArrowRight className="w-4 h-4" />
-                </Link>
-              </motion.div>
-              <motion.div
-                className="absolute bottom-6 right-6 lg:bottom-8 lg:right-8 w-14 h-14 lg:w-16 lg:h-16 mix-blend-screen pointer-events-none select-none z-10"
-                style={{ opacity: textOpacity }}
-              >
-                <Image src="/new-images/new-2/dg-favicon-fat-dark-background.png" alt="" fill className="object-contain opacity-25" />
-              </motion.div>
-            </motion.div>
-
-            {/* Right Image (Rachael) */}
-            <motion.div
-              className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden group shadow-2xl"
-              style={{ left: rightLeft, width: rightWidth, height: rightHeight, zIndex: rightZIndex, borderRadius }}
-            >
-              <Image src="/new-images/new-2/rachael-garnett-residential-commerical-advisor-tampa-real-estate-homepage-1.jpg" alt="Rachael Garnett" fill className="object-cover object-top transition-transform duration-700 group-hover:scale-105" />
-              <motion.div
-                className="absolute inset-0 flex flex-col items-center justify-end pb-12 xl:pb-20 px-8 xl:px-14 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-transparent"
-                style={{ opacity: textOpacity, y: textY }}
-              >
-                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.24em] xl:tracking-[0.28em] font-bold mb-3 xl:mb-4 text-center">REALTOR® · Commercial &amp; Residential Agent • SL3378601</span>
-                <h2 className="font-aiveritas text-4xl xl:text-6xl text-white mb-4 xl:mb-5">Rachael Garnett</h2>
-                <p className="text-white/90 text-center max-w-lg text-sm xl:text-[17px] 2xl:text-[18px] font-light mb-6 xl:mb-9 leading-relaxed">
-                  Rachael helps clients buy and sell homes, business spaces, and coastal estates. She brings warm energy, smart marketing, and clear updates every step of the way.
-                </p>
-                <Link
-                  href="/about/rachael-garnett"
-                  className="flex items-center gap-3 px-8 py-4 bg-white text-[#111] text-xs font-bold uppercase tracking-widest hover:bg-[#D4AF37] hover:text-[#111] transition-colors"
-                >
-                  Meet Rachael Garnett <ArrowRight className="w-4 h-4" />
-                </Link>
-              </motion.div>
-              <motion.div
-                className="absolute bottom-6 right-6 lg:bottom-8 lg:right-8 w-14 h-14 lg:w-16 lg:h-16 mix-blend-screen pointer-events-none select-none z-10"
-                style={{ opacity: textOpacity }}
-              >
-                <Image src="/new-images/new-2/dg-favicon-fat-dark-background.png" alt="" fill className="object-contain opacity-25" />
-              </motion.div>
-            </motion.div>
-          </div>
-        </section>
+        <DesktopTeamTriptych />
       )}
 
       {/* ── THE DUAL ADVANTAGE ── */}
