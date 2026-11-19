@@ -26,6 +26,7 @@ import {
   Calendar,
   FileText,
   Trees,
+  CheckCircle2,
 } from "lucide-react";
 import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 import PropertiesStickyStack from "@/components/PropertiesStickyStack";
@@ -40,6 +41,7 @@ export default function HomePageV1Light() {
   const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
   const developmentsRef = useRef<HTMLDivElement>(null);
+  const pillarsRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
@@ -1056,7 +1058,7 @@ export default function HomePageV1Light() {
           </div>
 
           {/* Priority 01 & 02: Flagship Two-Card Editorial Spotlight With Visuals */}
-          <div className="grid lg:grid-cols-2 gap-6 mb-6">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-6">
             <Link
               href="/knowledge-hub#guides"
               className="group relative bg-gradient-to-br from-[#161616] to-[#0a0a0a] text-white rounded-2xl border border-[#D4AF37]/45 hover:border-[#D4AF37] transition-all shadow-xl overflow-hidden flex flex-col-reverse sm:flex-row items-stretch"
@@ -1101,7 +1103,7 @@ export default function HomePageV1Light() {
             </Link>
 
             <Link
-              href="/tours"
+              href="/knowledge-hub#tours"
               className="group relative bg-white text-[#111] rounded-2xl border border-[#111]/12 hover:border-[#D4AF37] transition-all shadow-sm hover:shadow-xl overflow-hidden flex flex-col-reverse sm:flex-row items-stretch"
             >
               <div className="absolute -left-10 -bottom-10 w-44 h-44 rounded-full bg-[#D4AF37]/10 blur-2xl pointer-events-none group-hover:bg-[#D4AF37]/20 transition-colors" />
@@ -1144,30 +1146,49 @@ export default function HomePageV1Light() {
             </Link>
           </div>
 
-          {/* Priority 03–07: Horizontal Swipe Row on Mobile / Clean 5-Column Showcase on Desktop */}
-          <div className="flex items-center justify-between gap-4 mb-3 lg:hidden">
-            <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#9A7D3A]">
+          {/* Priority 03–07: Horizontal Swipe Row on Mobile & Portrait Tablet / Clean 5-Column Showcase on Desktop */}
+          <div className="flex items-center justify-between gap-3 mb-3 lg:hidden">
+            <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#9A7D3A]">
               Swipe to Explore More Pillars →
             </span>
+            <div className="flex items-center gap-2 shrink-0">
+              <button
+                type="button"
+                onClick={() => scrollCardTrack(pillarsRef.current, "left")}
+                className="p-2 rounded-full bg-[#D4AF37] text-[#111] border border-[#9A7D3A]/40 shadow-sm hover:bg-[#111] hover:text-[#D4AF37] active:scale-95 transition-all cursor-pointer"
+                aria-label="Scroll Knowledge Hub Pillars Left"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollCardTrack(pillarsRef.current, "right")}
+                className="p-2 rounded-full bg-[#D4AF37] text-[#111] border border-[#9A7D3A]/40 shadow-sm hover:bg-[#111] hover:text-[#D4AF37] active:scale-95 transition-all cursor-pointer"
+                aria-label="Scroll Knowledge Hub Pillars Right"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
           </div>
           <div
-            className="flex lg:grid lg:grid-cols-5 gap-4 overflow-x-auto lg:overflow-visible pb-3 lg:pb-0 snap-x snap-mandatory"
+            ref={pillarsRef}
+            className="flex lg:grid lg:grid-cols-5 gap-3.5 sm:gap-4 overflow-x-auto lg:overflow-visible pb-3 lg:pb-0 snap-x snap-mandatory"
             style={{ scrollbarWidth: "none" }}
           >
             {[
               {
                 num: "03",
-                icon: MapPin,
-                title: "Areas We Work In",
-                sub: "Local corridor spotlights",
-                cta: "View Areas",
-                href: "/knowledge-hub#areas",
+                icon: CheckCircle2,
+                title: "Get Started Worksheets",
+                sub: "Commercial & home PDF decks",
+                cta: "Start Worksheet",
+                href: "/knowledge-hub#get-started",
               },
               {
                 num: "04",
                 icon: Calculator,
-                title: "Florida Calculators",
-                sub: "Mortgage, NNN & 1031 math",
+                title: "Calculators & Glossary",
+                sub: "Mortgage, NNN, 1031 & terms",
                 cta: "Run Numbers",
                 href: "/knowledge-hub#tools",
               },
@@ -1190,10 +1211,10 @@ export default function HomePageV1Light() {
               {
                 num: "07",
                 icon: FileText,
-                title: "Reports & Glossary",
-                sub: "Market stats & key terms",
-                cta: "Browse Data",
-                href: "/market-reports",
+                title: "Market Articles",
+                sub: "Tampa Bay trends & updates",
+                cta: "Read Articles",
+                href: "/knowledge-hub#articles",
               },
             ].map((pillar) => {
               const Icon = pillar.icon;
@@ -1201,7 +1222,7 @@ export default function HomePageV1Light() {
                 <Link
                   key={pillar.num}
                   href={pillar.href}
-                  className="group w-[82%] sm:w-[280px] lg:w-auto lg:min-w-0 shrink-0 snap-start bg-white hover:bg-[#111] rounded-2xl p-5 sm:p-6 border border-[#111]/10 hover:border-[#D4AF37] hover:-translate-y-0.5 transition-all shadow-sm hover:shadow-xl flex flex-col justify-between gap-5"
+                  className="group w-full sm:w-[275px] lg:w-auto lg:min-w-0 shrink-0 snap-start snap-always bg-white hover:bg-[#111] rounded-2xl p-5 sm:p-6 border border-[#111]/10 hover:border-[#D4AF37] hover:-translate-y-0.5 transition-all shadow-sm hover:shadow-xl flex flex-col justify-between gap-5"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">
@@ -1229,9 +1250,9 @@ export default function HomePageV1Light() {
 
       {/* ── AREAS WE WORK IN — LOCAL PRESENCE ── */}
       <section className="py-20 sm:py-24 px-5 sm:px-8 bg-white border-t border-[#111]/5">
-        <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-          <div className="w-full lg:w-1/3 max-w-[380px] flex flex-col items-center gap-10 lg:gap-12 shrink-0">
-            <div className="w-full aspect-square relative rounded-full overflow-hidden border-4 border-[#D4AF37]/30 shadow-[0_0_40px_rgba(212,175,55,0.15)]">
+        <div className="max-w-screen-xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-12">
+          <div className="w-full max-w-2xl lg:w-1/3 lg:max-w-[380px] flex flex-col sm:flex-row lg:flex-col items-center justify-center gap-6 sm:gap-8 lg:gap-12 shrink-0 pt-4 lg:pt-0">
+            <div className="w-56 sm:w-52 lg:w-full aspect-square relative rounded-full overflow-hidden border-4 border-[#D4AF37]/30 shadow-[0_0_40px_rgba(212,175,55,0.15)] shrink-0">
               <video
                 src="/new-images/davis-garnett-team-video-1.mp4"
                 autoPlay
@@ -1249,7 +1270,7 @@ export default function HomePageV1Light() {
             {/* Align Right Carrollwood Image Card */}
             <Link
               href="/align-right-carrollwood-coverage"
-              className="group relative w-full aspect-[16/9] rounded-2xl overflow-hidden border border-[#ef5728]/40 hover:border-[#D4AF37] shadow-lg transition-all duration-300 block"
+              className="group relative w-full max-w-[380px] sm:flex-1 lg:flex-none aspect-[16/9] rounded-2xl overflow-hidden border border-[#ef5728]/40 hover:border-[#D4AF37] shadow-lg transition-all duration-300 block"
             >
               <Image
                 src="/new-images/new-2/davis-garnett-align-right-realty.jpg"
@@ -1286,7 +1307,7 @@ export default function HomePageV1Light() {
               </div>
             </Link>
           </div>
-          <div className="flex-1 text-center lg:text-left">
+          <div className="w-full flex-1 text-center lg:text-left">
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
               ALIGNED CORRECTLY REAL ESTATE
             </span>

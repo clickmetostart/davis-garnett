@@ -264,7 +264,7 @@ export default function KnowledgeHubPage() {
       </section>
 
       {/* ── SLIDER 1: ADVISORY PLAYBOOKS & BUYER/SELLER GUIDES ── */}
-      <section id="guides" className="py-20 sm:py-24 px-5 sm:px-8 bg-white border-b border-[#111]/8">
+      <section id="guides" className="py-20 sm:py-24 px-5 sm:px-8 bg-white border-b border-[#111]/8 scroll-mt-24">
         <div className="max-w-screen-xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
@@ -355,7 +355,7 @@ export default function KnowledgeHubPage() {
         bgClass="bg-[#f5f3ef]"
       />
       {/* ── SLIDER 3: AREAS WE WORK IN — GEOLOCATED NEIGHBORHOOD SPOTLIGHTS ── */}
-      <section id="areas" className="py-20 sm:py-24 px-5 sm:px-8 bg-white border-b border-[#111]/8">
+      <section id="areas" className="py-20 sm:py-24 px-5 sm:px-8 bg-white border-b border-[#111]/8 scroll-mt-24">
         <div className="max-w-screen-xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
@@ -668,7 +668,7 @@ export default function KnowledgeHubPage() {
       </section>
 
       {/* ── SLIDER 2: THE D&G CLASSROOM — TOP PURCHASE, SALE & INVESTMENT QUESTIONS (Q&A) ── */}
-      <section id="questions" className="py-20 sm:py-24 px-5 sm:px-8 bg-white border-b border-[#111]/8">
+      <section id="questions" className="py-20 sm:py-24 px-5 sm:px-8 bg-white border-b border-[#111]/8 scroll-mt-24">
         <div className="max-w-screen-xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
@@ -746,7 +746,7 @@ export default function KnowledgeHubPage() {
       </section>
 
       {/* ── SLIDER 4: COMMUNITY EVENTS, OUTREACH & VIP EXPERIENCES ── */}
-      <section id="events" className="py-20 sm:py-24 px-5 sm:px-8 bg-[#f5f3ef] border-b border-[#111]/8">
+      <section id="events" className="py-20 sm:py-24 px-5 sm:px-8 bg-[#f5f3ef] border-b border-[#111]/8 scroll-mt-24">
         <div className="max-w-screen-xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
@@ -832,7 +832,7 @@ export default function KnowledgeHubPage() {
       </section>
 
       {/* ── SECTION 05: MARKET INTELLIGENCE & EDITORIAL REPORTS (LOAD MORE GRID) ── */}
-      <section id="articles" className="py-24 px-8 bg-white border-b border-[#111]/8">
+      <section id="articles" className="py-20 sm:py-24 px-5 sm:px-8 bg-white border-b border-[#111]/8 scroll-mt-24">
         <div className="max-w-screen-xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
