@@ -113,7 +113,12 @@ export default function HomePageV1Light() {
             { id: 3, src: "/hero-videos-homepage/davis-garnett-realtors-tampa-bay-commercial-home-hero-placement-3.mp4?v=2" },
             { id: 4, src: "/new-images/new-2/davis-garnett-residential-commercial-real-estate-advisors-tampa-fl-sp4.mp4?v=2" },
           ].map((v) => (
-            <div key={v.id} className="relative flex-1 h-full border-r border-white/5 last:border-r-0 overflow-hidden group">
+            <div
+              key={v.id}
+              className={`relative flex-1 h-full border-r border-white/5 last:border-r-0 overflow-hidden group ${
+                v.id === 2 || v.id === 4 ? (isMobile ? "hidden" : "hidden lg:block") : ""
+              }`}
+            >
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-700 z-10 pointer-events-none" />
               <BackgroundVideo
                 src={v.src}
