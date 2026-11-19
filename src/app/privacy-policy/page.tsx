@@ -1,7 +1,8 @@
 import Link from "next/link";
 import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
-import { buildPageMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import { buildBreadcrumbSchema, buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
   title: "Privacy Policy | Davis & Garnett Real Estate Advisors",
@@ -14,6 +15,24 @@ export const metadata = buildPageMetadata({
 export default function PrivacyPolicyPage() {
   return (
     <div className="min-h-screen bg-white text-[#111] font-sans selection:bg-[#D4AF37] selection:text-white">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@graph": [
+            buildBreadcrumbSchema([
+              { name: "Home", path: "/" },
+              { name: "Privacy Policy", path: "/privacy-policy" },
+            ]),
+            {
+              "@type": "WebPage",
+              name: "Privacy Policy | Davis & Garnett Real Estate Advisors",
+              url: "https://www.davisgarnettsells.com/privacy-policy",
+              description:
+                "How Davis & Garnett and ClickMe collect, use, and protect your contact details, email requests, and SMS consent preferences.",
+            },
+          ],
+        }}
+      />
       <ProposalNav />
 
       <section className="pt-36 pb-16 px-8 bg-[#050505] text-white border-b border-[#D4AF37]/30">

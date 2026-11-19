@@ -16,10 +16,22 @@ export default function TermsOfServicePage() {
   return (
     <div className="min-h-screen bg-white text-[#111] font-sans selection:bg-[#D4AF37] selection:text-white">
       <JsonLd
-        data={buildBreadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "Terms of Service", path: "/terms-of-service" },
-        ])}
+        data={{
+          "@context": "https://schema.org",
+          "@graph": [
+            buildBreadcrumbSchema([
+              { name: "Home", path: "/" },
+              { name: "Terms of Service", path: "/terms-of-service" },
+            ]),
+            {
+              "@type": "WebPage",
+              name: "Terms of Service & MLS IDX Use | Davis & Garnett",
+              url: "https://www.davisgarnettsells.com/terms-of-service",
+              description:
+                "Website terms of service, Stellar MLS IDX non-commercial use rules, SMS consent terms, and Florida brokerage disclosures for Davis & Garnett.",
+            },
+          ],
+        }}
       />
       <ProposalNav />
 

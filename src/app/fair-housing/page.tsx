@@ -16,10 +16,22 @@ export default function FairHousingPage() {
   return (
     <div className="min-h-screen bg-white text-[#111] font-sans selection:bg-[#D4AF37] selection:text-white">
       <JsonLd
-        data={buildBreadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "Fair Housing & Equal Opportunity", path: "/fair-housing" },
-        ])}
+        data={{
+          "@context": "https://schema.org",
+          "@graph": [
+            buildBreadcrumbSchema([
+              { name: "Home", path: "/" },
+              { name: "Fair Housing & Equal Opportunity", path: "/fair-housing" },
+            ]),
+            {
+              "@type": "WebPage",
+              name: "Fair Housing & Equal Opportunity | Davis & Garnett",
+              url: "https://www.davisgarnettsells.com/fair-housing",
+              description:
+                "Davis & Garnett and Align Right Realty Carrollwood's commitment to the Federal Fair Housing Act, Florida Fair Housing Act, and Equal Housing Opportunity.",
+            },
+          ],
+        }}
       />
       <ProposalNav />
 

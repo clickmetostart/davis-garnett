@@ -16,10 +16,22 @@ export default function AccessibilityPage() {
   return (
     <div className="min-h-screen bg-white text-[#111] font-sans selection:bg-[#D4AF37] selection:text-white">
       <JsonLd
-        data={buildBreadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "Accessibility Statement", path: "/accessibility" },
-        ])}
+        data={{
+          "@context": "https://schema.org",
+          "@graph": [
+            buildBreadcrumbSchema([
+              { name: "Home", path: "/" },
+              { name: "Accessibility Statement", path: "/accessibility" },
+            ]),
+            {
+              "@type": "WebPage",
+              name: "Accessibility Statement | Davis & Garnett",
+              url: "https://www.davisgarnettsells.com/accessibility",
+              description:
+                "Website accessibility commitment and direct assistance options for Davis & Garnett Real Estate Advisors at Align Right Realty Carrollwood.",
+            },
+          ],
+        }}
       />
       <ProposalNav />
 
