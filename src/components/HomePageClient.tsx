@@ -108,10 +108,10 @@ export default function HomePageV1Light() {
       <section className="relative w-full min-h-screen flex items-center justify-center pt-20 pb-24 bg-[#050505] overflow-hidden">
         <div className="absolute inset-0 z-0 flex w-full h-full">
           {[
-            { id: 1, src: "/hero-videos-homepage/davis-garnett-home-realtor-video-hero-placement-1.mp4" },
-            { id: 2, src: "/new-images/new-2/davis-garnett-residential-commercial-real-estate-advisors-tampa-fl-sp2.mp4" },
-            { id: 3, src: "/hero-videos-homepage/davis-garnett-realtors-tampa-bay-commercial-home-hero-placement-3.mp4" },
-            { id: 4, src: "/new-images/new-2/davis-garnett-residential-commercial-real-estate-advisors-tampa-fl-sp4.mp4" },
+            { id: 1, src: "/hero-videos-homepage/davis-garnett-home-realtor-video-hero-placement-1.mp4?v=2" },
+            { id: 2, src: "/new-images/new-2/davis-garnett-residential-commercial-real-estate-advisors-tampa-fl-sp2.mp4?v=2" },
+            { id: 3, src: "/hero-videos-homepage/davis-garnett-realtors-tampa-bay-commercial-home-hero-placement-3.mp4?v=2" },
+            { id: 4, src: "/new-images/new-2/davis-garnett-residential-commercial-real-estate-advisors-tampa-fl-sp4.mp4?v=2" },
           ].map((v) => (
             <div key={v.id} className="relative flex-1 h-full border-r border-white/5 last:border-r-0 overflow-hidden group">
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-700 z-10 pointer-events-none" />
@@ -1254,7 +1254,7 @@ export default function HomePageV1Light() {
           <div className="w-full max-w-2xl lg:w-1/3 lg:max-w-[380px] flex flex-col sm:flex-row lg:flex-col items-center justify-center gap-6 sm:gap-8 lg:gap-12 shrink-0 pt-4 lg:pt-0">
             <div className="w-56 sm:w-52 lg:w-full aspect-square relative rounded-full overflow-hidden border-4 border-[#D4AF37]/30 shadow-[0_0_40px_rgba(212,175,55,0.15)] shrink-0">
               <video
-                src="/new-images/davis-garnett-team-video-1.mp4"
+                src="/new-images/davis-garnett-team-video-1.mp4?v=2"
                 autoPlay
                 loop
                 muted
