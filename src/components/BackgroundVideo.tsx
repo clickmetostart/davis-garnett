@@ -23,7 +23,13 @@ export default function BackgroundVideo({ src, className = "" }: BackgroundVideo
     const videoElement = containerRef.current?.querySelector('video');
     if (!videoElement) return;
 
+    videoElement.muted = true;
+    videoElement.defaultMuted = true;
+    videoElement.volume = 0;
+
     const attemptPlay = () => {
+      videoElement.muted = true;
+      videoElement.volume = 0;
       if (videoElement.paused) {
         videoElement.play().catch(() => {
           // Silent catch: if the user is in Low Power Mode, play() will reject.
@@ -54,6 +60,11 @@ export default function BackgroundVideo({ src, className = "" }: BackgroundVideo
             loop
             muted
             playsinline
+            aria-hidden="true"
+            tabindex="-1"
+            disablepictureinpicture
+            disableremoteplayback
+            controlslist="nodownload nofullscreen noremoteplayback"
             preload="auto"
             style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
           >

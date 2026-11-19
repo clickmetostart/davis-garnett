@@ -113,7 +113,7 @@ export default function HomePageV1Light() {
           {[
             { id: 1, src: "/hero-videos-homepage/davis-garnett-home-realtor-video-hero-placement-1.mp4" },
             { id: 2, src: "/new-images/new-2/davis-garnett-residential-commercial-real-estate-advisors-tampa-fl-sp2.mp4" },
-            { id: 3, src: "/hero-videos-homepage/davis-garnett-hero-video-4.mp4" },
+            { id: 3, src: "/hero-videos-homepage/davis-garnett-realtors-tampa-bay-commercial-home-hero-placement-3.mp4" },
             { id: 4, src: "/new-images/new-2/davis-garnett-residential-commercial-real-estate-advisors-tampa-fl-sp4.mp4" },
           ].map((v) => (
             <div key={v.id} className="relative flex-1 h-full border-r border-white/5 last:border-r-0 overflow-hidden group">
@@ -1195,7 +1195,11 @@ export default function HomePageV1Light() {
                 loop
                 muted
                 playsInline
-                className="absolute inset-0 w-full h-full object-cover scale-105"
+                aria-hidden="true"
+                tabIndex={-1}
+                disablePictureInPicture
+                disableRemotePlayback
+                className="absolute inset-0 w-full h-full object-cover scale-105 pointer-events-none"
               />
             </div>
 
