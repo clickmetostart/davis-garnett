@@ -79,16 +79,16 @@ export default function PropertiesStickyStack() {
       <div className="lg:hidden py-14">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
           <div>
-            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-2.5">
+            <span className="text-[#C8A951] text-xs uppercase tracking-[0.3em] font-bold block mb-2.5">
               Mark &amp; Rachael · Active Listings
             </span>
-            <h2 className="font-aiveritas text-4xl sm:text-5xl text-[#111111] leading-tight">
-              Featured <span className="text-[#9A7D3A]">Listings</span>
+            <h2 className="font-aiveritas text-4xl sm:text-5xl text-white leading-tight">
+              Featured <span className="text-[#C8A951]">Listings</span>
             </h2>
           </div>
 
           <div className="flex items-center justify-between sm:justify-end gap-3">
-            <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#9A7D3A]">
+            <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#C8A951]">
               Swipe Listings →
             </span>
             <div className="flex items-center gap-2 shrink-0">
@@ -173,15 +173,15 @@ export default function PropertiesStickyStack() {
           <div className="w-full sm:w-[370px] md:w-[410px] snap-start snap-always shrink-0 rounded-2xl overflow-hidden shadow-md bg-[#111111] flex flex-col justify-between p-6 border border-[#C8A951]/30">
             <div>
               <span className="text-[#C8A951] text-[10px] uppercase tracking-[0.25em] font-bold block mb-3">
-                Local Knowledge &amp; Personal Service
+                Residential · Commercial · Land · Investment
               </span>
               <h3 className="font-aiveritas text-3xl text-white leading-tight mb-3">
-                Serving Greater Tampa Bay{" "}
-                <span className="text-[#C8A951]">&amp; Central Florida</span>
+                Florida Real Estate{" "}
+                <span className="text-[#C8A951]">Represented Right</span>
               </h3>
               <div className="w-10 h-[1px] bg-[#C8A951] mb-4" />
               <p className="text-white/75 font-light text-sm leading-relaxed">
-                Representing residential and commercial clients across Pinellas, Hillsborough, Pasco, Polk, and Marion Counties.
+                Helping buyers, sellers, business owners, and investors navigate residential homes, waterfront estates, commercial acquisitions, and land opportunities across Florida.
               </p>
             </div>
             <div className="flex flex-col gap-2.5 pt-6">
@@ -207,17 +207,18 @@ export default function PropertiesStickyStack() {
         {/* ══ COLUMN 1 — Editorial panel (lg+ only so portrait tablets never squeeze into a narrow rail) ══ */}
         <div className="hidden lg:block lg:w-[36%] shrink-0">
           <div className="flex flex-col justify-center pr-2 lg:pr-6">
-            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
+            <span className="text-[#C8A951] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
               Mark &amp; Rachael · Active Listings
             </span>
 
-            <h2 className="font-aiveritas text-4xl lg:text-5xl xl:text-6xl text-[#111111] leading-tight mb-4">
-              Featured<br />Listings
+            <h2 className="font-aiveritas text-4xl lg:text-5xl xl:text-6xl text-white leading-tight mb-4">
+              Featured<br />
+              <span className="text-[#C8A951]">Listings</span>
             </h2>
 
             <div className="w-10 h-[2px] bg-[#C8A951] mb-4" />
 
-            <p className="text-[#111111]/75 font-light leading-relaxed max-w-md mb-6 text-sm lg:text-base xl:text-[17px]">
+            <p className="text-white/80 font-light leading-relaxed max-w-md mb-6 text-sm lg:text-base xl:text-[17px]">
               Helping buyers, sellers, and business owners across residential homes, commercial properties, land, and waterfront and unique properties in Tampa Bay and Central Florida.
             </p>
 
@@ -226,13 +227,13 @@ export default function PropertiesStickyStack() {
                 <Link
                   key={prop.slug}
                   href={`/listings/${prop.slug}`}
-                  className="flex items-center justify-between text-[#111111] text-xs font-bold uppercase tracking-[0.14em] border-b border-[#111111]/15 pb-2.5 hover:text-[#9A7D3A] hover:border-[#C8A951] transition-colors group"
+                  className="flex items-center justify-between text-white text-xs font-bold uppercase tracking-[0.14em] border-b border-white/15 pb-2.5 hover:text-[#C8A951] hover:border-[#C8A951] transition-colors group"
                 >
                   <span className="truncate pr-2 flex items-center gap-2">
-                    <span className="text-[10px] font-bold text-[#9A7D3A]">0{idx + 1}</span>
+                    <span className="text-[10px] font-bold text-[#C8A951]">0{idx + 1}</span>
                     <span className="truncate">{prop.title}</span>
                   </span>
-                  <span className="flex items-center gap-1.5 text-[#9A7D3A] shrink-0">
+                  <span className="flex items-center gap-1.5 text-[#C8A951] shrink-0">
                     {prop.price}
                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                   </span>
@@ -241,28 +242,28 @@ export default function PropertiesStickyStack() {
             </div>
 
             {/* Portfolio Credentials Strip (Matched to Portfolio Hero) */}
-            <div className="grid grid-cols-2 gap-4 border-t border-[#111111]/10 pt-5">
+            <div className="grid grid-cols-2 gap-4 border-t border-white/15 pt-5">
               <div>
-                <span className="font-aiveritas text-xl text-[#9A7D3A] block">CRE &amp; RES</span>
-                <span className="block text-[10px] uppercase tracking-widest text-[#111111]/60 font-bold mt-0.5">
+                <span className="font-aiveritas text-xl text-[#C8A951] block">CRE &amp; RES</span>
+                <span className="block text-[10px] uppercase tracking-widest text-white/60 font-bold mt-0.5">
                   Dual-Certified Agents
                 </span>
               </div>
               <div>
-                <span className="font-aiveritas text-xl text-[#9A7D3A] block">Tampa Bay</span>
-                <span className="block text-[10px] uppercase tracking-widest text-[#111111]/60 font-bold mt-0.5">
+                <span className="font-aiveritas text-xl text-[#C8A951] block">Tampa Bay</span>
+                <span className="block text-[10px] uppercase tracking-widest text-white/60 font-bold mt-0.5">
                   &amp; Central Florida
                 </span>
               </div>
               <div>
-                <span className="font-aiveritas text-xl text-[#9A7D3A] block">FL Licensed</span>
-                <span className="block text-[10px] uppercase tracking-widest text-[#111111]/60 font-bold mt-0.5">
+                <span className="font-aiveritas text-xl text-[#C8A951] block">FL Licensed</span>
+                <span className="block text-[10px] uppercase tracking-widest text-white/60 font-bold mt-0.5">
                   BK3209459 &amp; SL3378601
                 </span>
               </div>
               <div>
-                <span className="font-aiveritas text-xl text-[#9A7D3A] block">Align Right</span>
-                <span className="block text-[10px] uppercase tracking-widest text-[#111111]/60 font-bold mt-0.5">
+                <span className="font-aiveritas text-xl text-[#C8A951] block">Align Right</span>
+                <span className="block text-[10px] uppercase tracking-widest text-white/60 font-bold mt-0.5">
                   Carrollwood • BK3401606
                 </span>
               </div>
@@ -273,7 +274,7 @@ export default function PropertiesStickyStack() {
         {/* ══ COLUMN 2 — Full-size horizontal left/right slider ══ */}
         <div className="w-full lg:w-[64%] min-w-0">
           <div className="flex items-center justify-between mb-4">
-            <span className="text-[#9A7D3A] text-[11px] uppercase tracking-[0.25em] font-bold">
+            <span className="text-[#C8A951] text-[11px] uppercase tracking-[0.25em] font-bold">
               Featured Active Portfolio &middot; Slide to Explore
             </span>
             <div className="flex items-center gap-2.5">
@@ -281,7 +282,7 @@ export default function PropertiesStickyStack() {
                 type="button"
                 onClick={() => scrollCardTrack(desktopTrackRef.current, "left")}
                 aria-label="Previous property"
-                className="w-10 h-10 rounded-full border border-black/15 bg-white text-[#111111] flex items-center justify-center hover:border-[#C8A951] hover:bg-[#C8A951] transition-colors shadow-sm cursor-pointer"
+                className="w-10 h-10 rounded-full border border-[#C8A951]/40 bg-black/50 text-[#C8A951] flex items-center justify-center hover:border-[#C8A951] hover:bg-[#C8A951] hover:text-[#111111] transition-colors shadow-sm cursor-pointer"
               >
                 <ChevronLeft className="w-4 h-4" />
               </button>
@@ -289,7 +290,7 @@ export default function PropertiesStickyStack() {
                 type="button"
                 onClick={() => scrollCardTrack(desktopTrackRef.current, "right")}
                 aria-label="Next property"
-                className="w-10 h-10 rounded-full border border-black/15 bg-white text-[#111111] flex items-center justify-center hover:border-[#C8A951] hover:bg-[#C8A951] transition-colors shadow-sm cursor-pointer"
+                className="w-10 h-10 rounded-full border border-[#C8A951]/40 bg-black/50 text-[#C8A951] flex items-center justify-center hover:border-[#C8A951] hover:bg-[#C8A951] hover:text-[#111111] transition-colors shadow-sm cursor-pointer"
               >
                 <ChevronRight className="w-4 h-4" />
               </button>
@@ -372,15 +373,15 @@ export default function PropertiesStickyStack() {
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,#1a1810_0%,#0c0b09_70%)]" />
               <div className="relative z-10 flex flex-col items-center w-full max-w-lg gap-4 text-center">
                 <span className="text-[#C8A951] text-xs uppercase tracking-[0.3em] font-bold">
-                  Local Knowledge &amp; Personal Service
+                  Residential · Commercial · Land · Investment
                 </span>
                 <h3 className="font-aiveritas text-3xl xl:text-5xl text-white leading-tight">
-                  Serving Greater Tampa Bay<br />
-                  <span className="text-[#C8A951]">&amp; Central Florida</span>
+                  Florida Real Estate<br />
+                  <span className="text-[#C8A951]">Represented Right</span>
                 </h3>
                 <div className="w-12 h-[1px] bg-[#C8A951] my-2" />
                 <p className="text-white/80 font-light text-base xl:text-[18px] leading-relaxed max-w-md mb-2">
-                  Representing residential and commercial clients across Pinellas, Hillsborough, Pasco, Polk, and Marion Counties.
+                  Helping buyers, sellers, business owners, and investors navigate residential homes, waterfront estates, commercial acquisitions, and land opportunities across Florida.
                 </p>
 
                 <div className="flex flex-col w-full gap-3 mt-4">

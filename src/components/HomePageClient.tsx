@@ -546,10 +546,11 @@ export default function HomePageV1Light() {
       </section>
 
       {/* ── PORTFOLIO SPILL OUT (ACTIVE EXCLUSIVES) ── */}
-      <section className="bg-[#f5f3ef]">
+      <section className="relative overflow-hidden bg-[#0b0a08] bg-[radial-gradient(ellipse_at_top_right,rgba(200,169,81,0.24)_0%,rgba(20,18,13,0.96)_48%,#090807_100%)] border-y border-[#C8A951]/30">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-[#C8A951]/60 to-transparent" />
+        <div className="pointer-events-none absolute -bottom-32 -left-32 w-[480px] h-[480px] rounded-full bg-[#C8A951]/10 blur-3xl" />
         <PropertiesStickyStack />
       </section>
-      <div className="h-[8vh] bg-[#f5f3ef] pointer-events-none" />
 
       {/* ── TRENDING REAL ESTATE REGIONAL SLIDER ── */}
       <section className="py-24 sm:py-32 px-5 sm:px-8 bg-white border-t border-[#111]/10">
