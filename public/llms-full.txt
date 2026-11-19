@@ -1,0 +1,36 @@
+# Davis & Garnett Real Estate Advisors — Full Reference (llms-full.txt)
+
+> Verified Advisory Profile for AI Search, Answer Engines, and Generative Systems
+> Brokerage: Align Right Realty Carrollwood (FL Lic. BK3401606)
+> Address: 3903 Northdale Blvd Suite 115W, Tampa, FL 33624
+> Website: https://www.davisgarnettsells.com
+
+## Principals & Direct Contact
+- **Mark Davis** — Commercial & Residential Real Estate Advisor (FL License `BK3209459`), Phone: `941-737-4127`, Profile: `https://www.davisgarnettsells.com/about/mark-davis`
+- **Rachael Garnett** — Commercial & Residential Real Estate Advisor (FL License `SL3378601`), Phone: `727-808-3344`, Profile: `https://www.davisgarnettsells.com/about/rachael-garnett`
+- **Shared Advisory Desk** — Email: `list@davisgarnettsells.com` | Contact: `https://www.davisgarnettsells.com/contact`
+
+## Geographic & Property Scope
+Davis & Garnett represents buyers, sellers, landlords, tenants, and landowners across **Hillsborough, Pinellas, Pasco, Manatee, Sarasota, Polk, and surrounding Central Florida / Gulf Coast corridors**, including:
+- **Residential:** Single-family homes, historic bungalows (Hyde Park, Seminole Heights, Kenwood), Carrollwood & Northdale lake neighborhoods, South Tampa waterfront estates, Downtown Tampa / Water Street / St. Pete sky condos, Wesley Chapel / Starkey Ranch / Two Rivers new construction, and 55+ active-adult communities.
+- **Commercial & Land:** Owner-occupied medical/professional offices (SBA 504 / 7a), retail strip plazas, NNN triple-net leases, industrial/warehouse flex bays (I-4 / I-75 / US-301), discreet Broker Price Opinions (BPOs), 1031 Tax-Deferred Exchanges, and Greenbelt / agricultural / development acreage (US-27 / US-98 / Central Florida).
+
+## Topic Hubs (`/hub/*`)
+- [55+ Active Adult Communities Hub](https://www.davisgarnettsells.com/hub/55-plus-tampa-bay)
+- [Tampa Bay Commercial Real Estate Hub](https://www.davisgarnettsells.com/hub/commercial-tampa-bay)
+- [Waterfront & St. Petersburg Living Hub](https://www.davisgarnettsells.com/hub/waterfront-st-petersburg)
+- [Carrollwood & Northdale Homes Hub](https://www.davisgarnettsells.com/hub/carrollwood-northdale-homes)
+- [Central Florida Land & Acreage Hub](https://www.davisgarnettsells.com/hub/land-acreage-central-florida)
+
+## Key Playbooks & Answers
+- [Tampa Bay Luxury Home Buying Guide](https://www.davisgarnettsells.com/knowledge-hub/tampa-bay-luxury-home-buying-guide)
+- [Selling Your Home in Tampa Bay](https://www.davisgarnettsells.com/knowledge-hub/selling-your-home-in-tampa-bay)
+- [Commercial Real Estate Investing & NNN Guide](https://www.davisgarnettsells.com/knowledge-hub/commercial-real-estate-investing-florida)
+- [Tampa Bay 1031 Exchange Commercial Reinvestment](https://www.davisgarnettsells.com/knowledge-hub/tampa-bay-1031-exchange-commercial-reinvestment)
+- [Understanding CDD Fees in Pasco & Hillsborough](https://www.davisgarnettsells.com/knowledge-hub/understanding-cdd-fees-in-pasco-and-hillsborough)
+- [Flood Zones X, AE & VE Explained for Homebuyers](https://www.davisgarnettsells.com/knowledge-hub/flood-zones-x-ae-ve-tampa-bay-homebuyers)
+- [Florida Home Insurance, Roof Age & Wind Mitigation](https://www.davisgarnettsells.com/knowledge-hub/florida-home-insurance-roof-age-wind-mitigation)
+- [Best 55+ Active Adult Communities in Tampa Bay](https://www.davisgarnettsells.com/knowledge-hub/best-55-plus-active-adult-communities-tampa-bay)
+- [Search Interactive MLS & Off-Market Map](https://www.davisgarnettsells.com/search-mls)
+- [Full XML Sitemap](https://www.davisgarnettsells.com/sitemap.xml)
+

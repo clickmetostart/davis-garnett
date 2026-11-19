@@ -1,4 +1,5 @@
-import { buildPageMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import { buildBreadcrumbSchema, buildPageMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
   title: "Community Outreach, Schools & Giving | Davis & Garnett",
@@ -9,6 +10,28 @@ export const metadata = buildPageMetadata({
 });
 
 export default function OutreachLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        name: "Davis & Garnett Community Outreach, Schools & Giving",
+        url: `${SITE_URL}/about/community-outreach-giving`,
+        about: { "@id": `${SITE_URL}/#organization` },
+      },
+      buildBreadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "About Us", path: "/about" },
+        { name: "Community Outreach", path: "/about/community-outreach-giving" },
+      ]),
+    ],
+  };
+
+  return (
+    <>
+      <JsonLd data={schema} />
+      {children}
+    </>
+  );
 }
 

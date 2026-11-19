@@ -1,4 +1,5 @@
-import { buildPageMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import { buildBreadcrumbSchema, buildPageMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
   title: "About Davis & Garnett | Tampa Bay Real Estate Advisors",
@@ -9,6 +10,27 @@ export const metadata = buildPageMetadata({
 });
 
 export default function AboutLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        url: `${SITE_URL}/about`,
+        name: "About Mark Davis & Rachael Garnett — Tampa Bay Real Estate Advisors",
+        mainEntity: { "@id": `${SITE_URL}/#organization` },
+      },
+      buildBreadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "About Us", path: "/about" },
+      ]),
+    ],
+  };
+
+  return (
+    <>
+      <JsonLd data={schema} />
+      {children}
+    </>
+  );
 }
 

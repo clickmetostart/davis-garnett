@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { buildCapRateCalcHref, buildMortgageCalcHref } from "@/lib/priceParser";
 import {
   Bed,
   Bath,
@@ -976,19 +977,32 @@ export default function ListingDetailPage() {
                       Related Guides, Glossary &amp; {isCommercialOrLand ? "Underwriting Tools" : "Area Intelligence"}
                     </h2>
                   </div>
-                  {isCommercialOrLand && (
+                  {isCommercialOrLand ? (
                     <div className="flex flex-wrap gap-2">
                       <Link
-                        href="/tools/cap-rate-calculator"
+                        href={buildCapRateCalcHref({ price: listing.price, from: listing.title })}
                         className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#111111] text-[#C8A951] hover:bg-[#C8A951] hover:text-[#111111] text-[11px] font-bold uppercase tracking-wider transition-colors"
                       >
-                        <Calculator className="w-3.5 h-3.5" /> Cap Rate Tool
+                        <Calculator className="w-3.5 h-3.5" /> Model Cap Rate
                       </Link>
                       <Link
                         href="/tools/1031-deadline-calculator"
                         className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#f5f3ef] border border-[#111111]/12 hover:border-[#C8A951] text-[11px] font-bold uppercase tracking-wider text-[#111111] transition-colors"
                       >
                         1031 Calculator
+                      </Link>
+                    </div>
+                  ) : (
+                    <div className="flex flex-wrap gap-2">
+                      <Link
+                        href={buildMortgageCalcHref({
+                          price: listing.price,
+                          hoa: listing.hoaFee,
+                          from: listing.title,
+                        })}
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#111111] text-[#C8A951] hover:bg-[#C8A951] hover:text-[#111111] text-[11px] font-bold uppercase tracking-wider transition-colors"
+                      >
+                        <Calculator className="w-3.5 h-3.5" /> Estimate Payment
                       </Link>
                     </div>
                   )}

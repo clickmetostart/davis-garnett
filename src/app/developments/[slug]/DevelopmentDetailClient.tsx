@@ -7,7 +7,9 @@ import {
   ArrowLeft,
   ArrowRight,
   Building2,
+  Calculator,
   CheckCircle2,
+  ChevronDown,
   ChevronRight,
   Compass,
   DollarSign,
@@ -15,6 +17,7 @@ import {
   HardHat,
   Layers,
   MapPin,
+  Route,
   ShieldCheck,
   Sparkles,
   ExternalLink,
@@ -25,18 +28,33 @@ import {
 import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
 import type { Development } from "@/data/developments";
-import type { KnowledgeItem } from "@/data/knowledgeHub";
+import type { AreaItem, KnowledgeItem } from "@/data/knowledgeHub";
+import type { GuidedTour } from "@/data/tours";
+import type { GlossaryTerm } from "@/data/glossary";
+import type { Listing } from "@/types/listings";
+import type { DevelopmentAeo } from "@/lib/developmentAeo";
+import { buildCapRateCalcHref, buildMortgageCalcHref } from "@/lib/priceParser";
 
 interface Props {
   dev: Development;
+  aeo: DevelopmentAeo;
   relatedDevelopments: Development[];
   relatedGuides: KnowledgeItem[];
+  relatedAreas: AreaItem[];
+  relatedTours: GuidedTour[];
+  relatedGlossaryTerms: GlossaryTerm[];
+  relatedListings: Listing[];
 }
 
 export default function DevelopmentDetailClient({
   dev,
+  aeo,
   relatedDevelopments,
   relatedGuides,
+  relatedAreas,
+  relatedTours,
+  relatedGlossaryTerms,
+  relatedListings,
 }: Props) {
   const [selectedImage, setSelectedImage] = useState<string>(dev.heroImage);
   const [leadForm, setLeadForm] = useState({
@@ -254,6 +272,17 @@ export default function DevelopmentDetailClient({
               <h2 className="font-aiveritas text-3xl text-[#111111] mb-6">
                 About {dev.name}
               </h2>
+
+              {/* Plain-English AEO Quick Local Take */}
+              <div className="mb-6 p-5 rounded-2xl bg-[#f5f3ef] border-l-4 border-[#C8A951]">
+                <span className="text-[10px] uppercase tracking-[0.2em] text-[#9A7D3A] font-bold block mb-1.5">
+                  Quick Local Take
+                </span>
+                <p className="text-sm text-[#111111]/90 font-medium leading-relaxed">
+                  {aeo.quickAnswer}
+                </p>
+              </div>
+
               <p className="text-[#111111]/85 font-medium text-base md:text-lg leading-relaxed mb-6">
                 {dev.summary}
               </p>
@@ -483,25 +512,44 @@ export default function DevelopmentDetailClient({
               </div>
             </div>
 
-            {/* Related Knowledge Hub Spiderweb Links */}
-            {relatedGuides.length > 0 && (
-              <div className="bg-white rounded-3xl p-8 md:p-10 border border-[#111111]/10 shadow-sm">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-                  <div>
-                    <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.25em] font-bold block mb-1">
-                      Planning &amp; Cost Guides
-                    </span>
-                    <h2 className="font-aiveritas text-2xl md:text-3xl text-[#111111]">
-                      Essential Reading Before Buying
-                    </h2>
-                  </div>
+            {/* Related Knowledge Hub Spiderweb Links & Calculator Bridges */}
+            <div className="bg-white rounded-3xl p-8 md:p-10 border border-[#111111]/10 shadow-sm space-y-8">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                  <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.25em] font-bold block mb-1">
+                    Planning, Calculators &amp; Local Guides
+                  </span>
+                  <h2 className="font-aiveritas text-2xl md:text-3xl text-[#111111]">
+                    Explore Related Local Resources
+                  </h2>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <Link
+                    href={
+                      aeo.isCommercialFocused
+                        ? buildCapRateCalcHref({ price: dev.priceRange, from: dev.name })
+                        : buildMortgageCalcHref({
+                            price: dev.priceRange,
+                            hoa: dev.hoaCddInfo.hoaEstimate,
+                            cdd: dev.hoaCddInfo.cddEstimate,
+                            from: dev.name,
+                          })
+                    }
+                    className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#f5f3ef] hover:bg-[#C8A951] text-[#111111] border border-[#111111]/15 text-xs font-bold uppercase tracking-widest rounded-lg transition-colors shrink-0"
+                  >
+                    <Calculator className="w-3.5 h-3.5 text-[#9A7D3A]" />
+                    {aeo.isCommercialFocused ? "Model Cap Rate" : "Estimate Payment"}
+                  </Link>
                   <Link
                     href="/search-mls"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#111111] hover:bg-[#C8A951] text-white hover:text-[#111111] text-xs font-bold uppercase tracking-widest rounded-lg transition-colors shrink-0"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#111111] hover:bg-[#C8A951] text-white hover:text-[#111111] text-xs font-bold uppercase tracking-widest rounded-lg transition-colors shrink-0"
                   >
                     <Search className="w-3.5 h-3.5" /> Search All Homes
                   </Link>
                 </div>
+              </div>
+
+              {relatedGuides.length > 0 && (
                 <div className="grid sm:grid-cols-2 gap-4">
                   {relatedGuides.map((g) => (
                     <Link
@@ -521,8 +569,118 @@ export default function DevelopmentDetailClient({
                     </Link>
                   ))}
                 </div>
+              )}
+
+              {(relatedAreas.length > 0 || relatedTours.length > 0) && (
+                <div className="grid sm:grid-cols-2 gap-4 pt-6 border-t border-[#111111]/10">
+                  {relatedAreas.map((area) => (
+                    <Link
+                      key={area.slug}
+                      href={`/knowledge-hub/areas/${area.slug}`}
+                      className="p-4 rounded-xl bg-[#fbfbf9] hover:bg-[#C8A951]/15 border border-[#111111]/10 flex items-center justify-between gap-3 transition-colors group"
+                    >
+                      <div>
+                        <span className="text-[10px] uppercase tracking-widest text-[#9A7D3A] font-bold flex items-center gap-1">
+                          <MapPin className="w-3 h-3" /> Area Guide
+                        </span>
+                        <div className="text-sm font-bold text-[#111111] group-hover:text-[#9A7D3A]">
+                          {area.name}
+                        </div>
+                      </div>
+                      <ArrowRight className="w-4 h-4 text-[#9A7D3A] shrink-0" />
+                    </Link>
+                  ))}
+                  {relatedTours.map((tour) => (
+                    <Link
+                      key={tour.slug}
+                      href={`/tours/${tour.slug}`}
+                      className="p-4 rounded-xl bg-[#fbfbf9] hover:bg-[#C8A951]/15 border border-[#111111]/10 flex items-center justify-between gap-3 transition-colors group"
+                    >
+                      <div>
+                        <span className="text-[10px] uppercase tracking-widest text-[#9A7D3A] font-bold flex items-center gap-1">
+                          <Route className="w-3 h-3" /> #GuidedByDG Route
+                        </span>
+                        <div className="text-sm font-bold text-[#111111] group-hover:text-[#9A7D3A]">
+                          {tour.title}
+                        </div>
+                      </div>
+                      <ArrowRight className="w-4 h-4 text-[#9A7D3A] shrink-0" />
+                    </Link>
+                  ))}
+                </div>
+              )}
+
+              {relatedListings.length > 0 && (
+                <div className="pt-6 border-t border-[#111111]/10 space-y-3">
+                  <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#111111]/60">
+                    Matching Active Portfolio Opportunities:
+                  </div>
+                  <div className="grid sm:grid-cols-2 gap-3">
+                    {relatedListings.map((item) => (
+                      <Link
+                        key={item.slug || item.id}
+                        href={`/listings/${item.slug || item.id}`}
+                        className="p-3.5 rounded-xl bg-[#f5f3ef] hover:bg-[#111111] hover:text-white border border-[#111111]/10 transition-colors flex items-center justify-between gap-2 group"
+                      >
+                        <div className="min-w-0">
+                          <div className="text-xs font-bold truncate">{item.title}</div>
+                          <div className="text-[10px] text-[#9A7D3A] group-hover:text-[#D4AF37] uppercase tracking-wider">
+                            {item.city || item.category} {item.price ? `· ${item.price}` : ""}
+                          </div>
+                        </div>
+                        <ArrowRight className="w-3.5 h-3.5 text-[#9A7D3A] shrink-0" />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {relatedGlossaryTerms.length > 0 && (
+                <div className="pt-6 border-t border-[#111111]/10 flex flex-wrap items-center gap-2">
+                  <span className="text-[10px] uppercase tracking-[0.18em] font-bold text-[#111111]/55 mr-1">
+                    Key Terms:
+                  </span>
+                  {relatedGlossaryTerms.map((term) => (
+                    <Link
+                      key={term.slug}
+                      href={`/glossary/${term.slug}`}
+                      className="px-3 py-1.5 rounded-full bg-[#f5f3ef] hover:bg-[#111111] hover:text-[#D4AF37] border border-[#111111]/10 text-[11px] font-semibold text-[#111111] transition-colors"
+                    >
+                      {term.term}
+                    </Link>
+                  ))}
+                  <Link
+                    href={aeo.isCommercialFocused ? "/commercial" : "/residential"}
+                    className="px-3 py-1.5 rounded-full bg-[#111111] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#111111] text-[11px] font-bold uppercase tracking-wider transition-colors"
+                  >
+                    {aeo.isCommercialFocused ? "Commercial Hub →" : "Residential Hub →"}
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {/* Community AEO FAQ Accordion (Matches FAQPage Schema) */}
+            <div className="bg-white rounded-3xl p-8 md:p-10 border border-[#111111]/10 shadow-sm">
+              <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.25em] font-bold block mb-2">
+                Plain-English Answers
+              </span>
+              <h2 className="font-aiveritas text-2xl md:text-3xl text-[#111111] mb-6">
+                Common Questions About {dev.name}
+              </h2>
+              <div className="divide-y divide-[#111111]/10">
+                {aeo.faqs.map((faq, i) => (
+                  <details key={faq.question} open={i === 0} className="py-4 group">
+                    <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-bold text-sm md:text-base text-[#111111] hover:text-[#9A7D3A]">
+                      <span>{faq.question}</span>
+                      <ChevronDown className="w-4 h-4 text-[#9A7D3A] shrink-0 transition-transform group-open:rotate-180" />
+                    </summary>
+                    <p className="mt-2.5 text-sm text-[#111111]/75 font-light leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </details>
+                ))}
               </div>
-            )}
+            </div>
           </div>
 
           {/* Right 5 Columns: Sticky Interest List Form */}

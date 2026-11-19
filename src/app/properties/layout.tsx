@@ -1,7 +1,8 @@
-import { buildPageMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import { buildBreadcrumbSchema, buildPageMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Featured Commercial & Residential Properties | Davis & Garnett",
+  title: "Featured Homes, CRE & Land Portfolio | Davis & Garnett",
   description:
     "Browse curated residential waterfront homes, commercial buildings, acreage parcels, and recent closings represented by Davis & Garnett across Tampa Bay.",
   path: "/properties",
@@ -9,6 +10,27 @@ export const metadata = buildPageMetadata({
 });
 
 export default function PropertiesLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        url: `${SITE_URL}/properties`,
+        name: "Davis & Garnett Featured Florida Portfolio",
+        about: { "@id": `${SITE_URL}/#organization` },
+      },
+      buildBreadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "Portfolio", path: "/properties" },
+      ]),
+    ],
+  };
+
+  return (
+    <>
+      <JsonLd data={schema} />
+      {children}
+    </>
+  );
 }
 

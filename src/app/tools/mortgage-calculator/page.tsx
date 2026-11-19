@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
-import { ArrowRight, Home, ShieldCheck } from "lucide-react";
+import { ArrowRight, Home, ShieldCheck, Sparkles } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
 import ToolLeadCaptureCard from "@/components/ToolLeadCaptureCard";
@@ -24,6 +24,27 @@ export default function MortgageCalculatorPage() {
   const [annualFloodIns, setAnnualFloodIns] = useState(0);
   const [monthlyHoa, setMonthlyHoa] = useState(120);
   const [annualCdd, setAnnualCdd] = useState(0);
+  const [prefillSource, setPrefillSource] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    const p = Number(params.get("price"));
+    if (Number.isFinite(p) && p >= 50000) {
+      setHomePrice(Math.round(p));
+      setAnnualTaxes(Math.round(p * 0.0125));
+    }
+    const hoa = Number(params.get("hoa"));
+    if (Number.isFinite(hoa) && hoa >= 0 && params.has("hoa")) {
+      setMonthlyHoa(Math.round(hoa));
+    }
+    const cdd = Number(params.get("cdd"));
+    if (Number.isFinite(cdd) && cdd >= 0 && params.has("cdd")) {
+      setAnnualCdd(Math.round(cdd));
+    }
+    const from = params.get("from");
+    if (from) setPrefillSource(from);
+  }, []);
 
   const calc = useMemo(() => {
     const downPaymentDollar = (homePrice * downPaymentPct) / 100;
@@ -87,6 +108,11 @@ export default function MortgageCalculatorPage() {
           <span className="inline-flex items-center gap-2 text-[#D4AF37] text-xs font-bold uppercase tracking-[0.25em] mb-3">
             <Home className="w-4 h-4" /> Florida Buyer Payment Tool
           </span>
+          {prefillSource && (
+            <div className="mb-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/40 text-xs font-semibold text-[#D4AF37]">
+              <Sparkles className="w-3.5 h-3.5" /> Pre-filled starting numbers from {prefillSource}
+            </div>
+          )}
           <h1 className="font-aiveritas text-3xl md:text-5xl text-white max-w-4xl mb-4 leading-tight">
             Tampa Bay Mortgage, Tax, Insurance &amp; CDD Calculator
           </h1>

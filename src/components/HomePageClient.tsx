@@ -147,7 +147,7 @@ export default function HomePageV1Light() {
             <span className="text-[#D4AF37]">Real Estate Team.</span>
           </h1>
           <p className="text-base md:text-[17px] lg:text-[18px] text-white/90 font-light max-w-2xl leading-relaxed drop-shadow-lg">
-            Mark Davis and Rachael Garnett work together across residential and commercial real estate—giving you two experienced local agents in your corner from day one.
+            Mark Davis and Rachael Garnett help you buy and sell homes, land, and business spaces. You get two full-time local agents on your side from day one.
           </p>
         </div>
 
@@ -172,7 +172,7 @@ export default function HomePageV1Light() {
             <span className="text-[#9A7D3A] text-xs tracking-[0.2em] uppercase font-bold block mb-4">Working Together for You</span>
             <h2 className="font-aiveritas text-4xl text-[#111] mb-4">Meet Mark &amp; Rachael.</h2>
             <p className="text-[#111]/75 text-base font-light max-w-md mx-auto leading-relaxed mb-6">
-              Mark Davis and Rachael Garnett are both REALTORS® and Certified Commercial &amp; Residential Agents. Whether you are buying or selling a home, a commercial building, or land, we work together so you always have two experienced agents on your side.
+              Mark Davis and Rachael Garnett are both licensed in home and commercial sales. Buying a house, selling land, or leasing a shop? We work side by side so you always have two pros on your team.
             </p>
             <Link
               href="/about"
@@ -213,7 +213,7 @@ export default function HomePageV1Light() {
               <h3 className="font-aiveritas text-3xl text-[#111] mb-1">Rachael Garnett</h3>
               <p className="text-[#D4AF37] text-xs uppercase tracking-widest mb-3">REALTOR® · Certified Commercial &amp; Residential Agent • FL Lic SL3378601</p>
               <p className="text-[#111]/75 text-base font-light mb-5 leading-relaxed">
-                Rachael works with buyers, sellers, and investors across residential homes, commercial spaces, and waterfront and unique properties. She brings thoughtful marketing, clear communication, and strong negotiation to every table.
+                Rachael helps buyers and sellers with homes, business spaces, and coastal estates. She brings smart marketing, quick updates, and strong deal skill to every move.
               </p>
               <Link
                 href="/about/rachael-garnett"
@@ -255,7 +255,7 @@ export default function HomePageV1Light() {
                 One Team<br />on Your Side
               </h3>
               <p className="text-[#111]/80 text-base md:text-[17px] lg:text-[18px] font-light leading-relaxed max-w-sm mx-auto">
-                Two full-time agents working together across residential and commercial real estate in Tampa Bay.
+                Two full-time agents helping Tampa Bay clients buy and sell homes, land, and business sites.
               </p>
             </motion.div>
 
@@ -315,7 +315,7 @@ export default function HomePageV1Light() {
                 <span className="text-[#D4AF37] text-xs uppercase tracking-[0.28em] font-bold mb-4 text-center">REALTOR® · Commercial &amp; Residential Agent • SL3378601</span>
                 <h2 className="font-aiveritas text-5xl lg:text-6xl text-white mb-5">Rachael Garnett</h2>
                 <p className="text-white/90 text-center max-w-lg text-base md:text-[17px] lg:text-[18px] font-light mb-10 leading-relaxed">
-                  Rachael works across residential homes, commercial properties, and waterfront and unique properties. She brings energy, thoughtful marketing, and clear day-to-day communication to every client she serves.
+                  Rachael helps clients buy and sell homes, business spaces, and coastal estates. She brings warm energy, smart marketing, and clear updates every step of the way.
                 </p>
                 <Link
                   href="/about/rachael-garnett"
@@ -346,7 +346,7 @@ export default function HomePageV1Light() {
               How We Help You<br className="sm:hidden" /> in <span className="text-[#9A7D3A]">Tampa Bay</span>
             </h2>
             <p className="text-[#111]/75 text-base md:text-[17px] lg:text-[18px] font-light max-w-3xl mx-auto leading-relaxed">
-              Because both Mark and Rachael are certified in commercial and residential real estate, you get one approachable team whether you are buying or selling a home, a business property, or land.
+              Mark and Rachael handle both home and commercial deals. You get one friendly team whether you are buying a house, leasing a storefront, or pricing land.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
@@ -379,7 +379,7 @@ export default function HomePageV1Light() {
                     Commercial Real Estate
                   </h3>
                   <p className="text-white/80 font-light mb-7 text-base leading-relaxed">
-                    Helping business owners and investors buy, sell, and lease office buildings, mixed-use properties, retail spaces, and Florida land.
+                    We help owners and investors buy, sell, and lease offices, shops, flex bays, and Florida land.
                   </p>
                 </div>
                 <div>
@@ -418,7 +418,7 @@ export default function HomePageV1Light() {
                     Residential Real Estate
                   </h3>
                   <p className="text-white/80 font-light mb-7 text-base leading-relaxed">
-                    Helping buyers and sellers with single-family homes, downtown condos, new construction, and waterfront and unique properties.
+                    We help buyers and sellers with family homes, city condos, new builds, and coastal retreats.
                   </p>
                 </div>
                 <div>
@@ -495,7 +495,7 @@ export default function HomePageV1Light() {
                 Trending Tampa Bay<br className="sm:hidden" /> Real Estate
               </h2>
               <p className="text-[#111]/75 text-base md:text-[17px] lg:text-[18px] font-light max-w-2xl leading-relaxed">
-                Explore established neighborhoods, active commercial corridors, 55+ communities, and new construction across Tampa Bay—from Clearwater, Dunedin &amp; St. Petersburg through Tampa and Wesley Chapel to Bradenton, Lakewood Ranch &amp; Sarasota.
+                Browse classic streets, busy business hubs, 55+ clubs, and new builds across Tampa Bay. We cover Clearwater and St. Pete through Tampa and Wesley Chapel down to Lakewood Ranch and Sarasota.
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-4 shrink-0">
@@ -837,7 +837,7 @@ export default function HomePageV1Light() {
               Looking Beyond Our Featured Listings?
             </h2>
             <p className="text-white/85 text-base md:text-[17px] lg:text-[18px] font-light leading-relaxed">
-              Search active homes, commercial listings, and land across Hillsborough, Pinellas, Pasco, Polk, and Manatee counties.
+              Search live homes, business sites, and land across Tampa Bay and Central Florida.
             </p>
           </div>
 
@@ -881,7 +881,7 @@ export default function HomePageV1Light() {
                 <span className="text-[#9A7D3A]">Real Results.</span>
               </h2>
               <p className="text-[#111]/75 text-base md:text-[17px] lg:text-[18px] font-light leading-relaxed mb-8">
-                Our goal is simple: treat every client like family, communicate clearly, and do the homework so your purchase or sale goes smoothly.
+                Our goal is simple. We treat every client like family, speak plainly, and do the homework so your move goes smoothly.
               </p>
               <Link
                 href="/about"
@@ -936,7 +936,7 @@ export default function HomePageV1Light() {
                 Tampa Bay Real Estate <span className="text-[#9A7D3A]">Q&amp;A</span>
               </h2>
               <p className="text-[#111]/75 text-base md:text-[17px] lg:text-[18px] font-light leading-relaxed mb-8">
-                Get clear, plain-English answers from Mark and Rachael on the questions buyers, sellers, and investors ask most about Tampa Bay real estate.
+                Get straight, plain-English answers from Mark and Rachael on top Tampa Bay buying, selling, and leasing questions.
               </p>
               <Link
                 href="/knowledge-hub#questions"
@@ -985,44 +985,6 @@ export default function HomePageV1Light() {
             </div>
           </div>
         </div>
-
-        {/* Structured Data for AI Search Engines (GEO / AEO) */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "RealEstateAgent",
-              name: "Davis & Garnett Real Estate Advisory",
-              description:
-                "Tampa Bay's premier commercial, land, and luxury residential real estate advisory group brokered by Align Right Realty Carrollwood.",
-              url: "https://www.davisgarnettsells.com",
-              telephone: ["941-737-4127", "727-808-3344"],
-              email: "list@davisgarnettsells.com",
-              parentOrganization: {
-                "@type": "RealEstateAgent",
-                name: "Align Right Realty Carrollwood",
-                identifier: "BK3401606",
-              },
-              employee: [
-                {
-                  "@type": "Person",
-                  name: "Mark Davis",
-                  jobTitle: "Commercial & Residential Advisor",
-                  identifier: "FL License BK3209459",
-                  telephone: "941-737-4127",
-                },
-                {
-                  "@type": "Person",
-                  name: "Rachael Garnett",
-                  jobTitle: "Commercial & Residential Advisor",
-                  identifier: "FL License SL3378601",
-                  telephone: "727-808-3344",
-                },
-              ],
-            }),
-          }}
-        />
       </section>
 
       {/* ── KNOWLEDGE HUB SPOTLIGHT (PRETTY + MOBILE-SWIPEABLE BREAKDOWN) ── */}
@@ -1083,10 +1045,10 @@ export default function HomePageV1Light() {
               </div>
               <div className="relative h-48 sm:h-auto sm:w-[40%] shrink-0 overflow-hidden bg-[#1a1a1a] border-b sm:border-b-0 sm:border-l border-[#D4AF37]/25">
                 <Image
-                  src="/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-9.jpg"
+                  src="/images/team/home-playbooks-card.jpg"
                   alt="Mark Davis and Rachael Garnett reviewing Tampa Bay buyer, seller, and commercial playbooks"
                   fill
-                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover object-[center_32%] transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
                 <span className="absolute bottom-3 left-3 right-3 text-center px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-sm border border-[#D4AF37]/30 text-[10px] font-bold uppercase tracking-[0.16em] text-[#D4AF37]">
@@ -1126,10 +1088,10 @@ export default function HomePageV1Light() {
               </div>
               <div className="relative h-48 sm:h-auto sm:w-[40%] shrink-0 overflow-hidden bg-[#111] border-b sm:border-b-0 sm:border-l border-[#111]/10">
                 <Image
-                  src="/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-3.jpg"
-                  alt="Mark Davis and Rachael Garnett hosting a guided Tampa Bay waterfront tour"
+                  src="/images/team/home-guided-tours-card.jpg"
+                  alt="Mark Davis and Rachael Garnett hosting a guided Tampa Bay neighborhood and commercial tour"
                   fill
-                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover object-[center_32%] transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                 <span className="absolute bottom-3 left-3 right-3 text-center px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-sm border border-white/20 text-[10px] font-bold uppercase tracking-[0.16em] text-white">
@@ -1285,7 +1247,7 @@ export default function HomePageV1Light() {
               Areas We <span className="text-[#9A7D3A]">Work In.</span>
             </h2>
             <p className="text-[#111]/75 text-base md:text-[17px] lg:text-[18px] font-light max-w-2xl leading-relaxed mb-8 mx-auto lg:mx-0">
-              Explore the neighborhoods, coastal communities, and growth corridors we serve across Greater Tampa Bay and Central Florida.
+              See the towns, beach spots, and growing hubs we serve across Tampa Bay and Central Florida.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 border-t border-[#111]/10">
               {[
@@ -1332,7 +1294,7 @@ export default function HomePageV1Light() {
             <span className="text-[#D4AF37]">Driven by Real Results.</span>
           </h2>
           <p className="text-white/90 text-base md:text-[17px] lg:text-[18px] font-light mb-12 max-w-2xl mx-auto leading-relaxed">
-            Whether you are buying or selling a home, a commercial property, or land in Tampa Bay, Mark Davis and Rachael Garnett work together to guide you every step of the way.
+            Buying a home, selling land, or pricing a building? Mark Davis and Rachael Garnett work side by side to guide every step.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <button
@@ -1371,7 +1333,7 @@ export default function HomePageV1Light() {
           </span>
           <h2 className="font-aiveritas text-4xl md:text-5xl text-[#111] mb-4">@DavisGarnett</h2>
           <p className="text-[#111]/70 text-base md:text-[17px] lg:text-[18px] font-light max-w-xl mx-auto leading-relaxed">
-            Follow our latest listings, community updates, and market insights across the Tampa Bay area.
+            See our newest homes, local events, and Tampa Bay market notes.
           </p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-0">

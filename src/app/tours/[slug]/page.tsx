@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import TourDetailClient from "./TourDetailClient";
 import { getGuidedTourBySlug, LIVE_GUIDED_TOURS, buildGoogleMapsRouteUrl } from "@/data/tours";
-import { AREAS, ALL_GUIDES_AND_QUESTIONS } from "@/data/knowledgeHub";
+import { getSpiderwebForTour } from "@/lib/spiderweb";
 import { buildPageMetadata, SITE_URL, TEAM_SAME_AS } from "@/lib/seo";
 
 interface PageProps {
@@ -32,10 +32,7 @@ export default async function TourDetailPage({ params }: PageProps) {
   const tour = getGuidedTourBySlug(slug);
   if (!tour) notFound();
 
-  const relatedAreas = AREAS.filter((a) => tour.relatedAreaSlugs.includes(a.slug)).slice(0, 3);
-  const relatedGuides = ALL_GUIDES_AND_QUESTIONS.filter((g) =>
-    tour.relatedGuideSlugs.includes(g.slug)
-  ).slice(0, 3);
+  const spiderweb = getSpiderwebForTour(tour);
   const siblingTours = LIVE_GUIDED_TOURS.filter(
     (t) => t.slug !== tour.slug && t.track === tour.track
   ).slice(0, 2);
@@ -117,8 +114,10 @@ export default async function TourDetailPage({ params }: PageProps) {
       <TourDetailClient
         tour={tour}
         mapsRouteUrl={mapsRouteUrl}
-        relatedAreas={relatedAreas}
-        relatedGuides={relatedGuides}
+        relatedAreas={spiderweb.areas}
+        relatedGuides={spiderweb.guides}
+        relatedDevelopments={spiderweb.developments}
+        relatedListings={spiderweb.listings}
         siblingTours={siblingTours}
       />
     </>

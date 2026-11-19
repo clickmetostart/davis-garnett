@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { buildPageMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Tampa Bay Commercial Cap Rate & NOI Calculator | Davis & Garnett",
+  title: "Commercial Cap Rate & NOI Calculator | Davis & Garnett",
   description:
     "Calculate Net Operating Income (NOI), commercial cap rate, and implied valuation multiples for Tampa Bay retail, medical office, and NNN investment properties.",
   path: "/tools/cap-rate-calculator",

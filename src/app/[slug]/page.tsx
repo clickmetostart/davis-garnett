@@ -4,7 +4,8 @@ import { notFound } from 'next/navigation';
 import fs from 'fs';
 import path from 'path';
 import LinktreeProfile from '@/components/LinktreeProfile';
-import { buildPageMetadata } from '@/lib/seo';
+import JsonLd from '@/components/JsonLd';
+import { buildPageMetadata, SITE_URL, TEAM_SAME_AS } from '@/lib/seo';
 
 export async function generateMetadata({
   params,
@@ -78,6 +79,21 @@ export default async function LinktreePage({ params }: { params: Promise<{ slug:
 
   return (
     <div className="min-h-screen bg-[#f9fafb]">
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'ProfilePage',
+          url: `${SITE_URL}/${slug}`,
+          mainEntity: {
+            '@type': 'Person',
+            name: `${user.firstName} ${user.lastName}`,
+            jobTitle: user.role || 'Commercial & Residential Real Estate Advisor',
+            url: `${SITE_URL}/${slug}`,
+            worksFor: { '@id': `${SITE_URL}/#organization` },
+            sameAs: TEAM_SAME_AS,
+          },
+        }}
+      />
       <div className="max-w-md mx-auto min-h-screen bg-white shadow-2xl sm:border-x sm:border-gray-200">
         <LinktreeProfile user={user} featuredListingsData={featuredListingsData} />
       </div>

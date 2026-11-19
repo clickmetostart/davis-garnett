@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import DevelopmentDetailClient from "./DevelopmentDetailClient";
 import { DEVELOPMENTS, getDevelopmentBySlug } from "@/data/developments";
-import { ALL_GUIDES_AND_QUESTIONS } from "@/data/knowledgeHub";
-
+import { getSpiderwebForDevelopment } from "@/lib/spiderweb";
+import { buildDevelopmentAeo } from "@/lib/developmentAeo";
 import { buildPageMetadata, TEAM_SAME_AS } from "@/lib/seo";
 
 const BASE_URL = "https://www.davisgarnettsells.com";
@@ -42,24 +42,8 @@ export default async function DevelopmentDetailSpokePage({
     (d) => d.corridor === dev.corridor && d.slug !== dev.slug
   ).slice(0, 3);
 
-  const guideSlugs =
-    dev.corridor === "downtown-bayshore" || dev.slug === "the-quay-sarasota-waterfront"
-      ? [
-          "tampa-bay-luxury-home-buying-guide",
-          "flood-zones-x-ae-ve-tampa-bay-homebuyers",
-          "first-time-and-relocation-buyer-costs-tampa-bay",
-          "how-to-choose-a-commercial-or-residential-realtor-tampa-bay",
-        ]
-      : [
-          "understanding-cdd-fees-in-pasco-and-hillsborough",
-          "what-is-the-difference-between-hoa-and-cdd-in-tampa-bay",
-          "best-55-plus-active-adult-communities-tampa-bay",
-          "how-do-builder-rate-buydowns-work-in-wesley-chapel-developments",
-        ];
-
-  const relatedGuides = ALL_GUIDES_AND_QUESTIONS.filter((g) =>
-    guideSlugs.includes(g.slug)
-  );
+  const spiderweb = getSpiderwebForDevelopment(dev);
+  const aeo = buildDevelopmentAeo(dev);
 
   const pageUrl = `${BASE_URL}/developments/${dev.slug}`;
   const isUrbanTower =
@@ -102,6 +86,17 @@ export default async function DevelopmentDetailSpokePage({
         },
       },
       {
+        "@type": "FAQPage",
+        mainEntity: aeo.faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      },
+      {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
@@ -120,8 +115,13 @@ export default async function DevelopmentDetailSpokePage({
       />
       <DevelopmentDetailClient
         dev={dev}
+        aeo={aeo}
         relatedDevelopments={relatedDevelopments}
-        relatedGuides={relatedGuides}
+        relatedGuides={spiderweb.guides}
+        relatedAreas={spiderweb.areas}
+        relatedTours={spiderweb.tours}
+        relatedGlossaryTerms={spiderweb.glossaryTerms}
+        relatedListings={spiderweb.listings}
       />
     </>
   );

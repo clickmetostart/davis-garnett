@@ -5,10 +5,10 @@ import { ALL_GUIDES_AND_QUESTIONS, AREAS, EVENTS, ARTICLES } from "@/data/knowle
 import { LIVE_GLOSSARY_TERMS } from "@/data/glossary";
 import { LIVE_TOPIC_HUBS } from "@/data/topicHubs";
 import { LIVE_GUIDED_TOURS } from "@/data/tours";
-import { getLiveMarketReports } from "@/data/marketReports";
+import { getLiveMarketReports, isMarketReportsEnabled } from "@/data/marketReports";
 
 const BASE_URL = "https://www.davisgarnettsells.com";
-const STATIC_LAST_MODIFIED = new Date("2026-11-17T09:35:43-05:00");
+const STATIC_LAST_MODIFIED = new Date("2026-11-18T22:10:00-05:00");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
@@ -21,6 +21,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/align-right-carrollwood-coverage",
     "/about/strategic-partners",
     "/about/community-outreach-giving",
+    "/mark-davis-links",
+    "/rachael-garnett-links",
     "/residential",
     "/commercial",
     "/residential/get-started",
@@ -33,6 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/knowledge-hub",
     "/tours",
     "/glossary",
+    ...(isMarketReportsEnabled() ? ["/market-reports"] : []),
     "/tools/mortgage-calculator",
     "/tools/commercial-rent-calculator",
     "/tools/cap-rate-calculator",

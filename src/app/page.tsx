@@ -1,5 +1,5 @@
 import HomePageClient from "@/components/HomePageClient";
-import { buildPageMetadata, OFFICE_GBP_URL, SITE_URL, TEAM_SAME_AS } from "@/lib/seo";
+import { buildPageMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
   title: "Davis & Garnett | Tampa Bay Real Estate Advisors",
@@ -12,44 +12,26 @@ export const metadata = buildPageMetadata({
 export default function HomePage() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    name: "Davis & Garnett Commercial & Residential Advisors",
-    url: SITE_URL,
-    image: `${SITE_URL}/davis-garnett-real-estate-advisors-cover-image-2.jpg`,
-    telephone: "+1-727-808-3344",
-    email: "list@davisgarnettsells.com",
-    hasMap: OFFICE_GBP_URL,
-    sameAs: TEAM_SAME_AS,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "3903 Northdale Blvd Suite 115W",
-      addressLocality: "Tampa",
-      addressRegion: "FL",
-      postalCode: "33624",
-      addressCountry: "US",
-    },
-    areaServed: [
-      "Tampa, FL",
-      "Carrollwood, FL",
-      "St. Petersburg, FL",
-      "Clearwater, FL",
-      "Wesley Chapel, FL",
-      "Land O' Lakes, FL",
-      "Brandon, FL",
-      "Lutz, FL",
-    ],
-    member: [
+    "@graph": [
       {
-        "@type": "Person",
-        name: "Mark Davis",
-        jobTitle: "Commercial & Residential Advisor",
-        url: `${SITE_URL}/about/mark-davis`,
+        "@type": "WebPage",
+        "@id": `${SITE_URL}/#webpage`,
+        url: SITE_URL,
+        name: "Davis & Garnett | Tampa Bay Commercial & Residential Real Estate Advisors",
+        isPartOf: { "@id": `${SITE_URL}/#website` },
+        about: { "@id": `${SITE_URL}/#organization` },
       },
       {
-        "@type": "Person",
-        name: "Rachael Garnett",
-        jobTitle: "Commercial & Residential Advisor",
-        url: `${SITE_URL}/about/rachael-garnett`,
+        "@type": "ItemList",
+        name: "Core Advisory Pillars & Resources",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Residential Homes & Neighborhoods", url: `${SITE_URL}/residential` },
+          { "@type": "ListItem", position: 2, name: "Commercial & Land Advisory", url: `${SITE_URL}/commercial` },
+          { "@type": "ListItem", position: 3, name: "Featured Portfolio", url: `${SITE_URL}/properties` },
+          { "@type": "ListItem", position: 4, name: "Tampa Bay Developments & Corridors", url: `${SITE_URL}/developments` },
+          { "@type": "ListItem", position: 5, name: "Knowledge Hub & Playbooks", url: `${SITE_URL}/knowledge-hub` },
+          { "@type": "ListItem", position: 6, name: "Guided Neighborhood & CRE Tours", url: `${SITE_URL}/tours` },
+        ],
       },
     ],
   };

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import AmbientBackground from "@/components/AmbientBackground";
 import DragScrollProvider from "@/components/DragScrollProvider";
+import { OFFICE_GBP_URL, SITE_NAME, SITE_URL, TEAM_SAME_AS } from "@/lib/seo";
 import "./globals.css";
 
 // Modern, sleek geometric sans-serif for the proposal display/heading text
@@ -68,9 +69,96 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const rootSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        url: SITE_URL,
+        name: SITE_NAME,
+        description:
+          "Commercial, land, and residential real estate advisors at Align Right Realty Carrollwood serving Greater Tampa Bay and Central Florida.",
+        publisher: { "@id": `${SITE_URL}/#organization` },
+        potentialAction: {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: `${SITE_URL}/search-mls?q={search_term_string}`,
+          },
+          "query-input": "required name=search_term_string",
+        },
+      },
+      {
+        "@type": "RealEstateAgent",
+        "@id": `${SITE_URL}/#organization`,
+        name: "Davis & Garnett — Align Right Realty Carrollwood",
+        url: SITE_URL,
+        image: `${SITE_URL}/davis-garnett-real-estate-advisors-cover-image-2.jpg`,
+        telephone: "+1-727-808-3344",
+        email: "list@davisgarnettsells.com",
+        hasMap: OFFICE_GBP_URL,
+        sameAs: TEAM_SAME_AS,
+        parentOrganization: {
+          "@type": "RealEstateAgent",
+          name: "Align Right Realty Carrollwood",
+          identifier: "BK3401606",
+        },
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "3903 Northdale Blvd Suite 115W",
+          addressLocality: "Tampa",
+          addressRegion: "FL",
+          postalCode: "33624",
+          addressCountry: "US",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: 28.0811,
+          longitude: -82.5023,
+        },
+        areaServed: [
+          "Tampa, FL",
+          "Carrollwood, FL",
+          "St. Petersburg, FL",
+          "Clearwater, FL",
+          "Wesley Chapel, FL",
+          "Land O' Lakes, FL",
+          "Brandon, FL",
+          "Lutz, FL",
+          "Sarasota, FL",
+        ],
+        member: [
+          {
+            "@type": "Person",
+            "@id": `${SITE_URL}/about/mark-davis#person`,
+            name: "Mark Davis",
+            jobTitle: "Commercial & Residential Advisor",
+            identifier: "FL License BK3209459",
+            telephone: "+1-941-737-4127",
+            url: `${SITE_URL}/about/mark-davis`,
+          },
+          {
+            "@type": "Person",
+            "@id": `${SITE_URL}/about/rachael-garnett#person`,
+            name: "Rachael Garnett",
+            jobTitle: "Commercial & Residential Advisor",
+            identifier: "FL License SL3378601",
+            telephone: "+1-727-808-3344",
+            url: `${SITE_URL}/about/rachael-garnett`,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className={`${outfit.variable} ${dmSans.variable} ${playfair.variable} ${cormorant.variable} antialiased bg-black text-white`} suppressHydrationWarning>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(rootSchema) }}
+        />
         <AmbientBackground />
         <DragScrollProvider />
         <main className="w-full relative flex flex-col min-h-screen">

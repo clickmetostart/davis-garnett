@@ -1,6 +1,7 @@
 import listingsRaw from "@/data/listings.json";
 import { LIVE_GLOSSARY_TERMS, type GlossaryTerm } from "@/data/glossary";
 import { DEVELOPMENTS, type Development } from "@/data/developments";
+import { LIVE_GUIDED_TOURS, type GuidedTour } from "@/data/tours";
 import {
   ALL_GUIDES_AND_QUESTIONS,
   AREAS,
@@ -79,15 +80,48 @@ export function getTaxonomyForGlossaryTerm(term: GlossaryTerm): TagSignals {
   };
 }
 
+export function getTaxonomyForTour(tour: GuidedTour): TagSignals {
+  return {
+    propertyType: tour.propertyType,
+    audience: tour.audience,
+    county: tour.countyTags,
+    corridor: tour.corridor,
+  };
+}
+
+export function getRelatedToursForTags(
+  sourceTags: TagSignals,
+  explicitSlugs: string[] = [],
+  excludeSlug?: string,
+  limit = 2
+): GuidedTour[] {
+  const explicitSet = new Set(explicitSlugs);
+  return LIVE_GUIDED_TOURS.filter((t) => t.slug !== excludeSlug)
+    .map((tour) => ({
+      tour,
+      score:
+        scoreTaxonomyOverlap(sourceTags, getTaxonomyForTour(tour)) +
+        (explicitSet.has(tour.slug) ? 20 : 0),
+    }))
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map((x) => x.tour);
+}
+
 export function getRelatedListingsForTags(
   sourceTags: TagSignals,
   excludeSlug?: string,
-  limit = 3
+  limit = 3,
+  explicitSlugs: string[] = []
 ): Listing[] {
+  const explicitSet = new Set(explicitSlugs);
   return ACTIVE_LISTINGS.filter((l) => l.slug !== excludeSlug)
     .map((listing) => ({
       listing,
-      score: scoreTaxonomyOverlap(sourceTags, getTaxonomyForListing(listing)) + (listing.featured ? 1 : 0),
+      score:
+        scoreTaxonomyOverlap(sourceTags, getTaxonomyForListing(listing)) +
+        (listing.featured ? 1 : 0) +
+        (listing.slug && explicitSet.has(listing.slug) ? 20 : 0),
     }))
     .sort((a, b) => b.score - a.score)
     .slice(0, limit)
@@ -204,10 +238,23 @@ export function getSpiderwebForDevelopment(dev: Development) {
   const tags = getTaxonomyForDevelopment(dev);
   return {
     tags,
-    guides: getRelatedGuidesForTags(tags, dev.relatedGuideSlugs ?? [], undefined, 3),
+    guides: getRelatedGuidesForTags(tags, dev.relatedGuideSlugs ?? [], undefined, 4),
     areas: getRelatedAreasForTags(tags, dev.relatedAreaSlugs ?? [], undefined, 2),
     listings: getRelatedListingsForTags(tags, undefined, 2),
     glossaryTerms: getRelatedGlossaryForTags(tags, dev.relatedGlossarySlugs ?? [], undefined, 4),
+    tours: getRelatedToursForTags(tags, [], undefined, 2),
+  };
+}
+
+export function getSpiderwebForTour(tour: GuidedTour) {
+  const tags = getTaxonomyForTour(tour);
+  return {
+    tags,
+    areas: getRelatedAreasForTags(tags, tour.relatedAreaSlugs ?? [], undefined, 3),
+    guides: getRelatedGuidesForTags(tags, tour.relatedGuideSlugs ?? [], undefined, 3),
+    developments: getRelatedDevelopmentsForTags(tags, [], undefined, 3),
+    listings: getRelatedListingsForTags(tags, undefined, 2, tour.relatedListingSlugs ?? []),
+    glossaryTerms: getRelatedGlossaryForTags(tags, [], undefined, 4),
   };
 }
 

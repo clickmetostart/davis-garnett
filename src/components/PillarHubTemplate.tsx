@@ -64,7 +64,7 @@ export default function PillarHubTemplate({ hub }: { hub: PillarHubConfig }) {
         name: `${hub.title} ${hub.accentWord}`,
         description: hub.quickAnswer,
         url: canonicalUrl,
-        image: `${SITE_URL}${hub.heroImage}`,
+        image: `${SITE_URL}${hub.teamImage || hub.heroImage}`,
         datePublished: hub.publishedAt,
         dateModified: hub.updatedAt,
         publisher: {

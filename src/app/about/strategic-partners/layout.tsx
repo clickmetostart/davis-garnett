@@ -1,4 +1,5 @@
-import { buildPageMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import { buildBreadcrumbSchema, buildPageMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
   title: "Strategic Partners & Vendor Network | Davis & Garnett",
@@ -9,6 +10,28 @@ export const metadata = buildPageMetadata({
 });
 
 export default function StrategicPartnersLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        name: "Davis & Garnett Vetted Tampa Bay Real Estate Vendor Network",
+        url: `${SITE_URL}/about/strategic-partners`,
+        about: { "@id": `${SITE_URL}/#organization` },
+      },
+      buildBreadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "About Us", path: "/about" },
+        { name: "Strategic Partners", path: "/about/strategic-partners" },
+      ]),
+    ],
+  };
+
+  return (
+    <>
+      <JsonLd data={schema} />
+      {children}
+    </>
+  );
 }
 

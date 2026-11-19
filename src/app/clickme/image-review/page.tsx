@@ -101,7 +101,7 @@ const HOME_PAGE_IMAGES = [
     title: "Homepage: 01 Playbooks Card (Buyer, Seller & Commercial)",
     category: "Knowledge & Tours",
     description: "Mark & Rachael reviewing buyer, seller & commercial playbooks on Homepage card 01.",
-    image: "/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-9.jpg",
+    image: "/images/team/home-playbooks-card.jpg",
     liveHref: "/",
   },
   {
@@ -109,8 +109,8 @@ const HOME_PAGE_IMAGES = [
     slug: "home-guided-tours-card",
     title: "Homepage: 02 Guided Tours Card (#GuidedByDG)",
     category: "Knowledge & Tours",
-    description: "Mark & Rachael hosting a guided Tampa Bay waterfront tour on Homepage card 02.",
-    image: "/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-3.jpg",
+    description: "Mark & Rachael hosting a guided Tampa Bay neighborhood and commercial tour on Homepage card 02.",
+    image: "/images/team/home-guided-tours-card.jpg",
     liveHref: "/",
   },
   {

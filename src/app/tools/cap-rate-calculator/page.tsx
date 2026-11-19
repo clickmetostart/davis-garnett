@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight, Calculator, Sparkles } from "lucide-react";
 import ProposalNav from "@/components/ProposalNav";
@@ -19,6 +19,21 @@ export default function CapRateCalculatorPage() {
   const [grossScheduledRent, setGrossScheduledRent] = useState(142000);
   const [vacancyPct, setVacancyPct] = useState(5);
   const [operatingExpenses, setOperatingExpenses] = useState(32000);
+  const [prefillSource, setPrefillSource] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    const p = Number(params.get("price"));
+    if (Number.isFinite(p) && p >= 100000) {
+      const rounded = Math.round(p);
+      setPurchasePrice(rounded);
+      setGrossScheduledRent(Math.round(rounded * 0.095));
+      setOperatingExpenses(Math.round(rounded * 0.022));
+    }
+    const from = params.get("from");
+    if (from) setPrefillSource(from);
+  }, []);
 
   const metrics = useMemo(() => {
     const effectiveGrossIncome = grossScheduledRent * (1 - vacancyPct / 100);
@@ -49,6 +64,11 @@ export default function CapRateCalculatorPage() {
           <span className="inline-flex items-center gap-2 text-[#D4AF37] text-xs font-bold uppercase tracking-[0.25em] mb-3">
             <Calculator className="w-4 h-4" /> Commercial Investment Tool
           </span>
+          {prefillSource && (
+            <div className="mb-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/40 text-xs font-semibold text-[#D4AF37]">
+              <Sparkles className="w-3.5 h-3.5" /> Pre-filled target price from {prefillSource}
+            </div>
+          )}
           <h1 className="font-aiveritas text-3xl md:text-5xl text-white max-w-4xl mb-4 leading-tight">
             Commercial Cap Rate &amp; NOI Calculator
           </h1>

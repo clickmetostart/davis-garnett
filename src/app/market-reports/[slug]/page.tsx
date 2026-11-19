@@ -23,7 +23,8 @@ export async function generateMetadata({
   if (!report) {
     return buildPageMetadata({
       title: "Market Report | Davis & Garnett",
-      description: "Tampa Bay market statistics and verified local trend data.",
+      description:
+        "Verified monthly residential and commercial real estate statistics, days on market, and price benchmarks across Tampa Bay.",
       path: `/market-reports/${slug}`,
       noIndex: true,
     });

@@ -1,7 +1,8 @@
-import { buildPageMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import { buildBreadcrumbSchema, buildPageMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Trending Real Estate & Tampa Bay Neighborhoods | Davis & Garnett",
+  title: "Tampa Bay Neighborhoods & New Builds | Davis & Garnett",
   description:
     "Explore trending Tampa Bay neighborhoods, commercial districts, luxury condos, and new construction from Wesley Chapel to Sarasota.",
   path: "/developments",
@@ -9,6 +10,27 @@ export const metadata = buildPageMetadata({
 });
 
 export default function DevelopmentsLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        url: `${SITE_URL}/developments`,
+        name: "Trending Tampa Bay Developments & Neighborhood Corridors",
+        about: { "@id": `${SITE_URL}/#organization` },
+      },
+      buildBreadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "Developments", path: "/developments" },
+      ]),
+    ],
+  };
+
+  return (
+    <>
+      <JsonLd data={schema} />
+      {children}
+    </>
+  );
 }
 

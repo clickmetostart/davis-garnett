@@ -11,6 +11,19 @@ export const TEAM_SAME_AS: string[] = [
   `${SITE_URL}/rachael-garnett-links`,
 ];
 
+/** Builds a Schema.org BreadcrumbList node for `@graph` structured data blocks. */
+export function buildBreadcrumbSchema(items: Array<{ name: string; path: string }>) {
+  return {
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: item.name,
+      item: item.path === "/" ? SITE_URL : `${SITE_URL}${item.path.startsWith("/") ? item.path : `/${item.path}`}`,
+    })),
+  };
+}
+
 export interface BuildMetadataInput {
   title: string;
   description: string;

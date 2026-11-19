@@ -21,7 +21,7 @@ import {
 } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Commercial Real Estate Mentoring & Coaching | Davis & Garnett",
+  title: "Commercial Real Estate Mentoring | Davis & Garnett",
   description:
     "Hands-on commercial real estate mentoring in Tampa Bay with Mark Davis and Rachael Garnett covering NNN leases, cap rates, SBA 504, and 1031 swaps.",
   path: "/services/commercial-mentoring",

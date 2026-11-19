@@ -6,6 +6,7 @@ import Link from "next/link";
 import {
   ArrowLeft,
   ArrowRight,
+  Building2,
   CheckSquare,
   Compass,
   Clock,
@@ -30,12 +31,16 @@ import {
   type GuidedTour,
 } from "@/data/tours";
 import type { AreaItem, KnowledgeItem } from "@/data/knowledgeHub";
+import type { Development } from "@/data/developments";
+import type { Listing } from "@/types/listings";
 
 interface Props {
   tour: GuidedTour;
   mapsRouteUrl: string;
   relatedAreas: AreaItem[];
   relatedGuides: KnowledgeItem[];
+  relatedDevelopments: Development[];
+  relatedListings: Listing[];
   siblingTours: GuidedTour[];
 }
 
@@ -44,6 +49,8 @@ export default function TourDetailClient({
   mapsRouteUrl,
   relatedAreas,
   relatedGuides,
+  relatedDevelopments,
+  relatedListings,
   siblingTours,
 }: Props) {
   const [consultOpen, setConsultOpen] = useState(false);
@@ -562,6 +569,44 @@ export default function TourDetailClient({
                     className="block p-3 rounded-xl bg-[#f5f3ef] hover:bg-[#D4AF37]/20 transition-colors text-xs font-bold text-[#111]"
                   >
                     {g.title} →
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {relatedDevelopments.length > 0 && (
+            <div className="bg-white rounded-2xl border border-[#111]/10 p-6">
+              <h4 className="font-aiveritas text-xl text-[#111] mb-3 flex items-center gap-2">
+                <Building2 className="w-4 h-4 text-[#9A7D3A]" /> Communities Along This Route
+              </h4>
+              <div className="space-y-2.5">
+                {relatedDevelopments.map((dev) => (
+                  <Link
+                    key={dev.slug}
+                    href={`/developments/${dev.slug}`}
+                    className="block p-3 rounded-xl bg-[#f5f3ef] hover:bg-[#D4AF37]/20 transition-colors text-xs font-bold text-[#111]"
+                  >
+                    {dev.name} →
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {relatedListings.length > 0 && (
+            <div className="bg-white rounded-2xl border border-[#111]/10 p-6">
+              <h4 className="font-aiveritas text-xl text-[#111] mb-3">
+                Active Portfolio Matches
+              </h4>
+              <div className="space-y-2.5">
+                {relatedListings.map((item) => (
+                  <Link
+                    key={item.slug || item.id}
+                    href={`/listings/${item.slug || item.id}`}
+                    className="block p-3 rounded-xl bg-[#f5f3ef] hover:bg-[#D4AF37]/20 transition-colors text-xs font-bold text-[#111]"
+                  >
+                    {item.title} {item.price ? `(${item.price})` : ""} →
                   </Link>
                 ))}
               </div>

@@ -139,7 +139,7 @@ const RAW_DEVELOPMENTS: Development[] = [
     summary:
       "Pendry Residences Tampa rises 38 stories beside the Tampa Riverwalk. It pairs five-star hotel care with 207 private sky homes and wide river views.",
     description:
-      "Pendry Residences Tampa sets an unprecedented benchmark for branded vertical living on Florida's Gulf Coast. Developed by Two Roads Development in partnership with Pendry Hotels & Resorts (Montage International), this 38-story architectural landmark crowns the Tampa Riverwalk right beside the Straz Center for the Performing Arts and Curtis Hixon Waterfront Park. Owners enjoy the rare duality of complete residential privacy—with dedicated residential lobby, private high-speed elevator foyers, and an exclusive 19th-floor resident-only resort deck—paired with effortless access to five-star hotel dining, Spa Pendry, and 24-hour white-glove concierge turn-key management.",
+      "Pendry Residences Tampa sets a new bar for branded condo living on Florida's Gulf Coast. Built by Two Roads Development with Pendry Hotels & Resorts (Montage International), this 38-story tower sits on the Tampa Riverwalk beside the Straz Center and Curtis Hixon Park. Owners get full privacy with a separate lobby, private elevators, and a 19th-floor pool deck. You also enjoy five-star hotel dining, Spa Pendry, and 24-hour concierge care.",
     highlights: [
       "Direct Hillsborough Riverfront & Tampa Riverwalk frontage with immediate walkability to Straz Center and Curtis Hixon Park",
       "207 fully finished residences spanning floors 19–38 with private elevator access and 10-to-12-foot floor-to-ceiling glass",
@@ -266,7 +266,7 @@ const RAW_DEVELOPMENTS: Development[] = [
     summary:
       "The Ritz-Carlton Residences sit on five lush acres along Bayshore Boulevard in South Tampa. Owners get clear bay views and private Ritz-Carlton home care.",
     description:
-      "Positioned along the world's longest continuous waterfront sidewalk in prestigious South Tampa, The Ritz-Carlton Residences, Tampa represents pure residential exclusivity—with zero hotel transient traffic on site. Designed by Arquitectonica with warm, coastal-modern interiors by Meyer Davis Studio and landscape architecture by Enzo Enea, these twin 27-story towers feature flow-through floor plans with expansive east-facing Hillsborough Bay sunrise terraces and west-facing sunset verandas. Residents enjoy private tennis and pickleball courts, a resort-style infinity edge pool overlooking the bay, on-demand wellness treatment rooms, and dedicated Ritz-Carlton staff.",
+      "Set right on Bayshore Boulevard in South Tampa, The Ritz-Carlton Residences offer private condo living with no hotel guests on site. Arquitectonica designed these twin 27-story towers, with warm coastal interiors by Meyer Davis Studio and gardens by Enzo Enea. Flow-through plans pair east-facing Hillsborough Bay sunrise views with west-facing sunset decks. Owners also enjoy tennis and pickleball courts, a bayfront pool, wellness rooms, and full Ritz-Carlton staff.",
     highlights: [
       "Unobstructed, permanent sunrise views over Hillsborough Bay along historic Bayshore Boulevard",
       "100% pure residential sanctuary—no transient hotel rooms or short-term rentals permitted",
@@ -399,7 +399,7 @@ const RAW_DEVELOPMENTS: Development[] = [
     summary:
       "Water Street Tampa Phase 2 adds a 33-story condo tower downtown. Nichols Architects and MAWD designed the homes right above top shops and dining.",
     description:
-      "Water Street Tampa has transformed Downtown Tampa's waterfront into a $4+ billion, 56-acre walkable urban neighborhood backed by Bill Gates' Cascade Investment and Lightning owner Jeff Vinik. Phase 2 introduces a striking 33-story, 400-foot architectural condominium tower at the nexus of Water Street and Cumberland Avenue. Designed by Nichols Architects with interiors by London/New York design studio MAWD, the tower integrates ground-floor flagship culinary retail, elevated sky-park gardens, and expansive residences engineered to WELL Building Standards—Directly across from Benchmark International / Amalie Arena, The Tampa EDITION, and the Garrison Channel marina.",
+      "Water Street Tampa turned Downtown Tampa's waterfront into a $4+ billion, 56-acre walkable district backed by Cascade Investment and Jeff Vinik. Phase 2 brings a 33-story, 400-foot condo tower to Water Street and Cumberland Avenue. Nichols Architects and MAWD designed the building with ground-floor shops, sky gardens, and WELL-certified homes. It sits steps from Amalie Arena, The Tampa EDITION, and the Garrison Channel marina.",
     highlights: [
       "Located in the heart of the $4B+ WELL-Certified Water Street Tampa master district",
       "33-story, 400-foot sculptural glass tower by Nichols Architects & MAWD interior design",
@@ -527,7 +527,7 @@ const RAW_DEVELOPMENTS: Development[] = [
     summary:
       "Hotel ORA + Private Residences rises 39 stories in Downtown Tampa. It includes a rooftop pool, steakhouse, and optional rental care for owners.",
     description:
-      "Hotel ORA + Private Residences bridges a critical gap in the Tampa Bay luxury market: a true five-star high-rise engineered from the ground up for both lifestyle enjoyment and turnkey hospitality cash flow. Rising 39 stories at the gateway between Downtown Tampa, the Channel District, and Meridian Avenue, this $675M development features 627 fully furnished luxury condo-hotel suites alongside 31 ultra-exclusive Private Residences on the upper floors. Owners can place their residence into the professional Hotel ORA rental program when traveling—capturing lucrative demand from the Tampa Convention Center, Amalie Arena, and cruise port—or enjoy private skyline living year-round.",
+      "Hotel ORA + Private Residences blends luxury high-rise living with turnkey rental income. Rising 39 stories between Downtown Tampa, the Channel District, and Meridian Avenue, this $675M tower holds 627 furnished condo-hotel suites plus 31 top-floor Private Residences. Owners can live here year-round or place their unit into the Hotel ORA rental pool when away. Demand flows straight from the Tampa Convention Center, Amalie Arena, and the cruise port.",
     highlights: [
       "Rare Downtown Tampa luxury tower explicitly zoned and managed for flexible short-term hotel rental income",
       "Dramatic cantilevered rooftop infinity-edge pool & sky lounge with panoramic views of the Downtown skyline",
@@ -660,7 +660,7 @@ const RAW_DEVELOPMENTS: Development[] = [
     summary:
       "Gasworx spans 50 acres linking Historic Ybor City with Water Street Tampa. Buyers find brick walks, a bright food hall, streetcar stops, and new townhomes.",
     description:
-      "Gasworx is the most transformative urban infill project in Tampa's history alongside Water Street. Spanning 50 acres and nearly 5 million square feet of mixed-use density between Historic Ybor City and the Channel District, visionary landowner Darryl Shaw and national developer KETTLER (with urban planners DPZ CoDesign) are creating a deeply authentic, pedestrian-first neighborhood. Anchored by a lush central park, a restored historic glass warehouse marketplace, a new TECO Streetcar station, and continuous tree-lined bike/pedestrian trails, Gasworx offers both residential ownership opportunities and high-yield commercial retail/office acquisitions.",
+      "Gasworx is one of Tampa's biggest urban projects alongside Water Street. Covering 50 acres between Historic Ybor City and the Channel District, Darryl Shaw, KETTLER, and DPZ CoDesign are building a walkable mixed-use hub with nearly 5 million square feet. Plans feature a central park, a restored glass warehouse market, a TECO Streetcar stop, and shaded bike trails. Buyers can shop for urban homes as well as retail and office space.",
     highlights: [
       "50-acre, $1.5B+ master plan bridging the 0.7-mile gap between Ybor City, Encore, Channel District, and Water Street",
       "5 million total square feet including 5,000+ residential units, 500,000 SqFt of Class-A creative office, and 150,000 SqFt of retail",
@@ -793,7 +793,7 @@ const RAW_DEVELOPMENTS: Development[] = [
     summary:
       "Two Rivers spans 3,400 acres beside state parks in Wesley Chapel. Families can pick seven builders, The Nest club, and the coming Peak Surf Park.",
     description:
-      "Two Rivers represents the crown jewel of Wesley Chapel's eastward luxury expansion along State Road 56. Developed by Eisenhower Property Group on historic ranchland framed by ancient grand oaks and the Hillsborough River wilderness preserve, this 3,400-acre master plan combines authentic Old Florida conservation with resort-caliber modern amenities. Buyers can choose from seven of Tampa Bay's most respected builders—ranging from attainable $425K family residences by Casa Fresca and Lennar up to $1.6M+ semi-custom waterfront and conservation estates on 70-to-80-foot homesites by Homes by WestBay and Park Square Homes.",
+      "Two Rivers leads Wesley Chapel's eastward growth along State Road 56. Built by Eisenhower Property Group on old ranchland framed by grand oaks and the Hillsborough River preserve, this 3,400-acre plan blends nature with resort pools and trails. Seven local builders offer homes here. Choices range from $425K family plans by Casa Fresca and Lennar up to $1.6M+ estates on wide 70-to-80-foot lots by Homes by WestBay and Park Square Homes.",
     highlights: [
       "Ranked a Top-15 Best-Selling Master-Planned Community in the Nation by RCLCO & John Burns Research",
       "3,400+ acres of ancient oak hammocks, spring-fed lakes, and miles of trails bordering Hillsborough River State Park",
@@ -919,7 +919,7 @@ const RAW_DEVELOPMENTS: Development[] = [
     summary:
       "Angeline spans 6,200 acres off the Suncoast Parkway in Land O' Lakes. It centers on health, a working community farm, miles of trails, and new biotech jobs.",
     description:
-      "Angeline is one of the most ambitious mixed-use master-planned cities in the Southeast United States. Developed by Metro Development Group across 6,200 acres with direct Suncoast Parkway (SR-589) interchange access—putting Tampa International Airport and Westshore Business District just 28 minutes away—Angeline merges life-science job growth with conservation living. At its heart sits Speros FL, Moffitt Cancer Center's 775-acre, 140-building global biotech and research campus, alongside the new HCA Florida Angeline Hospital, the Tuition-Free Angeline Academy of Innovation (Grades 6–12 STEM magnet), a working community farm & café, and 3,600 acres of permanently preserved wetlands and 100 miles of trails.",
+      "Angeline is a 6,200-acre master-planned community built by Metro Development Group right off the Suncoast Parkway (SR-589). That direct highway ramp puts Tampa International Airport and Westshore just 28 minutes away. At the center sits Speros FL, Moffitt Cancer Center's 775-acre biotech campus, next to the new HCA Florida Angeline Hospital. Families also enjoy the tuition-free Angeline Academy of Innovation (Grades 6–12), a working farm and café, 3,600 acres of green space, and 100 miles of trails.",
     highlights: [
       "Anchored by Moffitt Cancer Center's 775-acre, multi-billion-dollar *Speros FL* Global Life Sciences & Innovation Campus",
       "Direct Suncoast Parkway (SR-589) expressway access—25 to 30 minutes to Tampa International Airport (TPA)",
@@ -1051,7 +1051,7 @@ const RAW_DEVELOPMENTS: Development[] = [
     summary:
       "Epperson and Mirada bring clear blue lagoons right into Wesley Chapel and San Antonio. Residents enjoy sand beaches, boats, and golf cart paths.",
     description:
-      "Epperson and Mirada revolutionized Florida master-planned living by bringing crystalline, turquoise Caribbean waters inland to the high-and-dry rolling hills of Wesley Chapel and Pasco County. At Epperson (just off the brand-new Overpass Road I-75 interchange), residents enjoy a 7.5-acre Crystal Lagoon® with sandy beaches, a swim-up bar, water obstacle course, and family events. Just minutes north, Mirada doubles the scale with a breathtaking 15-acre Crystal Lagoon®—the largest in the United States. Connected by extra-wide golf cart paths, ULTRAFi gigabit technology, and top-rated schools including Kirkland Ranch Academy of Innovation, these communities offer unbeatable resort lifestyle value and strong builder incentives.",
+      "Epperson and Mirada brought bright turquoise lagoon water inland to the dry hills of Wesley Chapel and Pasco County. Just off the Overpass Road I-75 exit, Epperson centers around a 7.5-acre Crystal Lagoon® with sandy beaches, a swim-up bar, and family events. Minutes north, Mirada doubles down with a 15-acre Crystal Lagoon®—the largest in the U.S. Wide golf cart paths, ULTRAFi fast internet, Kirkland Ranch Academy, and builder incentives make both spots a strong value.",
     highlights: [
       "Home to the first 7.5-acre Crystal Lagoon® in the U.S. (Epperson) and the largest 15-acre Crystal Lagoon® in the nation (Mirada)",
       "White-sand beaches, swim-up tiki bars, paddleboarding, kayaking, water slides, and private VIP cabanas",
@@ -1913,7 +1913,7 @@ const RAW_DEVELOPMENTS: Development[] = [
     trendingKind: "Commercial & Mixed-Use",
     isMixedUseCommercialResidential: true,
     summary: "Westshore joins new Marina Pointe condo towers and yacht docks on Tampa Bay with Beach Park homes. It also sits steps from International Plaza shops and main work offices.",
-    description: "Situated six minutes from Tampa International Airport, Westshore anchors major corporate headquarters alongside walkable boardwalk dining at Westshore Marina District and quiet guard-gated canals in Culbreath Isles.",
+    description: "Six minutes from Tampa International Airport, Westshore pairs major office hubs with walkable dining at Westshore Marina District. Nearby Culbreath Isles adds quiet, guard-gated canal homes.",
     highlights: [
       "Deep-water yacht marina slips and waterfront boardwalk dining at Westshore Marina District",
       "Direct access to Tampa International Airport, I-275, and the Howard Frankland Bridge",
@@ -2532,7 +2532,7 @@ const RAW_DEVELOPMENTS: Development[] = [
     gallery: ["/images/developments/carrollwood-village-northdale-villas-55-plus.jpg"],
     trendingKind: "55+ Community",
     summary: "Buyers wanting easy North Tampa living pick one-story villas and fairway condos near Carrollwood Village and Northdale. Hospitals and shops sit five minutes away.",
-    description: "While age-restricted 55+ parks cluster in Pasco and Pinellas, many North Tampa seniors prefer low-maintenance single-story villas inside Carrollwood Village and Northdale so they stay near Tampa doctors and family.",
+    description: "Many age-55+ parks sit out in Pasco or Pinellas. Still, plenty of North Tampa retirees choose easy one-story villas in Carrollwood Village and Northdale to stay close to Tampa doctors and family.",
     highlights: [
       "Step-free single-story floor plans with exterior yard care included in select villages",
       "Under 10 minutes to St. Joseph's North (Lutz) and AdventHealth Carrollwood",
@@ -3040,7 +3040,7 @@ const RAW_DEVELOPMENTS: Development[] = [
     trendingKind: "Commercial & Mixed-Use",
     isMixedUseCommercialResidential: true,
     summary: "University Pkwy (Exit 213), Lakewood Ranch Main St, and Downtown Sarasota anchor strong clinic sites, firm offices, and luxury storefront shops.",
-    description: "Anchored by University Town Center, Sarasota Memorial Hospital expansions, and thriving Lakewood Ranch office parks, the Bradenton-Sarasota corridor attracts strong healthcare tenants, family offices, and NNN retail investors.",
+    description: "University Town Center, Sarasota Memorial Hospital, and Lakewood Ranch office parks anchor this fast-growing corridor. It draws strong medical clinics, family offices, and NNN retail buyers.",
     highlights: [
       "University Parkway at I-75 Exit 213 anchors regional retail, hotels, and dining",
       "High-growth Lakewood Ranch corporate and medical offices near booming residential villages",
@@ -3455,7 +3455,7 @@ const RAW_DEVELOPMENTS: Development[] = [
     trendingKind: "Commercial & Mixed-Use",
     isMixedUseCommercialResidential: true,
     summary: "SR-54 in Trinity draws strong medical, dining, and retail growth. Nearby neighborhoods bring daily customer traffic.",
-    description: "Anchored by HCA Florida Trinity Hospital and the Suncoast Parkway, West Pasco's commercial spine captures affluent household traffic commuting between Pinellas and Hillsborough with high-visibility outparcels and office parks.",
+    description: "HCA Florida Trinity Hospital and the Suncoast Parkway drive steady traffic along West Pasco's main commercial road. Owners find busy corner pads and office parks serving both Pinellas and Hillsborough commuters.",
     highlights: [
       "Direct proximity to HCA Florida Trinity Hospital supporting specialist doctors and labs",
       "Over 45,000 vehicles daily traveling SR-54 past Starkey Blvd and Little Road",
@@ -3916,7 +3916,7 @@ const RAW_DEVELOPMENTS: Development[] = [
     trendingKind: "Commercial & Mixed-Use",
     isMixedUseCommercialResidential: true,
     summary: "Rocky Point sits five minutes from Tampa Airport. Bayfront offices, hotels, dining, and easy condos line the water.",
-    description: "Sitting directly off Courtney Campbell Causeway five minutes from Tampa International Airport terminals, Rocky Point is one of the highest-utility live-work peninsulas in the region—connecting Pinellas and Hillsborough on one bayfront loop.",
+    description: "Right off Courtney Campbell Causeway and five minutes from Tampa International Airport, Rocky Point blends office towers with bayfront condos. It gives buyers fast drives to both Pinellas and Tampa.",
     highlights: [
       "Five-minute drive to Tampa International Airport (TPA) terminals and FBO private jet hangars",
       "Scenic Courtney Campbell paved running/cycling bridge straight toward Clearwater",
@@ -4327,7 +4327,7 @@ const RAW_DEVELOPMENTS: Development[] = [
     gallery: ["/images/developments/bloomingdale-woodberry-courtyard-55-plus-villas.jpg"],
     trendingKind: "55+ Community",
     summary: "Brandon single-story villas remove stair climbs and lawn chores. Doctors and family stay five minutes away.",
-    description: "Ideal for retirees who want immediate proximity to Brandon's medical district, Westfield shopping, and family across Valrico, these single-story villas bundle roof and exterior lawn care into simple monthly fees.",
+    description: "These one-story villas fit retirees who want fast drives to Brandon clinics, Westfield shops, and family in Valrico. One simple monthly fee covers the roof and lawn care.",
     highlights: [
       "Zero CDD assessments keep recurring county property taxes clean and modest",
       "Fee-simple single-story villa ownership skips tall-tower condo milestone assessments",
@@ -4737,7 +4737,7 @@ const RAW_DEVELOPMENTS: Development[] = [
     gallery: ["/images/developments/solstice-renaissance-wellen-park-55-plus.jpg"],
     trendingKind: "55+ Community",
     summary: "Solstice and Renaissance bring modern 55+ villas and heated pools. Gulf beaches sit ten minutes away.",
-    description: "For downsizers choosing coastal Sarasota living without two-hour traffic into Tampa, Wellen Park's gated 55+ neighborhoods combine luxury Toll Brothers and Mattamy single-story finishes with golf-cart access to lakefront restaurants.",
+    description: "Wellen Park's gated 55+ clubs give downsizers sunny Sarasota living without long drives into Tampa. Toll Brothers and Mattamy build one-story homes with easy golf-cart rides to lakeside dining.",
     highlights: [
       "Solstice by Toll Brothers brings private residents-only clubhouses and designer flex dens",
       "Renaissance offers lower entry-point paired villas with social lifestyle directors",
@@ -4840,7 +4840,7 @@ const RAW_DEVELOPMENTS: Development[] = [
     trendingKind: "Commercial & Mixed-Use",
     isMixedUseCommercialResidential: true,
     summary: "Laurel Road booms with medical clinics, hotels, and retail pads. Sarasota Memorial Hospital anchors this exit.",
-    description: "Following the opening and rapid expansion of Sarasota Memorial Hospital Venice at Laurel Road and I-75, commercial demand for physician offices, imaging labs, urgent cares, hotels, and restaurants has surged across Nokomis and Venice.",
+    description: "Sarasota Memorial Hospital Venice opened at Laurel Road and I-75 and keeps growing fast. That growth has lifted demand for doctor offices, urgent cares, hotels, and dining across Nokomis and Venice.",
     highlights: [
       "Anchored directly by the expanding Sarasota Memorial Hospital Venice campus",
       "Direct I-75 Exit 195 visibility connecting South Sarasota, Palmer Ranch, and North Port",
@@ -4891,7 +4891,7 @@ const RAW_DEVELOPMENTS: Development[] = [
     gallery: ["/images/developments/north-port-warm-mineral-springs-growth-corridor.jpg"],
     trendingKind: "Existing Neighborhood",
     summary: "North Port builds affordable concrete-block homes on dry lots. Most streets charge zero HOA or CDD fees.",
-    description: "Bordering Wellen Park and minutes from I-75 Exits 179 and 182, North Port remains Sarasota County's #1 entry point for newer single-family homes on quarter-to-half-acre Zone X parcels without mandatory association restrictions.",
+    description: "Right beside Wellen Park and close to I-75 Exits 179 and 182, North Port is Sarasota County's top spot for newer homes on quarter-to-half-acre Zone X lots. Most streets have no HOA rules.",
     highlights: [
       "Zero HOA and zero CDD assessments across broad residential grid neighborhoods",
       "Minutes to the world-famous 85°F geothermal Warm Mineral Springs Park",
@@ -4994,7 +4994,7 @@ const RAW_DEVELOPMENTS: Development[] = [
     trendingKind: "Commercial & Mixed-Use",
     isMixedUseCommercialResidential: true,
     summary: "Citrus Park and Gunn Highway hold strong retail plazas and dental offices. Veterans Expressway sits minutes away.",
-    description: "Serving affluent Northwest Hillsborough households from Carrollwood and Cheval over to Westchase, Citrus Park commercial corridors combine instant Veterans Expressway exits with strong neighborhood retail spending.",
+    description: "Citrus Park serves strong household spending from Carrollwood and Cheval over to Westchase. Business owners get quick Veterans Expressway exits and busy retail strips.",
     highlights: [
       "Five minutes from our Align Right Carrollwood office hub at 3903 Northdale Blvd",
       "Direct Veterans Expressway Exits at Gunn Hwy, Ehrlich Rd, and Waters Ave",
