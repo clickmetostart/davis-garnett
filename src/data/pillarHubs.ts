@@ -101,6 +101,7 @@ export const RESIDENTIAL_PILLAR_HUB: PillarHubConfig = {
     "Buying your next house, selling a longtime place, or moving into Tampa Bay? Mark Davis and Rachael Garnett help you pick the right street at your own pace.",
   heroImage: "/res_waterfront_estate_1787632802890.png",
   heroImageAlt: "Tampa Bay home exterior at sunset",
+  teamImage: "/images/team/mark-rachael-hyde-park-residential.jpg",
   getStartedHref: "/residential/get-started",
   getStartedLabel: "Plan Your Move",
   secondaryHeroHref: "/search-mls",
@@ -418,6 +419,7 @@ export const COMMERCIAL_PILLAR_HUB: PillarHubConfig = {
     "Mark Davis and Rachael Garnett help business owners, clinics, landlords, and landowners find strong sites, strike fair leases, and price buildings cleanly.",
   heroImage: "/new-images/new-2/davis-garnett-tampa-commercial-real-estate-1.jpg",
   heroImageAlt: "Tampa Bay commercial real estate building and retail corridor",
+  teamImage: "/images/team/mark-rachael-channelside-commercial.jpg",
   getStartedHref: "/commercial/get-started",
   getStartedLabel: "Start Your Project",
   secondaryHeroHref: "/services/commercial-bpo",
@@ -446,6 +448,7 @@ export const COMMERCIAL_PILLAR_HUB: PillarHubConfig = {
       id: "business-sites",
       tag: "Owner-Occupied",
       title: "Buying a Home for Your Business",
+      image: "/images/hub-lanes/commercial-business-sites.jpg",
       summary:
         "Stop paying endless landlord rent hikes. We help medical practices, trades, and offices buy standalone buildings built to grow into.",
       highlights: [
@@ -515,6 +518,7 @@ export const COMMERCIAL_PILLAR_HUB: PillarHubConfig = {
       id: "deal-coaching",
       tag: "First CRE Buy",
       title: "Deal-by-Deal Commercial Coaching",
+      image: "/images/hub-lanes/commercial-deal-coaching.jpg",
       summary:
         "Buying your first business property? Walk through rent sheets, lease rules, and contract terms live with Mark and Rachael.",
       highlights: [

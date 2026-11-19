@@ -311,19 +311,23 @@ const HUB_PAGE_IMAGES = [
   {
     id: "hub-page:residential",
     slug: "hub-page-residential",
-    title: "Residential Realtor Team Hub Hero (/residential)",
+    title: "Residential Hub: Approachable Local Representation Card (/residential)",
     category: "/residential",
-    description: "Flagship hero image for the Residential Realtor Team page.",
-    image: "/res_waterfront_estate_1787632802890.png",
+    description: "2-column framed team/advisory card below the hero on /residential.",
+    image:
+      RESIDENTIAL_PILLAR_HUB.teamImage ||
+      "/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-9.jpg",
     liveHref: "/residential",
   },
   {
     id: "hub-page:commercial",
     slug: "hub-page-commercial",
-    title: "Commercial Realtor Team Hub Hero (/commercial)",
+    title: "Commercial Hub: Practical Commercial Advocacy Card (/commercial)",
     category: "/commercial",
-    description: "Flagship hero image for the Commercial Realtor Team page.",
-    image: "/new-images/new-2/davis-garnett-tampa-commercial-real-estate-1.jpg",
+    description: "2-column framed team/advisory card below the hero on /commercial.",
+    image:
+      COMMERCIAL_PILLAR_HUB.teamImage ||
+      "/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-9.jpg",
     liveHref: "/commercial",
   },
   {
@@ -334,15 +338,6 @@ const HUB_PAGE_IMAGES = [
     description: "Residential portfolio cover image on /properties.",
     image: "/listings/d-g-residential-1.webp",
     liveHref: "/properties",
-  },
-  {
-    id: "hub-page:developments-combo",
-    slug: "hub-page-developments-combo",
-    title: "Developments Hub: New Construction vs. Resale Advisory Card",
-    category: "/developments",
-    description: "Mark & Rachael advisory card in the 55+ / New Construction guide on /developments.",
-    image: "/davis-garnett-real-combo.png",
-    liveHref: "/developments",
   },
 ];
 
@@ -1030,7 +1025,7 @@ export default function ImageReviewPage() {
               <option value="all">All Pages &amp; Sections ({allItems.length})</option>
               <option value="Home Page">Home Page ({HOME_PAGE_IMAGES.length})</option>
               <option value="About & Team">About &amp; Team Pages ({ABOUT_PAGE_IMAGES.length})</option>
-              <option value="Hubs & Portfolio">Hubs &amp; Portfolio Pages ({HUB_PAGE_IMAGES.length})</option>
+              <option value="Hubs & Portfolio">Hubs &amp; Portfolio Pages ({HUB_PAGE_IMAGES.length + RESIDENTIAL_PILLAR_HUB.serviceLanes.length + COMMERCIAL_PILLAR_HUB.serviceLanes.length})</option>
               <option value="Trending Region">Trending Regions (12)</option>
               <option value="Development">Developments ({DEVELOPMENTS.length})</option>
               <option value="Get Started">Get Started Cards (2)</option>
