@@ -15,21 +15,21 @@ import { smoothScrollToId } from "@/lib/smoothScroll";
 export default function PillarHubJumpGrid({ isCommercial }: { isCommercial: boolean }) {
   const items = isCommercial
     ? [
-        { label: "Commercial Services", sub: "6 Core Lanes", target: "services", icon: Building2 },
-        { label: "Business Corridors", sub: "Tampa Bay & I-4", target: "corridors", icon: MapPin },
-        { label: "Active Portfolio", sub: "CRE & Land Deals", target: "portfolio", icon: Compass },
-        { label: "Tools & Tours", sub: "Cap Rate & Routes", target: "tours", icon: Calculator },
-        { label: "Checks & FAQ", sub: "Before You Sign", target: "checks-faq", icon: ShieldCheck },
-        { label: "Talk With Us", sub: "Mark & Rachael", target: "closing-cta", icon: Phone },
-      ]
+      { label: "Commercial Services", sub: "6 Core Lanes", target: "services", icon: Building2 },
+      { label: "Business Corridors", sub: "Tampa Bay & I-4", target: "corridors", icon: MapPin },
+      { label: "Active Portfolio", sub: "CRE & Land Deals", target: "portfolio", icon: Compass },
+      { label: "Tools & Tours", sub: "Cap Rate & Routes", target: "tours", icon: Calculator },
+      { label: "Checks & FAQ", sub: "Before You Sign", target: "checks-faq", icon: ShieldCheck },
+      { label: "Talk With Us", sub: "Mark & Rachael", target: "closing-cta", icon: Phone },
+    ]
     : [
-        { label: "Residential Services", sub: "6 Core Lanes", target: "services", icon: Home },
-        { label: "Neighborhoods", sub: "Across Tampa Bay", target: "corridors", icon: MapPin },
-        { label: "Active Portfolio", sub: "Homes & Condos", target: "portfolio", icon: Compass },
-        { label: "Tools & Tours", sub: "Mortgage & Routes", target: "tours", icon: Calculator },
-        { label: "Checks & FAQ", sub: "Buyer & Seller Tips", target: "checks-faq", icon: ShieldCheck },
-        { label: "Talk With Us", sub: "Mark & Rachael", target: "closing-cta", icon: Phone },
-      ];
+      { label: "Residential Services", sub: "6 Core Lanes", target: "services", icon: Home },
+      { label: "Neighborhoods", sub: "Across Tampa Bay", target: "corridors", icon: MapPin },
+      { label: "Active Portfolio", sub: "Homes & Condos", target: "portfolio", icon: Compass },
+      { label: "Tools & Tours", sub: "Mortgage & Routes", target: "tours", icon: Calculator },
+      { label: "Checks & FAQ", sub: "Buyer & Seller Tips", target: "checks-faq", icon: ShieldCheck },
+      { label: "Talk With Us", sub: "Mark & Rachael", target: "closing-cta", icon: Phone },
+    ];
 
   return (
     <section
@@ -37,7 +37,7 @@ export default function PillarHubJumpGrid({ isCommercial }: { isCommercial: bool
       className="py-8 px-6 lg:px-10 bg-white border-b border-[#111111]/10 scroll-mt-24"
     >
       <div className="max-w-screen-xl mx-auto">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3">
           {items.map((pill) => {
             const Icon = pill.icon;
             return (

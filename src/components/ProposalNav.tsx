@@ -196,9 +196,10 @@ export default function ProposalNav() {
           </div>
         </div>
 
-        {/* Mobile Menu Drawer */}
+        {/* Mobile & Tablet Menu Drawer */}
         {isOpen && (
-          <div className="xl:hidden absolute top-20 left-0 w-full bg-[#050505]/98 backdrop-blur-3xl border-b border-[#D4AF37]/20 p-6 flex flex-col gap-5 shadow-2xl h-[calc(100vh-5rem)] overflow-y-auto pb-28">
+          <div className="xl:hidden absolute top-20 left-0 w-full bg-[#050505]/98 backdrop-blur-3xl border-b border-[#D4AF37]/20 p-6 sm:px-10 shadow-2xl h-[calc(100vh-5rem)] overflow-y-auto pb-28">
+            <div className="max-w-3xl mx-auto flex flex-col gap-5">
             <Link
               href="/"
               onClick={() => setIsOpen(false)}
@@ -217,7 +218,7 @@ export default function ProposalNav() {
                   {group.label}
                 </Link>
                 {group.dropdown && (
-                  <div className="pl-3 flex flex-col gap-2.5 border-l border-[#D4AF37]/30">
+                  <div className="pl-3 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 border-l border-[#D4AF37]/30">
                     {group.dropdown.map((item) => (
                       <Link
                         key={`${item.href}-${item.label}`}
@@ -234,23 +235,25 @@ export default function ProposalNav() {
             ))}
 
             <div className="flex flex-col gap-3 pt-2">
-              <Link
-                href="/search-mls"
-                onClick={() => setIsOpen(false)}
-                className="w-full py-3.5 border border-[#D4AF37] text-[#D4AF37] text-center text-xs font-bold uppercase tracking-widest rounded-lg flex items-center justify-center gap-2"
-              >
-                <Search className="w-4 h-4" /> Search Tampa Bay MLS
-              </Link>
-              <button
-                onClick={() => {
-                  setIsOpen(false);
-                  setModalOpen(true);
-                }}
-                className="w-full py-3.5 bg-[#D4AF37] text-[#111] text-center text-xs font-bold uppercase tracking-widest rounded-lg"
-              >
-                Need Advice?
-              </button>
-              <div className="grid grid-cols-2 gap-3 pt-2 text-[11px] text-white/70">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <Link
+                  href="/search-mls"
+                  onClick={() => setIsOpen(false)}
+                  className="w-full py-3.5 border border-[#D4AF37] text-[#D4AF37] text-center text-xs font-bold uppercase tracking-widest rounded-lg flex items-center justify-center gap-2"
+                >
+                  <Search className="w-4 h-4" /> Search Tampa Bay MLS
+                </Link>
+                <button
+                  onClick={() => {
+                    setIsOpen(false);
+                    setModalOpen(true);
+                  }}
+                  className="w-full py-3.5 bg-[#D4AF37] text-[#111] text-center text-xs font-bold uppercase tracking-widest rounded-lg"
+                >
+                  Need Advice?
+                </button>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 text-[11px] text-white/70">
                 <a href="tel:941-737-4127" className="flex items-center justify-center gap-1.5 py-2.5 bg-white/5 rounded-lg">
                   <Phone className="w-3.5 h-3.5 text-[#D4AF37]" /> Mark: 941-737-4127
                 </a>
@@ -258,6 +261,7 @@ export default function ProposalNav() {
                   <Phone className="w-3.5 h-3.5 text-[#D4AF37]" /> Rachael: 727-808-3344
                 </a>
               </div>
+            </div>
             </div>
           </div>
         )}

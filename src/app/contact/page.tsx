@@ -72,7 +72,7 @@ export default function ContactPage() {
           <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
             Davis &amp; Garnett · Tampa Bay, Florida
           </span>
-          <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-white mb-6 leading-none">
+          <h1 className="font-aiveritas text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-white mb-6 leading-none">
             Contact <span className="text-[#D4AF37]">Us</span>
           </h1>
           <p className="text-white/85 text-base md:text-[17px] lg:text-[18px] font-light max-w-3xl mx-auto leading-relaxed mb-8">
@@ -104,7 +104,7 @@ export default function ContactPage() {
       {/* Clean Below-Hero Section Jump Grid (Eased Smooth Glide) */}
       <section id="contact-sections" className="py-8 px-6 md:px-8 bg-white border-b border-[#111]/10 scroll-mt-24">
         <div className="max-w-screen-xl mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {[
               { label: "Contact Mark & Rachael", sub: "Direct Phones & Emails", target: "advisor-cards", icon: Phone },
               { label: "Carrollwood Office", sub: "3903 Northdale Blvd", target: "brokerage-office", icon: Building2 },
@@ -157,7 +157,7 @@ export default function ContactPage() {
                 {/* Top Gold Bar */}
                 <div className="h-1.5 w-full bg-gradient-to-r from-[#9A7D3A] via-[#D4AF37] to-[#9A7D3A]" />
 
-                <div className="p-8 md:p-10">
+                <div className="p-5 sm:p-8 md:p-10">
                   <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-8">
                     {/* Circle Avatar matching Login Footer */}
                     <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-[#D4AF37] shadow-lg shrink-0 bg-[#111]">
@@ -187,7 +187,7 @@ export default function ContactPage() {
                   </div>
 
                   {/* Direct Contact Channels */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-3.5 mb-6">
                     <a
                       href="tel:941-737-4127"
                       className="flex items-center gap-3.5 p-4 rounded-xl bg-[#f5f3ef] hover:bg-[#111] text-[#111] hover:text-white transition-colors group"
@@ -265,7 +265,7 @@ export default function ContactPage() {
                 {/* Top Gold Bar */}
                 <div className="h-1.5 w-full bg-gradient-to-r from-[#9A7D3A] via-[#D4AF37] to-[#9A7D3A]" />
 
-                <div className="p-8 md:p-10">
+                <div className="p-5 sm:p-8 md:p-10">
                   <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-8">
                     {/* Circle Avatar matching Login Footer */}
                     <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-[#D4AF37] shadow-lg shrink-0 bg-[#111]">
@@ -295,7 +295,7 @@ export default function ContactPage() {
                   </div>
 
                   {/* Direct Contact Channels */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-3.5 mb-6">
                     <a
                       href="tel:727-808-3344"
                       className="flex items-center gap-3.5 p-4 rounded-xl bg-[#f5f3ef] hover:bg-[#111] text-[#111] hover:text-white transition-colors group"
@@ -371,7 +371,7 @@ export default function ContactPage() {
           {/* Bottom Row: Full-Width Horizontal Brokerage Card Stretching Across Both Columns */}
           <div id="brokerage-office" className="w-full bg-[#111] text-white rounded-2xl border border-[#ef5728]/50 shadow-2xl overflow-hidden scroll-mt-28">
             <div className="h-1.5 w-full bg-gradient-to-r from-[#ef5728] via-[#D4AF37] to-[#ef5728]" />
-            <div className="p-8 md:p-12">
+            <div className="p-5 sm:p-8 md:p-12">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 {/* Col 1: Brokerage Logo & Identity (4 cols) */}
                 <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left border-b lg:border-b-0 lg:border-r border-white/10 pb-8 lg:pb-0 lg:pr-8">
@@ -424,7 +424,7 @@ export default function ContactPage() {
                     <div className="w-10 h-10 rounded-lg bg-[#ef5728]/15 text-[#ef5728] flex items-center justify-center shrink-0 mt-0.5">
                       <Phone className="w-5 h-5" />
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <span className="text-[10px] uppercase tracking-widest text-[#ef5728] font-bold block mb-1">
                         Brokerage Desk &amp; Admin
                       </span>

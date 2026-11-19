@@ -131,7 +131,7 @@ export default function PillarHubTemplate({ hub }: { hub: PillarHubConfig }) {
             </span>
 
             <h1
-              className={`font-aiveritas text-5xl sm:text-7xl lg:text-8xl leading-none mb-6 ${
+              className={`font-aiveritas text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-none mb-6 ${
                 isCommercial ? "text-white" : "text-[#111111]"
               }`}
             >
@@ -334,7 +334,7 @@ export default function PillarHubTemplate({ hub }: { hub: PillarHubConfig }) {
           <Link
             key={c.title}
             href={c.href}
-            className="group min-w-[300px] sm:min-w-[360px] max-w-[360px] snap-start bg-white border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl shrink-0"
+            className="group min-w-[275px] sm:min-w-[360px] max-w-[360px] snap-start bg-white border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl shrink-0"
           >
             <div>
               <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#111]">
@@ -390,7 +390,7 @@ export default function PillarHubTemplate({ hub }: { hub: PillarHubConfig }) {
             <Link
               key={listing.slug}
               href={`/listings/${listing.slug}`}
-              className="group min-w-[300px] sm:min-w-[355px] max-w-[355px] snap-start bg-white/5 hover:bg-white/10 border border-white/15 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all shrink-0"
+              className="group min-w-[275px] sm:min-w-[355px] max-w-[355px] snap-start bg-white/5 hover:bg-white/10 border border-white/15 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all shrink-0"
             >
               <div>
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-black">

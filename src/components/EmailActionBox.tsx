@@ -79,14 +79,14 @@ export default function EmailActionBox({
 
   return (
     <div
-      className={`relative inline-block max-w-full ${className}`}
+      className={`relative inline-block max-w-full min-w-0 ${className}`}
       onMouseEnter={handleOpen}
       onMouseLeave={handleDelayedClose}
     >
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}
-        className={`inline-flex items-center gap-2 text-left transition-colors cursor-pointer select-text ${
+        className={`inline-flex items-center gap-2 max-w-full min-w-0 text-left transition-colors cursor-pointer select-text ${
           size === "sm" ? "text-sm" : "text-xs"
         } ${triggerColor}`}
         aria-expanded={open}
@@ -94,11 +94,11 @@ export default function EmailActionBox({
       >
         {showIcon && <Mail className="w-3.5 h-3.5 shrink-0" />}
         {prefixLabel && (
-          <span className={variant === "dark" ? "text-white/55" : "text-[#111]/60"}>
+          <span className={`shrink-0 ${variant === "dark" ? "text-white/55" : "text-[#111]/60"}`}>
             {prefixLabel}
           </span>
         )}
-        <span className="truncate">
+        <span className="break-all sm:break-normal leading-snug">
           {localPart}
           <span>&#64;</span>
           {domainPart}
@@ -107,7 +107,7 @@ export default function EmailActionBox({
 
       {open && (
         <div
-          className={`absolute left-0 top-full mt-1.5 p-2.5 rounded-lg border ${panelBg} w-[210px] z-40 transition-all`}
+          className={`absolute left-0 top-full mt-1.5 p-2.5 rounded-lg border ${panelBg} w-[210px] max-w-[calc(100vw-2rem)] z-40 transition-all`}
           onMouseEnter={handleOpen}
           onMouseLeave={handleDelayedClose}
         >

@@ -282,7 +282,7 @@ export default function AlignRightCarrollwoodCoveragePage() {
             <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
               Align Right Realty Carrollwood · FL Lic BK3401606
             </span>
-            <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-white leading-none mb-6">
+            <h1 className="font-aiveritas text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-none mb-6">
               Areas We <span className="text-[#D4AF37]">Work In</span>
             </h1>
 
@@ -331,13 +331,13 @@ export default function AlignRightCarrollwoodCoveragePage() {
                 <p className="font-aiveritas text-xl text-white">
                   Align Right Realty Carrollwood
                 </p>
-                <p className="text-white/60 mt-1 flex items-center gap-2">
-                  <MapPin className="w-3.5 h-3.5 text-[#ef5728]" />
-                  3903 Northdale Blvd Suite 115W, Tampa, FL 33624
+                <p className="text-white/60 mt-1 flex items-start gap-2">
+                  <MapPin className="w-3.5 h-3.5 text-[#ef5728] shrink-0 mt-0.5" />
+                  <span>3903 Northdale Blvd Suite 115W, Tampa, FL 33624</span>
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-4 border-b border-white/10 pb-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-b border-white/10 pb-4">
                 <div>
                   <span className="text-[10px] uppercase tracking-widest text-white/50 block">Broker License</span>
                   <span className="text-white font-bold text-sm">BK3401606</span>
@@ -349,17 +349,17 @@ export default function AlignRightCarrollwoodCoveragePage() {
               </div>
 
               <div className="space-y-2 pt-1 text-white/75">
-                <p className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#D4AF37]" />
-                  Mark Davis — Co-Founder &amp; Principal Advisor (BK3209459)
+                <p className="flex items-start gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#D4AF37] shrink-0 mt-0.5" />
+                  <span>Mark Davis — Co-Founder &amp; Principal Advisor (BK3209459)</span>
                 </p>
-                <p className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#D4AF37]" />
-                  Rachael Garnett — Co-Founder &amp; Principal Advisor (SL3378601)
+                <p className="flex items-start gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#D4AF37] shrink-0 mt-0.5" />
+                  <span>Rachael Garnett — Co-Founder &amp; Principal Advisor (SL3378601)</span>
                 </p>
-                <p className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#D4AF37]" />
-                  Serving 5 Major Florida Counties from Carrollwood
+                <p className="flex items-start gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#D4AF37] shrink-0 mt-0.5" />
+                  <span>Serving 5 Major Florida Counties from Carrollwood</span>
                 </p>
               </div>
             </div>

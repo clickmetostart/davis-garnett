@@ -196,7 +196,7 @@ export default function AboutHubPage() {
                 Why Us? · Meet Mark Davis &amp; Rachael Garnett
               </span>
 
-              <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-[#111111] leading-none mb-8">
+              <h1 className="font-aiveritas text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-[#111111] leading-none mb-8">
                 About <span className="text-[#9A7D3A]">Our Team</span>
               </h1>
 
@@ -468,7 +468,7 @@ export default function AboutHubPage() {
       <section className="py-28 px-6 md:px-12 bg-white border-b border-[#111111]/10">
         <div className="max-w-screen-xl mx-auto">
           <div className="grid lg:grid-cols-[1fr_1.15fr] gap-16 items-center">
-            <div className="bg-[#111111] text-white p-10 md:p-14 rounded-2xl relative overflow-hidden shadow-xl border border-[#ef5728]/35">
+            <div className="bg-[#111111] text-white p-6 sm:p-10 md:p-14 rounded-2xl relative overflow-hidden shadow-xl border border-[#ef5728]/35">
               <div className="absolute top-0 right-0 w-72 h-72 bg-[#ef5728]/15 rounded-full blur-[90px] pointer-events-none" />
               <span className="text-[10px] uppercase tracking-[0.25em] text-[#ef5728] font-bold block mb-4">
                 Brokerage Infrastructure · Broker Number BK3401606
@@ -492,7 +492,7 @@ export default function AboutHubPage() {
               <p className="text-white/80 text-base md:text-[17px] font-light leading-relaxed mb-8">
                 Working with an approachable team also means having a strong brokerage behind you. Our home office at Align Right Realty Carrollwood gives every client full MLS reach, smooth contract tools, and reliable support from contract to closing.
               </p>
-              <div className="grid grid-cols-2 gap-4 pt-6 border-t border-white/15 text-xs">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 border-t border-white/15 text-xs">
                 <div>
                   <span className="text-[#ef5728] font-bold block uppercase tracking-widest mb-1">
                     Broker Number
@@ -725,7 +725,7 @@ export default function AboutHubPage() {
               </Link>
             </div>
 
-            <div className="bg-[#111111] text-white p-10 md:p-12 rounded-2xl border border-[#C8A951]/30 relative overflow-hidden">
+            <div className="bg-[#111111] text-white p-6 sm:p-10 md:p-12 rounded-2xl border border-[#C8A951]/30 relative overflow-hidden">
               <div className="w-12 h-12 rounded-full bg-[#C8A951]/20 border border-[#C8A951]/40 flex items-center justify-center mb-6">
                 <Heart className="w-5 h-5 text-[#C8A951]" />
               </div>
@@ -765,7 +765,7 @@ export default function AboutHubPage() {
           </div>
 
           {submitted ? (
-            <div className="p-10 rounded-xl bg-[#fbfbf9] border border-[#C8A951] text-center">
+            <div className="p-6 sm:p-10 rounded-xl bg-[#fbfbf9] border border-[#C8A951] text-center">
               <CheckCircle2 className="w-12 h-12 text-[#9A7D3A] mx-auto mb-4" />
               <h3 className="font-aiveritas text-2xl text-[#111111] mb-2">
                 Your Consultation Request Has Been Received

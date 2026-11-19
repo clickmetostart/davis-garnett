@@ -255,7 +255,7 @@ export default function PropertiesPage() {
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
               Davis &amp; Garnett Portfolio Hub · Tampa Bay &amp; Central Florida
             </span>
-            <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-[#111111] leading-none mb-6">
+            <h1 className="font-aiveritas text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-[#111111] leading-none mb-6">
               Florida <span className="text-[#9A7D3A]">Portfolio</span>
             </h1>
             <p className="text-[#111111]/75 font-light text-base md:text-[17px] lg:text-[18px] leading-relaxed mb-8">
@@ -327,7 +327,7 @@ export default function PropertiesPage() {
       {/* Clean Below-Hero Section Jump Grid (Eased Smooth Glide) */}
       <section id="portfolio-sections" className="py-8 px-6 lg:px-10 bg-white border-b border-[#111111]/10 scroll-mt-24">
         <div className="max-w-screen-xl mx-auto">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3">
             {[
               { label: "Featured", sub: "Flagship Deck", href: "featured", icon: Award },
               { label: "New & Upcoming", sub: "Active & Soon", href: "new-listings", icon: Sparkles },
@@ -724,7 +724,7 @@ export default function PropertiesPage() {
               <Link
                 key={`new-${item.slug}`}
                 href={`/listings/${item.slug}`}
-                className="group min-w-[300px] sm:min-w-[340px] max-w-[340px] snap-start bg-white rounded-2xl overflow-hidden border border-[#111111]/10 hover:border-[#C8A951] shadow-sm hover:shadow-xl transition-all flex flex-col shrink-0"
+                className="group min-w-[275px] sm:min-w-[340px] max-w-[340px] snap-start bg-white rounded-2xl overflow-hidden border border-[#111111]/10 hover:border-[#C8A951] shadow-sm hover:shadow-xl transition-all flex flex-col shrink-0"
               >
                 <div className="relative h-48 bg-[#111111]">
                   <Image
@@ -761,7 +761,7 @@ export default function PropertiesPage() {
             {/* Upcoming Auto-Populated Lofty / IDX Area Card */}
             <Link
               href="/search-mls"
-              className="min-w-[300px] sm:min-w-[340px] max-w-[340px] snap-start bg-[#111111] text-white rounded-2xl p-6 border border-[#C8A951]/40 flex flex-col justify-between shrink-0"
+              className="min-w-[275px] sm:min-w-[340px] max-w-[340px] snap-start bg-[#111111] text-white rounded-2xl p-6 border border-[#C8A951]/40 flex flex-col justify-between shrink-0"
             >
               <div>
                 <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-widest font-bold text-[#C8A951] mb-3">
@@ -846,7 +846,7 @@ export default function PropertiesPage() {
               <Link
                 key={`office-static-${off.slug}`}
                 href={`/listings/${off.slug}`}
-                className="group min-w-[310px] sm:min-w-[350px] max-w-[350px] snap-start bg-[#fbfbf9] rounded-2xl overflow-hidden border border-[#111111]/10 hover:border-[#C8A951] shadow-sm transition-all flex flex-col shrink-0"
+                className="group min-w-[275px] sm:min-w-[350px] max-w-[350px] snap-start bg-[#fbfbf9] rounded-2xl overflow-hidden border border-[#111111]/10 hover:border-[#C8A951] shadow-sm transition-all flex flex-col shrink-0"
               >
                 <div className="relative h-48 bg-[#111111]">
                   <Image
@@ -885,7 +885,7 @@ export default function PropertiesPage() {
               <Link
                 key={`lofty-office-${ol.id}`}
                 href="/search-mls"
-                className="group min-w-[310px] sm:min-w-[350px] max-w-[350px] snap-start bg-[#fbfbf9] rounded-2xl overflow-hidden border border-[#111111]/10 hover:border-[#C8A951] shadow-sm transition-all flex flex-col shrink-0"
+                className="group min-w-[275px] sm:min-w-[350px] max-w-[350px] snap-start bg-[#fbfbf9] rounded-2xl overflow-hidden border border-[#111111]/10 hover:border-[#C8A951] shadow-sm transition-all flex flex-col shrink-0"
               >
                 <div className="relative h-48 bg-[#111111]">
                   <Image
@@ -1008,7 +1008,7 @@ export default function PropertiesPage() {
               <Link
                 key={`cre-${item.slug}`}
                 href={`/listings/${item.slug}`}
-                className="group min-w-[300px] sm:min-w-[350px] max-w-[350px] snap-start bg-white/5 hover:bg-white/10 rounded-2xl overflow-hidden border border-white/10 hover:border-[#C8A951] transition-all flex flex-col shrink-0"
+                className="group min-w-[275px] sm:min-w-[350px] max-w-[350px] snap-start bg-white/5 hover:bg-white/10 rounded-2xl overflow-hidden border border-white/10 hover:border-[#C8A951] transition-all flex flex-col shrink-0"
               >
                 <div className="relative h-48 bg-black">
                   <Image

@@ -72,12 +72,12 @@ export default function PropertiesStickyStack() {
 
   return (
     <div className="w-[92%] md:w-[90%] max-w-[1680px] mx-auto relative">
-      {/* ── Mobile header (hidden on desktop) ── */}
-      <div className="block md:hidden px-2 pt-14 pb-6 text-center">
+      {/* ── Mobile & Portrait Tablet header (hidden on lg+ desktop/landscape) ── */}
+      <div className="block lg:hidden px-2 pt-14 pb-6 text-center">
         <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
           Featured Listings · 2026
         </span>
-        <h2 className="font-aiveritas text-4xl text-[#111111] mb-4 leading-tight">
+        <h2 className="font-aiveritas text-4xl sm:text-5xl text-[#111111] mb-4 leading-tight">
           Featured<br />
           <span className="text-[#9A7D3A]">Listings</span>
         </h2>
@@ -86,25 +86,25 @@ export default function PropertiesStickyStack() {
         </p>
       </div>
 
-      <div className="flex flex-col md:flex-row gap-6 lg:gap-10">
-        {/* ══ COLUMN 1 — Sticky editorial panel (desktop only) ══ */}
-        <div className="hidden md:block md:w-[36%] shrink-0 relative">
-          <div className="sticky top-0 h-screen flex flex-col justify-center pr-2 lg:pr-6">
-            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
+      <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
+        {/* ══ COLUMN 1 — Sticky editorial panel (lg+ only so portrait tablets never squeeze into a narrow rail) ══ */}
+        <div className="hidden lg:block lg:w-[36%] shrink-0 relative">
+          <div className="sticky top-0 h-screen flex flex-col justify-center py-8 pr-2 lg:pr-6">
+            <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-3">
               Mark &amp; Rachael · Active Listings
             </span>
 
-            <h2 className="font-aiveritas text-4xl lg:text-5xl xl:text-6xl text-[#111111] leading-tight mb-5">
+            <h2 className="font-aiveritas text-4xl lg:text-5xl xl:text-6xl text-[#111111] leading-tight mb-4">
               Featured<br />Listings
             </h2>
 
-            <div className="w-10 h-[2px] bg-[#C8A951] mb-5" />
+            <div className="w-10 h-[2px] bg-[#C8A951] mb-4" />
 
-            <p className="text-[#111111]/75 font-light leading-relaxed max-w-md mb-7 text-sm lg:text-base xl:text-[17px]">
+            <p className="text-[#111111]/75 font-light leading-relaxed max-w-md mb-6 text-sm lg:text-base xl:text-[17px]">
               Helping buyers, sellers, and business owners across residential homes, commercial properties, land, and waterfront and unique properties in Tampa Bay and Central Florida.
             </p>
 
-            <div className="flex flex-col gap-2.5 mb-8">
+            <div className="flex flex-col gap-2.5 mb-6">
               {activeSignatureProperties.map((prop, idx) => (
                 <Link
                   key={prop.slug}
@@ -124,7 +124,7 @@ export default function PropertiesStickyStack() {
             </div>
 
             {/* Portfolio Credentials Strip (Matched to Portfolio Hero) */}
-            <div className="grid grid-cols-2 gap-4 border-t border-[#111111]/10 pt-6">
+            <div className="grid grid-cols-2 gap-4 border-t border-[#111111]/10 pt-5">
               <div>
                 <span className="font-aiveritas text-xl text-[#9A7D3A] block">CRE &amp; RES</span>
                 <span className="block text-[10px] uppercase tracking-widest text-[#111111]/60 font-bold mt-0.5">
@@ -154,8 +154,8 @@ export default function PropertiesStickyStack() {
         </div>
 
         {/* ══ COLUMN 2 — Scrolling sticky card stack ══ */}
-        <div className="w-full md:w-[64%] py-6 md:py-12">
-          <div className="h-2 md:hidden" />
+        <div className="w-full lg:w-[64%] py-6 lg:py-12">
+          <div className="h-2 lg:hidden" />
 
           <div className="flex flex-col gap-[10svh] pb-[8svh]">
             {activeSignatureProperties.map((prop, i) => {

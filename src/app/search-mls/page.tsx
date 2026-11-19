@@ -320,7 +320,7 @@ export default function SearchMlsDiscoveryPortal() {
             <span className="text-[#C8A951] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
               Davis &amp; Garnett · Stellar MLS &amp; Lofty IDX Portal
             </span>
-            <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-white leading-none mb-6">
+            <h1 className="font-aiveritas text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-none mb-6">
               Search <span className="text-[#C8A951]">MLS</span>
             </h1>
             <p className="text-base md:text-[17px] lg:text-[18px] text-white/85 font-light leading-relaxed max-w-3xl mx-auto mb-6">
@@ -613,26 +613,26 @@ export default function SearchMlsDiscoveryPortal() {
                         </span>
                       </p>
 
-                      <div className="grid grid-cols-3 gap-2 pt-4 border-t border-[#111111]/10 text-xs text-[#111111]/80 font-medium">
+                      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 pt-4 border-t border-[#111111]/10 text-xs text-[#111111]/80 font-medium">
                         {item.category === "Commercial" ? (
-                          <div className="col-span-2 flex items-center gap-1.5">
-                            <Building2 className="w-4 h-4 text-[#C8A951]" />
+                          <div className="flex items-center gap-1.5">
+                            <Building2 className="w-4 h-4 text-[#C8A951] shrink-0" />
                             <span>Commercial Asset</span>
                           </div>
                         ) : (
                           <>
                             <div className="flex items-center gap-1.5">
-                              <Bed className="w-4 h-4 text-[#C8A951]" />
+                              <Bed className="w-4 h-4 text-[#C8A951] shrink-0" />
                               <span>{item.bedrooms} Beds</span>
                             </div>
                             <div className="flex items-center gap-1.5">
-                              <Bath className="w-4 h-4 text-[#C8A951]" />
+                              <Bath className="w-4 h-4 text-[#C8A951] shrink-0" />
                               <span>{item.bathrooms} Baths</span>
                             </div>
                           </>
                         )}
                         <div className="flex items-center gap-1.5">
-                          <Maximize2 className="w-4 h-4 text-[#C8A951]" />
+                          <Maximize2 className="w-4 h-4 text-[#C8A951] shrink-0" />
                           <span>{item.sqFt} SF</span>
                         </div>
                       </div>

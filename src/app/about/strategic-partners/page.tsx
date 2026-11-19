@@ -266,7 +266,7 @@ export default function StrategicPartnersPage() {
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
               Davis &amp; Garnett · Trusted Local Professionals
             </span>
-            <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-[#111111] leading-none mb-6">
+            <h1 className="font-aiveritas text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-[#111111] leading-none mb-6">
               Strategic <span className="text-[#9A7D3A]">Partners</span>
             </h1>
             <p className="text-base md:text-[17px] lg:text-[18px] text-[#111111]/80 font-light leading-relaxed mb-6">
@@ -299,7 +299,7 @@ export default function StrategicPartnersPage() {
             </div>
           </div>
 
-          <div className="bg-[#111111] text-white p-10 md:p-12 rounded-2xl border border-[#C8A951]/30">
+          <div className="bg-[#111111] text-white p-6 sm:p-10 md:p-12 rounded-2xl border border-[#C8A951]/30">
             <Handshake className="w-10 h-10 text-[#C8A951] mb-6" />
             <span className="text-[10px] uppercase tracking-[0.25em] text-[#C8A951] font-bold block mb-2">
               Our Vetting Standard
@@ -310,7 +310,7 @@ export default function StrategicPartnersPage() {
             <p className="text-base text-white/75 font-light leading-relaxed mb-6">
               Davis &amp; Garnett never accepts referral fees from lenders, inspectors, surveyors, or contractors. We recommend local professionals for one reason only: they do great work and take great care of our clients.
             </p>
-            <div className="grid grid-cols-2 gap-4 pt-6 border-t border-white/15 text-xs">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 border-t border-white/15 text-xs">
               <div>
                 <span className="text-[#C8A951] font-bold block uppercase tracking-widest mb-1">
                   6 Core Categories
@@ -334,7 +334,7 @@ export default function StrategicPartnersPage() {
           {PARTNER_CATEGORIES.map((group) => (
             <div
               key={group.id}
-              className="bg-white rounded-2xl p-8 md:p-12 border border-[#111111]/10 shadow-sm"
+              className="bg-white rounded-2xl p-5 sm:p-8 md:p-12 border border-[#111111]/10 shadow-sm"
             >
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 mb-8 border-b border-[#111111]/10">
                 <div className="flex items-start gap-4">
@@ -412,7 +412,7 @@ export default function StrategicPartnersPage() {
           </div>
 
           {submitted ? (
-            <div className="p-10 rounded-xl bg-white border border-[#C8A951] text-center">
+            <div className="p-6 sm:p-10 rounded-xl bg-white border border-[#C8A951] text-center">
               <CheckCircle2 className="w-12 h-12 text-[#9A7D3A] mx-auto mb-4" />
               <h3 className="font-aiveritas text-2xl text-[#111111] mb-2">
                 Partner Request Received

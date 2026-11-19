@@ -1104,18 +1104,18 @@ export default function ListingDetailPage() {
                     ? "Request Offering Memorandum"
                     : "Schedule Private Showing"}
                 </a>
-                <div className="grid grid-cols-2 gap-2.5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   <a
                     href="tel:941-737-4127"
                     className="w-full py-3 bg-white/10 hover:bg-white/15 text-white text-[10px] font-bold uppercase tracking-wider rounded-xl transition-colors flex items-center justify-center gap-1.5 border border-white/10"
                   >
-                    <Phone className="w-3.5 h-3.5 text-[#C8A951]" /> Mark: 941-737-4127
+                    <Phone className="w-3.5 h-3.5 text-[#C8A951] shrink-0" /> Mark: 941-737-4127
                   </a>
                   <a
                     href="tel:727-808-3344"
                     className="w-full py-3 bg-white/10 hover:bg-white/15 text-white text-[10px] font-bold uppercase tracking-wider rounded-xl transition-colors flex items-center justify-center gap-1.5 border border-white/10"
                   >
-                    <Phone className="w-3.5 h-3.5 text-[#C8A951]" /> Rachael: 727-808-3344
+                    <Phone className="w-3.5 h-3.5 text-[#C8A951] shrink-0" /> Rachael: 727-808-3344
                   </a>
                 </div>
               </div>
@@ -1124,7 +1124,7 @@ export default function ListingDetailPage() {
             {/* Interactive CRM Lead Capture Form */}
             <div
               id="crm-lead-form"
-              className="bg-white rounded-2xl p-7 shadow-sm border border-[#111111]/8"
+              className="bg-white rounded-2xl p-5 sm:p-7 shadow-sm border border-[#111111]/8"
             >
               <p className="text-[#9A7D3A] text-[10px] uppercase tracking-[0.25em] font-bold mb-4">
                 Exclusive Representation
@@ -1135,48 +1135,50 @@ export default function ListingDetailPage() {
                 {orderedAdvisors.map((adv) => (
                   <div
                     key={adv.key}
-                    className="flex items-center gap-4 p-3 rounded-xl bg-[#fbfbf9] border border-[#111111]/8 hover:border-[#C8A951]/50 transition-colors"
+                    className="p-3.5 rounded-xl bg-[#fbfbf9] border border-[#111111]/8 hover:border-[#C8A951]/50 transition-colors"
                   >
-                    <Link
-                      href={adv.profileHref}
-                      className="relative w-16 h-16 rounded-full overflow-hidden shrink-0 border-2 border-[#C8A951]/40 bg-[#111111] shadow-md"
-                    >
-                      <Image
-                        src={adv.image}
-                        alt={adv.name}
-                        fill
-                        className={`object-cover ${adv.imagePosition}`}
-                        sizes="64px"
-                        unoptimized
-                      />
-                    </Link>
-                    <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-3.5">
                       <Link
                         href={adv.profileHref}
-                        className="font-bold text-[#111111] hover:text-[#9A7D3A] text-base leading-tight block transition-colors"
+                        className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden shrink-0 border-2 border-[#C8A951]/40 bg-[#111111] shadow-md"
                       >
-                        {adv.name}
-                      </Link>
-                      <p className="text-[#9A7D3A] text-xs font-semibold mt-0.5">
-                        {adv.role}
-                      </p>
-                      <p className="text-[#111111]/45 text-[10px] uppercase tracking-wider mt-0.5">
-                        {adv.license} · Align Right Realty
-                      </p>
-                      <div className="flex flex-wrap items-center gap-3 mt-1.5 text-[11px]">
-                        <a
-                          href={`tel:${adv.phone}`}
-                          className="text-[#9A7D3A] hover:text-[#111111] font-bold transition-colors"
-                        >
-                          {adv.phone}
-                        </a>
-                        <span className="text-[#111111]/20">|</span>
-                        <EmailActionBox
-                          email={adv.email}
-                          variant="light"
-                          showIcon={false}
+                        <Image
+                          src={adv.image}
+                          alt={adv.name}
+                          fill
+                          className={`object-cover ${adv.imagePosition}`}
+                          sizes="64px"
+                          unoptimized
                         />
+                      </Link>
+                      <div className="min-w-0 flex-1">
+                        <Link
+                          href={adv.profileHref}
+                          className="font-bold text-[#111111] hover:text-[#9A7D3A] text-base leading-tight block transition-colors"
+                        >
+                          {adv.name}
+                        </Link>
+                        <p className="text-[#9A7D3A] text-xs font-semibold mt-0.5 leading-snug">
+                          {adv.role}
+                        </p>
+                        <p className="text-[#111111]/45 text-[10px] uppercase tracking-wider mt-0.5">
+                          {adv.license} · Align Right Realty
+                        </p>
                       </div>
+                    </div>
+                    <div className="mt-3 pt-2.5 border-t border-[#111111]/8 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[11px]">
+                      <a
+                        href={`tel:${adv.phone}`}
+                        className="text-[#9A7D3A] hover:text-[#111111] font-bold transition-colors shrink-0"
+                      >
+                        {adv.phone}
+                      </a>
+                      <span className="text-[#111111]/20 hidden sm:inline">|</span>
+                      <EmailActionBox
+                        email={adv.email}
+                        variant="light"
+                        showIcon={false}
+                      />
                     </div>
                   </div>
                 ))}
@@ -1211,7 +1213,7 @@ export default function ListingDetailPage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmitLead} className="space-y-3">
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <input
                       type="text"
                       required

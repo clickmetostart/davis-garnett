@@ -154,7 +154,7 @@ export default function EveryListingApproachPage() {
               Why Us? · Davis &amp; Garnett
             </span>
 
-            <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-[#111111] leading-none mb-6">
+            <h1 className="font-aiveritas text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-[#111111] leading-none mb-6">
               Our Listing <span className="text-[#9A7D3A]">Approach</span>
             </h1>
 
@@ -189,7 +189,7 @@ export default function EveryListingApproachPage() {
       {/* Clean Below-Hero Section Jump Grid (Eased Smooth Glide) */}
       <section id="approach-sections" className="py-8 px-6 md:px-12 bg-white border-b border-[#111111]/10 scroll-mt-24">
         <div className="max-w-screen-xl mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {[
               { label: "Our Why", sub: "Philosophy & Commitment", target: "our-why", icon: Sparkles },
               { label: "Every Property Type", sub: "Homes, CRE & Land", target: "property-types", icon: Building2 },
@@ -381,7 +381,7 @@ export default function EveryListingApproachPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-6 relative">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
             {[
               {
                 phase: "01",

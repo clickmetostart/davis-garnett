@@ -188,7 +188,7 @@ export default function RachaelGarnettAdvisorPage() {
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
               REALTOR® · Certified Commercial &amp; Residential Agent
             </span>
-            <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-[#111111] leading-none mb-6">
+            <h1 className="font-aiveritas text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-[#111111] leading-none mb-6">
               Rachael <span className="text-[#9A7D3A]">Garnett</span>
             </h1>
             <p className="text-lg md:text-xl text-[#9A7D3A] font-light mb-6">
@@ -295,7 +295,7 @@ export default function RachaelGarnettAdvisorPage() {
               </div>
             </div>
 
-            <div className="p-8 md:p-12 flex flex-col justify-between">
+            <div className="p-6 sm:p-8 md:p-12 flex flex-col justify-between">
               <div>
                 <span className="text-[11px] uppercase tracking-[0.22em] text-[#9A7D3A] font-bold block mb-3">
                   Featured Waterfront Listing
@@ -307,7 +307,7 @@ export default function RachaelGarnettAdvisorPage() {
                   Located in St. Petersburg&apos;s Bahama Shores neighborhood, 6100 Bahama Shores Dr S offers open water views, private boating access to Tampa Bay and the Gulf of Mexico, and indoor-outdoor coastal living just minutes from downtown St. Pete.
                 </p>
 
-                <div className="grid grid-cols-2 gap-4 p-5 rounded-xl bg-[#fbfbf9] border border-[#111111]/8 mb-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 sm:p-5 rounded-xl bg-[#fbfbf9] border border-[#111111]/8 mb-6">
                   <div>
                     <span className="text-[10px] uppercase tracking-widest text-[#111111]/50 block">
                       Offering Price
@@ -580,7 +580,7 @@ export default function RachaelGarnettAdvisorPage() {
           </div>
 
           {submitted ? (
-            <div className="p-10 rounded-xl bg-white border border-[#C8A951] text-center">
+            <div className="p-6 sm:p-10 rounded-xl bg-white border border-[#C8A951] text-center">
               <CheckCircle2 className="w-12 h-12 text-[#9A7D3A] mx-auto mb-4" />
               <h3 className="font-aiveritas text-2xl text-[#111111] mb-2">
                 Inquiry Routed to Rachael Garnett (SL3378601)

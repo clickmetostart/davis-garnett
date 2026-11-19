@@ -108,7 +108,7 @@ export default function KnowledgeHubPage() {
           <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
             Davis &amp; Garnett · Guides, Q&amp;A &amp; Market Updates
           </span>
-          <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-white mb-6 leading-none">
+          <h1 className="font-aiveritas text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-white mb-6 leading-none">
             Knowledge <span className="text-[#D4AF37]">Hub</span>
           </h1>
           <p className="text-white/85 text-base md:text-[17px] lg:text-[18px] font-light max-w-3xl mx-auto leading-relaxed mb-8">
@@ -152,7 +152,7 @@ export default function KnowledgeHubPage() {
       {/* Clean Below-Hero Section Jump Grid (Eased Smooth Glide) */}
       <section id="hub-sections" className="py-8 px-6 md:px-8 bg-[#f5f3ef] border-b border-[#111]/10 scroll-mt-24">
         <div className="max-w-screen-xl mx-auto">
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-8 gap-3">
             {[
               { label: "Get Started Worksheets", target: "get-started", icon: CheckCircle2 },
               { label: "Playbooks & Guides", target: "guides", icon: BookOpen },
@@ -307,7 +307,7 @@ export default function KnowledgeHubPage() {
               <Link
                 key={guide.slug}
                 href={`/knowledge-hub/${guide.slug}`}
-                className="group min-w-[320px] md:min-w-[390px] max-w-[390px] snap-start bg-[#f5f3ef] border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl shrink-0"
+                className="group min-w-[275px] sm:min-w-[320px] md:min-w-[390px] max-w-[390px] snap-start bg-[#f5f3ef] border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl shrink-0"
               >
                 <div>
                   <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#111]">
@@ -397,7 +397,7 @@ export default function KnowledgeHubPage() {
             {/* Align Right Carrollwood Featured Spoke Card */}
             <Link
               href="/align-right-carrollwood-coverage"
-              className="group min-w-[320px] md:min-w-[390px] max-w-[390px] snap-start bg-[#111111] text-white border border-[#ef5728]/40 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-2xl shrink-0"
+              className="group min-w-[275px] sm:min-w-[320px] md:min-w-[390px] max-w-[390px] snap-start bg-[#111111] text-white border border-[#ef5728]/40 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-2xl shrink-0"
             >
               <div>
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-black">
@@ -447,7 +447,7 @@ export default function KnowledgeHubPage() {
               <Link
                 key={area.slug}
                 href={`/knowledge-hub/areas/${area.slug}`}
-                className="group min-w-[320px] md:min-w-[390px] max-w-[390px] snap-start bg-[#f5f3ef] border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl shrink-0"
+                className="group min-w-[275px] sm:min-w-[320px] md:min-w-[390px] max-w-[390px] snap-start bg-[#f5f3ef] border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl shrink-0"
               >
                 <div>
                   <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#111]">
@@ -647,7 +647,7 @@ export default function KnowledgeHubPage() {
               <Link
                 key={tool.href}
                 href={tool.href}
-                className="group min-w-[320px] md:min-w-[380px] max-w-[380px] snap-start shrink-0 bg-white rounded-2xl p-8 border border-[#111]/10 hover:border-[#D4AF37] shadow-sm hover:shadow-xl transition-all flex flex-col justify-between"
+                className="group min-w-[275px] sm:min-w-[320px] md:min-w-[380px] max-w-[380px] snap-start shrink-0 bg-white rounded-2xl p-8 border border-[#111]/10 hover:border-[#D4AF37] shadow-sm hover:shadow-xl transition-all flex flex-col justify-between"
               >
                 <div>
                   <span className="text-[10px] uppercase tracking-[0.22em] font-bold text-[#9A7D3A] block mb-3">
@@ -711,7 +711,7 @@ export default function KnowledgeHubPage() {
               <Link
                 key={qa.slug}
                 href={`/knowledge-hub/${qa.slug}`}
-                className="group min-w-[320px] md:min-w-[380px] max-w-[380px] snap-start bg-[#f5f3ef] border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl shrink-0"
+                className="group min-w-[275px] sm:min-w-[320px] md:min-w-[380px] max-w-[380px] snap-start bg-[#f5f3ef] border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl shrink-0"
               >
                 <div>
                   <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#111]">
@@ -789,7 +789,7 @@ export default function KnowledgeHubPage() {
               <Link
                 key={ev.slug}
                 href={`/knowledge-hub/events/${ev.slug}`}
-                className="group min-w-[320px] md:min-w-[380px] max-w-[380px] snap-start bg-white border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl shrink-0"
+                className="group min-w-[275px] sm:min-w-[320px] md:min-w-[380px] max-w-[380px] snap-start bg-white border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl shrink-0"
               >
                 <div>
                   <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#111]">

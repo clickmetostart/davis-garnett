@@ -241,7 +241,7 @@ export default function DevelopmentDetailClient({
           </div>
 
           {/* 6-Box Specs Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4 mt-8">
             {dev.specs.map((spec) => (
               <div
                 key={spec.label}

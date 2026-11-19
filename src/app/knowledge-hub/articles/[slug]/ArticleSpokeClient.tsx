@@ -293,14 +293,14 @@ export default function ArticleSpokeClient({
                     Request Custom Market Comps &amp; Insights
                   </h3>
                   <form onSubmit={handleSubmit} className="space-y-3.5">
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <input
                         type="text"
                         required
                         value={firstName}
                         onChange={(e) => setFirstName(e.target.value)}
                         placeholder="First Name *"
-                        className="px-3.5 py-3 bg-white border border-[#111]/15 rounded-lg text-base sm:text-xs"
+                        className="w-full px-3.5 py-3 bg-white border border-[#111]/15 rounded-lg text-base sm:text-xs"
                       />
                       <input
                         type="text"
@@ -308,7 +308,7 @@ export default function ArticleSpokeClient({
                         value={lastName}
                         onChange={(e) => setLastName(e.target.value)}
                         placeholder="Last Name *"
-                        className="px-3.5 py-3 bg-white border border-[#111]/15 rounded-lg text-base sm:text-xs"
+                        className="w-full px-3.5 py-3 bg-white border border-[#111]/15 rounded-lg text-base sm:text-xs"
                       />
                     </div>
                     <input

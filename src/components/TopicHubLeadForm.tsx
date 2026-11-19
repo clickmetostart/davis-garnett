@@ -74,7 +74,7 @@ export default function TopicHubLeadForm({
         Get active &amp; upcoming listings tailored to {hubTitle}.
       </p>
       <form onSubmit={handleSubmit} className="space-y-3">
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <input
             type="text"
             required

@@ -8,26 +8,26 @@ import EmailActionBox from "@/components/EmailActionBox";
 
 export default function SiteFooter() {
   return (
-    <footer className="relative py-24 px-8 bg-[#0c0b09] text-white border-t border-[#D4AF37]/25 overflow-hidden">
+    <footer className="relative py-20 sm:py-24 px-5 sm:px-8 bg-[#0c0b09] text-white border-t border-[#D4AF37]/25 overflow-hidden">
       <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-[#D4AF37]/5 rounded-full blur-[120px] pointer-events-none -translate-y-1/2" />
 
       <div className="relative z-10 max-w-screen-xl mx-auto">
         {/* Top Brand & Principal Advisor Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr_1fr] gap-10 pb-16 mb-16 border-b border-[#D4AF37]/25 items-center">
-          <div>
-            <div className="flex items-center justify-between gap-4 mb-5 max-w-md">
-              <div className="w-52 h-16 relative flex items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[1.2fr_1fr_1fr] gap-6 sm:gap-8 xl:gap-10 pb-14 sm:pb-16 mb-14 sm:mb-16 border-b border-[#D4AF37]/25 items-center">
+          <div className="md:col-span-2 xl:col-span-1">
+            <div className="flex items-center justify-between gap-3 sm:gap-4 mb-5 max-w-md">
+              <div className="w-40 sm:w-52 h-14 sm:h-16 relative flex items-center min-w-0">
                 <DavisGarnettLogo variant="dark" className="w-full h-full object-contain object-left" />
               </div>
               <Link
                 href="/about/align-right-realty-carrollwood"
-                className="h-16 relative flex items-center justify-end hover:opacity-85 transition-opacity shrink-0"
+                className="h-14 sm:h-16 relative flex items-center justify-end hover:opacity-85 transition-opacity shrink-0"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/align-right-email-logo.png"
                   alt="Align Right Realty Carrollwood"
-                  className="h-[52px] w-auto object-contain object-right"
+                  className="h-10 sm:h-[52px] w-auto object-contain object-right"
                 />
               </Link>
             </div>
@@ -51,88 +51,92 @@ export default function SiteFooter() {
           </div>
 
           {/* Mark Davis Card */}
-          <div className="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-[#D4AF37]/40 transition-colors flex items-center gap-5">
-            <Link href="/about/mark-davis" className="shrink-0">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/davis-garnett-headshots/mark-davis-avatar-footer.JPG"
-                alt="Mark Davis"
-                className="w-20 h-20 rounded-full object-cover object-top border border-[#D4AF37]/30 shadow-lg shadow-black/50 shrink-0"
-              />
-            </Link>
-            <div className="flex-1 min-w-0">
-              <div className="flex items-start justify-between gap-2 mb-1">
-                <div>
-                  <Link href="/about/mark-davis" className="font-aiveritas text-xl text-[#D4AF37] hover:text-white transition-colors block">
-                    Mark Davis, REALTOR®
+          <div className="bg-white/5 border border-white/10 rounded-xl p-5 sm:p-6 hover:border-[#D4AF37]/40 transition-colors">
+            <div className="flex items-center gap-4">
+              <Link href="/about/mark-davis" className="shrink-0">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/davis-garnett-headshots/mark-davis-avatar-footer.JPG"
+                  alt="Mark Davis"
+                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover object-top border border-[#D4AF37]/30 shadow-lg shadow-black/50 shrink-0"
+                />
+              </Link>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-start justify-between gap-2">
+                  <div className="min-w-0">
+                    <Link href="/about/mark-davis" className="font-aiveritas text-lg sm:text-xl text-[#D4AF37] hover:text-white transition-colors block leading-snug">
+                      Mark Davis, REALTOR®
+                    </Link>
+                    <span className="text-xs text-white/75 block leading-snug mt-0.5">
+                      Certified Commercial &amp; Residential Agent
+                    </span>
+                    <span className="text-[10px] uppercase tracking-widest text-white/40 font-bold block mt-1">
+                      FL License BK3209459
+                    </span>
+                  </div>
+                  <Link
+                    href="/about/mark-davis"
+                    className="p-1.5 rounded-full bg-white/5 hover:bg-[#D4AF37] hover:text-black transition-colors shrink-0"
+                    aria-label="Mark Davis Profile"
+                  >
+                    <ArrowUpRight className="w-3.5 h-3.5" />
                   </Link>
-                  <span className="text-xs text-white/75 block">
-                    Certified Commercial &amp; Residential Agent
-                  </span>
-                  <span className="text-[10px] uppercase tracking-widest text-white/40 font-bold block mt-0.5">
-                    FL License BK3209459
-                  </span>
                 </div>
-                <Link
-                  href="/about/mark-davis"
-                  className="p-1.5 rounded-full bg-white/5 hover:bg-[#D4AF37] hover:text-black transition-colors shrink-0"
-                  aria-label="Mark Davis Profile"
-                >
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </Link>
               </div>
-              <div className="space-y-1 text-xs mt-2">
-                <EmailActionBox email="mark@davisgarnettsells.com" variant="dark" />
-                <a href="tel:941-737-4127" className="flex items-center gap-2 text-[#D4AF37] hover:text-white transition-colors">
-                  <Phone className="w-3.5 h-3.5 shrink-0" /> 941-737-4127
-                </a>
-              </div>
+            </div>
+            <div className="mt-4 pt-3.5 border-t border-white/10 flex flex-col gap-1.5 text-xs">
+              <EmailActionBox email="mark@davisgarnettsells.com" variant="dark" />
+              <a href="tel:941-737-4127" className="inline-flex items-center gap-2 text-[#D4AF37] hover:text-white transition-colors">
+                <Phone className="w-3.5 h-3.5 shrink-0" /> 941-737-4127
+              </a>
             </div>
           </div>
 
           {/* Rachael Garnett Card */}
-          <div className="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-[#D4AF37]/40 transition-colors flex items-center gap-5">
-            <Link href="/about/rachael-garnett" className="shrink-0">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/davis-garnett-headshots/rachael-garnett-avatar-footer.webp"
-                alt="Rachael Garnett"
-                className="w-20 h-20 rounded-full object-cover object-[center_30%] border border-[#D4AF37]/30 shadow-lg shadow-black/50 shrink-0"
-              />
-            </Link>
-            <div className="flex-1 min-w-0">
-              <div className="flex items-start justify-between gap-2 mb-1">
-                <div>
-                  <Link href="/about/rachael-garnett" className="font-aiveritas text-xl text-[#D4AF37] hover:text-white transition-colors block">
-                    Rachael Garnett, REALTOR®
+          <div className="bg-white/5 border border-white/10 rounded-xl p-5 sm:p-6 hover:border-[#D4AF37]/40 transition-colors">
+            <div className="flex items-center gap-4">
+              <Link href="/about/rachael-garnett" className="shrink-0">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/davis-garnett-headshots/rachael-garnett-avatar-footer.webp"
+                  alt="Rachael Garnett"
+                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover object-[center_30%] border border-[#D4AF37]/30 shadow-lg shadow-black/50 shrink-0"
+                />
+              </Link>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-start justify-between gap-2">
+                  <div className="min-w-0">
+                    <Link href="/about/rachael-garnett" className="font-aiveritas text-lg sm:text-xl text-[#D4AF37] hover:text-white transition-colors block leading-snug">
+                      Rachael Garnett, REALTOR®
+                    </Link>
+                    <span className="text-xs text-white/75 block leading-snug mt-0.5">
+                      Certified Commercial &amp; Residential Agent
+                    </span>
+                    <span className="text-[10px] uppercase tracking-widest text-white/40 font-bold block mt-1">
+                      FL License SL3378601
+                    </span>
+                  </div>
+                  <Link
+                    href="/about/rachael-garnett"
+                    className="p-1.5 rounded-full bg-white/5 hover:bg-[#D4AF37] hover:text-black transition-colors shrink-0"
+                    aria-label="Rachael Garnett Profile"
+                  >
+                    <ArrowUpRight className="w-3.5 h-3.5" />
                   </Link>
-                  <span className="text-xs text-white/75 block">
-                    Certified Commercial &amp; Residential Agent
-                  </span>
-                  <span className="text-[10px] uppercase tracking-widest text-white/40 font-bold block mt-0.5">
-                    FL License SL3378601
-                  </span>
                 </div>
-                <Link
-                  href="/about/rachael-garnett"
-                  className="p-1.5 rounded-full bg-white/5 hover:bg-[#D4AF37] hover:text-black transition-colors shrink-0"
-                  aria-label="Rachael Garnett Profile"
-                >
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </Link>
               </div>
-              <div className="space-y-1 text-xs mt-2">
-                <EmailActionBox email="rachael@davisgarnettsells.com" variant="dark" />
-                <a href="tel:727-808-3344" className="flex items-center gap-2 text-[#D4AF37] hover:text-white transition-colors">
-                  <Phone className="w-3.5 h-3.5 shrink-0" /> 727-808-3344
-                </a>
-              </div>
+            </div>
+            <div className="mt-4 pt-3.5 border-t border-white/10 flex flex-col gap-1.5 text-xs">
+              <EmailActionBox email="rachael@davisgarnettsells.com" variant="dark" />
+              <a href="tel:727-808-3344" className="inline-flex items-center gap-2 text-[#D4AF37] hover:text-white transition-colors">
+                <Phone className="w-3.5 h-3.5 shrink-0" /> 727-808-3344
+              </a>
             </div>
           </div>
         </div>
 
         {/* 5-Column Sitemap Links */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12">
           {/* Col 1: Featured Portfolio */}
           <div>
             <Link href="/properties" className="text-xs font-bold uppercase tracking-[0.2em] text-[#D4AF37] block mb-4 hover:text-white transition-colors">
@@ -277,7 +281,7 @@ export default function SiteFooter() {
               </strong>
               Broker Number BK3401606<br />
               3903 Northdale Blvd Suite 115W, TAMPA, FL 33624<br />
-              (813) 374-6050 &nbsp;|&nbsp; officeadmin@alignrightcarrollwood.com
+              (813) 374-6050 &nbsp;|&nbsp; <span className="break-all sm:break-normal">officeadmin@alignrightcarrollwood.com</span>
             </p>
           </div>
         </div>

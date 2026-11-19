@@ -95,7 +95,7 @@ export default function AlignRightRealtyCarrollwoodPage() {
             <span className="text-[#9A7D3A] text-xs uppercase tracking-[0.3em] font-bold block mb-4">
               Brokerage of Record · FL License BK3401606
             </span>
-            <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-[#111111] leading-none mb-6">
+            <h1 className="font-aiveritas text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-[#111111] leading-none mb-6">
               Our <span className="text-[#9A7D3A]">Brokerage</span>
             </h1>
             <p className="text-lg md:text-xl text-[#111111]/75 font-light leading-relaxed mb-6">
@@ -132,12 +132,12 @@ export default function AlignRightRealtyCarrollwoodPage() {
             </div>
           </div>
 
-          <div className="bg-[#111111] text-white p-10 md:p-12 rounded-2xl border border-[#ef5728]/40 shadow-2xl relative overflow-hidden">
+          <div className="bg-[#111111] text-white p-6 sm:p-10 md:p-12 rounded-2xl border border-[#ef5728]/40 shadow-2xl relative overflow-hidden">
             <a
               href="https://alignrightcarrollwood.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="relative w-56 h-20 mb-8 block hover:opacity-85 transition-opacity"
+              className="relative w-48 sm:w-56 h-16 sm:h-20 mb-8 block hover:opacity-85 transition-opacity"
             >
               <Image
                 src="/align-right-email-logo.png"
@@ -155,7 +155,7 @@ export default function AlignRightRealtyCarrollwoodPage() {
                   Align Right Realty Carrollwood
                 </p>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <span className="text-[10px] uppercase tracking-widest text-white/50 block">
                     Broker Number
@@ -171,16 +171,16 @@ export default function AlignRightRealtyCarrollwoodPage() {
               </div>
               <div className="text-xs text-white/70">
                 3903 Northdale Blvd Suite 115W, TAMPA, FL 33624<br />
-                officeadmin@alignrightcarrollwood.com
+                <span className="break-all sm:break-normal">officeadmin@alignrightcarrollwood.com</span>
               </div>
               <div className="pt-4 border-t border-white/10 text-xs text-white/70 space-y-2">
-                <p className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#C8A951]" />
-                  Mark Davis, REALTOR® — Certified Commercial &amp; Residential Agent (BK3209459)
+                <p className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#C8A951] shrink-0 mt-0.5" />
+                  <span>Mark Davis, REALTOR® — Certified Commercial &amp; Residential Agent (BK3209459)</span>
                 </p>
-                <p className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#C8A951]" />
-                  Rachael Garnett, REALTOR® — Certified Commercial &amp; Residential Agent (SL3378601)
+                <p className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#C8A951] shrink-0 mt-0.5" />
+                  <span>Rachael Garnett, REALTOR® — Certified Commercial &amp; Residential Agent (SL3378601)</span>
                 </p>
               </div>
             </div>

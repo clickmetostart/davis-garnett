@@ -92,7 +92,7 @@ export default function TourSliderSection({
             return (
               <div
                 key={tour.slug}
-                className="group min-w-[320px] md:min-w-[390px] max-w-[390px] snap-start shrink-0 bg-[#fbfbf9] border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl"
+                className="group min-w-[275px] sm:min-w-[320px] md:min-w-[390px] max-w-[390px] snap-start shrink-0 bg-[#fbfbf9] border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl"
               >
                 <div>
                   <Link href={`/tours/${tour.slug}`} className="block">

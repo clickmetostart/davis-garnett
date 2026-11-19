@@ -81,7 +81,7 @@ export default function ConsultationModal({
           <X className="w-5 h-5" />
         </button>
 
-        <div className="p-8 md:p-10">
+        <div className="p-5 sm:p-8 md:p-10">
           {submitted ? (
             <div className="text-center py-10">
               <div className="w-16 h-16 rounded-full bg-[#D4AF37]/15 text-[#9A7D3A] flex items-center justify-center mx-auto mb-6">
@@ -114,11 +114,11 @@ export default function ConsultationModal({
             </div>
           ) : (
             <>
-              <div className="mb-8">
-                <span className="text-[#9A7D3A] text-[10px] uppercase tracking-[0.3em] font-bold block mb-2">
+              <div className="mb-8 pr-10">
+                <span className="text-[#9A7D3A] text-[10px] uppercase tracking-[0.22em] sm:tracking-[0.3em] font-bold block mb-2">
                   Davis &amp; Garnett Real Estate Advisory
                 </span>
-                <h2 className="font-aiveritas text-3xl md:text-4xl text-[#111] mb-2">
+                <h2 className="font-aiveritas text-2xl sm:text-3xl md:text-4xl text-[#111] mb-2 leading-tight">
                   {title}
                 </h2>
                 <p className="text-[#111]/60 text-sm font-light leading-relaxed">

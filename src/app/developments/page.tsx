@@ -180,7 +180,7 @@ export default function DevelopmentsHubPage() {
               Davis &amp; Garnett · Commercial, Neighborhoods &amp; New Construction
             </span>
 
-            <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-white leading-none mb-6">
+            <h1 className="font-aiveritas text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-none mb-6">
               Trending <span className="text-[#C8A951]">Real Estate</span>
             </h1>
 
@@ -214,7 +214,7 @@ export default function DevelopmentsHubPage() {
       {/* Clean Below-Hero Regional Grid Navigation (Matches Main Menu — Eased Smooth Glide) */}
       <section id="trending-regions" className="py-8 px-6 md:px-12 bg-[#f5f3ef] border-b border-[#111111]/10 scroll-mt-24">
         <div className="max-w-screen-xl mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {[
               { label: "Tampa Bay & Hillsborough", sub: "Downtown, Westshore, Brandon & SouthShore", target: "downtown-towers", icon: Building2 },
               { label: "Pinellas County & Beaches", sub: "St. Petersburg, Bahama Shores, Clearwater & Dunedin", target: "st-pete-region", icon: MapPin },

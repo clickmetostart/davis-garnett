@@ -144,7 +144,7 @@ export default function CommercialRentCalculatorPage() {
               <p className="text-xs text-[#9A7D3A] font-medium mt-2">{leaseLabel}</p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-5">
               <div>
                 <label className="text-xs font-bold uppercase tracking-wider text-[#111]/70 block mb-2">
                   Rentable Sq Ft (RSF)
@@ -277,7 +277,7 @@ export default function CommercialRentCalculatorPage() {
             <h2 className="font-aiveritas text-2xl text-[#111] mb-4">
               5-Year Commercial Lease Cost Projection ({annualEscalationPct}% Annual Bump)
             </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-5 gap-3">
               {model.schedule.map((row) => (
                 <div key={row.year} className="p-4 rounded-xl bg-[#f5f3ef] border border-[#111]/8">
                   <span className="text-[10px] uppercase tracking-widest font-bold text-[#9A7D3A] block">

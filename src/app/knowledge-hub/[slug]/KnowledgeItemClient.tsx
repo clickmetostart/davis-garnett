@@ -491,14 +491,14 @@ export default function KnowledgeItemClient({
                     Request customized comps, off-market listings, or a 1-on-1 strategy call.
                   </p>
                   <form onSubmit={handleLeadSubmit} className="space-y-3.5">
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <input
                         type="text"
                         required
                         value={firstName}
                         onChange={(e) => setFirstName(e.target.value)}
                         placeholder="First Name *"
-                        className="px-3.5 py-3 bg-white border border-[#111]/15 rounded-lg text-base sm:text-xs focus:outline-none focus:border-[#D4AF37]"
+                        className="w-full px-3.5 py-3 bg-white border border-[#111]/15 rounded-lg text-base sm:text-xs focus:outline-none focus:border-[#D4AF37]"
                       />
                       <input
                         type="text"
@@ -506,7 +506,7 @@ export default function KnowledgeItemClient({
                         value={lastName}
                         onChange={(e) => setLastName(e.target.value)}
                         placeholder="Last Name *"
-                        className="px-3.5 py-3 bg-white border border-[#111]/15 rounded-lg text-base sm:text-xs focus:outline-none focus:border-[#D4AF37]"
+                        className="w-full px-3.5 py-3 bg-white border border-[#111]/15 rounded-lg text-base sm:text-xs focus:outline-none focus:border-[#D4AF37]"
                       />
                     </div>
                     <input

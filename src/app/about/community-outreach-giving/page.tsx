@@ -207,7 +207,7 @@ export default function CommunityOutreachGivingPage() {
               Davis &amp; Garnett · Faith, Church &amp; Community
             </span>
 
-            <h1 className="font-aiveritas text-5xl sm:text-7xl lg:text-8xl text-[#111111] leading-none mb-6">
+            <h1 className="font-aiveritas text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-[#111111] leading-none mb-6">
               Community <span className="text-[#9A7D3A]">Outreach</span>
             </h1>
 
@@ -236,7 +236,7 @@ export default function CommunityOutreachGivingPage() {
             </div>
           </div>
 
-          <div className="bg-[#111111] text-white p-10 md:p-12 rounded-2xl border border-[#C8A951]/30 shadow-2xl">
+          <div className="bg-[#111111] text-white p-6 sm:p-10 md:p-12 rounded-2xl border border-[#C8A951]/30 shadow-2xl">
             <HeartHandshake className="w-10 h-10 text-[#C8A951] mb-6" />
             <span className="text-[10px] uppercase tracking-[0.25em] text-[#C8A951] font-bold block mb-2">
               The Davis & Garnett Giving Pledge
@@ -440,7 +440,7 @@ export default function CommunityOutreachGivingPage() {
           </div>
 
           {submitted ? (
-            <div className="p-10 rounded-xl bg-white border border-[#C8A951] text-center">
+            <div className="p-6 sm:p-10 rounded-xl bg-white border border-[#C8A951] text-center">
               <CheckCircle2 className="w-12 h-12 text-[#9A7D3A] mx-auto mb-4" />
               <h3 className="font-aiveritas text-2xl text-[#111111] mb-2">
                 Thank You for Sharing Your Mission
