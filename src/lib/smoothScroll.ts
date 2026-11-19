@@ -50,6 +50,38 @@ export function smoothScrollToId(
 }
 
 /**
+ * Smoothly glides the viewport back to the top of the page (y = 0).
+ */
+export function smoothScrollToTop(durationMs = 480): void {
+  if (typeof window === "undefined") return;
+  const startY = window.scrollY;
+  if (startY < 4) return;
+
+  const html = document.documentElement;
+  const previousScrollBehavior = html.style.scrollBehavior;
+  html.style.scrollBehavior = "auto";
+
+  let startTime: number | null = null;
+  const easeInOutCubic = (t: number) =>
+    t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+  const step = (now: number) => {
+    if (startTime === null) startTime = now;
+    const elapsed = now - startTime;
+    const progress = Math.min(1, elapsed / durationMs);
+    window.scrollTo(0, startY * (1 - easeInOutCubic(progress)));
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    } else {
+      html.style.scrollBehavior = previousScrollBehavior;
+    }
+  };
+
+  requestAnimationFrame(step);
+}
+
+/**
  * Steps a horizontal card slider smoothly by exactly one rendered card width
  * plus its computed flex gap so left/right arrow buttons always snap cleanly
  * onto the next full card across phone, tablet, and desktop viewports.

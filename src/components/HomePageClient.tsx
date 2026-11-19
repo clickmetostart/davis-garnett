@@ -4,12 +4,13 @@ import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 import {
   ArrowRight,
   Star,
   PlayCircle,
   ChevronDown,
+  ChevronsDown,
   ChevronLeft,
   ChevronRight,
   MessageCircleQuestion,
@@ -61,6 +62,26 @@ function DesktopTeamTriptych() {
   const textOpacity = useTransform(scrollYProgress, [0.74, 0.82, 1], [0, 1, 1]);
   const textY = useTransform(scrollYProgress, [0.74, 0.82, 1], [40, 0, 0]);
   const initialTextOpacity = useTransform(scrollYProgress, [0, 0.36, 0.43], [1, 1, 0]);
+
+  // Frameless scroll-cue transforms (shown only while scrolling down, hidden cleanly when scrolling back up):
+  // Phase 1 fills 0 -> 0.38 (right as the side cards emerge) and fades cleanly to 0 by 0.43
+  const [showDownCues, setShowDownCues] = useState(true);
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    const prev = scrollYProgress.getPrevious() ?? 0;
+    if (latest <= 0.01) {
+      setShowDownCues(true);
+    } else if (latest > prev + 0.0005) {
+      setShowDownCues(true);
+    } else if (latest < prev - 0.0005) {
+      setShowDownCues(false);
+    }
+  });
+
+  const cueIntroOpacity = useTransform(scrollYProgress, [0, 0.36, 0.43], [1, 1, 0]);
+  const introProgressScale = useTransform(scrollYProgress, [0, 0.38], [0.08, 1]);
+  // Phase 2 appears only after the full-screen advisor split settles (0.76 -> 0.83) and stays visible through 1.0 on the way down
+  const cueOutroOpacity = useTransform(scrollYProgress, [0.76, 0.83, 1], [0, 1, 1]);
+  const outroProgressScale = useTransform(scrollYProgress, [0.76, 1], [0.08, 1]);
 
   return (
     <section ref={containerRef} className="relative w-full h-[1150vh] bg-[#f5f3ef]">
@@ -169,6 +190,70 @@ function DesktopTeamTriptych() {
             <Image src="/new-images/new-2/dg-favicon-fat-dark-background.png" alt="" fill className="object-contain opacity-25" />
           </motion.div>
         </motion.div>
+
+        {/* Frameless Bouncing Scroll Cue + Live Progress Line (Phase 1: Opening Hold -> Card Split, downward scroll only) */}
+        <div
+          className={`absolute bottom-4 xl:bottom-6 left-1/2 -translate-x-1/2 z-30 pointer-events-none select-none transition-opacity duration-300 ${
+            showDownCues ? "opacity-100" : "opacity-0"
+          }`}
+          aria-hidden="true"
+        >
+          <motion.div
+            className="flex flex-col items-center gap-1.5"
+            style={{ opacity: cueIntroOpacity }}
+          >
+            <div className="flex items-center gap-2.5">
+              <span className="w-3.5 h-5 rounded-full border-[1.5px] border-[#9A7D3A] flex items-start justify-center pt-1 shrink-0">
+                <motion.span
+                  className="w-1 h-1.5 rounded-full bg-[#C8A951]"
+                  animate={{ y: [0, 6, 0], opacity: [1, 0.3, 1] }}
+                  transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                />
+              </span>
+
+              <span className="text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.26em] text-[#111111]/85 whitespace-nowrap">
+                Keep Scrolling · Meet Mark &amp; Rachael
+              </span>
+
+              <ChevronsDown className="w-4 h-4 text-[#9A7D3A] animate-bounce shrink-0" />
+            </div>
+
+            {/* Live scroll-linked progress line fills 0 -> 0.38 right as the cards split open */}
+            <div className="w-44 h-[2px] bg-[#111111]/12 overflow-hidden">
+              <motion.div
+                className="h-full w-full origin-left bg-gradient-to-r from-[#9A7D3A] via-[#D4AF37] to-[#C8A951]"
+                style={{ scaleX: introProgressScale }}
+              />
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Frameless Bouncing Scroll Cue + Live Progress Line (Phase 2: Full-Screen Advisors -> Next Section, downward scroll only) */}
+        <div
+          className={`absolute bottom-28 xl:bottom-32 left-1/2 -translate-x-1/2 z-30 pointer-events-none select-none transition-opacity duration-300 ${
+            showDownCues ? "opacity-100" : "opacity-0"
+          }`}
+          aria-hidden="true"
+        >
+          <motion.div
+            className="flex flex-col items-center gap-1.5"
+            style={{ opacity: cueOutroOpacity }}
+          >
+            <div className="flex items-center gap-2 drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
+              <span className="text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.26em] text-white/95 whitespace-nowrap">
+                Keep Scrolling
+              </span>
+              <ChevronsDown className="w-4 h-4 text-[#D4AF37] animate-bounce shrink-0" />
+            </div>
+
+            <div className="w-32 h-[2px] bg-white/20 overflow-hidden">
+              <motion.div
+                className="h-full w-full origin-left bg-[#D4AF37]"
+                style={{ scaleX: outroProgressScale }}
+              />
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

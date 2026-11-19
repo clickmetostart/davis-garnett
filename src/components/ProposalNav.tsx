@@ -1,11 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type MouseEvent } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, Search, ArrowUpRight, Phone } from "lucide-react";
 import DavisGarnettLogo from "@/components/DavisGarnettLogo";
 import ConsultationModal from "@/components/ConsultationModal";
 import SocialIconsStrip from "@/components/SocialIconsStrip";
+import { smoothScrollToTop } from "@/lib/smoothScroll";
 
 interface NavDropdownItem {
   label: string;
@@ -91,12 +93,21 @@ export default function ProposalNav() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
+  const pathname = usePathname();
+
+  const handleHomeClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    setIsOpen(false);
+    if (pathname === "/") {
+      e.preventDefault();
+      smoothScrollToTop(480);
+    }
+  };
 
   return (
     <>
       <nav className="fixed top-0 w-full z-50 bg-[#050505]/95 backdrop-blur-xl border-b border-white/10">
         <div className="max-w-[1680px] mx-auto px-5 xl:px-8 h-20 flex items-center justify-between gap-4">
-          <Link href="/" className="flex items-center hover:opacity-85 transition-opacity shrink-0">
+          <Link href="/" onClick={handleHomeClick} className="flex items-center hover:opacity-85 transition-opacity shrink-0">
             <DavisGarnettLogo variant="dark" className="w-36 xl:w-40 max-w-full" />
           </Link>
 
@@ -104,6 +115,7 @@ export default function ProposalNav() {
           <div className="hidden xl:flex items-center gap-4 2xl:gap-7 shrink-0">
             <Link
               href="/"
+              onClick={handleHomeClick}
               className="text-xs 2xl:text-[13px] font-bold tracking-[0.14em] uppercase text-white/85 hover:text-[#D4AF37] transition-colors py-6 whitespace-nowrap shrink-0"
             >
               Home
@@ -203,7 +215,7 @@ export default function ProposalNav() {
             <div className="max-w-3xl mx-auto flex flex-col gap-5">
             <Link
               href="/"
-              onClick={() => setIsOpen(false)}
+              onClick={handleHomeClick}
               className="text-lg font-serif text-white hover:text-[#D4AF37] border-b border-white/10 pb-3"
             >
               Home
