@@ -106,7 +106,11 @@ export default function HomePageV1Light() {
 
       {/* ── HERO (video grid — dark overlay stays, white text over it) ── */}
       <section className="relative w-full min-h-screen flex items-center justify-center pt-20 pb-24 bg-[#050505] overflow-hidden">
-        <div className="absolute inset-0 z-0 flex w-full h-full">
+        <div
+          className={`absolute inset-0 z-0 w-full h-full ${
+            isMobile ? "grid grid-cols-2 grid-rows-2" : "flex"
+          }`}
+        >
           {[
             { id: 1, src: "/hero-videos-homepage/davis-garnett-home-realtor-video-hero-placement-1.mp4?v=2" },
             { id: 2, src: "/new-images/new-2/davis-garnett-residential-commercial-real-estate-advisors-tampa-fl-sp2.mp4?v=2" },
@@ -115,8 +119,18 @@ export default function HomePageV1Light() {
           ].map((v) => (
             <div
               key={v.id}
-              className={`relative flex-1 h-full border-r border-white/5 last:border-r-0 overflow-hidden group ${
-                v.id === 2 || v.id === 4 ? (isMobile ? "hidden" : "hidden lg:block") : ""
+              className={`relative h-full overflow-hidden group ${
+                isMobile
+                  ? `w-full border-r border-b border-white/5 ${
+                      v.id === 1
+                        ? "order-1"
+                        : v.id === 2
+                        ? "order-2 border-r-0"
+                        : v.id === 4
+                        ? "order-3 border-b-0"
+                        : "order-4 border-r-0 border-b-0"
+                    }`
+                  : "flex-1 border-r border-white/5 last:border-r-0"
               }`}
             >
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-700 z-10 pointer-events-none" />
