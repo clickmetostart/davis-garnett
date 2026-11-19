@@ -7,6 +7,7 @@ export interface PillarServiceLane {
   title: string;
   summary: string;
   highlights: string[];
+  image?: string;
   primaryCta: { label: string; href: string };
   secondaryCta: { label: string; href: string };
 }
@@ -17,6 +18,7 @@ export interface PillarCorridorCard {
   desc: string;
   href: string;
   actionLabel: string;
+  image?: string;
 }
 
 export interface PillarStepItem {
@@ -57,6 +59,7 @@ export interface PillarHubConfig {
   subtitle: string;
   heroImage: string;
   heroImageAlt: string;
+  teamImage?: string;
   getStartedHref: string;
   getStartedLabel: string;
   secondaryHeroHref: string;
@@ -99,7 +102,7 @@ export const RESIDENTIAL_PILLAR_HUB: PillarHubConfig = {
   heroImage: "/res_waterfront_estate_1787632802890.png",
   heroImageAlt: "Tampa Bay home exterior at sunset",
   getStartedHref: "/residential/get-started",
-  getStartedLabel: "Start Your Project",
+  getStartedLabel: "Plan Your Move",
   secondaryHeroHref: "/search-mls",
   secondaryHeroLabel: "Search Homes With Map",
   quickAnswer:
@@ -128,19 +131,21 @@ export const RESIDENTIAL_PILLAR_HUB: PillarHubConfig = {
       id: "lifestyle-buying",
       tag: "Home Buying",
       title: "Matching Real Life to the Right Street",
+      image: "/images/hub-lanes/residential-lifestyle-buying.jpg",
       summary:
         "We look past fresh paint to test drive times, school car lines, patio shade, parking room, and future demand.",
       highlights: [
         "Honest takes on room flow, light, and lot layout",
         "Clean offers built around timing and budget",
       ],
-      primaryCta: { label: "Start Your Project", href: "/residential/get-started" },
+      primaryCta: { label: "Plan Your Move", href: "/residential/get-started" },
       secondaryCta: { label: "Search Live MLS Homes", href: "/search-mls" },
     },
     {
       id: "strategic-selling",
       tag: "Home Selling",
       title: "Listing Prep That Protects Take-Home Cash",
+      image: "/images/hub-lanes/residential-strategic-selling.jpg",
       summary:
         "Learn which fast fix-ups raise real offers—paint, light bulbs, and trim yard care—before spending money you never get back.",
       highlights: [
@@ -154,6 +159,7 @@ export const RESIDENTIAL_PILLAR_HUB: PillarHubConfig = {
       id: "move-up-downsize",
       tag: "Timing Both Sides",
       title: "Buying & Selling Without Double Moves",
+      image: "/images/hub-lanes/residential-move-up-downsize.jpg",
       summary:
         "Selling one home while buying the next takes calm math. We line up closing days, rent-back stays, and loan dates neatly.",
       highlights: [
@@ -167,6 +173,7 @@ export const RESIDENTIAL_PILLAR_HUB: PillarHubConfig = {
       id: "relocation-orientation",
       tag: "Moving to Tampa Bay",
       title: "Out-of-State & Job Relocations",
+      image: "/images/hub-lanes/residential-relocation-orientation.jpg",
       summary:
         "New to Tampa Bay? Spend a relaxed half-day driving areas side by side to feel local shops, parks, and traffic first.",
       highlights: [
@@ -180,6 +187,7 @@ export const RESIDENTIAL_PILLAR_HUB: PillarHubConfig = {
       id: "classic-vs-new",
       tag: "Neighborhood Fit",
       title: "Classic Canopy Streets vs. New Builds",
+      image: "/images/hub-lanes/residential-classic-vs-new.jpg",
       summary:
         "Compare wide oak-shaded lots in older towns against brand-new floor plans, swim clubs, and parks in new communities.",
       highlights: [
@@ -193,6 +201,7 @@ export const RESIDENTIAL_PILLAR_HUB: PillarHubConfig = {
       id: "condos-coastal",
       tag: "Lock & Leave Living",
       title: "Downtown Condos & Easy-Care Villas",
+      image: "/images/hub-lanes/residential-condos-coastal.jpg",
       summary:
         "Trade lawn work for walkable coffee shops, city views, and gyms—with plain-English checks on pet rules and monthly fees.",
       highlights: [
@@ -214,6 +223,7 @@ export const RESIDENTIAL_PILLAR_HUB: PillarHubConfig = {
       desc: "Shaded oaks, clean lakes, quiet dead-end streets, golf clubs, and quick 20-minute drives to Tampa Airport.",
       href: "/hub/carrollwood-northdale-homes",
       actionLabel: "Explore Carrollwood",
+      image: "/images/knowledge-hub/carrollwood-northdale.jpg",
     },
     {
       region: "Urban Core · South Tampa",
@@ -221,6 +231,7 @@ export const RESIDENTIAL_PILLAR_HUB: PillarHubConfig = {
       desc: "Walkable cafes along Howard and Water Street, Bayshore running paths, brick homes, and city towers.",
       href: "/developments#downtown-towers",
       actionLabel: "See South & Downtown",
+      image: "/images/regions/downtown-towers.jpg",
     },
     {
       region: "Pinellas Peninsula",
@@ -228,6 +239,7 @@ export const RESIDENTIAL_PILLAR_HUB: PillarHubConfig = {
       desc: "Brick streets under big trees, weekend pier markets, Central Ave dining, and Gulf sunsets ten minutes west.",
       href: "/knowledge-hub/areas/st-petersburg",
       actionLabel: "Explore St. Petersburg",
+      image: "/images/regions/st-pete-region.jpg",
     },
     {
       region: "North Pinellas Coast",
@@ -235,6 +247,7 @@ export const RESIDENTIAL_PILLAR_HUB: PillarHubConfig = {
       desc: "Golf-cart downtown blocks, harbor walks, cozy shops, and miles of bike rides on the Pinellas Trail.",
       href: "/developments#clearwater-north-pinellas",
       actionLabel: "Explore North Pinellas",
+      image: "/images/regions/clearwater-region.jpg",
     },
     {
       region: "North Suburban Growth",
@@ -242,6 +255,7 @@ export const RESIDENTIAL_PILLAR_HUB: PillarHubConfig = {
       desc: "Bright family towns with walking paths, neighborhood pools, sports fields, and growing shops near Wiregrass.",
       href: "/developments#north-tampa-communities",
       actionLabel: "See Wesley Chapel",
+      image: "/images/regions/north-tampa-communities.jpg",
     },
     {
       region: "South Counties",
@@ -249,6 +263,7 @@ export const RESIDENTIAL_PILLAR_HUB: PillarHubConfig = {
       desc: "Town greens, weekend markets, golf links, bayfront parks, and bright white beaches on Sarasota Bay.",
       href: "/developments#sarasota-manatee-communities",
       actionLabel: "Explore Sarasota & LWR",
+      image: "/images/regions/sarasota-manatee-communities.png",
     },
   ],
   processEyebrow: "Your Getting Started Path",
@@ -261,7 +276,7 @@ export const RESIDENTIAL_PILLAR_HUB: PillarHubConfig = {
       title: "Share Your Goals, Areas & Budget Range",
       body: "Answer seven quick steps online so Mark and Rachael know what feels like home first.",
       href: "/residential/get-started",
-      linkLabel: "Start Your Project",
+      linkLabel: "Plan Your Move",
     },
     {
       step: "02",
@@ -346,7 +361,7 @@ export const RESIDENTIAL_PILLAR_HUB: PillarHubConfig = {
       title: "Get Started Worksheet & Guide PDF",
       desc: "Spend three minutes online to organize your move, or print our sheet before coffee.",
       href: "/residential/get-started",
-      ctaLabel: "Start Your Project",
+      ctaLabel: "Plan Your Move",
     },
   ],
   glossaryChips: [
@@ -372,7 +387,7 @@ export const RESIDENTIAL_PILLAR_HUB: PillarHubConfig = {
         "You never get handed off to junior staff. Both partners stay plugged into pricing, tours, and repair talks so help answers fast every day.",
     },
     {
-      question: "What happens after I fill out the Start Your Project steps?",
+      question: "What happens after I fill out the Plan Your Move steps?",
       answer:
         "Mark and Rachael receive your notes right away and build your custom PDF copy. Our first call starts around real streets instead of basic intake.",
     },
@@ -444,6 +459,7 @@ export const COMMERCIAL_PILLAR_HUB: PillarHubConfig = {
       id: "retail-medical-leasing",
       tag: "Tenant & Landlord Leasing",
       title: "Retail Plazas, Clinics & Office Suites",
+      image: "/images/hub-lanes/commercial-retail-medical-leasing.jpg",
       summary:
         "Review daytime car counts, nearby co-tenants, build-out cash credits, AC rules, and fair yearly rent bumps before signing.",
       highlights: [
@@ -457,6 +473,7 @@ export const COMMERCIAL_PILLAR_HUB: PillarHubConfig = {
       id: "industrial-flex",
       tag: "Warehouse & Flex",
       title: "Warehouses, Service Bays & Yards",
+      image: "/images/hub-lanes/commercial-industrial-flex.jpg",
       summary:
         "Source tall ceilings for racks, truck dock or drive-in doors, heavy power, and fenced fleet yards right off I-4 or I-75.",
       highlights: [
@@ -470,6 +487,7 @@ export const COMMERCIAL_PILLAR_HUB: PillarHubConfig = {
       id: "exit-valuation",
       tag: "Selling & Pricing",
       title: "Fast Pricing Reports & Quiet Sales",
+      image: "/images/hub-lanes/commercial-exit-valuation.jpg",
       summary:
         "Ready to retire, sell a plaza, or split a group asset? Get a grounded Broker Price Opinion and pick quiet calls or full marketing.",
       highlights: [
@@ -483,6 +501,7 @@ export const COMMERCIAL_PILLAR_HUB: PillarHubConfig = {
       id: "land-assemblage",
       tag: "Pads & Acreage",
       title: "Corner Pads, Lots & Country Land",
+      image: "/images/hub-lanes/commercial-land-assemblage.jpg",
       summary:
         "From retail pads needing drainage room to 80-acre tracts, we check road access, sewer lines, and county growth maps upfront.",
       highlights: [
@@ -517,6 +536,7 @@ export const COMMERCIAL_PILLAR_HUB: PillarHubConfig = {
       desc: "High daytime worker counts, medical hubs, office suites, and 10-minute drives to Tampa Airport.",
       href: "/tours/westshore-dale-mabry-retail-office-tour",
       actionLabel: "Drive Westshore Corridor",
+      image: "/images/tours/westshore-dale-mabry-retail-office-tour.jpg",
     },
     {
       region: "East Hillsborough Spine",
@@ -524,6 +544,7 @@ export const COMMERCIAL_PILLAR_HUB: PillarHubConfig = {
       desc: "Dense nearby rooftops driving strong neighborhood shops, freestanding clinics, and service firms.",
       href: "/tours/brandon-sr60-mixed-use-commercial-tour",
       actionLabel: "Drive Brandon SR-60",
+      image: "/images/tours/brandon-sr60-mixed-use-commercial-tour.jpg",
     },
     {
       region: "Urban Mixed-Use",
@@ -531,6 +552,7 @@ export const COMMERCIAL_PILLAR_HUB: PillarHubConfig = {
       desc: "Street-front food spots, boutique offices, and busy apartment blocks bringing daily foot traffic.",
       href: "/developments#downtown-towers",
       actionLabel: "See Downtown Districts",
+      image: "/images/tours/downtown-tampa-water-street-channelside-tour.jpg",
     },
     {
       region: "North Tampa · Carrollwood HQ",
@@ -538,6 +560,7 @@ export const COMMERCIAL_PILLAR_HUB: PillarHubConfig = {
       desc: "Steady high-income neighborhoods backing dental clinics, wellness spaces, and local offices.",
       href: "/hub/carrollwood-northdale-homes",
       actionLabel: "See Carrollwood Market",
+      image: "/images/developments/northdale-dale-mabry-commercial-office-corridor.jpg",
     },
     {
       region: "Pinellas Peninsula",
@@ -545,6 +568,7 @@ export const COMMERCIAL_PILLAR_HUB: PillarHubConfig = {
       desc: "Tight land supply keeping flex bays, strip centers, and Central Ave shops in steady demand.",
       href: "/developments#st-pete-region",
       actionLabel: "Explore Pinellas Market",
+      image: "/images/developments/edge-district-central-ave-commercial-st-pete.jpg",
     },
     {
       region: "I-4 Corridor & Heartland",
@@ -552,6 +576,7 @@ export const COMMERCIAL_PILLAR_HUB: PillarHubConfig = {
       desc: "Major trucking routes along I-4 alongside open commercial acreage and large country tracts.",
       href: "/hub/land-acreage-central-florida",
       actionLabel: "Explore Central FL Land",
+      image: "/images/developments/i4-plant-city-polk-industrial-logistics-land.jpg",
     },
   ],
   processEyebrow: "Clear Deal Execution",

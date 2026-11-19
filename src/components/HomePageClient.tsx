@@ -1382,7 +1382,7 @@ export default function HomePageV1Light() {
             { img: "/listings/bahama-shores-lot-1.jpg", href: "/properties", alt: "6100 Bahama Shores Lot 10 - Pre-Construction Homesite" },
             { img: "/developments/ritz-carlton/downtown-tampa-luxury-living-ritz-carlton-residences-davis-garnett-residential-commercial-advisors-1.jpg", href: "/developments/the-ritz-carlton-residences-bayshore", alt: "Bayshore Boulevard Luxury Living - The Ritz-Carlton Residences" },
             { img: "/listings/justamere-tampa-1.jpg", href: "/properties", alt: "3012 Justamere Ln - Lakefront Estate Closed" },
-            { img: "/developments/epperson-mirada/tampa-bay-new-development-epperson-mirada-davis-garnett-residential-commercial-advisors-1.jpg", href: "/developments/epperson-mirada-lagoon-wesley-chapel", alt: "Wesley Chapel Lagoon Communities - Epperson & Mirada" },
+            { img: "/images/developments/epperson-mirada-lagoon-wesley-chapel.jpg", href: "/developments/epperson-mirada-lagoon-wesley-chapel", alt: "Wesley Chapel Lagoon Communities - Epperson & Mirada" },
             { img: "/listings/beverly-hills-zephyrhills-1.jpg", href: "/properties", alt: "6389 Beverly Hills Dr - Abbott Square Closed" },
           ].map((item, idx) => (
             <Link key={idx} href={item.href} className="group relative aspect-square w-full overflow-hidden block bg-[#111]">

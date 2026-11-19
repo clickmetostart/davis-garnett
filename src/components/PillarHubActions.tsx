@@ -2,8 +2,9 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Download, Phone, Sparkles } from "lucide-react";
+import { ArrowRight, Compass, Download, Phone, Sparkles } from "lucide-react";
 import ConsultationModal from "@/components/ConsultationModal";
+import { smoothScrollToId } from "@/lib/smoothScroll";
 
 interface PillarHubActionsProps {
   track: "residential" | "commercial";
@@ -12,6 +13,8 @@ interface PillarHubActionsProps {
   secondaryHeroHref: string;
   secondaryHeroLabel: string;
   variant?: "hero" | "closing";
+  surface?: "dark" | "light";
+  align?: "left" | "center";
 }
 
 export default function PillarHubActions({
@@ -21,6 +24,8 @@ export default function PillarHubActions({
   secondaryHeroHref,
   secondaryHeroLabel,
   variant = "hero",
+  surface = "dark",
+  align = "left",
 }: PillarHubActionsProps) {
   const [modalOpen, setModalOpen] = useState(false);
   const [downloadingPdf, setDownloadingPdf] = useState(false);
@@ -108,32 +113,50 @@ export default function PillarHubActions({
     );
   }
 
-  return (
-    <div className="flex flex-col items-start gap-4">
-      <div className="flex flex-wrap items-center gap-3.5">
-        <Link
-          href={getStartedHref}
-          className="inline-flex items-center gap-2.5 px-7 py-4 rounded-lg bg-[#D4AF37] text-[#111111] hover:bg-white text-xs font-bold uppercase tracking-[0.18em] transition-colors shadow-lg"
-        >
-          {getStartedLabel}
-          <ArrowRight className="w-4 h-4" />
-        </Link>
+  const isLightSurface = surface === "light";
+  const isCentered = align === "center";
 
-        <Link
-          href={secondaryHeroHref}
-          className="inline-flex items-center gap-2 px-6 py-4 rounded-lg border border-white/25 text-white hover:border-[#D4AF37] hover:text-[#D4AF37] text-xs font-bold uppercase tracking-[0.18em] transition-colors"
+  return (
+    <div className={`flex flex-col ${isCentered ? "items-center" : "items-start"} gap-4`}>
+      <div className={`flex flex-wrap items-center ${isCentered ? "justify-center" : "justify-start"} gap-3.5`}>
+        <button
+          type="button"
+          onClick={() => smoothScrollToId("hub-sections")}
+          className={`inline-flex items-center gap-2.5 px-7 py-4 rounded-lg text-xs font-bold uppercase tracking-[0.18em] transition-colors shadow-lg cursor-pointer ${
+            isLightSurface
+              ? "bg-[#111111] text-white hover:bg-[#C8A951] hover:text-[#111111]"
+              : "bg-[#D4AF37] text-[#111111] hover:bg-white"
+          }`}
         >
-          {secondaryHeroLabel}
-        </Link>
+          <Compass className="w-4 h-4 shrink-0" />
+          {isCommercial ? "Explore Commercial" : "Explore Residential"}
+        </button>
+
+        <button
+          type="button"
+          onClick={() => smoothScrollToId("closing-cta")}
+          className={`inline-flex items-center gap-2 px-6 py-4 rounded-lg border text-xs font-bold uppercase tracking-[0.18em] transition-colors cursor-pointer ${
+            isLightSurface
+              ? "border-[#111111]/25 bg-white text-[#111111] hover:border-[#9A7D3A] hover:text-[#9A7D3A]"
+              : "border-white/25 text-white hover:border-[#D4AF37] hover:text-[#D4AF37]"
+          }`}
+        >
+          <Phone className={`w-4 h-4 shrink-0 ${isLightSurface ? "text-[#9A7D3A]" : "text-[#D4AF37]"}`} />
+          Talk With Mark &amp; Rachael
+        </button>
       </div>
 
       <button
         type="button"
         onClick={handleBlankPdf}
         disabled={downloadingPdf}
-        className="inline-flex items-center gap-2 text-xs font-semibold text-white/75 hover:text-[#D4AF37] transition-colors cursor-pointer disabled:opacity-60"
+        className={`inline-flex items-center gap-2 text-xs font-semibold transition-colors cursor-pointer disabled:opacity-60 ${
+          isLightSurface
+            ? "text-[#111111]/75 hover:text-[#9A7D3A]"
+            : "text-white/75 hover:text-[#D4AF37]"
+        }`}
       >
-        <Download className="w-3.5 h-3.5 text-[#D4AF37]" />
+        <Download className={`w-3.5 h-3.5 ${isLightSurface ? "text-[#9A7D3A]" : "text-[#D4AF37]"}`} />
         {downloadingPdf
           ? "Preparing Printable Guide (PDF)..."
           : "Prefer paper? Download Printable Getting Started Guide (PDF)"}

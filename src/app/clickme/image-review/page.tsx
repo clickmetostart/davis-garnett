@@ -19,6 +19,7 @@ import {
 import { GUIDES, QUESTIONS, AREAS, EVENTS, ARTICLES } from "@/data/knowledgeHub";
 import { LIVE_GUIDED_TOURS } from "@/data/tours";
 import { DEVELOPMENTS } from "@/data/developments";
+import { RESIDENTIAL_PILLAR_HUB, COMMERCIAL_PILLAR_HUB } from "@/data/pillarHubs";
 import type { ImageReviewRecord } from "@/lib/kv";
 
 type ReviewStatus = ImageReviewRecord["status"];
@@ -97,10 +98,19 @@ const HOME_PAGE_IMAGES = [
   {
     id: "home:every-listing-approach",
     slug: "home-every-listing-approach",
-    title: "Homepage: Our Every Listing Approach Feature",
-    category: "Approach Card",
-    description: "Mark & Rachael reviewing buyer, seller & commercial playbooks on Homepage.",
+    title: "Homepage: 01 Playbooks Card (Buyer, Seller & Commercial)",
+    category: "Knowledge & Tours",
+    description: "Mark & Rachael reviewing buyer, seller & commercial playbooks on Homepage card 01.",
     image: "/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-9.jpg",
+    liveHref: "/",
+  },
+  {
+    id: "home:guided-tours-card",
+    slug: "home-guided-tours-card",
+    title: "Homepage: 02 Guided Tours Card (#GuidedByDG)",
+    category: "Knowledge & Tours",
+    description: "Mark & Rachael hosting a guided Tampa Bay waterfront tour on Homepage card 02.",
+    image: "/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-3.jpg",
     liveHref: "/",
   },
   {
@@ -232,6 +242,69 @@ const ABOUT_PAGE_IMAGES = [
     image: "/new-images/new-2/davis-garnett-stock-gallery/realtors-mark-davis-rachael-garnett-tampa-residential-real-estate-gallery-10.jpg",
     liveHref: "/about/community-outreach-giving",
   },
+  {
+    id: "about:rachael-valencia-cove",
+    slug: "about-rachael-valencia-cove",
+    title: "About Rachael: 3537 Valencia Cove Ct",
+    category: "/about/rachael-garnett",
+    description: "Closed residential listing on Rachael Garnett bio page.",
+    image: "/listings/valencia-cove-lol-1.webp",
+    liveHref: "/about/rachael-garnett",
+  },
+  {
+    id: "about:rachael-teal-trce",
+    slug: "about-rachael-teal-trce",
+    title: "About Rachael: 7608 Teal Trce",
+    category: "/about/rachael-garnett",
+    description: "Closed residential listing on Rachael Garnett bio page.",
+    image: "/listings/teal-trce-bradenton-1.webp",
+    liveHref: "/about/rachael-garnett",
+  },
+  {
+    id: "about:rachael-otto-pt",
+    slug: "about-rachael-otto-pt",
+    title: "About Rachael: 1106 S Otto Pt",
+    category: "/about/rachael-garnett",
+    description: "Closed residential listing on Rachael Garnett bio page.",
+    image: "/listings/otto-pt-inverness-2.webp",
+    liveHref: "/about/rachael-garnett",
+  },
+  {
+    id: "about:rachael-wheat-stone",
+    slug: "about-rachael-wheat-stone",
+    title: "About Rachael: 8136 Wheat Stone Dr",
+    category: "/about/rachael-garnett",
+    description: "Closed residential listing on Rachael Garnett bio page.",
+    image: "/listings/wheat-stone-zephyrhills-1.webp",
+    liveHref: "/about/rachael-garnett",
+  },
+  {
+    id: "about:rachael-16th-st",
+    slug: "about-rachael-16th-st",
+    title: "About Rachael: 2402 16th St W",
+    category: "/about/rachael-garnett",
+    description: "Closed residential listing on Rachael Garnett bio page.",
+    image: "/listings/16th-st-palmetto-1.webp",
+    liveHref: "/about/rachael-garnett",
+  },
+  {
+    id: "about:rachael-stonehaven",
+    slug: "about-rachael-stonehaven",
+    title: "About Rachael: 4603 Stonehaven Pl",
+    category: "/about/rachael-garnett",
+    description: "Closed residential listing on Rachael Garnett bio page.",
+    image: "/listings/stonehaven-npr-1.jpg",
+    liveHref: "/about/rachael-garnett",
+  },
+  {
+    id: "about:rachael-raffia",
+    slug: "about-rachael-raffia",
+    title: "About Rachael: 10609 Raffia Dr",
+    category: "/about/rachael-garnett",
+    description: "Closed residential listing on Rachael Garnett bio page.",
+    image: "/listings/raffia-port-richey-1.webp",
+    liveHref: "/about/rachael-garnett",
+  },
 ];
 
 const HUB_PAGE_IMAGES = [
@@ -261,6 +334,15 @@ const HUB_PAGE_IMAGES = [
     description: "Residential portfolio cover image on /properties.",
     image: "/listings/d-g-residential-1.webp",
     liveHref: "/properties",
+  },
+  {
+    id: "hub-page:developments-combo",
+    slug: "hub-page-developments-combo",
+    title: "Developments Hub: New Construction vs. Resale Advisory Card",
+    category: "/developments",
+    description: "Mark & Rachael advisory card in the 55+ / New Construction guide on /developments.",
+    image: "/davis-garnett-real-combo.png",
+    liveHref: "/developments",
   },
 ];
 
@@ -520,6 +602,30 @@ export default function ImageReviewPage() {
         mapItem({
           ...item,
           section: "Hubs & Portfolio",
+        })
+      ),
+      ...RESIDENTIAL_PILLAR_HUB.serviceLanes.map((lane) =>
+        mapItem({
+          id: `residential-lane:${lane.id}`,
+          section: "Hubs & Portfolio",
+          slug: `residential-${lane.id}`,
+          title: `Residential Hub Lane: ${lane.title}`,
+          category: `/residential · ${lane.tag}`,
+          description: lane.summary,
+          image: lane.image || PLACEHOLDER_PATH,
+          liveHref: "/residential",
+        })
+      ),
+      ...COMMERCIAL_PILLAR_HUB.serviceLanes.map((lane) =>
+        mapItem({
+          id: `commercial-lane:${lane.id}`,
+          section: "Hubs & Portfolio",
+          slug: `commercial-${lane.id}`,
+          title: `Commercial Hub Lane: ${lane.title}`,
+          category: `/commercial · ${lane.tag}`,
+          description: lane.summary,
+          image: lane.image || PLACEHOLDER_PATH,
+          liveHref: "/commercial",
         })
       ),
     ];

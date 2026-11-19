@@ -175,9 +175,7 @@ export default function SearchMlsDiscoveryPortal() {
                   imageUrl:
                     l.images?.[0]?.url && !l.images[0].url.includes("unsplash.com")
                       ? l.images[0].url
-                      : l.category === "Commercial"
-                      ? "/com_luxury_retail_1787632885082.png"
-                      : "/res_modern_mansion_1787632812473.png",
+                      : "/placeholders/dg-brand-placeholder.webp",
                   source: "Davis & Garnett Exclusive",
                   href: `/listings/${l.slug}`,
                 });
@@ -209,7 +207,7 @@ export default function SearchMlsDiscoveryPortal() {
                 propertyType: "Single Family",
                 category: "Residential",
                 status: item.status || "Active MLS",
-                imageUrl: item.images?.[0]?.url || "/res_waterfront_estate_1787632802890.png",
+                imageUrl: item.images?.[0]?.url || "/placeholders/dg-brand-placeholder.webp",
                 source: "Lofty Stellar MLS Feed",
                 href: "#lofty-idx-container",
               });

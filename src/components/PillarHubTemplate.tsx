@@ -15,6 +15,8 @@ import {
 import ProposalNav from "@/components/ProposalNav";
 import SiteFooter from "@/components/SiteFooter";
 import PillarHubActions from "@/components/PillarHubActions";
+import PillarHubJumpGrid from "@/components/PillarHubJumpGrid";
+import FaviconHeroBackground from "@/components/FaviconHeroBackground";
 import HubCardSlider from "@/components/HubCardSlider";
 import type { PillarHubConfig } from "@/data/pillarHubs";
 import { LIVE_GUIDED_TOURS } from "@/data/tours";
@@ -45,13 +47,13 @@ export default function PillarHubTemplate({ hub }: { hub: PillarHubConfig }) {
         { stat: "Full Cycle", label: "Buy, Sell, Lease & Land", sub: "Businesses, plazas & acreage" },
         { stat: "Direct", label: "Principals on Every Call", sub: "Mark Davis & Rachael Garnett" },
         { stat: "Discreet", label: "Quiet or Public Marketing", sub: "Tailored to tenant sensitivity" },
-        { stat: "I-4 to Bay", label: "Tampa Bay to Heartland", sub: "Retail, medical, flex & land" },
+        { stat: "Regional", label: "Tampa Bay & Central FL", sub: "Retail, medical, flex & land" },
       ]
     : [
         { stat: "$250M+", label: "Combined Team Success", sub: "Across Greater Tampa Bay" },
         { stat: "20+ Yrs", label: "Local Market Experience", sub: "Residential & Commercial" },
         { stat: "Direct", label: "Mark & Rachael Personally", sub: "Zero junior handoffs, ever" },
-        { stat: "8 Counties", label: "Full Regional Coverage", sub: "Tampa to St. Pete & Sarasota" },
+        { stat: "Full-Service", label: "Buy, Sell & Relocate", sub: "Homes, condos, waterfront & new builds" },
       ];
 
   const jsonLd = {
@@ -106,80 +108,70 @@ export default function PillarHubTemplate({ hub }: { hub: PillarHubConfig }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* ── LANDER HERO (Secondary-Homepage Full-Bleed Architectural Look) ── */}
-      <section className="relative w-full min-h-[78vh] flex items-center pt-28 pb-20 px-6 md:px-12 bg-[#050505] text-white overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src={hub.heroImage}
-            alt={hub.heroImageAlt}
-            fill
-            unoptimized
-            priority
-            className="object-cover opacity-55"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/95 via-[#050505]/75 to-[#050505]/35" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-[#050505]/60" />
-        </div>
+      {/* ── PILLAR HUB HERO (DG Monogram Pattern — Dark for Commercial, Light for Residential) ── */}
+      <section
+        className={`relative w-full pt-32 pb-16 px-6 lg:px-10 overflow-hidden min-h-[680px] flex flex-col justify-center border-b ${
+          isCommercial
+            ? "bg-[#111111] text-white border-[#D4AF37]/30"
+            : "bg-[#f5f3ef] text-[#111111] border-[#111111]/10"
+        }`}
+      >
+        <FaviconHeroBackground variant={isCommercial ? "dark" : "light"} />
 
-        <div className="relative z-10 max-w-screen-xl mx-auto w-full">
-          <div className="max-w-3xl">
-            <nav
-              aria-label="Breadcrumb"
-              className="flex items-center gap-2 text-[11px] uppercase tracking-widest text-white/60 mb-5"
+        <div className="relative z-10 w-full max-w-screen-xl mx-auto">
+          <div className="max-w-3xl mx-auto text-center">
+            <span
+              className={`text-xs uppercase tracking-[0.3em] font-bold block mb-4 ${
+                isCommercial ? "text-[#D4AF37]" : "text-[#9A7D3A]"
+              }`}
             >
-              <Link href="/" className="hover:text-[#D4AF37]">
-                Home
-              </Link>
-              <span>/</span>
-              <span className="text-[#D4AF37]">
-                {isCommercial ? "Commercial Realtor Hub" : "Residential Realtor Hub"}
-              </span>
-            </nav>
+              {isCommercial
+                ? "Davis & Garnett Commercial · Tampa Bay & Central Florida"
+                : "Davis & Garnett Residential · Greater Tampa Bay"}
+            </span>
 
-            <Link
-              href="/about/align-right-realty-carrollwood"
-              className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-black/55 backdrop-blur-md border border-[#ef5728]/50 hover:border-[#D4AF37] text-[11px] font-semibold uppercase tracking-[0.22em] text-white/95 hover:text-[#D4AF37] mb-6 transition-colors"
+            <h1
+              className={`font-aiveritas text-5xl sm:text-7xl lg:text-8xl leading-none mb-6 ${
+                isCommercial ? "text-white" : "text-[#111111]"
+              }`}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/align-right-email-logo.png"
-                alt="Align Right Realty Carrollwood"
-                className="h-4 w-auto object-contain"
-              />
-              <span>{isCommercial ? "Commercial & Land · Align Right Realty" : "Residential Homes · Align Right Realty"}</span>
-            </Link>
-
-            <h1 className="font-aiveritas text-5xl sm:text-6xl lg:text-8xl text-white mb-6 leading-[0.98] drop-shadow-2xl">
               {isCommercial ? (
                 <>
                   Tampa Bay <br />
-                  <span className="text-[#D4AF37]">Commercial &amp; Land.</span>
+                  <span className="text-[#D4AF37]">Commercial.</span>
                 </>
               ) : (
                 <>
                   Tampa Bay <br />
-                  <span className="text-[#D4AF37]">Homes &amp; Neighborhoods.</span>
+                  <span className="text-[#9A7D3A]">Residential.</span>
                 </>
               )}
             </h1>
 
-            <p className="text-base md:text-xl text-white/85 font-light leading-relaxed max-w-2xl mb-9 drop-shadow-md">
+            <p
+              className={`font-light text-base md:text-[17px] lg:text-[18px] leading-relaxed max-w-2xl mx-auto mb-8 ${
+                isCommercial ? "text-white/85" : "text-[#111111]/75"
+              }`}
+            >
               {hub.subtitle}
             </p>
 
-            <div className="flex flex-col items-start gap-4">
-              <PillarHubActions
-                track={hub.track}
-                getStartedHref={hub.getStartedHref}
-                getStartedLabel={hub.getStartedLabel}
-                secondaryHeroHref={hub.secondaryHeroHref}
-                secondaryHeroLabel={hub.secondaryHeroLabel}
-                variant="hero"
-              />
-            </div>
+            <PillarHubActions
+              track={hub.track}
+              getStartedHref={hub.getStartedHref}
+              getStartedLabel={hub.getStartedLabel}
+              secondaryHeroHref={hub.secondaryHeroHref}
+              secondaryHeroLabel={hub.secondaryHeroLabel}
+              variant="hero"
+              surface={isCommercial ? "dark" : "light"}
+              align="center"
+            />
           </div>
         </div>
       </section>
+
+      {/* ── CLEAN BELOW-HERO SECTION JUMP GRID (Eased Smooth Glide) ── */}
+      <PillarHubJumpGrid isCommercial={isCommercial} />
 
       {/* ── LANDER CREDENTIAL BAR (Matches Homepage Advisor Stats) ── */}
       <section className="py-12 px-6 md:px-8 bg-white border-b border-[#111]/10">
@@ -238,10 +230,10 @@ export default function PillarHubTemplate({ hub }: { hub: PillarHubConfig }) {
           <div className="rounded-2xl overflow-hidden bg-[#111111] text-white border border-[#D4AF37]/30 shadow-xl">
             <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#0a0a0a]">
               <Image
-                src={PLACEHOLDER_IMG}
+                src={hub.teamImage || "/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-9.jpg"}
                 alt="Davis & Garnett Real Estate Advisors Tampa Bay"
                 fill
-                className="object-cover"
+                className="object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-black/20" />
             </div>
@@ -268,7 +260,7 @@ export default function PillarHubTemplate({ hub }: { hub: PillarHubConfig }) {
       </section>
 
       {/* ── CORE SERVICES GRID (CLEAN 3-COLUMN SHOWCASE, NOT A SLIDER WALL) ── */}
-      <section className="py-20 md:py-24 px-6 md:px-10 bg-white border-b border-[#111]/10">
+      <section id="services" className="scroll-mt-24 py-20 md:py-24 px-6 md:px-10 bg-white border-b border-[#111]/10">
         <div className="max-w-screen-xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div className="max-w-2xl">
@@ -297,7 +289,7 @@ export default function PillarHubTemplate({ hub }: { hub: PillarHubConfig }) {
                 <div>
                   <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#111]">
                     <Image
-                      src={PLACEHOLDER_IMG}
+                      src={lane.image || PLACEHOLDER_IMG}
                       alt={lane.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -347,7 +339,7 @@ export default function PillarHubTemplate({ hub }: { hub: PillarHubConfig }) {
             <div>
               <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#111]">
                 <Image
-                  src={PLACEHOLDER_IMG}
+                  src={c.image || PLACEHOLDER_IMG}
                   alt={c.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -403,7 +395,11 @@ export default function PillarHubTemplate({ hub }: { hub: PillarHubConfig }) {
               <div>
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-black">
                   <Image
-                    src={PLACEHOLDER_IMG}
+                    src={
+                      (typeof listing.images?.main === "string" && listing.images.main) ||
+                      (Array.isArray(listing.images?.gallery) && listing.images.gallery[0]) ||
+                      PLACEHOLDER_IMG
+                    }
                     alt={listing.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -436,7 +432,7 @@ export default function PillarHubTemplate({ hub }: { hub: PillarHubConfig }) {
       )}
 
       {/* ── CLEAN TOOLS, TOURS & GLOSSARY RIBBON (DARK FOOTER CONTINUATION) ── */}
-      <section className="py-12 px-6 md:px-10 bg-[#0b0b0b] text-white border-b border-[#D4AF37]/20">
+      <section id="tours" className="scroll-mt-24 py-12 px-6 md:px-10 bg-[#0b0b0b] text-white border-b border-[#D4AF37]/20">
         <div className="max-w-screen-xl mx-auto space-y-8">
           <div className="grid md:grid-cols-3 gap-4">
             {hub.tools.map((tool) => (
@@ -552,7 +548,7 @@ export default function PillarHubTemplate({ hub }: { hub: PillarHubConfig }) {
       </section>
 
       {/* ── CLOSING CONVERSION CTA ── */}
-      <section className="py-24 px-6 md:px-12 bg-[#111111] text-white text-center">
+      <section id="closing-cta" className="scroll-mt-24 py-24 px-6 md:px-12 bg-[#111111] text-white text-center">
         <div className="max-w-3xl mx-auto">
           <span className="inline-flex items-center gap-2 text-[#D4AF37] text-xs uppercase tracking-[0.28em] font-bold mb-4">
             <Compass className="w-4 h-4" /> Your Move, Your Pace
