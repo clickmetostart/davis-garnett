@@ -239,7 +239,7 @@ export default function AboutHubPage() {
                   alt="Mark Davis and Rachael Garnett — Principal Advisors at Davis & Garnett"
                   fill
                   priority
-                  unoptimized
+                  sizes="(max-width: 1024px) 100vw, 42vw"
                   className="object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/85 via-transparent to-transparent" />
@@ -306,7 +306,7 @@ export default function AboutHubPage() {
                       src="/new-images/new-2/mark-davis-residential-commerical-advisor-tampa-real-estate-3.jpg"
                       alt="Mark Davis, REALTOR® — Certified Commercial & Residential Agent"
                       fill
-                      unoptimized
+                      sizes="(max-width: 640px) 100vw, 280px"
                       className="object-cover object-top"
                     />
                   </div>
@@ -388,7 +388,7 @@ export default function AboutHubPage() {
                       src="/new-images/new-2/rachael-garnett-residential-commerical-advisor-tampa-real-estate-6.jpg"
                       alt="Rachael Garnett, REALTOR® — Certified Commercial & Residential Agent"
                       fill
-                      unoptimized
+                      sizes="(max-width: 640px) 100vw, 280px"
                       className="object-cover object-top"
                     />
                   </div>

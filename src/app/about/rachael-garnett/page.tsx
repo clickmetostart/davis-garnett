@@ -168,7 +168,7 @@ export default function RachaelGarnettAdvisorPage() {
                 alt="Rachael Garnett, REALTOR® — Certified Commercial & Residential Agent (SL3378601)"
                 fill
                 priority
-                unoptimized
+                sizes="(max-width: 1024px) 100vw, 42vw"
                 className="object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/80 via-transparent to-transparent" />

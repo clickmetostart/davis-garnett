@@ -222,11 +222,10 @@ export default function DevelopmentDetailClient({
                     key={idx}
                     type="button"
                     onClick={() => setSelectedImage(imgUrl)}
-                    className={`relative aspect-[16/10] rounded-xl overflow-hidden border-2 transition-all ${
-                      isSelected
+                    className={`relative aspect-[16/10] rounded-xl overflow-hidden border-2 transition-all ${isSelected
                         ? "border-[#C8A951] ring-2 ring-[#C8A951]/40 scale-[0.98]"
                         : "border-transparent opacity-75 hover:opacity-100"
-                    }`}
+                      }`}
                   >
                     <Image
                       src={imgUrl}
@@ -529,11 +528,11 @@ export default function DevelopmentDetailClient({
                       aeo.isCommercialFocused
                         ? buildCapRateCalcHref({ price: dev.priceRange, from: dev.name })
                         : buildMortgageCalcHref({
-                            price: dev.priceRange,
-                            hoa: dev.hoaCddInfo.hoaEstimate,
-                            cdd: dev.hoaCddInfo.cddEstimate,
-                            from: dev.name,
-                          })
+                          price: dev.priceRange,
+                          hoa: dev.hoaCddInfo.hoaEstimate,
+                          cdd: dev.hoaCddInfo.cddEstimate,
+                          from: dev.name,
+                        })
                     }
                     className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#f5f3ef] hover:bg-[#C8A951] text-[#111111] border border-[#111111]/15 text-xs font-bold uppercase tracking-widest rounded-lg transition-colors shrink-0"
                   >
@@ -706,7 +705,7 @@ export default function DevelopmentDetailClient({
                       src="/davis-garnett-headshots/mark-davis-avatar-footer.JPG"
                       alt="Mark Davis"
                       fill
-                      unoptimized
+                      sizes="44px"
                       className="object-cover object-top"
                     />
                   </div>
@@ -715,7 +714,7 @@ export default function DevelopmentDetailClient({
                       src="/davis-garnett-headshots/rachael-garnett-avatar-footer.webp"
                       alt="Rachael Garnett"
                       fill
-                      unoptimized
+                      sizes="44px"
                       className="object-cover object-[center_30%]"
                     />
                   </div>

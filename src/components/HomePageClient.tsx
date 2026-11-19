@@ -172,7 +172,7 @@ export default function HomePageV1Light() {
                 src="/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-8.jpg"
                 alt="Davis & Garnett Team"
                 fill
-                unoptimized
+                sizes="(max-width: 768px) 100vw, 448px"
                 className="object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
@@ -274,7 +274,7 @@ export default function HomePageV1Light() {
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 rounded-2xl overflow-hidden shadow-2xl group"
               style={{ width: "30vw", height: "75vh", scale: centerScale }}
             >
-              <Image src="/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-8.jpg" alt="Davis & Garnett Team" fill unoptimized className="object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+              <Image src="/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-8.jpg" alt="Davis & Garnett Team" fill sizes="32vw" className="object-cover object-top transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
               <div className="absolute bottom-8 left-0 right-0 text-center px-6 flex flex-col items-center">
                 <h3 className="font-aiveritas text-3xl lg:text-4xl text-white drop-shadow-md mb-1.5">Mark &amp; Rachael</h3>
@@ -401,7 +401,7 @@ export default function HomePageV1Light() {
                   src="/new-images/new-2/davis-garnett-tampa-commercial-real-estate-1.jpg"
                   alt="Tampa Bay Commercial Real Estate Building & Mixed-Use Corridor"
                   fill
-                  unoptimized
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-black/25 pointer-events-none" />
@@ -1259,6 +1259,7 @@ export default function HomePageV1Light() {
                 loop
                 muted
                 playsInline
+                preload="metadata"
                 aria-hidden="true"
                 tabIndex={-1}
                 disablePictureInPicture
@@ -1350,21 +1351,21 @@ export default function HomePageV1Light() {
       </section>
 
       {/* ── ADVISORY CTA ── */}
-      <section className="relative py-32 px-8 overflow-hidden border-t border-[#D4AF37]/20">
+      <section className="relative py-16 sm:py-24 lg:py-32 px-5 sm:px-8 overflow-hidden border-t border-[#D4AF37]/20">
         <div className="absolute inset-0 z-0">
-          <Image src="/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-5.jpg" alt="Davis & Garnett Advisory" fill className="object-cover object-center" />
-          <div className="absolute inset-0 bg-black/65" />
+          <Image src="/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-5.jpg" alt="Davis & Garnett Advisory" fill className="object-cover object-[71%_35%] lg:object-center" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/75" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-bold block mb-6">Commercial &amp; Residential Real Estate Team</span>
-          <h2 className="font-aiveritas text-4xl md:text-5xl lg:text-6xl text-white mb-8 leading-tight">
+          <span className="text-[#D4AF37] text-xs uppercase tracking-[0.22em] sm:tracking-[0.3em] font-bold block mb-4 sm:mb-6">Commercial &amp; Residential Real Estate Team</span>
+          <h2 className="font-aiveritas text-4xl md:text-5xl lg:text-6xl text-white mb-5 sm:mb-8 leading-tight">
             Built on Proven Experience.<br />
             <span className="text-[#D4AF37]">Driven by Real Results.</span>
           </h2>
-          <p className="text-white/90 text-base md:text-[17px] lg:text-[18px] font-light mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-white/90 text-base md:text-[17px] lg:text-[18px] font-light mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed">
             Buying a home, selling land, or pricing a building? Mark Davis and Rachael Garnett work side by side to guide every step.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-6">
             <button
               onClick={() =>
                 openConsultation(

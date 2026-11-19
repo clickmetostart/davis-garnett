@@ -183,7 +183,7 @@ export default function MarkDavisAdvisorPage() {
                 alt="Mark Davis, REALTOR® — Certified Commercial & Residential Agent (BK3209459)"
                 fill
                 priority
-                unoptimized
+                sizes="(max-width: 1024px) 100vw, 42vw"
                 className="object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/80 via-transparent to-transparent" />

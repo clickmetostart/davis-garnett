@@ -165,7 +165,7 @@ export default function ContactPage() {
                         src="/davis-garnett-headshots/mark-davis-avatar-footer.JPG"
                         alt="Mark Davis"
                         fill
-                        unoptimized
+                        sizes="128px"
                         className="object-cover object-top"
                       />
                     </div>
@@ -273,7 +273,7 @@ export default function ContactPage() {
                         src="/davis-garnett-headshots/rachael-garnett-avatar-footer.webp"
                         alt="Rachael Garnett"
                         fill
-                        unoptimized
+                        sizes="128px"
                         className="object-cover object-[center_30%]"
                       />
                     </div>

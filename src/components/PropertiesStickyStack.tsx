@@ -174,7 +174,6 @@ export default function PropertiesStickyStack() {
                     sizes="(max-width: 768px) 92vw, 58vw"
                     priority={i === 0}
                     className="object-cover"
-                    unoptimized
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/15" />
 

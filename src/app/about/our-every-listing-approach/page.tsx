@@ -231,7 +231,7 @@ export default function EveryListingApproachPage() {
                 src="/new-images/new-2/mark-davis-and-rachael-garnett-residential-commerical-advisors-tampa-real-estate-9.jpg"
                 alt="Mark Davis and Rachael Garnett — Principal Advisors"
                 fill
-                unoptimized
+                sizes="(max-width: 1024px) 100vw, 48vw"
                 className="object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />

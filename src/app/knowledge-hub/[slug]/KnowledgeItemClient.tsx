@@ -438,7 +438,7 @@ export default function KnowledgeItemClient({
                   src={item.author.image}
                   alt={item.author.name}
                   fill
-                  unoptimized
+                  sizes="96px"
                   className={`object-cover ${
                     item.author.name.includes("Rachael") ? "object-[center_30%]" : "object-top"
                   }`}
