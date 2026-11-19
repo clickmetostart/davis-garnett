@@ -34,7 +34,7 @@ import BackgroundVideo from "@/components/BackgroundVideo";
 import SiteFooter from "@/components/SiteFooter";
 import ConsultationModal from "@/components/ConsultationModal";
 import PdfAvailableBadge from "@/components/PdfAvailableBadge";
-import { smoothScrollToId } from "@/lib/smoothScroll";
+import { smoothScrollToId, scrollCardTrack } from "@/lib/smoothScroll";
 
 export default function HomePageV1Light() {
   const router = useRouter();
@@ -69,13 +69,7 @@ export default function HomePageV1Light() {
   };
 
   const scrollDevelopmentsSlider = (dir: "left" | "right") => {
-    if (!developmentsRef.current) return;
-    const el = developmentsRef.current;
-    const distance = Math.min(el.clientWidth * 0.92, el.clientWidth);
-    el.scrollBy({
-      left: dir === "left" ? -distance : distance,
-      behavior: "smooth",
-    });
+    scrollCardTrack(developmentsRef.current, dir);
   };
 
   const handleMlsSearch = (e: React.FormEvent) => {
@@ -530,7 +524,7 @@ export default function HomePageV1Light() {
       <div className="h-[8vh] bg-[#f5f3ef] pointer-events-none" />
 
       {/* ── TRENDING REAL ESTATE REGIONAL SLIDER ── */}
-      <section className="py-32 px-8 bg-white border-t border-[#111]/10">
+      <section className="py-24 sm:py-32 px-5 sm:px-8 bg-white border-t border-[#111]/10">
         <div className="max-w-screen-xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-8">
             <div>
@@ -574,7 +568,7 @@ export default function HomePageV1Light() {
 
           <div
             ref={developmentsRef}
-            className="flex gap-7 lg:gap-10 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-thin"
+            className="flex gap-4 sm:gap-7 lg:gap-10 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-thin"
             style={{ scrollbarWidth: "none" }}
           >
             {[
@@ -811,52 +805,55 @@ export default function HomePageV1Light() {
               return (
                 <div
                   key={slide.title}
-                  className="w-[84vw] sm:w-[76vw] lg:w-[calc(50%-20px)] shrink-0 snap-start bg-[#f5f3ef] border border-[#111]/10 rounded-2xl overflow-hidden flex flex-col justify-between"
+                  className="w-full sm:w-[76vw] lg:w-[calc(50%-20px)] shrink-0 snap-start snap-always bg-[#f5f3ef] border border-[#111]/10 rounded-2xl overflow-hidden flex flex-col"
                 >
-                  <div className="relative aspect-[16/9] w-full overflow-hidden">
+                  <div className="relative min-h-[235px] sm:min-h-[290px] w-full overflow-hidden flex flex-col justify-between p-4 sm:p-6 shrink-0">
                     <Image
                       src={slide.heroImage}
                       alt={slide.heroAlt}
                       fill
                       className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-                    <div
-                      className={`absolute top-4 left-4 px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-sm flex items-center gap-1.5 ${slide.badgeGold ? "bg-[#D4AF37] text-[#111]" : "bg-[#111] text-[#D4AF37]"
-                        }`}
-                    >
-                      <BadgeIcon className="w-3.5 h-3.5" /> {slide.badge}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/25 pointer-events-none" />
+                    <div className="relative z-10 flex items-start">
+                      <div
+                        className={`px-2.5 sm:px-3 py-1 text-[10px] font-bold uppercase tracking-wider sm:tracking-widest rounded-sm inline-flex items-center gap-1.5 max-w-full ${slide.badgeGold ? "bg-[#D4AF37] text-[#111]" : "bg-[#111] text-[#D4AF37]"
+                          }`}
+                      >
+                        <BadgeIcon className="w-3.5 h-3.5 shrink-0" />
+                        <span className="leading-snug">{slide.badge}</span>
+                      </div>
                     </div>
-                    <div className="absolute bottom-5 left-6 right-6">
-                      <h3 className="font-aiveritas text-2xl xl:text-[26px] text-white mb-1">
+                    <div className="relative z-10 mt-7 sm:mt-12">
+                      <h3 className="font-aiveritas text-[22px] sm:text-[26px] text-white mb-1 leading-snug drop-shadow-sm">
                         {slide.title}
                       </h3>
-                      <p className="text-white/85 text-xs uppercase tracking-widest mb-1.5">
+                      <p className="text-white/90 text-[11px] sm:text-xs uppercase tracking-wider sm:tracking-widest mb-1 leading-snug">
                         {slide.subtitle}
                       </p>
-                      <span className="inline-block text-[10px] font-bold uppercase tracking-wider text-[#D4AF37]">
+                      <span className="inline-block text-[10px] font-bold uppercase tracking-wider text-[#D4AF37] leading-snug">
                         {slide.dualNote}
                       </span>
                     </div>
                   </div>
-                  <div className="p-8">
-                    <div className="grid sm:grid-cols-2 gap-4 mb-8">
+                  <div className="p-3.5 sm:p-6 lg:p-7 flex-1 flex flex-col justify-between">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3.5 mb-4 sm:mb-6">
                       {slide.items.map((d) => (
                         <Link
                           key={`${slide.title}-${d.name}`}
                           href={`/developments/${d.slug}`}
-                          className="p-4 bg-white rounded-xl border border-[#111]/8 hover:border-[#D4AF37] transition-colors group"
+                          className="px-3.5 py-2.5 sm:p-4 bg-white rounded-xl border border-[#111]/8 hover:border-[#D4AF37] transition-colors group"
                         >
-                          <div className="font-bold text-sm md:text-base text-[#111] group-hover:text-[#9A7D3A] transition-colors flex items-center justify-between gap-2">
+                          <div className="font-bold text-[13px] sm:text-sm md:text-base text-[#111] group-hover:text-[#9A7D3A] transition-colors flex items-center justify-between gap-2 leading-snug">
                             <span>{d.name}</span>
                             <ArrowRight className="w-3.5 h-3.5 text-[#D4AF37] shrink-0" />
                           </div>
-                          <div className="text-xs md:text-sm text-[#111]/65 font-light mt-1">{d.sub}</div>
+                          <div className="text-[11px] sm:text-xs md:text-sm text-[#111]/65 font-light mt-0.5 leading-snug line-clamp-1 sm:line-clamp-2">{d.sub}</div>
                         </Link>
                       ))}
                     </div>
-                    <div className="flex items-center justify-between pt-4 border-t border-[#111]/10 gap-4">
-                      <span className="text-xs text-[#111]/60">{slide.footerNote}</span>
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between pt-3 sm:pt-4 border-t border-[#111]/10 gap-2 sm:gap-4">
+                      <span className="text-[11px] sm:text-xs text-[#111]/60 leading-snug">{slide.footerNote}</span>
                       <Link
                         href={slide.ctaHref}
                         className="text-xs font-bold uppercase tracking-widest text-[#9A7D3A] hover:text-[#111] flex items-center gap-1 shrink-0"
@@ -1034,7 +1031,7 @@ export default function HomePageV1Light() {
       </section>
 
       {/* ── KNOWLEDGE HUB SPOTLIGHT (PRETTY + MOBILE-SWIPEABLE BREAKDOWN) ── */}
-      <section className="py-24 px-6 sm:px-8 bg-[#f5f3ef] relative overflow-hidden">
+      <section className="py-20 sm:py-24 px-5 sm:px-8 bg-[#f5f3ef] relative overflow-hidden">
         <div className="absolute -top-24 right-0 w-[520px] h-[520px] bg-[#D4AF37]/10 rounded-full blur-[130px] pointer-events-none" />
         <div className="max-w-screen-xl mx-auto relative z-10">
           {/* Header Row */}
@@ -1089,12 +1086,12 @@ export default function HomePageV1Light() {
                   Open Playbooks <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
               </div>
-              <div className="relative h-48 sm:h-auto sm:w-[40%] shrink-0 overflow-hidden bg-[#1a1a1a] border-b sm:border-b-0 sm:border-l border-[#D4AF37]/25">
+              <div className="relative h-72 sm:h-auto sm:min-h-[280px] sm:w-[42%] shrink-0 overflow-hidden bg-[#1a1a1a] border-b sm:border-b-0 sm:border-l border-[#D4AF37]/25">
                 <Image
                   src="/images/team/home-playbooks-card.jpg"
                   alt="Mark Davis and Rachael Garnett reviewing Tampa Bay buyer, seller, and commercial playbooks"
                   fill
-                  className="object-cover object-[center_32%] transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover object-[center_22%] transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
                 <span className="absolute bottom-3 left-3 right-3 text-center px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-sm border border-[#D4AF37]/30 text-[10px] font-bold uppercase tracking-[0.16em] text-[#D4AF37]">
@@ -1132,12 +1129,12 @@ export default function HomePageV1Light() {
                   Explore Area Tours <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
               </div>
-              <div className="relative h-48 sm:h-auto sm:w-[40%] shrink-0 overflow-hidden bg-[#111] border-b sm:border-b-0 sm:border-l border-[#111]/10">
+              <div className="relative h-72 sm:h-auto sm:min-h-[280px] sm:w-[42%] shrink-0 overflow-hidden bg-[#111] border-b sm:border-b-0 sm:border-l border-[#111]/10">
                 <Image
                   src="/images/team/home-guided-tours-card.jpg"
                   alt="Mark Davis and Rachael Garnett hosting a guided Tampa Bay neighborhood and commercial tour"
                   fill
-                  className="object-cover object-[center_32%] transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover object-[center_22%] transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                 <span className="absolute bottom-3 left-3 right-3 text-center px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-sm border border-white/20 text-[10px] font-bold uppercase tracking-[0.16em] text-white">
@@ -1204,7 +1201,7 @@ export default function HomePageV1Light() {
                 <Link
                   key={pillar.num}
                   href={pillar.href}
-                  className="group min-w-[260px] sm:min-w-[280px] lg:min-w-0 snap-start bg-white hover:bg-[#111] rounded-2xl p-5 sm:p-6 border border-[#111]/10 hover:border-[#D4AF37] hover:-translate-y-0.5 transition-all shadow-sm hover:shadow-xl flex flex-col justify-between gap-5"
+                  className="group w-[82%] sm:w-[280px] lg:w-auto lg:min-w-0 shrink-0 snap-start bg-white hover:bg-[#111] rounded-2xl p-5 sm:p-6 border border-[#111]/10 hover:border-[#D4AF37] hover:-translate-y-0.5 transition-all shadow-sm hover:shadow-xl flex flex-col justify-between gap-5"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">

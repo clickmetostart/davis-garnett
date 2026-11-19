@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { smoothScrollToId } from "@/lib/smoothScroll";
+import { smoothScrollToId, scrollCardTrack } from "@/lib/smoothScroll";
 import {
   ArrowRight,
   MapPin,
@@ -92,8 +92,7 @@ export default function PropertiesPage() {
   const commercialRef = useRef<HTMLDivElement>(null);
 
   const scrollSlider = (ref: React.RefObject<HTMLDivElement | null>, dir: "left" | "right") => {
-    if (!ref.current) return;
-    ref.current.scrollBy({ left: dir === "left" ? -420 : 420, behavior: "smooth" });
+    scrollCardTrack(ref.current, dir);
   };
 
   useEffect(() => {
@@ -717,16 +716,16 @@ export default function PropertiesPage() {
 
           <div
             ref={newListingsRef}
-            className="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory"
+            className="flex gap-4 sm:gap-6 overflow-x-auto pb-6 snap-x snap-mandatory"
             style={{ scrollbarWidth: "none" }}
           >
             {newestActiveListings.map((item) => (
               <Link
                 key={`new-${item.slug}`}
                 href={`/listings/${item.slug}`}
-                className="group min-w-[275px] sm:min-w-[340px] max-w-[340px] snap-start bg-white rounded-2xl overflow-hidden border border-[#111111]/10 hover:border-[#C8A951] shadow-sm hover:shadow-xl transition-all flex flex-col shrink-0"
+                className="group w-full sm:w-[340px] snap-start snap-always bg-white rounded-2xl overflow-hidden border border-[#111111]/10 hover:border-[#C8A951] shadow-sm hover:shadow-xl transition-all flex flex-col shrink-0"
               >
-                <div className="relative h-48 bg-[#111111]">
+                <div className="relative h-56 sm:h-52 bg-[#111111]">
                   <Image
                     src={resolveListingImage(item)}
                     alt={item.title}
@@ -761,7 +760,7 @@ export default function PropertiesPage() {
             {/* Upcoming Auto-Populated Lofty / IDX Area Card */}
             <Link
               href="/search-mls"
-              className="min-w-[275px] sm:min-w-[340px] max-w-[340px] snap-start bg-[#111111] text-white rounded-2xl p-6 border border-[#C8A951]/40 flex flex-col justify-between shrink-0"
+              className="w-full sm:w-[340px] snap-start snap-always bg-[#111111] text-white rounded-2xl p-6 border border-[#C8A951]/40 flex flex-col justify-between shrink-0"
             >
               <div>
                 <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-widest font-bold text-[#C8A951] mb-3">
@@ -839,16 +838,16 @@ export default function PropertiesPage() {
 
           <div
             ref={carrollwoodRef}
-            className="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory"
+            className="flex gap-4 sm:gap-6 overflow-x-auto pb-6 snap-x snap-mandatory"
             style={{ scrollbarWidth: "none" }}
           >
             {staticOfficeListings.map((off) => (
               <Link
                 key={`office-static-${off.slug}`}
                 href={`/listings/${off.slug}`}
-                className="group min-w-[275px] sm:min-w-[350px] max-w-[350px] snap-start bg-[#fbfbf9] rounded-2xl overflow-hidden border border-[#111111]/10 hover:border-[#C8A951] shadow-sm transition-all flex flex-col shrink-0"
+                className="group w-full sm:w-[350px] snap-start snap-always bg-[#fbfbf9] rounded-2xl overflow-hidden border border-[#111111]/10 hover:border-[#C8A951] shadow-sm transition-all flex flex-col shrink-0"
               >
-                <div className="relative h-48 bg-[#111111]">
+                <div className="relative h-56 sm:h-52 bg-[#111111]">
                   <Image
                     src={resolveListingImage(off)}
                     alt={off.title}
@@ -885,9 +884,9 @@ export default function PropertiesPage() {
               <Link
                 key={`lofty-office-${ol.id}`}
                 href="/search-mls"
-                className="group min-w-[275px] sm:min-w-[350px] max-w-[350px] snap-start bg-[#fbfbf9] rounded-2xl overflow-hidden border border-[#111111]/10 hover:border-[#C8A951] shadow-sm transition-all flex flex-col shrink-0"
+                className="group w-full sm:w-[350px] snap-start snap-always bg-[#fbfbf9] rounded-2xl overflow-hidden border border-[#111111]/10 hover:border-[#C8A951] shadow-sm transition-all flex flex-col shrink-0"
               >
-                <div className="relative h-48 bg-[#111111]">
+                <div className="relative h-56 sm:h-52 bg-[#111111]">
                   <Image
                     src={ol.images?.[0]?.url || "/placeholders/dg-brand-placeholder.webp"}
                     alt={ol.title}
@@ -1001,16 +1000,16 @@ export default function PropertiesPage() {
 
           <div
             ref={commercialRef}
-            className="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory"
+            className="flex gap-4 sm:gap-6 overflow-x-auto pb-6 snap-x snap-mandatory"
             style={{ scrollbarWidth: "none" }}
           >
             {commercialAndLandListings.map((item) => (
               <Link
                 key={`cre-${item.slug}`}
                 href={`/listings/${item.slug}`}
-                className="group min-w-[275px] sm:min-w-[350px] max-w-[350px] snap-start bg-white/5 hover:bg-white/10 rounded-2xl overflow-hidden border border-white/10 hover:border-[#C8A951] transition-all flex flex-col shrink-0"
+                className="group w-full sm:w-[350px] snap-start snap-always bg-white/5 hover:bg-white/10 rounded-2xl overflow-hidden border border-white/10 hover:border-[#C8A951] transition-all flex flex-col shrink-0"
               >
-                <div className="relative h-48 bg-black">
+                <div className="relative h-56 sm:h-52 bg-black">
                   <Image
                     src={resolveListingImage(item)}
                     alt={item.title}

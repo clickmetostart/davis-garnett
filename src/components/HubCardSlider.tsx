@@ -3,6 +3,7 @@
 import React, { useRef } from "react";
 import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { scrollCardTrack } from "@/lib/smoothScroll";
 
 interface HubCardSliderProps {
   id?: string;
@@ -30,17 +31,13 @@ export default function HubCardSlider({
   const trackRef = useRef<HTMLDivElement>(null);
 
   const scrollSlider = (dir: "left" | "right") => {
-    if (!trackRef.current) return;
-    trackRef.current.scrollBy({
-      left: dir === "left" ? -420 : 420,
-      behavior: "smooth",
-    });
+    scrollCardTrack(trackRef.current, dir);
   };
 
   return (
     <section
       id={id}
-      className={`py-20 md:py-24 px-6 md:px-8 border-b scroll-mt-24 ${
+      className={`py-20 md:py-24 px-5 sm:px-8 border-b scroll-mt-24 ${
         dark ? "border-[#D4AF37]/20 text-white" : "border-[#111]/8 text-[#111]"
       } ${bgClass}`}
     >
@@ -109,7 +106,7 @@ export default function HubCardSlider({
 
         <div
           ref={trackRef}
-          className="flex gap-7 overflow-x-auto pb-6 snap-x snap-mandatory"
+          className="flex gap-4 sm:gap-7 overflow-x-auto pb-6 snap-x snap-mandatory"
           style={{ scrollbarWidth: "none" }}
         >
           {children}

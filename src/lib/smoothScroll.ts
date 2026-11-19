@@ -49,3 +49,26 @@ export function smoothScrollToId(
   requestAnimationFrame(step);
 }
 
+/**
+ * Steps a horizontal card slider smoothly by exactly one rendered card width
+ * plus its computed flex gap so left/right arrow buttons always snap cleanly
+ * onto the next full card across phone, tablet, and desktop viewports.
+ */
+export function scrollCardTrack(
+  el: HTMLElement | null,
+  dir: "left" | "right"
+): void {
+  if (!el || typeof window === "undefined") return;
+  const firstCard = el.firstElementChild as HTMLElement | null;
+  const styles = window.getComputedStyle(el);
+  const gap = parseFloat(styles.columnGap || styles.gap || "0") || 0;
+  const step = firstCard
+    ? firstCard.getBoundingClientRect().width + gap
+    : el.clientWidth;
+
+  el.scrollBy({
+    left: dir === "left" ? -step : step,
+    behavior: "smooth",
+  });
+}
+

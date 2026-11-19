@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { LIVE_GUIDED_TOURS, buildGoogleMapsRouteUrl } from "@/data/tours";
 import PdfAvailableBadge from "@/components/PdfAvailableBadge";
+import { scrollCardTrack } from "@/lib/smoothScroll";
 
 interface TourSliderSectionProps {
   id?: string;
@@ -33,12 +34,11 @@ export default function TourSliderSection({
   const sliderRef = useRef<HTMLDivElement>(null);
 
   const scrollSlider = (dir: "left" | "right") => {
-    if (!sliderRef.current) return;
-    sliderRef.current.scrollBy({ left: dir === "left" ? -420 : 420, behavior: "smooth" });
+    scrollCardTrack(sliderRef.current, dir);
   };
 
   return (
-    <section id={id} className={`py-20 md:py-24 px-6 md:px-8 border-b border-[#111]/10 scroll-mt-24 ${bgClass}`}>
+    <section id={id} className={`py-20 md:py-24 px-5 sm:px-8 border-b border-[#111]/10 scroll-mt-24 ${bgClass}`}>
       <div className="max-w-screen-xl mx-auto">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 gap-6">
           <div>
@@ -84,7 +84,7 @@ export default function TourSliderSection({
         {/* Horizontal Scrollable Tour Cards (All cards remain rendered in DOM) */}
         <div
           ref={sliderRef}
-          className="flex gap-7 overflow-x-auto pb-6 snap-x snap-mandatory"
+          className="flex gap-4 sm:gap-7 overflow-x-auto pb-6 snap-x snap-mandatory"
           style={{ scrollbarWidth: "none" }}
         >
           {LIVE_GUIDED_TOURS.map((tour) => {
@@ -92,11 +92,11 @@ export default function TourSliderSection({
             return (
               <div
                 key={tour.slug}
-                className="group min-w-[275px] sm:min-w-[320px] md:min-w-[390px] max-w-[390px] snap-start shrink-0 bg-[#fbfbf9] border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl"
+                className="group w-full sm:w-[340px] md:w-[385px] snap-start snap-always shrink-0 bg-[#fbfbf9] border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl"
               >
                 <div>
                   <Link href={`/tours/${tour.slug}`} className="block">
-                    <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#111]">
+                    <div className="relative aspect-[4/3] sm:aspect-[16/9] w-full overflow-hidden bg-[#111]">
                       <Image
                         src={tour.heroImage}
                         alt={tour.title}

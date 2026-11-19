@@ -334,10 +334,10 @@ export default function PillarHubTemplate({ hub }: { hub: PillarHubConfig }) {
           <Link
             key={c.title}
             href={c.href}
-            className="group min-w-[275px] sm:min-w-[360px] max-w-[360px] snap-start bg-white border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl shrink-0"
+            className="group w-full sm:w-[340px] md:w-[360px] snap-start snap-always bg-white border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl shrink-0"
           >
             <div>
-              <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#111]">
+              <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full overflow-hidden bg-[#111]">
                 <Image
                   src={c.image || PLACEHOLDER_IMG}
                   alt={c.title}
@@ -390,10 +390,10 @@ export default function PillarHubTemplate({ hub }: { hub: PillarHubConfig }) {
             <Link
               key={listing.slug}
               href={`/listings/${listing.slug}`}
-              className="group min-w-[275px] sm:min-w-[355px] max-w-[355px] snap-start bg-white/5 hover:bg-white/10 border border-white/15 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all shrink-0"
+              className="group w-full sm:w-[340px] md:w-[355px] snap-start snap-always bg-white/5 hover:bg-white/10 border border-white/15 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all shrink-0"
             >
               <div>
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-black">
+                <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full overflow-hidden bg-black">
                   <Image
                     src={
                       (typeof listing.images?.main === "string" && listing.images.main) ||

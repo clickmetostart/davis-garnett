@@ -27,7 +27,7 @@ import ProposalNav from "@/components/ProposalNav";
 import DevelopmentImageSlider from "@/components/DevelopmentImageSlider";
 import SiteFooter from "@/components/SiteFooter";
 import FaviconHeroBackground from "@/components/FaviconHeroBackground";
-import { smoothScrollToId } from "@/lib/smoothScroll";
+import { smoothScrollToId, scrollCardTrack } from "@/lib/smoothScroll";
 import { DEVELOPMENTS, Development } from "@/data/developments";
 
 type FilterOption =
@@ -91,13 +91,7 @@ export default function DevelopmentsHubPage() {
   }, []);
 
   const scrollSlider = (ref: React.RefObject<HTMLDivElement | null>, dir: "left" | "right") => {
-    if (!ref.current) return;
-    const el = ref.current;
-    const distance = Math.min(el.clientWidth * 0.92, el.clientWidth);
-    el.scrollBy({
-      left: dir === "left" ? -distance : distance,
-      behavior: "smooth",
-    });
+    scrollCardTrack(ref.current, dir);
   };
   const [leadForm, setLeadForm] = useState({
     name: "",
@@ -892,7 +886,7 @@ export default function DevelopmentsHubPage() {
 
           <div
             ref={fiftyPlusRef}
-            className="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-thin"
+            className="flex gap-4 sm:gap-6 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-thin"
             style={{ scrollbarWidth: "none" }}
           >
             {[
@@ -997,7 +991,7 @@ export default function DevelopmentsHubPage() {
             ].map((comm) => (
               <div
                 key={comm.name}
-                className="w-[82vw] sm:w-[46vw] lg:w-[calc(33.333%-16px)] shrink-0 snap-start p-6 rounded-2xl bg-[#fbfbf9] border border-[#111111]/10 hover:border-[#C8A951] transition-all flex flex-col justify-between shadow-sm"
+                className="w-full sm:w-[46vw] lg:w-[calc(33.333%-16px)] shrink-0 snap-start snap-always p-5 sm:p-6 rounded-2xl bg-[#fbfbf9] border border-[#111111]/10 hover:border-[#C8A951] transition-all flex flex-col justify-between shadow-sm"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-3">

@@ -26,7 +26,7 @@ import FaviconHeroBackground from "@/components/FaviconHeroBackground";
 import TourSliderSection from "@/components/TourSliderSection";
 import ConsultationModal from "@/components/ConsultationModal";
 import PdfAvailableBadge from "@/components/PdfAvailableBadge";
-import { smoothScrollToId } from "@/lib/smoothScroll";
+import { smoothScrollToId, scrollCardTrack } from "@/lib/smoothScroll";
 import { GUIDES, QUESTIONS, AREAS, EVENTS, ARTICLES } from "@/data/knowledgeHub";
 
 export default function KnowledgeHubPage() {
@@ -48,9 +48,7 @@ export default function KnowledgeHubPage() {
   const toolsRef = useRef<HTMLDivElement>(null);
 
   const scrollSlider = (ref: React.RefObject<HTMLDivElement | null>, dir: "left" | "right") => {
-    if (!ref.current) return;
-    const distance = dir === "left" ? -440 : 440;
-    ref.current.scrollBy({ left: distance, behavior: "smooth" });
+    scrollCardTrack(ref.current, dir);
   };
 
   const q = searchQuery.trim().toLowerCase();
@@ -266,7 +264,7 @@ export default function KnowledgeHubPage() {
       </section>
 
       {/* ── SLIDER 1: ADVISORY PLAYBOOKS & BUYER/SELLER GUIDES ── */}
-      <section id="guides" className="py-24 px-8 bg-white border-b border-[#111]/8">
+      <section id="guides" className="py-20 sm:py-24 px-5 sm:px-8 bg-white border-b border-[#111]/8">
         <div className="max-w-screen-xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
@@ -300,17 +298,17 @@ export default function KnowledgeHubPage() {
 
           <div
             ref={guidesRef}
-            className="flex gap-7 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-thin"
+            className="flex gap-4 sm:gap-7 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-thin"
             style={{ scrollbarWidth: "none" }}
           >
             {filteredGuides.map((guide) => (
               <Link
                 key={guide.slug}
                 href={`/knowledge-hub/${guide.slug}`}
-                className="group min-w-[275px] sm:min-w-[320px] md:min-w-[390px] max-w-[390px] snap-start bg-[#f5f3ef] border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl shrink-0"
+                className="group w-full sm:w-[340px] md:w-[385px] snap-start snap-always bg-[#f5f3ef] border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl shrink-0"
               >
                 <div>
-                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#111]">
+                  <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full overflow-hidden bg-[#111]">
                     <Image
                       src={guide.heroImage}
                       alt={guide.title}
@@ -318,26 +316,26 @@ export default function KnowledgeHubPage() {
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                    <div className="absolute top-3.5 left-4 right-4 flex flex-col items-start gap-2 pointer-events-none">
-                      <span className="px-3 py-1 bg-[#D4AF37] text-[#111] text-[10px] font-bold uppercase tracking-widest rounded-sm whitespace-nowrap">
+                    <div className="absolute top-3.5 left-3.5 right-3.5 flex flex-col items-start gap-2 pointer-events-none">
+                      <span className="px-2.5 sm:px-3 py-1 bg-[#D4AF37] text-[#111] text-[10px] font-bold uppercase tracking-wider sm:tracking-widest rounded-sm max-w-full">
                         {guide.category}
                       </span>
                       <PdfAvailableBadge />
                     </div>
-                    <span className="absolute bottom-3 right-4 text-[11px] text-white/90 flex items-center gap-1 font-medium">
+                    <span className="absolute bottom-3 right-3.5 text-[11px] text-white/90 flex items-center gap-1 font-medium">
                       <Clock className="w-3.5 h-3.5 text-[#D4AF37]" /> {guide.readTime}
                     </span>
                   </div>
-                  <div className="p-7">
-                    <h3 className="font-aiveritas text-xl xl:text-2xl text-[#111] group-hover:text-[#9A7D3A] transition-colors mb-3 leading-snug line-clamp-2 min-h-[3.25rem]">
+                  <div className="p-5 sm:p-7">
+                    <h3 className="font-aiveritas text-xl xl:text-2xl text-[#111] group-hover:text-[#9A7D3A] transition-colors mb-2.5 leading-snug line-clamp-2 min-h-[3.25rem]">
                       {guide.title}
                     </h3>
-                    <p className="text-[#111]/75 text-base font-light leading-relaxed line-clamp-3">
+                    <p className="text-[#111]/75 text-sm sm:text-base font-light leading-relaxed line-clamp-3">
                       {guide.subtitle}
                     </p>
                   </div>
                 </div>
-                <div className="px-7 pb-6 pt-4 border-t border-[#111]/8 flex items-center justify-between">
+                <div className="px-5 sm:px-7 pb-5 sm:pb-6 pt-4 border-t border-[#111]/8 flex items-center justify-between gap-2">
                   <span className="text-[11px] text-[#111]/55 font-medium">By {guide.author.name}</span>
                   <span className="text-xs font-bold uppercase tracking-widest text-[#9A7D3A] flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
                     Read Playbook <ArrowRight className="w-3.5 h-3.5" />
@@ -357,7 +355,7 @@ export default function KnowledgeHubPage() {
         bgClass="bg-[#f5f3ef]"
       />
       {/* ── SLIDER 3: AREAS WE WORK IN — GEOLOCATED NEIGHBORHOOD SPOTLIGHTS ── */}
-      <section id="areas" className="py-24 px-8 bg-white border-b border-[#111]/8">
+      <section id="areas" className="py-20 sm:py-24 px-5 sm:px-8 bg-white border-b border-[#111]/8">
         <div className="max-w-screen-xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
@@ -391,16 +389,16 @@ export default function KnowledgeHubPage() {
 
           <div
             ref={areasRef}
-            className="flex gap-7 overflow-x-auto pb-6 snap-x snap-mandatory"
+            className="flex gap-4 sm:gap-7 overflow-x-auto pb-6 snap-x snap-mandatory"
             style={{ scrollbarWidth: "none" }}
           >
             {/* Align Right Carrollwood Featured Spoke Card */}
             <Link
               href="/align-right-carrollwood-coverage"
-              className="group min-w-[275px] sm:min-w-[320px] md:min-w-[390px] max-w-[390px] snap-start bg-[#111111] text-white border border-[#ef5728]/40 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-2xl shrink-0"
+              className="group w-full sm:w-[340px] md:w-[385px] snap-start snap-always bg-[#111111] text-white border border-[#ef5728]/40 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-2xl shrink-0"
             >
               <div>
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-black">
+                <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full overflow-hidden bg-black">
                   <Image
                     src="/new-images/new-2/davis-garnett-align-right-realty.jpg"
                     alt="Align Right Realty Carrollwood"
@@ -447,10 +445,10 @@ export default function KnowledgeHubPage() {
               <Link
                 key={area.slug}
                 href={`/knowledge-hub/areas/${area.slug}`}
-                className="group min-w-[275px] sm:min-w-[320px] md:min-w-[390px] max-w-[390px] snap-start bg-[#f5f3ef] border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl shrink-0"
+                className="group w-full sm:w-[340px] md:w-[385px] snap-start snap-always bg-[#f5f3ef] border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl shrink-0"
               >
                 <div>
-                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#111]">
+                  <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full overflow-hidden bg-[#111]">
                     <Image
                       src={area.heroImage}
                       alt={area.name}
@@ -555,7 +553,7 @@ export default function KnowledgeHubPage() {
       </section>
 
       {/* ── SECTION 06: INTERACTIVE CALCULATORS & PLANNING TOOLS ── */}
-      <section id="tools" className="py-24 px-8 bg-[#f5f3ef] border-b border-[#111]/10 scroll-mt-24">
+      <section id="tools" className="py-20 sm:py-24 px-5 sm:px-8 bg-[#f5f3ef] border-b border-[#111]/10 scroll-mt-24">
         <div className="max-w-screen-xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
@@ -597,7 +595,7 @@ export default function KnowledgeHubPage() {
 
           <div
             ref={toolsRef}
-            className="flex gap-7 overflow-x-auto pb-6 snap-x snap-mandatory"
+            className="flex gap-4 sm:gap-7 overflow-x-auto pb-6 snap-x snap-mandatory"
             style={{ scrollbarWidth: "none" }}
           >
             {[
@@ -647,7 +645,7 @@ export default function KnowledgeHubPage() {
               <Link
                 key={tool.href}
                 href={tool.href}
-                className="group min-w-[275px] sm:min-w-[320px] md:min-w-[380px] max-w-[380px] snap-start shrink-0 bg-white rounded-2xl p-8 border border-[#111]/10 hover:border-[#D4AF37] shadow-sm hover:shadow-xl transition-all flex flex-col justify-between"
+                className="group w-full sm:w-[340px] md:w-[380px] snap-start snap-always shrink-0 bg-white rounded-2xl p-6 sm:p-8 border border-[#111]/10 hover:border-[#D4AF37] shadow-sm hover:shadow-xl transition-all flex flex-col justify-between"
               >
                 <div>
                   <span className="text-[10px] uppercase tracking-[0.22em] font-bold text-[#9A7D3A] block mb-3">
@@ -670,7 +668,7 @@ export default function KnowledgeHubPage() {
       </section>
 
       {/* ── SLIDER 2: THE D&G CLASSROOM — TOP PURCHASE, SALE & INVESTMENT QUESTIONS (Q&A) ── */}
-      <section id="questions" className="py-24 px-8 bg-white border-b border-[#111]/8">
+      <section id="questions" className="py-20 sm:py-24 px-5 sm:px-8 bg-white border-b border-[#111]/8">
         <div className="max-w-screen-xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
@@ -704,17 +702,17 @@ export default function KnowledgeHubPage() {
 
           <div
             ref={qaRef}
-            className="flex gap-7 overflow-x-auto pb-6 snap-x snap-mandatory"
+            className="flex gap-4 sm:gap-7 overflow-x-auto pb-6 snap-x snap-mandatory"
             style={{ scrollbarWidth: "none" }}
           >
             {filteredQuestions.map((qa) => (
               <Link
                 key={qa.slug}
                 href={`/knowledge-hub/${qa.slug}`}
-                className="group min-w-[275px] sm:min-w-[320px] md:min-w-[380px] max-w-[380px] snap-start bg-[#f5f3ef] border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl shrink-0"
+                className="group w-full sm:w-[340px] md:w-[380px] snap-start snap-always bg-[#f5f3ef] border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl shrink-0"
               >
                 <div>
-                  <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#111]">
+                  <div className="relative aspect-[4/3] sm:aspect-[16/9] w-full overflow-hidden bg-[#111]">
                     <Image
                       src={qa.heroImage}
                       alt={qa.title}
@@ -748,7 +746,7 @@ export default function KnowledgeHubPage() {
       </section>
 
       {/* ── SLIDER 4: COMMUNITY EVENTS, OUTREACH & VIP EXPERIENCES ── */}
-      <section id="events" className="py-24 px-8 bg-[#f5f3ef] border-b border-[#111]/8">
+      <section id="events" className="py-20 sm:py-24 px-5 sm:px-8 bg-[#f5f3ef] border-b border-[#111]/8">
         <div className="max-w-screen-xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
@@ -782,17 +780,17 @@ export default function KnowledgeHubPage() {
 
           <div
             ref={eventsRef}
-            className="flex gap-7 overflow-x-auto pb-6 snap-x snap-mandatory"
+            className="flex gap-4 sm:gap-7 overflow-x-auto pb-6 snap-x snap-mandatory"
             style={{ scrollbarWidth: "none" }}
           >
             {filteredEvents.map((ev) => (
               <Link
                 key={ev.slug}
                 href={`/knowledge-hub/events/${ev.slug}`}
-                className="group min-w-[275px] sm:min-w-[320px] md:min-w-[380px] max-w-[380px] snap-start bg-white border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl shrink-0"
+                className="group w-full sm:w-[340px] md:w-[380px] snap-start snap-always bg-white border border-[#111]/10 hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:shadow-xl shrink-0"
               >
                 <div>
-                  <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#111]">
+                  <div className="relative aspect-[4/3] sm:aspect-[16/9] w-full overflow-hidden bg-[#111]">
                     <Image
                       src={ev.heroImage}
                       alt={ev.title}
